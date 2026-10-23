@@ -1,8 +1,8 @@
 # Case08: observed results and boundaries
 
-[English](README.md) В· [Р СѓСЃСЃРєРёР№](README.ru.md)
+[English](README.md) · [Русский](README.ru.md)
 
-[Metrics](results.json) В· [Hashes](evidence-hashes.json) В· [Source manifest](source-manifest.json) В· [Protocol](../protocol/)
+[Metrics](results.json) · [Hashes](evidence-hashes.json) · [Source manifest](source-manifest.json) · [Protocol](../protocol/)
 
 Original task/rubric, Sol 6.1 XHigh, 1500 seconds and 80 native requests per arm. Scores are preserved without normalization; artifact acceptance never changes execution status.
 
@@ -18,7 +18,7 @@ Original task/rubric, Sol 6.1 XHigh, 1500 seconds and 80 native requests per arm
 
 Budget suffix injection is off for both arms. B uses native MCP flow_budget.status. Configuration, successful calls and channel health are separate. Audit counts identify neither root/worker nor causal benefit; invalid audit data cannot establish use. Absent A counters stay null.
 
-The HarnessВІ-inspired guard defers calibration: zero online probes and no demonstrated active optimizer benefit. Complete usage requires completed requests across all phases; known lower bounds remain separate. Unmeasured money and quota stay unknown.
+The Harness²-inspired guard defers calibration: zero online probes and no demonstrated active optimizer benefit. Complete usage requires completed requests across all phases; known lower bounds remain separate. Unmeasured money and quota stay unknown.
 
 Native pass requires exactly 57 passing checks and complete_protocol=true. Original failures, partial evidence and supplemental not_run are preserved. MCP-audit phases and passive request snapshots are separate. RSS/CPU covers sampled root PIDs only; open/read timings include upstream waiting/generation, and overlapping requests are not additive task latency.
 
@@ -32,14 +32,14 @@ README/launch instructions and real Ctrl+C restoration are present in both; the
 old eight-point documentation/control loss was not reproduced.
 
 B is **not a successful timing completion**. Request 28 received HTTP 200 headers
-but body reading did not return normally, after 56.594seconds. Native execution
-then failed with 405seconds and 52 request attempts unused. The exact exception
+but body reading did not return normally, after 56.594 seconds. Native execution
+then failed with 405 seconds and 52 request attempts unused. The exact exception
 class was not retained. A size-limit or deadline cause is not supported by the
-record. B's complete aggregate usage remains null;27 completed requests provide
+record. B's complete aggregate usage remains null; 27 completed requests provide
 only a known lower bound. Neither its shorter stopped duration nor request count
 establishes acceleration or subscription savings.
 
-Flow preparation took 1.062seconds; its one native medium worker and one validated
+Flow preparation took 1.062 seconds; its one native medium worker and one validated
 free-only Mercury decision were observed. Budget MCP had 4/4 successful audited
 calls, with no unavailable result; audit counts do not identify callers. Enabled
 Harness-inspired calibration remained deferred with zero online probes. The
