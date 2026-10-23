@@ -2,7 +2,7 @@
   {
     "file": "seed42_2d.txt",
     "seed": 42,
-    "tree_fingerprint": "5a841f9a105eb1ce",
+    "tree_fingerprint": "7af70d66ad15cbf4",
     "options": {
       "width": 100,
       "height": 40,
@@ -15,12 +15,14 @@
       "aspect": 0.5,
       "time": 0.0
     },
-    "sha256": "9734ea28f6a93adf19256525c592c7cba1850dec253019a41b1e7a105a6dea3f"
+    "sha256": "9734ea28f6a93adf19256525c592c7cba1850dec253019a41b1e7a105a6dea3f",
+    "original_tree_fingerprint": "5a841f9a105eb1ce",
+    "tree_fingerprint_format": "ascii-tree-fixed9-v1"
   },
   {
     "file": "seed42_3d.txt",
     "seed": 42,
-    "tree_fingerprint": "5a841f9a105eb1ce",
+    "tree_fingerprint": "7af70d66ad15cbf4",
     "options": {
       "width": 100,
       "height": 40,
@@ -33,12 +35,14 @@
       "aspect": 0.5,
       "time": 0.0
     },
-    "sha256": "56f8892fe35969e524fc795cc7af635d4f5badf954995e2cae73b6e78c90e389"
+    "sha256": "56f8892fe35969e524fc795cc7af635d4f5badf954995e2cae73b6e78c90e389",
+    "original_tree_fingerprint": "5a841f9a105eb1ce",
+    "tree_fingerprint_format": "ascii-tree-fixed9-v1"
   },
   {
     "file": "seed42_4d_xw_000.txt",
     "seed": 42,
-    "tree_fingerprint": "5a841f9a105eb1ce",
+    "tree_fingerprint": "7af70d66ad15cbf4",
     "options": {
       "width": 100,
       "height": 40,
@@ -51,12 +55,14 @@
       "aspect": 0.5,
       "time": 0.0
     },
-    "sha256": "a1b534f3fea9bf9c0880e9275287240cd7230c99bd473e83a0f14f3f9fa46a19"
+    "sha256": "a1b534f3fea9bf9c0880e9275287240cd7230c99bd473e83a0f14f3f9fa46a19",
+    "original_tree_fingerprint": "5a841f9a105eb1ce",
+    "tree_fingerprint_format": "ascii-tree-fixed9-v1"
   },
   {
     "file": "seed42_4d_xw_040.txt",
     "seed": 42,
-    "tree_fingerprint": "5a841f9a105eb1ce",
+    "tree_fingerprint": "7af70d66ad15cbf4",
     "options": {
       "width": 100,
       "height": 40,
@@ -69,12 +75,14 @@
       "aspect": 0.5,
       "time": 0.0
     },
-    "sha256": "09f6f9e59219c0ef723ed5ce8a562d5e655716ead4a80c782fcb20cee1c391d7"
+    "sha256": "09f6f9e59219c0ef723ed5ce8a562d5e655716ead4a80c782fcb20cee1c391d7",
+    "original_tree_fingerprint": "5a841f9a105eb1ce",
+    "tree_fingerprint_format": "ascii-tree-fixed9-v1"
   },
   {
     "file": "seed7_3d.txt",
     "seed": 7,
-    "tree_fingerprint": "6ace6a9461c665ad",
+    "tree_fingerprint": "529d985dc0e00fa7",
     "options": {
       "width": 100,
       "height": 40,
@@ -87,6 +95,8 @@
       "aspect": 0.5,
       "time": 0.0
     },
-    "sha256": "680fba56df8d15c795b3591c4966cfc658dafa2f491736100d25f40ec701ed78"
+    "sha256": "680fba56df8d15c795b3591c4966cfc658dafa2f491736100d25f40ec701ed78",
+    "original_tree_fingerprint": "6ace6a9461c665ad",
+    "tree_fingerprint_format": "ascii-tree-fixed9-v1"
   }
 ]

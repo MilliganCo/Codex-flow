@@ -1,8 +1,9 @@
 import math
+from dataclasses import replace
 import unittest
 
 from ascii_tree.geometry import Vec3, Vec4, camera_rotate, perspective, project4, rotation4, transform4
-from ascii_tree.model import MAX_SEGMENTS, generate_tree
+from ascii_tree.model import Leaf, MAX_SEGMENTS, Segment, Tree, generate_tree
 
 
 class ModelTests(unittest.TestCase):
@@ -13,6 +14,38 @@ class ModelTests(unittest.TestCase):
     def test_seed_determinism_and_variety(self):
         self.assertEqual(self.tree, generate_tree(42))
         self.assertEqual(len({generate_tree(s).fingerprint for s in (7, 42, 103)}), 3)
+
+    def test_fingerprint_tolerates_ulp_drift_and_tracks_material_changes(self):
+        points = (Vec4(0.0, 0.0, 0.0, 0.0), Vec4(1.25, 2.5, 3.75, 4.5),
+                  Vec4(2.75, 4.0, 5.25, 6.5))
+        segments = (Segment(0, 1, .4, .2, None, 0), Segment(1, 2, .2, .1, 0, 1))
+        tree = Tree(42, points, segments, (Leaf(points[2], .125, 1, 2),))
+
+        def drift(value):
+            return math.nextafter(value, math.inf)
+
+        def drift_point(point):
+            return Vec4(*(drift(value) for value in (point.x, point.y, point.z, point.w)))
+
+        drifted = replace(tree, vertices=tuple(map(drift_point, points)),
+                          segments=tuple(replace(s, radius_start=drift(s.radius_start),
+                                                 radius_end=drift(s.radius_end)) for s in segments),
+                          leaves=tuple(replace(leaf, position=drift_point(leaf.position),
+                                               size=drift(leaf.size)) for leaf in tree.leaves))
+        self.assertEqual(tree.fingerprint, drifted.fingerprint)
+        self.assertEqual(tree.fingerprint, replace(tree, vertices=(
+            Vec4(-0.0, 0.0, -0.0, 0.0), *points[1:])).fingerprint)
+        alternatives = {
+            "seed": replace(tree, seed=43),
+            "spatial_geometry": replace(tree, vertices=(*points[:2], replace(points[2], x=points[2].x + 1e-6))),
+            "fourth_coordinate": replace(tree, vertices=(*points[:2], replace(points[2], w=points[2].w + 1e-6))),
+            "topology": replace(tree, segments=(segments[0], replace(segments[1], start=0, parent=None))),
+            "thickness": replace(tree, segments=(segments[0], replace(segments[1], radius_end=.11))),
+            "foliage": replace(tree, leaves=(replace(tree.leaves[0], size=.15, tone=3),)),
+        }
+        for name, changed in alternatives.items():
+            with self.subTest(change=name):
+                self.assertNotEqual(tree.fingerprint, changed.fingerprint)
 
     def test_connected_finite_positive_tapered_graph(self):
         tree = self.tree

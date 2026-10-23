@@ -31,7 +31,7 @@ The model-free kernel check separately exercised real sandbox permissions on own
 
 ## Demos, CI and frozen experiments
 
-Subsequent Windows sandbox verification of the packaged old demos passed 35 solo and 47 flow tests plus all-mode headless ASCII/dimensions/repeat/seed checks. That smoke did not run an interactive terminal scenario. Linux example CI is pending. Packaging provenance continues to describe the earlier copy operation, during which no applications or tests were run.
+Subsequent Windows sandbox verification of the initial packaged old demos passed 35 solo and 47 flow tests plus all-mode headless checks. Ubuntu CI later exposed solo's platform-dependent full-float fingerprint. The explicitly recorded post-benchmark canonical-identity patch preserved geometry and all fixture bytes. Isolated Linux verification passed the 36-test solo suite (one Windows-only skip), the 47-test flow suite and all 18 renders. Fresh two-platform CI remains pending. Original snapshots and scores are unchanged; packaging and subsequent verification are distinct records.
 
 The [last confirmed green private CI run](https://github.com/MilliganCo/Codex-flow/actions/runs/39971266172) passed Windows and Ubuntu for the older `fc6` snapshot with 155 tests. The current 181-test local suite and newly added example CI step are separate: do not label them green in GitHub until the corresponding new run is verified.
 

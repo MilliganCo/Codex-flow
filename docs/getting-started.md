@@ -39,9 +39,12 @@ For independent work, start with a reviewed dry run:
 
 ```powershell
 python codex-flow.py --repo <project> run --task-file <task.md> --independent-steps 2 --max-agents 2 --dry-run
+python codex-flow.py --repo <project> run --task-file <task.md> --independent-steps 2 --max-agents 2 --enable
 ```
 
 The integer is a caller-supplied independence hint, not source analysis. The coordinator owns application writes; generated helper roles gather evidence and inherit the parent's permissions. Their read-only/depth restrictions are instructions, not separate hard sandboxes. Parallel parents persist for native worker rollouts; SQLite/logs are project-local while native auth/rollouts remain shared. Review [isolation limits](safety-and-permissions.md) before using confidential workspaces, and preserve dirty files.
+
+Inspect both completion and orchestration fields. `completed_unverified` can coexist with `orchestration_status: degraded`: a correct-looking artifact does not establish that a required helper ran. Accepted native child evidence is recorded separately; missing evidence is not a measured count of zero.
 
 ## Keep the original skill
 
@@ -51,5 +54,7 @@ python payload/codex-flow/scripts/flowctl.py install --dry-run
 ```
 
 Review installer output and existing managed-file customizations before a real installation. `--skill-only` and `--native-agents` are installer options; changing a previously recorded installation option requires deliberate migration. The runtime does not need global installation.
+
+This checkout does not automatically replace or redirect an existing global skill. Invoke `codex-flow.py` explicitly to use the new runtime; the original conversational workflow remains available at its installed version.
 
 See [configuration](configuration.md) for exact defaults and [rollback](rollback.md) before changing an existing installation.

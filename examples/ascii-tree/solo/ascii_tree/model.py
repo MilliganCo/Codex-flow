@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass
 import hashlib
+import json
 import math
 import random
 
@@ -9,6 +10,7 @@ from .geometry import Vec3, Vec4
 
 MAX_ORDER = 4
 MAX_SEGMENTS = 5000
+FINGERPRINT_FORMAT = "ascii-tree-fixed9-v1"
 
 
 @dataclass(frozen=True, slots=True)
@@ -38,7 +40,27 @@ class Tree:
 
     @property
     def fingerprint(self) -> str:
-        return hashlib.sha256(repr(self).encode("ascii")).hexdigest()[:16]
+        """Identify the full graph at nine decimal places, not libm's last bit."""
+        def scalar(value: float) -> str:
+            if not math.isfinite(value):
+                raise ValueError("fingerprint requires finite geometry")
+            text = format(value, ".9f")
+            return "0.000000000" if text == "-0.000000000" else text
+
+        def point(value: Vec4) -> tuple[str, ...]:
+            return tuple(scalar(v) for v in (value.x, value.y, value.z, value.w))
+
+        payload = {
+            "format": FINGERPRINT_FORMAT,
+            "seed": self.seed,
+            "vertices": tuple(map(point, self.vertices)),
+            "segments": tuple((s.start, s.end, scalar(s.radius_start), scalar(s.radius_end),
+                               s.parent, s.order) for s in self.segments),
+            "leaves": tuple((point(leaf.position), scalar(leaf.size), leaf.segment, leaf.tone)
+                            for leaf in self.leaves),
+        }
+        canonical = json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False)
+        return hashlib.sha256(canonical.encode("ascii")).hexdigest()[:16]
 
 
 def generate_tree(seed: int) -> Tree:

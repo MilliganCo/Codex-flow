@@ -26,6 +26,8 @@ def main():
         folder = ROOT / 'examples/ascii-tree' / name
         tested = invoke(folder, '-m', 'unittest', 'discover', '-s', 'tests', '-q')
         match = re.search(rb'Ran (\d+) tests?', tested.stderr)
+        skipped_match = re.search(rb'skipped=(\d+)', tested.stderr)
+        skipped = int(skipped_match[1]) if skipped_match else 0
         checks = []
         for mode in ('2d', '3d', '4d'):
             def render(seed):
@@ -40,6 +42,8 @@ def main():
             assert frame != render(137), (name, mode, 'seed variation')
             checks.append({'mode': mode, 'dimensions_ascii_repeat_seed': 'pass'})
         report[name] = {'submitted_tests': int(match[1]) if match else None,
+                        'submitted_skipped': skipped,
+                        'submitted_passed': int(match[1]) - skipped if match else None,
                         'module_smoke': checks, 'interactive_terminal': 'not run by this CI smoke'}
     print(json.dumps(report, indent=2))
 

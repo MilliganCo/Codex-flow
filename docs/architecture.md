@@ -7,6 +7,7 @@ Codex Flow has two compatible layers. `payload/codex-flow/` retains the 1.2.0 sk
 | `cli.py`, `config.py` | Public command parsing, bounded project-local settings and explicit enabling |
 | `contracts.py`, `policy.py` | Serializable task/route records, dependency readiness and deterministic routing |
 | `native.py` | Native CLI discovery, subscription check, process-local overrides, timeout/cancellation |
+| `native_metadata.py` | Post-exit read-only evidence for the exact observed root and its used direct children; hashed identities only |
 | `subscription.py` | Nonce-protected loopback forwarding to fixed subscription upstream, shared request budget and response metadata |
 | `mercury.py`, `harness.py` | Optional external typed decisions and project-local measured proposals |
 | `telemetry.py`, `doctor.py`, `benchmark.py` | Sanitized evidence, metadata preflight and experiment lifecycle |
@@ -22,6 +23,24 @@ Codex Flow has two compatible layers. `payload/codex-flow/` retains the 1.2.0 sk
 `ExecutionPlan.ready_batches()` validates dependency identifiers, rejects cycles and avoids overlapping paths within one batch. It is a library contract; the current `run` command does not automatically extract a complete task graph from arbitrary prose.
 
 The coordinator is the sole integrator/writer. Generated native role files request Sol medium for default/worker/awaiter, Sol high for reviewer and Luna medium for explorer. All instruct helpers to gather evidence without application writes or further delegation. They **inherit parent permissions**; no hard per-role read-only sandbox or delegation-depth enforcement is claimed. Their configured names are not evidence that workers actually ran.
+
+For an admitted parallel invocation, developer instructions explicitly require one read-only helper as the first tool action. After process exit, the observer checks only the exact CLI-observed root ID/cwd and JSON-linked direct child metadata with positive usage. Missing/incompatible metadata stays unknown. `orchestration_status` is `verified` only with accepted native evidence, otherwise `degraded` with `helper_not_observed`; this is separate from application completion and does not prove helper completion, hard depth enforcement or peak agent concurrency.
+
+```mermaid
+flowchart LR
+    task[Authorized task and project config] --> gate[Deterministic risk and ownership gate]
+    gate --> route[Single or parallel route]
+    mercury[Optional free-only typed decision] --> route
+    route --> root[Sol 6.1 XHigh coordinator]
+    probes[Optional bounded plan probes] --> root
+    root --> helpers[Native read-only evidence helpers]
+    helpers --> root
+    root --> artifact[Application and finite checks]
+    root --> trace[Sanitized events and request usage]
+    helpers --> trace
+    artifact --> review[Independent acceptance]
+    trace --> evidence[Post-exit native evidence and report]
+```
 
 ## Subscription transport
 
