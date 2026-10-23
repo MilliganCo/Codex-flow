@@ -34,6 +34,23 @@ Backups and installation records may contain private instructions. Keep them loc
 
 ## Restore source
 
+Before the live-budget/MCP change, the private repository's reviewed commit is
+`aa9cd7a2c85b5b2bce11c6e26e4e3042c3920160`. Keep the current checkout and recover
+into a new directory:
+
+```powershell
+git worktree add --detach ../codex-flow-before-budget aa9cd7a2c85b5b2bce11c6e26e4e3042c3920160
+```
+
+Budget MCP configuration is per process and disappears when that native process
+exits. No global MCP uninstall/config restore is required. Preserve the owned run
+directory and its status/audit evidence. The local pre-change Git bundle retains
+development commit `b1fc69a90e4ec6a4c2c30b0d5d038ac72db5fdf8`.
+
+Для отката изменений бюджета/MCP используйте команду выше: она создаёт отдельный
+каталог со старой версией и сохраняет текущие исходники, результаты и локальные
+правки. Глобальные настройки и sandbox не меняются.
+
 For a non-destructive recovery from the case06 orchestration change, the private
 repository's previous reviewed commit is `5f9fe86847ca412abe227d4c35071307a8a1cdb1`.
 From your clone, create a new, previously unused recovery directory:

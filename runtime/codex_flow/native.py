@@ -71,8 +71,9 @@ def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gate
         overrides['model_providers.flow_subscription.env_http_headers.X-Codex-Flow-Token']='CODEX_FLOW_GATEWAY_TOKEN'
         overrides['features.enable_request_compression']=False
     if budget_channel is not None:
-        # runpy imports the same frozen package from a directory OR a zipapp.
-        bootstrap = ('import runpy,sys;sys.path.insert(0,' + repr(str(Path(__file__).parent.parent))
+        # The protected snapshot is copied before native tools can edit source.
+        # -I excludes cwd/PYTHONPATH; never fall back to the writable package.
+        bootstrap = ('import runpy,sys;sys.path.insert(0,' + repr(str(budget_channel.runtime_root))
                      + ');runpy.run_module("codex_flow.budget_stdio",run_name="__main__")')
         overrides.update({
             'mcp_servers.flow_budget.command': sys.executable,

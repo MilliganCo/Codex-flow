@@ -54,6 +54,12 @@ guidance at50/75% requests stabilization/finalization without declaring acceptan
 The shared deadline includes preparation, and native stop aborts owned registered streams.
 See [the decision and limitations](decisions/0003-live-execution-budget.md).
 
+The host stdio sidecar uses isolated Python and exactly four pre-launch package
+sources copied below model-read-only `.codex-flow`. This prevents task edits to
+the original runtime from changing later server/worker imports. The server accepts
+no model-selected paths or commands; snapshots are small, validated and expire
+after10 seconds. These controls are separate from the model's workspace sandbox.
+
 The native CLI supplies subscription authentication to a `127.0.0.1` gateway with a fresh per-run nonce. It forwards only the fixed official `https://chatgpt.com/backend-api/codex` models/responses routes, disallows redirects and API-key-style credentials, and never chooses an alternate provider. Request bodies and completed responses are bounded; sensitive payloads are processed in memory rather than persisted in telemetry.
 
 One locked `RequestBudget` limits inference requests across a task's planning probes, root and gateway-routed helpers to at most 80. Metadata GETs are counted separately. The gateway records requested model/effort, response `actual_model`, completion usage and status. The response does not independently echo reasoning effort. Complete totals require every observed request to finish with valid usage; requests alone do not identify agents.

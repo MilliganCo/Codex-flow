@@ -89,6 +89,34 @@ class BudgetChannelTests(unittest.TestCase):
             result = json.loads(process.stdout)['result']
             self.assertEqual(json.loads(result['content'][0]['text'])['status'], 'ok')
 
+    def test_server_imports_prelaunch_snapshot_after_editable_source_changes(self):
+        from importlib.resources import files
+        editable = self.root / 'editable-package'
+        editable.mkdir()
+        for name in ('__init__.py', 'budget.py', 'contracts.py', 'budget_stdio.py'):
+            (editable/name).write_bytes(files('codex_flow').joinpath(name).read_bytes())
+        with patch('importlib.resources.files', return_value=editable):
+            channel = BudgetChannel(self.root, ExecutionBudget(100), RequestBudget(80))
+        for original in editable.iterdir():
+            original.write_text('raise RuntimeError("edited application source executed on host")\n')
+        channel.publish()
+        command = native.argv('fake', self.root, Config(), parallel=True, budget_channel=channel)
+        overrides = dict(command[i+1].split('=', 1) for i, value in enumerate(command) if value == '-c')
+        arguments = json.loads(overrides['mcp_servers.flow_budget.args'])
+        self.assertIn(repr(str(channel.runtime_root)), arguments[3])
+        request = {'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call',
+                   'params': {'name': 'status', 'arguments': {}}}
+        process = subprocess.run([sys.executable, *arguments], cwd=self.root,
+                                 input=json.dumps(request)+'\n', text=True,
+                                 capture_output=True, timeout=10)
+        self.assertEqual(process.returncode, 0, process.stderr)
+        self.assertEqual(json.loads(json.loads(process.stdout)['result']['content'][0]['text'])['status'], 'ok')
+
+    def test_snapshot_failure_does_not_fall_back_to_source(self):
+        with patch('importlib.resources.files', side_effect=OSError):
+            with self.assertRaises(OSError):
+                BudgetChannel(self.root, ExecutionBudget(100), RequestBudget(80))
+
 
 if __name__ == '__main__':
     unittest.main()

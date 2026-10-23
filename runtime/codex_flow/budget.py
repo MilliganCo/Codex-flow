@@ -89,6 +89,20 @@ class BudgetChannel:
         self.status_file = self.root / 'status.json'
         self.audit_dir = self.root / 'calls'
         self.audit_dir.mkdir()
+        # A self-hosting task can edit the original package. Host MCP imports
+        # must use a pre-launch snapshot below the model's read-only boundary.
+        from importlib.resources import files
+        from .contracts import PolicyError
+        self.runtime_root = inside(self.root, self.root / 'runtime')
+        package = inside(self.root, self.runtime_root / 'codex_flow')
+        package.mkdir(parents=True)
+        resources = files('codex_flow')
+        for name in ('__init__.py', 'budget.py', 'contracts.py', 'budget_stdio.py'):
+            raw = resources.joinpath(name).read_bytes()
+            if not raw or len(raw) > 65536:
+                raise PolicyError('budget server snapshot input rejected')
+            with inside(package, package / name).open('xb') as stream:
+                stream.write(raw)
         self.execution_budget, self.request_budget = execution_budget, request_budget
         self._stop = threading.Event()
         self._thread = None

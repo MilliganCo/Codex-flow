@@ -15,6 +15,13 @@
  in WSL; Windows229 passed with21 symlink skips. An isolated Python bootstrap
  prevents workspace/PYTHONPATH imports in the trusted MCP server.
 
+- After the case08 freeze, snapshot the four trusted MCP modules into the
+ model-read-only controller tree before native launch. This closes editable-source
+ imports in self-hosting tasks without changing the frozen external-runtime trial.
+ Source-mutation and zipapp resource checks passed; combined252 tests passed in
+ WSL, with231 Windows passes and21 symlink skips. No performance claim is assigned
+ to this subsequent security hardening.
+
 - Independent case06 repeat: solo 97/Flow 98, both completed within 1500 seconds,
  43/36 native requests, headless 25/25 and native 57/57 each. Preserve 69 unchanged
  submitted files, raw failed auxiliary rotation assertions and their observed-value

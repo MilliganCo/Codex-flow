@@ -74,3 +74,20 @@ clock rollback, stale/concurrent counters, unchanged payload fallback, role scop
 expiry/cancel/admission, timeout clamping, HMAC privacy, MCP parsing, fixed paths,
 stale data, hardlinks/symlinks, controller lifecycle and workspace/PYTHONPATH import
 shadowing. The isolated `-I` bootstrap closes the P1 found during independent review.
+
+## Self-hosting hardening after the case08 freeze
+
+A second review identified a separate source trust boundary: if the assigned task
+contains the live Codex Flow package or zipapp, model tools can edit that original
+source. `-I` alone does not authenticate an explicitly inserted package. Current
+source snapshots exactly four trusted modules before native launch into the
+model-read-only `.codex-flow` tree and bootstraps MCP only from that copy. Snapshot
+failure aborts setup; it never falls back to editable source. Folder and zipapp
+resources and post-snapshot source mutation are covered by model-free checks.
+
+This hardening is after the case08 runtime freeze and is not silently included in
+its timings. That frozen runtime was already external to and explicitly denied
+from both assigned workspaces, so this trigger does not affect that experiment.
+Its exact16 files match explicit curated commit `f52b7e45f7beddf0d3ef9a7c64bb66da91f51d18`
+after LF normalization. Latest-source verification is separate: WSL252 passed;
+Windows231 passed with21 symlink skips; Ruff/mypy15 modules/build passed.
