@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-23T21:15:42.888783+00:00",
+  "core_source_commit": "3d325f666e1f767ba3d881349f42c3412c6688c6",
+  "windows": {
+    "tests": 250,
+    "passed": 229,
+    "skipped": 21,
+    "skip_reason": "Symlink creation unavailable for this Windows user"
+  },
+  "wsl": {
+    "tests": 250,
+    "passed": 250,
+    "skipped": 0
+  },
+  "ruff_selected_checks": "passed",
+  "mypy_modules": 15,
+  "mypy": "passed",
+  "zipapp_build": "passed",
+  "packaged_stdio_smoke": "passed; zero models",
+  "isolated_python_bootstrap_regression": "passed; workspace and PYTHONPATH shadow modules excluded",
+  "independent_review": {
+    "P1_found": "MCP bootstrap initially exposed cwd/PYTHONPATH imports",
+    "P1_fixed": "Isolated -I interpreter before explicit trusted package insertion",
+    "unresolved_P0_P1_P2": 0
+  },
+  "live_prerequisites": {
+    "budget-mcp-prerequisite-20261024-01.json": {
+      "sha256": "b233bf1e11a95db7f59021384ef92f8a08ed9d531731e9e83a9f028702dc3465",
+      "success": true,
+      "benchmark_credit": false
+    },
+    "budget-suffix-prerequisite-01.json": {
+      "sha256": "f5155b158c5dcff1adfc7a8b6d861cc454229bb658dd8477f0705e9a3d775f1a",
+      "success": false,
+      "benchmark_credit": false
+    },
+    "budget-suffix-prerequisite-02.json": {
+      "sha256": "1ea2bac8ba3e10ca2db48779a37da87fc328ca93e5f5eba4f1dd03694d579367",
+      "success": true,
+      "benchmark_credit": false
+    },
+    "budget-suffix-prerequisite-03.json": {
+      "sha256": "9331bd68b0bc70154323c0d753e21ae9a418a0cfb29f473fc4d98a3de4adde0e",
+      "success": false,
+      "benchmark_credit": false
+    }
+  },
+  "limits": "Offline/config/transport checks do not establish application quality or runtime speedup"
+}

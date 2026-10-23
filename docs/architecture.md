@@ -11,6 +11,8 @@ Codex Flow has two compatible layers. `payload/codex-flow/` retains the 1.2.0 sk
 | `subscription.py` | Nonce-protected loopback forwarding to fixed subscription upstream, shared request budget and response metadata |
 | `mercury.py`, `harness.py` | Optional external typed decisions and project-local measured proposals |
 | `telemetry.py`, `doctor.py`, `benchmark.py` | Sanitized evidence, metadata preflight and experiment lifecycle |
+| `budget.py` | Shared monotonic deadline/attempt observations and owned MCP snapshot publisher |
+| `budget_stdio.py` | Argument-free, fixed-path read-only MCP budget status server |
 
 ## Task execution
 
@@ -43,6 +45,14 @@ flowchart LR
 ```
 
 ## Subscription transport
+
+Parallel Flow receives a local read-only `flow_budget.status` MCP tool with a
+controller snapshot updated once per second. Gateway input injection is disabled
+by default after incompatible native async-history prerequisites; single mode has
+no budget MCP server. Native request payloads are forwarded unchanged. Phase
+guidance at50/75% requests stabilization/finalization without declaring acceptance.
+The shared deadline includes preparation, and native stop aborts owned registered streams.
+See [the decision and limitations](decisions/0003-live-execution-budget.md).
 
 The native CLI supplies subscription authentication to a `127.0.0.1` gateway with a fresh per-run nonce. It forwards only the fixed official `https://chatgpt.com/backend-api/codex` models/responses routes, disallows redirects and API-key-style credentials, and never chooses an alternate provider. Request bodies and completed responses are bounded; sensitive payloads are processed in memory rather than persisted in telemetry.
 

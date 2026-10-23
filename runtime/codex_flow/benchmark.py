@@ -132,6 +132,8 @@ def execute(root:Path,task:Path,evaluator:Path,codex=None,mercury_root=None,time
     shared_denied+=(evaluator.parent,)+protect_paths
     def arm(group):
         start=time.monotonic();workspace=root/('workspace-'+group);details={}
+        from .budget import ExecutionBudget
+        execution_budget=ExecutionBudget(timeout,cfg.max_model_requests)
         from .subscription import RequestBudget
         budget=RequestBudget(cfg.max_model_requests)
         denied=shared_denied
@@ -148,7 +150,7 @@ def execute(root:Path,task:Path,evaluator:Path,codex=None,mercury_root=None,time
         remaining=int(timeout-preparation_s)
         if remaining<=0:raise PolicyError('total task budget exhausted during routing; task execution not started')
         m=run(exe,workspace,replace(cfg,timeout_s=remaining),prompt,root/('run-'+group),parallel=group!='A' and decision.strategy=='parallel',instructions=instructions,
-              request_budget=budget,denied_reads=denied)
+              request_budget=budget,denied_reads=denied,execution_budget=execution_budget)
         m.update(group=group,task_sha256=manifest['task_sha256'],scaffold_sha=manifest['scaffold_sha'],
                  total_arm_s=round(time.monotonic()-start,3),strategy=decision.strategy,
                  orchestration_frontload_s=round(preparation_s,3),

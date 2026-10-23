@@ -1,0 +1,23 @@
+{
+  "experiment_id": "tree-case-20261023-07",
+  "purpose": "One fresh independent A/B after live execution-budget control; balance quality and speed",
+  "selected_groups": ["A", "B"],
+  "runtime_code_commit": "265f4dafcabc8c57c8f9e69e795318ff87998c23",
+  "task_sha256": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "root_model": "gpt-6.1-sol",
+  "requested_effort": "xhigh",
+  "outer_seconds_per_arm": 1500,
+  "native_attempt_cap_per_arm_including_helpers": 80,
+  "paid_api_allowed": false,
+  "A": "Unchanged solo developer instructions; shared hard deadline infrastructure; no guidance suffix, delegation, Mercury or optimization",
+  "B": "Flow with shared monotonic budget, reserved-attempt observations, role-neutral final developer suffix and50/75percent stabilization/finalization guidance; bounded readonly native helper and free-only Mercury; Harness-inspired guard defers calibration, zero online probes",
+  "generation": "Concurrent empty detached worktrees from one scaffold; identical literal task; no earlier solutions or judge findings supplied",
+  "assessment": "Fresh blind reviewer; same26criteria and five critical gates; frozen headless evaluator, same57nativeConPTY sequence and production geometry checks",
+  "optimization_goal": "Keep critical and non-aesthetic requirements complete and quality comparable to case06 while reducing completion wall time and/or native requests; report quality/latency/request tradeoffs without declaring general superiority from one case",
+  "benchmark_acceptance_unchanged": "score>=80 and all five critical gates pass; no new scoring weights or normalization",
+  "trial_policy": "One preregistered comparison for this treatment; no rerun-until-win",
+  "compatibility": "Prereq01 preserved unsupported-input fallback; zero-inference shape fixture identified native developer additional_tools; prereq02 passed2realSolrequests,2guidance applications,one successful tool call,READY; prerequisite usage is separate from benchmark",
+  "limits": ["Shared native auth/rollouts and soft current-peer read isolation", "Helper readonly/depth are instructions", "Phase guidance does not prove acceptance or enforce a phase timer", "Initial HTTP-header open is bounded by remaining timeout; cannot be aborted through a response handle before it exists", "No active Harness2 optimization, cache-hit guarantee, billing/quota or first accepted demo timing claim"]
+}

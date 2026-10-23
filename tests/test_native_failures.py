@@ -95,7 +95,7 @@ class NativeFailureTests(unittest.TestCase):
         requester.join(1)
         self.assertLess(time.monotonic() - started, 1)
         stop.assert_called_once_with(process)
-        self.assertEqual(result['status'], 'timed_out')
+        self.assertEqual(result['status'], 'cancelled')
         self.assertTrue(result['stdin_writer_stopped'])
 
     def test_only_completed_native_spawn_identifies_child(self):

@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "kind": "budget_mcp_multiturn_prerequisite",
+  "created_utc": "2026-10-23T21:11:15.515954+00:00",
+  "success": true,
+  "failure_category": null,
+  "checks": {
+    "native_completed": true,
+    "answer_ascii_ready": true,
+    "stage1_ascii_correct": true,
+    "all_requests_completed": true,
+    "actual_model_sol61": true,
+    "root_xhigh_worker_medium_profiles": true,
+    "gateway_guidance_disabled_and_unapplied": true,
+    "at_least_two_completed_shell_events": true,
+    "exactly_one_parent_linked_used_child": true,
+    "readonly_child_instructions_configured": true,
+    "zero_failed_calls": true,
+    "budget_tool_configured": true,
+    "budget_publisher_healthy": true,
+    "budget_audit_valid": true,
+    "at_least_three_successful_status_calls": true,
+    "no_unavailable_status_calls": true,
+    "runtime_unchanged": true,
+    "pinned_executable_unchanged": true,
+    "read_denials_configured": true
+  },
+  "runtime_source_commit": "3d325f666e1f767ba3d881349f42c3412c6688c6",
+  "runtime_file_count": 16,
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "f8504644902d67a5a71e57d366dbda409ff7bbfd9dcffb95774f916e852fde07",
+    "runtime/codex_flow/budget.py": "a7dfa2d4b53fc7e2ec7e2117606489a6dfe692c1dfba7e581c5db6ff762bde44",
+    "runtime/codex_flow/budget_stdio.py": "0bcd1e3ad46999150f4937240c1ebc2cdfa783f151dd06901ac1c1936cd65bcc",
+    "runtime/codex_flow/cli.py": "1d01c2e47b1f72c9d974dc9a25102c2444c0be7bab5e51f9dd01df82888dc651",
+    "runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "a204ada59ac8057ce735042f5f55f31d40c3d827c66ba8ffc53aa82a0fdafb88",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "d6d7d792ae9f476b755b5ecadfd2ec6f821c41af3a66403ca5eb5c29f7cd728f",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "codex_sha256": "e757246b4de87359e660647fa9514955a0971ff6a30affdd8c145d1d5ece7b84",
+  "timeout_s": 180,
+  "max_model_requests": 12,
+  "root_model": "gpt-6.1-sol",
+  "root_effort": "xhigh",
+  "parallel": true,
+  "budget_guidance": false,
+  "mcp_server": "flow_budget",
+  "mcp_tool": "status",
+  "benchmark_credit": false,
+  "status": "completed_unverified",
+  "usage": {
+    "request_count": 11,
+    "completed_requests": 11,
+    "budget_used": 11,
+    "actual_models": [
+      "gpt-6.1-sol"
+    ],
+    "root_cli_usage": {
+      "input_tokens": 142151,
+      "output_tokens": 610,
+      "cached_tokens": 68480
+    },
+    "all_requests_usage": {
+      "input_tokens": 217921,
+      "output_tokens": 1036,
+      "total_tokens": 218957,
+      "cached_tokens": 77824,
+      "reasoning_tokens": 191
+    },
+    "actual_api_cost_usd": null,
+    "subscription_quota_delta": null,
+    "budget_guidance": {
+      "enabled": false,
+      "applied_requests": 0,
+      "statuses": {
+        "disabled": 11
+      }
+    }
+  },
+  "budget_tool": {
+    "configured": true,
+    "publisher_failed": false,
+    "status_calls": 4,
+    "successful_calls": 4,
+    "unavailable_calls": 0,
+    "audit_valid": true
+  },
+  "structural_evidence": {
+    "completed_shell_events": 2,
+    "parent_linked_used_children": 1,
+    "mcp_audit_counts_do_not_identify_root_or_worker": true,
+    "requested_profile_counts_are_not_agent_identity": true
+  },
+  "limits": [
+    "One-shot native MCP/worker proof; no benchmark quality or speed credit",
+    "Prompt requires a worker status call; aggregate MCP audit counts cannot prove its caller identity",
+    "Native parent-linked metadata proves one used child, not per-tool child attribution",
+    "Readonly/depth remain instructions; shared auth/rollouts and physical read isolation remain degraded",
+    "No inference payload suffix or provider fallback; official subscription transport only"
+  ]
+}

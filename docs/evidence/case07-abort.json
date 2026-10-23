@@ -1,0 +1,12 @@
+{
+  "experiment_id": "tree-case-20261023-07",
+  "validity": "aborted_integration",
+  "quality_scored": false,
+  "reason": "Live guidance was applied initially but mostly skipped after native opaque tool/history input items accumulated; the intended sustained phase-control treatment was not established",
+  "action": "Both owned generators cancelled before grading; original metrics, partial sources, traces and monitor samples retained unchanged",
+  "original_execution_statuses": {"A": "cancelled", "B": "cancelled"},
+  "original_total_arm_s": {"A": 507.765, "B": 507.781},
+  "scores": {"A": null, "B": null},
+  "interpretation": "No quality, speed or quota win is claimed. This is an implementation-compatibility failure, not a scored A/B result or a reason to discard a losing score.",
+  "next_boundary": "Conservative container/tail validation with unchanged opaque native history, then a parallel helper compatibility prerequisite before a separately registered case08"
+}

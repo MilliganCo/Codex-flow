@@ -20,3 +20,5 @@ benchmarks/case05/solutions/** -text -whitespace
 benchmarks/case05/rotation-frames/*.txt -whitespace
 benchmarks/case06/solutions/** -text -whitespace
 benchmarks/case06/evidence/frozen-*/*.txt -text -whitespace
+benchmarks/case08/solutions/** -text -whitespace
+benchmarks/case08/evidence/frozen-*/*.txt -text -whitespace

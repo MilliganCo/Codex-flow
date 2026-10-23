@@ -18,6 +18,10 @@ for bounded research and Sol high for review where available. Read applicable pr
 For an explicitly parallel run, use at least one independent read-only native helper;
 receive its evidence before final integration. A failed spawn is degraded execution,
 never proof of delegation. Do not repeatedly retry an unavailable helper.
+The initial helper should inspect the task and available constraints, then return one
+concise evidence pass. If required files do not exist yet, report that prerequisite
+once; never keep polling or waiting for the coordinator to create them. A later code
+review needs an explicit stable scope and a concrete reason for a follow-up.
 Continue implementing while the helper works; do not wait for a generic plan. Start with
 a runnable vertical slice, a documented launch command and a finite smoke check. Keep
 required documentation and artifacts current as features land, rather than leaving them
@@ -27,6 +31,15 @@ Reserve the final 20 percent of the task's time budget for verification, require
 documentation and handoff. This is a planning target, not a guaranteed runtime timer.
 Integrate helper findings once; follow up only for a concrete unresolved defect. Do not
 duplicate its assigned investigation or rerun unchanged checks without new evidence.
+Consult the controller's read-only budget status tool at major stage boundaries when available.
+Complete a minimal real platform
+startup/shutdown check early, before optional rendering or structural polish. Batch
+independent finite checks when appropriate and wait for a running operation rather
+than spending repeated model turns polling it. Keep required documentation and saved
+artifacts complete during implementation. After acceptance evidence is complete,
+finish promptly; do not keep changing working features to consume the remaining time.
+This local workflow context is sufficient. Do not retry unavailable global skills or
+read denied global paths; report the bounded limitation and continue locally.
 All work must stay within the assigned workspace. Do not read sibling workspaces/evaluators,
 global user files, credentials, memories or prior solutions. Do not use paid APIs, internet,
 publication, deployment, sandbox bypass, global config changes or external applications.
@@ -79,6 +92,8 @@ def main(argv=None):
             from .policy import route
             if args.max_agents is not None:cfg=replace(cfg,max_agents=args.max_agents)
             if args.timeout is not None:cfg=replace(cfg,timeout_s=args.timeout)
+            from .budget import ExecutionBudget
+            execution_budget=ExecutionBudget(cfg.timeout_s,cfg.max_model_requests)
             prompt=args.task_file.read_text(encoding='utf-8-sig') if args.task_file else args.task
             if not prompt:raise PolicyError('task or --task-file required')
             if not args.dry_run and not (cfg.enabled or args.enable):raise PolicyError('runtime disabled; use --enable or project config')
@@ -112,7 +127,7 @@ def main(argv=None):
                         GuardedHarness(repo).rollback(harness['decision']['proposal']['id'])
                     raise PolicyError('total task budget exhausted during routing/probes; task execution not started')
                 out=run(cli,repo,replace(cfg,timeout_s=remaining),prompt,repo/'.codex-flow/runs'/uuid.uuid4().hex,
-                        parallel=decision.strategy=='parallel',instructions=instructions,request_budget=request_budget)
+                        parallel=decision.strategy=='parallel',instructions=instructions,request_budget=request_budget,execution_budget=execution_budget)
                 out['execution_s']=out['wall_clock_s']
                 out['wall_clock_s']=round(time.monotonic()-started,3)
                 out['root_usage']={k:out[k] for k in ('input_tokens','output_tokens','cached_tokens')}

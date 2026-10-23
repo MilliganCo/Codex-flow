@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "recorded_utc": "2026-10-23T21:15:14.152886+00:00",
+  "case08_generation_started": true,
+  "anonymous_source_inspected": false,
+  "evaluation_started": false,
+  "preexisting_protocols_fixed_before_case08_generation": true,
+  "case08_path_adaptation_prepared_during_generation": true,
+  "files": {
+    "conpty-case08-protocol.md": {
+      "preexisting_case07_sha256": "cb7c93e0689e8056844d37178f58b9f26f39fefffa7eaed79278d53a85461157",
+      "case08_sha256": "611636451696019685326792c675a5d48c8538b9f16173a3adabc909f34ad0ee",
+      "normalized_body_unchanged": true,
+      "adaptation": "Case label/date/paths and neutral support filename only; no numerical or scoring changes"
+    },
+    "geometry-case08-protocol.md": {
+      "preexisting_case07_sha256": "f17b51124ca1915393ca2b21057a9e070a1676132d3524b1349167e6eccdacc1",
+      "case08_sha256": "33eeaf674a55a640631249f0a7d847e2285f401bc2cd24938a12873c97343db4",
+      "normalized_body_unchanged": true,
+      "adaptation": "Case label/date/paths and neutral support filename only; no numerical or scoring changes"
+    }
+  },
+  "conpty_support_byte_identical": true
+}

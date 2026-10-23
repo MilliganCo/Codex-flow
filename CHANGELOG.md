@@ -2,6 +2,19 @@
 
 ## Unreleased — opt-in runtime development
 
+- Share a monotonic task deadline/attempt view between native execution and the
+ subscription gateway. Parallel Flow receives a fixed-path read-only local MCP
+ budget status tool. Gateway message injection is disabled by default after native
+ async-history incompatibilities; original request bytes are forwarded unchanged.
+ Add safe operation timing/HMAC metadata and header-open/body-read timings.
+ Control refusals now distinguish408 deadline,429 request budget and503 cancellation;
+ native cancellation is `cancelled`, distinct from deadline timeout. No retry,
+ provider, sandbox or global-setting change is introduced. Case07 was cancelled
+ before grading; all partial artifacts/traces remain. The native MCP prerequisite
+ passed19/19 checks; independent case08 A/B is in progress. Offline250 tests passed
+ in WSL; Windows229 passed with21 symlink skips. An isolated Python bootstrap
+ prevents workspace/PYTHONPATH imports in the trusted MCP server.
+
 - Independent case06 repeat: solo 97/Flow 98, both completed within 1500 seconds,
  43/36 native requests, headless 25/25 and native 57/57 each. Preserve 69 unchanged
  submitted files, raw failed auxiliary rotation assertions and their observed-value

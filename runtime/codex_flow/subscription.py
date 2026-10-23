@@ -1,11 +1,13 @@
 """Bounded metadata observer for the official CLI's subscription transport.
 
 The native CLI supplies authentication and enforces its sandbox. This observer
-does not open credential files, modify tool payloads, retry, or select providers.
+does not open credential files, modify existing tool/history items, retry, or
+select providers. Optional controller guidance is appended to compatible input.
 """
 from __future__ import annotations
 
 import copy
+from collections import Counter
 import hashlib
 import hmac
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -56,12 +58,30 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
 def _number(value):
     return type(value) is int and 0 <= value <= 2**63 - 1
 
+def _input_metadata(document):
+    """Source-owned shape labels only, never content, IDs or field values."""
+    value=document.get('input')
+    known={'message','reasoning','additional_tools','function_call','function_call_output','custom_tool_call',
+           'custom_tool_call_output','local_shell_call','local_shell_call_output','compaction'}
+    kinds=Counter()
+    if isinstance(value,list):
+        for item in value:
+            kind=item.get('type','message' if 'role' in item else None) if isinstance(item,dict) else None
+            kinds[kind if isinstance(kind,str) and kind in known else 'other']+=1
+    def label(item):
+        return 'null' if item is None else 'string' if isinstance(item,str) else 'array' if isinstance(item,list) else 'object' if isinstance(item,dict) else 'other'
+    return {'input_type':label(value),'item_types':dict(kinds),
+            'stateful_field_types':{key:label(document[key]) for key in ('previous_response_id','conversation') if key in document}}
+
 
 class _Validation(ValueError):
     """Only source-owned fixed categories are eligible for diagnostics."""
     def __init__(self, code):
         self.code = code
         super().__init__(code)
+
+class _ControlRejected(_Validation):
+    """A fixed execution-control reason, never an upstream/raw error."""
 
 
 def _mime(value):
@@ -132,8 +152,16 @@ def _completed_metadata(body, content_type):
 
 
 class SubscriptionGateway:
-    def __init__(self, budget: RequestBudget | None = None, opener=None, trace=None):
+    def __init__(self, budget: RequestBudget | None = None, opener=None, trace=None,
+                 *, execution_budget=None, guidance=False, cancel=None):
+        if type(guidance) is not bool:raise ValueError('guidance must be boolean')
         self.budget = budget if budget is not None else RequestBudget()
+        self.execution_budget = execution_budget
+        self.guidance = guidance
+        self.external_cancel = cancel
+        self._cancelled = threading.Event()
+        self._stop_reason = 'cancelled'
+        self._control_rejections:Counter[str] = Counter()
         self.opener = opener if opener is not None else urllib.request.build_opener(_NoRedirect())
         self.trace = trace
         self.nonce = secrets.token_urlsafe(32)
@@ -174,6 +202,28 @@ class SubscriptionGateway:
             self._thread.join(5)
         self._server.server_close()
 
+    def cancel(self,reason='cancelled'):
+        """Stop new requests and wake registered readers; never signal processes."""
+        if reason not in ('cancelled','deadline_exhausted'):raise ValueError('invalid stop reason')
+        self._stop_reason=reason
+        self._cancelled.set()
+        with self._lock:responses=list(self._responses.values())
+        for response in responses:self._abort_response(response)
+
+    def _check_control(self):
+        if self._cancelled.is_set():raise _ControlRejected(self._stop_reason)
+        if self.external_cancel is not None and self.external_cancel.is_set():
+            raise _ControlRejected('cancelled')
+        if self.execution_budget is not None and self.execution_budget.remaining_s()<=0:
+            raise _ControlRejected('deadline_exhausted')
+        if self._closed:raise _ControlRejected('cancelled')
+
+    def _open_timeout(self):
+        self._check_control()
+        remaining=self.execution_budget.remaining_s() if self.execution_budget is not None else 120
+        if remaining<=0:raise _ControlRejected('deadline_exhausted')
+        return min(120,remaining)
+
     @staticmethod
     def _abort_response(response):
         fp = getattr(response, "fp", None)
@@ -191,12 +241,12 @@ class SubscriptionGateway:
 
     def _register_response(self, response):
         with self._lock:
-            closed = self._closed
+            closed = self._closed or self._cancelled.is_set()
             if not closed:
                 self._responses[id(response)] = response
         if closed:
             self._abort_response(response)
-            raise ValueError("gateway closed")
+            raise _ControlRejected(self._stop_reason)
 
     def _unregister_response(self, response):
         with self._lock:
@@ -204,13 +254,19 @@ class SubscriptionGateway:
 
     def _begin(self, model, effort, headers):
         with self._lock:
-            if self._closed:
-                raise ValueError("gateway closed")
-            sequence = self.budget.reserve()
+            self._check_control()
+            try:sequence = self.budget.reserve()
+            except ValueError:raise _ControlRejected('request_budget_exhausted') from None
         record = {"sequence": sequence, "model": model, "effort": effort,
                   "status": "pending", "actual_model": None, "usage": None,
                   "duration_s": None, "http_status": None, "reason": None,
                   "response_content_type": None, "response_encoding": None, "response_bytes": None}
+        if self.execution_budget is not None:
+            record['execution_budget']=self.execution_budget.snapshot(self.budget.used)
+        record['guidance_status']='disabled'
+        record['upstream_open_s']=None
+        record['upstream_body_read_s']=None
+        record['response_buffered']=True
         for header, field in (("Session_id", "session_sha256"),
                               ("Conversation_id", "conversation_sha256"),
                               ("X-Request-ID", "request_sha256")):
@@ -238,6 +294,7 @@ class SubscriptionGateway:
         with self._lock:
             records = copy.deepcopy(self._records)
             active, peak, gets = self._active, self._peak, self._models_gets
+            rejections=dict(self._control_rejections)
         aggregate = None
         if records and not active and all(r["status"] == "completed" and r["usage"] is not None
                                          and all(k in r["usage"] for k in ("input_tokens", "output_tokens", "total_tokens"))
@@ -253,6 +310,11 @@ class SubscriptionGateway:
                 "requests": records, "aggregate_usage": aggregate,
                 "actual_models": sorted({r["actual_model"] for r in records if r["actual_model"]}),
                 "budget_used": self.budget.used, "budget_max_requests": self.budget.max_requests,
+                "control_rejections":rejections,
+                "budget_guidance":{"enabled":self.guidance,
+                    "applied_requests":sum(r.get('guidance_status')=='applied' for r in records),
+                    "statuses":dict(Counter(r.get('guidance_status','disabled') for r in records))},
+                "initial_header_open_cancellation":"bounded by remaining timeout; no response handle exists until open returns",
                 "agent_count": None, "agent_count_limitation": "requests do not identify agents"}
 
     def _handler(self):
@@ -324,8 +386,7 @@ class SubscriptionGateway:
                 reply_status, reply_body, reply_type = 502, b'{"error":{"type":"subscription_transport_rejected"}}', "application/json"
                 try:
                     with owner._lock:
-                        if owner._closed:
-                            raise ValueError("gateway closed")
+                        owner._check_control()
                     if not hmac.compare_digest(self.headers.get("X-Codex-Flow-Token", ""), owner.nonce):
                         raise ValueError("invalid capability")
                     route = urllib.parse.urlsplit(self.path)
@@ -349,7 +410,7 @@ class SubscriptionGateway:
                         length = int(lengths[0])
                         if not 0 < length <= MAX_REQUEST_BYTES:
                             raise ValueError("body limit")
-                        self.connection.settimeout(15)
+                        self.connection.settimeout(min(15,owner._open_timeout()))
                         data = self.rfile.read(length)
                         request_bytes_read = len(data)
                         if len(data) != length:
@@ -363,10 +424,21 @@ class SubscriptionGateway:
                         if not isinstance(model, str) or model not in ALLOWED or effort not in ALLOWED[model]:
                             raise ValueError("unapproved model effort")
                         record = owner._begin(model, effort, self.headers)
+                        if owner.guidance:record['input_schema']=_input_metadata(document)
+                        if owner.guidance and owner.execution_budget is not None:
+                            from .budget import append_budget_guidance
+                            try:
+                                updated,reason=append_budget_guidance(document,record['execution_budget'])
+                                if updated is not None:
+                                    encoded=json.dumps(updated,ensure_ascii=False,separators=(',',':')).encode('utf-8')
+                                    if len(encoded)<=MAX_REQUEST_BYTES:data=encoded
+                                    else:reason='size_limit'
+                            except (TypeError,ValueError,UnicodeError,OverflowError):
+                                reason='serialization_incompatible'
+                            record['guidance_status']=reason
                     else:
                         with owner._lock:
-                            if owner._closed:
-                                raise ValueError("gateway closed")
+                            owner._check_control()
                             owner._models_gets += 1
                     # Never forward a local nonce, arbitrary client headers, or proxy auth.
                     headers = {name: self.headers[name] for name in
@@ -381,11 +453,13 @@ class SubscriptionGateway:
                     request = urllib.request.Request(upstream, data=data, headers=headers,
                                                      method="POST" if inference else "GET")
                     with owner._lock:
-                        if owner._closed:
-                            raise ValueError("gateway closed")
+                        owner._check_control()
                     failure_stage = "upstream_open_error"
-                    with owner.opener.open(request, timeout=120) as response:
+                    opened=time.monotonic()
+                    with owner.opener.open(request, timeout=owner._open_timeout()) as response:
+                        updates['upstream_open_s']=round(time.monotonic()-opened,6)
                         owner._register_response(response)
+                        owner._check_control()
                         status = response.status
                         updates["http_status"] = status
                         final_url = getattr(response, "geturl", lambda: upstream)()
@@ -397,7 +471,10 @@ class SubscriptionGateway:
                         if encoding not in ("identity", ""):
                             raise _Validation("response_encoding")
                         failure_stage = "upstream_read_error"
+                        read_started=time.monotonic()
                         body = response.read(MAX_RESPONSE_BYTES + 1)
+                        updates['upstream_body_read_s']=round(time.monotonic()-read_started,6)
+                        owner._check_control()
                         updates["response_bytes"] = len(body)
                         if len(body) > MAX_RESPONSE_BYTES:
                             raise _Validation("response_size_limit")
@@ -408,6 +485,9 @@ class SubscriptionGateway:
                             content_type = "text/event-stream"
                         reply_status, reply_body, reply_type = status, body, content_type
                 except Exception as error:
+                    if not isinstance(error,_ControlRejected):
+                        try:owner._check_control()
+                        except _ControlRejected as stopped:error=stopped
                     if inference:
                         self.discard_rejected_body(request_bytes_read)
                     if isinstance(error, urllib.error.HTTPError):
@@ -416,6 +496,10 @@ class SubscriptionGateway:
                                          "upstream_http_error" if isinstance(error, urllib.error.HTTPError) else failure_stage)
                     # Fixed errors only; request, upstream bodies, and exception text are never logged.
                     reply_status = 403 if isinstance(error, ValueError) else 502
+                    if isinstance(error,_ControlRejected):
+                        with owner._lock:owner._control_rejections[error.code]+=1
+                        reply_status={'request_budget_exhausted':429,'deadline_exhausted':408,'cancelled':503}[error.code]
+                        reply_body=json.dumps({'error':{'type':error.code}}).encode('ascii')
                 finally:
                     if response is not None:
                         owner._unregister_response(response)

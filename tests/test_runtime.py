@@ -441,7 +441,7 @@ class NativeTests(TemporaryTests):
              patch.object(native, "terminate_tree", side_effect=terminate) as stop:
             result = native.run("fake-codex", self.root, Config(timeout_s=1), "task", self.root / "run", cancel=cancelled)
         stop.assert_called_once_with(process)
-        self.assertEqual(result["status"], "timed_out")
+        self.assertEqual(result["status"], "cancelled")
 
     def test_wall_deadline_terminates_child(self):
         process = FakeProcess([])

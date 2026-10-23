@@ -2,7 +2,7 @@
 from __future__ import annotations
 from dataclasses import asdict
 from pathlib import Path
-import hashlib, json, os, queue, shutil, subprocess, threading, time
+import hashlib, hmac, json, os, queue, secrets, shutil, subprocess, sys, threading, time
 from .config import Config
 from .contracts import PolicyError, inside
 from .telemetry import Trace, write_json, utc
@@ -29,7 +29,7 @@ def environment(workspace:Path):
     env.update(TEMP=str(temp),TMP=str(temp),PYTHONUTF8='1',PYTHONDONTWRITEBYTECODE='1')
     return env
 
-def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gateway=None,denied_reads=(),profiles=None):
+def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gateway=None,denied_reads=(),profiles=None,budget_channel=None):
     if parallel:
         instructions += ('\nController execution plan: selected_strategy=parallel; max_helpers='+str(cfg.max_agents)+
                          '; delegation_depth=1 (instruction boundary). The human owner explicitly authorized '
@@ -38,6 +38,8 @@ def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gate
                          'shell commands. This is a required execution step, not a discretionary recommendation. '
                          'Give the worker one bounded independent acceptance/test review task, with concise actionable '
                          'findings and limitations. Continue useful implementation immediately while it works; do not '
+                         'ask it to wait or poll for files that do not exist yet. It should return available '
+                         'requirements evidence and missing prerequisites once. Do not '
                          'wait for its plan; receive its evidence before final integration. '
                          'A failed spawn is degraded execution: report it and do not retry. Never ask helpers to delegate.')
     overrides={
@@ -68,6 +70,22 @@ def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gate
         overrides['model_providers.flow_subscription.base_url']=gateway.base_url
         overrides['model_providers.flow_subscription.env_http_headers.X-Codex-Flow-Token']='CODEX_FLOW_GATEWAY_TOKEN'
         overrides['features.enable_request_compression']=False
+    if budget_channel is not None:
+        # runpy imports the same frozen package from a directory OR a zipapp.
+        bootstrap = ('import runpy,sys;sys.path.insert(0,' + repr(str(Path(__file__).parent.parent))
+                     + ');runpy.run_module("codex_flow.budget_stdio",run_name="__main__")')
+        overrides.update({
+            'mcp_servers.flow_budget.command': sys.executable,
+            'mcp_servers.flow_budget.args': ['-I', '-B', '-c', bootstrap, '--root', str(workspace),
+                                           '--status-file', str(budget_channel.status_file),
+                                           '--audit-dir', str(budget_channel.audit_dir)],
+            'mcp_servers.flow_budget.enabled': True,
+            'mcp_servers.flow_budget.enabled_tools': ['status'],
+            'mcp_servers.flow_budget.startup_timeout_sec': 10,
+            'mcp_servers.flow_budget.tool_timeout_sec': 5,
+            'mcp_servers.flow_budget.default_tools_approval_mode': 'writes',
+            'mcp_servers.flow_budget.tools.status.approval_mode': 'approve',
+        })
     for name,path in (profiles or {}).items():
         overrides['agents.'+name+'.description']='Evidence role instructed not to write or delegate: '+name
         overrides['agents.'+name+'.config_file']=str(path)
@@ -121,7 +139,9 @@ def terminate_tree(proc):
     try:proc.wait(timeout=10)
     except subprocess.TimeoutExpired:proc.kill();proc.wait(timeout=5)
 
-def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=False,instructions='',cancel:threading.Event|None=None,gateway=None,denied_reads=()):
+def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=False,instructions='',cancel:threading.Event|None=None,gateway=None,denied_reads=(),execution_budget=None,budget_channel=None):
+    from .budget import ExecutionBudget
+    execution_budget=execution_budget or ExecutionBudget(cfg.timeout_s,cfg.max_model_requests)
     subscription(exe)
     if not workspace.is_dir():raise PolicyError('workspace missing')
     run_dir.mkdir(parents=True,exist_ok=False)
@@ -131,7 +151,14 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
     profiles=role_profiles(workspace,named_permissions=bool(denied_reads)) if parallel else None
     if parallel:
         instructions+='\nController task time budget: '+str(cfg.timeout_s)+' seconds including native execution. Plan the final '+str(max(1,round(cfg.timeout_s*.2)))+' seconds for verification, documentation and handoff; do not claim an enforced phase timer.'
-    command=argv(exe,workspace,cfg,parallel=parallel,instructions=instructions,gateway=gateway,denied_reads=denied_reads,profiles=profiles)
+    if budget_channel is not None:
+        instructions += ('\nThe local flow_budget MCP server exposes the read-only status tool. '
+                         'After the required initial helper spawn, consult status at major stage boundaries '
+                         '(first runnable slice, verification, final handoff). Do not repeatedly poll it. '
+                         'It reports the shared remaining time and reserved native request attempts. '
+                         'Treat unavailable status as missing evidence; do not invent a balance or skip acceptance checks. '
+                         'The phase is planning guidance, not proof of completion.')
+    command=argv(exe,workspace,cfg,parallel=parallel,instructions=instructions,gateway=gateway,denied_reads=denied_reads,profiles=profiles,budget_channel=budget_channel)
     trace.emit('execution.start',{'model':cfg.model,'effort':cfg.effort,'sandbox':'workspace-write',
                                'parallel':parallel,'max_agents':cfg.max_agents,'task_sha256':hashlib.sha256(prompt.encode()).hexdigest()})
     env=environment(workspace)
@@ -172,13 +199,18 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
     result['native_child_ids']=None
     result['native_child_count']=None
     result['delegation_evidence']='not_exposed'
-    completed=False;timed_out=False;seen_agents:set[str]=set();stdout_closed=False
+    completed=False;timed_out=False;cancelled=False;seen_agents:set[str]=set();stdout_closed=False
+    operation_key=secrets.token_bytes(32);operation_starts:dict[str,float]={}
     root_thread_id=None;root_identity_conflict=False
     try:
         writer.start()
         while True:
-            if time.monotonic()-started>cfg.timeout_s or (cancel and cancel.is_set()) or (run_dir/'cancel.request').exists():
-                timed_out=True;terminate_tree(proc);break
+            cancelled=bool((cancel and cancel.is_set()) or (run_dir/'cancel.request').exists())
+            if time.monotonic()-started>cfg.timeout_s or execution_budget.remaining_s()<=0 or cancelled:
+                timed_out=not cancelled
+                result['stop_reason']='cancelled' if cancelled else 'deadline_exhausted'
+                if gateway is not None:gateway.cancel(reason=result['stop_reason'])
+                terminate_tree(proc);break
             if input_failed.is_set():
                 result['error_category']='stdin_write_failed';result['failed_calls']+=1
                 terminate_tree(proc);break
@@ -194,6 +226,19 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
             except ValueError:continue
             kind=event.get('type','unknown');safe={}
             item=event.get('item') or {}
+            if kind in ('item.started','item.completed') and isinstance(item,dict):
+                itype=item.get('type','unknown')
+                if itype in ('command_execution','mcp_tool_call','collab_tool_call'):
+                    safe['item_type']=itype
+                    item_id=item.get('id')
+                    if isinstance(item_id,str) and 0<len(item_id)<=256:
+                        safe['item_id_hash']=hmac.new(operation_key,item_id.encode(),hashlib.sha256).hexdigest()
+                        if kind=='item.started' and len(operation_starts)<1024:operation_starts[item_id]=time.monotonic()
+                        elif kind=='item.completed' and item_id in operation_starts:
+                            safe['tool_duration_s']=round(time.monotonic()-operation_starts.pop(item_id),6)
+                    operation=item.get('command') if itype=='command_execution' else item.get('tool')
+                    if isinstance(operation,str) and len(operation)<=262144:
+                        safe['operation_hash']=hmac.new(operation_key,(itype+'\0'+operation).encode(),hashlib.sha256).hexdigest()
             if kind=='thread.started':
                 from .native_metadata import thread_hash
                 identity=event.get('thread_id')
@@ -207,7 +252,7 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
                 for src,dst in [('input_tokens','input_tokens'),('output_tokens','output_tokens'),('cached_input_tokens','cached_tokens')]:
                     if type(usage.get(src)) is int:result[dst]=usage[src]
             if kind=='item.completed':
-                itype=item.get('type','unknown');safe={'item_type':itype,'status':item.get('status'),'exit_code':item.get('exit_code')}
+                itype=item.get('type','unknown');safe.update(item_type=itype,status=item.get('status'),exit_code=item.get('exit_code'))
                 if itype in ('command_execution','mcp_tool_call','collab_tool_call'):result['tool_calls']+=1
                 if itype=='agent_message':safe['summary']=item.get('text','')[-2048:]
                 if itype=='collab_tool_call':
@@ -241,7 +286,9 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
         if input_failed.is_set() and not timed_out and result.get('error_category')!='stdin_write_failed':
             result['error_category']='stdin_write_failed';result['failed_calls']+=1
         result.update(native_exit_code=proc.returncode,ended_utc=utc(),wall_clock_s=round(time.monotonic()-started,3),stderr_bytes_suppressed=stderr_size[0])
-        result['status']='timed_out' if timed_out else ('completed_unverified' if completed and proc.returncode==0 and not input_failed.is_set() else 'failed')
+        result['status']='cancelled' if cancelled else 'timed_out' if timed_out else ('completed_unverified' if completed and proc.returncode==0 and not input_failed.is_set() else 'failed')
+        used=getattr(getattr(gateway,'budget',None),'used',0)
+        result['execution_budget']=execution_budget.snapshot(used if type(used) is int else 0)
         if parallel:
             from .native_metadata import observe_children
             metadata=observe_children(workspace,root_thread_id)
@@ -264,9 +311,12 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
         write_json(run_dir/'diagnostics.json',{'stderr_tail':sanitize(''.join(stderr_tail))})
     return result
 
-def run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=False,instructions='',cancel=None,denied_reads=(),request_budget=None):
+def run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=False,instructions='',cancel=None,denied_reads=(),request_budget=None,execution_budget=None,budget_guidance=None):
     from .subscription import RequestBudget, SubscriptionGateway
+    from .budget import BudgetChannel, ExecutionBudget
+    from contextlib import nullcontext
     budget=request_budget if request_budget is not None else RequestBudget(cfg.max_model_requests)
+    execution_budget=execution_budget or ExecutionBudget(cfg.timeout_s,budget.max_requests)
     if not workspace.is_dir():raise PolicyError('workspace missing')
     # The official CLI may backfill shared historical metadata into this local
     # SQLite directory. Its filesystem location does not imply content isolation.
@@ -274,9 +324,15 @@ def run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fal
     private_state=inside(workspace,workspace/'.codex-flow/native-state')
     private_state.mkdir(parents=True,exist_ok=True)
     denied_reads=tuple(denied_reads)+(private_state,)+tuple(p for p in (Path.home()/'.codex',Path.home()/'.agents') if p.exists())
-    with SubscriptionGateway(budget=budget) as gateway:
-        result=_run(exe,workspace,cfg,prompt,run_dir,parallel=parallel,instructions=instructions,cancel=cancel,
-                    gateway=gateway,denied_reads=denied_reads)
+    # Proxy suffix injection is experimental and never enabled implicitly: native
+    # async histories have opaque continuation boundaries. MCP owns its protocol.
+    guidance=False if budget_guidance is None else budget_guidance
+    channel=BudgetChannel(workspace,execution_budget,budget) if parallel else None
+    with channel if channel is not None else nullcontext():
+        with SubscriptionGateway(budget=budget,execution_budget=execution_budget,guidance=guidance,cancel=cancel) as gateway:
+            result=_run(exe,workspace,cfg,prompt,run_dir,parallel=parallel,instructions=instructions,cancel=cancel,
+                        gateway=gateway,denied_reads=denied_reads,execution_budget=execution_budget,budget_channel=channel)
+    result['budget_tool']=channel.summary() if channel is not None else {'configured':False}
     result['subscription']=gateway.summary()
     result['transport_validated']=result['subscription']['completed_requests']>0
     result['root_cli_usage']={k:result[k] for k in ('input_tokens','output_tokens','cached_tokens')}

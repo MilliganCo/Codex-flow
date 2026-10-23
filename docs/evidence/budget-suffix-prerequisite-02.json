@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "kind": "budget_feedback_prerequisite",
+  "created_utc": "2026-10-23T20:31:28.493546+00:00",
+  "success": true,
+  "failure_category": null,
+  "checks": {
+    "native_completed": true,
+    "answer_ascii_ready": true,
+    "all_requests_completed": true,
+    "actual_model_sol61": true,
+    "guidance_applied": true,
+    "runtime_unchanged": true,
+    "pinned_executable_unchanged": true,
+    "single_agent": true,
+    "one_successful_shell_call": true,
+    "read_denials_configured": true
+  },
+  "runtime_source_commit": "265f4dafcabc8c57c8f9e69e795318ff87998c23",
+  "runtime_file_count": 15,
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "f8504644902d67a5a71e57d366dbda409ff7bbfd9dcffb95774f916e852fde07",
+    "runtime/codex_flow/budget.py": "7ce40dfa856a347df4518361cf67426044ecbe99d00368174411a49cdf15b8e4",
+    "runtime/codex_flow/cli.py": "dc616598077dfd57adbb4274697d7ae0b2ac96a74fe030ee1ff46acf1fbfb52a",
+    "runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "7930360954cac8b45212d71a7d330ea5dcc8c2e3b52e80b4cb7437dbdc532950",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "8b6adb65e2bfdd6c2a096e88addd283e3cd2af6865dce7abc06cbd8f4514b7ca",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "codex_sha256": "e757246b4de87359e660647fa9514955a0971ff6a30affdd8c145d1d5ece7b84",
+  "timeout_s": 120,
+  "max_model_requests": 4,
+  "root_model": "gpt-6.1-sol",
+  "root_effort": "xhigh",
+  "parallel": false,
+  "budget_guidance": true,
+  "benchmark_credit": false,
+  "status": "completed_unverified",
+  "usage": {
+    "request_count": 2,
+    "completed_requests": 2,
+    "budget_used": 2,
+    "actual_models": [
+      "gpt-6.1-sol"
+    ],
+    "root_cli_usage": {
+      "input_tokens": 36627,
+      "output_tokens": 169,
+      "cached_tokens": 9216
+    },
+    "all_requests_usage": {
+      "input_tokens": 36627,
+      "output_tokens": 169,
+      "total_tokens": 36796,
+      "cached_tokens": 9216,
+      "reasoning_tokens": 21
+    },
+    "budget_guidance": {
+      "enabled": true,
+      "applied_requests": 2,
+      "statuses": {
+        "applied": 2
+      }
+    }
+  },
+  "limits": [
+    "Single one-shot internal transport proof; no benchmark quality credit",
+    "Shared native authentication and rollouts; no full filesystem isolation claim",
+    "Model-facing network disabled; official subscription transport only"
+  ]
+}

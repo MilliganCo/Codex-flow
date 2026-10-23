@@ -211,7 +211,7 @@ class SubscriptionTests(unittest.TestCase):
         with SubscriptionGateway(budget, opener=opener) as gateway:
             with ThreadPoolExecutor(max_workers=4) as pool:
                 statuses = list(pool.map(lambda _: self.call(gateway)[0], range(4)))
-            self.assertEqual(sorted(statuses), [200, 200, 403, 403])
+            self.assertEqual(sorted(statuses), [200, 200, 429, 429])
             summary = gateway.summary()
         self.assertEqual((budget.used, len(opener.requests)), (2, 2))
         self.assertEqual(summary["peak_concurrent_requests"], 2)
@@ -330,7 +330,7 @@ class SubscriptionTests(unittest.TestCase):
             self.assertEqual(response.shutdown_calls, 1)
             self.assertEqual(gateway.summary()["active_requests"], 0)
             self.assertIsNone(gateway.summary()["aggregate_usage"])
-            self.assertEqual(result[0][0], 502)
+            self.assertEqual(result[0][0], 503)
         finally:
             response.released.set()
             gateway.__exit__(None, None, None)
@@ -339,9 +339,9 @@ class SubscriptionTests(unittest.TestCase):
         gateway = SubscriptionGateway(opener=Opener())
         gateway.__exit__(None, None, None)
         response = Response()
-        with self.assertRaisesRegex(ValueError, "closed"):
+        with self.assertRaisesRegex(ValueError, "cancelled"):
             gateway._register_response(response)
-        with self.assertRaisesRegex(ValueError, "closed"):
+        with self.assertRaisesRegex(ValueError, "cancelled"):
             gateway._begin("gpt-6.1-sol", "xhigh", {})
         self.assertEqual(gateway.budget.used, 0)
 
