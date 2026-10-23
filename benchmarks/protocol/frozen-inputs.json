@@ -1,0 +1,26 @@
+{
+  "frozen_before_generation": true,
+  "published_after_all_executors_stopped": true,
+  "files": [
+    {
+      "file": "TREE_BENCHMARK_TASK.md",
+      "sha256": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+      "byte_identical_to_preexecution_input": true
+    },
+    {
+      "file": "BENCHMARK_PROTOCOL.md",
+      "sha256": "a1f27e05f42a199779d71a166dc838f8abe996856e79f2f0fae01ec5bde53bf4",
+      "byte_identical_to_preexecution_input": true
+    },
+    {
+      "file": "evaluator.py",
+      "sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+      "byte_identical_to_preexecution_input": true
+    },
+    {
+      "file": "rubric.json",
+      "sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+      "byte_identical_to_preexecution_input": true
+    }
+  ]
+}

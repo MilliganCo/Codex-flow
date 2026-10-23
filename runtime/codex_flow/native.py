@@ -30,6 +30,14 @@ def environment(workspace:Path):
     return env
 
 def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gateway=None,denied_reads=(),profiles=None):
+    if parallel:
+        instructions += ('\nController execution plan: selected_strategy=parallel; max_helpers='+str(cfg.max_agents)+
+                         '; delegation_depth=1 (instruction boundary). The human owner explicitly authorized '
+                         'this multi-agent execution. Your FIRST TOOL ACTION must spawn exactly one independent '
+                         'read-only worker using the native spawn tool, BEFORE editing application files or running '
+                         'shell commands. This is a required execution step, not a discretionary recommendation. '
+                         'Give the worker a bounded independent evidence task and receive its evidence before integration. '
+                         'A failed spawn is degraded execution: report it and do not retry. Never ask helpers to delegate.')
     overrides={
         'model_provider':'flow_subscription','model_reasoning_effort':cfg.effort,'approval_policy':'never',
         'model_providers.flow_subscription.name':'Codex Flow subscription transport',
@@ -161,6 +169,7 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
     result['native_child_count']=None
     result['delegation_evidence']='not_exposed'
     completed=False;timed_out=False;seen_agents:set[str]=set();stdout_closed=False
+    root_thread_id=None;root_identity_conflict=False
     try:
         writer.start()
         while True:
@@ -181,6 +190,14 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
             except ValueError:continue
             kind=event.get('type','unknown');safe={}
             item=event.get('item') or {}
+            if kind=='thread.started':
+                from .native_metadata import thread_hash
+                identity=event.get('thread_id')
+                identity_hash=thread_hash(identity)
+                if identity_hash is not None:
+                    safe['thread_sha256']=identity_hash
+                    if root_thread_id is None and not root_identity_conflict:root_thread_id=identity
+                    elif root_thread_id!=identity:root_thread_id=None;root_identity_conflict=True
             if kind=='turn.completed':
                 completed=True;usage=event.get('usage') or {};safe['usage']=usage
                 for src,dst in [('input_tokens','input_tokens'),('output_tokens','output_tokens'),('cached_input_tokens','cached_tokens')]:
@@ -221,6 +238,20 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
             result['error_category']='stdin_write_failed';result['failed_calls']+=1
         result.update(native_exit_code=proc.returncode,ended_utc=utc(),wall_clock_s=round(time.monotonic()-started,3),stderr_bytes_suppressed=stderr_size[0])
         result['status']='timed_out' if timed_out else ('completed_unverified' if completed and proc.returncode==0 and not input_failed.is_set() else 'failed')
+        if parallel:
+            from .native_metadata import observe_children
+            metadata=observe_children(workspace,root_thread_id)
+            result['native_metadata']=metadata
+            if metadata['status']=='observed' and metadata['children'] and not result['native_child_ids']:
+                result['native_child_ids']=[child['thread_sha256'] for child in metadata['children']]
+                result['native_child_count']=len(metadata['children'])
+                result['agent_count']=1+len(metadata['children'])
+                result['delegation_evidence']='native_parent_link_and_usage_metadata'
+            child_count=result.get('native_child_count')
+            authoritative=result.get('delegation_evidence') in ('native_completed_spawn','native_parent_link_and_usage_metadata')
+            verified=authoritative and type(child_count) is int and child_count>0
+            result['orchestration_status']='verified' if verified else 'degraded'
+            result['orchestration_reason']=result['delegation_evidence'] if verified else 'helper_not_observed'
         trace.emit('execution.end',result)
         write_json(run_dir/'metrics.json',result)
         write_json(run_dir/'control.json',{'pid':proc.pid,'status':result['status']})

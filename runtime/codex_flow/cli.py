@@ -47,6 +47,8 @@ def main(argv=None):
     r.add_argument('--strategy',choices=['auto','single','parallel'],default='auto');r.add_argument('--single-agent',action='store_true')
     r.add_argument('--max-agents',type=int);r.add_argument('--no-mercury',action='store_true');r.add_argument('--no-harness2',action='store_true');r.add_argument('--mercury-root',type=Path)
     r.add_argument('--independent-steps',type=int,default=1)
+    r.add_argument('--risk-level',choices=['low','normal','medium','high','critical'],default='normal')
+    r.add_argument('--conflicting-paths',action='store_true')
     r.add_argument('--timeout',type=int)
     s=sub.add_parser('runs');s.add_argument('action',choices=['list','show','cancel','replay']);s.add_argument('run_id',nargs='?')
     b=sub.add_parser('benchmark');b.add_argument('action',choices=['tree','report']);b.add_argument('--task-file',type=Path);b.add_argument('--root',type=Path);b.add_argument('--evaluator',type=Path);b.add_argument('--mercury-root',type=Path);b.add_argument('--execute',action='store_true');b.add_argument('--timeout',type=int,default=1200)
@@ -70,10 +72,14 @@ def main(argv=None):
             if not prompt:raise PolicyError('task or --task-file required')
             if not args.dry_run and not (cfg.enabled or args.enable):raise PolicyError('runtime disabled; use --enable or project config')
             mercury=None
-            if cfg.mercury and not args.no_mercury and not args.dry_run:
+            decision=route(independent_steps=args.independent_steps,conflicting_paths=args.conflicting_paths,
+                           risk_level=args.risk_level,single=args.single_agent or args.strategy=='single')
+            if decision.strategy=='parallel' and cfg.mercury and not args.no_mercury and not args.dry_run:
                 from .mercury import MercuryBridge
-                mercury=MercuryBridge(args.mercury_root).decide({'complexity':'high','independent_steps':args.independent_steps,'conflicting_paths':False,'risk_level':'normal'},enabled=True)
-            decision=route(independent_steps=args.independent_steps, single=args.single_agent or args.strategy=='single',mercury=mercury)
+                mercury=MercuryBridge(args.mercury_root).decide({'complexity':'high','independent_steps':min(args.independent_steps,100),
+                    'conflicting_paths':False,'risk_level':'low' if args.risk_level=='normal' else args.risk_level},enabled=True)
+                decision=route(independent_steps=args.independent_steps,conflicting_paths=args.conflicting_paths,
+                               risk_level=args.risk_level,single=args.single_agent or args.strategy=='single',mercury=mercury)
             if args.dry_run:out={'dry_run':True,'config':asdict(cfg),'route':asdict(decision),'external_calls':0}
             else:
                 if not (cfg.enabled or args.enable):raise PolicyError('runtime disabled; use --enable or project config')

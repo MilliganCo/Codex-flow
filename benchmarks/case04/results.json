@@ -1,0 +1,1508 @@
+{
+  "schema": 1,
+  "experiment_id": "tree-case-20261023-04",
+  "created_utc": "2026-10-23T14:00:47.817391+00:00",
+  "task_sha256": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+  "scaffold_sha": "f2b62728cfa953303744048cb546e7a7fa8d1e1d",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "runtime_sha256": {
+    "benchmark.py": "ec1014ecac806653c24c595d99aea72986d8613a2c608de975bb7599064e4c6a",
+    "cli.py": "1331e7e4222dc45110b277960757fee55f23aeefd415f616e8524b4aada201d4",
+    "config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "harness.py": "c8e16fb258199597e9204f0ee45291d8b66ad05822c1e84ad5948ee8de7e3031",
+    "mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "native.py": "5a810233f6a6576ffcd322d1d97afd8462732b0726d776117e46661409037a74",
+    "policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "subscription.py": "a530bca33ac0c2a135b37097cd95e484d260cddb40359a36f51ba01b7ecfb1b9",
+    "telemetry.py": "f5c8324383a5dba1c7717b5e9e1d96d1736ff7c042237adc8f1523e68ba766e8",
+    "__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1"
+  },
+  "codex_version": "codex-cli 0.163.0-alpha.11.1",
+  "requested_root_model": "gpt-6.1-sol",
+  "requested_root_effort": "xhigh",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "hardware": {
+    "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16,
+    "ram_bytes": 68635971584,
+    "machine": "AMD64"
+  },
+  "timeout_s_per_arm": 1500,
+  "max_model_requests_per_arm_including_probes": 80,
+  "order": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "C",
+      "D"
+    ]
+  ],
+  "independent_blind_review_complete": true,
+  "independence_boundary_audit": {
+    "status": "observed blind review with metadata-access limitation",
+    "reviewer_attestation": "Did not open .git or run Git; saw pointer filename/size in inventory only; no original-arm identities or strategy mappings used for grading",
+    "limitation": "Anonymous copies initially contained worktree pointer files; OS/rg internal reads cannot be fully attested. Grades retained with this metadata-access limitation."
+  },
+  "source_archive_version": 2,
+  "source_archive_packaging_correction": "v1 ZIPs/manifest retained locally; v2 excludes .git pointer files and all denied names in files/directories; no benchmark/source changes",
+  "full_flow_ab_status": "BLOCKED",
+  "full_flow_ab_reasons": [
+    "Native helpers were not observed in B/C/D; no fully delegated flow was demonstrated",
+    "Strict independent profiles/shared-state and hard depth isolation are unverified",
+    "One case with changed runtime; do not pool with case02 or infer causal module contributions"
+  ],
+  "isolation": {
+    "workspaces": "separate",
+    "shared_native_auth_rollout_container": true,
+    "project_sqlite_logs": "separate paths, historical metadata import possible",
+    "current_peer_reads": "soft prohibition; physical isolation degraded",
+    "hidden_evaluator_prior_solutions": "common existing-target read denials",
+    "native_role_readonly_depth": "instruction-only"
+  },
+  "usage_boundary": "Unknown aggregate usage is null. Known-completed lower bounds include main and probe request records, never sums of cumulative budget_used.",
+  "resource_boundary": "Root CLI PID periodic samples only, not whole-process-tree or remote-model resource use",
+  "artifact_boundary": "Independent acceptance applies to retained artifacts; original frozen execution/discovery/test failures remain unchanged",
+  "raw_evidence_boundary": "Retained locally; no raw prompts, authenticated payloads, native state, databases, journals, stderr or personal paths published",
+  "arms": {
+    "A": {
+      "anonymous_review_id": "solution-5",
+      "execution_status": "timed_out",
+      "native_exit_code": 1,
+      "total_arm_s": 1501.0,
+      "deadline_censored": true,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 89,
+      "artifact_accepted": true,
+      "categories": {
+        "2d": {
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        "3d": {
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        "4d": {
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        "ux": {
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        "aesthetics": {
+          "score": 10,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 10,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        "reliability": {
+          "score": 7,
+          "max": 10,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 0,
+              "max": 3,
+              "status": "fail"
+            }
+          ]
+        },
+        "tests": {
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        "maintainability": {
+          "score": 6,
+          "max": 7,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 6,
+              "max": 7,
+              "status": "partial"
+            }
+          ]
+        },
+        "readme": {
+          "score": 0,
+          "max": 5,
+          "status": "fail",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            },
+            {
+              "id": "readme.installation",
+              "score": 0,
+              "max": 1,
+              "status": "fail"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            }
+          ]
+        }
+      },
+      "native_requests_total_including_probes": 24,
+      "completed_native_requests": 23,
+      "censored_or_incomplete_requests": 1,
+      "phase_usage": [
+        {
+          "phase": "main",
+          "requests": 24,
+          "completed_requests": 23,
+          "usage_known_completed_requests": 23,
+          "known_completed_usage_lower_bound": {
+            "input_tokens": 1086257,
+            "output_tokens": 40966,
+            "total_tokens": 1127223,
+            "cached_tokens": 200064,
+            "reasoning_tokens": 14732
+          }
+        }
+      ],
+      "aggregate_usage": null,
+      "known_completed_usage_lower_bound": {
+        "input_tokens": 1086257,
+        "output_tokens": 40966,
+        "total_tokens": 1127223,
+        "cached_tokens": 200064,
+        "reasoning_tokens": 14732
+      },
+      "actual_response_models": [
+        "gpt-6.1-sol"
+      ],
+      "requested_model_effort_profiles": [
+        {
+          "model": "gpt-6.1-sol",
+          "requested_effort": "xhigh",
+          "requests": 24
+        }
+      ],
+      "mercury_successful_calls": 0,
+      "mercury_reported_usage": {},
+      "harness2_upstream_calls": 0,
+      "harness_inspired_probes": 0,
+      "helpers_observed_in_benchmark": 0,
+      "fully_delegated_flow_verified": false,
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 25,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "pass",
+        "tests_run": 33,
+        "test_errors": 0,
+        "discovery_limit": null,
+        "normalization_to_100": false,
+        "unchanged_after_supplement": true
+      },
+      "uniform_supplement": {
+        "status": "passed",
+        "explicit_module_frames": 20,
+        "applied_to_all_arms": true,
+        "amends_frozen_discovery": false
+      },
+      "independent_geometry": {
+        "status": "passed",
+        "seeds": [
+          42,
+          137
+        ],
+        "real_xyzw_variable_w_rotation_projection": "passed"
+      },
+      "independent_native": {
+        "passed": 55,
+        "failed": 1,
+        "ctrl_c": "timeout; cleanup unverified",
+        "status": "fail",
+        "visible_terminal_font_assessed": false
+      },
+      "root_process_samples": {
+        "main": {
+          "samples": 294,
+          "first_observed_utc": "2026-10-23T14:01:22.069797+00:00",
+          "last_observed_utc": "2026-10-23T14:25:47.935451+00:00",
+          "max_observed_working_set_bytes": 180985856,
+          "max_reported_peak_working_set_bytes": 670556160,
+          "first_observed_cumulative_cpu_s": 27.4375,
+          "last_observed_cumulative_cpu_s": 47.734375,
+          "observed_cpu_delta_s": 20.296875,
+          "scope": "Root CLI PID only, late-start periodic sampling; excludes unsampled intervals, descendants and remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case04-A-source-v2.zip",
+        "sha256": "bb81a1e7730c75ba6e6dcbe05b2dd9347554d0cc6085c246f0e7556f43c67c76",
+        "archive_bytes": 32625,
+        "file_count": 32,
+        "local_only": true,
+        "archive_version": 2,
+        "prior_v1_sha256": "24c56ec8b86b21c429d46a293b5773b96043968cf2f06a0de39a2aab023cf1c0",
+        "packaging_correction": "Skip names apply to files and directories; .git worktree pointer excluded; original sources unchanged; v1 retained locally"
+      }
+    },
+    "B": {
+      "anonymous_review_id": "solution-6",
+      "execution_status": "timed_out",
+      "native_exit_code": 1,
+      "total_arm_s": 1501.375,
+      "deadline_censored": true,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 83,
+      "artifact_accepted": true,
+      "categories": {
+        "2d": {
+          "score": 11,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 6,
+              "max": 7,
+              "status": "partial"
+            }
+          ]
+        },
+        "3d": {
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        "4d": {
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        "ux": {
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        "aesthetics": {
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        "reliability": {
+          "score": 7,
+          "max": 10,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 0,
+              "max": 3,
+              "status": "fail"
+            }
+          ]
+        },
+        "tests": {
+          "score": 5,
+          "max": 9,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 0,
+              "max": 3,
+              "status": "fail"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 5,
+              "max": 6,
+              "status": "partial"
+            }
+          ]
+        },
+        "maintainability": {
+          "score": 6,
+          "max": 7,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 6,
+              "max": 7,
+              "status": "partial"
+            }
+          ]
+        },
+        "readme": {
+          "score": 0,
+          "max": 5,
+          "status": "fail",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            },
+            {
+              "id": "readme.installation",
+              "score": 0,
+              "max": 1,
+              "status": "fail"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            }
+          ]
+        }
+      },
+      "native_requests_total_including_probes": 39,
+      "completed_native_requests": 38,
+      "censored_or_incomplete_requests": 1,
+      "phase_usage": [
+        {
+          "phase": "main",
+          "requests": 32,
+          "completed_requests": 31,
+          "usage_known_completed_requests": 31,
+          "known_completed_usage_lower_bound": {
+            "input_tokens": 1457158,
+            "output_tokens": 37593,
+            "total_tokens": 1494751,
+            "cached_tokens": 176640,
+            "reasoning_tokens": 12610
+          }
+        },
+        {
+          "phase": "probe-1",
+          "requests": 4,
+          "completed_requests": 4,
+          "usage_known_completed_requests": 4,
+          "known_completed_usage_lower_bound": {
+            "input_tokens": 69752,
+            "output_tokens": 1012,
+            "total_tokens": 70764,
+            "cached_tokens": 18432,
+            "reasoning_tokens": 319
+          }
+        },
+        {
+          "phase": "probe-2",
+          "requests": 3,
+          "completed_requests": 3,
+          "usage_known_completed_requests": 3,
+          "known_completed_usage_lower_bound": {
+            "input_tokens": 52498,
+            "output_tokens": 950,
+            "total_tokens": 53448,
+            "cached_tokens": 18432,
+            "reasoning_tokens": 295
+          }
+        }
+      ],
+      "aggregate_usage": null,
+      "known_completed_usage_lower_bound": {
+        "input_tokens": 1579408,
+        "output_tokens": 39555,
+        "total_tokens": 1618963,
+        "cached_tokens": 213504,
+        "reasoning_tokens": 13224
+      },
+      "actual_response_models": [
+        "gpt-6.1-sol"
+      ],
+      "requested_model_effort_profiles": [
+        {
+          "model": "gpt-6.1-sol",
+          "requested_effort": "xhigh",
+          "requests": 39
+        }
+      ],
+      "mercury_successful_calls": 1,
+      "mercury_reported_usage": {
+        "cost": 0,
+        "input_tokens": 144,
+        "output_tokens": 1
+      },
+      "harness2_upstream_calls": 0,
+      "harness_inspired_probes": 2,
+      "helpers_observed_in_benchmark": 0,
+      "fully_delegated_flow_verified": false,
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "frozen_evaluator": {
+        "discovery_status": "not-assessed",
+        "raw_assessed_points": 0,
+        "raw_assessed_max": 3,
+        "unassessed_max": 97,
+        "tests_status": "fail",
+        "tests_run": 25,
+        "test_errors": 2,
+        "discovery_limit": "README/CLI documentation missing; not a zero-quality score",
+        "normalization_to_100": false,
+        "unchanged_after_supplement": true
+      },
+      "uniform_supplement": {
+        "status": "passed",
+        "explicit_module_frames": 20,
+        "applied_to_all_arms": true,
+        "amends_frozen_discovery": false
+      },
+      "independent_geometry": {
+        "status": "passed",
+        "seeds": [
+          42,
+          137
+        ],
+        "real_xyzw_variable_w_rotation_projection": "passed"
+      },
+      "independent_native": {
+        "passed": 55,
+        "failed": 1,
+        "ctrl_c": "timeout; cleanup unverified",
+        "status": "fail",
+        "visible_terminal_font_assessed": false
+      },
+      "root_process_samples": {
+        "main": {
+          "samples": 264,
+          "first_observed_utc": "2026-10-23T14:03:52.181549+00:00",
+          "last_observed_utc": "2026-10-23T14:25:47.935958+00:00",
+          "max_observed_working_set_bytes": 218710016,
+          "max_reported_peak_working_set_bytes": 669970432,
+          "first_observed_cumulative_cpu_s": 3.84375,
+          "last_observed_cumulative_cpu_s": 34.625,
+          "observed_cpu_delta_s": 30.78125,
+          "scope": "Root CLI PID only, late-start periodic sampling; excludes unsampled intervals, descendants and remote model compute"
+        },
+        "probe-1": {
+          "samples": 14,
+          "first_observed_utc": "2026-10-23T14:01:22.078503+00:00",
+          "last_observed_utc": "2026-10-23T14:02:27.114211+00:00",
+          "max_observed_working_set_bytes": 202944512,
+          "max_reported_peak_working_set_bytes": 670363648,
+          "first_observed_cumulative_cpu_s": 27.9375,
+          "last_observed_cumulative_cpu_s": 29.515625,
+          "observed_cpu_delta_s": 1.578125,
+          "scope": "Root CLI PID only, late-start periodic sampling; excludes unsampled intervals, descendants and remote model compute"
+        },
+        "probe-2": {
+          "samples": 16,
+          "first_observed_utc": "2026-10-23T14:02:32.132750+00:00",
+          "last_observed_utc": "2026-10-23T14:03:47.169264+00:00",
+          "max_observed_working_set_bytes": 203501568,
+          "max_reported_peak_working_set_bytes": 669265920,
+          "first_observed_cumulative_cpu_s": 0.515625,
+          "last_observed_cumulative_cpu_s": 26.09375,
+          "observed_cpu_delta_s": 25.578125,
+          "scope": "Root CLI PID only, late-start periodic sampling; excludes unsampled intervals, descendants and remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case04-B-source-v2.zip",
+        "sha256": "62aa6a30006ac74d23e35d8abb370300d22e4f57d01990722e10160a8caf4cdd",
+        "archive_bytes": 31357,
+        "file_count": 29,
+        "local_only": true,
+        "archive_version": 2,
+        "prior_v1_sha256": "40d8760184e0d9502b0133d388ffff89f8f30092b6c1d7e120cf324bd74bfd36",
+        "packaging_correction": "Skip names apply to files and directories; .git worktree pointer excluded; original sources unchanged; v1 retained locally"
+      }
+    },
+    "C": {
+      "anonymous_review_id": "solution-7",
+      "execution_status": "completed_unverified",
+      "native_exit_code": 0,
+      "total_arm_s": 1475.578,
+      "deadline_censored": false,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 96,
+      "artifact_accepted": true,
+      "categories": {
+        "2d": {
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        "3d": {
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        "4d": {
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        "ux": {
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        "aesthetics": {
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        "reliability": {
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            }
+          ]
+        },
+        "tests": {
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        "maintainability": {
+          "score": 6,
+          "max": 7,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 6,
+              "max": 7,
+              "status": "partial"
+            }
+          ]
+        },
+        "readme": {
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "native_requests_total_including_probes": 24,
+      "completed_native_requests": 24,
+      "censored_or_incomplete_requests": 0,
+      "phase_usage": [
+        {
+          "phase": "main",
+          "requests": 24,
+          "completed_requests": 24,
+          "usage_known_completed_requests": 24,
+          "known_completed_usage_lower_bound": {
+            "input_tokens": 1183819,
+            "output_tokens": 44500,
+            "total_tokens": 1228319,
+            "cached_tokens": 109696,
+            "reasoning_tokens": 11541
+          }
+        }
+      ],
+      "aggregate_usage": {
+        "input_tokens": 1183819,
+        "output_tokens": 44500,
+        "total_tokens": 1228319,
+        "cached_tokens": 109696,
+        "reasoning_tokens": 11541
+      },
+      "known_completed_usage_lower_bound": {
+        "input_tokens": 1183819,
+        "output_tokens": 44500,
+        "total_tokens": 1228319,
+        "cached_tokens": 109696,
+        "reasoning_tokens": 11541
+      },
+      "actual_response_models": [
+        "gpt-6.1-sol"
+      ],
+      "requested_model_effort_profiles": [
+        {
+          "model": "gpt-6.1-sol",
+          "requested_effort": "xhigh",
+          "requests": 24
+        }
+      ],
+      "mercury_successful_calls": 1,
+      "mercury_reported_usage": {
+        "cost": 0,
+        "input_tokens": 143,
+        "output_tokens": 1
+      },
+      "harness2_upstream_calls": 0,
+      "harness_inspired_probes": 0,
+      "helpers_observed_in_benchmark": 0,
+      "fully_delegated_flow_verified": false,
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 25,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "pass",
+        "tests_run": 35,
+        "test_errors": 0,
+        "discovery_limit": null,
+        "normalization_to_100": false,
+        "unchanged_after_supplement": true
+      },
+      "uniform_supplement": {
+        "status": "passed",
+        "explicit_module_frames": 20,
+        "applied_to_all_arms": true,
+        "amends_frozen_discovery": false
+      },
+      "independent_geometry": {
+        "status": "passed",
+        "seeds": [
+          42,
+          137
+        ],
+        "real_xyzw_variable_w_rotation_projection": "passed"
+      },
+      "independent_native": {
+        "passed": 57,
+        "failed": 0,
+        "ctrl_c": "passed",
+        "status": "pass",
+        "visible_terminal_font_assessed": false
+      },
+      "root_process_samples": {
+        "main": {
+          "samples": 295,
+          "first_observed_utc": "2026-10-23T14:25:52.972029+00:00",
+          "last_observed_utc": "2026-10-23T14:50:24.423551+00:00",
+          "max_observed_working_set_bytes": 574382080,
+          "max_reported_peak_working_set_bytes": 671109120,
+          "first_observed_cumulative_cpu_s": 1.78125,
+          "last_observed_cumulative_cpu_s": 56.59375,
+          "observed_cpu_delta_s": 54.8125,
+          "scope": "Root CLI PID only, late-start periodic sampling; excludes unsampled intervals, descendants and remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case04-C-source-v2.zip",
+        "sha256": "405d290f42f14b6a79245c490a318b8d66b2d4ce318a44647f4150fef4b7cc9c",
+        "archive_bytes": 42033,
+        "file_count": 32,
+        "local_only": true,
+        "archive_version": 2,
+        "prior_v1_sha256": "e434eee552c3f2ecaf9d775e37c0594ceb0f5b8070daec8f92fac292fc40a121",
+        "packaging_correction": "Skip names apply to files and directories; .git worktree pointer excluded; original sources unchanged; v1 retained locally"
+      }
+    },
+    "D": {
+      "anonymous_review_id": "solution-8",
+      "execution_status": "timed_out",
+      "native_exit_code": 1,
+      "total_arm_s": 1501.344,
+      "deadline_censored": true,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 90,
+      "artifact_accepted": true,
+      "categories": {
+        "2d": {
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        "3d": {
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        "4d": {
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        "ux": {
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        "aesthetics": {
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        "reliability": {
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            }
+          ]
+        },
+        "tests": {
+          "score": 8,
+          "max": 9,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 5,
+              "max": 6,
+              "status": "partial"
+            }
+          ]
+        },
+        "maintainability": {
+          "score": 6,
+          "max": 7,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 6,
+              "max": 7,
+              "status": "partial"
+            }
+          ]
+        },
+        "readme": {
+          "score": 0,
+          "max": 5,
+          "status": "fail",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            },
+            {
+              "id": "readme.installation",
+              "score": 0,
+              "max": 1,
+              "status": "fail"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            }
+          ]
+        }
+      },
+      "native_requests_total_including_probes": 42,
+      "completed_native_requests": 41,
+      "censored_or_incomplete_requests": 1,
+      "phase_usage": [
+        {
+          "phase": "main",
+          "requests": 33,
+          "completed_requests": 32,
+          "usage_known_completed_requests": 32,
+          "known_completed_usage_lower_bound": {
+            "input_tokens": 1537136,
+            "output_tokens": 33090,
+            "total_tokens": 1570226,
+            "cached_tokens": 372736,
+            "reasoning_tokens": 8987
+          }
+        },
+        {
+          "phase": "probe-1",
+          "requests": 4,
+          "completed_requests": 4,
+          "usage_known_completed_requests": 4,
+          "known_completed_usage_lower_bound": {
+            "input_tokens": 69689,
+            "output_tokens": 966,
+            "total_tokens": 70655,
+            "cached_tokens": 18432,
+            "reasoning_tokens": 260
+          }
+        },
+        {
+          "phase": "probe-2",
+          "requests": 5,
+          "completed_requests": 5,
+          "usage_known_completed_requests": 5,
+          "known_completed_usage_lower_bound": {
+            "input_tokens": 88092,
+            "output_tokens": 1170,
+            "total_tokens": 89262,
+            "cached_tokens": 18432,
+            "reasoning_tokens": 332
+          }
+        }
+      ],
+      "aggregate_usage": null,
+      "known_completed_usage_lower_bound": {
+        "input_tokens": 1694917,
+        "output_tokens": 35226,
+        "total_tokens": 1730143,
+        "cached_tokens": 409600,
+        "reasoning_tokens": 9579
+      },
+      "actual_response_models": [
+        "gpt-6.1-sol"
+      ],
+      "requested_model_effort_profiles": [
+        {
+          "model": "gpt-6.1-sol",
+          "requested_effort": "xhigh",
+          "requests": 42
+        }
+      ],
+      "mercury_successful_calls": 0,
+      "mercury_reported_usage": {},
+      "harness2_upstream_calls": 0,
+      "harness_inspired_probes": 2,
+      "helpers_observed_in_benchmark": 0,
+      "fully_delegated_flow_verified": false,
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "frozen_evaluator": {
+        "discovery_status": "not-assessed",
+        "raw_assessed_points": 3,
+        "raw_assessed_max": 3,
+        "unassessed_max": 97,
+        "tests_status": "pass",
+        "tests_run": 43,
+        "test_errors": 0,
+        "discovery_limit": "README/CLI documentation missing; not a zero-quality score",
+        "normalization_to_100": false,
+        "unchanged_after_supplement": true
+      },
+      "uniform_supplement": {
+        "status": "passed",
+        "explicit_module_frames": 20,
+        "applied_to_all_arms": true,
+        "amends_frozen_discovery": false
+      },
+      "independent_geometry": {
+        "status": "passed",
+        "seeds": [
+          42,
+          137
+        ],
+        "real_xyzw_variable_w_rotation_projection": "passed"
+      },
+      "independent_native": {
+        "passed": 57,
+        "failed": 0,
+        "ctrl_c": "passed",
+        "status": "pass",
+        "visible_terminal_font_assessed": false
+      },
+      "root_process_samples": {
+        "main": {
+          "samples": 265,
+          "first_observed_utc": "2026-10-23T14:28:48.184827+00:00",
+          "last_observed_utc": "2026-10-23T14:50:49.443625+00:00",
+          "max_observed_working_set_bytes": 216371200,
+          "max_reported_peak_working_set_bytes": 669626368,
+          "first_observed_cumulative_cpu_s": 2.21875,
+          "last_observed_cumulative_cpu_s": 49.9375,
+          "observed_cpu_delta_s": 47.71875,
+          "scope": "Root CLI PID only, late-start periodic sampling; excludes unsampled intervals, descendants and remote model compute"
+        },
+        "probe-1": {
+          "samples": 17,
+          "first_observed_utc": "2026-10-23T14:25:52.982182+00:00",
+          "last_observed_utc": "2026-10-23T14:27:13.078491+00:00",
+          "max_observed_working_set_bytes": 308707328,
+          "max_reported_peak_working_set_bytes": 671350784,
+          "first_observed_cumulative_cpu_s": 2.5625,
+          "last_observed_cumulative_cpu_s": 31.9375,
+          "observed_cpu_delta_s": 29.375,
+          "scope": "Root CLI PID only, late-start periodic sampling; excludes unsampled intervals, descendants and remote model compute"
+        },
+        "probe-2": {
+          "samples": 18,
+          "first_observed_utc": "2026-10-23T14:27:18.097459+00:00",
+          "last_observed_utc": "2026-10-23T14:28:43.171797+00:00",
+          "max_observed_working_set_bytes": 445861888,
+          "max_reported_peak_working_set_bytes": 670707712,
+          "first_observed_cumulative_cpu_s": 0.0625,
+          "last_observed_cumulative_cpu_s": 29.671875,
+          "observed_cpu_delta_s": 29.609375,
+          "scope": "Root CLI PID only, late-start periodic sampling; excludes unsampled intervals, descendants and remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case04-D-source-v2.zip",
+        "sha256": "f9fbb21ad5eb50dbff5ecdb2cc1d3f2a63df7cc00f20ccee679f0ebfe4f10c3d",
+        "archive_bytes": 32662,
+        "file_count": 36,
+        "local_only": true,
+        "archive_version": 2,
+        "prior_v1_sha256": "16a05c05cedff41f33e88d852d94848b04deef78e2a582dfad842097981b4bb5",
+        "packaging_correction": "Skip names apply to files and directories; .git worktree pointer excluded; original sources unchanged; v1 retained locally"
+      }
+    }
+  }
+}

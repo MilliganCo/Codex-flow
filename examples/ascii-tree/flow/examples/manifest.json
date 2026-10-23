@@ -1,0 +1,98 @@
+[
+  {
+    "file": "seed-42-2d.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "2d",
+      "yaw": 25.0,
+      "pitch": -8.0,
+      "angle4d": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "968c50a55d192d7ddf5842efa1c0f63a5a490e7842a6fe1b0abb5e1c7fb549ab"
+  },
+  {
+    "file": "seed-42-3d.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "3d",
+      "yaw": 25.0,
+      "pitch": -8.0,
+      "angle4d": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "10c36525259e2d91d4c9930eca00e4b5a808db3d10bb3dc04d433864aeb6c6c6"
+  },
+  {
+    "file": "seed-42-4d-xw-0.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "4d",
+      "yaw": 25.0,
+      "pitch": -8.0,
+      "angle4d": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "2a5dfd6596644f78f5712a0adeb29ae20b4d15d79bae1d4edb5030893a3814d5"
+  },
+  {
+    "file": "seed-42-4d-xw-65.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "4d",
+      "yaw": 25.0,
+      "pitch": -8.0,
+      "angle4d": 65,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "5df5c25ed20bd5aa2a42b35834743db4ac87ed789f1c8406cbf438d6a77723e0"
+  },
+  {
+    "file": "seed-7-2d.txt",
+    "seed": 7,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "2d",
+      "yaw": 25.0,
+      "pitch": -8.0,
+      "angle4d": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "79ce2c82766f995357a54f72d63c2f2b6fc918b80c57c940769cdac0ac3860e3"
+  },
+  {
+    "file": "seed-7-3d.txt",
+    "seed": 7,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "3d",
+      "yaw": 25.0,
+      "pitch": -8.0,
+      "angle4d": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "871b7796f51c097f281a348c15dcafdfe739b51439efd530c52746df959cd335"
+  }
+]

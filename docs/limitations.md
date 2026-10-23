@@ -20,9 +20,9 @@ This list describes implementation boundaries, not missing evidence disguised as
 
 ## Integrations
 
-- Mercury is external and optional. Current source passed one real free-only typed smoke after Windows system-proxy forwarding to Node; this is not a routing-accuracy or availability guarantee. It remains disabled by default. The earlier frozen benchmark still recorded zero successful calls and must remain degraded for Mercury.
+- Mercury is external and optional. Current source passed a real free-only typed smoke; case04 recorded one successful call in each of B/C. This is not a routing-accuracy or availability guarantee, and configuration remains disabled by default. Case02 still has zero successful calls; later evidence does not change its integration status.
 - Free pricing/provider/build guarantees depend on the trusted external adapter's checks; no external provider implementation is bundled.
-- The local optimizer is Harness²-inspired and measures plan coverage in its current experiment. It does not execute upstream Harness² or establish application-quality gains.
+- The local optimizer is Harness²-inspired and measures plan coverage. Both benchmark and normal opt-in `run` currently use the same hardcoded ASCII Tree planning brief; it is not a general task-specific optimizer and does not establish application-quality gains. Existing project proposal limits can refuse repeated probes; history is preserved.
 - Explicitly configured Harness-inspired probes add two planning calls before a normal run. Their plan-coverage metric does not establish final application quality; account for their overhead separately.
 
 ## Measurement and acceptance
@@ -33,7 +33,11 @@ This list describes implementation boundaries, not missing evidence disguised as
 - Parallel runs contend for host/network/quota resources. One experiment cannot support general speed claims.
 - Final quality requires independent evidence, including real 4D mathematics and runnable behavior; self-tests and changed frame bytes are insufficient alone.
 
-The frozen case02 artifact scores A=95/B=97/C=95/D=96 coexist with zero successful Mercury calls and unconfirmed helpers. They do not validate a full-component performance gain. Case03 is aborted and immutable. Case04 started at 2026-10-23 14:00:48 UTC and has A/B running in this snapshot. Its requested-profile `multi_agent_verified` heuristic is insufficient worker proof; native collaboration and completed-request evidence must be assessed separately. Imported historical metadata is not proof of actual cross-arm reading. An audit limited to each run's own native sessions is pending after A/B terminates. Development-source fixes, including stdin-write cleanup, do not change that frozen runtime.
+The frozen case02 artifact scores A=95/B=97/C=95/D=96 coexist with zero successful Mercury calls and unconfirmed helpers. They do not validate a full-component performance gain. Case03 is aborted and immutable. Case04 artifact scores are A=89/B=83/C=96/D=90, with all artifacts accepted under the frozen formula despite documented defects. B/C each recorded one Mercury call; B/D each ran two local inspired probes. Helpers were unverified in B/C/D. Requested-profile heuristics are insufficient proof, and development-source fixes do not change that frozen runtime.
+
+The separate [native capability proof](evidence/integration-2026-10-23.json) did verify a root and worker using exact owned-session metadata, native collaboration calls and eight completed requests. It took 144.578 seconds and is not a benchmark/speed proof. The root's synthetic protected read produced `PermissionError`; the worker refused under policy without attempting it. A zero-model-call kernel check separately passed normal reads/writes and denied protected synthetic file/SQLite operations while preserving host fixture access. These bounded successes do not establish strict native-history/state isolation or hard helper read-only/depth enforcement. Imported historical metadata is not proof of actual cross-arm reading.
+
+Current local core verification reports 181 tests: Windows 172 passed/9 skipped; the preceding full WSL 180-test suite and all 28 final focused native tests passed. The last confirmed green private CI is an older 155-test snapshot; it must not be presented as CI coverage of the latest source. Packaged old demos passed a subsequent Windows sandbox smoke (35 solo/47 flow tests and all-mode headless checks); Linux example CI is pending. See [acceptance status](acceptance-status.md).
 
 ## Distribution
 

@@ -1,0 +1,383 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "scope": "Independent integration checks; not part of any tree benchmark arm",
+  "codex_version": "codex-cli 0.163.0-alpha.11.1",
+  "native_state_boundary": {
+    "status": "passed",
+    "model_calls": 0,
+    "checks": {
+      "host_own_sqlite_read_update_before": true,
+      "private_files_exist_before": true,
+      "all_denial_targets_existed": true,
+      "sandbox_program_passed": true,
+      "private_failures_are_permission_errors": true,
+      "host_own_sqlite_read_update_after": true,
+      "host_private_sentinel_unchanged": true,
+      "normal_write_present_after": true
+    },
+    "cli_version": "codex-cli 0.163.0-alpha.11.1",
+    "sandbox_executed": true,
+    "wall_s": 1.172,
+    "scope": "owned synthetic files only; tool boundary and host fixture access; not full native history/content isolation",
+    "controller_read_global_auth_or_native_database": false,
+    "native_internal_file_access_audited": false,
+    "permission_source": "final native.argv named flow_task profile",
+    "permission_sha256": "a19538e279aa946f280277fa18869553dd21cdcb7e5ead4da7478bf67108c7f5",
+    "native_exit_code": 0,
+    "stderr_bytes_suppressed": 0,
+    "sandbox_checks": {
+      "normal_project_read": {
+        "passed": true
+      },
+      "normal_project_write": {
+        "passed": true
+      },
+      "private_sentinel_read_denied": {
+        "passed": true,
+        "error": "PermissionError"
+      },
+      "private_state_write_denied": {
+        "passed": true,
+        "error": "PermissionError"
+      },
+      "private_sqlite_read_denied": {
+        "passed": true,
+        "error": "PermissionError"
+      },
+      "private_sqlite_write_denied": {
+        "passed": true,
+        "error": "PermissionError"
+      }
+    }
+  },
+  "native_helper": {
+    "execution_status": "completed_unverified",
+    "wall_clock_s": 144.578,
+    "requests": 8,
+    "completed_requests": 8,
+    "peak_concurrent_requests": 2,
+    "profiles": [
+      {
+        "actual_response_model": "gpt-6.1-sol",
+        "requested_effort": "xhigh",
+        "completed_requests": 6
+      },
+      {
+        "actual_response_model": "gpt-6.1-sol",
+        "requested_effort": "medium",
+        "completed_requests": 2
+      }
+    ],
+    "all_requests_usage": {
+      "input_tokens": 142279,
+      "output_tokens": 3385,
+      "total_tokens": 145664,
+      "cached_tokens": 28800,
+      "reasoning_tokens": 2053
+    },
+    "actual_api_cost_usd": null,
+    "subscription_quota_delta": null,
+    "root_synthetic_state_read_attempted": true,
+    "root_synthetic_state_read_permission_error": true,
+    "helper_synthetic_state_read_attempted": false,
+    "helper_policy_refusal": true,
+    "markers_match_after_whitespace_normalization": true,
+    "native_session_metadata": {
+      "scope": "exact owned cwd only; no unrelated thread values read",
+      "physical_isolation_verified": false,
+      "sessions": [
+        {
+          "thread_id_hash": "db038e19b12e",
+          "source_kind": "exec",
+          "model_metadata": "gpt-6.1-sol",
+          "requested_effort_metadata": "xhigh",
+          "role_metadata": null,
+          "rollout_sha256": "4de2347f125d8725926afbcc2011f9711b238d9c92eb1f946f5aa696207ae85a",
+          "function_calls": {
+            "spawn_agent": 1,
+            "wait_agent": 1,
+            "exec": 3
+          },
+          "nested_tool_references": {
+            "exec_command": 3,
+            "apply_patch": 1
+          },
+          "native_command_items": 3,
+          "event_types": {
+            "task_started": 1,
+            "thread_settings_applied": 1,
+            "item_completed": 17,
+            "token_count": 6,
+            "task_complete": 1
+          },
+          "agent_function_calls": [
+            {
+              "tool": "spawn_agent",
+              "arguments_sha256": "155bec9a22cc764ec2befc388e9a3412b9f97a2855494ae03be0c4036b3997a4"
+            },
+            {
+              "tool": "wait_agent",
+              "arguments_sha256": "2342e8f336b76566ca94da3914a980c8adbbeb393d956d91b9e6d561967d90a2"
+            }
+          ],
+          "foreign_read_indicators": [
+            {
+              "tool": "exec",
+              "indicators": [
+                ".codex-flow/native-state"
+              ],
+              "arguments_sha256": "3d15d020408a285068bb68cff325a7a2492964ad267467116169b03fadea4ba7"
+            },
+            {
+              "tool": "native.CommandExecution",
+              "indicators": [
+                ".codex-flow/native-state"
+              ],
+              "arguments_sha256": "7461439acc4272e62dcd01a9714c080a264c4fc8642d832d195957b2ca7cee15"
+            }
+          ]
+        },
+        {
+          "thread_id_hash": "295ef1f71054",
+          "source_kind": "other",
+          "model_metadata": "gpt-6.1-sol",
+          "requested_effort_metadata": "medium",
+          "role_metadata": "worker",
+          "rollout_sha256": "90b3b47411721a14eb6e3944c9c3f353a9650ccb79c470456662c812f7e5606d",
+          "function_calls": {
+            "exec": 1
+          },
+          "nested_tool_references": {
+            "exec_command": 1
+          },
+          "native_command_items": 1,
+          "event_types": {
+            "task_started": 2,
+            "thread_settings_applied": 1,
+            "item_completed": 4,
+            "token_count": 2,
+            "task_complete": 1
+          },
+          "agent_function_calls": [],
+          "foreign_read_indicators": []
+        }
+      ],
+      "limitation": "Literal tool-argument indicators do not prove absence of indirect reads or identify every child."
+    },
+    "limitations": [
+      "Native JSON stream did not expose child identities; project-owned metadata and native tool calls inspected separately.",
+      "Reasoning effort is requested configuration, not independently echoed in response.",
+      "Helper refused protected-state operation without issuing it; OS PermissionError was observed only for root and model-free probes.",
+      "Physical native history/content isolation remains degraded."
+    ]
+  },
+  "parallel_private_state_preflight": {
+    "source_id": "parallel-private-state-preflight-20261023-03",
+    "status": "passed",
+    "model_calls": 0,
+    "source_result_sha256": "ab800c8bc232ccda3fad5748134600e1b3784a134bc68f72e686c4c2098df1f5",
+    "native_source_sha256": "340d2b9845853944842bac5de375e9b442fe400ecaefe7799cf4009d38cb33c4",
+    "controller_source_sha256": "cbdcd082b3a2849e430b92fa0910cb70314759b9b9449d8f51d826bf9bb6f78a",
+    "simultaneous_owned_sandbox_processes": 2,
+    "deadline_s_per_process": 45,
+    "probes": {
+      "A": {
+        "passed": true,
+        "wall_s": 4.047,
+        "native_exit_code": 0,
+        "permission_sha256": "e0e1f0f7a66b6859a4fd1339add85b656b722e32adab63aa4401eab66471bc75",
+        "loops": 30,
+        "counts": {
+          "normal_success": 30,
+          "normal_permission_errors": 0,
+          "normal_mismatch": 0,
+          "private_permission_errors": 30,
+          "private_unexpected_success": 0,
+          "shared_permission_errors": 30,
+          "shared_unexpected_success": 0,
+          "other_errors": {}
+        }
+      },
+      "B": {
+        "passed": true,
+        "wall_s": 4.047,
+        "native_exit_code": 0,
+        "permission_sha256": "9b5f2925992edb298c06a870dec27706f882da6f1f32c0a1c12e5b55b4945250",
+        "loops": 30,
+        "counts": {
+          "normal_success": 30,
+          "normal_permission_errors": 0,
+          "normal_mismatch": 0,
+          "private_permission_errors": 30,
+          "private_unexpected_success": 0,
+          "shared_permission_errors": 30,
+          "shared_unexpected_success": 0,
+          "other_errors": {}
+        }
+      }
+    },
+    "host_owned_synthetic_read_before": true,
+    "host_owned_synthetic_read_after": true,
+    "cli_state_condition": "Existing official CLI setup selected explicitly; CLI owns state/auth, no controller read/copy/query of actual auth or native databases",
+    "credential_directory_denials": "Present in exact generated permission profiles; no real credential contents tested",
+    "controller_read_actual_auth_or_native_database": false,
+    "native_internal_file_access_audited": false,
+    "prior_attempts": [
+      {
+        "attempt": "01",
+        "status": "failed",
+        "model_calls": 0,
+        "classification": "launcher/setup failure; required sandbox program counts not observed",
+        "source_result_sha256": "c42a15e505c1a4f32b5f1549e0f4f25a9045cdd48d3d3555692b184d7551a131",
+        "probes": {
+          "A": {
+            "returncode": 2,
+            "timeout": false,
+            "wall_s": 0.047
+          },
+          "B": {
+            "returncode": 2,
+            "timeout": false,
+            "wall_s": 0.047
+          }
+        },
+        "validates_permission_policy": false
+      },
+      {
+        "attempt": "02",
+        "status": "failed",
+        "model_calls": 0,
+        "classification": "owned empty CLI-home setup exceeded45-second limit; required program counts not observed",
+        "source_result_sha256": "99551fdfc8313ffcc7129e3441b595f92b65039a551d8ba4b2257b4c824206b3",
+        "probes": {
+          "A": {
+            "returncode": 1,
+            "timeout": true,
+            "wall_s": 45.578
+          },
+          "B": {
+            "returncode": 1,
+            "timeout": true,
+            "wall_s": 45.609
+          }
+        },
+        "validates_permission_policy": false
+      }
+    ],
+    "condition_change_boundary": "Attempt03 used existing official CLI setup; earlier empty-home attempts retained. Native source fingerprint also differs from earlier attempts; no causal attribution solely to the home change.",
+    "native_source_differs_from_prior_attempts": true,
+    "limits": [
+      "Owned synthetic normal/private/shared files only; no reciprocal whole-workspace denials",
+      "Passed tool-level deny/read availability under simultaneous execution, not strict native history/content/profile isolation",
+      "No model generation, helper execution, global configuration changes or benchmark was performed by this preflight"
+    ]
+  },
+  "parallel_plan_prerequisites": {
+    "scope": "Independent owned synthetic prerequisite tasks; not tree benchmark arms or speed/causal contribution evidence",
+    "first_attempt": {
+      "source_id": "parallel-plan-prerequisite-20261023",
+      "source_metrics_sha256": "2c4c4051500c591a65507c35f1e2968d51d7cafc7c0129db4314c4f168b38e82",
+      "source_result_sha256": "bae71a4633f965d23438d44cd9f6fae60489d0e067767aa6d9cdc12c392b0d3a",
+      "execution_status": "completed_unverified",
+      "wall_clock_s": 88.656,
+      "execution_s": 88.343,
+      "native_exit_code": 0,
+      "native_child_count": null,
+      "delegation_evidence": "not_exposed",
+      "artifact_correct": true,
+      "requests": 6,
+      "completed_requests": 6,
+      "peak_concurrent_requests": 1,
+      "profiles": [
+        {
+          "actual_response_model": "gpt-6.1-sol",
+          "requested_model": "gpt-6.1-sol",
+          "requested_effort": "xhigh",
+          "completed_requests": 6
+        }
+      ],
+      "all_requests_usage": {
+        "input_tokens": 108002,
+        "output_tokens": 1678,
+        "total_tokens": 109680,
+        "cached_tokens": 48000,
+        "reasoning_tokens": 714
+      },
+      "root_cli_usage": {
+        "input_tokens": 108002,
+        "output_tokens": 1678,
+        "cached_tokens": 48000
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "shared_native_auth_rollout_container": true,
+      "native_state_content_isolation_verified": false,
+      "requested_effort_response_independently_echoed": false,
+      "linked_child_metadata": [],
+      "parallel_requirement_status": "not_verified; no child verified, actual child count not exposed"
+    },
+    "second_attempt": {
+      "source_id": "parallel-plan-prerequisite-20261023-02",
+      "source_metrics_sha256": "779cf1351f2dd63874572f6d8fdea3c57d3b0722212333b9dc67ad5586da4adc",
+      "source_result_sha256": "f383a7cbc70818af6005f8e2ea41b7ee54f23d5b199678a92b2f361fd335573c",
+      "execution_status": "completed_unverified",
+      "wall_clock_s": 96.36,
+      "execution_s": 96.125,
+      "native_exit_code": 0,
+      "native_child_count": 1,
+      "delegation_evidence": "native_parent_link_and_usage_metadata",
+      "artifact_correct": true,
+      "requests": 8,
+      "completed_requests": 8,
+      "peak_concurrent_requests": 2,
+      "profiles": [
+        {
+          "actual_response_model": "gpt-6.1-sol",
+          "requested_model": "gpt-6.1-sol",
+          "requested_effort": "xhigh",
+          "completed_requests": 6
+        },
+        {
+          "actual_response_model": "gpt-6.1-sol",
+          "requested_model": "gpt-6.1-sol",
+          "requested_effort": "medium",
+          "completed_requests": 2
+        }
+      ],
+      "all_requests_usage": {
+        "input_tokens": 139660,
+        "output_tokens": 2114,
+        "total_tokens": 141774,
+        "cached_tokens": 48000,
+        "reasoning_tokens": 606
+      },
+      "root_cli_usage": {
+        "input_tokens": 88951,
+        "output_tokens": 1662,
+        "cached_tokens": 48000
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "shared_native_auth_rollout_container": true,
+      "native_state_content_isolation_verified": false,
+      "requested_effort_response_independently_echoed": false,
+      "linked_child_metadata": [
+        {
+          "model": "gpt-6.1-sol",
+          "requested_effort": "medium",
+          "depth": 1,
+          "tokens_used": 33345
+        }
+      ],
+      "parallel_requirement_status": "verified; real parent-linked child metadata plus completed-request usage"
+    },
+    "limits": [
+      "First completed artifact does not establish delegation; unknown child count remains null",
+      "Second actual parent-child metadata and completed requests prove this bounded prerequisite, not general depth/read-only enforcement",
+      "Requested reasoning effort is configuration, not an independent response echo",
+      "Money and subscription quota delta remain unknown; root CLI usage is separate from all-request usage",
+      "Shared native state/history/profile isolation remains degraded; no raw native journals, databases or IDs are redistributed"
+    ]
+  }
+}

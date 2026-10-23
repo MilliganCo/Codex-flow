@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 import json, re, time
 import uuid
-import os, tempfile
+import os, tempfile, threading
 from .contracts import inside
 
 SECRET=re.compile(r'(?i)(?:sk-(?:or-v1-|proj-)?[A-Za-z0-9_-]{16,}|gh[pousr]_[A-Za-z0-9_]{16,}|Bearer\s+\S+|eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+)')
@@ -33,14 +33,18 @@ def write_json(path: Path, value):
 
 class Trace:
     def __init__(self,path:Path,run_id:str,task_id='root'):
+        inside(path.parent,path)
         self.path=path; self.run_id=run_id; self.task_id=task_id
+        self._lock=threading.Lock()
         self.trace_id=uuid.uuid4().hex; self.start=time.monotonic()
         path.parent.mkdir(parents=True,exist_ok=True)
     def emit(self,event_type,payload=None,actor='coordinator',model='gpt-6.1-sol',error_category=None):
         event=dict(run_id=self.run_id,trace_id=self.trace_id,task_id=self.task_id,timestamp=utc(),
                    actor=actor,model=model,event_type=event_type,duration_s=round(time.monotonic()-self.start,4),
                    payload=sanitize(payload or {}),token_usage=None,error_category=error_category)
-        with self.path.open('a',encoding='utf-8') as f:f.write(json.dumps(event,ensure_ascii=False)+'\n')
+        with self._lock:
+            inside(self.path.parent,self.path)
+            with self.path.open('a',encoding='utf-8') as f:f.write(json.dumps(event,ensure_ascii=False)+'\n')
 
 def replay(path:Path):
     counts:dict[str,int]={}; usage=None; errors=0

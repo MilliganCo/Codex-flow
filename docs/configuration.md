@@ -35,11 +35,18 @@ The runtime reads `.codex-flow/config.json` under `--repo`, or an explicit `--co
 | `allow_paid_api` | Only false; true is rejected |
 | `max_model_requests` | Integer 1–80; shared hard gateway inference-request budget, including planning probes |
 
-`--max-agents` and `--timeout` override run-level values. `--no-mercury` and `--no-harness2` disable optional components for that run. An external Mercury installation is selected by `--mercury-root`; its key or source is never placed in project config. Enabling `harness2` executes two measured planning probes before the main task, consuming additional subscription time/quota; plan coverage remains a limited metric.
+`--max-agents` and `--timeout` override run-level values. `--no-mercury` and `--no-harness2` disable optional components for that run. An external Mercury installation is selected by `--mercury-root`; its key or source is never placed in project config. Enabling `harness2` executes two measured planning probes before the main task, consuming additional subscription time/quota. Both probes use the fixed five-field ASCII Tree brief even for an unrelated task; this is a narrow integration pilot, not a task-specific general optimizer or a measure of application quality.
 
 ## Routing inputs
 
-`--independent-steps` defaults to 1. At least two independent steps are required for the rule-based parallel route. `--single-agent` and `--strategy single` force single execution. `--strategy parallel` currently still passes through the independence gate; it is not an unconditional fan-out switch. Risk and ownership validation are available in the policy library but are not automatically derived from arbitrary task text.
+`--independent-steps` defaults to 1. At least two independent steps are required for the rule-based parallel route. `--single-agent` and `--strategy single` force single execution. `--strategy parallel` still passes through the independence gate; it is not an unconditional fan-out switch.
+
+| Run flag | Admission behavior |
+|---|---|
+| `--risk-level low\|normal\|medium\|high\|critical` | Default `normal`; medium, high and critical stop execution for a scope decision |
+| `--conflicting-paths` | Declare overlapping ownership and select single execution |
+
+Risk, ownership and independence are caller-provided facts, not automatic task decomposition or risk detection. These deterministic gates run before Mercury. Single execution, escalation and dry runs make no Mercury call. Only an admitted parallel candidate may request its bounded recommendation; accepted `normal` risk is encoded as `low` for the external adapter, while escalated risks are never sent or relabeled as safe.
 
 ## CLI and host settings
 

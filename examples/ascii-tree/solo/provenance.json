@@ -1,0 +1,183 @@
+{
+  "schema": 1,
+  "packaged_at_utc": "2026-10-23T14:36:27.061052+00:00",
+  "experiment_id": "tree-case-20261023-02",
+  "group": "A",
+  "original_anonymous_id": "solution-2",
+  "source_snapshot_reference": "case02/evaluation/solution-2",
+  "source_archive_sha256": "107adec4d0dc316e5c68656e862df4661435d867f9511888921363d9e921ef31",
+  "artifact_score": 95,
+  "artifact_accepted": true,
+  "execution_status": "timed_out",
+  "source_code_changes": false,
+  "code_hash_normalization": "CRLF replaced by LF for normalized_lf_sha256; copied code bytes otherwise identical",
+  "code_files": [
+    {
+      "path": "ascii-tree.ps1",
+      "normalized_lf_sha256": "00a08011f2b0ab0840cef99a34e2c68ecda2383e2ce64c49f1d4378a33b989d5",
+      "original_bytes_sha256": "00a08011f2b0ab0840cef99a34e2c68ecda2383e2ce64c49f1d4378a33b989d5"
+    },
+    {
+      "path": "ascii_tree/__init__.py",
+      "normalized_lf_sha256": "bf9fcefaee98a00136118a8be4d600665038333e4c9526dccb6305a71b30d450",
+      "original_bytes_sha256": "bf9fcefaee98a00136118a8be4d600665038333e4c9526dccb6305a71b30d450"
+    },
+    {
+      "path": "ascii_tree/__main__.py",
+      "normalized_lf_sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "original_bytes_sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "ascii_tree/cli.py",
+      "normalized_lf_sha256": "651ab78b8de3d38403e4630b19ded913d3d4ad6d16ffc7d927ed03b0b2cabf46",
+      "original_bytes_sha256": "651ab78b8de3d38403e4630b19ded913d3d4ad6d16ffc7d927ed03b0b2cabf46"
+    },
+    {
+      "path": "ascii_tree/geometry.py",
+      "normalized_lf_sha256": "a3ce4aac35ff003858e919059ebfe148093e95428ef08291642aea5cf0db97f8",
+      "original_bytes_sha256": "a3ce4aac35ff003858e919059ebfe148093e95428ef08291642aea5cf0db97f8"
+    },
+    {
+      "path": "ascii_tree/model.py",
+      "normalized_lf_sha256": "7f62a78fd2239b8b355ed1737c96b5023142ca8cc3ce2b753e3b1c16938bdf15",
+      "original_bytes_sha256": "7f62a78fd2239b8b355ed1737c96b5023142ca8cc3ce2b753e3b1c16938bdf15"
+    },
+    {
+      "path": "ascii_tree/renderer.py",
+      "normalized_lf_sha256": "e74c861f0b46630f62a6ea84d199615a40c78bad2b34fbb62461d766a5994799",
+      "original_bytes_sha256": "e74c861f0b46630f62a6ea84d199615a40c78bad2b34fbb62461d766a5994799"
+    },
+    {
+      "path": "ascii_tree/state.py",
+      "normalized_lf_sha256": "9666c53930b16f0e3ae8bd3c8ac888ffe945a17ae4210f743acb84805ebd5f98",
+      "original_bytes_sha256": "9666c53930b16f0e3ae8bd3c8ac888ffe945a17ae4210f743acb84805ebd5f98"
+    },
+    {
+      "path": "ascii_tree/terminal.py",
+      "normalized_lf_sha256": "8b96a93f0bc2426dc155d933b5759c6503346d35349e535f8a8946452f149e23",
+      "original_bytes_sha256": "8b96a93f0bc2426dc155d933b5759c6503346d35349e535f8a8946452f149e23"
+    },
+    {
+      "path": "ascii_tree_launcher.py",
+      "normalized_lf_sha256": "a83d48d3b86efab20ad1359ebda76bad76f6d82d8cf21f39a39ab727ab9f6207",
+      "original_bytes_sha256": "a83d48d3b86efab20ad1359ebda76bad76f6d82d8cf21f39a39ab727ab9f6207"
+    },
+    {
+      "path": "tests/__init__.py",
+      "normalized_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_bytes_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/support.py",
+      "normalized_lf_sha256": "25f1bacd1751febe6eec665c97802cf581be3573e7dafa04417fa742024b5cf8",
+      "original_bytes_sha256": "25f1bacd1751febe6eec665c97802cf581be3573e7dafa04417fa742024b5cf8"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "normalized_lf_sha256": "6e36250df4ca49e60921a85431621aba8a458314b4c5187e39eca625ca037819",
+      "original_bytes_sha256": "6e36250df4ca49e60921a85431621aba8a458314b4c5187e39eca625ca037819"
+    },
+    {
+      "path": "tests/test_examples.py",
+      "normalized_lf_sha256": "b56e64d8d56c790319eaa8a28da93e270c908033efa71f1dde63e5037c7c2b6e",
+      "original_bytes_sha256": "b56e64d8d56c790319eaa8a28da93e270c908033efa71f1dde63e5037c7c2b6e"
+    },
+    {
+      "path": "tests/test_geometry_model.py",
+      "normalized_lf_sha256": "7dc3a880666a680f73d779c4093116f65dc10e5719709df55f708ecd8ebfc93c",
+      "original_bytes_sha256": "7dc3a880666a680f73d779c4093116f65dc10e5719709df55f708ecd8ebfc93c"
+    },
+    {
+      "path": "tests/test_renderer.py",
+      "normalized_lf_sha256": "c0bdff3bc3caae5d53b23fc7532d7c3c1b019f70ada7286ab99413e18997788e",
+      "original_bytes_sha256": "c0bdff3bc3caae5d53b23fc7532d7c3c1b019f70ada7286ab99413e18997788e"
+    },
+    {
+      "path": "tests/test_state_terminal.py",
+      "normalized_lf_sha256": "3c91ea0ba1d51d27494024c0f766b70c078414d2a535c45040dfe08e543b7ed6",
+      "original_bytes_sha256": "3c91ea0ba1d51d27494024c0f766b70c078414d2a535c45040dfe08e543b7ed6"
+    },
+    {
+      "path": "tools/benchmark.py",
+      "normalized_lf_sha256": "7c198616f0ec9594fc03bed8a504d952511bab092f774c837838d2f2e8eb193c",
+      "original_bytes_sha256": "7c198616f0ec9594fc03bed8a504d952511bab092f774c837838d2f2e8eb193c"
+    },
+    {
+      "path": "tools/create_examples.py",
+      "normalized_lf_sha256": "f9007cefb9900d2b6731310c82ab8e2029f7a89350540645aadffa7f3164b007",
+      "original_bytes_sha256": "f9007cefb9900d2b6731310c82ab8e2029f7a89350540645aadffa7f3164b007"
+    },
+    {
+      "path": "tools/smoke.py",
+      "normalized_lf_sha256": "d965a1e8ef6ea3b57248c26bd7cd13d30636300bb5ab203cb9a117925273da2a",
+      "original_bytes_sha256": "d965a1e8ef6ea3b57248c26bd7cd13d30636300bb5ab203cb9a117925273da2a"
+    }
+  ],
+  "copied_original_files": [
+    ".gitignore",
+    "ascii-tree.ps1",
+    "ascii_tree/__init__.py",
+    "ascii_tree/__main__.py",
+    "ascii_tree/cli.py",
+    "ascii_tree/geometry.py",
+    "ascii_tree/model.py",
+    "ascii_tree/renderer.py",
+    "ascii_tree/state.py",
+    "ascii_tree/terminal.py",
+    "ascii_tree_launcher.py",
+    "examples/interactive_layout.txt",
+    "examples/manifest.json",
+    "examples/seed42_2d.txt",
+    "examples/seed42_3d.txt",
+    "examples/seed42_4d_xw_000.txt",
+    "examples/seed42_4d_xw_040.txt",
+    "examples/seed7_3d.txt",
+    "IMPLEMENTATION_NOTES.md",
+    "README.md",
+    "requirements.txt",
+    "tests/__init__.py",
+    "tests/support.py",
+    "tests/test_cli.py",
+    "tests/test_examples.py",
+    "tests/test_geometry_model.py",
+    "tests/test_renderer.py",
+    "tests/test_state_terminal.py",
+    "tools/benchmark.py",
+    "tools/create_examples.py",
+    "tools/smoke.py"
+  ],
+  "excluded": "Git/native state, home/temp/cache, bytecode, runtime exports, raw logs, terminal streams and generated performance reports",
+  "static_ascii_fixtures_included": "examples/*.txt and manifest.json retained because existing tests require exact fixture bytes",
+  "documentation_packaging_differences": [
+    {
+      "path": "README.md",
+      "operation": "documentation_link_target_only",
+      "from": "examples/benchmark.json",
+      "to": "PACKAGING.md#omitted-generated-artifacts",
+      "occurrences": 1
+    },
+    {
+      "path": "README.md",
+      "operation": "documentation_link_target_only",
+      "from": "TEST_REPORT.md",
+      "to": "PACKAGING.md#omitted-generated-artifacts",
+      "occurrences": 1
+    }
+  ],
+  "added_packaging_documents": [
+    "PACKAGING.md",
+    "provenance.json"
+  ],
+  "verification_boundary": {
+    "historical_case02_evidence": true,
+    "application_executed_during_packaging": false,
+    "tests_run_during_packaging": false,
+    "ci_run_during_packaging": false
+  },
+  "privacy_scan": {
+    "selected_original_text_files": 24,
+    "secret_pattern_findings": 0,
+    "absolute_path_findings": 0,
+    "scope": "selected source/tests/scripts/readme/notes/launchers only, no raw native state inspected"
+  }
+}

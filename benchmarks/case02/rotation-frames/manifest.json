@@ -1,0 +1,89 @@
+{
+  "scope": "Actual exports from accepted case02 solo A source; post-evaluation presentation only",
+  "frames": [
+    {
+      "file": "xw-000.txt",
+      "xw_degrees": 0,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-030.txt",
+      "xw_degrees": 30,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-060.txt",
+      "xw_degrees": 60,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-090.txt",
+      "xw_degrees": 90,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-120.txt",
+      "xw_degrees": 120,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-150.txt",
+      "xw_degrees": 150,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-180.txt",
+      "xw_degrees": 180,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-210.txt",
+      "xw_degrees": 210,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-240.txt",
+      "xw_degrees": 240,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-270.txt",
+      "xw_degrees": 270,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-300.txt",
+      "xw_degrees": 300,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    },
+    {
+      "file": "xw-330.txt",
+      "xw_degrees": 330,
+      "seed": 42,
+      "width": 80,
+      "height": 30
+    }
+  ]
+}

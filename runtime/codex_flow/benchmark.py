@@ -22,7 +22,8 @@ def delegation_evidence(metrics,cfg):
                      'requested_effort':request.get('effort')}
             if profile not in profiles:profiles.append(profile)
     children=metrics.get('native_child_ids')
-    confirmed=bool(isinstance(children,list) and children and metrics.get('delegation_evidence')=='native_completed_spawn')
+    confirmed=bool(isinstance(children,list) and children and metrics.get('delegation_evidence') in
+                   ('native_completed_spawn','native_parent_link_and_usage_metadata'))
     return {'observed_role_profile':bool(profiles),'observed_role_profiles':profiles,
             'multi_agent_verified':confirmed,
             'multi_agent_evidence':children if confirmed else None}

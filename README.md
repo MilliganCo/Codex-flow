@@ -61,11 +61,27 @@ The runtime is off until `--enable` or project configuration opts in. A loopback
 
 Single-agent execution is ephemeral. Parallel parents persist because native workers require a parent rollout. SQLite/log paths and workspace home/temp/cache are project-local, while the native auth/rollout container remains shared. **Separate paths do not establish separate native context:** the CLI can rehydrate unrelated historical thread metadata from shared rollouts into a project-local database. Strict independent profiles are therefore blocked by this platform behavior. Never publish native databases, journals or raw native logs. Custom helper roles inherit parent permissions; their read-only ownership and depth restrictions are instructions, not separate hard sandboxes.
 
-On this Windows sandbox, reciprocal per-arm deny rules interfered through shared `CodexSandboxUsers` ACLs. The benchmark now gives every arm the same deny policy for existing evaluator/prior-solution targets. Current peer reads remain a soft prohibition: **physical read and shared-state isolation are degraded**. Historical metadata import is not proof of actual cross-arm reading; an audit limited to each run's own native sessions is pending after A/B terminates. See [safety](docs/safety-and-permissions.md).
+On this Windows sandbox, reciprocal per-arm deny rules interfered through shared `CodexSandboxUsers` ACLs. The benchmark gives every arm the same deny policy for existing evaluator/prior-solution targets. Current peer reads remain a soft prohibition: **physical read and shared-state isolation are degraded**. The completed audit of B/C/D's own journals found no native spawn calls or literal peer/state-read indicators; this limited observation does not prove absence of all cross-arm reads. A was ephemeral and has no equivalent retained journal. See [safety](docs/safety-and-permissions.md).
 
 Gateway totals are available only when every observed request completes with usable usage. Request counts do not identify agents; top-level unknown totals, quota deltas and actual API cost remain `null`. Root CLI usage is retained separately. `max_attempts` is a bounded configuration field; the current wrapper makes one attempt with automatic transport retries disabled.
 
-The frozen case02 applications scored A=95, B=97, C=95 and D=96, but Mercury had zero successful calls and helper execution was unconfirmed. Those scores do not validate a full-component speedup. Case03 was aborted after future deny targets became directories; its evidence remains immutable. Case04 started at 2026-10-23 14:00:48 UTC with A/B running against its frozen runtime; no final result is claimed. See [benchmark evidence](docs/benchmarking.md).
+The frozen case02 applications scored A=95, B=97, C=95 and D=96, with zero successful Mercury calls and unconfirmed helpers. The later [case04](benchmarks/case04/README.md) scored A=89, B=83, C=96 and D=90; all four artifacts met the frozen acceptance rule. B/C each made one real Mercury call and B/D each ran two inspired probes, but helpers remained unverified. A/B/D hit their deadlines. These are artifact-quality results, without a full multi-agent or speedup conclusion. Case01 is invalidated and case03 aborted; both remain immutable. See [benchmark evidence](docs/benchmarking.md).
+
+## Run the accepted examples
+
+![Actual case02 solo ASCII exports in 2D, 3D and 4D](benchmarks/case02/preview.png)
+
+These are typeset exports from the accepted solo case02 artifact. They do not demonstrate a workflow speedup. Two complete, separate implementations and their tests are available in [ASCII Tree Explorer demos](examples/ascii-tree/README.md).
+
+[Watch the actual 4D XW-rotation frames](benchmarks/case02/rotation.gif), generated from the preserved CLI implementation.
+
+```powershell
+Push-Location examples/ascii-tree/solo
+python -m ascii_tree view --seed 42 --mode 4d
+Pop-Location
+```
+
+Use `1`, `2`, `3` to switch dimensions, `[` / `]` for 4D rotation, and `Q` to quit. No model account or package installation is needed to run the examples.
 
 ## Existing installation and checks
 

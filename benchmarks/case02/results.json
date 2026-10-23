@@ -133,7 +133,12 @@
       "tool_calls": 21,
       "failed_tool_calls": 2,
       "anonymous_review_id": "solution-2",
-      "source_archive_sha256": "107adec4d0dc316e5c68656e862df4661435d867f9511888921363d9e921ef31"
+      "source_archive_sha256": "342c29198c38d65c7cacc2b4527d0e34767a1103c61498a959b9609995cb74f7",
+      "source_archive_prior_v1_sha256": "107adec4d0dc316e5c68656e862df4661435d867f9511888921363d9e921ef31",
+      "source_archive_current_v2_sha256": "342c29198c38d65c7cacc2b4527d0e34767a1103c61498a959b9609995cb74f7",
+      "source_archive_current_v2_filename": "tree-A-sources-v2.zip",
+      "source_archive_version": 2,
+      "source_archive_packaging_correction": ".git worktree pointer and excluded names removed from v2; v1 retained locally; original sources and benchmark unchanged"
     },
     "B": {
       "requested_strategy": "flow + Mercury + inspired probes",
@@ -239,7 +244,12 @@
       "tool_calls": 26,
       "failed_tool_calls": 6,
       "anonymous_review_id": "solution-1",
-      "source_archive_sha256": "0ac744aec2ca8b85b66ea5e924c9db85a14012cba9e70ae7d2c3559395574feb"
+      "source_archive_sha256": "7002b1facd55f850202b550f310b6976f6d837193879bbb7cf3c519cfaaf474d",
+      "source_archive_prior_v1_sha256": "0ac744aec2ca8b85b66ea5e924c9db85a14012cba9e70ae7d2c3559395574feb",
+      "source_archive_current_v2_sha256": "7002b1facd55f850202b550f310b6976f6d837193879bbb7cf3c519cfaaf474d",
+      "source_archive_current_v2_filename": "tree-B-sources-v2.zip",
+      "source_archive_version": 2,
+      "source_archive_packaging_correction": ".git worktree pointer and excluded names removed from v2; v1 retained locally; original sources and benchmark unchanged"
     },
     "C": {
       "requested_strategy": "flow + Mercury; no inspired probes",
@@ -347,7 +357,12 @@
       "tool_calls": 23,
       "failed_tool_calls": 1,
       "anonymous_review_id": "solution-4",
-      "source_archive_sha256": "ef383fe0c2a96c9d3ec5427a641b3dda7e132013a87ff330a290a12a6604ebde"
+      "source_archive_sha256": "2fa2a64280fd591e6fadc124a35854323b33550f91fc3a567ded1930c93f6edc",
+      "source_archive_prior_v1_sha256": "ef383fe0c2a96c9d3ec5427a641b3dda7e132013a87ff330a290a12a6604ebde",
+      "source_archive_current_v2_sha256": "2fa2a64280fd591e6fadc124a35854323b33550f91fc3a567ded1930c93f6edc",
+      "source_archive_current_v2_filename": "tree-C-sources-v2.zip",
+      "source_archive_version": 2,
+      "source_archive_packaging_correction": ".git worktree pointer and excluded names removed from v2; v1 retained locally; original sources and benchmark unchanged"
     },
     "D": {
       "requested_strategy": "flow + inspired probes; no Mercury",
@@ -455,7 +470,14 @@
       "tool_calls": 18,
       "failed_tool_calls": 3,
       "anonymous_review_id": "solution-3",
-      "source_archive_sha256": "a7083429a04289a82eedb4cdcec561a29d5803a0919a0649490a19b32a4146de"
+      "source_archive_sha256": "f304badc9a12c4ad036de84147a808dddbd70a41ef1e24c02d56266275c8edc9",
+      "source_archive_prior_v1_sha256": "a7083429a04289a82eedb4cdcec561a29d5803a0919a0649490a19b32a4146de",
+      "source_archive_current_v2_sha256": "f304badc9a12c4ad036de84147a808dddbd70a41ef1e24c02d56266275c8edc9",
+      "source_archive_current_v2_filename": "tree-D-sources-v2.zip",
+      "source_archive_version": 2,
+      "source_archive_packaging_correction": ".git worktree pointer and excluded names removed from v2; v1 retained locally; original sources and benchmark unchanged"
     }
-  }
+  },
+  "source_archive_version": 2,
+  "source_archive_packaging_correction": "v2 excludes .git pointer files and raw runtime/state outputs; prior_v1 hashes retained; no source/evaluation/score changes"
 }

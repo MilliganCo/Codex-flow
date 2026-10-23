@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "scope": "Post-evaluation presentation of actual accepted case02 solo A CLI exports",
+  "source_manifest": "rotation-frames/manifest.json",
+  "source_manifest_sha256": "ecc1dcbc2a3ece64758e95bf40d6addf021cd9dd38bd5a4de25787ce51066947",
+  "source_manifest_supplies_per_frame_hashes": false,
+  "hash_boundary": "Per-frame hashes computed from preserved export bytes during typesetting; inputs unchanged",
+  "source_frames": [
+    {
+      "file": "rotation-frames/xw-000.txt",
+      "sha256": "abdc939a9dbb67c5547e86ea955b5aed59baf149d48eb8478cd4c651e6f85e8d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 0
+    },
+    {
+      "file": "rotation-frames/xw-030.txt",
+      "sha256": "0b0529d7690e3050bc32653c7349d78b650cdcd781e3addcb0341c21ff505418",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 30
+    },
+    {
+      "file": "rotation-frames/xw-060.txt",
+      "sha256": "0c9610e0e6a3a9d5d1eeae6374c7312ab127d7eb11f2bccd5078ea5cb60b0ef3",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 60
+    },
+    {
+      "file": "rotation-frames/xw-090.txt",
+      "sha256": "c371084a61211cbd4ccaf48bbf865b80cca8d7f6fb08ab5d8bac1095b710e27e",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 90
+    },
+    {
+      "file": "rotation-frames/xw-120.txt",
+      "sha256": "8851ab474b26484b29a3366799765e201a83ff91b9bb4a30c72fd85a5d375253",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 120
+    },
+    {
+      "file": "rotation-frames/xw-150.txt",
+      "sha256": "93a441a8a9b67dd4b621100368cbeb6f1e4e15a11974a5fb2e0f1e6acbf6e366",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 150
+    },
+    {
+      "file": "rotation-frames/xw-180.txt",
+      "sha256": "b913f3344f8c1d542443bb2cfcf51339a8c0f9e2bacb9f8e509397e23e0830b0",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 180
+    },
+    {
+      "file": "rotation-frames/xw-210.txt",
+      "sha256": "181d6fef91fb5a1dcb2c070685a8fa3c50cf0869ed33c4a38e598929bb3052bb",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 210
+    },
+    {
+      "file": "rotation-frames/xw-240.txt",
+      "sha256": "d4fda6d3cc2980ba9df934c84506f29357cc7c40172f6ab30e5bd6e13aa7b61e",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 240
+    },
+    {
+      "file": "rotation-frames/xw-270.txt",
+      "sha256": "7f49897d66f92f9b05ffbd7a89f329acd753624b7977322075db509bad5a5ab6",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 270
+    },
+    {
+      "file": "rotation-frames/xw-300.txt",
+      "sha256": "17ee289f50b4b3696ec06bc33af2a7c57b432d67ae3b601a050e3e859b82ffb0",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 300
+    },
+    {
+      "file": "rotation-frames/xw-330.txt",
+      "sha256": "7efe9969f8415b895e68174035394d134345bd5fb7a504043873ce15ad609483",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 330
+    }
+  ],
+  "output": "rotation.gif",
+  "output_sha256": "7c8fb9cf5120aec4910fb653d216f9740bd56fe59d246b7a26d95c7ffe2a8f94",
+  "output_bytes": 170206,
+  "frame_count": 12,
+  "pixel_width": 688,
+  "pixel_height": 650,
+  "duration_ms_per_frame": 250,
+  "loop": 0,
+  "typesetter": "Pillow",
+  "pillow_version": "12.2.0",
+  "font": "Consolas",
+  "ascii_font_px": 15,
+  "cell_width_px": 8,
+  "line_height_px": 18,
+  "application_executed_by_typesetter": false,
+  "model_calls": 0,
+  "source_frames_modified": false,
+  "gui_screenshot": false,
+  "changes_benchmark_result": false,
+  "palette_reference": "Existing case02 preview.png dark panel/background family"
+}

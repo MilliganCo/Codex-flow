@@ -17,6 +17,6 @@ Case02 had **zero successful Mercury calls** and unconfirmed native helpers. B/D
 
 - Case01: invalidated by a runtime source-hash race; excluded.
 - Case03: aborted after Windows SDK materialized future deny targets as directories; immutable.
-- Case04: currently running its frozen runtime with a native subscription transport observer; final evidence pending.
+- Case04: complete, with independently accepted artifact scores A/B/C/D **89/83/96/90**. B/C Mercury calls: one each; B/D inspired probes: two each; helpers unverified. [Report](case04/README.md), [metrics](case04/results.json).
 
-Unknown aggregate usage, quota delta and cost remain `null`, never measured zero. Read/shared-state isolation is degraded. Raw native logs, databases, journals and rollout/auth containers are retained locally and must not be published. Frozen task/rubric/evaluator links will be added after case04 completes.
+Unknown aggregate usage, quota delta and cost remain `null`, never measured zero. Read/shared-state isolation is degraded. Raw native logs, databases, journals and rollout/auth containers stay local. The [frozen task/protocol/evaluator/rubric manifest](protocol/frozen-inputs.json) records public reproducibility inputs. No full-component speedup follows from these runs.

@@ -10,6 +10,14 @@ The root requests `gpt-6.1-sol` with `xhigh`. Generated helper profiles request 
 
 The shared gateway inference budget is at most 80 requests across probes/root/gateway-routed helpers. It records request model/effort, actual response model and usage; response metadata does not independently echo reasoning effort. Complete usage aggregates require every observed request to finish with complete usage. Worker identities and subscription quota deltas remain separate evidence questions.
 
+### Independent native capability proof
+
+The [sanitized integration evidence](evidence/integration-2026-10-23.json) records a separate helper proof completed in **144.578 seconds**, outside every Tree benchmark arm. All eight requests completed: six actual `gpt-6.1-sol` responses at requested `xhigh`, and two at requested `medium`. Observed totals were 142,279 input, 3,385 output and 28,800 cached tokens. Money and subscription quota delta remain unknown. Requested effort is not independently echoed by the response.
+
+The audit was limited to the proof's exact owned native sessions: one session had null role metadata and one had role `worker`; native spawn/wait calls and completed requests support actual helper capability. The root's synthetic protected-state read produced `PermissionError`. The helper refused that operation under the known policy **without attempting it**; no helper OS-level read denial is claimed. The earlier proof attempt failed during missing-Git setup with zero model calls and is retained separately. Neither attempt is a benchmark or speedup measurement.
+
+A separate **zero-model-call** kernel boundary check passed ordinary project reads/writes and observed `PermissionError` for protected synthetic sentinel/SQLite operations. The host could read/update its own SQLite fixture before and afterward. This proves those tool boundaries for owned synthetic files, not isolation of native internal history or every indirect read.
+
 ## Mercury: external and free-only
 
 `MercuryBridge` references an existing, explicitly trusted installation containing its decision client and credential helper. **That implementation is not bundled or redistributed.** Selecting its root authorizes loading that trusted external helper. Disabled or absent configuration performs no credential read or provider call.
@@ -30,12 +38,14 @@ This is an external provider request, unlike the default doctor. It requires an 
 
 The real free-only smoke returned `OBSERVED` with probability `0.9947798753220525`, `successful_calls: 1`, `inference_attempts: 1`, and usage `{ "cost": 0, "input_tokens": 144, "output_tokens": 1 }`. Expected model/build/provider and zero-cost checks were adapter-validated. This validates one actual typed routing call in the current environment, not routing accuracy, general uptime or every future invocation. Configuration still defaults to disabled.
 
-**Frozen benchmark: degraded Mercury.** The active frozen case study was launched with an earlier copied runtime and recorded zero successful Mercury calls. The later current-source smoke must not be counted in those arms or used to relabel B as fully active. Its earlier HTTP 403 evidence remains valid for the runtime that actually executed the experiment. Any comparison using the corrected bridge needs a new frozen experiment ID.
+**Keep experiment versions separate.** Frozen case02 recorded zero successful Mercury calls; the later smoke must not be counted in those arms. Case04 independently scored A/B/C/D=89/83/96/90: B/C each recorded one successful Mercury call, while B/D each ran two Harness²-inspired probes. Helpers were not verified in B/C/D, so these counts do not establish full integration or causal benefit. Independent helper proofs establish capability outside that benchmark, not delegation within its arms.
 
 ## Harness²-inspired local probes
 
 The [upstream Harness² project](https://github.com/google-research/harness2) is a research reference. Its executor is not bundled or launched. The local module implements bounded proposal comparison, safety/completeness gates, explicit adoption and hash-checked rollback inside `.codex-flow/lessons/`.
 
 The Tree benchmark runs two single-agent planning probes per enabled arm: baseline and candidate instructions. The metric is coverage of five required plan fields. Probe duration and model usage remain part of the experiment overhead. This is a real measured planning experiment, but it does not establish improved application correctness or speed. Reports must say **Harness²-inspired**, with upstream probes zero.
+
+The normal opt-in `run` currently reuses that ASCII Tree planning brief, even for another application task. It is a narrow integration pilot, not a task-specific general optimizer. The project proposal limit can reject repeated probes in an existing lessons store; changing that budget or deleting history is not an automatic retry policy.
 
 A normal `run` with `harness2: true` invokes the same paired measured planning probe unless `--no-harness2` is supplied. Probe records are stored under `.codex-flow/probes/`; proposals and active instructions remain project-local. Its result is degraded because the measured plan metric is not final application quality. Include probe cost/time in any efficiency comparison. The current CLI exposes no separate general proposal/adopt/rollback subcommand. The library rollback procedure is documented in [rollback](rollback.md).

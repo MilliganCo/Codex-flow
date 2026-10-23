@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.tmp/
+.home/
+.codex-flow/
+exports/
+.venv/

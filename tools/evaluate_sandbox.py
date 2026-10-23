@@ -12,9 +12,14 @@ def main():
     a=p.parse_args();root=a.root.resolve()
     for path in (a.solution.resolve(),a.output.resolve()):
         if root not in path.parents:raise SystemExit('solution/output must be beneath evaluation root')
-    deny={str(Path.home()/'.codex').replace('\\','/'):'deny',str(Path.home()/'.agents').replace('\\','/'):'deny'}
-    entries=','.join(json.dumps(k)+'="deny"' for k in deny)
-    entries+=','+json.dumps(str(root).replace('\\','/'))+'="write"'
+    # Declare the trusted frozen runner as read-only in the verification phase.
+    # On Windows, an earlier deny may persist despite this declaration: use a
+    # byte-verified copy in a fresh read-only runner directory after generation.
+    # Never grant write access to the frozen runner. Credential denies win.
+    rules={str(a.evaluator.resolve().parent).replace('\\','/'):'read',
+           str(root).replace('\\','/'):'write'}
+    rules.update({str(Path.home()/name).replace('\\','/'):'deny' for name in ('.codex','.agents')})
+    entries=','.join(json.dumps(k)+'='+json.dumps(v) for k,v in rules.items())
     profile='permissions.flow_evaluator={extends=":workspace",filesystem={'+entries+'},network={enabled=false}}'
     command=[a.codex,'sandbox','-P','flow_evaluator','--cd',str(root),'-c',profile,'-c','windows.sandbox="elevated"',
              '--',sys.executable,str(a.evaluator.resolve()),str(a.solution.resolve()),'--output',str(a.output.resolve())]

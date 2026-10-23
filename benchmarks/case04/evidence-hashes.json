@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "experiment_id": "tree-case-20261023-04",
+  "blind_review_stage": "complete",
+  "source_hashes": [
+    {
+      "label": "frozen experiment manifest",
+      "sha256": "507548f8b9c35bfa39d8a52b64c34b3eedd3ceddb19b2ecd9d530678ffc9957d"
+    },
+    {
+      "label": "completed independent blind review",
+      "sha256": "9e89ae4f3a23d1314de72667cc19a509c4b21fd58c2897c362f3eea51a9c80f6"
+    },
+    {
+      "label": "root-only resource samples",
+      "sha256": "7945e1fa60bae58294df85886d3aa9ed09a1f1e64ba9a46c18f0274d03750df8"
+    },
+    {
+      "label": "private mapping ab",
+      "sha256": "daea5ab3a5d40005ef012d3b43d05f3cd8881c159bbd01696b4b0920669bb1d6",
+      "redistributed": false
+    },
+    {
+      "label": "private mapping cd",
+      "sha256": "7dc3970b3175565d550541c4d9146885cf00ca1e5378a26eb374ec895bc0a1bd",
+      "redistributed": false
+    },
+    {
+      "group": "A",
+      "label": "frozen metrics",
+      "sha256": "aa4f4990718db2658aeafb21fabfdce274e4149f71aead3333069b4e7e8e3002"
+    },
+    {
+      "group": "A",
+      "label": "frozen evaluator",
+      "sha256": "6a85d553da2ae451c166a52bc0a997e81290c6e62b06a23696bab94e40ab9a10"
+    },
+    {
+      "group": "A",
+      "label": "uniform supplemental matrix",
+      "sha256": "41bc5b6fde664640e182e89e75480983a027923436975ea6eb14a673ea70dd20"
+    },
+    {
+      "group": "A",
+      "label": "independent geometry",
+      "sha256": "afd5dfc160df867bcf210967a795ce3ea0de68009b2cf37ccd93ef9baa6af0c7"
+    },
+    {
+      "group": "A",
+      "label": "independent native terminal",
+      "sha256": "dbdb91b8ee29ddfdcae50fa8d966d3e21ec67253ea40ed41bdc81521365b53a5"
+    },
+    {
+      "group": "B",
+      "label": "frozen metrics",
+      "sha256": "58014c94d130f496926dc9f37651bf5fe97552f336e982f1d20d77409a927437"
+    },
+    {
+      "group": "B",
+      "label": "frozen evaluator",
+      "sha256": "2eb0a20b1c62f9dfac61677f08f2f631b84a995ce8efdca13df08f97bcda28cd"
+    },
+    {
+      "group": "B",
+      "label": "uniform supplemental matrix",
+      "sha256": "41bc5b6fde664640e182e89e75480983a027923436975ea6eb14a673ea70dd20"
+    },
+    {
+      "group": "B",
+      "label": "independent geometry",
+      "sha256": "208a9d391c222d0b7b860fc37dbc9b298c7d3c4b8d97e37357f6ed0a41f1d78c"
+    },
+    {
+      "group": "B",
+      "label": "independent native terminal",
+      "sha256": "4953c104e5db0c9110c65704ce10bd34f49231780bb6b3584e1f5e54e0e088d0"
+    },
+    {
+      "group": "C",
+      "label": "frozen metrics",
+      "sha256": "1749187373cb36881fc8c457697dfc92ce93a04915bca94771aca51fb6b382f6"
+    },
+    {
+      "group": "C",
+      "label": "frozen evaluator",
+      "sha256": "34964930a955038bc023ebf5decdcead66f1f3d17d2bba59b85e45099f76b0e4"
+    },
+    {
+      "group": "C",
+      "label": "uniform supplemental matrix",
+      "sha256": "41bc5b6fde664640e182e89e75480983a027923436975ea6eb14a673ea70dd20"
+    },
+    {
+      "group": "C",
+      "label": "independent geometry",
+      "sha256": "4f7270949d89c85a1629ca1a8eefac0366d75446d8c231ed9f510007d146c2cc"
+    },
+    {
+      "group": "C",
+      "label": "independent native terminal",
+      "sha256": "5d812ebceecc180ca083ab04ebbc0e07424d3703132fd9b3293c722de7cc1da7"
+    },
+    {
+      "group": "D",
+      "label": "frozen metrics",
+      "sha256": "81c121701ee661d84f00f0349bde9d3dd5561019a4bfba1730cc0490674a882e"
+    },
+    {
+      "group": "D",
+      "label": "frozen evaluator",
+      "sha256": "e7f548443865a8f2f8d4b807b4e845d696b2d2781df639a32b54625dc45585db"
+    },
+    {
+      "group": "D",
+      "label": "uniform supplemental matrix",
+      "sha256": "41bc5b6fde664640e182e89e75480983a027923436975ea6eb14a673ea70dd20"
+    },
+    {
+      "group": "D",
+      "label": "independent geometry",
+      "sha256": "77ab95904e87cf72a8cd6a88d337c099bb0ad53a2bae27d084ad0ca1c9330f7e"
+    },
+    {
+      "group": "D",
+      "label": "independent native terminal",
+      "sha256": "b7912979e0138291de24f5acbee2d2d758af870951c0fcd45014f0097a767525"
+    }
+  ],
+  "raw_sources_redistributed": false,
+  "archive_version": 2,
+  "local_source_archives": [
+    {
+      "group": "A",
+      "archive": "case04-A-source-v2.zip",
+      "sha256": "bb81a1e7730c75ba6e6dcbe05b2dd9347554d0cc6085c246f0e7556f43c67c76",
+      "file_count": 32,
+      "archive_bytes": 32625,
+      "local_only": true,
+      "prior_v1_sha256": "24c56ec8b86b21c429d46a293b5773b96043968cf2f06a0de39a2aab023cf1c0"
+    },
+    {
+      "group": "B",
+      "archive": "case04-B-source-v2.zip",
+      "sha256": "62aa6a30006ac74d23e35d8abb370300d22e4f57d01990722e10160a8caf4cdd",
+      "file_count": 29,
+      "archive_bytes": 31357,
+      "local_only": true,
+      "prior_v1_sha256": "40d8760184e0d9502b0133d388ffff89f8f30092b6c1d7e120cf324bd74bfd36"
+    },
+    {
+      "group": "C",
+      "archive": "case04-C-source-v2.zip",
+      "sha256": "405d290f42f14b6a79245c490a318b8d66b2d4ce318a44647f4150fef4b7cc9c",
+      "file_count": 32,
+      "archive_bytes": 42033,
+      "local_only": true,
+      "prior_v1_sha256": "e434eee552c3f2ecaf9d775e37c0594ceb0f5b8070daec8f92fac292fc40a121"
+    },
+    {
+      "group": "D",
+      "archive": "case04-D-source-v2.zip",
+      "sha256": "f9fbb21ad5eb50dbff5ecdb2cc1d3f2a63df7cc00f20ccee679f0ebfe4f10c3d",
+      "file_count": 36,
+      "archive_bytes": 32662,
+      "local_only": true,
+      "prior_v1_sha256": "16a05c05cedff41f33e88d852d94848b04deef78e2a582dfad842097981b4bb5"
+    }
+  ]
+}

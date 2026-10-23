@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "case": "case04",
+  "issue": "Worktree .git pointer files were present in anonymous copies; directory-only filters missed regular files.",
+  "reviewer_attestation": {
+    "git_contents_read": false,
+    "git_commands_executed": false,
+    "original_strategy_paths_or_mappings_seen": false,
+    "observed_only": "filename .git and size97bytes in inventory",
+    "criteria_used_identity_information": false
+  },
+  "limits": "Internal reads performed by rg/OS are not attested; physical metadata access was not prevented. Observed identity disclosure was not reported.",
+  "correction": "Pointer metadata retired privately after review; implementation files and original experiments unchanged; portable source archives regenerated as v2; v1 preserved locally."
+}

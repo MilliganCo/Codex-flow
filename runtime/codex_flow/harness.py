@@ -54,12 +54,13 @@ class GuardedHarness:
         return record
     def rollback(self,proposal_id):
         if not proposal_id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in proposal_id):raise PolicyError('invalid proposal id')
-        record=json.loads((self.store/('proposal-'+proposal_id+'.json')).read_text())
+        record_path=inside(self.root,self.store/('proposal-'+proposal_id+'.json'))
+        record=json.loads(record_path.read_text(encoding='utf-8'))
         target=inside(self.root,self.store/'active.txt')
         if not record.get('adopted'):raise PolicyError('proposal was not adopted')
         if not target.exists() or hashlib.sha256(target.read_bytes()).hexdigest()!=record['adopted_sha256']:
             raise PolicyError('active instructions changed; rollback refused')
         if record['previous'] is None:target.unlink()
         else:target.write_text(record['previous'],encoding='utf-8')
-        record['rolled_back']=True;write_json(self.store/('proposal-'+proposal_id+'.json'),record)
+        record['rolled_back']=True;write_json(record_path,record)
         return record

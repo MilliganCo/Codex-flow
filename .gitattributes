@@ -6,6 +6,13 @@
 *.yml text eol=lf
 *.yaml text eol=lf
 *.toml text eol=lf
+*.txt text eol=lf
+*.cjs text eol=lf
 *.ps1 text eol=crlf
 .gitignore text eol=lf
 .gitattributes text eol=lf
+# Fixed-width ASCII rasters require padded lines and trailing blank rows.
+benchmarks/case02/rotation-frames/*.txt -whitespace
+examples/ascii-tree/*/examples/*.txt -whitespace
+# Keep the frozen brief byte-identical, including Markdown hard line breaks.
+benchmarks/protocol/TREE_BENCHMARK_TASK.md -whitespace

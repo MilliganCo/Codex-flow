@@ -12,13 +12,19 @@ The noninteractive child requests approval policy `never`, shell-network access 
 
 Each workspace gets separate home, temp/cache and physical native SQLite/log paths, while native `CODEX_HOME` remains shared for subscription credential reuse and native rollout storage. No tokens are copied into the repository. Single-agent parents are ephemeral; parallel parents **are not ephemeral**, because native workers require a persisted parent rollout.
 
-**Project-local storage is not isolated native state.** The CLI can rehydrate thread metadata from the shared rollout container into the local SQLite database; unrelated historical working-directory metadata was observed there. Separate log paths likewise do not establish independently scoped native context or log contents. This is a platform blocker for strict independent profiles, not a claim that actual cross-arm solution reading occurred. An audit restricted to each execution's own native sessions remains pending until A/B reaches a terminal state. Do not query broad shared history to investigate it. Never publish native databases, SQLite journals/WAL files or raw native logs.
+**Project-local storage is not isolated native state.** The CLI can rehydrate thread metadata from the shared rollout container into the local SQLite database; unrelated historical working-directory metadata was observed there. Separate log paths likewise do not establish independently scoped native context or log contents. This is a platform blocker for strict independent profiles, not a claim that actual cross-arm solution reading occurred. The independent helper proof was audited only for its exact owned sessions; it does not complete a benchmark-wide native-history audit. Do not query broad shared history to investigate it. Never publish native databases, SQLite journals/WAL files or raw native logs.
 
 **A local boundary probe found sibling reads possible under `workspace-write`.** Explicit single-target read denies worked, but reciprocal Windows profiles interfered through the shared `CodexSandboxUsers` ACL. Consequently, all benchmark arms receive the same deny policy for existing hidden-evaluator, prior-solution and additional protected paths. Current-peer read isolation remains soft: agents must not read peers, but that prohibition is not a hard physical boundary. The experiment records degraded read and shared-state isolation. Do not use it for mutually untrusted confidential work.
 
 Deny targets must already exist. In the aborted case03, Windows SDK materialized future targets as directories; that frozen experiment is preserved and excluded rather than repaired in place. Do not add reciprocal/future deny paths during an active run.
 
 Native concurrent-helper limits are requested through the current CLI configuration. Custom helper roles inherit parent permissions; their read-only ownership, depth=1 and total-helper limits are instruction-only. They do not have independently enforced read-only sandboxes. A sole integrator reduces conflicts but does not eliminate shared-filesystem risks.
+
+## Verified synthetic boundaries
+
+The [2026-10-23 integration summary](evidence/integration-2026-10-23.json) records a real kernel/sandbox check with **zero model calls**. Normal project reads/writes passed. Protected owned sentinel and SQLite read/write operations raised `PermissionError`; the host's own SQLite fixture remained readable/updatable before and after. This is an actual tool-boundary result, not proof that native internal metadata access is isolated.
+
+In the separate live helper proof, the root attempted a protected synthetic-state read and received `PermissionError`. The worker refused under the known policy without issuing that operation. **The worker's refusal is not an observed OS denial.** Two exact owned sessions plus native collaboration calls and eight completed requests establish helper capability, while shared-state isolation and hard read-only/depth limits remain degraded or unverified. No raw native journal or unrelated database was needed for this published summary.
 
 ## Authentication and external requests
 
