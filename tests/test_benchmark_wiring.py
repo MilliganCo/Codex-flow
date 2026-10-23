@@ -13,7 +13,7 @@ from unittest.mock import Mock, patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "runtime"))
-from codex_flow import benchmark, native
+from codex_flow import benchmark, native, cli
 from codex_flow.config import Config
 from codex_flow.contracts import PolicyError
 from codex_flow.subscription import RequestBudget
@@ -28,7 +28,7 @@ class BenchmarkWiringTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory(prefix="flow-wiring-test-")
         self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name)
+        self.root = Path(self.temporary.name).resolve()
 
     def test_parallel_arms_share_prompt_safe_deny_targets_and_per_arm_probe_budget(self):
         experiment = self.root / "new-experiment"
@@ -156,9 +156,11 @@ class BenchmarkWiringTests(unittest.TestCase):
         workspace.mkdir()
         deny = self.root / "hidden"
         deny.mkdir()
+        private_state = workspace / ".codex-flow/native-state"
+        private_state.mkdir(parents=True)
         profiles = native.role_profiles(workspace, named_permissions=True)
         command = native.argv("fake-codex", workspace, Config(), parallel=True,
-                              denied_reads=(deny,), profiles=profiles)
+                              denied_reads=(deny, private_state), profiles=profiles)
         config = options(command)
         self.assertNotIn("--sandbox", command)
         self.assertNotIn("--ephemeral", command)
@@ -166,6 +168,7 @@ class BenchmarkWiringTests(unittest.TestCase):
         self.assertEqual(json.loads(config["default_permissions"]), "flow_task")
         permission = tomllib.loads("value=" + config["permissions.flow_task"])["value"]
         self.assertEqual(permission["filesystem"][str(deny.resolve()).replace("\\", "/")], "deny")
+        self.assertEqual(permission["filesystem"][str(private_state.resolve()).replace("\\", "/")], "deny")
         self.assertEqual(permission["filesystem"][str(workspace.resolve()).replace("\\", "/")], "write")
         self.assertFalse(permission["network"]["enabled"])
         self.assertEqual(json.loads(config["sqlite_home"]), str(workspace / ".codex-flow/native-state"))
@@ -181,6 +184,47 @@ class BenchmarkWiringTests(unittest.TestCase):
             self.assertLessEqual(set(role_config["features"]), {"apps", "plugins", "memories", "request_permissions_tool"})
             self.assertTrue(all(value is False for value in role_config["features"].values()))
         self.assertIn("--ephemeral", native.argv("fake-codex", workspace, Config(), parallel=False))
+
+    def test_native_run_precreates_only_owned_state_and_denies_tool_reads_without_content_isolation_claim(self):
+        workspace = self.root / "workspace"
+        workspace.mkdir()
+        run_dir = self.root / "synthetic-run"
+        state = workspace / ".codex-flow/native-state"
+        self.assertFalse(state.exists())
+        gateway = Mock()
+        gateway.__enter__ = Mock(return_value=gateway)
+        gateway.__exit__ = Mock(return_value=False)
+        gateway.summary.return_value = {"completed_requests": 0, "aggregate_usage": None}
+        def fake_run(exe, assigned, cfg, prompt, output, **kwargs):
+            self.assertTrue(state.is_dir())
+            self.assertIn(state, kwargs["denied_reads"])
+            self.assertTrue(all(Path(target).exists() for target in kwargs["denied_reads"]))
+            command = native.argv(exe, assigned, cfg, denied_reads=kwargs["denied_reads"])
+            profile = tomllib.loads("value=" + options(command)["permissions.flow_task"])["value"]
+            self.assertEqual(profile["filesystem"][str(state.resolve()).replace("\\", "/")], "deny")
+            self.assertEqual(profile["filesystem"][str(workspace.resolve()).replace("\\", "/")], "write")
+            output.mkdir()
+            return {"status": "completed_unverified", "input_tokens": None, "output_tokens": None, "cached_tokens": None}
+        with patch("codex_flow.subscription.SubscriptionGateway", return_value=gateway), \
+             patch.object(native, "_run", side_effect=fake_run), patch.object(native.subprocess, "Popen") as process:
+            result = native.run("fake-codex", workspace, Config(), "synthetic", run_dir)
+        process.assert_not_called()
+        self.assertTrue(result["native_state_tool_read_denial_configured"])
+        self.assertFalse(result["native_state_tool_read_denial_verified"])
+        self.assertTrue(result["native_state_may_rehydrate_shared_history"])
+        self.assertFalse(result["native_state_content_isolation_verified"])
+        self.assertEqual(list(state.iterdir()), [])
+
+    def test_missing_workspace_is_not_created_to_materialize_state_denial(self):
+        missing = self.root / "missing-workspace"
+        with self.assertRaisesRegex(PolicyError, "workspace missing"):
+            native.run("fake-codex", missing, Config(), "synthetic", self.root / "run")
+        self.assertFalse(missing.exists())
+
+    def test_both_instruction_variants_forbid_native_history_containers(self):
+        for instructions in (cli.BASE_INSTRUCTIONS, cli.FLOW_INSTRUCTIONS):
+            self.assertIn(".codex-flow/native-state", instructions)
+            self.assertIn("history containers", instructions)
 
 
 if __name__ == "__main__": unittest.main()

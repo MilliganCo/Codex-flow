@@ -267,11 +267,48 @@ class SubscriptionGateway:
             def do_POST(self):
                 self.forward(True)
 
+            def discard_rejected_body(self, consumed):
+                """Avoid Windows RST on normal rejected POSTs without a slow-body wait.
+
+                No parsing, forwarding or credential use happens here. Ambiguous
+                framing and oversized declarations are closed without draining.
+                """
+                lengths = self.headers.get_all("Content-Length", [])
+                if len(lengths) != 1 or self.headers.get("Transfer-Encoding"):
+                    return
+                try:
+                    length = int(lengths[0])
+                except ValueError:
+                    return
+                if not 0 <= length <= MAX_REQUEST_BYTES:
+                    return
+                remaining = max(0, length - consumed)
+                deadline = time.monotonic() + .25
+                previous_timeout = self.connection.gettimeout()
+                try:
+                    while remaining:
+                        available = deadline - time.monotonic()
+                        if available <= 0:
+                            break
+                        self.connection.settimeout(min(.05, available))
+                        block = self.rfile.read1(min(16384, remaining))
+                        if not block:
+                            break
+                        remaining -= len(block)
+                except OSError:
+                    pass  # Body timeout/disconnect cannot authorize forwarding.
+                finally:
+                    try:
+                        self.connection.settimeout(previous_timeout)
+                    except OSError:
+                        pass  # The client may have already closed this socket.
+
             def respond(self, status, body, content_type="application/json"):
                 try:
                     self.send_response(status)
                     self.send_header("Content-Type", content_type)
                     self.send_header("Content-Length", str(len(body)))
+                    self.send_header("Connection", "close")
                     self.end_headers()
                     self.wfile.write(body)
                 except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
@@ -283,6 +320,7 @@ class SubscriptionGateway:
                 updates = {"status": "failed", "http_status": None}
                 failure_stage = "request_validation"
                 response = None
+                request_bytes_read = 0
                 reply_status, reply_body, reply_type = 502, b'{"error":{"type":"subscription_transport_rejected"}}', "application/json"
                 try:
                     with owner._lock:
@@ -313,6 +351,7 @@ class SubscriptionGateway:
                             raise ValueError("body limit")
                         self.connection.settimeout(15)
                         data = self.rfile.read(length)
+                        request_bytes_read = len(data)
                         if len(data) != length:
                             raise ValueError("incomplete body")
                         document = json.loads(data)
@@ -369,6 +408,8 @@ class SubscriptionGateway:
                             content_type = "text/event-stream"
                         reply_status, reply_body, reply_type = status, body, content_type
                 except Exception as error:
+                    if inference:
+                        self.discard_rejected_body(request_bytes_read)
                     if isinstance(error, urllib.error.HTTPError):
                         updates["http_status"] = error.code
                     updates["reason"] = (error.code if isinstance(error, _Validation) else

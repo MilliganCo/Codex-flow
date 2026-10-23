@@ -20,6 +20,8 @@ never proof of delegation. Do not repeatedly retry an unavailable helper.
 All work must stay within the assigned workspace. Do not read sibling workspaces/evaluators,
 global user files, credentials, memories or prior solutions. Do not use paid APIs, internet,
 publication, deployment, sandbox bypass, global config changes or external applications.
+Do not inspect .codex-flow/native-state, native SQLite databases, session/rollout or
+history containers, or historical thread metadata, including inside this workspace.
 Do not stage, commit, merge, or alter Git history; the experiment controller owns archives.
 Run relevant finite tests; report pass/fail/not-run, actual paths and limitations. Do not
 claim success merely because a tool exited zero. Stop only when acceptance is met or blocked.
@@ -28,6 +30,8 @@ BASE_INSTRUCTIONS='''Work independently as one GPT-6.1 Sol xhigh agent. Do not d
 All work must stay within the assigned workspace. Do not read sibling workspaces/evaluators,
 global user files, credentials, memories or prior solutions. Do not use paid APIs, internet,
 publication, deployment, sandbox bypass, global config changes or external applications.
+Do not inspect .codex-flow/native-state, native SQLite databases, session/rollout or
+history containers, or historical thread metadata, including inside this workspace.
 Do not stage, commit, merge, or alter Git history; the experiment controller owns archives.
 Run relevant finite tests; report pass/fail/not-run and limitations. Preserve task acceptance.
 '''

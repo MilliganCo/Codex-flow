@@ -232,7 +232,13 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
 def run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=False,instructions='',cancel=None,denied_reads=(),request_budget=None):
     from .subscription import RequestBudget, SubscriptionGateway
     budget=request_budget if request_budget is not None else RequestBudget(cfg.max_model_requests)
-    denied_reads=tuple(denied_reads)+tuple(p for p in (Path.home()/'.codex',Path.home()/'.agents') if p.exists())
+    if not workspace.is_dir():raise PolicyError('workspace missing')
+    # The official CLI may backfill shared historical metadata into this local
+    # SQLite directory. Its filesystem location does not imply content isolation.
+    # Precreate only this owned target: Windows materializes nonexistent denies.
+    private_state=inside(workspace,workspace/'.codex-flow/native-state')
+    private_state.mkdir(parents=True,exist_ok=True)
+    denied_reads=tuple(denied_reads)+(private_state,)+tuple(p for p in (Path.home()/'.codex',Path.home()/'.agents') if p.exists())
     with SubscriptionGateway(budget=budget) as gateway:
         result=_run(exe,workspace,cfg,prompt,run_dir,parallel=parallel,instructions=instructions,cancel=cancel,
                     gateway=gateway,denied_reads=denied_reads)
@@ -241,5 +247,9 @@ def run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fal
     result['root_cli_usage']={k:result[k] for k in ('input_tokens','output_tokens','cached_tokens')}
     result['all_requests_usage']=result['subscription']['aggregate_usage']
     result['read_denials_configured']=bool(denied_reads)
+    result['native_state_may_rehydrate_shared_history']=True
+    result['native_state_content_isolation_verified']=False
+    result['native_state_tool_read_denial_configured']=True
+    result['native_state_tool_read_denial_verified']=False
     write_json(run_dir/'metrics.json',result)
     return result

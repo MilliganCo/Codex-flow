@@ -1,6 +1,7 @@
 """Loopback-only subscription observer checks; fake upstream, synthetic auth."""
 from concurrent.futures import ThreadPoolExecutor
 import copy
+from email.message import Message
 import io
 import json
 from pathlib import Path
@@ -9,6 +10,7 @@ import threading
 import time
 from types import SimpleNamespace
 import unittest
+from unittest.mock import Mock
 import urllib.error
 import urllib.request
 
@@ -151,6 +153,46 @@ class SubscriptionTests(unittest.TestCase):
             for path in ("/responses?elsewhere=1", "/../../other", "/other"):
                 with self.subTest(path=path): self.assertEqual(self.call(gateway, path=path)[0], 403)
             self.assertEqual(gateway.summary()["request_count"], 0)
+        self.assertEqual(opener.requests, [])
+
+    def test_unauthorized_body_is_consumed_before_error_reply_without_forwarding(self):
+        opener = Opener()
+        gateway = SubscriptionGateway(opener=opener)
+        handler = object.__new__(gateway._handler())
+        body = b"discard-only synthetic request body" * 100
+        handler.headers = Message()
+        handler.headers["Content-Length"] = str(len(body))
+        handler.headers["X-Codex-Flow-Token"] = ""
+        handler.path = "/backend-api/codex/responses"
+        handler.connection = Mock()
+        handler.connection.gettimeout.return_value = None
+        handler.rfile = io.BytesIO(body)
+        replies = []
+        handler.respond = lambda status, data, mime: replies.append((status, handler.rfile.tell()))
+        try:
+            handler.forward(True)
+        finally:
+            gateway.__exit__(None, None, None)
+        self.assertEqual(replies, [(403, len(body))])
+        self.assertEqual(opener.requests, [])
+        self.assertEqual(gateway.budget.used, 0)
+
+    def test_loopback_unauthorized_inflight_body_returns_403_without_forwarding(self):
+        opener = Opener()
+        with SubscriptionGateway(opener=opener) as gateway:
+            for _ in range(20):
+                self.assertEqual(self.call(gateway, raw=b"x" * 65536,
+                                           headers={"X-Codex-Flow-Token": ""})[0], 403)
+            self.assertEqual(gateway.budget.used, 0)
+        self.assertEqual(opener.requests, [])
+
+    def test_incomplete_unauthorized_body_has_bounded_wait_and_no_forwarding(self):
+        opener = Opener()
+        with SubscriptionGateway(opener=opener) as gateway:
+            started = time.monotonic()
+            status, _ = self.call(gateway, raw=b"x", headers={"X-Codex-Flow-Token": "", "Content-Length": "1024"})
+            self.assertEqual(status, 403)
+            self.assertLess(time.monotonic() - started, 1)
         self.assertEqual(opener.requests, [])
 
     def test_model_effort_allowlist(self):

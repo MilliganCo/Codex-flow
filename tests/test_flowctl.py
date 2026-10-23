@@ -187,7 +187,9 @@ module.exports = { chromium: {
         script = ROOT / 'examples' / 'browser-smoke.cjs'
         completed = subprocess.run([node, str(script), '--engine=chromium',
                                     '--url=http://127.0.0.1:3000', '--runs=2'],
-                                   cwd=project, capture_output=True, text=True, timeout=10)
+                                   # Allow Windows runner cold Node startup; this is a
+                                   # functional fake, not a performance threshold.
+                                   cwd=project, capture_output=True, text=True, timeout=30)
         self.assertEqual(completed.returncode, 0, completed.stderr)
         result = json.loads(completed.stdout)
         self.assertEqual(result['runs'], 2)
@@ -196,7 +198,7 @@ module.exports = { chromium: {
         blocked = subprocess.run([node, str(script), '--engine=cdp',
                                   '--endpoint=http://192.168.1.1:9222',
                                   '--url=http://127.0.0.1:3000'],
-                                 cwd=project, capture_output=True, text=True, timeout=10)
+                                 cwd=project, capture_output=True, text=True, timeout=30)
         self.assertNotEqual(blocked.returncode, 0)
         self.assertIn('loopback', blocked.stderr)
 

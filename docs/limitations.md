@@ -13,7 +13,7 @@ This list describes implementation boundaries, not missing evidence disguised as
 ## Security and environment
 
 - Workspace permissions do not give full read isolation. Reciprocal Windows deny profiles interfere through shared `CodexSandboxUsers` ACLs; the benchmark uses identical existing-target denials protecting evaluator/prior solutions while current-peer reads remain soft/degraded. Future deny targets are rejected after the aborted case03.
-- Native auth/rollout storage remains shared. Single-agent parents are ephemeral; parallel parents persist for worker rollouts. SQLite/logs are project-local, not a separate auth/rollout container. The environment builder uses the default credential home rather than a caller's custom `CODEX_HOME`.
+- Native auth/rollout storage remains shared. SQLite/log paths are physically project-local, but the CLI can rehydrate unrelated historical thread metadata into the local database. Separate paths do not establish isolated native contexts/log contents; strict independent profiles are a platform blocker. Never publish native databases, journals or raw logs. Single-agent parents are ephemeral; parallel parents persist for worker rollouts.
 - Task restrictions, ownership, depth guidance and redaction are not substitutes for OS access control or human review.
 - Native CLI schemas and flags may change. Global configuration is not rewritten to compensate silently.
 - Windows behavior is the primary environment under evaluation; portability requires platform-specific evidence.
@@ -33,7 +33,7 @@ This list describes implementation boundaries, not missing evidence disguised as
 - Parallel runs contend for host/network/quota resources. One experiment cannot support general speed claims.
 - Final quality requires independent evidence, including real 4D mathematics and runnable behavior; self-tests and changed frame bytes are insufficient alone.
 
-The frozen case02 artifact scores A=95/B=97/C=95/D=96 coexist with zero successful Mercury calls and unconfirmed helpers. They do not validate a full-component performance gain. Case03 is aborted and immutable. Case04 started at 2026-10-23 14:00:48 UTC and has A/B running in this snapshot. Its requested-profile `multi_agent_verified` heuristic is insufficient worker proof; native collaboration and completed-request evidence must be assessed separately. Development-source fixes, including stdin-write cleanup, do not change that frozen runtime.
+The frozen case02 artifact scores A=95/B=97/C=95/D=96 coexist with zero successful Mercury calls and unconfirmed helpers. They do not validate a full-component performance gain. Case03 is aborted and immutable. Case04 started at 2026-10-23 14:00:48 UTC and has A/B running in this snapshot. Its requested-profile `multi_agent_verified` heuristic is insufficient worker proof; native collaboration and completed-request evidence must be assessed separately. Imported historical metadata is not proof of actual cross-arm reading. An audit limited to each run's own native sessions is pending after A/B terminates. Development-source fixes, including stdin-write cleanup, do not change that frozen runtime.
 
 ## Distribution
 

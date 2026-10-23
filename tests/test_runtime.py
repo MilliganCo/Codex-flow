@@ -27,7 +27,8 @@ class TemporaryTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory(prefix="flow-runtime-test-")
         self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name)
+        # Windows CI can return an 8.3 TEMP alias; production guards canonicalize.
+        self.root = Path(self.temporary.name).resolve()
 
 
 class ConfigTests(TemporaryTests):
