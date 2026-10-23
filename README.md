@@ -67,18 +67,20 @@ Gateway totals are available only when every observed request completes with usa
 
 The frozen case02 applications scored A=95, B=97, C=95 and D=96, with zero successful Mercury calls and unconfirmed helpers. The later [case04](benchmarks/case04/README.md) scored A=89, B=83, C=96 and D=90; all four artifacts met the frozen acceptance rule. B/C each made one real Mercury call and B/D each ran two inspired probes, but helpers remained unverified. A/B/D hit their deadlines. These are artifact-quality results, without a full multi-agent or speedup conclusion. Case01 is invalidated and case03 aborted; both remain immutable. See [benchmark evidence](docs/benchmarking.md).
 
-The final [case05](benchmarks/case05/README.md) observed real parent-linked helpers in B/C/D (1/2/1), one Mercury call in B/C and two inspired probes in B/D. Artifact scores were **A=97, B=89, C=89, D=94**, all accepted. A completed in 1,463.437 seconds; B/C reached their deadlines and D stopped on an upstream connection-open error. The solo artifact scored highest in this case. No general speed, quota or causal contribution claim follows. [Unchanged evaluated sources](benchmarks/case05/solutions/README.md) and exact evidence are preserved; the later run-record security fix does not rewrite the frozen runtime.
+The frozen [case05](benchmarks/case05/README.md) observed real parent-linked helpers in B/C/D (1/2/1), one Mercury call in B/C and two inspired probes in B/D. Artifact scores were **A=97, B=89, C=89, D=94**, all accepted. A completed in 1,463.437 seconds; B/C reached their deadlines and D stopped on an upstream connection-open error. The solo artifact scored highest in this case. No general speed, quota or causal contribution claim follows. [Unchanged evaluated sources](benchmarks/case05/solutions/README.md) and exact evidence are preserved; later changes do not rewrite its frozen runtime.
+
+The independent [case06 repeat](benchmarks/case06/README.md) kept the literal task, evaluator, rubric, Sol XHigh and 1500-second/80-request limits. After removing the unvalidated 125.328-second calibration prefix and requesting earlier runnable/docs/verification artifacts, **solo scored 97 and updated Flow 98**. Both completed and passed 57/57 native interaction checks. Their only score difference is one aesthetic point. Process durations were 1444.484/1414.000 seconds and native request counts 43/36. Flow used one verified helper, one free Mercury call and a deferred Harness-inspired guard with zero online probes. This is one case, not proof of general speedup, active optimizer benefit or subscription-quota savings. The [diagnosis](docs/decisions/0002-remove-proxy-calibration-prefix.md) and [unchanged new sources](benchmarks/case06/solutions/README.md) are retained.
 
 ## Run the accepted examples
 
-![Actual case05 solo ASCII exports in 2D, 3D and 4D](benchmarks/case05/preview.png)
+![Actual case06 solo and Flow exports in 2D, 3D and 4D](benchmarks/case06/comparison.png)
 
-These are typeset CLI exports from accepted case05 A, not a GUI screenshot or a workflow-speed demonstration. All four [frozen applications](benchmarks/case05/solutions/README.md) are available with their defects recorded. The separately maintained [case02 demos](examples/ascii-tree/README.md) have Windows/Ubuntu CI.
+These are six actual frozen headless exports from accepted case06 A/B, typeset without rerunning or repairing the apps. They are not interactive screenshots. The earlier four [case05 applications](benchmarks/case05/solutions/README.md) remain unchanged with recorded defects. Separately maintained [case02 demos](examples/ascii-tree/README.md) have Windows/Ubuntu CI.
 
 [Watch the actual 4D XW-rotation frames](benchmarks/case05/rotation.gif), generated after evaluation from unchanged case05 A.
 
 ```powershell
-Push-Location benchmarks/case05/solutions/A
+Push-Location benchmarks/case06/solutions/B
 python -m ascii_tree view --seed 42 --mode 4d
 Pop-Location
 ```

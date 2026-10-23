@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ascii-tree-explorer"
+version = "1.0.0"
+description = "An offline ASCII tree explorer with real 3D and 4D projections"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+ascii-tree = "ascii_tree.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ascii_tree*"]

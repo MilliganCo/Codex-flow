@@ -1,0 +1,110 @@
+[
+  {
+    "file": "seed42_2d.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "2d",
+      "yaw": -25.0,
+      "pitch": 8.0,
+      "angle4": 0.0,
+      "plane": "xw",
+      "zoom": 1.0,
+      "aspect": 0.5,
+      "time": 0.0
+    },
+    "bytes": 4040,
+    "sha256": "bff3e63a9a36bfede8fb9998a86d79989014abcdc20536da67366ee23abce68f"
+  },
+  {
+    "file": "seed42_3d.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "3d",
+      "yaw": -25.0,
+      "pitch": 8.0,
+      "angle4": 0.0,
+      "plane": "xw",
+      "zoom": 1.0,
+      "aspect": 0.5,
+      "time": 0.0
+    },
+    "bytes": 4040,
+    "sha256": "8fc1418ff74ee4d269b4aa1ff348db4215ffc0f29e05b808752a73298f1fc52f"
+  },
+  {
+    "file": "seed42_4d_xw_000.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "4d",
+      "yaw": -25.0,
+      "pitch": 8.0,
+      "angle4": 0,
+      "plane": "xw",
+      "zoom": 1.0,
+      "aspect": 0.5,
+      "time": 0.0
+    },
+    "bytes": 4040,
+    "sha256": "2c0794ef4935545b3af883151bca79d9d8d04b41dcd300a793a2b02dc7064324"
+  },
+  {
+    "file": "seed42_4d_xw_048.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "4d",
+      "yaw": -25.0,
+      "pitch": 8.0,
+      "angle4": 48,
+      "plane": "xw",
+      "zoom": 1.0,
+      "aspect": 0.5,
+      "time": 0.0
+    },
+    "bytes": 4040,
+    "sha256": "251bbd1800855c1b449b4a9017edf64ade10955f051a8bbd649e37634388bae6"
+  },
+  {
+    "file": "seed7_2d.txt",
+    "seed": 7,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "2d",
+      "yaw": -25.0,
+      "pitch": 8.0,
+      "angle4": 0.0,
+      "plane": "xw",
+      "zoom": 1.0,
+      "aspect": 0.5,
+      "time": 0.0
+    },
+    "bytes": 4040,
+    "sha256": "7d74059dffbdbe95ccc9ef4fee4a4c69d716242e8fbaecf2e466b9bfbeb6e357"
+  },
+  {
+    "file": "seed7_3d.txt",
+    "seed": 7,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "3d",
+      "yaw": -25.0,
+      "pitch": 8.0,
+      "angle4": 0.0,
+      "plane": "xw",
+      "zoom": 1.0,
+      "aspect": 0.5,
+      "time": 0.0
+    },
+    "bytes": 4040,
+    "sha256": "1b51c1bd9105f30117ea763c7e0befb8cc35392400cdca9ef0eb07e4fceef682"
+  }
+]

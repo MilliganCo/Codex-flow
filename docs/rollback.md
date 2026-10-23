@@ -34,4 +34,22 @@ Backups and installation records may contain private instructions. Keep them loc
 
 ## Restore source
 
+For a non-destructive recovery from the case06 orchestration change, the private
+repository's previous reviewed commit is `5f9fe86847ca412abe227d4c35071307a8a1cdb1`.
+From your clone, create a new, previously unused recovery directory:
+
+```powershell
+git worktree add --detach ../codex-flow-before-case06 5f9fe86847ca412abe227d4c35071307a8a1cdb1
+```
+
+Run the older entrypoint from that separate checkout after reviewing its settings.
+This preserves current source, the new experiment and all local edits. It does not
+install/uninstall the global skill or change any host sandbox configuration. The
+local development backup also records source commit
+`51fd9bb6f1b2ac85552cfc57092cec32f51cc6ba` in the verified pre-repeat Git bundle.
+
+Для отката после case06 создайте отдельный каталог приведённой командой и
+проверьте настройки перед запуском старого entrypoint. Текущие исходники и
+результаты экспериментов сохраняются; глобальная установка не меняется.
+
 Use the recorded pre-change source snapshot or a known reviewed Git commit in a separate recovery checkout. Compare with current dirty changes before applying selected files. Do not run `git reset --hard`, `git clean`, bulk directory deletion or blind backup restore against a user's active workspace. A proposed restore should identify exact paths and preserve current changes first.

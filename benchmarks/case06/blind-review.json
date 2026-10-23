@@ -1,0 +1,860 @@
+{
+  "stage": "complete",
+  "blind": true,
+  "independent": true,
+  "total_max": 100,
+  "solutions": [
+    {
+      "id": "solution-13",
+      "quality_score": 97,
+      "accepted": true,
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen identical seed-42 80x30 headless runs are byte-identical; seeded local RNG and immutable geometry agree with the supplied tests.",
+              "evidence": [
+                "frozen-13/2d-42.txt",
+                "frozen-13/2d-42-repeat.txt",
+                "frozen-13/evaluation.json",
+                "solution-13/tests/test_model.py"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Seed 42 and 137 at the same 80x30 dimensions differ; this is geometric variation, also checked by the independent generated-graph comparison.",
+              "evidence": [
+                "frozen-13/2d-42.txt",
+                "frozen-13/2d-137-same-size.txt",
+                "geometry-13.json"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "model.py:39-119 grows a curved leader, seeded irregular whorls and four recursive branch orders; radii taper continuously and attachments reuse indexed vertices. Frozen 2D seeds 42/137 show a readable connected trunk and branching crown rather than a template.",
+              "evidence": [
+                "solution-13/ascii_tree/model.py",
+                "solution-13/tests/test_model.py",
+                "frozen-13/2d-42.txt",
+                "frozen-13/2d-137.txt",
+                "geometry-13.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen yaw 0 versus 37 changes the same-seed raster. Native check 7 additionally matches one Right+Up increment to headless output and proves Left+Down restores the frame.",
+              "evidence": [
+                "frozen-13/3d-angle-0.txt",
+                "frozen-13/3d-angle-37.txt",
+                "interactive-13/report.json",
+                "solution-13/ascii_tree/geometry.py"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "model.py:50-57 shares exact endpoint indices. Independent SDK checks find 3376 positive-length segments, one connected parent-ordered root, finite XYZW, XYZ affine rank 3 and Z range 13.8133765; supplied model tests also prove acyclicity and tapering.",
+              "evidence": [
+                "solution-13/ascii_tree/model.py",
+                "solution-13/tests/test_model.py",
+                "geometry-13.json"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass",
+              "reason": "render.py:36-56 selects minimum finite eye-distance per cell with deterministic tie priority; draw_segment at 128-160 interpolates reciprocal depth, tapered radii and depth/surface shading. Supplied crossing and slanted-depth tests at tests/test_render.py:49-76 pass in both draw orders.",
+              "evidence": [
+                "solution-13/ascii_tree/render.py",
+                "solution-13/tests/test_render.py",
+                "frozen-13/evaluation.json",
+                "geometry-13.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen XW 0 versus 37 changes the same-seed raster; native checks 12-17 match the 8-degree bracket increment and its inverse exactly to the documented CLI.",
+              "evidence": [
+                "frozen-13/4d-angle-0.txt",
+                "frozen-13/4d-angle-37.txt",
+                "geometry-13.json",
+                "interactive-13/report.json"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "geometry.py:8-18 defines actual four-component points used by model.py:54; all 3377 skeleton vertices are finite in the SDK check, and leaves retain XYZW too.",
+              "evidence": [
+                "solution-13/ascii_tree/geometry.py",
+                "solution-13/ascii_tree/model.py",
+                "geometry-13.json",
+                "solution-13/tests/test_model.py"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "model.py:54 accumulates 0.48 times positive XYZ segment length. SDK output proves W strictly increases along every skeleton edge and spans 8.265934989 across the tree; it is not a mode label or constant.",
+              "evidence": [
+                "solution-13/ascii_tree/model.py",
+                "geometry-13.json",
+                "solution-13/tests/test_model.py"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "geometry.py:20-35 builds orthogonal XW/YW/ZW rotations. Raw SDK rotation_xw is FALSE only because the checker additionally demanded arbitrary |deltaW|>0.1; that failed result and exit 1 are retained. The separate audit of its observed point gives formula error 0, norm error 3.55e-15, inverse error 2.22e-16, det=1 and off-diagonal |sin(37)|=0.601815. Supplied orthogonality/quarter-turn tests pass; all rubric rotation requirements are established without rerunning or changing thresholds.",
+              "evidence": [
+                "solution-13/ascii_tree/geometry.py",
+                "solution-13/tests/test_geometry.py",
+                "geometry-13.json",
+                "geometry-13-execution.json",
+                "observed-rotation-audit.json",
+                "frozen-13/evaluation.json"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "render.py:82-109 centers XYZW, rotates the selected W plane, calls protected project4, rotates XYZ by yaw/pitch and then divides by positive 3D eye depth. Independent SDK manual composition exactly matches Projector coordinates, and near/behind-eye rejection passes in both stages (geometry.py:38-45; render.py:102-105).",
+              "evidence": [
+                "solution-13/ascii_tree/geometry.py",
+                "solution-13/ascii_tree/render.py",
+                "geometry-13.json",
+                "solution-13/tests/test_geometry.py",
+                "solution-13/tests/test_render.py"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Documented module --help and render --help exit zero and list actual options. Native check 27 observes fresh help output, and checks 28-30 close it without changing the projected tree.",
+              "evidence": [
+                "frozen-13/evaluation.json",
+                "interactive-13/report.json",
+                "solution-13/README.md"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "All six frozen standard frames have the requested dimensions and printable ASCII/LF only. All 18 native exports, including the two embedded 3D checks, also have bounded rectangular ASCII and exact oracle matches where specified.",
+              "evidence": [
+                "frozen-13/evaluation.json",
+                "interactive-13/report.json"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "The unchanged native 57-check protocol passed in full: modes, camera forward/reverse, literal brackets, zoom, H/?, animation/pause, reset, next seed, export and all three exit paths. The viewport adapter follows source and README; no input repair was applied.",
+              "evidence": [
+                "interactive-13/report.json",
+                "terminal-13-execution.json",
+                "interactive-13/main-transcript.bin"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "state.py:36-43 changes only mode; generation occurs in construction or G. Independent SDK checks preserve the exact tree object through repeated mode changes; native projections and reverse controls agree with the same seed-42 geometry.",
+              "evidence": [
+                "solution-13/ascii_tree/state.py",
+                "solution-13/tests/test_app.py",
+                "geometry-13.json",
+                "interactive-13/report.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial",
+              "reason": "9/12. Across frozen seeds 42 and 137, the flared/shaded trunk and open lower forks read immediately as a tree, with visibly asymmetric crowns and distinct 3D/4D silhouettes. Upper foliage is visually busy: repeated o/*/quote glyphs and parallel twig strokes merge into a near-solid canopy at 80x30, reducing fine branch hierarchy and depth separation. This is an aesthetic limitation, not a geometric failure.",
+              "evidence": [
+                "frozen-13/2d-42.txt",
+                "frozen-13/3d-42.txt",
+                "frozen-13/4d-42.txt",
+                "frozen-13/2d-137.txt",
+                "frozen-13/3d-137.txt",
+                "frozen-13/4d-137.txt",
+                "frozen-13/4d-angle-37.txt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "All six standard mode/seed renders exit zero without TTY, with deterministic bytes and valid frames; the non-TTY viewer test exits cleanly with an actionable render message.",
+              "evidence": [
+                "frozen-13/evaluation.json",
+                "solution-13/tests/test_cli.py"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "All three frozen 2x2 headless frames pass exact-size printable ASCII checks. Native checks 46-48 additionally prove a real 1x1 console export and matching headless oracle.",
+              "evidence": [
+                "frozen-13/2d-tiny.txt",
+                "frozen-13/3d-tiny.txt",
+                "frozen-13/4d-tiny.txt",
+                "interactive-13/report.json"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Native checks 43-51 resize the actual ConPTY from 100x40 to 30x12, then 1x1, then back, preserving the new seed and reset view; every export matches its exact viewport oracle.",
+              "evidence": [
+                "interactive-13/report.json",
+                "interactive-13/oracle-resize-small.txt",
+                "interactive-13/oracle-resize-one.txt",
+                "interactive-13/oracle-resize-restored.txt"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Native checks 52-57 observe Q=0, literal Esc=0 and literal Ctrl+C=130. Each real transcript contains both cursor-show and alternate-screen-leave sequences; no signal-handler or input-mode changes were added by the checker.",
+              "evidence": [
+                "interactive-13/report.json",
+                "interactive-13/main-transcript.bin",
+                "interactive-13/escape-transcript.bin",
+                "interactive-13/ctrl-c-transcript.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Documented unittest discovery exits zero with 52 observed tests in the unchanged frozen SDK evaluator; nonzero test count is recorded.",
+              "evidence": [
+                "frozen-13/evaluation.json",
+                "solution-13/README.md"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "Meaningful tests cover all ten task obligations: all-mode timed determinism and seed variation; rooted finite/tapered graph; exact dimensions/ASCII; nontranslation 3D camera and order-independent crossing/sloped occlusion; orthogonal three-plane 4D and frame change; exact tree identity on mode changes; CLI headless/non-TTY; finite application lifecycle, cleanup and tiny resize. Native behavior was additionally verified by the independent 57-check protocol rather than inferred from mocked tests.",
+              "evidence": [
+                "solution-13/tests/test_model.py",
+                "solution-13/tests/test_geometry.py",
+                "solution-13/tests/test_render.py",
+                "solution-13/tests/test_app.py",
+                "solution-13/tests/test_cli.py",
+                "frozen-13/evaluation.json",
+                "interactive-13/report.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Clear model/geometry/render/state/app/terminal/CLI boundaries, frozen typed value objects, bounded four-order recursion, local RNG, bounded raster/zoom and separate injectable loop/I/O are easy to inspect. CLI validates finite inputs and gives clean errors; exclusive export preserves old files. No external runtime dependency or unexplained asset path is required. Near-plane segment dropping is documented as an approximation.",
+              "evidence": [
+                "solution-13/ascii_tree/model.py",
+                "solution-13/ascii_tree/geometry.py",
+                "solution-13/ascii_tree/render.py",
+                "solution-13/ascii_tree/state.py",
+                "solution-13/ascii_tree/app.py",
+                "solution-13/ascii_tree/terminal.py",
+                "solution-13/ascii_tree/cli.py",
+                "solution-13/pyproject.toml",
+                "solution-13/IMPLEMENTATION_NOTES.md"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "README module, help, render and unittest commands correspond to executed frozen commands. The same documented view command succeeds in native ConPTY with only --export-dir directed to new evidence.",
+              "evidence": [
+                "solution-13/README.md",
+                "frozen-13/evaluation.json",
+                "interactive-13/report.json"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass",
+              "reason": "Python 3.12+ and standard-library-only runtime/tests are accurate. pyproject.toml pins its optional setuptools build backend; running from the project directory needs no package installation. Optional package build/install was not assessed.",
+              "evidence": [
+                "solution-13/README.md",
+                "solution-13/requirements.txt",
+                "solution-13/pyproject.toml",
+                "frozen-13/evaluation.json"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "README.md:55-70 accurately explains growth-distance W, Y/W centering, true XW equations, optional YW/ZW and sequential perspective with near-plane guards. The interface calls this a projection, and the description matches geometry.py and render.py.",
+              "evidence": [
+                "solution-13/README.md",
+                "solution-13/ascii_tree/geometry.py",
+                "solution-13/ascii_tree/render.py",
+                "solution-13/ascii_tree/app.py"
+              ]
+            }
+          ]
+        }
+      ],
+      "gates": {
+        "4d.coordinates": true,
+        "4d.variable_w": true,
+        "4d.rotation_math": true,
+        "4d.projection": true,
+        "reliability.headless": true
+      }
+    },
+    {
+      "id": "solution-14",
+      "quality_score": 98,
+      "accepted": true,
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen identical seed-42 80x30 headless runs are byte-identical; seeded local RNG and immutable geometry agree with the supplied tests.",
+              "evidence": [
+                "frozen-14/2d-42.txt",
+                "frozen-14/2d-42-repeat.txt",
+                "frozen-14/evaluation.json",
+                "solution-14/tests/test_model.py"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Seed 42 and 137 at the same 80x30 dimensions differ; this is geometric variation, also checked by the independent generated-graph comparison.",
+              "evidence": [
+                "frozen-14/2d-42.txt",
+                "frozen-14/2d-137-same-size.txt",
+                "geometry-14.json"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "model.py:47-133 creates a locally seeded curved tapering trunk, connected buttress roots, spatial forks in a local basis, four branch orders and tip foliage. Frozen 2D seeds 42/137 show differing asymmetric crowns, fine branches and a clear heavier base; supplied tests/test_render.py:34-48 verifies an eight-neighbor-connected bare skeleton for three seeds.",
+              "evidence": [
+                "solution-14/ascii_tree/model.py",
+                "solution-14/tests/test_model.py",
+                "solution-14/tests/test_render.py",
+                "frozen-14/2d-42.txt",
+                "frozen-14/2d-137.txt",
+                "geometry-14.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen yaw 0 versus 37 changes the same-seed raster. Native check 7 additionally matches one Right+Up increment to headless output and proves Left+Down restores the frame.",
+              "evidence": [
+                "frozen-14/3d-angle-0.txt",
+                "frozen-14/3d-angle-37.txt",
+                "interactive-14/report.json",
+                "solution-14/ascii_tree/geometry.py"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "model.py:58-65 constructs real XYZ endpoints and exact parent endpoint attachments. SDK checks find 550 positive-length tapered segments, one connected parent-ordered root, finite XYZW, affine XYZ rank 3 and Z range 14.9729940; supplied tests also prove parent acyclicity.",
+              "evidence": [
+                "solution-14/ascii_tree/model.py",
+                "solution-14/tests/test_model.py",
+                "geometry-14.json"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass",
+              "reason": "render.py:40-67 compares minimum finite eye depth per cell and reciprocal-interpolates it along tapered capsules. Segment/leaf depth, order, thickness and tone select shading (116-144). Crossing segments in both orders, swapped depths and sloped depth are meaningful passing tests at tests/test_render.py:83-107.",
+              "evidence": [
+                "solution-14/ascii_tree/render.py",
+                "solution-14/tests/test_render.py",
+                "frozen-14/evaluation.json",
+                "geometry-14.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen XW 0 versus 37 changes the same-seed raster; native checks 12-17 match the 8-degree bracket increment and its inverse exactly to the documented CLI.",
+              "evidence": [
+                "frozen-14/4d-angle-0.txt",
+                "frozen-14/4d-angle-37.txt",
+                "geometry-14.json",
+                "interactive-14/report.json"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "model.py:8-13 defines real XYZW points, reused by the segment graph and leaves. SDK checks verify all 551 listed skeleton endpoints are finite; no replacement 3D model is used in 4D.",
+              "evidence": [
+                "solution-14/ascii_tree/model.py",
+                "geometry-14.json",
+                "solution-14/tests/test_model.py"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "model.py:64 accumulates 0.52 times positive segment length from W=-4.5 at the root. SDK output proves strict W increase on all edges and total range 9.460386874, independently supporting the documented growth-path interpretation.",
+              "evidence": [
+                "solution-14/ascii_tree/model.py",
+                "geometry-14.json",
+                "solution-14/tests/test_model.py"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "geometry.py:11-21 implements the true XW rotation with opposite-signed sine cross terms. Raw SDK rotation_xw is FALSE only because the checker additionally demanded arbitrary |deltaW|>0.1; that failed result and exit 1 are retained. The separate observed-value audit gives formula error 0, norm error 3.55e-15, inverse error 2.22e-16, det=1 and |sin(37)|=0.601815. Supplied norm/inverse/orthogonality/quarter-turn tests also pass. The rubric is met without rerunning or replacing raw status.",
+              "evidence": [
+                "solution-14/ascii_tree/geometry.py",
+                "solution-14/tests/test_geometry.py",
+                "geometry-14.json",
+                "geometry-14-execution.json",
+                "observed-rotation-audit.json",
+                "frozen-14/evaluation.json"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "render.py:93-114 composes rotate_xw then project_4d, followed by Camera.project and terminal aspect scaling; radius scaling carries both perspective factors. geometry.py:24-31 and 46-52 reject nonfinite or near/behind-eye denominators. SDK numerical composition agrees within 1e-10 and both clipping checks pass.",
+              "evidence": [
+                "solution-14/ascii_tree/geometry.py",
+                "solution-14/ascii_tree/render.py",
+                "geometry-14.json",
+                "solution-14/tests/test_geometry.py"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Documented module --help and render --help exit zero and list actual options. Native check 27 observes fresh help output, and checks 28-30 close it without changing the projected tree.",
+              "evidence": [
+                "frozen-14/evaluation.json",
+                "interactive-14/report.json",
+                "solution-14/README.md"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "All six frozen standard frames have the requested dimensions and printable ASCII/LF only. All 18 native exports, including the two embedded 3D checks, also have bounded rectangular ASCII and exact oracle matches where specified.",
+              "evidence": [
+                "frozen-14/evaluation.json",
+                "interactive-14/report.json"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "The unchanged native 57-check protocol passed in full: modes, camera forward/reverse, literal brackets, zoom, H/?, animation/pause, reset, next seed, export and all three exit paths. The viewport adapter follows source and README; no input repair was applied.",
+              "evidence": [
+                "interactive-14/report.json",
+                "terminal-14-execution.json",
+                "interactive-14/main-transcript.bin"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "state.py:25-27 replaces only RenderOptions for a mode change, while G alone replaces the graph. SDK identity checks and passing tests/test_state.py:24 prove this; native mode exports and exact camera round trip retain seed 42.",
+              "evidence": [
+                "solution-14/ascii_tree/state.py",
+                "solution-14/tests/test_state.py",
+                "geometry-14.json",
+                "interactive-14/report.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 10,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 10,
+              "max": 12,
+              "status": "partial",
+              "reason": "10/12. Frozen seeds 42/137 show recognizable irregular broadleaf crowns, open branching, a heavier flared root/base and lighter foliage punctuation that leaves branch paths legible. Rotation changes overlapping limb groups, and XW makes a coherent deformed silhouette. Fine branches still become angular parallel bundles and some crown patches form similarly sized horizontal tiers; 4D framing leaves a large empty lower margin, reducing visual presence.",
+              "evidence": [
+                "frozen-14/2d-42.txt",
+                "frozen-14/3d-42.txt",
+                "frozen-14/4d-42.txt",
+                "frozen-14/2d-137.txt",
+                "frozen-14/3d-137.txt",
+                "frozen-14/4d-137.txt",
+                "frozen-14/4d-angle-37.txt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "All six standard mode/seed renders exit zero without TTY, with deterministic bytes and valid frames; the non-TTY viewer test exits cleanly with an actionable render message.",
+              "evidence": [
+                "frozen-14/evaluation.json",
+                "solution-14/tests/test_cli.py"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "All three frozen 2x2 headless frames pass exact-size printable ASCII checks. Native checks 46-48 additionally prove a real 1x1 console export and matching headless oracle.",
+              "evidence": [
+                "frozen-14/2d-tiny.txt",
+                "frozen-14/3d-tiny.txt",
+                "frozen-14/4d-tiny.txt",
+                "interactive-14/report.json"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Native checks 43-51 resize the actual ConPTY from 100x40 to 30x12, then 1x1, then back, preserving the new seed and reset view; every export matches its exact viewport oracle.",
+              "evidence": [
+                "interactive-14/report.json",
+                "interactive-14/oracle-resize-small.txt",
+                "interactive-14/oracle-resize-one.txt",
+                "interactive-14/oracle-resize-restored.txt"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Native checks 52-57 observe Q=0, literal Esc=0 and literal Ctrl+C=130. Each real transcript contains both cursor-show and alternate-screen-leave sequences; no signal-handler or input-mode changes were added by the checker.",
+              "evidence": [
+                "interactive-14/report.json",
+                "interactive-14/main-transcript.bin",
+                "interactive-14/escape-transcript.bin",
+                "interactive-14/ctrl-c-transcript.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Documented unittest discovery exits zero with 38 observed tests in the unchanged frozen SDK evaluator; nonzero test count is recorded.",
+              "evidence": [
+                "frozen-14/evaluation.json",
+                "solution-14/README.md"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "Meaningful coverage addresses all ten obligations: seeded graph/frame determinism and variation, finite positive connected graph, exact sizes and ASCII, connected 2D raster, 3D yaw/pitch and reciprocal-depth crossing/swap tests, 4D norm/inverse/matrix/W/angle effects, exact mode/tree identity, subprocess CLI/non-TTY and simulated startup/resize/cleanup including minimal dimensions. Simulation is clearly labeled and supplemented here by independent native 57/57 checks.",
+              "evidence": [
+                "solution-14/tests/test_model.py",
+                "solution-14/tests/test_geometry.py",
+                "solution-14/tests/test_render.py",
+                "solution-14/tests/test_state.py",
+                "solution-14/tests/test_cli.py",
+                "frozen-14/evaluation.json",
+                "interactive-14/report.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Small model/geometry/render/state/terminal/CLI modules use frozen typed point/segment/tree/options values, local RNG and bounded recursion/segment budget. The raster visits clipped viewport boxes, validates limits/finite values and separates state from terminal transport. Context-managed cleanup, exclusive export and pinned optional build backend are understandable and covered. Whole-segment near-plane dropping and untested Linux/install paths are explicitly documented.",
+              "evidence": [
+                "solution-14/ascii_tree/model.py",
+                "solution-14/ascii_tree/geometry.py",
+                "solution-14/ascii_tree/render.py",
+                "solution-14/ascii_tree/state.py",
+                "solution-14/ascii_tree/terminal.py",
+                "solution-14/ascii_tree/cli.py",
+                "solution-14/pyproject.toml",
+                "solution-14/IMPLEMENTATION_NOTES.md"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "README module, help, render and unittest commands correspond to executed frozen commands. The same documented view command succeeds in native ConPTY with only --export-dir directed to new evidence.",
+              "evidence": [
+                "solution-14/README.md",
+                "frozen-14/evaluation.json",
+                "interactive-14/report.json"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass",
+              "reason": "Python 3.12+ and standard-library-only runtime/tests are accurate. pyproject.toml pins its optional setuptools build backend; running from the project directory needs no package installation. Optional package build/install was not assessed.",
+              "evidence": [
+                "solution-14/README.md",
+                "solution-14/requirements.txt",
+                "solution-14/pyproject.toml",
+                "frozen-14/evaluation.json"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "README.md:65-90 accurately describes a shared immutable XYZW graph, W=-4.5+growth distance, the XW sine/cosine equations and 24/(24-w) perspective followed by the 3D camera. The norm/determinant and projection wording match the source and tests.",
+              "evidence": [
+                "solution-14/README.md",
+                "solution-14/ascii_tree/geometry.py",
+                "solution-14/ascii_tree/render.py",
+                "solution-14/ascii_tree/state.py"
+              ]
+            }
+          ]
+        }
+      ],
+      "gates": {
+        "4d.coordinates": true,
+        "4d.variable_w": true,
+        "4d.rotation_math": true,
+        "4d.projection": true,
+        "reliability.headless": true
+      }
+    }
+  ]
+}

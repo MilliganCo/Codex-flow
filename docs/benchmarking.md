@@ -1,5 +1,13 @@
 # Benchmarking
 
+Latest [case06](../benchmarks/case06/README.md) is an explicitly scoped A/B repeat
+of the unchanged task/evaluator/rubric and 1500-second/80-request limit. Both fresh
+artifacts were accepted: solo 97, updated Flow 98; the difference is one aesthetic
+point. Both passed headless 25/25 and native 57/57. Raw auxiliary geometry failures
+and the separate arithmetic audit are retained. The new B guard defers calibration,
+so this is not a measured active-Harness optimizer comparison. Historical case05
+97/89 and its probes, timeouts and source remain unchanged.
+
 The benchmark is a reproducible case study, not a promise of speed. Use the same frozen task, scaffold commit, root model/effort, dependencies, budgets and independent evaluator across groups. Freeze hashes **before** executors begin and preserve every condition change under a new experiment ID.
 
 | Group | Native helpers | Mercury | Optimization |

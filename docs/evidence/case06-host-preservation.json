@@ -1,0 +1,11 @@
+{
+  "comparison": "protected pre-vnext backup versus post-case06 host",
+  "non_project_config_semantics_unchanged": true,
+  "project_registration_section_changed": true,
+  "installed_skill_agents_manifest_files_checked": 15,
+  "installed_skill_agents_manifest_files_unchanged": true,
+  "config_raw_bytes_unchanged": false,
+  "auth_files_read_or_copied": false,
+  "host_files_written": false,
+  "limitation": "Project registrations can be added by native setup. This comparison does not attribute the writer and does not restore settings."
+}

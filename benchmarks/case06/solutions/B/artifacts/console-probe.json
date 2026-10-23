@@ -1,0 +1,17 @@
+{
+  "platform": "win32",
+  "normal_exit": 0,
+  "modes_before": [
+    503,
+    7
+  ],
+  "modes_after_normal": [
+    503,
+    7
+  ],
+  "modes_after_exception": [
+    503,
+    7
+  ],
+  "passed": true
+}

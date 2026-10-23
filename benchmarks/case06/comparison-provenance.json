@@ -1,0 +1,31 @@
+{
+  "kind": "typeset actual frozen headless frames; not interactive screenshots",
+  "frames": {
+    "A/2d": {
+      "sha256": "33f45b68d8b71b880800dc9b1f45610142006fb390278524a29a0880b258e28d",
+      "file": "frozen-13/2d-42.txt"
+    },
+    "A/3d": {
+      "sha256": "031de8409f418e5dc0725d9a8b30af3c839346419f9703fc08ba3eae0fb0143b",
+      "file": "frozen-13/3d-42.txt"
+    },
+    "A/4d": {
+      "sha256": "7701a1a4cc9fe0bf9c563df7de7ed5996cf324c40f80d6a7b7a917d7e3ed9489",
+      "file": "frozen-13/4d-42.txt"
+    },
+    "B/2d": {
+      "sha256": "b5bc2549fc258278563a02d613d1563d1166f04f6c7213bf3c6ddbb305a41daf",
+      "file": "frozen-14/2d-42.txt"
+    },
+    "B/3d": {
+      "sha256": "c634f4db713d2577de2ad2f7e4a6fc4f32a5f1bd6e2dfb1ac3dc0fa724abe145",
+      "file": "frozen-14/3d-42.txt"
+    },
+    "B/4d": {
+      "sha256": "12b5e3facf5d6a905da4d4495529656a19df80790db14ecbb5b9b7e01dfec237",
+      "file": "frozen-14/4d-42.txt"
+    }
+  },
+  "app_execution_or_import": false,
+  "image_sha256": "07bfe360fceb40b1af79078de8b7c8436b99862a7e1415569039f33226362977"
+}

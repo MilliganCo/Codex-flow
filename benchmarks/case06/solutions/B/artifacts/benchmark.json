@@ -1,0 +1,27 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows",
+  "dimensions": [
+    100,
+    40
+  ],
+  "seed": 42,
+  "frames_per_mode": 12,
+  "segments": 550,
+  "leaves": 1042,
+  "generation_ms": 14.162,
+  "render": {
+    "2d": {
+      "median_ms": 24.946,
+      "max_ms": 32.235
+    },
+    "3d": {
+      "median_ms": 23.396,
+      "max_ms": 28.826
+    },
+    "4d": {
+      "median_ms": 25.525,
+      "max_ms": 34.217
+    }
+  }
+}

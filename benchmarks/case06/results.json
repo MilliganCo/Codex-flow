@@ -1,0 +1,1669 @@
+{
+  "schema": 1,
+  "experiment_id": "tree-case-20261023-06",
+  "created_utc": "2026-10-23T18:54:02.990741+00:00",
+  "task_sha256": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+  "scaffold_git_sha": "f10b4a349b4349d1942efd672c574f75081b859a",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "executed_raw_runtime_sha256": {
+    "benchmark.py": "8ecfeaa225b0c23ec0fba09c7ede91ca5fc6026a786e3b1b8b576d4613fedc92",
+    "cli.py": "2902103a560200a641ebf9286be121c1ca629ea0dd8738c2d56a03cd3e5b6775",
+    "config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "native.py": "549d38590e4c7fba405d8e74ca7cfbba84278e9f4df23dd084a7be7a90734fd0",
+    "native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "subscription.py": "96c31dadd43b36eb1e736be70c81fb1060d7644729a57b2ceab0b56420993cd8",
+    "telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1"
+  },
+  "runtime_publication_equivalence": {
+    "source_json_sha256": "64ce909bee5d786cb890164227ac43978068641bd9bc92ca8f56ab53a203f5a6",
+    "frozen_runtime_source_commit": "b33ad9cdba0b8fde7efe75ef2572eedc0667c472",
+    "private_publication_commit": "11ee18d1996ab54b99e900f8db30a7361c0c2c33",
+    "files": {
+      "codex-flow.py": {
+        "executed_raw_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+        "published_blob_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+        "normalized_lf_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/__init__.py": {
+        "executed_raw_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+        "published_blob_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+        "normalized_lf_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/benchmark.py": {
+        "executed_raw_sha256": "8ecfeaa225b0c23ec0fba09c7ede91ca5fc6026a786e3b1b8b576d4613fedc92",
+        "published_blob_sha256": "8ecfeaa225b0c23ec0fba09c7ede91ca5fc6026a786e3b1b8b576d4613fedc92",
+        "normalized_lf_sha256": "8ecfeaa225b0c23ec0fba09c7ede91ca5fc6026a786e3b1b8b576d4613fedc92",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/cli.py": {
+        "executed_raw_sha256": "2902103a560200a641ebf9286be121c1ca629ea0dd8738c2d56a03cd3e5b6775",
+        "published_blob_sha256": "2902103a560200a641ebf9286be121c1ca629ea0dd8738c2d56a03cd3e5b6775",
+        "normalized_lf_sha256": "2902103a560200a641ebf9286be121c1ca629ea0dd8738c2d56a03cd3e5b6775",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/config.py": {
+        "executed_raw_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+        "published_blob_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+        "normalized_lf_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/contracts.py": {
+        "executed_raw_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+        "published_blob_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+        "normalized_lf_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/doctor.py": {
+        "executed_raw_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+        "published_blob_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+        "normalized_lf_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/harness.py": {
+        "executed_raw_sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+        "published_blob_sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+        "normalized_lf_sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/mercury.py": {
+        "executed_raw_sha256": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+        "published_blob_sha256": "d9b534f213b39a28bdbe916f2ecdfec0ca83475459e041fd086f75bc8e51d1d6",
+        "normalized_lf_sha256": "d9b534f213b39a28bdbe916f2ecdfec0ca83475459e041fd086f75bc8e51d1d6",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/native.py": {
+        "executed_raw_sha256": "549d38590e4c7fba405d8e74ca7cfbba84278e9f4df23dd084a7be7a90734fd0",
+        "published_blob_sha256": "549d38590e4c7fba405d8e74ca7cfbba84278e9f4df23dd084a7be7a90734fd0",
+        "normalized_lf_sha256": "549d38590e4c7fba405d8e74ca7cfbba84278e9f4df23dd084a7be7a90734fd0",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/native_metadata.py": {
+        "executed_raw_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+        "published_blob_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+        "normalized_lf_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/policy.py": {
+        "executed_raw_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+        "published_blob_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+        "normalized_lf_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/subscription.py": {
+        "executed_raw_sha256": "96c31dadd43b36eb1e736be70c81fb1060d7644729a57b2ceab0b56420993cd8",
+        "published_blob_sha256": "96c31dadd43b36eb1e736be70c81fb1060d7644729a57b2ceab0b56420993cd8",
+        "normalized_lf_sha256": "96c31dadd43b36eb1e736be70c81fb1060d7644729a57b2ceab0b56420993cd8",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/telemetry.py": {
+        "executed_raw_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+        "published_blob_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+        "normalized_lf_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+        "normalized_lf_equal": true
+      }
+    },
+    "runtime_snapshot_sha256": "4f133c085f432591897f7d47690ab5dec45b9d1ea0ccbb7c2bd2dc93621c320d",
+    "launcher_and_all_13_modules_covered": true,
+    "claim": "Python source content matches the explicit publication commit after LF normalization; executed raw SHAs remain unchanged",
+    "git_blob_attestation": "External fixed-commit blob attestation supplied; this helper validates snapshot/hash contracts without invoking Git",
+    "raw_git_blob_byte_identity_claimed": false,
+    "latest_main_equivalence_claimed": false,
+    "post_freeze_boundary": "Only the explicit case06 frozen runtime is represented; case05 and later main changes are not relabeled as this execution"
+  },
+  "requested_root_model": "gpt-6.1-sol",
+  "requested_root_effort": "xhigh",
+  "codex_version": "codex-cli 0.163.0-alpha.11.1",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "hardware": {
+    "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16,
+    "ram_bytes": 68635971584,
+    "machine": "AMD64"
+  },
+  "timeout_s_per_arm": 1500,
+  "model_request_budget_per_arm": 80,
+  "order": [
+    [
+      "A",
+      "B"
+    ]
+  ],
+  "selected_groups": [
+    "A",
+    "B"
+  ],
+  "flow_treatment": {
+    "harness": "enabled guard; calibration deferred; zero automatic online probes",
+    "helper": "bounded readonly evidence; instruction requests concurrent root implementation",
+    "phase_reserve": "final 20 percent planning instruction; not independently enforced"
+  },
+  "terminal_original_process_identity_guards_passed": true,
+  "original_process_identity_guards": {
+    "A": {
+      "original_process_dead": true,
+      "basis": "original_pid_absent",
+      "unique_monitored_identity_available": true
+    },
+    "B": {
+      "original_process_dead": true,
+      "basis": "original_pid_reused",
+      "unique_monitored_identity_available": true
+    }
+  },
+  "evaluated_source_binding": {
+    "source_hashes_json_sha256": "ba9124a6f2ee900b430708b850f1540039e6245649f0ac1c4c7e81db055b7f4d",
+    "all_filtered_eligible_files_match_evaluated_snapshot": true,
+    "raw_byte_sha256_not_normalized": true
+  },
+  "pid_guard_scope": "Original A/B root process identities only; numeric PID reuse requires distinct current creation FILETIME; no names, signals, descendants or monitor liveness inference",
+  "historical_case05_reference": {
+    "experiment_id": "tree-case-20261023-05",
+    "quality_scores": {
+      "A": 97,
+      "B": 89
+    },
+    "runtime_prefix": "343d395",
+    "same_runtime_claimed": false,
+    "pooled_with_case06": false
+  },
+  "reviewer_declared_blind_complete": true,
+  "rubric_criteria": 26,
+  "critical_gates": [
+    "4d.coordinates",
+    "4d.variable_w",
+    "4d.rotation_math",
+    "4d.projection",
+    "reliability.headless"
+  ],
+  "strict_profile_and_history_isolation": "degraded; shared auth/rollouts and historical metadata import possible",
+  "hard_helper_readonly_depth": "instruction-only; not verified by this report",
+  "causal_module_contribution": "not established by this single case",
+  "speedup_percent": null,
+  "raw_evidence_boundary": "Local-only native request bodies/private instructions, native/auth state, journals/databases and raw stderr; common frozen task brief is published in protocol; no original source changes",
+  "arms": {
+    "A": {
+      "anonymous_review_id": "solution-13",
+      "execution_status": "completed_unverified",
+      "native_exit_code": 0,
+      "total_arm_s": 1444.484,
+      "deadline_censored": false,
+      "orchestration_frontload_s": 0.062,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 97,
+      "artifact_accepted": true,
+      "critical_gates": {
+        "4d.coordinates": "pass",
+        "4d.variable_w": "pass",
+        "4d.rotation_math": "pass",
+        "4d.projection": "pass",
+        "reliability.headless": "pass"
+      },
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        }
+      ],
+      "native_delegation": {
+        "reported_orchestration_status": null,
+        "reported_delegation_evidence": "not_exposed",
+        "reported_multi_agent_verified": false,
+        "native_child_count": null,
+        "parent_link_verified": false,
+        "child_model_metadata": [],
+        "peak_concurrent_agents": 1,
+        "requested_effort_is_not_identity_proof": true,
+        "hard_readonly_or_depth_verified": false
+      },
+      "usage": {
+        "native_requests_total_including_probes": 43,
+        "request_records_observed": 43,
+        "completed_requests_observed": 43,
+        "censored_or_incomplete_requests": 0,
+        "phase_usage_evidence": [
+          {
+            "phase": "main",
+            "request_records_available": true,
+            "requests": 43,
+            "completed_requests": 43
+          }
+        ],
+        "all_phase_request_evidence_available": true,
+        "aggregate_usage": {
+          "input_tokens": 2558725,
+          "output_tokens": 42540,
+          "total_tokens": 2601265,
+          "cached_tokens": 637440,
+          "reasoning_tokens": 11057
+        },
+        "known_completed_usage_lower_bound": {
+          "input_tokens": 2558725,
+          "output_tokens": 42540,
+          "total_tokens": 2601265,
+          "cached_tokens": 637440,
+          "reasoning_tokens": 11057
+        },
+        "usage_known_completed_requests": 43,
+        "requested_profiles": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "requests": 43
+          }
+        ],
+        "actual_response_models": [
+          "gpt-6.1-sol"
+        ],
+        "money_boundary": "Native subscription usage is not actual API billing; unknown charges/quota deltas remain null"
+      },
+      "root_cli_usage": {
+        "input_tokens": 2558725,
+        "output_tokens": 42540,
+        "cached_tokens": 637440
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "mercury_successful_calls": 0,
+      "harness_inspired_probes": 0,
+      "upstream_harness2_calls": 0,
+      "harness_runtime_guard": {
+        "status": "disabled",
+        "application_quality_eligible": null,
+        "calibration_deferred": false,
+        "active_optimizer_benefit_proven": false
+      },
+      "mercury_reported_usage": {},
+      "harness_adoption": {
+        "eligible": null,
+        "adopted": null,
+        "rollback_recorded": false,
+        "rolled_back": null
+      },
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 25,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "pass",
+        "tests_run": 52,
+        "test_errors": null,
+        "normalization_to_100": false
+      },
+      "supplemental_cli": {
+        "status": "not_run",
+        "frames": null,
+        "reason": "No supplemental CLI run supplied; frozen CLI evidence remains authoritative"
+      },
+      "supplement_does_not_amend_frozen": true,
+      "independent_geometry": {
+        "status": null,
+        "seeds": []
+      },
+      "independent_native": {
+        "status": null,
+        "passed": 0,
+        "failed": 0,
+        "nonpass_checks": [
+          {
+            "name": "native startup marker",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode2d dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode2d printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode2d exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode3d dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode3d printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode3d oracle and embedded Right Up Left Down round trip",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode4d dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode4d printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode4d exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "three distinct mode projections same seed",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-plus dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-plus printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-plus exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-reverse dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-reverse printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-reverse exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "camera4d dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "camera4d printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "camera4d exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-plus dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-plus printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-plus exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-reverse dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-reverse printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-reverse exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "help marker in fresh console output",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "help-closed dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "help-closed printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "help-closed exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "animation-paused dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "animation-paused printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "animation changed rotated frame",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "still-paused dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "still-paused printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "paused frame remains identical",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "reset dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "reset printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "reset exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "new-seed dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "new-seed printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "new-seed exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-small dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-small printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-small exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-one dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-one printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-one exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-restored dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-restored printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-restored exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Q actual exit code",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Q cursor and alternate screen restored",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Esc actual exit code",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Esc cursor and alternate screen restored",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Ctrl+C actual exit code",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Ctrl+C cursor and alternate screen restored",
+            "status": null,
+            "type": null,
+            "reason": null
+          }
+        ],
+        "visible_terminal_font_assessed": false
+      },
+      "root_probe_pid_samples": {
+        "main": {
+          "samples": 143,
+          "input_rows": 144,
+          "state_counts": {
+            "alive": 143,
+            "dead": 1
+          },
+          "process_status_counts": {
+            "alive": 143,
+            "dead": 1
+          },
+          "sample_status_counts": {
+            "observed": 143,
+            "unavailable": 1
+          },
+          "invalid_observed_numeric_rows": 0,
+          "first_observed_utc": "2026-10-23T18:54:21.016370+00:00",
+          "last_observed_utc": "2026-10-23T19:18:01.185812+00:00",
+          "max_observed_working_set_bytes": 158629888,
+          "max_reported_peak_working_set_bytes": 670556160,
+          "first_observed_cumulative_cpu_s": 16.8125,
+          "last_observed_cumulative_cpu_s": 49.203125,
+          "observed_cpu_delta_s": 32.390625,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case06-A-source.zip",
+        "sha256": "93ff791061e80de535af315a94ac0f0f9c73cb2a0776c0de99a29731d547b3c4",
+        "archive_bytes": 48674,
+        "file_count": 35,
+        "archive_version": 1,
+        "packaging_filter_version": 2,
+        "local_only": true
+      }
+    },
+    "B": {
+      "anonymous_review_id": "solution-14",
+      "execution_status": "completed_unverified",
+      "native_exit_code": 0,
+      "total_arm_s": 1414.0,
+      "deadline_censored": false,
+      "orchestration_frontload_s": 1.266,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 98,
+      "artifact_accepted": true,
+      "critical_gates": {
+        "4d.coordinates": "pass",
+        "4d.variable_w": "pass",
+        "4d.rotation_math": "pass",
+        "4d.projection": "pass",
+        "reliability.headless": "pass"
+      },
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 10,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 10,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        }
+      ],
+      "native_delegation": {
+        "reported_orchestration_status": "verified",
+        "reported_delegation_evidence": "native_parent_link_and_usage_metadata",
+        "reported_multi_agent_verified": true,
+        "native_child_count": 1,
+        "parent_link_verified": true,
+        "child_model_metadata": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "depth": 1,
+            "tokens_used": 84971
+          }
+        ],
+        "peak_concurrent_agents": null,
+        "requested_effort_is_not_identity_proof": true,
+        "hard_readonly_or_depth_verified": false
+      },
+      "usage": {
+        "native_requests_total_including_probes": 36,
+        "request_records_observed": 36,
+        "completed_requests_observed": 36,
+        "censored_or_incomplete_requests": 0,
+        "phase_usage_evidence": [
+          {
+            "phase": "main",
+            "request_records_available": true,
+            "requests": 36,
+            "completed_requests": 36
+          }
+        ],
+        "all_phase_request_evidence_available": true,
+        "aggregate_usage": {
+          "input_tokens": 1813084,
+          "output_tokens": 49154,
+          "total_tokens": 1862238,
+          "cached_tokens": 229504,
+          "reasoning_tokens": 9375
+        },
+        "known_completed_usage_lower_bound": {
+          "input_tokens": 1813084,
+          "output_tokens": 49154,
+          "total_tokens": 1862238,
+          "cached_tokens": 229504,
+          "reasoning_tokens": 9375
+        },
+        "usage_known_completed_requests": 36,
+        "requested_profiles": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "requests": 32
+          },
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "requests": 4
+          }
+        ],
+        "actual_response_models": [
+          "gpt-6.1-sol"
+        ],
+        "money_boundary": "Native subscription usage is not actual API billing; unknown charges/quota deltas remain null"
+      },
+      "root_cli_usage": {
+        "input_tokens": 1703771,
+        "output_tokens": 42127,
+        "cached_tokens": 229504
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "mercury_successful_calls": 1,
+      "harness_inspired_probes": 0,
+      "upstream_harness2_calls": 0,
+      "harness_runtime_guard": {
+        "status": "deferred",
+        "application_quality_eligible": false,
+        "calibration_deferred": true,
+        "active_optimizer_benefit_proven": false
+      },
+      "mercury_reported_usage": {
+        "cost": 0,
+        "input_tokens": 144,
+        "output_tokens": 1
+      },
+      "harness_adoption": {
+        "eligible": null,
+        "adopted": false,
+        "rollback_recorded": false,
+        "rolled_back": null
+      },
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 25,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "pass",
+        "tests_run": 38,
+        "test_errors": null,
+        "normalization_to_100": false
+      },
+      "supplemental_cli": {
+        "status": "not_run",
+        "frames": null,
+        "reason": "No supplemental CLI run supplied; frozen CLI evidence remains authoritative"
+      },
+      "supplement_does_not_amend_frozen": true,
+      "independent_geometry": {
+        "status": null,
+        "seeds": []
+      },
+      "independent_native": {
+        "status": null,
+        "passed": 0,
+        "failed": 0,
+        "nonpass_checks": [
+          {
+            "name": "native startup marker",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode2d dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode2d printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode2d exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode3d dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode3d printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode3d oracle and embedded Right Up Left Down round trip",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode4d dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode4d printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "mode4d exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "three distinct mode projections same seed",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-plus dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-plus printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-plus exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-reverse dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-reverse printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "xw-reverse exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "camera4d dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "camera4d printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "camera4d exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-plus dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-plus printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-plus exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-reverse dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-reverse printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "zoom-reverse exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "help marker in fresh console output",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "help-closed dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "help-closed printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "help-closed exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "animation-paused dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "animation-paused printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "animation changed rotated frame",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "still-paused dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "still-paused printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "paused frame remains identical",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "reset dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "reset printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "reset exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "new-seed dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "new-seed printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "new-seed exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-small dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-small printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-small exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-one dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-one printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-one exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-restored dimensions",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-restored printable ASCII rectangular LF",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "resize-restored exact headless oracle",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Q actual exit code",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Q cursor and alternate screen restored",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Esc actual exit code",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Esc cursor and alternate screen restored",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Ctrl+C actual exit code",
+            "status": null,
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "Ctrl+C cursor and alternate screen restored",
+            "status": null,
+            "type": null,
+            "reason": null
+          }
+        ],
+        "visible_terminal_font_assessed": false
+      },
+      "root_probe_pid_samples": {
+        "main": {
+          "samples": 140,
+          "input_rows": 144,
+          "state_counts": {
+            "alive": 140,
+            "dead": 4
+          },
+          "process_status_counts": {
+            "alive": 140,
+            "dead": 4
+          },
+          "sample_status_counts": {
+            "observed": 140,
+            "unavailable": 4
+          },
+          "invalid_observed_numeric_rows": 0,
+          "first_observed_utc": "2026-10-23T18:54:21.016370+00:00",
+          "last_observed_utc": "2026-10-23T19:17:31.176962+00:00",
+          "max_observed_working_set_bytes": 206569472,
+          "max_reported_peak_working_set_bytes": 671465472,
+          "first_observed_cumulative_cpu_s": 15.859375,
+          "last_observed_cumulative_cpu_s": 54.421875,
+          "observed_cpu_delta_s": 38.5625,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case06-B-source.zip",
+        "sha256": "ecaed6c6816eb5f4dad873bd58c80a8caf47964597238f2c2b7929fbcc305a04",
+        "archive_bytes": 35170,
+        "file_count": 30,
+        "archive_version": 1,
+        "packaging_filter_version": 2,
+        "local_only": true
+      }
+    }
+  }
+}

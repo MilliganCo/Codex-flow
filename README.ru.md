@@ -64,14 +64,16 @@ Gateway суммирует usage только при полном заверше
 
 ## Запуск принятых демо
 
-![Реальные ASCII-кадры solo case05 в 2D, 3D и 4D](benchmarks/case05/preview.png)
+Независимый [повтор case06](benchmarks/case06/README.ru.md) сохранил дословное задание, оценщик, рубрику, Sol XHigh и лимиты 1500 секунд/80 запросов. После удаления неподтверждённой калибровки и переноса рабочих артефактов, документации и проверок на более ранний этап **solo получил 97, обновлённый Flow 98**. Оба завершились и прошли 57/57 реальных терминальных проверок. Один балл разницы относится только к эстетике. Время процессов — 1444,484/1414,000 с, запросы — 43/36. У Flow подтверждены один помощник и один бесплатный Mercury-вызов; guard Harness² отложил калибровку, онлайн-проб нет. Один повтор не доказывает универсальное ускорение, пользу активного оптимизатора или экономию квоты. Сохранены [разбор причин](docs/decisions/0002-remove-proxy-calibration-prefix.md) и [неизменённые новые исходники](benchmarks/case06/solutions/README.ru.md).
 
-Это оформленные CLI-экспорты принятого A из case05, без GUI-снимка и заявления об ускорении. Доступны все четыре [замороженных приложения](benchmarks/case05/solutions/README.ru.md) с описанными дефектами. Отдельные поддерживаемые [демо case02](examples/ascii-tree/README.ru.md) проходят Windows/Ubuntu CI.
+![Реальные ASCII-кадры solo и Flow case06 в 2D, 3D и 4D](benchmarks/case06/comparison.png)
+
+Это шесть реальных headless-экспортов принятых A/B case06, оформленных без повторного запуска или исправления приложений. Это не снимок интерактивного окна. Все четыре [приложения case05](benchmarks/case05/solutions/README.ru.md) сохранены с описанными дефектами. Отдельные поддерживаемые [демо case02](examples/ascii-tree/README.ru.md) проходят Windows/Ubuntu CI.
 
 [Анимация настоящего 4D-поворота XW](benchmarks/case05/rotation.gif) получена после оценки из неизменённого case05 A.
 
 ```powershell
-Push-Location benchmarks/case05/solutions/A
+Push-Location benchmarks/case06/solutions/B
 python -m ascii_tree view --seed 42 --mode 4d
 Pop-Location
 ```

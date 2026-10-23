@@ -1,0 +1,134 @@
+{
+  "solution_id": 13,
+  "checks": [
+    {
+      "id": "finite_xyzw",
+      "passed": true,
+      "vertices": 3377,
+      "segments": 3376
+    },
+    {
+      "id": "positive_lengths_and_radii",
+      "passed": true
+    },
+    {
+      "id": "single_root_connected_parent_graph",
+      "passed": true,
+      "roots": 1
+    },
+    {
+      "id": "nonplanar_xyz_rank_three",
+      "passed": true,
+      "rank": 3,
+      "xyz_ranges": [
+        12.845600045119316,
+        14.036551104275098,
+        13.813376500467497
+      ]
+    },
+    {
+      "id": "variable_w_growth",
+      "passed": true,
+      "w_range": 8.26593498902335
+    },
+    {
+      "id": "deterministic_graph",
+      "passed": true
+    },
+    {
+      "id": "rotation_xw",
+      "passed": false,
+      "orthogonality_error": 0.0,
+      "determinant": 1.0,
+      "point_in": [
+        1.3,
+        -2.1,
+        0.7,
+        3.8
+      ],
+      "point_out": [
+        -1.2486709249163028,
+        -2.1,
+        0.7,
+        3.817174468277375
+      ]
+    },
+    {
+      "id": "rotation_yw",
+      "passed": true,
+      "orthogonality_error": 0.0,
+      "determinant": 1.0,
+      "point_in": [
+        1.3,
+        -2.1,
+        0.7,
+        3.8
+      ],
+      "point_out": [
+        1.3,
+        -3.9640316590770985,
+        0.7,
+        1.7710033895604111
+      ]
+    },
+    {
+      "id": "rotation_zw",
+      "passed": true,
+      "orthogonality_error": 0.0,
+      "determinant": 1.0,
+      "point_in": [
+        1.3,
+        -2.1,
+        0.7,
+        3.8
+      ],
+      "point_out": [
+        1.3,
+        -2.1,
+        -1.7278522309446784,
+        3.4560854543861463
+      ]
+    },
+    {
+      "id": "safe_4d_perspective",
+      "passed": true
+    },
+    {
+      "id": "sequential_4d_3d_2d",
+      "passed": true,
+      "expected": [
+        43.09907239545454,
+        13.16547233321739,
+        28.57217352300834
+      ],
+      "actual": [
+        43.09907239545454,
+        13.16547233321739,
+        28.57217352300834
+      ]
+    },
+    {
+      "id": "safe_3d_perspective",
+      "passed": true
+    },
+    {
+      "id": "mode_switch_preserves_model",
+      "passed": true
+    },
+    {
+      "id": "zbuffer_nearest_order_independent",
+      "passed": true
+    },
+    {
+      "id": "xw_changes_actual_raster",
+      "passed": true,
+      "sha256": [
+        "2c0794ef4935545b3af883151bca79d9d8d04b41dcd300a793a2b02dc7064324",
+        "48449332561b5851787ea102da90a62ce6d545aa43b1336855822f22c99938e0"
+      ]
+    }
+  ],
+  "complete": true,
+  "repairs": false,
+  "passed": false
+}

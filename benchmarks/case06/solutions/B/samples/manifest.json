@@ -1,0 +1,102 @@
+[
+  {
+    "file": "seed42-2d.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "2d",
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4d": 0.0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0,
+      "foliage": true
+    },
+    "segments": 550,
+    "leaves": 1042,
+    "bytes": 4040,
+    "sha256": "7e517d70844467f92db0df47784ed6ebd8a702da631b79eb619cca96f4b29420"
+  },
+  {
+    "file": "seed42-3d.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "3d",
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4d": 0.0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0,
+      "foliage": true
+    },
+    "segments": 550,
+    "leaves": 1042,
+    "bytes": 4040,
+    "sha256": "c4a2a70142bfb25eae5d40c9165e7812624ba868179c0af3c29a99f135f8c905"
+  },
+  {
+    "file": "seed42-4d-xw000.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "4d",
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4d": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0,
+      "foliage": true
+    },
+    "segments": 550,
+    "leaves": 1042,
+    "bytes": 4040,
+    "sha256": "22777b996577aec3c43a8af8ab0e24037146075ad838e88c7c0c52288b6c0d8a"
+  },
+  {
+    "file": "seed42-4d-xw035.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "4d",
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4d": 35,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0,
+      "foliage": true
+    },
+    "segments": 550,
+    "leaves": 1042,
+    "bytes": 4040,
+    "sha256": "331dff7fea20a438f366cc89ddf059a1cecdebd10db2fd48191cdfdc972cf082"
+  },
+  {
+    "file": "seed7-3d.txt",
+    "seed": 7,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "3d",
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4d": 0.0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0,
+      "foliage": true
+    },
+    "segments": 475,
+    "leaves": 909,
+    "bytes": 4040,
+    "sha256": "e0bdcc441f57e01715f092377ae0597a5b06aee88e23f700e639d2169aba5398"
+  }
+]

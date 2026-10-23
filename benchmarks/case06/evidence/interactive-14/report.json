@@ -1,0 +1,1246 @@
+{
+  "solution_id": 14,
+  "protocol": "conpty-protocol.md / fixed 57",
+  "expected_checks": 57,
+  "checks": [
+    {
+      "number": 1,
+      "name": "native startup marker",
+      "passed": true
+    },
+    {
+      "number": 2,
+      "name": "mode2d dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-2d-0001.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 3,
+      "name": "mode2d printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-2d-0001.txt"
+    },
+    {
+      "number": 4,
+      "name": "mode2d exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-mode2d.txt"
+    },
+    {
+      "number": 5,
+      "name": "mode3d dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-3d-0001.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 6,
+      "name": "mode3d printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-3d-0001.txt"
+    },
+    {
+      "number": 7,
+      "name": "mode3d oracle and embedded Right Up Left Down round trip",
+      "passed": true,
+      "oracles": [
+        "oracle-mode3d.txt",
+        "oracle-mode3d-rotated.txt",
+        "oracle-mode3d-restored.txt"
+      ]
+    },
+    {
+      "number": 8,
+      "name": "mode4d dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0001.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 9,
+      "name": "mode4d printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0001.txt"
+    },
+    {
+      "number": 10,
+      "name": "mode4d exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-mode4d.txt"
+    },
+    {
+      "number": 11,
+      "name": "three distinct mode projections same seed",
+      "passed": true,
+      "seed": 42
+    },
+    {
+      "number": 12,
+      "name": "xw-plus dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0002.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 13,
+      "name": "xw-plus printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0002.txt"
+    },
+    {
+      "number": 14,
+      "name": "xw-plus exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-xw-plus.txt"
+    },
+    {
+      "number": 15,
+      "name": "xw-reverse dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0003.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 16,
+      "name": "xw-reverse printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0003.txt"
+    },
+    {
+      "number": 17,
+      "name": "xw-reverse exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-xw-reverse.txt"
+    },
+    {
+      "number": 18,
+      "name": "camera4d dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0004.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 19,
+      "name": "camera4d printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0004.txt"
+    },
+    {
+      "number": 20,
+      "name": "camera4d exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-camera4d.txt"
+    },
+    {
+      "number": 21,
+      "name": "zoom-plus dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0005.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 22,
+      "name": "zoom-plus printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0005.txt"
+    },
+    {
+      "number": 23,
+      "name": "zoom-plus exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-zoom-plus.txt"
+    },
+    {
+      "number": 24,
+      "name": "zoom-reverse dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0006.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 25,
+      "name": "zoom-reverse printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0006.txt"
+    },
+    {
+      "number": 26,
+      "name": "zoom-reverse exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-zoom-reverse.txt"
+    },
+    {
+      "number": 27,
+      "name": "help marker in fresh console output",
+      "passed": true,
+      "marker": "ASCII TREE EXPLORER / FIELD GUIDE"
+    },
+    {
+      "number": 28,
+      "name": "help-closed dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0007.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 29,
+      "name": "help-closed printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0007.txt"
+    },
+    {
+      "number": 30,
+      "name": "help-closed exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-help-closed.txt"
+    },
+    {
+      "number": 31,
+      "name": "animation-paused dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0008.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 32,
+      "name": "animation-paused printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0008.txt"
+    },
+    {
+      "number": 33,
+      "name": "animation changed rotated frame",
+      "passed": true
+    },
+    {
+      "number": 34,
+      "name": "still-paused dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0009.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 35,
+      "name": "still-paused printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0009.txt"
+    },
+    {
+      "number": 36,
+      "name": "paused frame remains identical",
+      "passed": true
+    },
+    {
+      "number": 37,
+      "name": "reset dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0010.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 38,
+      "name": "reset printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-42-4d-0010.txt"
+    },
+    {
+      "number": 39,
+      "name": "reset exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-reset.txt"
+    },
+    {
+      "number": 40,
+      "name": "new-seed dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-43-4d-0001.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 41,
+      "name": "new-seed printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-43-4d-0001.txt"
+    },
+    {
+      "number": 42,
+      "name": "new-seed exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-new-seed.txt"
+    },
+    {
+      "number": 43,
+      "name": "resize-small dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-43-4d-0002.txt",
+      "expected": [
+        30,
+        7
+      ]
+    },
+    {
+      "number": 44,
+      "name": "resize-small printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-43-4d-0002.txt"
+    },
+    {
+      "number": 45,
+      "name": "resize-small exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-resize-small.txt"
+    },
+    {
+      "number": 46,
+      "name": "resize-one dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-43-4d-0003.txt",
+      "expected": [
+        1,
+        1
+      ]
+    },
+    {
+      "number": 47,
+      "name": "resize-one printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-43-4d-0003.txt"
+    },
+    {
+      "number": 48,
+      "name": "resize-one exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-resize-one.txt"
+    },
+    {
+      "number": 49,
+      "name": "resize-restored dimensions",
+      "passed": true,
+      "path": "exports-main\\tree-43-4d-0004.txt",
+      "expected": [
+        100,
+        35
+      ]
+    },
+    {
+      "number": 50,
+      "name": "resize-restored printable ASCII rectangular LF",
+      "passed": true,
+      "path": "exports-main\\tree-43-4d-0004.txt"
+    },
+    {
+      "number": 51,
+      "name": "resize-restored exact headless oracle",
+      "passed": true,
+      "oracle": "oracle-resize-restored.txt"
+    },
+    {
+      "number": 52,
+      "name": "Q actual exit code",
+      "passed": true,
+      "actual": 0,
+      "accepted": [
+        0
+      ]
+    },
+    {
+      "number": 53,
+      "name": "Q cursor and alternate screen restored",
+      "passed": true
+    },
+    {
+      "number": 54,
+      "name": "Esc actual exit code",
+      "passed": true,
+      "actual": 0,
+      "accepted": [
+        0
+      ]
+    },
+    {
+      "number": 55,
+      "name": "Esc cursor and alternate screen restored",
+      "passed": true
+    },
+    {
+      "number": 56,
+      "name": "Ctrl+C actual exit code",
+      "passed": true,
+      "actual": 130,
+      "accepted": [
+        0,
+        130
+      ]
+    },
+    {
+      "number": 57,
+      "name": "Ctrl+C cursor and alternate screen restored",
+      "passed": true
+    }
+  ],
+  "oracle_runs": [
+    {
+      "label": "mode2d",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "2d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.172,
+      "output": "oracle-mode2d.txt",
+      "sha256": "ab9ab94624bf68fd63e91d3f57a12b2b21d02aaf14e24f72979615e12520b443"
+    },
+    {
+      "label": "mode3d",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "3d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.156,
+      "output": "oracle-mode3d.txt",
+      "sha256": "6bd9c8d6629881d25d005ab93a81abee109b8553ca5f90edd57fdb1733e3438e"
+    },
+    {
+      "label": "mode3d-rotated",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "3d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "33.0",
+        "--pitch",
+        "-1.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.156,
+      "output": "oracle-mode3d-rotated.txt",
+      "sha256": "42798a4cc44099ffe90b8baa5189de5ee7f7453e9881a3b50cdd5622a60eedc5"
+    },
+    {
+      "label": "mode3d-restored",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "3d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.156,
+      "output": "oracle-mode3d-restored.txt",
+      "sha256": "6bd9c8d6629881d25d005ab93a81abee109b8553ca5f90edd57fdb1733e3438e"
+    },
+    {
+      "label": "mode4d",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.156,
+      "output": "oracle-mode4d.txt",
+      "sha256": "2d247fd63387bbba2794f77ff91f39a8cadc756fec961c46bd107c73bdaf8236"
+    },
+    {
+      "label": "xw-plus",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "8",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.172,
+      "output": "oracle-xw-plus.txt",
+      "sha256": "f2e05400ad83bf28e28d5483398ec9eee65fb0b884ca8e21b7d2ced04a880853"
+    },
+    {
+      "label": "xw-reverse",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.156,
+      "output": "oracle-xw-reverse.txt",
+      "sha256": "2d247fd63387bbba2794f77ff91f39a8cadc756fec961c46bd107c73bdaf8236"
+    },
+    {
+      "label": "camera4d",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "33.0",
+        "--pitch",
+        "-1.0",
+        "--angle4d",
+        "0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.172,
+      "output": "oracle-camera4d.txt",
+      "sha256": "41b89e6bcbfd12e8edec2a5c330e722dad1bc87c32bbf11ff4be99b0ff6d426f"
+    },
+    {
+      "label": "zoom-plus",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "33.0",
+        "--pitch",
+        "-1.0",
+        "--angle4d",
+        "0",
+        "--zoom",
+        "1.12",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.172,
+      "output": "oracle-zoom-plus.txt",
+      "sha256": "e85e0c38a423c9159d904e5ae3436c08e35f4c6e4e213f7903df50a8c2eae546"
+    },
+    {
+      "label": "zoom-reverse",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "33.0",
+        "--pitch",
+        "-1.0",
+        "--angle4d",
+        "0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.219,
+      "output": "oracle-zoom-reverse.txt",
+      "sha256": "41b89e6bcbfd12e8edec2a5c330e722dad1bc87c32bbf11ff4be99b0ff6d426f"
+    },
+    {
+      "label": "help-closed",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "33.0",
+        "--pitch",
+        "-1.0",
+        "--angle4d",
+        "0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.156,
+      "output": "oracle-help-closed.txt",
+      "sha256": "41b89e6bcbfd12e8edec2a5c330e722dad1bc87c32bbf11ff4be99b0ff6d426f"
+    },
+    {
+      "label": "reset",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.171,
+      "output": "oracle-reset.txt",
+      "sha256": "2d247fd63387bbba2794f77ff91f39a8cadc756fec961c46bd107c73bdaf8236"
+    },
+    {
+      "label": "new-seed",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "43",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.156,
+      "output": "oracle-new-seed.txt",
+      "sha256": "7812dac03222b91761e8930a608240df3085596bd00c4ed9365ee36678b40c9d"
+    },
+    {
+      "label": "resize-small",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "43",
+        "--mode",
+        "4d",
+        "--width",
+        "30",
+        "--height",
+        "7",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.188,
+      "output": "oracle-resize-small.txt",
+      "sha256": "aa6f0fb0c15b6bb8565040c14789634be145c6f9d7918719adcd76661a9f0b05"
+    },
+    {
+      "label": "resize-one",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "43",
+        "--mode",
+        "4d",
+        "--width",
+        "1",
+        "--height",
+        "1",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.172,
+      "output": "oracle-resize-one.txt",
+      "sha256": "f3743a0a18e53d13922cc21a70d783d875a12560c22ff8d28bda5f5ca9fe05c3"
+    },
+    {
+      "label": "resize-restored",
+      "command": [
+        "<python312>",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--seed",
+        "43",
+        "--mode",
+        "4d",
+        "--width",
+        "100",
+        "--height",
+        "35",
+        "--yaw",
+        "25.0",
+        "--pitch",
+        "-7.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0.0"
+      ],
+      "exit_code": 0,
+      "seconds": 0.188,
+      "output": "oracle-resize-restored.txt",
+      "sha256": "7812dac03222b91761e8930a608240df3085596bd00c4ed9365ee36678b40c9d"
+    }
+  ],
+  "exports": [
+    {
+      "label": "mode2d",
+      "path": "exports-main\\tree-42-2d-0001.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "ab9ab94624bf68fd63e91d3f57a12b2b21d02aaf14e24f72979615e12520b443",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "mode3d",
+      "path": "exports-main\\tree-42-3d-0001.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "6bd9c8d6629881d25d005ab93a81abee109b8553ca5f90edd57fdb1733e3438e",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "mode3d-rotated",
+      "path": "exports-main\\tree-42-3d-0002.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "42798a4cc44099ffe90b8baa5189de5ee7f7453e9881a3b50cdd5622a60eedc5",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "mode3d-restored",
+      "path": "exports-main\\tree-42-3d-0003.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "6bd9c8d6629881d25d005ab93a81abee109b8553ca5f90edd57fdb1733e3438e",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "mode4d",
+      "path": "exports-main\\tree-42-4d-0001.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "2d247fd63387bbba2794f77ff91f39a8cadc756fec961c46bd107c73bdaf8236",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "xw-plus",
+      "path": "exports-main\\tree-42-4d-0002.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "f2e05400ad83bf28e28d5483398ec9eee65fb0b884ca8e21b7d2ced04a880853",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "xw-reverse",
+      "path": "exports-main\\tree-42-4d-0003.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "2d247fd63387bbba2794f77ff91f39a8cadc756fec961c46bd107c73bdaf8236",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "camera4d",
+      "path": "exports-main\\tree-42-4d-0004.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "41b89e6bcbfd12e8edec2a5c330e722dad1bc87c32bbf11ff4be99b0ff6d426f",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "zoom-plus",
+      "path": "exports-main\\tree-42-4d-0005.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "e85e0c38a423c9159d904e5ae3436c08e35f4c6e4e213f7903df50a8c2eae546",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "zoom-reverse",
+      "path": "exports-main\\tree-42-4d-0006.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "41b89e6bcbfd12e8edec2a5c330e722dad1bc87c32bbf11ff4be99b0ff6d426f",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "help-closed",
+      "path": "exports-main\\tree-42-4d-0007.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "41b89e6bcbfd12e8edec2a5c330e722dad1bc87c32bbf11ff4be99b0ff6d426f",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "animation-paused",
+      "path": "exports-main\\tree-42-4d-0008.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "631aa04b2b9b3ecbf1162ee70cc8477f500db7e8fbec7a9a156e4855dc032654",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "still-paused",
+      "path": "exports-main\\tree-42-4d-0009.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "631aa04b2b9b3ecbf1162ee70cc8477f500db7e8fbec7a9a156e4855dc032654",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "reset",
+      "path": "exports-main\\tree-42-4d-0010.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "2d247fd63387bbba2794f77ff91f39a8cadc756fec961c46bd107c73bdaf8236",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "new-seed",
+      "path": "exports-main\\tree-43-4d-0001.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "7812dac03222b91761e8930a608240df3085596bd00c4ed9365ee36678b40c9d",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "resize-small",
+      "path": "exports-main\\tree-43-4d-0002.txt",
+      "expected_dimensions": [
+        30,
+        7
+      ],
+      "byte_count": 217,
+      "sha256": "aa6f0fb0c15b6bb8565040c14789634be145c6f9d7918719adcd76661a9f0b05",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "resize-one",
+      "path": "exports-main\\tree-43-4d-0003.txt",
+      "expected_dimensions": [
+        1,
+        1
+      ],
+      "byte_count": 2,
+      "sha256": "f3743a0a18e53d13922cc21a70d783d875a12560c22ff8d28bda5f5ca9fe05c3",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    },
+    {
+      "label": "resize-restored",
+      "path": "exports-main\\tree-43-4d-0004.txt",
+      "expected_dimensions": [
+        100,
+        35
+      ],
+      "byte_count": 3535,
+      "sha256": "7812dac03222b91761e8930a608240df3085596bd00c4ed9365ee36678b40c9d",
+      "dimensions_pass": true,
+      "ascii_lf_pass": true
+    }
+  ],
+  "sessions": [
+    {
+      "name": "main",
+      "command": [
+        "-m",
+        "ascii_tree",
+        "view",
+        "--seed",
+        "42",
+        "--mode",
+        "2d",
+        "--export-dir",
+        "interactive-14\\exports-main"
+      ],
+      "exports_dir": "exports-main",
+      "exit_code": 0,
+      "transcript": "main-transcript.bin",
+      "duration_s": 6.891,
+      "transcript_sha256": "29569d865132a0429c4114ed31bf03af42125175e69e79ed71710446a5decc92"
+    },
+    {
+      "name": "escape",
+      "command": [
+        "-m",
+        "ascii_tree",
+        "view",
+        "--seed",
+        "42",
+        "--mode",
+        "2d",
+        "--export-dir",
+        "interactive-14\\exports-escape"
+      ],
+      "exports_dir": "exports-escape",
+      "exit_code": 0,
+      "transcript": "escape-transcript.bin",
+      "duration_s": 0.609,
+      "transcript_sha256": "71c870243c716187fe900681291d80be3416774d09c7855b5e10c88fc02262b1"
+    },
+    {
+      "name": "ctrl-c",
+      "command": [
+        "-m",
+        "ascii_tree",
+        "view",
+        "--seed",
+        "42",
+        "--mode",
+        "2d",
+        "--export-dir",
+        "interactive-14\\exports-ctrl-c"
+      ],
+      "exports_dir": "exports-ctrl-c",
+      "exit_code": 130,
+      "transcript": "ctrl-c-transcript.bin",
+      "duration_s": 0.281,
+      "transcript_sha256": "71c870243c716187fe900681291d80be3416774d09c7855b5e10c88fc02262b1"
+    }
+  ],
+  "complete": true,
+  "smoke_completion": "pass",
+  "runtime_repairs": false,
+  "adapter": {
+    "module": "ascii_tree",
+    "commands": [
+      "view",
+      "render"
+    ],
+    "angle_flag": "--angle4d",
+    "defaults": {
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle": 0.0,
+      "zoom": 1.0,
+      "seed": 42,
+      "time": 0.0,
+      "mode": "2d"
+    },
+    "yaw_increment": 8,
+    "pitch_increment": 6,
+    "xw_increment": 8,
+    "zoom_factor": 1.12,
+    "next_seed": "seed + 1",
+    "export_flag": "--export-dir",
+    "export_pattern": "tree-SEED-MODE-NNNN.txt",
+    "startup_marker": "ASCII TREE EXPLORER",
+    "help_marker": "ASCII TREE EXPLORER / FIELD GUIDE",
+    "viewport": "columns x (rows-5) when columns>=24 and rows>=7; otherwise columns x rows",
+    "bootstrap": "Unchanged neutral console standard-handle rebinding; no input-mode or signal repair"
+  },
+  "executed_checks": 57,
+  "passed_checks": 57,
+  "unexecuted_check_numbers": []
+}

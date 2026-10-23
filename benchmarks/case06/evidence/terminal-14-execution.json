@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "kind": "terminal",
+  "solution_id": 14,
+  "exit_code": 0,
+  "wall_clock_s": 7.953,
+  "timeout_s": 600,
+  "sdk_cli_timed_out": false,
+  "launch_error": null,
+  "checker_sha256": "a282c964e49e752921ce494b09ef65c6aa88704d8719293e103d4f417766711e",
+  "checker_support_sha256": {
+    "terminal-check.py": "a282c964e49e752921ce494b09ef65c6aa88704d8719293e103d4f417766711e",
+    "conpty_case06_neutral.py": "d7c59cf9a3a999dd64d6d796cc9e8ce501d157000db990e2a9f4b9c59daaa6f9"
+  },
+  "checker_support_unchanged": true,
+  "source_files_checked": 33,
+  "submitted_source_unchanged": true,
+  "source_integrity_error": null,
+  "stdout_sha256": "01a13d091dcd415e53b7cf69b0cd4bf8d49a13fd9e84d21abb67c23711f69379",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "permission_profile_sha256": "8d98a047c4fbbe851fb24efa4923db03971acc2855b66a2ebdd552694270da56",
+  "checker_permission": "read-only verifier outside writable evaluation root",
+  "network_enabled": false,
+  "model_calls": 0,
+  "boundary": "Existing official CLI setup; user .codex/.agents tool reads denied; no auth copying",
+  "timeout_boundary": "600-second CLI timeout; descendant cleanup is not independently established on timeout",
+  "frozen_evaluator_status_amended": false
+}

@@ -1,6 +1,6 @@
 # Acceptance status — 2026-10-23
 
-This is an evidence boundary, not a claim that the entire requested architecture has passed. Status values are `pass`, `degraded`, `blocked` and `notimplemented`. Independent integration proofs, packaged-demo verification and frozen benchmarks are separate records; later success does not rewrite an earlier run.
+This is an evidence boundary, not a claim that the entire requested architecture has passed. Status values are `pass`, `degraded`, `deferred`, `blocked` and `notimplemented`. Independent integration proofs, packaged-demo verification and frozen benchmarks are separate records; later success does not rewrite an earlier run.
 
 | Requirement | Status | Verified scope / remaining limit |
 |---|---|---|
@@ -13,11 +13,12 @@ This is an evidence boundary, not a claim that the entire requested architecture
 | Strict independent native profiles/state | blocked | Auth/rollout container shared; project SQLite can import historical metadata; separate paths do not establish isolation |
 | Hard helper read-only/depth isolation | degraded | Custom roles inherit parent permissions; ownership/depth are instructions; worker policy refusal is not an observed OS attempt |
 | Configured multi-agent A/B | pass | Case05 observed real helpers/Mercury/inspired probes; independently accepted artifact scores A/B/C/D=97/89/89/94 |
-| Acceleration / causal component benefit | degraded | Single changed-runtime case with censored/failed processes; solo scored highest; no general contribution or quota-saving conclusion |
+| Updated orchestration A/B repeat | pass | Case06: solo 97/Flow 98, both completed, headless 25/25 and native 57/57; Flow one verified helper/one Mercury call/deferred guard with zero online probes |
+| Acceleration / causal component benefit | degraded | One updated-runtime repeat: process durations 1444.484/1414.000s,43/36 requests; one aesthetic point difference; no general contribution, active optimizer or quota-saving conclusion |
 | Doctor, integration status, cancel, event replay | pass | Implemented CLI controls; replay does not resume inference |
 | Runtime TUI / native-session resume | notimplemented | No such commands or interface shipped |
 | Real 2D/3D/4D demos | pass | Accepted old case02 originals preserved; labelled packaged portability patch passed Windows/Ubuntu CI |
-| Local core verification | pass | 192 tests after the run-record boundary fix: Windows 174 passed/18 skipped; WSL 192 passed |
+| Local core verification | pass | 196 tests after orchestration fixes: Windows 178 passed/18 skipped; WSL 196 passed; static checks and build passed |
 | Private CI | pass | Confirmed green for f757663: all 192 core tests on Windows/Ubuntu; packaged examples, static checks, build and 454-object all-history scan passed |
 | License selection | blocked | Owner decision pending; repository remains private |
 | Host configuration preservation | pass | Process-local overrides; no copied auth tokens, global-setting rewrites or sandbox bypass |

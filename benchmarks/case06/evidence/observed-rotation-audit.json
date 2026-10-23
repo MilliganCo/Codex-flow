@@ -1,0 +1,82 @@
+{
+  "kind": "Observed numeric evidence audit, no app rerun",
+  "raw_attempts_modified": false,
+  "rubric_or_thresholds_changed": false,
+  "explanation": "The unchanged rubric requires a true norm-preserving hyperplane rotation. It does not require a chosen point to change W by more than 0.1. Both emitted points match the stated XW formula, preserve norm and invert within 1e-12. Small delta W here is cancellation between sin(a)*x and (cos(a)-1)*w; it is not absent mixing. The raw failed assertions and nonzero execution receipts remain intact.",
+  "solutions": [
+    {
+      "solution_id": 13,
+      "raw_evidence": "geometry-13.json",
+      "raw_sha256": "b4707edaf47547087f7471d5c999c268a24c33e859bf00ae0717f4453ce4c1fd",
+      "raw_rotation_xw_passed": false,
+      "raw_overconstraint": "abs(q.w-p.w)>0.1 for one arbitrarily chosen point",
+      "angle_degrees": 37,
+      "observed_point_in": [
+        1.3,
+        -2.1,
+        0.7,
+        3.8
+      ],
+      "observed_point_out": [
+        -1.2486709249163028,
+        -2.1,
+        0.7,
+        3.817174468277375
+      ],
+      "expected_point_out": [
+        -1.2486709249163028,
+        -2.1,
+        0.7,
+        3.817174468277375
+      ],
+      "observed_delta_w": 0.017174468277375343,
+      "observed_delta_x": -2.548670924916303,
+      "sine_offdiagonal_magnitude": 0.6018150231520483,
+      "tolerance": 1e-12,
+      "formula_error": 0.0,
+      "norm_error": 3.552713678800501e-15,
+      "inverse_error": 2.220446049250313e-16,
+      "recorded_orthogonality_error": 0.0,
+      "recorded_determinant": 1.0,
+      "rubric_rotation_math_supported": true,
+      "source_formula": "solution-13/ascii_tree/geometry.py:20-35"
+    },
+    {
+      "solution_id": 14,
+      "raw_evidence": "geometry-14.json",
+      "raw_sha256": "c30526b98e43bd2e6635b8e6105b0fd0751622541f090498da62cbb7c56ce082",
+      "raw_rotation_xw_passed": false,
+      "raw_overconstraint": "abs(q.w-p.w)>0.1 for one arbitrarily chosen point",
+      "angle_degrees": 37,
+      "observed_point_in": [
+        1.3,
+        -2.1,
+        0.7,
+        3.8
+      ],
+      "observed_point_out": [
+        -1.2486709249163028,
+        -2.1,
+        0.7,
+        3.817174468277375
+      ],
+      "expected_point_out": [
+        -1.2486709249163028,
+        -2.1,
+        0.7,
+        3.817174468277375
+      ],
+      "observed_delta_w": 0.017174468277375343,
+      "observed_delta_x": -2.548670924916303,
+      "sine_offdiagonal_magnitude": 0.6018150231520483,
+      "tolerance": 1e-12,
+      "formula_error": 0.0,
+      "norm_error": 3.552713678800501e-15,
+      "inverse_error": 2.220446049250313e-16,
+      "recorded_orthogonality_error": 0.0,
+      "recorded_determinant": 1.0,
+      "rubric_rotation_math_supported": true,
+      "source_formula": "solution-14/ascii_tree/geometry.py:11-21"
+    }
+  ]
+}
