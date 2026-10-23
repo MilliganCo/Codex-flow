@@ -1,0 +1,2 @@
+# Runtime and tests use only the Python 3.12 standard library.
+# No pip install or network access is required.

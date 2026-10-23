@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.tmp/
+.home/
+.codex-flow/
+.venv/
+exports/
+build/
+dist/
+*.egg-info/

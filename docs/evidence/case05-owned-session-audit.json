@@ -1,0 +1,457 @@
+{
+  "case": "05",
+  "scope": "exact owned B/C/D cwd and their identity-matched guarded session rollouts only",
+  "physical_isolation_verified": false,
+  "hard_depth_limit_verified": false,
+  "groups": {
+    "B": {
+      "status": "observed",
+      "exact_owned_contexts": 2,
+      "exec_root_contexts": 1,
+      "subagent_contexts": 1,
+      "rollouts_audited": 2,
+      "max_observed_source_depth": 1,
+      "function_call_counts": {
+        "spawn_agent": 1,
+        "exec": 37,
+        "send_message": 5,
+        "followup_task": 1
+      },
+      "nested_tool_reference_counts": {
+        "exec_command": 28,
+        "apply_patch": 9,
+        "write_stdin": 9
+      },
+      "native_completed_tool_counts": {
+        "command_execution": 28
+      },
+      "tool_argument_literal_marker_counts": {},
+      "sessions": [
+        {
+          "context_sha256": "298f1bd25b7f53f5fcef695826cee9de70887985782780007cf7c38301ea6e3c",
+          "source": {
+            "kind": "exec_root",
+            "direct_depth": 0
+          },
+          "model_metadata": "gpt-6.1-sol",
+          "requested_effort_metadata": "xhigh",
+          "role_metadata": "other",
+          "rollout_sha256": "0302b3b4da887be588feff1c5a235e0b069dab52aa3a5dadad2ca4023ff53614",
+          "invalid_json_lines": 0,
+          "function_call_counts": {
+            "spawn_agent": 1,
+            "exec": 28,
+            "followup_task": 1
+          },
+          "nested_tool_reference_counts": {
+            "exec_command": 19,
+            "apply_patch": 9,
+            "write_stdin": 9
+          },
+          "native_completed_tool_counts": {
+            "command_execution": 19
+          },
+          "tool_argument_literal_marker_counts": {},
+          "native_event_kind_counts": {
+            "task_started": 1,
+            "thread_settings_applied": 1,
+            "item_completed": 73,
+            "token_count": 33
+          },
+          "turn_context_effective_profiles": [
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "turns": 1
+            }
+          ]
+        },
+        {
+          "context_sha256": "483b04180964c086c8a288b810b63320d7d3d90f095ade47b4a459d46c6b9a17",
+          "source": {
+            "kind": "subagent",
+            "direct_depth": 1,
+            "parent_is_owned_exec_root": true
+          },
+          "model_metadata": "gpt-6.1-sol",
+          "requested_effort_metadata": "medium",
+          "role_metadata": "worker",
+          "rollout_sha256": "e1f00fbea4df36f9eeefbb0a22a58fc68204740856494d2f7771abaf91002b0d",
+          "invalid_json_lines": 0,
+          "function_call_counts": {
+            "exec": 9,
+            "send_message": 5
+          },
+          "nested_tool_reference_counts": {
+            "exec_command": 9
+          },
+          "native_completed_tool_counts": {
+            "command_execution": 9
+          },
+          "tool_argument_literal_marker_counts": {},
+          "native_event_kind_counts": {
+            "task_started": 3,
+            "thread_settings_applied": 1,
+            "item_completed": 24,
+            "token_count": 16,
+            "task_complete": 2
+          },
+          "turn_context_effective_profiles": [
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "turns": 2
+            },
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "turns": 1
+            }
+          ]
+        }
+      ],
+      "function_agent_call_counts": {
+        "spawn": 1,
+        "wait": 0,
+        "followup_task": 1
+      },
+      "native_completed_agent_event_counts": {
+        "spawn": 0,
+        "wait": 0
+      },
+      "native_collaboration_event_schema_observed": false
+    },
+    "C": {
+      "status": "observed",
+      "exact_owned_contexts": 3,
+      "exec_root_contexts": 1,
+      "subagent_contexts": 2,
+      "rollouts_audited": 3,
+      "max_observed_source_depth": 1,
+      "function_call_counts": {
+        "spawn_agent": 2,
+        "exec": 29,
+        "send_message": 1,
+        "followup_task": 1
+      },
+      "nested_tool_reference_counts": {
+        "exec_command": 32,
+        "apply_patch": 8
+      },
+      "native_completed_tool_counts": {
+        "command_execution": 32
+      },
+      "tool_argument_literal_marker_counts": {},
+      "sessions": [
+        {
+          "context_sha256": "18b198244cf2348ce7230bb8be97e4d2d9aa99248fe13457005796ba57cb009e",
+          "source": {
+            "kind": "exec_root",
+            "direct_depth": 0
+          },
+          "model_metadata": "gpt-6.1-sol",
+          "requested_effort_metadata": "xhigh",
+          "role_metadata": "other",
+          "rollout_sha256": "76cf285b7a7d7f162439e8c0f3d20fef3a4c3235a729c44c6f265a05ea538f62",
+          "invalid_json_lines": 0,
+          "function_call_counts": {
+            "spawn_agent": 2,
+            "exec": 16,
+            "followup_task": 1
+          },
+          "nested_tool_reference_counts": {
+            "exec_command": 15,
+            "apply_patch": 8
+          },
+          "native_completed_tool_counts": {
+            "command_execution": 15
+          },
+          "tool_argument_literal_marker_counts": {},
+          "native_event_kind_counts": {
+            "task_started": 1,
+            "thread_settings_applied": 1,
+            "item_completed": 69,
+            "token_count": 22
+          },
+          "turn_context_effective_profiles": [
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "turns": 1
+            }
+          ]
+        },
+        {
+          "context_sha256": "237002903602aa5e611f114c4e29ed581a8d0f7fb4ad7562c60cb998e079ba75",
+          "source": {
+            "kind": "subagent",
+            "direct_depth": 1,
+            "parent_is_owned_exec_root": true
+          },
+          "model_metadata": "gpt-6.1-sol",
+          "requested_effort_metadata": "medium",
+          "role_metadata": "worker",
+          "rollout_sha256": "4b68158b1450a8b0d0733a4d39fb066ade42f0f058e57d8e16cda2737435cffa",
+          "invalid_json_lines": 0,
+          "function_call_counts": {
+            "exec": 2,
+            "send_message": 1
+          },
+          "nested_tool_reference_counts": {
+            "exec_command": 3
+          },
+          "native_completed_tool_counts": {
+            "command_execution": 3
+          },
+          "tool_argument_literal_marker_counts": {},
+          "native_event_kind_counts": {
+            "task_started": 2,
+            "thread_settings_applied": 1,
+            "item_completed": 7,
+            "token_count": 4,
+            "task_complete": 1
+          },
+          "turn_context_effective_profiles": [
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "turns": 1
+            },
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "turns": 1
+            }
+          ]
+        },
+        {
+          "context_sha256": "e624ceb7c33419b1b5d89705d2b610048039665c5e1af7f3e35af5676849be46",
+          "source": {
+            "kind": "subagent",
+            "direct_depth": 1,
+            "parent_is_owned_exec_root": true
+          },
+          "model_metadata": "gpt-6.1-sol",
+          "requested_effort_metadata": "high",
+          "role_metadata": "reviewer",
+          "rollout_sha256": "0e737346eddb241b6fafa35138bee9aa5cd919436385b4d509409e15d8eacfd9",
+          "invalid_json_lines": 0,
+          "function_call_counts": {
+            "exec": 11
+          },
+          "nested_tool_reference_counts": {
+            "exec_command": 14
+          },
+          "native_completed_tool_counts": {
+            "command_execution": 14
+          },
+          "tool_argument_literal_marker_counts": {},
+          "native_event_kind_counts": {
+            "task_started": 3,
+            "thread_settings_applied": 1,
+            "item_completed": 28,
+            "token_count": 13,
+            "task_complete": 2
+          },
+          "turn_context_effective_profiles": [
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "high",
+              "turns": 2
+            },
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "turns": 1
+            }
+          ]
+        }
+      ],
+      "function_agent_call_counts": {
+        "spawn": 2,
+        "wait": 0,
+        "followup_task": 1
+      },
+      "native_completed_agent_event_counts": {
+        "spawn": 0,
+        "wait": 0
+      },
+      "native_collaboration_event_schema_observed": false
+    },
+    "D": {
+      "status": "observed",
+      "exact_owned_contexts": 2,
+      "exec_root_contexts": 1,
+      "subagent_contexts": 1,
+      "rollouts_audited": 2,
+      "max_observed_source_depth": 1,
+      "function_call_counts": {
+        "spawn_agent": 1,
+        "exec": 35,
+        "send_message": 1,
+        "followup_task": 1
+      },
+      "nested_tool_reference_counts": {
+        "exec_command": 25,
+        "apply_patch": 10,
+        "write_stdin": 9
+      },
+      "native_completed_tool_counts": {
+        "command_execution": 34
+      },
+      "tool_argument_literal_marker_counts": {
+        "private_state_literal": 4
+      },
+      "sessions": [
+        {
+          "context_sha256": "42c20d992e6b2f27d1477ea124a2caebf92f33e7e0cb18955cc58af71dc55c57",
+          "source": {
+            "kind": "exec_root",
+            "direct_depth": 0
+          },
+          "model_metadata": "gpt-6.1-sol",
+          "requested_effort_metadata": "xhigh",
+          "role_metadata": "other",
+          "rollout_sha256": "fb85de85741b5af2b58e68e76c3bd72913c480a30d26b62a1d4e1aab1bf8ef45",
+          "invalid_json_lines": 0,
+          "function_call_counts": {
+            "spawn_agent": 1,
+            "exec": 28,
+            "followup_task": 1
+          },
+          "nested_tool_reference_counts": {
+            "exec_command": 18,
+            "apply_patch": 10,
+            "write_stdin": 9
+          },
+          "native_completed_tool_counts": {
+            "command_execution": 18
+          },
+          "tool_argument_literal_marker_counts": {
+            "private_state_literal": 2
+          },
+          "native_event_kind_counts": {
+            "task_started": 1,
+            "thread_settings_applied": 1,
+            "item_completed": 65,
+            "token_count": 33,
+            "task_complete": 1
+          },
+          "turn_context_effective_profiles": [
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "turns": 1
+            }
+          ]
+        },
+        {
+          "context_sha256": "0468229d110ca6c7369b90c24c7dd7c0c8be3a37165401f41cf5e5dcde2136bb",
+          "source": {
+            "kind": "subagent",
+            "direct_depth": 1,
+            "parent_is_owned_exec_root": true
+          },
+          "model_metadata": "gpt-6.1-sol",
+          "requested_effort_metadata": "medium",
+          "role_metadata": "worker",
+          "rollout_sha256": "beb7d7d2d32f0684215c29ecb5338c5b2d4933ca53a4d72eae948a07dcf836e0",
+          "invalid_json_lines": 0,
+          "function_call_counts": {
+            "exec": 7,
+            "send_message": 1
+          },
+          "nested_tool_reference_counts": {
+            "exec_command": 7
+          },
+          "native_completed_tool_counts": {
+            "command_execution": 16
+          },
+          "tool_argument_literal_marker_counts": {
+            "private_state_literal": 2
+          },
+          "native_event_kind_counts": {
+            "task_started": 3,
+            "thread_settings_applied": 1,
+            "item_completed": 26,
+            "token_count": 10,
+            "task_complete": 2
+          },
+          "turn_context_effective_profiles": [
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "turns": 2
+            },
+            {
+              "model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "turns": 1
+            }
+          ]
+        }
+      ],
+      "function_agent_call_counts": {
+        "spawn": 1,
+        "wait": 0,
+        "followup_task": 1
+      },
+      "native_completed_agent_event_counts": {
+        "spawn": 0,
+        "wait": 0
+      },
+      "native_collaboration_event_schema_observed": false,
+      "private_state_marker_classification": {
+        "raw_observations_preserved": 4,
+        "deduplicated_actions": 2,
+        "classification_counts": {
+          "explicit_exclusion/glob_filter": 2
+        },
+        "actions": [
+          {
+            "command_sha256": "0e7f5378c01aec68929adc0c2b23b0209ff252629d9d303f23a8b26b2bcc6c2f",
+            "classification": "explicit_exclusion/glob_filter",
+            "fixed_explanation": "Private-state literal occurs only inside negated rg --files glob arguments; no explicit private-state read operand in this command.",
+            "observation_layers": [
+              "function",
+              "native"
+            ],
+            "observation_hashes": [
+              "9696e976cc28529e87b76b84f22415726be65a58bb56f38a0c79fbef3e2e166b",
+              "091cfaf22282f51b2bb5e9324186a159561fd8cc514ab75ffc2b00a7a68a5611"
+            ],
+            "observed_error_names": []
+          },
+          {
+            "command_sha256": "e034f366e6fd0ad344db1ea052af09a8b286a557a2d7d01d0365b329093be931",
+            "classification": "explicit_exclusion/glob_filter",
+            "fixed_explanation": "Private-state literal occurs only inside negated rg --files glob arguments; no explicit private-state read operand in this command.",
+            "observation_layers": [
+              "function",
+              "native"
+            ],
+            "observation_hashes": [
+              "c79dab535ca6173d18219daf587da18c9f0307bb69670039d4c9f7e132634c91",
+              "b927b1408dec5c1677fa539e1a1cf7a670685cca9498263835e974f7ba495f28"
+            ],
+            "observed_error_names": []
+          }
+        ],
+        "limits": [
+          "Exact command hash correlation deduplicates function/native representations of the same action.",
+          "Exclusion syntax does not prove absence of indirect traversal or reads.",
+          "Stored matching outputs were scanned only for fixed permission/error-name indicators; no target state/content was opened."
+        ]
+      }
+    }
+  },
+  "limits": [
+    "A is ephemeral and unavailable to this audit.",
+    "Extra helper worktrees or nested contexts with different cwd were not queried or audited.",
+    "No literal marker does not prove absence of indirect or otherwise unmarked reads.",
+    "Historical metadata import/backfill does not prove model tools read that metadata.",
+    "Turn-context models/efforts and SQLite metadata do not independently verify backend response identity.",
+    "Counts of wrapper references, function calls and native events are separate observations and may overlap.",
+    "Child turn contexts may contain inherited parent context; turn-context entries are not counts of inference calls."
+  ]
+}

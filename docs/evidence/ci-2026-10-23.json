@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
   "repository_visibility_at_publication": "PRIVATE",
-  "commit": "d5fb49a891d1f2c5ee9d518395eb4bfbf11ada33",
-  "run_url": "https://github.com/MilliganCo/Codex-flow/actions/runs/39987763791",
+  "commit": "f7576634969c7272fdb18028d21c9dc06c251629",
+  "run_url": "https://github.com/MilliganCo/Codex-flow/actions/runs/39989887104",
   "status": "completed",
   "conclusion": "success",
   "platforms": {
     "ubuntu-latest": {
-      "job_id": 120531288706,
+      "job_id": 120538614988,
       "core": {
-        "run": 181,
-        "passed": 181,
+        "run": 192,
+        "passed": 192,
         "skipped": 0,
-        "duration_s": 4.679
+        "duration_s": 4.562
       },
       "solo_example": {
         "run": 36,
@@ -26,12 +26,12 @@
       }
     },
     "windows-latest": {
-      "job_id": 120531289215,
+      "job_id": 120538615358,
       "core": {
-        "run": 181,
-        "passed": 181,
+        "run": 192,
+        "passed": 192,
         "skipped": 0,
-        "duration_s": 15.336
+        "duration_s": 61.839
       },
       "solo_example": {
         "run": 36,
@@ -58,7 +58,7 @@
     "compile_and_zipapp": "passed",
     "tracked_tree_and_all_history_scan": {
       "passed": true,
-      "checked_objects": 442
+      "checked_objects": 454
     },
     "model_calls": 0,
     "interactive_terminal_test": "not run by this example CI smoke"
@@ -69,5 +69,10 @@
     "correction": "Explicit post-benchmark packaged-demo canonical identity patch; original source archives/scores unchanged"
   },
   "scope": "Only the named commit and jobs were verified; this is not a claim that later source is already green, that native models ran in CI, or that every possible secret format is detectable",
-  "recorded_utc": "2026-10-23T16:38:02.085924+00:00"
+  "recorded_utc": "2026-10-23T16:54:10.463399+00:00",
+  "prior_success": {
+    "commit": "d5fb49a891d1f2c5ee9d518395eb4bfbf11ada33",
+    "run_url": "https://github.com/MilliganCo/Codex-flow/actions/runs/39987763791",
+    "core_tests_per_platform": 181
+  }
 }

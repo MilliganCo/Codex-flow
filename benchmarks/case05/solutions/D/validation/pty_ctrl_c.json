@@ -1,0 +1,30 @@
+{
+  "platform": "win32",
+  "python": "3.12.10",
+  "exit_code": 0,
+  "expected_exit_code": 130,
+  "keys": [
+    "q"
+  ],
+  "viewport_sizes": [
+    [
+      79,
+      23
+    ]
+  ],
+  "modes_before": {
+    "input": 503,
+    "output": 7
+  },
+  "modes_after": {
+    "input": 503,
+    "output": 7
+  },
+  "modes_restored": true,
+  "final_mode": "3d",
+  "final_seed": 42,
+  "tree_preserved": true,
+  "snapshots": [
+    "3d_xw0"
+  ]
+}

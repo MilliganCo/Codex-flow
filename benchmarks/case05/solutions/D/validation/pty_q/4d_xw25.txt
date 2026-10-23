@@ -1,0 +1,23 @@
+ ASCII TREE EXPLORER   [4D]   seed 42   PLAY                                   
+ yaw   36.2  pitch  -1.0  XW   24.6 deg  zoom 1.00                             
+ 4D DATA -> XW -> 3D -> 2D projection                                          
+                                          '/'                                  
+                                 ':    |'o:o*                                  
+                                |*'',*  ::/                                    
+                            '|::*:o:o*:*o|:,*|                                 
+                            |o|**'**|o:|//'|o|                                 
+                             *|||':|:oo:/o*/:*:'                               
+                             \|'*|:|o*//*||/**': **:                           
+                             *o|*''\|\|'*\''o:/||oo*                           
+                              ,:\o*::||\|*':o:'/|*                             
+                                 \*\*\\||/|':*//'                              
+                                    \\\////||//                                
+                                       |___                                    
+                                       ||                                      
+                                        ||                                     
+                                                                               
+                                                                               
+                                                                               
+ 1/2/3 mode | Arrows orbit | [ ] XW | +/- zoom | Space play                    
+ G seed | R reset | E export | H help | Q quit                                 
+ Animation: orbit in 3D, orbit + XW rotation in 4D                             

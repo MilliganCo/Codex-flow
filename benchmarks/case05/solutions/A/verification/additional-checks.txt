@@ -1,0 +1,3 @@
+PASS: CLI pitch -10, then Up -> -5
+PASS: CLI KeyboardInterrupt -> exit 130
+PASS: required documentation and verification artifacts present

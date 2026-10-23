@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-23T17:22:18.482561+00:00",
+  "protected_files_compared": 16,
+  "unchanged_files": 15,
+  "installed_skill_files_unchanged": 13,
+  "global_instructions_and_install_manifest_unchanged": true,
+  "config_byte_identical": false,
+  "all_non_project_config_semantics_unchanged": true,
+  "project_registrations_changed": true,
+  "registration_change_actor": "not attributed",
+  "blind_config_restore_performed": false,
+  "native_auth_file_opened_or_copied_by_implementation": false,
+  "native_session_refresh_scope": "Official CLI owns native login/state; no claim that all native-owned state bytes are frozen",
+  "backup_distribution": "local only, not published"
+}

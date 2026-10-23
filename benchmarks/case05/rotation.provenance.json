@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "case": "case05",
+  "arm": "A",
+  "scope": "Post-evaluation presentation only; does not change benchmark scores or execution latency",
+  "model_calls": 0,
+  "cli_render_invocations": 12,
+  "application_execution_boundary": "Existing official CLI Windows sandbox flow_evaluator profile; evaluation root WRITE, trusted controller runner READ, credential/skill homes DENY, network false",
+  "source_file_count": 40,
+  "source_files_manifest_sha256": "619a5dab4529e1ad3ab553324ffe74d14ac6bee5e7266e02b28f20341be123ec",
+  "source_hashes_verified_before_after": true,
+  "source_modified": false,
+  "controller_sha256": "2965166eb1459e002e4416415163e6f5045992ca55150009eac2050714a04872",
+  "permission_profile_sha256": "708f06d4dc45b4a15ec0114ba5d371d97449ee9ee38c5b503d1ff50c1669db6a",
+  "source_frame_manifest": "rotation-frames/manifest.json",
+  "source_frame_manifest_sha256": "429d0354fa17eff372f182cd1cf5740c05b6229b24b9f762b6b5ab87dae0232f",
+  "frame_count": 12,
+  "duration_ms": 250,
+  "loop": 0,
+  "pixel_width": 688,
+  "pixel_height": 650,
+  "font": "Consolas",
+  "ascii_font_px": 15,
+  "pillow_version": "12.2.0",
+  "gif_sha256": "4569239600af3c68aa86027252a88fc024c576eecadc329832ebe8b522cd6900",
+  "gif_bytes": 179431,
+  "typesetter_imported_or_executed_app": false,
+  "native_tty_screenshot": false,
+  "preview": {
+    "file": "preview.png",
+    "sha256": "6749187a606cecbf90401ec834b5afbc85ccaf1ed3b0faf9b2c9cd49b99e816c",
+    "pixel_width": 2040,
+    "pixel_height": 650,
+    "sources": [
+      {
+        "mode": "2d",
+        "seed": 42,
+        "width": 80,
+        "height": 30,
+        "sha256": "8df9363925127fd183d32e6be602ee8985b9712c35cf0c8468adaff89d7ce121",
+        "source": "Existing frozen evaluator frame for accepted case05 A"
+      },
+      {
+        "mode": "3d",
+        "seed": 42,
+        "width": 80,
+        "height": 30,
+        "sha256": "8bd59777d489520062a59d39ab7ed27a21d158e7d6b476ceed4374add26ed731",
+        "source": "Existing frozen evaluator frame for accepted case05 A"
+      },
+      {
+        "mode": "4d",
+        "seed": 42,
+        "width": 80,
+        "height": 30,
+        "sha256": "ea8e4b6fa566decdff54bcc58375e160a43be63dd4b2179ee19c371a3a663111",
+        "source": "Existing frozen evaluator frame for accepted case05 A"
+      }
+    ],
+    "new_app_invocations": 0
+  },
+  "angle_zero_matches_frozen": true,
+  "distinct_frame_sha256_count": 12
+}

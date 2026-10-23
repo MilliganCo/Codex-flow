@@ -1,0 +1,1797 @@
+{
+  "schema": 1,
+  "experiment_id": "tree-case-20261023-05",
+  "created_utc": "2026-10-23T16:07:06.101395+00:00",
+  "task_sha256": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+  "scaffold_git_sha": "3b59ea27992e3d14f9329d0de098a4d370e3e8e3",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "executed_raw_runtime_sha256": {
+    "benchmark.py": "a47a220ff2a992907034f58dea2313fb312d27213e8f1217f0265be5adcefe49",
+    "cli.py": "49ee5f0e5fd2755535b129a12753d7422d3412e9efa181a8d51a013db1ddcee3",
+    "config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "harness.py": "1eee42280ee9d3e0a80ae25c2ff8ce70ea7bfd901a4688155ff4be2f78670d1f",
+    "mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "native.py": "340d2b9845853944842bac5de375e9b442fe400ecaefe7799cf4009d38cb33c4",
+    "native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "subscription.py": "96c31dadd43b36eb1e736be70c81fb1060d7644729a57b2ceab0b56420993cd8",
+    "telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1"
+  },
+  "runtime_publication_equivalence": {
+    "source_json_sha256": "01955d6f129130c4d03c3dcb95e549d0aa54f6f316cb0a2e200e5af0cc08cce1",
+    "frozen_runtime_source_commit": "343d395495274587f472296b0e1a2944b3d7dd9d",
+    "private_publication_commit": "00156335175f097224f32264fa90bd54db93793a",
+    "files": {
+      "codex-flow.py": {
+        "executed_raw_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+        "published_blob_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+        "normalized_lf_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/benchmark.py": {
+        "executed_raw_sha256": "a47a220ff2a992907034f58dea2313fb312d27213e8f1217f0265be5adcefe49",
+        "published_blob_sha256": "a47a220ff2a992907034f58dea2313fb312d27213e8f1217f0265be5adcefe49",
+        "normalized_lf_sha256": "a47a220ff2a992907034f58dea2313fb312d27213e8f1217f0265be5adcefe49",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/cli.py": {
+        "executed_raw_sha256": "49ee5f0e5fd2755535b129a12753d7422d3412e9efa181a8d51a013db1ddcee3",
+        "published_blob_sha256": "49ee5f0e5fd2755535b129a12753d7422d3412e9efa181a8d51a013db1ddcee3",
+        "normalized_lf_sha256": "49ee5f0e5fd2755535b129a12753d7422d3412e9efa181a8d51a013db1ddcee3",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/config.py": {
+        "executed_raw_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+        "published_blob_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+        "normalized_lf_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/contracts.py": {
+        "executed_raw_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+        "published_blob_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+        "normalized_lf_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/doctor.py": {
+        "executed_raw_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+        "published_blob_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+        "normalized_lf_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/harness.py": {
+        "executed_raw_sha256": "1eee42280ee9d3e0a80ae25c2ff8ce70ea7bfd901a4688155ff4be2f78670d1f",
+        "published_blob_sha256": "1eee42280ee9d3e0a80ae25c2ff8ce70ea7bfd901a4688155ff4be2f78670d1f",
+        "normalized_lf_sha256": "1eee42280ee9d3e0a80ae25c2ff8ce70ea7bfd901a4688155ff4be2f78670d1f",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/mercury.py": {
+        "executed_raw_sha256": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+        "published_blob_sha256": "d9b534f213b39a28bdbe916f2ecdfec0ca83475459e041fd086f75bc8e51d1d6",
+        "normalized_lf_sha256": "d9b534f213b39a28bdbe916f2ecdfec0ca83475459e041fd086f75bc8e51d1d6",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/native.py": {
+        "executed_raw_sha256": "340d2b9845853944842bac5de375e9b442fe400ecaefe7799cf4009d38cb33c4",
+        "published_blob_sha256": "340d2b9845853944842bac5de375e9b442fe400ecaefe7799cf4009d38cb33c4",
+        "normalized_lf_sha256": "340d2b9845853944842bac5de375e9b442fe400ecaefe7799cf4009d38cb33c4",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/native_metadata.py": {
+        "executed_raw_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+        "published_blob_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+        "normalized_lf_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/policy.py": {
+        "executed_raw_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+        "published_blob_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+        "normalized_lf_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/subscription.py": {
+        "executed_raw_sha256": "96c31dadd43b36eb1e736be70c81fb1060d7644729a57b2ceab0b56420993cd8",
+        "published_blob_sha256": "96c31dadd43b36eb1e736be70c81fb1060d7644729a57b2ceab0b56420993cd8",
+        "normalized_lf_sha256": "96c31dadd43b36eb1e736be70c81fb1060d7644729a57b2ceab0b56420993cd8",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/telemetry.py": {
+        "executed_raw_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+        "published_blob_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+        "normalized_lf_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/__init__.py": {
+        "executed_raw_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+        "published_blob_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+        "normalized_lf_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+        "normalized_lf_equal": true
+      }
+    },
+    "claim": "Python source content matches the explicit publication commit after LF normalization; executed raw SHAs remain unchanged",
+    "raw_git_blob_byte_identity_claimed": false,
+    "latest_main_equivalence_claimed": false,
+    "post_freeze_boundary": "Later main changes, including CLI record-access hardening/tests, are not retroactively part of this execution"
+  },
+  "requested_root_model": "gpt-6.1-sol",
+  "requested_root_effort": "xhigh",
+  "codex_version": "codex-cli 0.163.0-alpha.11.1",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "hardware": {
+    "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16,
+    "ram_bytes": 68635971584,
+    "machine": "AMD64"
+  },
+  "timeout_s_per_arm": 1500,
+  "model_request_budget_per_arm": 80,
+  "order": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "C",
+      "D"
+    ]
+  ],
+  "reviewer_declared_blind_complete": true,
+  "rubric_criteria": 26,
+  "critical_gates": [
+    "4d.coordinates",
+    "4d.variable_w",
+    "4d.rotation_math",
+    "4d.projection",
+    "reliability.headless"
+  ],
+  "strict_profile_and_history_isolation": "degraded; shared auth/rollouts and historical metadata import possible",
+  "hard_helper_readonly_depth": "instruction-only; not verified by this report",
+  "causal_module_contribution": "not established by this single case",
+  "speedup_percent": null,
+  "raw_evidence_boundary": "Local-only native request bodies/private instructions, native/auth state, journals/databases and raw stderr; common frozen task brief is published in protocol; no original source changes",
+  "arms": {
+    "A": {
+      "anonymous_review_id": "solution-10",
+      "execution_status": "completed_unverified",
+      "native_exit_code": 0,
+      "total_arm_s": 1463.437,
+      "deadline_censored": false,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 97,
+      "artifact_accepted": true,
+      "critical_gates": {
+        "4d.coordinates": "pass",
+        "4d.variable_w": "pass",
+        "4d.rotation_math": "pass",
+        "4d.projection": "pass",
+        "reliability.headless": "pass"
+      },
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        }
+      ],
+      "native_delegation": {
+        "reported_orchestration_status": null,
+        "reported_delegation_evidence": "not_exposed",
+        "reported_multi_agent_verified": false,
+        "native_child_count": null,
+        "parent_link_verified": false,
+        "child_model_metadata": [],
+        "peak_concurrent_agents": 1,
+        "requested_effort_is_not_identity_proof": true,
+        "hard_readonly_or_depth_verified": false
+      },
+      "usage": {
+        "native_requests_total_including_probes": 29,
+        "request_records_observed": 29,
+        "completed_requests_observed": 29,
+        "censored_or_incomplete_requests": 0,
+        "phase_usage_evidence": [
+          {
+            "phase": "main",
+            "request_records_available": true,
+            "requests": 29,
+            "completed_requests": 29
+          }
+        ],
+        "all_phase_request_evidence_available": true,
+        "aggregate_usage": {
+          "input_tokens": 1415382,
+          "output_tokens": 46482,
+          "total_tokens": 1461864,
+          "cached_tokens": 267776,
+          "reasoning_tokens": 14607
+        },
+        "known_completed_usage_lower_bound": {
+          "input_tokens": 1415382,
+          "output_tokens": 46482,
+          "total_tokens": 1461864,
+          "cached_tokens": 267776,
+          "reasoning_tokens": 14607
+        },
+        "usage_known_completed_requests": 29,
+        "requested_profiles": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "requests": 29
+          }
+        ],
+        "actual_response_models": [
+          "gpt-6.1-sol"
+        ],
+        "money_boundary": "Native subscription usage is not actual API billing; unknown charges/quota deltas remain null"
+      },
+      "root_cli_usage": {
+        "input_tokens": 1415382,
+        "output_tokens": 46482,
+        "cached_tokens": 267776
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "mercury_successful_calls": 0,
+      "harness_inspired_probes": 0,
+      "upstream_harness2_calls": 0,
+      "mercury_reported_usage": {},
+      "harness_adoption": {
+        "eligible": null,
+        "adopted": null,
+        "rollback_recorded": false,
+        "rolled_back": null
+      },
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 25,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "pass",
+        "tests_run": 37,
+        "test_errors": null,
+        "normalization_to_100": false
+      },
+      "supplemental_cli": {
+        "status": "not_run",
+        "frames": null,
+        "reason": "No supplemental CLI run supplied; frozen CLI evidence remains authoritative"
+      },
+      "supplement_does_not_amend_frozen": true,
+      "independent_geometry": {
+        "status": "pass",
+        "seeds": []
+      },
+      "independent_native": {
+        "status": "pass",
+        "passed": 57,
+        "failed": 0,
+        "nonpass_checks": [],
+        "visible_terminal_font_assessed": false
+      },
+      "root_probe_pid_samples": {
+        "main": {
+          "samples": 143,
+          "first_observed_utc": "2026-10-23T16:07:49.370887+00:00",
+          "last_observed_utc": "2026-10-23T16:31:29.655244+00:00",
+          "max_observed_working_set_bytes": 206020608,
+          "max_reported_peak_working_set_bytes": 671551488,
+          "first_observed_cumulative_cpu_s": 21.53125,
+          "last_observed_cumulative_cpu_s": 44.0,
+          "observed_cpu_delta_s": 22.46875,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case05-A-source.zip",
+        "sha256": "5ddf78b3a1aa94d35b51761bb7cb6e5cdc9394103e65e4e43e910501c01c4312",
+        "archive_bytes": 44988,
+        "file_count": 38,
+        "archive_version": 1,
+        "packaging_filter_version": 2,
+        "local_only": true
+      }
+    },
+    "B": {
+      "anonymous_review_id": "solution-9",
+      "execution_status": "timed_out",
+      "native_exit_code": 1,
+      "total_arm_s": 1501.032,
+      "deadline_censored": true,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 89,
+      "artifact_accepted": true,
+      "critical_gates": {
+        "4d.coordinates": "pass",
+        "4d.variable_w": "pass",
+        "4d.rotation_math": "pass",
+        "4d.projection": "pass",
+        "reliability.headless": "pass"
+      },
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 7,
+          "max": 10,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 0,
+              "max": 3,
+              "status": "fail"
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 0,
+          "max": 5,
+          "status": "fail",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            },
+            {
+              "id": "readme.installation",
+              "score": 0,
+              "max": 1,
+              "status": "fail"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            }
+          ]
+        }
+      ],
+      "native_delegation": {
+        "reported_orchestration_status": "verified",
+        "reported_delegation_evidence": "native_parent_link_and_usage_metadata",
+        "reported_multi_agent_verified": true,
+        "native_child_count": 1,
+        "parent_link_verified": true,
+        "child_model_metadata": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "depth": 1,
+            "tokens_used": 537102
+          }
+        ],
+        "peak_concurrent_agents": null,
+        "requested_effort_is_not_identity_proof": true,
+        "hard_readonly_or_depth_verified": false
+      },
+      "usage": {
+        "native_requests_total_including_probes": 58,
+        "request_records_observed": 58,
+        "completed_requests_observed": 57,
+        "censored_or_incomplete_requests": 1,
+        "phase_usage_evidence": [
+          {
+            "phase": "main",
+            "request_records_available": true,
+            "requests": 50,
+            "completed_requests": 49
+          },
+          {
+            "phase": "probe-1",
+            "request_records_available": true,
+            "requests": 4,
+            "completed_requests": 4
+          },
+          {
+            "phase": "probe-2",
+            "request_records_available": true,
+            "requests": 4,
+            "completed_requests": 4
+          }
+        ],
+        "all_phase_request_evidence_available": true,
+        "aggregate_usage": null,
+        "known_completed_usage_lower_bound": {
+          "input_tokens": 2264297,
+          "output_tokens": 47049,
+          "total_tokens": 2311346,
+          "cached_tokens": 470912,
+          "reasoning_tokens": 10554
+        },
+        "usage_known_completed_requests": 57,
+        "requested_profiles": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "requests": 42
+          },
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "requests": 16
+          }
+        ],
+        "actual_response_models": [
+          "gpt-6.1-sol"
+        ],
+        "money_boundary": "Native subscription usage is not actual API billing; unknown charges/quota deltas remain null"
+      },
+      "root_cli_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cached_tokens": null
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "mercury_successful_calls": 1,
+      "harness_inspired_probes": 2,
+      "upstream_harness2_calls": 0,
+      "mercury_reported_usage": {
+        "cost": 0,
+        "input_tokens": 143,
+        "output_tokens": 1
+      },
+      "harness_adoption": {
+        "eligible": true,
+        "adopted": true,
+        "rollback_recorded": true,
+        "rolled_back": true
+      },
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 25,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "pass",
+        "tests_run": 38,
+        "test_errors": null,
+        "normalization_to_100": false
+      },
+      "supplemental_cli": {
+        "status": "not_run",
+        "frames": null,
+        "reason": "No supplemental CLI run supplied; frozen CLI evidence remains authoritative"
+      },
+      "supplement_does_not_amend_frozen": true,
+      "independent_geometry": {
+        "status": "pass",
+        "seeds": []
+      },
+      "independent_native": {
+        "status": "fail",
+        "passed": 55,
+        "failed": 1,
+        "nonpass_checks": [
+          {
+            "name": "smoke completion",
+            "status": "fail",
+            "type": "TimeoutError",
+            "reason": "interactive process failed to exit"
+          }
+        ],
+        "visible_terminal_font_assessed": false
+      },
+      "root_probe_pid_samples": {
+        "main": {
+          "samples": 137,
+          "first_observed_utc": "2026-10-23T16:09:19.423562+00:00",
+          "last_observed_utc": "2026-10-23T16:31:59.666682+00:00",
+          "max_observed_working_set_bytes": 209387520,
+          "max_reported_peak_working_set_bytes": 670380032,
+          "first_observed_cumulative_cpu_s": 5.765625,
+          "last_observed_cumulative_cpu_s": 47.59375,
+          "observed_cpu_delta_s": 41.828125,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        },
+        "probe-1": {
+          "samples": 3,
+          "first_observed_utc": "2026-10-23T16:07:49.377553+00:00",
+          "last_observed_utc": "2026-10-23T16:08:09.388356+00:00",
+          "max_observed_working_set_bytes": 198791168,
+          "max_reported_peak_working_set_bytes": 670646272,
+          "first_observed_cumulative_cpu_s": 21.578125,
+          "last_observed_cumulative_cpu_s": 22.28125,
+          "observed_cpu_delta_s": 0.703125,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        },
+        "probe-2": {
+          "samples": 6,
+          "first_observed_utc": "2026-10-23T16:08:19.404791+00:00",
+          "last_observed_utc": "2026-10-23T16:09:09.414544+00:00",
+          "max_observed_working_set_bytes": 208588800,
+          "max_reported_peak_working_set_bytes": 669646848,
+          "first_observed_cumulative_cpu_s": 4.65625,
+          "last_observed_cumulative_cpu_s": 20.890625,
+          "observed_cpu_delta_s": 16.234375,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case05-B-source.zip",
+        "sha256": "e80c1629576fc1d0eac34c2c2202a0d283bcb370c3d7a0bf59d4de0a506a1e9b",
+        "archive_bytes": 27871,
+        "file_count": 27,
+        "archive_version": 1,
+        "packaging_filter_version": 2,
+        "local_only": true
+      }
+    },
+    "C": {
+      "anonymous_review_id": "solution-11",
+      "execution_status": "timed_out",
+      "native_exit_code": 1,
+      "total_arm_s": 1500.906,
+      "deadline_censored": true,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 89,
+      "artifact_accepted": true,
+      "critical_gates": {
+        "4d.coordinates": "pass",
+        "4d.variable_w": "pass",
+        "4d.rotation_math": "pass",
+        "4d.projection": "pass",
+        "reliability.headless": "pass"
+      },
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 10,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 4,
+              "max": 6,
+              "status": "partial"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 8,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 8,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 0,
+          "max": 5,
+          "status": "fail",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            },
+            {
+              "id": "readme.installation",
+              "score": 0,
+              "max": 1,
+              "status": "fail"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 0,
+              "max": 2,
+              "status": "fail"
+            }
+          ]
+        }
+      ],
+      "native_delegation": {
+        "reported_orchestration_status": "verified",
+        "reported_delegation_evidence": "native_parent_link_and_usage_metadata",
+        "reported_multi_agent_verified": true,
+        "native_child_count": 2,
+        "parent_link_verified": true,
+        "child_model_metadata": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "depth": 1,
+            "tokens_used": 89692
+          },
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "high",
+            "depth": 1,
+            "tokens_used": 515697
+          }
+        ],
+        "peak_concurrent_agents": null,
+        "requested_effort_is_not_identity_proof": true,
+        "hard_readonly_or_depth_verified": false
+      },
+      "usage": {
+        "native_requests_total_including_probes": 40,
+        "request_records_observed": 40,
+        "completed_requests_observed": 39,
+        "censored_or_incomplete_requests": 1,
+        "phase_usage_evidence": [
+          {
+            "phase": "main",
+            "request_records_available": true,
+            "requests": 40,
+            "completed_requests": 39
+          }
+        ],
+        "all_phase_request_evidence_available": true,
+        "aggregate_usage": null,
+        "known_completed_usage_lower_bound": {
+          "input_tokens": 1620885,
+          "output_tokens": 56503,
+          "total_tokens": 1677388,
+          "cached_tokens": 306944,
+          "reasoning_tokens": 17169
+        },
+        "usage_known_completed_requests": 39,
+        "requested_profiles": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "requests": 23
+          },
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "requests": 4
+          },
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "high",
+            "requests": 13
+          }
+        ],
+        "actual_response_models": [
+          "gpt-6.1-sol"
+        ],
+        "money_boundary": "Native subscription usage is not actual API billing; unknown charges/quota deltas remain null"
+      },
+      "root_cli_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cached_tokens": null
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "mercury_successful_calls": 1,
+      "harness_inspired_probes": 0,
+      "upstream_harness2_calls": 0,
+      "mercury_reported_usage": {
+        "cost": 0,
+        "input_tokens": 144,
+        "output_tokens": 1
+      },
+      "harness_adoption": {
+        "eligible": null,
+        "adopted": null,
+        "rollback_recorded": false,
+        "rolled_back": null
+      },
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 25,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "pass",
+        "tests_run": 53,
+        "test_errors": null,
+        "normalization_to_100": false
+      },
+      "supplemental_cli": {
+        "status": "not_run",
+        "frames": null,
+        "reason": "No supplemental CLI run supplied; frozen CLI evidence remains authoritative"
+      },
+      "supplement_does_not_amend_frozen": true,
+      "independent_geometry": {
+        "status": "pass",
+        "seeds": []
+      },
+      "independent_native": {
+        "status": "fail",
+        "passed": 46,
+        "failed": 11,
+        "nonpass_checks": [
+          {
+            "name": "same seeded tree mode 3d",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "same seeded tree mode 4d",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "three distinct mode projections",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "literal close bracket",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "literal open bracket reverses XW",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "arrow yaw and pitch",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "plus zoom",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "minus zoom",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "paused frame stable",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "reset orientation scale and time",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          },
+          {
+            "name": "G changes seed",
+            "status": "fail",
+            "type": null,
+            "reason": null
+          }
+        ],
+        "visible_terminal_font_assessed": false
+      },
+      "root_probe_pid_samples": {
+        "main": {
+          "samples": 150,
+          "first_observed_utc": "2026-10-23T16:32:09.683257+00:00",
+          "last_observed_utc": "2026-10-23T16:57:00.052721+00:00",
+          "max_observed_working_set_bytes": 174399488,
+          "max_reported_peak_working_set_bytes": 671186944,
+          "first_observed_cumulative_cpu_s": 1.125,
+          "last_observed_cumulative_cpu_s": 43.09375,
+          "observed_cpu_delta_s": 41.96875,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case05-C-source.zip",
+        "sha256": "a0c303c5ce99dc536a71cda5045ec9f73a7511dba3ecc3bcdd20caaf561bc3ac",
+        "archive_bytes": 27150,
+        "file_count": 18,
+        "archive_version": 1,
+        "packaging_filter_version": 2,
+        "local_only": true
+      }
+    },
+    "D": {
+      "anonymous_review_id": "solution-12",
+      "execution_status": "failed",
+      "native_exit_code": 1,
+      "total_arm_s": 1334.063,
+      "deadline_censored": false,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 94,
+      "artifact_accepted": true,
+      "critical_gates": {
+        "4d.coordinates": "pass",
+        "4d.variable_w": "pass",
+        "4d.rotation_math": "pass",
+        "4d.projection": "pass",
+        "reliability.headless": "pass"
+      },
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 6,
+          "max": 9,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 0,
+              "max": 3,
+              "status": "fail"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        }
+      ],
+      "native_delegation": {
+        "reported_orchestration_status": "verified",
+        "reported_delegation_evidence": "native_parent_link_and_usage_metadata",
+        "reported_multi_agent_verified": true,
+        "native_child_count": 1,
+        "parent_link_verified": true,
+        "child_model_metadata": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "depth": 1,
+            "tokens_used": 325638
+          }
+        ],
+        "peak_concurrent_agents": null,
+        "requested_effort_is_not_identity_proof": true,
+        "hard_readonly_or_depth_verified": false
+      },
+      "usage": {
+        "native_requests_total_including_probes": 53,
+        "request_records_observed": 53,
+        "completed_requests_observed": 52,
+        "censored_or_incomplete_requests": 1,
+        "phase_usage_evidence": [
+          {
+            "phase": "main",
+            "request_records_available": true,
+            "requests": 44,
+            "completed_requests": 43
+          },
+          {
+            "phase": "probe-1",
+            "request_records_available": true,
+            "requests": 5,
+            "completed_requests": 5
+          },
+          {
+            "phase": "probe-2",
+            "request_records_available": true,
+            "requests": 4,
+            "completed_requests": 4
+          }
+        ],
+        "all_phase_request_evidence_available": true,
+        "aggregate_usage": null,
+        "known_completed_usage_lower_bound": {
+          "input_tokens": 2146942,
+          "output_tokens": 45479,
+          "total_tokens": 2192421,
+          "cached_tokens": 646528,
+          "reasoning_tokens": 8691
+        },
+        "usage_known_completed_requests": 52,
+        "requested_profiles": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "requests": 43
+          },
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "requests": 10
+          }
+        ],
+        "actual_response_models": [
+          "gpt-6.1-sol"
+        ],
+        "money_boundary": "Native subscription usage is not actual API billing; unknown charges/quota deltas remain null"
+      },
+      "root_cli_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cached_tokens": null
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "mercury_successful_calls": 0,
+      "harness_inspired_probes": 2,
+      "upstream_harness2_calls": 0,
+      "mercury_reported_usage": {},
+      "harness_adoption": {
+        "eligible": false,
+        "adopted": false,
+        "rollback_recorded": false,
+        "rolled_back": null
+      },
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 22,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "fail",
+        "tests_run": 38,
+        "test_errors": 3,
+        "normalization_to_100": false
+      },
+      "supplemental_cli": {
+        "status": "not_run",
+        "frames": null,
+        "reason": "No supplemental CLI run supplied; frozen CLI evidence remains authoritative"
+      },
+      "supplement_does_not_amend_frozen": true,
+      "independent_geometry": {
+        "status": "pass",
+        "seeds": []
+      },
+      "independent_native": {
+        "status": "pass",
+        "passed": 57,
+        "failed": 0,
+        "nonpass_checks": [],
+        "visible_terminal_font_assessed": false
+      },
+      "root_probe_pid_samples": {
+        "main": {
+          "samples": 120,
+          "first_observed_utc": "2026-10-23T16:34:29.735825+00:00",
+          "last_observed_utc": "2026-10-23T16:54:20.007779+00:00",
+          "max_observed_working_set_bytes": 211181568,
+          "max_reported_peak_working_set_bytes": 671432704,
+          "first_observed_cumulative_cpu_s": 8.015625,
+          "last_observed_cumulative_cpu_s": 51.65625,
+          "observed_cpu_delta_s": 43.640625,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        },
+        "probe-1": {
+          "samples": 7,
+          "first_observed_utc": "2026-10-23T16:32:09.689783+00:00",
+          "last_observed_utc": "2026-10-23T16:33:09.702404+00:00",
+          "max_observed_working_set_bytes": 203722752,
+          "max_reported_peak_working_set_bytes": 670965760,
+          "first_observed_cumulative_cpu_s": 2.078125,
+          "last_observed_cumulative_cpu_s": 22.03125,
+          "observed_cpu_delta_s": 19.953125,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        },
+        "probe-2": {
+          "samples": 7,
+          "first_observed_utc": "2026-10-23T16:33:19.716885+00:00",
+          "last_observed_utc": "2026-10-23T16:34:19.728874+00:00",
+          "max_observed_working_set_bytes": 206741504,
+          "max_reported_peak_working_set_bytes": 670855168,
+          "first_observed_cumulative_cpu_s": 7.0625,
+          "last_observed_cumulative_cpu_s": 21.90625,
+          "observed_cpu_delta_s": 14.84375,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case05-D-source.zip",
+        "sha256": "6bc24bd510d8036bd7a4f4c4d51663d59b222b4e6916b25ce875e6bf5979d12d",
+        "archive_bytes": 42520,
+        "file_count": 42,
+        "archive_version": 1,
+        "packaging_filter_version": 2,
+        "local_only": true
+      }
+    }
+  }
+}

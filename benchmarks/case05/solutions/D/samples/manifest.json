@@ -1,0 +1,72 @@
+[
+  {
+    "file": "seed42_2d.txt",
+    "seed": 42,
+    "mode": "2d",
+    "width": 100,
+    "height": 40,
+    "yaw": 25.0,
+    "pitch": -7.0,
+    "angle4d": 0,
+    "zoom": 1.0,
+    "aspect": 0.5,
+    "time": 0,
+    "sha256": "dc5772d090c98b2491ef67c27ca87160b68308bd1b6087c942910db0382cfe69"
+  },
+  {
+    "file": "seed42_3d.txt",
+    "seed": 42,
+    "mode": "3d",
+    "width": 100,
+    "height": 40,
+    "yaw": 25.0,
+    "pitch": -7.0,
+    "angle4d": 0,
+    "zoom": 1.0,
+    "aspect": 0.5,
+    "time": 0,
+    "sha256": "20acd419da07846372151d207523c8944d61fcffddf8a2efa3be3a30ad72aac6"
+  },
+  {
+    "file": "seed42_4d_xw0.txt",
+    "seed": 42,
+    "mode": "4d",
+    "width": 100,
+    "height": 40,
+    "yaw": 25.0,
+    "pitch": -7.0,
+    "angle4d": 0,
+    "zoom": 1.0,
+    "aspect": 0.5,
+    "time": 0,
+    "sha256": "f22839d793002516dfbe34a7863f38f9667641909dd5225e1a339862cb5a4c5a"
+  },
+  {
+    "file": "seed42_4d_xw35.txt",
+    "seed": 42,
+    "mode": "4d",
+    "width": 100,
+    "height": 40,
+    "yaw": 25.0,
+    "pitch": -7.0,
+    "angle4d": 35,
+    "zoom": 1.0,
+    "aspect": 0.5,
+    "time": 0,
+    "sha256": "173f8af153c73ffd8b246b7add3923b7287892c73ec1a52c23fedcb697b299b1"
+  },
+  {
+    "file": "seed2026_3d.txt",
+    "seed": 2026,
+    "mode": "3d",
+    "width": 100,
+    "height": 40,
+    "yaw": 25.0,
+    "pitch": -7.0,
+    "angle4d": 0,
+    "zoom": 1.0,
+    "aspect": 0.5,
+    "time": 0,
+    "sha256": "968fcf39c731704e8fa854d74f1dceb3bb1f4ff84f74b71af05fb5534553f2a6"
+  }
+]

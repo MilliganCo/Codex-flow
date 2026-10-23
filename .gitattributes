@@ -16,3 +16,5 @@ benchmarks/case02/rotation-frames/*.txt -whitespace
 examples/ascii-tree/*/examples/*.txt -whitespace
 # Keep the frozen brief byte-identical, including Markdown hard line breaks.
 benchmarks/protocol/TREE_BENCHMARK_TASK.md -whitespace
+benchmarks/case05/solutions/** -text -whitespace
+benchmarks/case05/rotation-frames/*.txt -whitespace

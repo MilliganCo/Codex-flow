@@ -1,0 +1,2 @@
+# No third-party dependencies. Tested with CPython 3.12.10.
+# Runtime and tests use the Python standard library only.

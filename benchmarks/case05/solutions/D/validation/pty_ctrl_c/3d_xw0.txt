@@ -1,0 +1,23 @@
+ ASCII TREE EXPLORER   [3D]   seed 42   PAUSED                                 
+ yaw   25.0  pitch  -7.0  XW    0.0 deg  zoom 1.00                             
+ Perspective + depth buffer                                                    
+                                                                               
+                                                                               
+                                   '      o*'/                                 
+                                 \o:o/   \*:**                                 
+                               |*\':*'::/*:|:o:                                
+                                'o:|ooo:/o*o*o:'                               
+                              *'**:|*///*''|:::/ *:                            
+                               :'/'\\\|'\o:*:/,|o*o                            
+                                \oo':|\\|\':*|//'                              
+                                  *\\\\\/||o://                                
+                                    \\|////||:                                 
+                                      |_//                                     
+                                      ||                                       
+                                      ||                                       
+                                      |||                                      
+                                                                               
+                                                                               
+ 1/2/3 mode | Arrows orbit | [ ] XW | +/- zoom | Space play                    
+ G seed | R reset | E export | H help | Q quit                                 
+ H: help  |  Space: animate  |  Q: quit                                        

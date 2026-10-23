@@ -67,16 +67,18 @@ Gateway totals are available only when every observed request completes with usa
 
 The frozen case02 applications scored A=95, B=97, C=95 and D=96, with zero successful Mercury calls and unconfirmed helpers. The later [case04](benchmarks/case04/README.md) scored A=89, B=83, C=96 and D=90; all four artifacts met the frozen acceptance rule. B/C each made one real Mercury call and B/D each ran two inspired probes, but helpers remained unverified. A/B/D hit their deadlines. These are artifact-quality results, without a full multi-agent or speedup conclusion. Case01 is invalidated and case03 aborted; both remain immutable. See [benchmark evidence](docs/benchmarking.md).
 
+The final [case05](benchmarks/case05/README.md) observed real parent-linked helpers in B/C/D (1/2/1), one Mercury call in B/C and two inspired probes in B/D. Artifact scores were **A=97, B=89, C=89, D=94**, all accepted. A completed in 1,463.437 seconds; B/C reached their deadlines and D stopped on an upstream connection-open error. The solo artifact scored highest in this case. No general speed, quota or causal contribution claim follows. [Unchanged evaluated sources](benchmarks/case05/solutions/README.md) and exact evidence are preserved; the later run-record security fix does not rewrite the frozen runtime.
+
 ## Run the accepted examples
 
-![Actual case02 solo ASCII exports in 2D, 3D and 4D](benchmarks/case02/preview.png)
+![Actual case05 solo ASCII exports in 2D, 3D and 4D](benchmarks/case05/preview.png)
 
-These are typeset exports from the accepted solo case02 artifact. They do not demonstrate a workflow speedup. Two complete, separate implementations and their tests are available in [ASCII Tree Explorer demos](examples/ascii-tree/README.md).
+These are typeset CLI exports from accepted case05 A, not a GUI screenshot or a workflow-speed demonstration. All four [frozen applications](benchmarks/case05/solutions/README.md) are available with their defects recorded. The separately maintained [case02 demos](examples/ascii-tree/README.md) have Windows/Ubuntu CI.
 
-[Watch the actual 4D XW-rotation frames](benchmarks/case02/rotation.gif), generated from the preserved CLI implementation.
+[Watch the actual 4D XW-rotation frames](benchmarks/case05/rotation.gif), generated after evaluation from unchanged case05 A.
 
 ```powershell
-Push-Location examples/ascii-tree/solo
+Push-Location benchmarks/case05/solutions/A
 python -m ascii_tree view --seed 42 --mode 4d
 Pop-Location
 ```

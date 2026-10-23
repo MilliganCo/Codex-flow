@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "platform": "win32",
+  "python": "3.12.10",
+  "native_console_key_events": true,
+  "mode_switches_keep_tree": true,
+  "camera_xw_zoom_help_animation_export": true,
+  "q_restores_console_modes": true,
+  "ctrl_c_restores_console_modes": true,
+  "escape_restores_console_modes": true,
+  "physical_resize": "NOT RUN"
+}

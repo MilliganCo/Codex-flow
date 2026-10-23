@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "experiment_id": "tree-case-20261023-05",
+  "source_hashes": [
+    {
+      "label": "frozen experiment manifest",
+      "sha256": "8b1f608b9dd1e5c372b4007caf7d139df4f067b6cb6897e3bd85af64930868b6"
+    },
+    {
+      "label": "final blind review",
+      "sha256": "0c258d91abfe348a3c0b4594c78efba00bebb11db96f8dad40a0e3cfb5951501"
+    },
+    {
+      "label": "frozen rubric",
+      "sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+    },
+    {
+      "label": "private mapping",
+      "sha256": "ed27991491f042c79fe989e5bf0b48e755ef51c4e3d064c73b3d5b6c5c4b631e",
+      "redistributed": false
+    },
+    {
+      "label": "LF publication equivalence",
+      "sha256": "01955d6f129130c4d03c3dcb95e549d0aa54f6f316cb0a2e200e5af0cc08cce1"
+    },
+    {
+      "label": "root/probe PID sampling",
+      "sha256": "5b5e53f03ed9e369a71dcd405dc0cc2180bd7379e7f83e652e7d0f963c07713e"
+    },
+    {
+      "group": "A",
+      "label": "frozen final metrics",
+      "sha256": "f54d2423578a33bdcd4ac81aa5838d323f5840b14e31d83a0153f913e65a9a7b"
+    },
+    {
+      "group": "A",
+      "label": "frozen_evaluator",
+      "sha256": "394f1813038945cde82a1a2c7e4451b97944327d7db018f34c54676359df93fb"
+    },
+    {
+      "group": "A",
+      "label": "geometry",
+      "sha256": "2c4db180add9d33c293c357fa35cd7d2c836e1184eb259f1a4db20795762b2c0"
+    },
+    {
+      "group": "A",
+      "label": "native_terminal",
+      "sha256": "d472c9a2d24d7561816f4abd0147282fb6c1c8b5b396f0e49c46b9b4efd65845"
+    },
+    {
+      "group": "B",
+      "label": "frozen final metrics",
+      "sha256": "1a8557fddf4dd3718676ec517f83ef5c2bc6df625e7675b5402a1971d35a6376"
+    },
+    {
+      "group": "B",
+      "label": "frozen_evaluator",
+      "sha256": "d4bc6002a7777b671ea861d0d2b7551b5e0741a27eb110e309d6992c348359a9"
+    },
+    {
+      "group": "B",
+      "label": "geometry",
+      "sha256": "5bdee14c4403942fa059f419cc73787593a8793e25fa41b7a18a15088ecabbbe"
+    },
+    {
+      "group": "B",
+      "label": "native_terminal",
+      "sha256": "27a21e81d95ffc3f72d158ee5fd19a28f031da6db711ffd7154a38cd96b9adc9"
+    },
+    {
+      "group": "C",
+      "label": "frozen final metrics",
+      "sha256": "87f50dd4796202fca11dc1d6cd24d0c779e7357ef6aa567846a3c99611dc4c47"
+    },
+    {
+      "group": "C",
+      "label": "frozen_evaluator",
+      "sha256": "bc242563db3b8d7c2db1ad2763c0bf30dace73192663868f6612873783f3a804"
+    },
+    {
+      "group": "C",
+      "label": "geometry",
+      "sha256": "9bfc161eafbf3f77e3682367f92cd9313ce0a9ca59cb5b5f1e5a350a712c474d"
+    },
+    {
+      "group": "C",
+      "label": "native_terminal",
+      "sha256": "d14407822fb1dc8beaac73f11d2ce9a0425e683d0535aaa514507e84684b6057"
+    },
+    {
+      "group": "D",
+      "label": "frozen final metrics",
+      "sha256": "aa8f992f28277e952789a73537657e31532228b560d9c62b89c259e6592fd75f"
+    },
+    {
+      "group": "D",
+      "label": "frozen_evaluator",
+      "sha256": "d77e272173153654901af97b30139a85cfd0804796843e5a2104ee4579556527"
+    },
+    {
+      "group": "D",
+      "label": "geometry",
+      "sha256": "80214bbaa291534a6495a45b2071a4336c29d6c71270fa8fc86c4ebc6483edae"
+    },
+    {
+      "group": "D",
+      "label": "native_terminal",
+      "sha256": "a68305d47bf4bd131ca6093cd6d783f42eb11f099eb8cddc4d2836ca8e29319f"
+    },
+    {
+      "label": "public path-redacted independent review",
+      "sha256": "403f08ab565834700cb0e1f4e1ec411b38d79122a49401baf34158b7df62a1bc"
+    }
+  ],
+  "raw_sources_redistributed": false,
+  "runtime_publication_equivalence_source_sha256": "01955d6f129130c4d03c3dcb95e549d0aa54f6f316cb0a2e200e5af0cc08cce1",
+  "filtered_application_sources_published": true,
+  "published_application_files": 127,
+  "raw_sources_scope": "Unfiltered originals, native request bodies/auth/state/logs are not redistributed; filtered evaluated application code and ASCII samples are published",
+  "original_blind_review_sha256": "ff31a558bccc0279caafc506fc953b5a2f2d0a532ab4db2666d33bb5c9f2ae77",
+  "schema_adapter": {
+    "original_review_sha256": "ff31a558bccc0279caafc506fc953b5a2f2d0a532ab4db2666d33bb5c9f2ae77",
+    "packaging_review_sha256": "0c258d91abfe348a3c0b4594c78efba00bebb11db96f8dad40a0e3cfb5951501",
+    "transformation": "Only numeric solution IDs 9..12 mapped to filename labels solution-9..solution-12; all scores, evidence, gates, categories and flags remain identical",
+    "original_review_immutable": true,
+    "scores_changed": false
+  }
+}

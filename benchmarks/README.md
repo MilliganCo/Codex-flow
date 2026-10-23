@@ -18,5 +18,6 @@ Case02 had **zero successful Mercury calls** and unconfirmed native helpers. B/D
 - Case01: invalidated by a runtime source-hash race; excluded.
 - Case03: aborted after Windows SDK materialized future deny targets as directories; immutable.
 - Case04: complete, with independently accepted artifact scores A/B/C/D **89/83/96/90**. B/C Mercury calls: one each; B/D inspired probes: two each; helpers unverified. [Report](case04/README.md), [metrics](case04/results.json).
+- Case05: complete, accepted artifact scores **97/89/89/94**, real B/C/D helpers **1/2/1**, B/C Mercury calls and B/D inspired probes. Solo completed; B/C timed out; D failed to open an upstream connection. [Report](case05/README.md), [unchanged sources](case05/solutions/README.md), [real rotation](case05/rotation.gif).
 
 Unknown aggregate usage, quota delta and cost remain `null`, never measured zero. Read/shared-state isolation is degraded. Raw native logs, databases, journals and rollout/auth containers stay local. The [frozen task/protocol/evaluator/rubric manifest](protocol/frozen-inputs.json) records public reproducibility inputs. No full-component speedup follows from these runs.

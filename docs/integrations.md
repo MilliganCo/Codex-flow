@@ -40,6 +40,8 @@ The real free-only smoke returned `OBSERVED` with probability `0.994779875322052
 
 **Keep experiment versions separate.** Frozen case02 recorded zero successful Mercury calls; the later smoke must not be counted in those arms. Case04 independently scored A/B/C/D=89/83/96/90: B/C each recorded one successful Mercury call, while B/D each ran two Harness²-inspired probes. Helpers were not verified in B/C/D, so these counts do not establish full integration or causal benefit. Independent helper proofs establish capability outside that benchmark, not delegation within its arms.
 
+Final case05 did observe parent-linked used helpers in B/C/D (1/2/1), successful Mercury in B/C (one each) and two inspired probes in B/D. All four artifact scores passed acceptance: 97/89/89/94. B/C still reached their deadlines and D failed on an upstream connection-open error. This proves observed component execution in that frozen case; general routing accuracy, application-quality improvement, quota savings and strict profile isolation remain unestablished. See the [report](../benchmarks/case05/README.md).
+
 ## Harness²-inspired local probes
 
 The [upstream Harness² project](https://github.com/google-research/harness2) is a research reference. Its executor is not bundled or launched. The local module implements bounded proposal comparison, safety/completeness gates, explicit adoption and hash-checked rollback inside `.codex-flow/lessons/`.

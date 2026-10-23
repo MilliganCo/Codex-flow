@@ -1,0 +1,4245 @@
+{
+  "schema_version": 1,
+  "stage": "complete",
+  "blind": true,
+  "independent": true,
+  "total_max": 100,
+  "solutions": [
+    {
+      "id": 9,
+      "quality_score": 89,
+      "total_score": 89,
+      "accepted": true,
+      "criteria": [
+        {
+          "id": "2d.determinism",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-9/evaluation.json:2d.determinism",
+            "2d-42.txt",
+            "2d-42-repeat.txt"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/model.py:49-58",
+            "solution-9/tests/test_cli.py:21-30"
+          ]
+        },
+        {
+          "id": "2d.seed_variation",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-9/evaluation.json:2d.seed_variation",
+            "2d-42.txt",
+            "2d-137-same-size.txt"
+          ],
+          "source_evidence": [
+            "solution-9/tests/test_model_geometry.py:9-12",
+            "solution-9/tests/test_render.py:32-34"
+          ]
+        },
+        {
+          "id": "2d.procedural_morphology",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "reason": "Seeded bounded procedural graph has connected curved branches, multiple orders, taper and organic asymmetric foliage; source and fresh two-seed frames reviewed.",
+          "evidence": [
+            "solution-9/ascii_tree/model.py",
+            "frozen-9/2d-42.txt",
+            "frozen-9/2d-137.txt",
+            "geometry-9.json"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/model.py:75-135",
+            "solution-9/examples/seed42-2d.txt:1-40"
+          ]
+        },
+        {
+          "id": "3d.angular_change",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-9/evaluation.json:3d.angular_change",
+            "[task-root]\\evaluation-case05-20261023\\frozen-9\\3d-angle-0.txt",
+            "[task-root]\\evaluation-case05-20261023\\frozen-9\\3d-angle-37.txt"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/geometry.py:27-32",
+            "solution-9/tests/test_render.py:36-44"
+          ]
+        },
+        {
+          "id": "3d.geometry",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "All full and skeleton coordinates finite, every edge connected with positive XYZ length/radii, affine XYZ rank3 for seeds42/137.",
+          "evidence": [
+            "geometry-9.json:full_actual_finite_XYZW",
+            "geometry-9.json:connected_positive_finite_graph",
+            "geometry-9.json:nonplanar_XYZ_rank3"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/model.py:26-46",
+            "solution-9/ascii_tree/model.py:75-135",
+            "solution-9/tests/test_model_geometry.py:14-39"
+          ]
+        },
+        {
+          "id": "3d.occlusion",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "reason": "Source uses per-cell nearest-depth ordering and depth/thickness shading; real crossing tests verify visibility and draw-order independence, and those cases passed the frozen suite.",
+          "evidence": [
+            "solution-9/ascii_tree/render.py",
+            "frozen-9/evaluation.json:tests"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/render.py:19-90",
+            "solution-9/ascii_tree/render.py:133-141",
+            "solution-9/tests/test_render.py:114-136"
+          ]
+        },
+        {
+          "id": "4d.angular_change",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-9/evaluation.json:4d.angular_change",
+            "[task-root]\\evaluation-case05-20261023\\frozen-9\\4d-angle-0.txt",
+            "[task-root]\\evaluation-case05-20261023\\frozen-9\\4d-angle-37.txt"
+          ],
+          "source_evidence": [
+            "solution-9/tests/test_render.py:46-53"
+          ]
+        },
+        {
+          "id": "4d.coordinates",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual finite XYZW on every branch and leaf for both full trees.",
+          "evidence": [
+            "geometry-9.json",
+            "solution-9/ascii_tree/model.py:7-8",
+            "solution-9/ascii_tree/model.py:26-46",
+            "solution-9/ascii_tree/model.py:87-92",
+            "solution-9/ascii_tree/model.py:110-121"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/model.py:7-8",
+            "solution-9/ascii_tree/model.py:26-46",
+            "solution-9/ascii_tree/model.py:87-92",
+            "solution-9/ascii_tree/model.py:110-121"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "W varies on both branch skeleton and full geometry for seeds42/137.",
+          "evidence": [
+            "geometry-9.json",
+            "solution-9/ascii_tree/model.py:87-92",
+            "solution-9/ascii_tree/model.py:110-121",
+            "solution-9/tests/test_model_geometry.py:25-36"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/model.py:87-92",
+            "solution-9/ascii_tree/model.py:110-121",
+            "solution-9/tests/test_model_geometry.py:25-36"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual XW operator mixes space/W; all points preserve4D norm with correct inverse and exact90-degree action; determinant+1 and orthogonality verified.",
+          "evidence": [
+            "geometry-9.json",
+            "solution-9/ascii_tree/geometry.py:9-16",
+            "solution-9/tests/test_model_geometry.py:42-63"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/geometry.py:9-16",
+            "solution-9/tests/test_model_geometry.py:42-63"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual production point projections match independent exact4D perspective, camera and3D perspective arithmetic across five views for each full tree; near-plane division guards pass.",
+          "evidence": [
+            "geometry-9.json",
+            "solution-9/ascii_tree/geometry.py:19-24",
+            "solution-9/ascii_tree/render.py:96-131"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/geometry.py:19-24",
+            "solution-9/ascii_tree/render.py:96-131"
+          ]
+        },
+        {
+          "id": "ux.help",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-9/evaluation.json:ux.help",
+            "cli.help"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/cli.py:32-60"
+          ]
+        },
+        {
+          "id": "ux.export",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-9/evaluation.json:ux.export",
+            "frames[0:6].frame"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/render.py:145-155",
+            "solution-9/tests/test_cli.py:32-42"
+          ]
+        },
+        {
+          "id": "ux.interactive_controls",
+          "score": 6,
+          "max": 6,
+          "status": "pass",
+          "reason": "Native required mode,3D/4D rotation, zoom, help, animation/pause, reset, seed/export and Q/Esc controls match the oracle. Ctrl+C is assessed separately.",
+          "evidence": [
+            "interactive-9/report.json"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/state.py:36-74",
+            "solution-9/ascii_tree/state.py:83-100",
+            "solution-9/ascii_tree/terminal.py:177-234"
+          ]
+        },
+        {
+          "id": "ux.stable_object",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Independent controls/render checks preserve the same immutable full Tree and seed across every view/angle change for seeds42/137; only G regenerates.",
+          "evidence": [
+            "geometry-9.json:same_immutable_tree_across_modes_angles",
+            "interactive-9/report.json"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/state.py:26-34",
+            "solution-9/ascii_tree/state.py:36-74",
+            "solution-9/tests/test_state_terminal.py:50-77"
+          ]
+        },
+        {
+          "id": "aesthetics.blind_frames",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "reason": "Recognizable asymmetric open crown with visible branch orders and seed variation. Several parallel twig strokes look wiry; the80x30 spatial frames leave a very thin trunk and modest tonal separation.",
+          "evidence": [
+            "frozen-9/2d-42.txt",
+            "frozen-9/2d-137.txt",
+            "frozen-9/3d-42.txt",
+            "frozen-9/3d-137.txt",
+            "frozen-9/4d-42.txt",
+            "frozen-9/4d-137.txt"
+          ],
+          "source_evidence": [
+            "solution-9/examples/seed42-2d.txt:1-40",
+            "solution-9/examples/seed7-3d.txt:1-40"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-9/evaluation.json:reliability.headless",
+            "frames[0:6]"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/cli.py:63-87"
+          ]
+        },
+        {
+          "id": "reliability.tiny",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-9/evaluation.json:reliability.tiny",
+            "*-tiny.txt"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/geometry.py:47-56",
+            "solution-9/tests/test_render.py:17-30",
+            "solution-9/tests/test_state_terminal.py:158-165"
+          ]
+        },
+        {
+          "id": "reliability.resize",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Actual ConPTY resizing30x12 ->1x1 ->100x40 passes with exact bounded ASCII viewport exports and recovery.",
+          "evidence": [
+            "interactive-9/report.json"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/terminal.py:111-113",
+            "solution-9/ascii_tree/terminal.py:154-174",
+            "solution-9/ascii_tree/terminal.py:218-228"
+          ]
+        },
+        {
+          "id": "reliability.ctrl_c",
+          "score": 0,
+          "max": 3,
+          "status": "fail",
+          "reason": "Actual neutral Ctrl+C session failed to exit within the controller limit. Cleanup was not established; original failure retained without signal/input repair.",
+          "evidence": [
+            "interactive-9/report.json"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/terminal.py:67-109",
+            "solution-9/ascii_tree/terminal.py:115-141",
+            "solution-9/ascii_tree/terminal.py:231-234",
+            "solution-9/tests/test_state_terminal.py:135-139"
+          ]
+        },
+        {
+          "id": "tests.execution",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen test command ran38 tests with exit0.",
+          "evidence": [
+            "frozen-9/evaluation.json:tests.execution",
+            "tests"
+          ],
+          "source_evidence": [
+            "solution-9/tests/test_cli.py:14-65",
+            "solution-9/tests/test_model_geometry.py:8-80",
+            "solution-9/tests/test_render.py:12-143",
+            "solution-9/tests/test_state_terminal.py:50-184"
+          ]
+        },
+        {
+          "id": "tests.coverage",
+          "score": 6,
+          "max": 6,
+          "status": "pass",
+          "reason": "Source contains meaningful tests for all ten task obligations: deterministic processes/seeds, finite connected graph, sizes/ASCII, real3D occlusion, W/XW math/frame effect, same object, headless/startup/cleanup and tiny layout. Test execution failures remain separately scored.",
+          "evidence": [
+            "solution-9/tests/test_cli.py:14-65",
+            "solution-9/tests/test_model_geometry.py:8-80",
+            "solution-9/tests/test_render.py:12-143",
+            "solution-9/tests/test_state_terminal.py:50-184"
+          ],
+          "source_evidence": [
+            "solution-9/tests/test_cli.py:14-65",
+            "solution-9/tests/test_model_geometry.py:8-80",
+            "solution-9/tests/test_render.py:12-143",
+            "solution-9/tests/test_state_terminal.py:50-184"
+          ]
+        },
+        {
+          "id": "maintainability.review",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "reason": "Small clear model/math/projection/raster/state/terminal/CLI boundaries; frozen geometry, bounded resource use and standard-library runtime. Functional/documentation/test failures are scored in their responsible criteria.",
+          "evidence": [
+            "solution-9/ascii_tree/model.py:26-46",
+            "solution-9/ascii_tree/geometry.py:1-56",
+            "solution-9/ascii_tree/state.py:1-34",
+            "solution-9/pyproject.toml:1-16",
+            "solution-9/requirements.txt:1"
+          ],
+          "source_evidence": [
+            "solution-9/ascii_tree/model.py:26-46",
+            "solution-9/ascii_tree/geometry.py:1-56",
+            "solution-9/ascii_tree/state.py:1-34",
+            "solution-9/pyproject.toml:1-16",
+            "solution-9/requirements.txt:1"
+          ]
+        },
+        {
+          "id": "readme.commands",
+          "score": 0,
+          "max": 2,
+          "status": "fail",
+          "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+          "evidence": [
+            "source-hashes.json:solution-9",
+            "source-hashes.json:solution-9",
+            "solution-9/pyproject.toml:12-13"
+          ],
+          "source_evidence": [
+            "source-hashes.json:solution-9",
+            "solution-9/pyproject.toml:12-13"
+          ]
+        },
+        {
+          "id": "readme.installation",
+          "score": 0,
+          "max": 1,
+          "status": "fail",
+          "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+          "evidence": [
+            "source-hashes.json:solution-9",
+            "source-hashes.json:solution-9",
+            "solution-9/requirements.txt:1",
+            "solution-9/pyproject.toml:9-10"
+          ],
+          "source_evidence": [
+            "source-hashes.json:solution-9",
+            "solution-9/requirements.txt:1",
+            "solution-9/pyproject.toml:9-10"
+          ]
+        },
+        {
+          "id": "readme.4d_explanation",
+          "score": 0,
+          "max": 2,
+          "status": "fail",
+          "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+          "evidence": [
+            "source-hashes.json:solution-9",
+            "source-hashes.json:solution-9",
+            "solution-9/ascii_tree/state.py:95-97"
+          ],
+          "source_evidence": [
+            "source-hashes.json:solution-9",
+            "solution-9/ascii_tree/state.py:95-97"
+          ]
+        }
+      ],
+      "critical_gates": [
+        {
+          "id": "4d.coordinates",
+          "status": "pass",
+          "evidence": [
+            "geometry-9.json",
+            "solution-9/ascii_tree/model.py:7-8",
+            "solution-9/ascii_tree/model.py:26-46",
+            "solution-9/ascii_tree/model.py:87-92",
+            "solution-9/ascii_tree/model.py:110-121"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "status": "pass",
+          "evidence": [
+            "geometry-9.json",
+            "solution-9/ascii_tree/model.py:87-92",
+            "solution-9/ascii_tree/model.py:110-121",
+            "solution-9/tests/test_model_geometry.py:25-36"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "status": "pass",
+          "evidence": [
+            "geometry-9.json",
+            "solution-9/ascii_tree/geometry.py:9-16",
+            "solution-9/tests/test_model_geometry.py:42-63"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "status": "pass",
+          "evidence": [
+            "geometry-9.json",
+            "solution-9/ascii_tree/geometry.py:19-24",
+            "solution-9/ascii_tree/render.py:96-131"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "status": "pass",
+          "evidence": [
+            "frozen-9/evaluation.json:reliability.headless",
+            "frames[0:6]"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-9/evaluation.json:2d.determinism",
+                "2d-42.txt",
+                "2d-42-repeat.txt"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/model.py:49-58",
+                "solution-9/tests/test_cli.py:21-30"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-9/evaluation.json:2d.seed_variation",
+                "2d-42.txt",
+                "2d-137-same-size.txt"
+              ],
+              "source_evidence": [
+                "solution-9/tests/test_model_geometry.py:9-12",
+                "solution-9/tests/test_render.py:32-34"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Seeded bounded procedural graph has connected curved branches, multiple orders, taper and organic asymmetric foliage; source and fresh two-seed frames reviewed.",
+              "evidence": [
+                "solution-9/ascii_tree/model.py",
+                "frozen-9/2d-42.txt",
+                "frozen-9/2d-137.txt",
+                "geometry-9.json"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/model.py:75-135",
+                "solution-9/examples/seed42-2d.txt:1-40"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-9/evaluation.json:3d.angular_change",
+                "[task-root]\\evaluation-case05-20261023\\frozen-9\\3d-angle-0.txt",
+                "[task-root]\\evaluation-case05-20261023\\frozen-9\\3d-angle-37.txt"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/geometry.py:27-32",
+                "solution-9/tests/test_render.py:36-44"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "All full and skeleton coordinates finite, every edge connected with positive XYZ length/radii, affine XYZ rank3 for seeds42/137.",
+              "evidence": [
+                "geometry-9.json:full_actual_finite_XYZW",
+                "geometry-9.json:connected_positive_finite_graph",
+                "geometry-9.json:nonplanar_XYZ_rank3"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/model.py:26-46",
+                "solution-9/ascii_tree/model.py:75-135",
+                "solution-9/tests/test_model_geometry.py:14-39"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass",
+              "reason": "Source uses per-cell nearest-depth ordering and depth/thickness shading; real crossing tests verify visibility and draw-order independence, and those cases passed the frozen suite.",
+              "evidence": [
+                "solution-9/ascii_tree/render.py",
+                "frozen-9/evaluation.json:tests"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/render.py:19-90",
+                "solution-9/ascii_tree/render.py:133-141",
+                "solution-9/tests/test_render.py:114-136"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-9/evaluation.json:4d.angular_change",
+                "[task-root]\\evaluation-case05-20261023\\frozen-9\\4d-angle-0.txt",
+                "[task-root]\\evaluation-case05-20261023\\frozen-9\\4d-angle-37.txt"
+              ],
+              "source_evidence": [
+                "solution-9/tests/test_render.py:46-53"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual finite XYZW on every branch and leaf for both full trees.",
+              "evidence": [
+                "geometry-9.json",
+                "solution-9/ascii_tree/model.py:7-8",
+                "solution-9/ascii_tree/model.py:26-46",
+                "solution-9/ascii_tree/model.py:87-92",
+                "solution-9/ascii_tree/model.py:110-121"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/model.py:7-8",
+                "solution-9/ascii_tree/model.py:26-46",
+                "solution-9/ascii_tree/model.py:87-92",
+                "solution-9/ascii_tree/model.py:110-121"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "W varies on both branch skeleton and full geometry for seeds42/137.",
+              "evidence": [
+                "geometry-9.json",
+                "solution-9/ascii_tree/model.py:87-92",
+                "solution-9/ascii_tree/model.py:110-121",
+                "solution-9/tests/test_model_geometry.py:25-36"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/model.py:87-92",
+                "solution-9/ascii_tree/model.py:110-121",
+                "solution-9/tests/test_model_geometry.py:25-36"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual XW operator mixes space/W; all points preserve4D norm with correct inverse and exact90-degree action; determinant+1 and orthogonality verified.",
+              "evidence": [
+                "geometry-9.json",
+                "solution-9/ascii_tree/geometry.py:9-16",
+                "solution-9/tests/test_model_geometry.py:42-63"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/geometry.py:9-16",
+                "solution-9/tests/test_model_geometry.py:42-63"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual production point projections match independent exact4D perspective, camera and3D perspective arithmetic across five views for each full tree; near-plane division guards pass.",
+              "evidence": [
+                "geometry-9.json",
+                "solution-9/ascii_tree/geometry.py:19-24",
+                "solution-9/ascii_tree/render.py:96-131"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/geometry.py:19-24",
+                "solution-9/ascii_tree/render.py:96-131"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-9/evaluation.json:ux.help",
+                "cli.help"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/cli.py:32-60"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-9/evaluation.json:ux.export",
+                "frames[0:6].frame"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/render.py:145-155",
+                "solution-9/tests/test_cli.py:32-42"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "Native required mode,3D/4D rotation, zoom, help, animation/pause, reset, seed/export and Q/Esc controls match the oracle. Ctrl+C is assessed separately.",
+              "evidence": [
+                "interactive-9/report.json"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/state.py:36-74",
+                "solution-9/ascii_tree/state.py:83-100",
+                "solution-9/ascii_tree/terminal.py:177-234"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Independent controls/render checks preserve the same immutable full Tree and seed across every view/angle change for seeds42/137; only G regenerates.",
+              "evidence": [
+                "geometry-9.json:same_immutable_tree_across_modes_angles",
+                "interactive-9/report.json"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/state.py:26-34",
+                "solution-9/ascii_tree/state.py:36-74",
+                "solution-9/tests/test_state_terminal.py:50-77"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial",
+              "reason": "Recognizable asymmetric open crown with visible branch orders and seed variation. Several parallel twig strokes look wiry; the80x30 spatial frames leave a very thin trunk and modest tonal separation.",
+              "evidence": [
+                "frozen-9/2d-42.txt",
+                "frozen-9/2d-137.txt",
+                "frozen-9/3d-42.txt",
+                "frozen-9/3d-137.txt",
+                "frozen-9/4d-42.txt",
+                "frozen-9/4d-137.txt"
+              ],
+              "source_evidence": [
+                "solution-9/examples/seed42-2d.txt:1-40",
+                "solution-9/examples/seed7-3d.txt:1-40"
+              ]
+            }
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "reliability",
+          "score": 7,
+          "max": 10,
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-9/evaluation.json:reliability.headless",
+                "frames[0:6]"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/cli.py:63-87"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-9/evaluation.json:reliability.tiny",
+                "*-tiny.txt"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/geometry.py:47-56",
+                "solution-9/tests/test_render.py:17-30",
+                "solution-9/tests/test_state_terminal.py:158-165"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Actual ConPTY resizing30x12 ->1x1 ->100x40 passes with exact bounded ASCII viewport exports and recovery.",
+              "evidence": [
+                "interactive-9/report.json"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/terminal.py:111-113",
+                "solution-9/ascii_tree/terminal.py:154-174",
+                "solution-9/ascii_tree/terminal.py:218-228"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 0,
+              "max": 3,
+              "status": "fail",
+              "reason": "Actual neutral Ctrl+C session failed to exit within the controller limit. Cleanup was not established; original failure retained without signal/input repair.",
+              "evidence": [
+                "interactive-9/report.json"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/terminal.py:67-109",
+                "solution-9/ascii_tree/terminal.py:115-141",
+                "solution-9/ascii_tree/terminal.py:231-234",
+                "solution-9/tests/test_state_terminal.py:135-139"
+              ]
+            }
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen test command ran38 tests with exit0.",
+              "evidence": [
+                "frozen-9/evaluation.json:tests.execution",
+                "tests"
+              ],
+              "source_evidence": [
+                "solution-9/tests/test_cli.py:14-65",
+                "solution-9/tests/test_model_geometry.py:8-80",
+                "solution-9/tests/test_render.py:12-143",
+                "solution-9/tests/test_state_terminal.py:50-184"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "Source contains meaningful tests for all ten task obligations: deterministic processes/seeds, finite connected graph, sizes/ASCII, real3D occlusion, W/XW math/frame effect, same object, headless/startup/cleanup and tiny layout. Test execution failures remain separately scored.",
+              "evidence": [
+                "solution-9/tests/test_cli.py:14-65",
+                "solution-9/tests/test_model_geometry.py:8-80",
+                "solution-9/tests/test_render.py:12-143",
+                "solution-9/tests/test_state_terminal.py:50-184"
+              ],
+              "source_evidence": [
+                "solution-9/tests/test_cli.py:14-65",
+                "solution-9/tests/test_model_geometry.py:8-80",
+                "solution-9/tests/test_render.py:12-143",
+                "solution-9/tests/test_state_terminal.py:50-184"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Small clear model/math/projection/raster/state/terminal/CLI boundaries; frozen geometry, bounded resource use and standard-library runtime. Functional/documentation/test failures are scored in their responsible criteria.",
+              "evidence": [
+                "solution-9/ascii_tree/model.py:26-46",
+                "solution-9/ascii_tree/geometry.py:1-56",
+                "solution-9/ascii_tree/state.py:1-34",
+                "solution-9/pyproject.toml:1-16",
+                "solution-9/requirements.txt:1"
+              ],
+              "source_evidence": [
+                "solution-9/ascii_tree/model.py:26-46",
+                "solution-9/ascii_tree/geometry.py:1-56",
+                "solution-9/ascii_tree/state.py:1-34",
+                "solution-9/pyproject.toml:1-16",
+                "solution-9/requirements.txt:1"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "readme",
+          "score": 0,
+          "max": 5,
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 0,
+              "max": 2,
+              "status": "fail",
+              "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+              "evidence": [
+                "source-hashes.json:solution-9",
+                "source-hashes.json:solution-9",
+                "solution-9/pyproject.toml:12-13"
+              ],
+              "source_evidence": [
+                "source-hashes.json:solution-9",
+                "solution-9/pyproject.toml:12-13"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "score": 0,
+              "max": 1,
+              "status": "fail",
+              "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+              "evidence": [
+                "source-hashes.json:solution-9",
+                "source-hashes.json:solution-9",
+                "solution-9/requirements.txt:1",
+                "solution-9/pyproject.toml:9-10"
+              ],
+              "source_evidence": [
+                "source-hashes.json:solution-9",
+                "solution-9/requirements.txt:1",
+                "solution-9/pyproject.toml:9-10"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 0,
+              "max": 2,
+              "status": "fail",
+              "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+              "evidence": [
+                "source-hashes.json:solution-9",
+                "source-hashes.json:solution-9",
+                "solution-9/ascii_tree/state.py:95-97"
+              ],
+              "source_evidence": [
+                "source-hashes.json:solution-9",
+                "solution-9/ascii_tree/state.py:95-97"
+              ]
+            }
+          ],
+          "status": "fail"
+        }
+      ],
+      "unassessed_subevidence": [
+        {
+          "name": "Ctrl+C clean exit",
+          "status": "not-assessed",
+          "value": null,
+          "reason": "Input was sent, but process wait timed out before the named clean-exit assertion could be recorded."
+        },
+        {
+          "name": "Ctrl+C cursor/alternate-screen restoration",
+          "status": "not-assessed",
+          "value": null,
+          "reason": "Unreached after the timeout; no cleanup outcome invented."
+        },
+        {
+          "name": "smoke completion",
+          "status": "fail",
+          "reason": "Actual diagnostic: TimeoutError: interactive process failed to exit."
+        }
+      ],
+      "runtime_summary": {
+        "frozen_discovery": "pass",
+        "frozen_assessed_points": 25,
+        "frozen_assessed_max": 25,
+        "test_count": 38,
+        "test_status": "pass",
+        "geometry_checks": 16,
+        "geometry_status": "pass",
+        "native_checks": 56,
+        "native_pass": 55,
+        "native_fail": 1,
+        "native_diagnostic_fail": 1,
+        "native_failed_named_checks": 0,
+        "native_status": "fail"
+      },
+      "evidence_sha256": {
+        "frozen-9\\evaluation.json": "d4bc6002a7777b671ea861d0d2b7551b5e0741a27eb110e309d6992c348359a9",
+        "geometry-9.json": "5bdee14c4403942fa059f419cc73787593a8793e25fa41b7a18a15088ecabbbe",
+        "interactive-9\\report.json": "27a21e81d95ffc3f72d158ee5fd19a28f031da6db711ffd7154a38cd96b9adc9"
+      }
+    },
+    {
+      "id": 10,
+      "quality_score": 97,
+      "total_score": 97,
+      "accepted": true,
+      "criteria": [
+        {
+          "id": "2d.determinism",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-10/evaluation.json:2d.determinism",
+            "2d-42.txt",
+            "2d-42-repeat.txt"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/model.py:48-57",
+            "solution-10/tests/test_cli.py:22-35"
+          ]
+        },
+        {
+          "id": "2d.seed_variation",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-10/evaluation.json:2d.seed_variation",
+            "2d-42.txt",
+            "2d-137-same-size.txt"
+          ],
+          "source_evidence": [
+            "solution-10/tests/test_model.py:15-18"
+          ]
+        },
+        {
+          "id": "2d.procedural_morphology",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "reason": "Seeded bounded procedural graph has connected curved branches, multiple orders, taper and organic asymmetric foliage; source and fresh two-seed frames reviewed.",
+          "evidence": [
+            "solution-10/ascii_tree/model.py",
+            "frozen-10/2d-42.txt",
+            "frozen-10/2d-137.txt",
+            "geometry-10.json"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/model.py:65-144",
+            "solution-10/samples/seed42-2d.txt:1-40"
+          ]
+        },
+        {
+          "id": "3d.angular_change",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-10/evaluation.json:3d.angular_change",
+            "[task-root]\\evaluation-case05-20261023\\frozen-10\\3d-angle-0.txt",
+            "[task-root]\\evaluation-case05-20261023\\frozen-10\\3d-angle-37.txt"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/geometry.py:82-95",
+            "solution-10/tests/test_render.py:44-50"
+          ]
+        },
+        {
+          "id": "3d.geometry",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "All full and skeleton coordinates finite, every edge connected with positive XYZ length/radii, affine XYZ rank3 for seeds42/137.",
+          "evidence": [
+            "geometry-10.json:full_actual_finite_XYZW",
+            "geometry-10.json:connected_positive_finite_graph",
+            "geometry-10.json:nonplanar_XYZ_rank3"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/model.py:8-38",
+            "solution-10/ascii_tree/model.py:79-143",
+            "solution-10/tests/test_model.py:20-54"
+          ]
+        },
+        {
+          "id": "3d.occlusion",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "reason": "Source uses per-cell nearest-depth ordering and depth/thickness shading; real crossing tests verify visibility and draw-order independence, and those cases passed the frozen suite.",
+          "evidence": [
+            "solution-10/ascii_tree/render.py",
+            "frozen-10/evaluation.json:tests"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/render.py:33-43",
+            "solution-10/ascii_tree/render.py:69-103",
+            "solution-10/ascii_tree/render.py:117-126",
+            "solution-10/tests/test_render.py:52-62"
+          ]
+        },
+        {
+          "id": "4d.angular_change",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-10/evaluation.json:4d.angular_change",
+            "[task-root]\\evaluation-case05-20261023\\frozen-10\\4d-angle-0.txt",
+            "[task-root]\\evaluation-case05-20261023\\frozen-10\\4d-angle-37.txt"
+          ],
+          "source_evidence": [
+            "solution-10/tests/test_render.py:86-91"
+          ]
+        },
+        {
+          "id": "4d.coordinates",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual finite XYZW on every branch and leaf for both full trees.",
+          "evidence": [
+            "geometry-10.json",
+            "solution-10/ascii_tree/model.py:8-38",
+            "solution-10/ascii_tree/model.py:75-76",
+            "solution-10/ascii_tree/model.py:89-92"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/model.py:8-38",
+            "solution-10/ascii_tree/model.py:75-76",
+            "solution-10/ascii_tree/model.py:89-92"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "W varies on both branch skeleton and full geometry for seeds42/137.",
+          "evidence": [
+            "geometry-10.json",
+            "solution-10/ascii_tree/model.py:89-92",
+            "solution-10/ascii_tree/model.py:123-126",
+            "solution-10/tests/test_model.py:46-54"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/model.py:89-92",
+            "solution-10/ascii_tree/model.py:123-126",
+            "solution-10/tests/test_model.py:46-54"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual XW operator mixes space/W; all points preserve4D norm with correct inverse and exact90-degree action; determinant+1 and orthogonality verified.",
+          "evidence": [
+            "geometry-10.json",
+            "solution-10/ascii_tree/geometry.py:9-19",
+            "solution-10/tests/test_render.py:64-84"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/geometry.py:9-19",
+            "solution-10/tests/test_render.py:64-84"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual production point projections match independent exact4D perspective, camera and3D perspective arithmetic across five views for each full tree; near-plane division guards pass.",
+          "evidence": [
+            "geometry-10.json",
+            "solution-10/ascii_tree/geometry.py:22-26",
+            "solution-10/ascii_tree/geometry.py:54-99",
+            "solution-10/tests/test_render.py:93-106"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/geometry.py:22-26",
+            "solution-10/ascii_tree/geometry.py:54-99",
+            "solution-10/tests/test_render.py:93-106"
+          ]
+        },
+        {
+          "id": "ux.help",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-10/evaluation.json:ux.help",
+            "cli.help"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/cli.py:32-51",
+            "solution-10/ascii_tree/app.py:12-32",
+            "solution-10/ascii_tree/app.py:146-153"
+          ]
+        },
+        {
+          "id": "ux.export",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-10/evaluation.json:ux.export",
+            "frames[0:6].frame"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/render.py:11-30",
+            "solution-10/ascii_tree/app.py:120-136",
+            "solution-10/tests/test_cli.py:22-35"
+          ]
+        },
+        {
+          "id": "ux.interactive_controls",
+          "score": 6,
+          "max": 6,
+          "status": "pass",
+          "reason": "Native required mode,3D/4D rotation, zoom, help, animation/pause, reset, seed/export and Q/Esc controls match the oracle. Ctrl+C is assessed separately.",
+          "evidence": [
+            "interactive-10/report.json"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/app.py:80-118",
+            "solution-10/ascii_tree/winconsole.py:6-12",
+            "solution-10/ascii_tree/winconsole.py:59-80",
+            "solution-10/README.md:29-45"
+          ]
+        },
+        {
+          "id": "ux.stable_object",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Independent controls/render checks preserve the same immutable full Tree and seed across every view/angle change for seeds42/137; only G regenerates.",
+          "evidence": [
+            "geometry-10.json:same_immutable_tree_across_modes_angles",
+            "interactive-10/report.json"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/app.py:58-78",
+            "solution-10/ascii_tree/app.py:80-118",
+            "solution-10/tests/test_app.py:42-67"
+          ]
+        },
+        {
+          "id": "aesthetics.blind_frames",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "reason": "Strong trunk/root flare and a rounded irregular crown with good seed variation. Dense leaf clouds obscure fine upper branching, and the default4D seed42 frame reaches the top border.",
+          "evidence": [
+            "frozen-10/2d-42.txt",
+            "frozen-10/2d-137.txt",
+            "frozen-10/3d-42.txt",
+            "frozen-10/3d-137.txt",
+            "frozen-10/4d-42.txt",
+            "frozen-10/4d-137.txt"
+          ],
+          "source_evidence": [
+            "solution-10/samples/seed42-2d.txt:1-40",
+            "solution-10/samples/seed7-3d.txt:1-40"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-10/evaluation.json:reliability.headless",
+            "frames[0:6]"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/cli.py:54-79",
+            "solution-10/tests/test_cli.py:22-47"
+          ]
+        },
+        {
+          "id": "reliability.tiny",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-10/evaluation.json:reliability.tiny",
+            "*-tiny.txt"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/render.py:106-114",
+            "solution-10/ascii_tree/app.py:138-170",
+            "solution-10/tests/test_render.py:108-112"
+          ]
+        },
+        {
+          "id": "reliability.resize",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Actual ConPTY resizing30x12 ->1x1 ->100x40 passes with exact bounded ASCII viewport exports and recovery.",
+          "evidence": [
+            "interactive-10/report.json"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/app.py:138-190",
+            "solution-10/ascii_tree/terminal.py:73-87"
+          ]
+        },
+        {
+          "id": "reliability.ctrl_c",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Actual Ctrl+C exits cleanly with cursor/alternate-screen restoration; Q/Esc cleanup also passes.",
+          "evidence": [
+            "interactive-10/report.json"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/winconsole.py:44-57",
+            "solution-10/ascii_tree/app.py:80-85",
+            "solution-10/ascii_tree/terminal.py:57-71",
+            "solution-10/ascii_tree/cli.py:78-79"
+          ]
+        },
+        {
+          "id": "tests.execution",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen test command ran37 tests with exit0.",
+          "evidence": [
+            "frozen-10/evaluation.json:tests.execution",
+            "tests"
+          ],
+          "source_evidence": [
+            "solution-10/README.md:119-146",
+            "solution-10/VERIFICATION.md:9-31"
+          ]
+        },
+        {
+          "id": "tests.coverage",
+          "score": 6,
+          "max": 6,
+          "status": "pass",
+          "reason": "Source contains meaningful tests for all ten task obligations: deterministic processes/seeds, finite connected graph, sizes/ASCII, real3D occlusion, W/XW math/frame effect, same object, headless/startup/cleanup and tiny layout. Test execution failures remain separately scored.",
+          "evidence": [
+            "solution-10/tests/test_model.py:12-54",
+            "solution-10/tests/test_render.py:22-130",
+            "solution-10/tests/test_app.py:42-182",
+            "solution-10/tests/test_cli.py:15-61"
+          ],
+          "source_evidence": [
+            "solution-10/tests/test_model.py:12-54",
+            "solution-10/tests/test_render.py:22-130",
+            "solution-10/tests/test_app.py:42-182",
+            "solution-10/tests/test_cli.py:15-61"
+          ]
+        },
+        {
+          "id": "maintainability.review",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "reason": "Small clear model/math/projection/raster/state/terminal/CLI boundaries; frozen geometry, bounded resource use and standard-library runtime. Functional/documentation/test failures are scored in their responsible criteria.",
+          "evidence": [
+            "solution-10/ascii_tree/model.py:8-38",
+            "solution-10/ascii_tree/model.py:93-95",
+            "solution-10/ascii_tree/geometry.py:47-99",
+            "solution-10/ascii_tree/winconsole.py:15-80",
+            "solution-10/requirements.txt:1-2",
+            "solution-10/IMPLEMENTATION_NOTES.md:41-58"
+          ],
+          "source_evidence": [
+            "solution-10/ascii_tree/model.py:8-38",
+            "solution-10/ascii_tree/model.py:93-95",
+            "solution-10/ascii_tree/geometry.py:47-99",
+            "solution-10/ascii_tree/winconsole.py:15-80",
+            "solution-10/requirements.txt:1-2",
+            "solution-10/IMPLEMENTATION_NOTES.md:41-58"
+          ]
+        },
+        {
+          "id": "readme.commands",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "README supplies real help/view/render/test/smoke commands and Python fallback. Equivalent documented module CLI/help/render behavior was executed by frozen evaluator; separate frozen test failure is retained.",
+          "evidence": [
+            "solution-10/README.md",
+            "frozen-10/evaluation.json:cli",
+            "solution-10/README.md:9-21",
+            "solution-10/README.md:47-79",
+            "solution-10/README.md:119-157",
+            "solution-10/ascii_tree/cli.py:32-51"
+          ],
+          "source_evidence": [
+            "solution-10/README.md:9-21",
+            "solution-10/README.md:47-79",
+            "solution-10/README.md:119-157",
+            "solution-10/ascii_tree/cli.py:32-51"
+          ]
+        },
+        {
+          "id": "readme.installation",
+          "score": 1,
+          "max": 1,
+          "status": "pass",
+          "reason": "README correctly states Python3.12+, actual standard-library dependencies and reproducible source/optional packaging setup.",
+          "evidence": [
+            "solution-10/README.md",
+            "frozen-10/evaluation.json:cli",
+            "solution-10/README.md:3-7",
+            "solution-10/README.md:14-21",
+            "solution-10/requirements.txt:1-2"
+          ],
+          "source_evidence": [
+            "solution-10/README.md:3-7",
+            "solution-10/README.md:14-21",
+            "solution-10/requirements.txt:1-2"
+          ]
+        },
+        {
+          "id": "readme.4d_explanation",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "README accurately explains variable growth W, true XW mixing and sequential4D-to3D-to2D perspective; equations match independently validated code.",
+          "evidence": [
+            "solution-10/README.md",
+            "frozen-10/evaluation.json:cli",
+            "solution-10/README.md:95-117",
+            "solution-10/ascii_tree/geometry.py:66-99"
+          ],
+          "source_evidence": [
+            "solution-10/README.md:95-117",
+            "solution-10/ascii_tree/geometry.py:66-99"
+          ]
+        }
+      ],
+      "critical_gates": [
+        {
+          "id": "4d.coordinates",
+          "status": "pass",
+          "evidence": [
+            "geometry-10.json",
+            "solution-10/ascii_tree/model.py:8-38",
+            "solution-10/ascii_tree/model.py:75-76",
+            "solution-10/ascii_tree/model.py:89-92"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "status": "pass",
+          "evidence": [
+            "geometry-10.json",
+            "solution-10/ascii_tree/model.py:89-92",
+            "solution-10/ascii_tree/model.py:123-126",
+            "solution-10/tests/test_model.py:46-54"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "status": "pass",
+          "evidence": [
+            "geometry-10.json",
+            "solution-10/ascii_tree/geometry.py:9-19",
+            "solution-10/tests/test_render.py:64-84"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "status": "pass",
+          "evidence": [
+            "geometry-10.json",
+            "solution-10/ascii_tree/geometry.py:22-26",
+            "solution-10/ascii_tree/geometry.py:54-99",
+            "solution-10/tests/test_render.py:93-106"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "status": "pass",
+          "evidence": [
+            "frozen-10/evaluation.json:reliability.headless",
+            "frames[0:6]"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-10/evaluation.json:2d.determinism",
+                "2d-42.txt",
+                "2d-42-repeat.txt"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/model.py:48-57",
+                "solution-10/tests/test_cli.py:22-35"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-10/evaluation.json:2d.seed_variation",
+                "2d-42.txt",
+                "2d-137-same-size.txt"
+              ],
+              "source_evidence": [
+                "solution-10/tests/test_model.py:15-18"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Seeded bounded procedural graph has connected curved branches, multiple orders, taper and organic asymmetric foliage; source and fresh two-seed frames reviewed.",
+              "evidence": [
+                "solution-10/ascii_tree/model.py",
+                "frozen-10/2d-42.txt",
+                "frozen-10/2d-137.txt",
+                "geometry-10.json"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/model.py:65-144",
+                "solution-10/samples/seed42-2d.txt:1-40"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-10/evaluation.json:3d.angular_change",
+                "[task-root]\\evaluation-case05-20261023\\frozen-10\\3d-angle-0.txt",
+                "[task-root]\\evaluation-case05-20261023\\frozen-10\\3d-angle-37.txt"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/geometry.py:82-95",
+                "solution-10/tests/test_render.py:44-50"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "All full and skeleton coordinates finite, every edge connected with positive XYZ length/radii, affine XYZ rank3 for seeds42/137.",
+              "evidence": [
+                "geometry-10.json:full_actual_finite_XYZW",
+                "geometry-10.json:connected_positive_finite_graph",
+                "geometry-10.json:nonplanar_XYZ_rank3"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/model.py:8-38",
+                "solution-10/ascii_tree/model.py:79-143",
+                "solution-10/tests/test_model.py:20-54"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass",
+              "reason": "Source uses per-cell nearest-depth ordering and depth/thickness shading; real crossing tests verify visibility and draw-order independence, and those cases passed the frozen suite.",
+              "evidence": [
+                "solution-10/ascii_tree/render.py",
+                "frozen-10/evaluation.json:tests"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/render.py:33-43",
+                "solution-10/ascii_tree/render.py:69-103",
+                "solution-10/ascii_tree/render.py:117-126",
+                "solution-10/tests/test_render.py:52-62"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-10/evaluation.json:4d.angular_change",
+                "[task-root]\\evaluation-case05-20261023\\frozen-10\\4d-angle-0.txt",
+                "[task-root]\\evaluation-case05-20261023\\frozen-10\\4d-angle-37.txt"
+              ],
+              "source_evidence": [
+                "solution-10/tests/test_render.py:86-91"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual finite XYZW on every branch and leaf for both full trees.",
+              "evidence": [
+                "geometry-10.json",
+                "solution-10/ascii_tree/model.py:8-38",
+                "solution-10/ascii_tree/model.py:75-76",
+                "solution-10/ascii_tree/model.py:89-92"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/model.py:8-38",
+                "solution-10/ascii_tree/model.py:75-76",
+                "solution-10/ascii_tree/model.py:89-92"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "W varies on both branch skeleton and full geometry for seeds42/137.",
+              "evidence": [
+                "geometry-10.json",
+                "solution-10/ascii_tree/model.py:89-92",
+                "solution-10/ascii_tree/model.py:123-126",
+                "solution-10/tests/test_model.py:46-54"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/model.py:89-92",
+                "solution-10/ascii_tree/model.py:123-126",
+                "solution-10/tests/test_model.py:46-54"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual XW operator mixes space/W; all points preserve4D norm with correct inverse and exact90-degree action; determinant+1 and orthogonality verified.",
+              "evidence": [
+                "geometry-10.json",
+                "solution-10/ascii_tree/geometry.py:9-19",
+                "solution-10/tests/test_render.py:64-84"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/geometry.py:9-19",
+                "solution-10/tests/test_render.py:64-84"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual production point projections match independent exact4D perspective, camera and3D perspective arithmetic across five views for each full tree; near-plane division guards pass.",
+              "evidence": [
+                "geometry-10.json",
+                "solution-10/ascii_tree/geometry.py:22-26",
+                "solution-10/ascii_tree/geometry.py:54-99",
+                "solution-10/tests/test_render.py:93-106"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/geometry.py:22-26",
+                "solution-10/ascii_tree/geometry.py:54-99",
+                "solution-10/tests/test_render.py:93-106"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-10/evaluation.json:ux.help",
+                "cli.help"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/cli.py:32-51",
+                "solution-10/ascii_tree/app.py:12-32",
+                "solution-10/ascii_tree/app.py:146-153"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-10/evaluation.json:ux.export",
+                "frames[0:6].frame"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/render.py:11-30",
+                "solution-10/ascii_tree/app.py:120-136",
+                "solution-10/tests/test_cli.py:22-35"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "Native required mode,3D/4D rotation, zoom, help, animation/pause, reset, seed/export and Q/Esc controls match the oracle. Ctrl+C is assessed separately.",
+              "evidence": [
+                "interactive-10/report.json"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/app.py:80-118",
+                "solution-10/ascii_tree/winconsole.py:6-12",
+                "solution-10/ascii_tree/winconsole.py:59-80",
+                "solution-10/README.md:29-45"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Independent controls/render checks preserve the same immutable full Tree and seed across every view/angle change for seeds42/137; only G regenerates.",
+              "evidence": [
+                "geometry-10.json:same_immutable_tree_across_modes_angles",
+                "interactive-10/report.json"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/app.py:58-78",
+                "solution-10/ascii_tree/app.py:80-118",
+                "solution-10/tests/test_app.py:42-67"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial",
+              "reason": "Strong trunk/root flare and a rounded irregular crown with good seed variation. Dense leaf clouds obscure fine upper branching, and the default4D seed42 frame reaches the top border.",
+              "evidence": [
+                "frozen-10/2d-42.txt",
+                "frozen-10/2d-137.txt",
+                "frozen-10/3d-42.txt",
+                "frozen-10/3d-137.txt",
+                "frozen-10/4d-42.txt",
+                "frozen-10/4d-137.txt"
+              ],
+              "source_evidence": [
+                "solution-10/samples/seed42-2d.txt:1-40",
+                "solution-10/samples/seed7-3d.txt:1-40"
+              ]
+            }
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-10/evaluation.json:reliability.headless",
+                "frames[0:6]"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/cli.py:54-79",
+                "solution-10/tests/test_cli.py:22-47"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-10/evaluation.json:reliability.tiny",
+                "*-tiny.txt"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/render.py:106-114",
+                "solution-10/ascii_tree/app.py:138-170",
+                "solution-10/tests/test_render.py:108-112"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Actual ConPTY resizing30x12 ->1x1 ->100x40 passes with exact bounded ASCII viewport exports and recovery.",
+              "evidence": [
+                "interactive-10/report.json"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/app.py:138-190",
+                "solution-10/ascii_tree/terminal.py:73-87"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Actual Ctrl+C exits cleanly with cursor/alternate-screen restoration; Q/Esc cleanup also passes.",
+              "evidence": [
+                "interactive-10/report.json"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/winconsole.py:44-57",
+                "solution-10/ascii_tree/app.py:80-85",
+                "solution-10/ascii_tree/terminal.py:57-71",
+                "solution-10/ascii_tree/cli.py:78-79"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen test command ran37 tests with exit0.",
+              "evidence": [
+                "frozen-10/evaluation.json:tests.execution",
+                "tests"
+              ],
+              "source_evidence": [
+                "solution-10/README.md:119-146",
+                "solution-10/VERIFICATION.md:9-31"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "Source contains meaningful tests for all ten task obligations: deterministic processes/seeds, finite connected graph, sizes/ASCII, real3D occlusion, W/XW math/frame effect, same object, headless/startup/cleanup and tiny layout. Test execution failures remain separately scored.",
+              "evidence": [
+                "solution-10/tests/test_model.py:12-54",
+                "solution-10/tests/test_render.py:22-130",
+                "solution-10/tests/test_app.py:42-182",
+                "solution-10/tests/test_cli.py:15-61"
+              ],
+              "source_evidence": [
+                "solution-10/tests/test_model.py:12-54",
+                "solution-10/tests/test_render.py:22-130",
+                "solution-10/tests/test_app.py:42-182",
+                "solution-10/tests/test_cli.py:15-61"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Small clear model/math/projection/raster/state/terminal/CLI boundaries; frozen geometry, bounded resource use and standard-library runtime. Functional/documentation/test failures are scored in their responsible criteria.",
+              "evidence": [
+                "solution-10/ascii_tree/model.py:8-38",
+                "solution-10/ascii_tree/model.py:93-95",
+                "solution-10/ascii_tree/geometry.py:47-99",
+                "solution-10/ascii_tree/winconsole.py:15-80",
+                "solution-10/requirements.txt:1-2",
+                "solution-10/IMPLEMENTATION_NOTES.md:41-58"
+              ],
+              "source_evidence": [
+                "solution-10/ascii_tree/model.py:8-38",
+                "solution-10/ascii_tree/model.py:93-95",
+                "solution-10/ascii_tree/geometry.py:47-99",
+                "solution-10/ascii_tree/winconsole.py:15-80",
+                "solution-10/requirements.txt:1-2",
+                "solution-10/IMPLEMENTATION_NOTES.md:41-58"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "README supplies real help/view/render/test/smoke commands and Python fallback. Equivalent documented module CLI/help/render behavior was executed by frozen evaluator; separate frozen test failure is retained.",
+              "evidence": [
+                "solution-10/README.md",
+                "frozen-10/evaluation.json:cli",
+                "solution-10/README.md:9-21",
+                "solution-10/README.md:47-79",
+                "solution-10/README.md:119-157",
+                "solution-10/ascii_tree/cli.py:32-51"
+              ],
+              "source_evidence": [
+                "solution-10/README.md:9-21",
+                "solution-10/README.md:47-79",
+                "solution-10/README.md:119-157",
+                "solution-10/ascii_tree/cli.py:32-51"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass",
+              "reason": "README correctly states Python3.12+, actual standard-library dependencies and reproducible source/optional packaging setup.",
+              "evidence": [
+                "solution-10/README.md",
+                "frozen-10/evaluation.json:cli",
+                "solution-10/README.md:3-7",
+                "solution-10/README.md:14-21",
+                "solution-10/requirements.txt:1-2"
+              ],
+              "source_evidence": [
+                "solution-10/README.md:3-7",
+                "solution-10/README.md:14-21",
+                "solution-10/requirements.txt:1-2"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "README accurately explains variable growth W, true XW mixing and sequential4D-to3D-to2D perspective; equations match independently validated code.",
+              "evidence": [
+                "solution-10/README.md",
+                "frozen-10/evaluation.json:cli",
+                "solution-10/README.md:95-117",
+                "solution-10/ascii_tree/geometry.py:66-99"
+              ],
+              "source_evidence": [
+                "solution-10/README.md:95-117",
+                "solution-10/ascii_tree/geometry.py:66-99"
+              ]
+            }
+          ],
+          "status": "pass"
+        }
+      ],
+      "unassessed_subevidence": [],
+      "runtime_summary": {
+        "frozen_discovery": "pass",
+        "frozen_assessed_points": 25,
+        "frozen_assessed_max": 25,
+        "test_count": 37,
+        "test_status": "pass",
+        "geometry_checks": 16,
+        "geometry_status": "pass",
+        "native_checks": 57,
+        "native_pass": 57,
+        "native_fail": 0,
+        "native_diagnostic_fail": 0,
+        "native_failed_named_checks": 0,
+        "native_status": "pass"
+      },
+      "evidence_sha256": {
+        "frozen-10\\evaluation.json": "394f1813038945cde82a1a2c7e4451b97944327d7db018f34c54676359df93fb",
+        "geometry-10.json": "2c4db180add9d33c293c357fa35cd7d2c836e1184eb259f1a4db20795762b2c0",
+        "interactive-10\\report.json": "d472c9a2d24d7561816f4abd0147282fb6c1c8b5b396f0e49c46b9b4efd65845"
+      }
+    },
+    {
+      "id": 11,
+      "quality_score": 89,
+      "total_score": 89,
+      "accepted": true,
+      "criteria": [
+        {
+          "id": "2d.determinism",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-11/evaluation.json:2d.determinism",
+            "2d-42.txt",
+            "2d-42-repeat.txt"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/model.py:44-53",
+            "frozen-11/evaluation.json:2d.determinism"
+          ]
+        },
+        {
+          "id": "2d.seed_variation",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-11/evaluation.json:2d.seed_variation",
+            "2d-42.txt",
+            "2d-137-same-size.txt"
+          ],
+          "source_evidence": [
+            "solution-11/tests/test_model_math.py:14-24",
+            "frozen-11/evaluation.json:2d.seed_variation"
+          ]
+        },
+        {
+          "id": "2d.procedural_morphology",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "reason": "Seeded bounded procedural graph has connected curved branches, multiple orders, taper and organic asymmetric foliage; source and fresh two-seed frames reviewed.",
+          "evidence": [
+            "solution-11/ascii_tree/model.py",
+            "frozen-11/2d-42.txt",
+            "frozen-11/2d-137.txt",
+            "geometry-11.json"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/model.py:61-127",
+            "frozen-11/evaluation.json:2d.procedural_morphology"
+          ]
+        },
+        {
+          "id": "3d.angular_change",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-11/evaluation.json:3d.angular_change",
+            "[task-root]\\evaluation-case05-20261023\\frozen-11\\3d-angle-0.txt",
+            "[task-root]\\evaluation-case05-20261023\\frozen-11\\3d-angle-37.txt"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/math4d.py:44-49",
+            "frozen-11/evaluation.json:3d.angular_change"
+          ]
+        },
+        {
+          "id": "3d.geometry",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "All full and skeleton coordinates finite, every edge connected with positive XYZ length/radii, affine XYZ rank3 for seeds42/137.",
+          "evidence": [
+            "geometry-11.json:full_actual_finite_XYZW",
+            "geometry-11.json:connected_positive_finite_graph",
+            "geometry-11.json:nonplanar_XYZ_rank3"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/model.py:12-36",
+            "solution-11/tests/test_model_math.py:26-61",
+            "frozen-11/evaluation.json:3d.geometry"
+          ]
+        },
+        {
+          "id": "3d.occlusion",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "reason": "Source uses per-cell nearest-depth ordering and depth/thickness shading; real crossing tests verify visibility and draw-order independence, and those cases passed the frozen suite.",
+          "evidence": [
+            "solution-11/ascii_tree/render.py",
+            "frozen-11/evaluation.json:tests"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/render.py:35-54",
+            "solution-11/ascii_tree/render.py:117-175",
+            "solution-11/tests/test_render.py:85-109",
+            "frozen-11/evaluation.json:3d.occlusion"
+          ]
+        },
+        {
+          "id": "4d.angular_change",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-11/evaluation.json:4d.angular_change",
+            "[task-root]\\evaluation-case05-20261023\\frozen-11\\4d-angle-0.txt",
+            "[task-root]\\evaluation-case05-20261023\\frozen-11\\4d-angle-37.txt"
+          ],
+          "source_evidence": [
+            "solution-11/tests/test_render.py:47-50",
+            "frozen-11/evaluation.json:4d.angular_change"
+          ]
+        },
+        {
+          "id": "4d.coordinates",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual finite XYZW on every branch and leaf for both full trees.",
+          "evidence": [
+            "geometry-11.json",
+            "solution-11/ascii_tree/math4d.py:9-20",
+            "solution-11/ascii_tree/model.py:12-36",
+            "frozen-11/evaluation.json:4d.coordinates"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/math4d.py:9-20",
+            "solution-11/ascii_tree/model.py:12-36",
+            "frozen-11/evaluation.json:4d.coordinates"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "W varies on both branch skeleton and full geometry for seeds42/137.",
+          "evidence": [
+            "geometry-11.json",
+            "solution-11/ascii_tree/model.py:65-66",
+            "solution-11/ascii_tree/model.py:82-83",
+            "solution-11/ascii_tree/model.py:105-106",
+            "frozen-11/evaluation.json:4d.variable_w"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/model.py:65-66",
+            "solution-11/ascii_tree/model.py:82-83",
+            "solution-11/ascii_tree/model.py:105-106",
+            "frozen-11/evaluation.json:4d.variable_w"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual XW operator mixes space/W; all points preserve4D norm with correct inverse and exact90-degree action; determinant+1 and orthogonality verified.",
+          "evidence": [
+            "geometry-11.json",
+            "solution-11/ascii_tree/math4d.py:23-31",
+            "solution-11/tests/test_model_math.py:64-88",
+            "frozen-11/evaluation.json:4d.rotation_math"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/math4d.py:23-31",
+            "solution-11/tests/test_model_math.py:64-88",
+            "frozen-11/evaluation.json:4d.rotation_math"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual production point projections match independent exact4D perspective, camera and3D perspective arithmetic across five views for each full tree; near-plane division guards pass.",
+          "evidence": [
+            "geometry-11.json",
+            "solution-11/ascii_tree/math4d.py:34-41",
+            "solution-11/ascii_tree/render.py:65-102",
+            "frozen-11/evaluation.json:4d.projection"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/math4d.py:34-41",
+            "solution-11/ascii_tree/render.py:65-102",
+            "frozen-11/evaluation.json:4d.projection"
+          ]
+        },
+        {
+          "id": "ux.help",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-11/evaluation.json:ux.help",
+            "cli.help"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/app.py:12-34",
+            "frozen-11/evaluation.json:ux.help"
+          ]
+        },
+        {
+          "id": "ux.export",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-11/evaluation.json:ux.export",
+            "frames[0:6].frame"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/app.py:116-130",
+            "solution-11/ascii_tree/terminal.py:224-236",
+            "frozen-11/evaluation.json:ux.export"
+          ]
+        },
+        {
+          "id": "ux.interactive_controls",
+          "score": 4,
+          "max": 6,
+          "status": "partial",
+          "reason": "Native protocol completed57 checks:46 pass,11 fail. Required input handlers update state, help/animation/resize/exits work, but batched mode/angle/zoom/reset/G plusE exports stale cached last_frame; first paused export differs from later held export. Multiple failed comparisons share this export/redraw defect; geometry evidence stays separate.",
+          "evidence": [
+            "interactive-11/report.json",
+            "solution-11/ascii_tree/app.py:116-130",
+            "solution-11/ascii_tree/terminal.py:224-236"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/app.py:62-114",
+            "solution-11/ascii_tree/terminal.py:208-241",
+            "frozen-11/evaluation.json:ux.interactive_controls"
+          ]
+        },
+        {
+          "id": "ux.stable_object",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Independent controls/render checks preserve the same immutable full Tree and seed across every view/angle change for seeds42/137; only G regenerates.",
+          "evidence": [
+            "geometry-11.json:same_immutable_tree_across_modes_angles",
+            "interactive-11/report.json"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/app.py:55-114",
+            "solution-11/tests/test_app_terminal.py:18-44",
+            "frozen-11/evaluation.json:ux.stable_object"
+          ]
+        },
+        {
+          "id": "aesthetics.blind_frames",
+          "score": 8,
+          "max": 12,
+          "status": "partial",
+          "reason": "Airy asymmetric branching and visible scaffold orders. Sparse/line-heavy crown, long plain trunk and unused margins reduce fullness; the4D seed137 crown touches the top border.",
+          "evidence": [
+            "frozen-11/2d-42.txt",
+            "frozen-11/2d-137.txt",
+            "frozen-11/3d-42.txt",
+            "frozen-11/3d-137.txt",
+            "frozen-11/4d-42.txt",
+            "frozen-11/4d-137.txt"
+          ],
+          "source_evidence": [
+            "source-hashes.json:solution-11",
+            "frozen-11/evaluation.json:aesthetics.blind_frames"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-11/evaluation.json:reliability.headless",
+            "frames[0:6]"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/cli.py:42-65",
+            "frozen-11/evaluation.json:reliability.headless"
+          ]
+        },
+        {
+          "id": "reliability.tiny",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-11/evaluation.json:reliability.tiny",
+            "*-tiny.txt"
+          ],
+          "source_evidence": [
+            "solution-11/tests/test_render.py:13-23",
+            "frozen-11/evaluation.json:reliability.tiny"
+          ]
+        },
+        {
+          "id": "reliability.resize",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Actual ConPTY resizing30x12 ->1x1 ->100x40 passes with exact bounded ASCII viewport exports and recovery.",
+          "evidence": [
+            "interactive-11/report.json"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/app.py:132-157",
+            "solution-11/ascii_tree/terminal.py:232-237",
+            "frozen-11/evaluation.json:reliability.resize"
+          ]
+        },
+        {
+          "id": "reliability.ctrl_c",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Actual Ctrl+C exits cleanly with cursor/alternate-screen restoration; Q/Esc cleanup also passes.",
+          "evidence": [
+            "interactive-11/report.json"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/terminal.py:122-183",
+            "solution-11/ascii_tree/terminal.py:224-240",
+            "frozen-11/evaluation.json:reliability.ctrl_c"
+          ]
+        },
+        {
+          "id": "tests.execution",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen test command ran53 tests with exit0.",
+          "evidence": [
+            "frozen-11/evaluation.json:tests.execution",
+            "tests"
+          ],
+          "source_evidence": [
+            "solution-11/tests/test_cli.py:16-68",
+            "frozen-11/evaluation.json:tests.execution"
+          ]
+        },
+        {
+          "id": "tests.coverage",
+          "score": 6,
+          "max": 6,
+          "status": "pass",
+          "reason": "Source contains meaningful tests for all ten task obligations: deterministic processes/seeds, finite connected graph, sizes/ASCII, real3D occlusion, W/XW math/frame effect, same object, headless/startup/cleanup and tiny layout. Test execution failures remain separately scored.",
+          "evidence": [
+            "solution-11/tests/test_model_math.py:14-99",
+            "solution-11/tests/test_render.py:13-109",
+            "solution-11/tests/test_app_terminal.py:18-201",
+            "solution-11/tests/test_cli.py:16-68",
+            "frozen-11/evaluation.json:tests.coverage"
+          ],
+          "source_evidence": [
+            "solution-11/tests/test_model_math.py:14-99",
+            "solution-11/tests/test_render.py:13-109",
+            "solution-11/tests/test_app_terminal.py:18-201",
+            "solution-11/tests/test_cli.py:16-68",
+            "frozen-11/evaluation.json:tests.coverage"
+          ]
+        },
+        {
+          "id": "maintainability.review",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "reason": "Small clear model/math/projection/raster/state/terminal/CLI boundaries; frozen geometry, bounded resource use and standard-library runtime. Functional/documentation/test failures are scored in their responsible criteria.",
+          "evidence": [
+            "solution-11/ascii_tree/model.py:12-36",
+            "solution-11/ascii_tree/app.py:116-157",
+            "solution-11/pyproject.toml:1-16",
+            "solution-11/requirements.txt:1-2",
+            "frozen-11/evaluation.json:maintainability.review"
+          ],
+          "source_evidence": [
+            "solution-11/ascii_tree/model.py:12-36",
+            "solution-11/ascii_tree/app.py:116-157",
+            "solution-11/pyproject.toml:1-16",
+            "solution-11/requirements.txt:1-2",
+            "frozen-11/evaluation.json:maintainability.review"
+          ]
+        },
+        {
+          "id": "readme.commands",
+          "score": 0,
+          "max": 2,
+          "status": "fail",
+          "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+          "evidence": [
+            "source-hashes.json:solution-11",
+            "source-hashes.json:solution-11",
+            "solution-11/pyproject.toml:12-13",
+            "frozen-11/evaluation.json:readme.commands"
+          ],
+          "source_evidence": [
+            "source-hashes.json:solution-11",
+            "solution-11/pyproject.toml:12-13",
+            "frozen-11/evaluation.json:readme.commands"
+          ]
+        },
+        {
+          "id": "readme.installation",
+          "score": 0,
+          "max": 1,
+          "status": "fail",
+          "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+          "evidence": [
+            "source-hashes.json:solution-11",
+            "source-hashes.json:solution-11",
+            "solution-11/requirements.txt:1-2",
+            "frozen-11/evaluation.json:readme.installation"
+          ],
+          "source_evidence": [
+            "source-hashes.json:solution-11",
+            "solution-11/requirements.txt:1-2",
+            "frozen-11/evaluation.json:readme.installation"
+          ]
+        },
+        {
+          "id": "readme.4d_explanation",
+          "score": 0,
+          "max": 2,
+          "status": "fail",
+          "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+          "evidence": [
+            "source-hashes.json:solution-11",
+            "source-hashes.json:solution-11",
+            "solution-11/ascii_tree/app.py:26-33",
+            "frozen-11/evaluation.json:readme.4d_explanation"
+          ],
+          "source_evidence": [
+            "source-hashes.json:solution-11",
+            "solution-11/ascii_tree/app.py:26-33",
+            "frozen-11/evaluation.json:readme.4d_explanation"
+          ]
+        }
+      ],
+      "critical_gates": [
+        {
+          "id": "4d.coordinates",
+          "status": "pass",
+          "evidence": [
+            "geometry-11.json",
+            "solution-11/ascii_tree/math4d.py:9-20",
+            "solution-11/ascii_tree/model.py:12-36",
+            "frozen-11/evaluation.json:4d.coordinates"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "status": "pass",
+          "evidence": [
+            "geometry-11.json",
+            "solution-11/ascii_tree/model.py:65-66",
+            "solution-11/ascii_tree/model.py:82-83",
+            "solution-11/ascii_tree/model.py:105-106",
+            "frozen-11/evaluation.json:4d.variable_w"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "status": "pass",
+          "evidence": [
+            "geometry-11.json",
+            "solution-11/ascii_tree/math4d.py:23-31",
+            "solution-11/tests/test_model_math.py:64-88",
+            "frozen-11/evaluation.json:4d.rotation_math"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "status": "pass",
+          "evidence": [
+            "geometry-11.json",
+            "solution-11/ascii_tree/math4d.py:34-41",
+            "solution-11/ascii_tree/render.py:65-102",
+            "frozen-11/evaluation.json:4d.projection"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "status": "pass",
+          "evidence": [
+            "frozen-11/evaluation.json:reliability.headless",
+            "frames[0:6]"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-11/evaluation.json:2d.determinism",
+                "2d-42.txt",
+                "2d-42-repeat.txt"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/model.py:44-53",
+                "frozen-11/evaluation.json:2d.determinism"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-11/evaluation.json:2d.seed_variation",
+                "2d-42.txt",
+                "2d-137-same-size.txt"
+              ],
+              "source_evidence": [
+                "solution-11/tests/test_model_math.py:14-24",
+                "frozen-11/evaluation.json:2d.seed_variation"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Seeded bounded procedural graph has connected curved branches, multiple orders, taper and organic asymmetric foliage; source and fresh two-seed frames reviewed.",
+              "evidence": [
+                "solution-11/ascii_tree/model.py",
+                "frozen-11/2d-42.txt",
+                "frozen-11/2d-137.txt",
+                "geometry-11.json"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/model.py:61-127",
+                "frozen-11/evaluation.json:2d.procedural_morphology"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-11/evaluation.json:3d.angular_change",
+                "[task-root]\\evaluation-case05-20261023\\frozen-11\\3d-angle-0.txt",
+                "[task-root]\\evaluation-case05-20261023\\frozen-11\\3d-angle-37.txt"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/math4d.py:44-49",
+                "frozen-11/evaluation.json:3d.angular_change"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "All full and skeleton coordinates finite, every edge connected with positive XYZ length/radii, affine XYZ rank3 for seeds42/137.",
+              "evidence": [
+                "geometry-11.json:full_actual_finite_XYZW",
+                "geometry-11.json:connected_positive_finite_graph",
+                "geometry-11.json:nonplanar_XYZ_rank3"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/model.py:12-36",
+                "solution-11/tests/test_model_math.py:26-61",
+                "frozen-11/evaluation.json:3d.geometry"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass",
+              "reason": "Source uses per-cell nearest-depth ordering and depth/thickness shading; real crossing tests verify visibility and draw-order independence, and those cases passed the frozen suite.",
+              "evidence": [
+                "solution-11/ascii_tree/render.py",
+                "frozen-11/evaluation.json:tests"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/render.py:35-54",
+                "solution-11/ascii_tree/render.py:117-175",
+                "solution-11/tests/test_render.py:85-109",
+                "frozen-11/evaluation.json:3d.occlusion"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-11/evaluation.json:4d.angular_change",
+                "[task-root]\\evaluation-case05-20261023\\frozen-11\\4d-angle-0.txt",
+                "[task-root]\\evaluation-case05-20261023\\frozen-11\\4d-angle-37.txt"
+              ],
+              "source_evidence": [
+                "solution-11/tests/test_render.py:47-50",
+                "frozen-11/evaluation.json:4d.angular_change"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual finite XYZW on every branch and leaf for both full trees.",
+              "evidence": [
+                "geometry-11.json",
+                "solution-11/ascii_tree/math4d.py:9-20",
+                "solution-11/ascii_tree/model.py:12-36",
+                "frozen-11/evaluation.json:4d.coordinates"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/math4d.py:9-20",
+                "solution-11/ascii_tree/model.py:12-36",
+                "frozen-11/evaluation.json:4d.coordinates"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "W varies on both branch skeleton and full geometry for seeds42/137.",
+              "evidence": [
+                "geometry-11.json",
+                "solution-11/ascii_tree/model.py:65-66",
+                "solution-11/ascii_tree/model.py:82-83",
+                "solution-11/ascii_tree/model.py:105-106",
+                "frozen-11/evaluation.json:4d.variable_w"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/model.py:65-66",
+                "solution-11/ascii_tree/model.py:82-83",
+                "solution-11/ascii_tree/model.py:105-106",
+                "frozen-11/evaluation.json:4d.variable_w"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual XW operator mixes space/W; all points preserve4D norm with correct inverse and exact90-degree action; determinant+1 and orthogonality verified.",
+              "evidence": [
+                "geometry-11.json",
+                "solution-11/ascii_tree/math4d.py:23-31",
+                "solution-11/tests/test_model_math.py:64-88",
+                "frozen-11/evaluation.json:4d.rotation_math"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/math4d.py:23-31",
+                "solution-11/tests/test_model_math.py:64-88",
+                "frozen-11/evaluation.json:4d.rotation_math"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual production point projections match independent exact4D perspective, camera and3D perspective arithmetic across five views for each full tree; near-plane division guards pass.",
+              "evidence": [
+                "geometry-11.json",
+                "solution-11/ascii_tree/math4d.py:34-41",
+                "solution-11/ascii_tree/render.py:65-102",
+                "frozen-11/evaluation.json:4d.projection"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/math4d.py:34-41",
+                "solution-11/ascii_tree/render.py:65-102",
+                "frozen-11/evaluation.json:4d.projection"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "ux",
+          "score": 10,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-11/evaluation.json:ux.help",
+                "cli.help"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/app.py:12-34",
+                "frozen-11/evaluation.json:ux.help"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-11/evaluation.json:ux.export",
+                "frames[0:6].frame"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/app.py:116-130",
+                "solution-11/ascii_tree/terminal.py:224-236",
+                "frozen-11/evaluation.json:ux.export"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 4,
+              "max": 6,
+              "status": "partial",
+              "reason": "Native protocol completed57 checks:46 pass,11 fail. Required input handlers update state, help/animation/resize/exits work, but batched mode/angle/zoom/reset/G plusE exports stale cached last_frame; first paused export differs from later held export. Multiple failed comparisons share this export/redraw defect; geometry evidence stays separate.",
+              "evidence": [
+                "interactive-11/report.json",
+                "solution-11/ascii_tree/app.py:116-130",
+                "solution-11/ascii_tree/terminal.py:224-236"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/app.py:62-114",
+                "solution-11/ascii_tree/terminal.py:208-241",
+                "frozen-11/evaluation.json:ux.interactive_controls"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Independent controls/render checks preserve the same immutable full Tree and seed across every view/angle change for seeds42/137; only G regenerates.",
+              "evidence": [
+                "geometry-11.json:same_immutable_tree_across_modes_angles",
+                "interactive-11/report.json"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/app.py:55-114",
+                "solution-11/tests/test_app_terminal.py:18-44",
+                "frozen-11/evaluation.json:ux.stable_object"
+              ]
+            }
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "aesthetics",
+          "score": 8,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 8,
+              "max": 12,
+              "status": "partial",
+              "reason": "Airy asymmetric branching and visible scaffold orders. Sparse/line-heavy crown, long plain trunk and unused margins reduce fullness; the4D seed137 crown touches the top border.",
+              "evidence": [
+                "frozen-11/2d-42.txt",
+                "frozen-11/2d-137.txt",
+                "frozen-11/3d-42.txt",
+                "frozen-11/3d-137.txt",
+                "frozen-11/4d-42.txt",
+                "frozen-11/4d-137.txt"
+              ],
+              "source_evidence": [
+                "source-hashes.json:solution-11",
+                "frozen-11/evaluation.json:aesthetics.blind_frames"
+              ]
+            }
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-11/evaluation.json:reliability.headless",
+                "frames[0:6]"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/cli.py:42-65",
+                "frozen-11/evaluation.json:reliability.headless"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-11/evaluation.json:reliability.tiny",
+                "*-tiny.txt"
+              ],
+              "source_evidence": [
+                "solution-11/tests/test_render.py:13-23",
+                "frozen-11/evaluation.json:reliability.tiny"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Actual ConPTY resizing30x12 ->1x1 ->100x40 passes with exact bounded ASCII viewport exports and recovery.",
+              "evidence": [
+                "interactive-11/report.json"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/app.py:132-157",
+                "solution-11/ascii_tree/terminal.py:232-237",
+                "frozen-11/evaluation.json:reliability.resize"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Actual Ctrl+C exits cleanly with cursor/alternate-screen restoration; Q/Esc cleanup also passes.",
+              "evidence": [
+                "interactive-11/report.json"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/terminal.py:122-183",
+                "solution-11/ascii_tree/terminal.py:224-240",
+                "frozen-11/evaluation.json:reliability.ctrl_c"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen test command ran53 tests with exit0.",
+              "evidence": [
+                "frozen-11/evaluation.json:tests.execution",
+                "tests"
+              ],
+              "source_evidence": [
+                "solution-11/tests/test_cli.py:16-68",
+                "frozen-11/evaluation.json:tests.execution"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "Source contains meaningful tests for all ten task obligations: deterministic processes/seeds, finite connected graph, sizes/ASCII, real3D occlusion, W/XW math/frame effect, same object, headless/startup/cleanup and tiny layout. Test execution failures remain separately scored.",
+              "evidence": [
+                "solution-11/tests/test_model_math.py:14-99",
+                "solution-11/tests/test_render.py:13-109",
+                "solution-11/tests/test_app_terminal.py:18-201",
+                "solution-11/tests/test_cli.py:16-68",
+                "frozen-11/evaluation.json:tests.coverage"
+              ],
+              "source_evidence": [
+                "solution-11/tests/test_model_math.py:14-99",
+                "solution-11/tests/test_render.py:13-109",
+                "solution-11/tests/test_app_terminal.py:18-201",
+                "solution-11/tests/test_cli.py:16-68",
+                "frozen-11/evaluation.json:tests.coverage"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Small clear model/math/projection/raster/state/terminal/CLI boundaries; frozen geometry, bounded resource use and standard-library runtime. Functional/documentation/test failures are scored in their responsible criteria.",
+              "evidence": [
+                "solution-11/ascii_tree/model.py:12-36",
+                "solution-11/ascii_tree/app.py:116-157",
+                "solution-11/pyproject.toml:1-16",
+                "solution-11/requirements.txt:1-2",
+                "frozen-11/evaluation.json:maintainability.review"
+              ],
+              "source_evidence": [
+                "solution-11/ascii_tree/model.py:12-36",
+                "solution-11/ascii_tree/app.py:116-157",
+                "solution-11/pyproject.toml:1-16",
+                "solution-11/requirements.txt:1-2",
+                "frozen-11/evaluation.json:maintainability.review"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "readme",
+          "score": 0,
+          "max": 5,
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 0,
+              "max": 2,
+              "status": "fail",
+              "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+              "evidence": [
+                "source-hashes.json:solution-11",
+                "source-hashes.json:solution-11",
+                "solution-11/pyproject.toml:12-13",
+                "frozen-11/evaluation.json:readme.commands"
+              ],
+              "source_evidence": [
+                "source-hashes.json:solution-11",
+                "solution-11/pyproject.toml:12-13",
+                "frozen-11/evaluation.json:readme.commands"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "score": 0,
+              "max": 1,
+              "status": "fail",
+              "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+              "evidence": [
+                "source-hashes.json:solution-11",
+                "source-hashes.json:solution-11",
+                "solution-11/requirements.txt:1-2",
+                "frozen-11/evaluation.json:readme.installation"
+              ],
+              "source_evidence": [
+                "source-hashes.json:solution-11",
+                "solution-11/requirements.txt:1-2",
+                "frozen-11/evaluation.json:readme.installation"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 0,
+              "max": 2,
+              "status": "fail",
+              "reason": "Required README is confirmed absent from the exact manifest and source inventory. This is an assessed missing deliverable; successful metadata CLI discovery does not supply a README.",
+              "evidence": [
+                "source-hashes.json:solution-11",
+                "source-hashes.json:solution-11",
+                "solution-11/ascii_tree/app.py:26-33",
+                "frozen-11/evaluation.json:readme.4d_explanation"
+              ],
+              "source_evidence": [
+                "source-hashes.json:solution-11",
+                "solution-11/ascii_tree/app.py:26-33",
+                "frozen-11/evaluation.json:readme.4d_explanation"
+              ]
+            }
+          ],
+          "status": "fail"
+        }
+      ],
+      "unassessed_subevidence": [],
+      "runtime_summary": {
+        "frozen_discovery": "pass",
+        "frozen_assessed_points": 25,
+        "frozen_assessed_max": 25,
+        "test_count": 53,
+        "test_status": "pass",
+        "geometry_checks": 16,
+        "geometry_status": "pass",
+        "native_checks": 57,
+        "native_pass": 46,
+        "native_fail": 11,
+        "native_diagnostic_fail": 0,
+        "native_failed_named_checks": 11,
+        "native_status": "fail"
+      },
+      "evidence_sha256": {
+        "frozen-11\\evaluation.json": "bc242563db3b8d7c2db1ad2763c0bf30dace73192663868f6612873783f3a804",
+        "geometry-11.json": "9bfc161eafbf3f77e3682367f92cd9313ce0a9ca59cb5b5f1e5a350a712c474d",
+        "interactive-11\\report.json": "d14407822fb1dc8beaac73f11d2ce9a0425e683d0535aaa514507e84684b6057"
+      }
+    },
+    {
+      "id": 12,
+      "quality_score": 94,
+      "total_score": 94,
+      "accepted": true,
+      "criteria": [
+        {
+          "id": "2d.determinism",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-12/evaluation.json:2d.determinism",
+            "2d-42.txt",
+            "2d-42-repeat.txt"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/geometry.py:50-59",
+            "frozen-12/evaluation.json:2d.determinism"
+          ]
+        },
+        {
+          "id": "2d.seed_variation",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-12/evaluation.json:2d.seed_variation",
+            "2d-42.txt",
+            "2d-137-same-size.txt"
+          ],
+          "source_evidence": [
+            "solution-12/tests/test_geometry.py:13-15",
+            "frozen-12/evaluation.json:2d.seed_variation"
+          ]
+        },
+        {
+          "id": "2d.procedural_morphology",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "reason": "Seeded bounded procedural graph has connected curved branches, multiple orders, taper and organic asymmetric foliage; source and fresh two-seed frames reviewed.",
+          "evidence": [
+            "solution-12/ascii_tree/geometry.py",
+            "frozen-12/2d-42.txt",
+            "frozen-12/2d-137.txt",
+            "geometry-12.json"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/geometry.py:83-139",
+            "solution-12/tests/test_render.py:84-97",
+            "frozen-12/evaluation.json:2d.procedural_morphology"
+          ]
+        },
+        {
+          "id": "3d.angular_change",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-12/evaluation.json:3d.angular_change",
+            "[task-root]\\evaluation-case05-20261023\\frozen-12\\3d-angle-0.txt",
+            "[task-root]\\evaluation-case05-20261023\\frozen-12\\3d-angle-37.txt"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/projection.py:74-86",
+            "frozen-12/evaluation.json:3d.angular_change"
+          ]
+        },
+        {
+          "id": "3d.geometry",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "All full and skeleton coordinates finite, every edge connected with positive XYZ length/radii, affine XYZ rank3 for seeds42/137.",
+          "evidence": [
+            "geometry-12.json:full_actual_finite_XYZW",
+            "geometry-12.json:connected_positive_finite_graph",
+            "geometry-12.json:nonplanar_XYZ_rank3"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/geometry.py:8-40",
+            "solution-12/tests/test_geometry.py:17-50",
+            "frozen-12/evaluation.json:3d.geometry"
+          ]
+        },
+        {
+          "id": "3d.occlusion",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "reason": "Source uses per-cell nearest-depth ordering and depth/thickness shading; real crossing tests verify visibility and draw-order independence, and those cases passed the frozen suite.",
+          "evidence": [
+            "solution-12/ascii_tree/render.py",
+            "frozen-12/evaluation.json:tests"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/render.py:38-99",
+            "solution-12/tests/test_render.py:57-82",
+            "frozen-12/evaluation.json:3d.occlusion"
+          ]
+        },
+        {
+          "id": "4d.angular_change",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-12/evaluation.json:4d.angular_change",
+            "[task-root]\\evaluation-case05-20261023\\frozen-12\\4d-angle-0.txt",
+            "[task-root]\\evaluation-case05-20261023\\frozen-12\\4d-angle-37.txt"
+          ],
+          "source_evidence": [
+            "solution-12/tests/test_render.py:38-41",
+            "frozen-12/evaluation.json:4d.angular_change"
+          ]
+        },
+        {
+          "id": "4d.coordinates",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual finite XYZW on every branch and leaf for both full trees.",
+          "evidence": [
+            "geometry-12.json",
+            "solution-12/ascii_tree/geometry.py:8-40",
+            "solution-12/ascii_tree/geometry.py:64-80",
+            "frozen-12/evaluation.json:4d.coordinates"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/geometry.py:8-40",
+            "solution-12/ascii_tree/geometry.py:64-80",
+            "frozen-12/evaluation.json:4d.coordinates"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "W varies on both branch skeleton and full geometry for seeds42/137.",
+          "evidence": [
+            "geometry-12.json",
+            "solution-12/ascii_tree/geometry.py:64-65",
+            "solution-12/ascii_tree/geometry.py:76-80",
+            "solution-12/ascii_tree/geometry.py:108",
+            "frozen-12/evaluation.json:4d.variable_w"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/geometry.py:64-65",
+            "solution-12/ascii_tree/geometry.py:76-80",
+            "solution-12/ascii_tree/geometry.py:108",
+            "frozen-12/evaluation.json:4d.variable_w"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual XW operator mixes space/W; all points preserve4D norm with correct inverse and exact90-degree action; determinant+1 and orthogonality verified.",
+          "evidence": [
+            "geometry-12.json",
+            "solution-12/ascii_tree/projection.py:13-17",
+            "solution-12/tests/test_geometry.py:52-72",
+            "frozen-12/evaluation.json:4d.rotation_math"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/projection.py:13-17",
+            "solution-12/tests/test_geometry.py:52-72",
+            "frozen-12/evaluation.json:4d.rotation_math"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "score": 4,
+          "max": 4,
+          "status": "pass",
+          "reason": "Actual production point projections match independent exact4D perspective, camera and3D perspective arithmetic across five views for each full tree; near-plane division guards pass.",
+          "evidence": [
+            "geometry-12.json",
+            "solution-12/ascii_tree/projection.py:20-25",
+            "solution-12/ascii_tree/projection.py:55-88",
+            "solution-12/tests/test_geometry.py:74-95",
+            "frozen-12/evaluation.json:4d.projection"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/projection.py:20-25",
+            "solution-12/ascii_tree/projection.py:55-88",
+            "solution-12/tests/test_geometry.py:74-95",
+            "frozen-12/evaluation.json:4d.projection"
+          ]
+        },
+        {
+          "id": "ux.help",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-12/evaluation.json:ux.help",
+            "cli.help"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/terminal.py:124-142",
+            "frozen-12/evaluation.json:ux.help"
+          ]
+        },
+        {
+          "id": "ux.export",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-12/evaluation.json:ux.export",
+            "frames[0:6].frame"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/render.py:18-35",
+            "solution-12/ascii_tree/state.py:73-91",
+            "frozen-12/evaluation.json:ux.export"
+          ]
+        },
+        {
+          "id": "ux.interactive_controls",
+          "score": 6,
+          "max": 6,
+          "status": "pass",
+          "reason": "Native required mode,3D/4D rotation, zoom, help, animation/pause, reset, seed/export and Q/Esc controls match the oracle. Ctrl+C is assessed separately.",
+          "evidence": [
+            "interactive-12/report.json"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/state.py:43-91",
+            "solution-12/README.md:18-26",
+            "frozen-12/evaluation.json:ux.interactive_controls"
+          ]
+        },
+        {
+          "id": "ux.stable_object",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Independent controls/render checks preserve the same immutable full Tree and seed across every view/angle change for seeds42/137; only G regenerates.",
+          "evidence": [
+            "geometry-12.json:same_immutable_tree_across_modes_angles",
+            "interactive-12/report.json"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/state.py:24-72",
+            "solution-12/tests/test_app.py:16-26",
+            "frozen-12/evaluation.json:ux.stable_object"
+          ]
+        },
+        {
+          "id": "aesthetics.blind_frames",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "reason": "Coherent fine branching, asymmetric crown and readable lower scaffold with seed variation. Dense repeated strokes/leaf symbols obscure some upper limbs, and default4D crowns meet the top border.",
+          "evidence": [
+            "frozen-12/2d-42.txt",
+            "frozen-12/2d-137.txt",
+            "frozen-12/3d-42.txt",
+            "frozen-12/3d-137.txt",
+            "frozen-12/4d-42.txt",
+            "frozen-12/4d-137.txt"
+          ],
+          "source_evidence": [
+            "solution-12/samples/seed42_2d.txt:1-40",
+            "solution-12/samples/seed2026_3d.txt:1-40",
+            "frozen-12/evaluation.json:aesthetics.blind_frames"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-12/evaluation.json:reliability.headless",
+            "frames[0:6]"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/cli.py:44-67",
+            "frozen-12/evaluation.json:reliability.headless"
+          ]
+        },
+        {
+          "id": "reliability.tiny",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Frozen evaluator observed passing process/frame evidence.",
+          "evidence": [
+            "frozen-12/evaluation.json:reliability.tiny",
+            "*-tiny.txt"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/render.py:13-15",
+            "solution-12/tests/test_render.py:17-28",
+            "frozen-12/evaluation.json:reliability.tiny"
+          ]
+        },
+        {
+          "id": "reliability.resize",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "Actual ConPTY resizing30x12 ->1x1 ->100x40 passes with exact bounded ASCII viewport exports and recovery.",
+          "evidence": [
+            "interactive-12/report.json"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/terminal.py:88-96",
+            "solution-12/ascii_tree/terminal.py:145-191",
+            "frozen-12/evaluation.json:reliability.resize"
+          ]
+        },
+        {
+          "id": "reliability.ctrl_c",
+          "score": 3,
+          "max": 3,
+          "status": "pass",
+          "reason": "Actual Ctrl+C exits cleanly with cursor/alternate-screen restoration; Q/Esc cleanup also passes.",
+          "evidence": [
+            "interactive-12/report.json"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/terminal.py:18-28",
+            "solution-12/ascii_tree/terminal.py:40-86",
+            "solution-12/ascii_tree/terminal.py:172-195",
+            "frozen-12/evaluation.json:reliability.ctrl_c"
+          ]
+        },
+        {
+          "id": "tests.execution",
+          "score": 0,
+          "max": 3,
+          "status": "fail",
+          "reason": "Frozen test command ran38 tests with exit1. Three FileNotFoundError errors for absent.tmp; discover -s tests bypasses tests/__init__.py initialization. Original failure preserved; no fixture repair.",
+          "evidence": [
+            "frozen-12/evaluation.json:tests.execution",
+            "tests"
+          ],
+          "source_evidence": [
+            "solution-12/tests/__init__.py:1-5",
+            "solution-12/tests/test_app.py:71-81",
+            "solution-12/tests/test_cli.py:46-54",
+            "solution-12/tests/test_render.py:47-55",
+            "frozen-12/evaluation.json:tests.execution"
+          ]
+        },
+        {
+          "id": "tests.coverage",
+          "score": 6,
+          "max": 6,
+          "status": "pass",
+          "reason": "Source contains meaningful tests for all ten task obligations: deterministic processes/seeds, finite connected graph, sizes/ASCII, real3D occlusion, W/XW math/frame effect, same object, headless/startup/cleanup and tiny layout. Test execution failures remain separately scored.",
+          "evidence": [
+            "solution-12/tests/test_geometry.py:13-95",
+            "solution-12/tests/test_render.py:17-115",
+            "solution-12/tests/test_app.py:16-218",
+            "solution-12/tests/test_cli.py:19-77",
+            "frozen-12/evaluation.json:tests.coverage"
+          ],
+          "source_evidence": [
+            "solution-12/tests/test_geometry.py:13-95",
+            "solution-12/tests/test_render.py:17-115",
+            "solution-12/tests/test_app.py:16-218",
+            "solution-12/tests/test_cli.py:19-77",
+            "frozen-12/evaluation.json:tests.coverage"
+          ]
+        },
+        {
+          "id": "maintainability.review",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "reason": "Small clear model/math/projection/raster/state/terminal/CLI boundaries; frozen geometry, bounded resource use and standard-library runtime. Functional/documentation/test failures are scored in their responsible criteria.",
+          "evidence": [
+            "solution-12/ascii_tree/geometry.py:8-40",
+            "solution-12/ascii_tree/state.py:11-40",
+            "solution-12/tests/__init__.py:5",
+            "solution-12/README.md:73",
+            "frozen-12/evaluation.json:maintainability.review"
+          ],
+          "source_evidence": [
+            "solution-12/ascii_tree/geometry.py:8-40",
+            "solution-12/ascii_tree/state.py:11-40",
+            "solution-12/tests/__init__.py:5",
+            "solution-12/README.md:73",
+            "frozen-12/evaluation.json:maintainability.review"
+          ]
+        },
+        {
+          "id": "readme.commands",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "README supplies real help/view/render/test/smoke commands and Python fallback. Equivalent documented module CLI/help/render behavior was executed by frozen evaluator; separate frozen test failure is retained.",
+          "evidence": [
+            "solution-12/README.md",
+            "frozen-12/evaluation.json:cli",
+            "solution-12/README.md:9-16",
+            "solution-12/README.md:30-41",
+            "solution-12/README.md:60-73",
+            "frozen-12/evaluation.json:readme.commands"
+          ],
+          "source_evidence": [
+            "solution-12/README.md:9-16",
+            "solution-12/README.md:30-41",
+            "solution-12/README.md:60-73",
+            "frozen-12/evaluation.json:readme.commands"
+          ]
+        },
+        {
+          "id": "readme.installation",
+          "score": 1,
+          "max": 1,
+          "status": "pass",
+          "reason": "README correctly states Python3.12+, actual standard-library dependencies and reproducible source/optional packaging setup.",
+          "evidence": [
+            "solution-12/README.md",
+            "frozen-12/evaluation.json:cli",
+            "solution-12/README.md:3-16",
+            "solution-12/requirements.txt:1-2",
+            "solution-12/pyproject.toml:1-10",
+            "frozen-12/evaluation.json:readme.installation"
+          ],
+          "source_evidence": [
+            "solution-12/README.md:3-16",
+            "solution-12/requirements.txt:1-2",
+            "solution-12/pyproject.toml:1-10",
+            "frozen-12/evaluation.json:readme.installation"
+          ]
+        },
+        {
+          "id": "readme.4d_explanation",
+          "score": 2,
+          "max": 2,
+          "status": "pass",
+          "reason": "README accurately explains variable growth W, true XW mixing and sequential4D-to3D-to2D perspective; equations match independently validated code.",
+          "evidence": [
+            "solution-12/README.md",
+            "frozen-12/evaluation.json:cli",
+            "solution-12/README.md:43-58",
+            "solution-12/ascii_tree/projection.py:13-88",
+            "frozen-12/evaluation.json:readme.4d_explanation"
+          ],
+          "source_evidence": [
+            "solution-12/README.md:43-58",
+            "solution-12/ascii_tree/projection.py:13-88",
+            "frozen-12/evaluation.json:readme.4d_explanation"
+          ]
+        }
+      ],
+      "critical_gates": [
+        {
+          "id": "4d.coordinates",
+          "status": "pass",
+          "evidence": [
+            "geometry-12.json",
+            "solution-12/ascii_tree/geometry.py:8-40",
+            "solution-12/ascii_tree/geometry.py:64-80",
+            "frozen-12/evaluation.json:4d.coordinates"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "status": "pass",
+          "evidence": [
+            "geometry-12.json",
+            "solution-12/ascii_tree/geometry.py:64-65",
+            "solution-12/ascii_tree/geometry.py:76-80",
+            "solution-12/ascii_tree/geometry.py:108",
+            "frozen-12/evaluation.json:4d.variable_w"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "status": "pass",
+          "evidence": [
+            "geometry-12.json",
+            "solution-12/ascii_tree/projection.py:13-17",
+            "solution-12/tests/test_geometry.py:52-72",
+            "frozen-12/evaluation.json:4d.rotation_math"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "status": "pass",
+          "evidence": [
+            "geometry-12.json",
+            "solution-12/ascii_tree/projection.py:20-25",
+            "solution-12/ascii_tree/projection.py:55-88",
+            "solution-12/tests/test_geometry.py:74-95",
+            "frozen-12/evaluation.json:4d.projection"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "status": "pass",
+          "evidence": [
+            "frozen-12/evaluation.json:reliability.headless",
+            "frames[0:6]"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-12/evaluation.json:2d.determinism",
+                "2d-42.txt",
+                "2d-42-repeat.txt"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/geometry.py:50-59",
+                "frozen-12/evaluation.json:2d.determinism"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-12/evaluation.json:2d.seed_variation",
+                "2d-42.txt",
+                "2d-137-same-size.txt"
+              ],
+              "source_evidence": [
+                "solution-12/tests/test_geometry.py:13-15",
+                "frozen-12/evaluation.json:2d.seed_variation"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Seeded bounded procedural graph has connected curved branches, multiple orders, taper and organic asymmetric foliage; source and fresh two-seed frames reviewed.",
+              "evidence": [
+                "solution-12/ascii_tree/geometry.py",
+                "frozen-12/2d-42.txt",
+                "frozen-12/2d-137.txt",
+                "geometry-12.json"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/geometry.py:83-139",
+                "solution-12/tests/test_render.py:84-97",
+                "frozen-12/evaluation.json:2d.procedural_morphology"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-12/evaluation.json:3d.angular_change",
+                "[task-root]\\evaluation-case05-20261023\\frozen-12\\3d-angle-0.txt",
+                "[task-root]\\evaluation-case05-20261023\\frozen-12\\3d-angle-37.txt"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/projection.py:74-86",
+                "frozen-12/evaluation.json:3d.angular_change"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "All full and skeleton coordinates finite, every edge connected with positive XYZ length/radii, affine XYZ rank3 for seeds42/137.",
+              "evidence": [
+                "geometry-12.json:full_actual_finite_XYZW",
+                "geometry-12.json:connected_positive_finite_graph",
+                "geometry-12.json:nonplanar_XYZ_rank3"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/geometry.py:8-40",
+                "solution-12/tests/test_geometry.py:17-50",
+                "frozen-12/evaluation.json:3d.geometry"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass",
+              "reason": "Source uses per-cell nearest-depth ordering and depth/thickness shading; real crossing tests verify visibility and draw-order independence, and those cases passed the frozen suite.",
+              "evidence": [
+                "solution-12/ascii_tree/render.py",
+                "frozen-12/evaluation.json:tests"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/render.py:38-99",
+                "solution-12/tests/test_render.py:57-82",
+                "frozen-12/evaluation.json:3d.occlusion"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-12/evaluation.json:4d.angular_change",
+                "[task-root]\\evaluation-case05-20261023\\frozen-12\\4d-angle-0.txt",
+                "[task-root]\\evaluation-case05-20261023\\frozen-12\\4d-angle-37.txt"
+              ],
+              "source_evidence": [
+                "solution-12/tests/test_render.py:38-41",
+                "frozen-12/evaluation.json:4d.angular_change"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual finite XYZW on every branch and leaf for both full trees.",
+              "evidence": [
+                "geometry-12.json",
+                "solution-12/ascii_tree/geometry.py:8-40",
+                "solution-12/ascii_tree/geometry.py:64-80",
+                "frozen-12/evaluation.json:4d.coordinates"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/geometry.py:8-40",
+                "solution-12/ascii_tree/geometry.py:64-80",
+                "frozen-12/evaluation.json:4d.coordinates"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "W varies on both branch skeleton and full geometry for seeds42/137.",
+              "evidence": [
+                "geometry-12.json",
+                "solution-12/ascii_tree/geometry.py:64-65",
+                "solution-12/ascii_tree/geometry.py:76-80",
+                "solution-12/ascii_tree/geometry.py:108",
+                "frozen-12/evaluation.json:4d.variable_w"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/geometry.py:64-65",
+                "solution-12/ascii_tree/geometry.py:76-80",
+                "solution-12/ascii_tree/geometry.py:108",
+                "frozen-12/evaluation.json:4d.variable_w"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual XW operator mixes space/W; all points preserve4D norm with correct inverse and exact90-degree action; determinant+1 and orthogonality verified.",
+              "evidence": [
+                "geometry-12.json",
+                "solution-12/ascii_tree/projection.py:13-17",
+                "solution-12/tests/test_geometry.py:52-72",
+                "frozen-12/evaluation.json:4d.rotation_math"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/projection.py:13-17",
+                "solution-12/tests/test_geometry.py:52-72",
+                "frozen-12/evaluation.json:4d.rotation_math"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass",
+              "reason": "Actual production point projections match independent exact4D perspective, camera and3D perspective arithmetic across five views for each full tree; near-plane division guards pass.",
+              "evidence": [
+                "geometry-12.json",
+                "solution-12/ascii_tree/projection.py:20-25",
+                "solution-12/ascii_tree/projection.py:55-88",
+                "solution-12/tests/test_geometry.py:74-95",
+                "frozen-12/evaluation.json:4d.projection"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/projection.py:20-25",
+                "solution-12/ascii_tree/projection.py:55-88",
+                "solution-12/tests/test_geometry.py:74-95",
+                "frozen-12/evaluation.json:4d.projection"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-12/evaluation.json:ux.help",
+                "cli.help"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/terminal.py:124-142",
+                "frozen-12/evaluation.json:ux.help"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-12/evaluation.json:ux.export",
+                "frames[0:6].frame"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/render.py:18-35",
+                "solution-12/ascii_tree/state.py:73-91",
+                "frozen-12/evaluation.json:ux.export"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "Native required mode,3D/4D rotation, zoom, help, animation/pause, reset, seed/export and Q/Esc controls match the oracle. Ctrl+C is assessed separately.",
+              "evidence": [
+                "interactive-12/report.json"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/state.py:43-91",
+                "solution-12/README.md:18-26",
+                "frozen-12/evaluation.json:ux.interactive_controls"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Independent controls/render checks preserve the same immutable full Tree and seed across every view/angle change for seeds42/137; only G regenerates.",
+              "evidence": [
+                "geometry-12.json:same_immutable_tree_across_modes_angles",
+                "interactive-12/report.json"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/state.py:24-72",
+                "solution-12/tests/test_app.py:16-26",
+                "frozen-12/evaluation.json:ux.stable_object"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial",
+              "reason": "Coherent fine branching, asymmetric crown and readable lower scaffold with seed variation. Dense repeated strokes/leaf symbols obscure some upper limbs, and default4D crowns meet the top border.",
+              "evidence": [
+                "frozen-12/2d-42.txt",
+                "frozen-12/2d-137.txt",
+                "frozen-12/3d-42.txt",
+                "frozen-12/3d-137.txt",
+                "frozen-12/4d-42.txt",
+                "frozen-12/4d-137.txt"
+              ],
+              "source_evidence": [
+                "solution-12/samples/seed42_2d.txt:1-40",
+                "solution-12/samples/seed2026_3d.txt:1-40",
+                "frozen-12/evaluation.json:aesthetics.blind_frames"
+              ]
+            }
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-12/evaluation.json:reliability.headless",
+                "frames[0:6]"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/cli.py:44-67",
+                "frozen-12/evaluation.json:reliability.headless"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Frozen evaluator observed passing process/frame evidence.",
+              "evidence": [
+                "frozen-12/evaluation.json:reliability.tiny",
+                "*-tiny.txt"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/render.py:13-15",
+                "solution-12/tests/test_render.py:17-28",
+                "frozen-12/evaluation.json:reliability.tiny"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "Actual ConPTY resizing30x12 ->1x1 ->100x40 passes with exact bounded ASCII viewport exports and recovery.",
+              "evidence": [
+                "interactive-12/report.json"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/terminal.py:88-96",
+                "solution-12/ascii_tree/terminal.py:145-191",
+                "frozen-12/evaluation.json:reliability.resize"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass",
+              "reason": "Actual Ctrl+C exits cleanly with cursor/alternate-screen restoration; Q/Esc cleanup also passes.",
+              "evidence": [
+                "interactive-12/report.json"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/terminal.py:18-28",
+                "solution-12/ascii_tree/terminal.py:40-86",
+                "solution-12/ascii_tree/terminal.py:172-195",
+                "frozen-12/evaluation.json:reliability.ctrl_c"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "tests",
+          "score": 6,
+          "max": 9,
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 0,
+              "max": 3,
+              "status": "fail",
+              "reason": "Frozen test command ran38 tests with exit1. Three FileNotFoundError errors for absent.tmp; discover -s tests bypasses tests/__init__.py initialization. Original failure preserved; no fixture repair.",
+              "evidence": [
+                "frozen-12/evaluation.json:tests.execution",
+                "tests"
+              ],
+              "source_evidence": [
+                "solution-12/tests/__init__.py:1-5",
+                "solution-12/tests/test_app.py:71-81",
+                "solution-12/tests/test_cli.py:46-54",
+                "solution-12/tests/test_render.py:47-55",
+                "frozen-12/evaluation.json:tests.execution"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass",
+              "reason": "Source contains meaningful tests for all ten task obligations: deterministic processes/seeds, finite connected graph, sizes/ASCII, real3D occlusion, W/XW math/frame effect, same object, headless/startup/cleanup and tiny layout. Test execution failures remain separately scored.",
+              "evidence": [
+                "solution-12/tests/test_geometry.py:13-95",
+                "solution-12/tests/test_render.py:17-115",
+                "solution-12/tests/test_app.py:16-218",
+                "solution-12/tests/test_cli.py:19-77",
+                "frozen-12/evaluation.json:tests.coverage"
+              ],
+              "source_evidence": [
+                "solution-12/tests/test_geometry.py:13-95",
+                "solution-12/tests/test_render.py:17-115",
+                "solution-12/tests/test_app.py:16-218",
+                "solution-12/tests/test_cli.py:19-77",
+                "frozen-12/evaluation.json:tests.coverage"
+              ]
+            }
+          ],
+          "status": "partial"
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass",
+              "reason": "Small clear model/math/projection/raster/state/terminal/CLI boundaries; frozen geometry, bounded resource use and standard-library runtime. Functional/documentation/test failures are scored in their responsible criteria.",
+              "evidence": [
+                "solution-12/ascii_tree/geometry.py:8-40",
+                "solution-12/ascii_tree/state.py:11-40",
+                "solution-12/tests/__init__.py:5",
+                "solution-12/README.md:73",
+                "frozen-12/evaluation.json:maintainability.review"
+              ],
+              "source_evidence": [
+                "solution-12/ascii_tree/geometry.py:8-40",
+                "solution-12/ascii_tree/state.py:11-40",
+                "solution-12/tests/__init__.py:5",
+                "solution-12/README.md:73",
+                "frozen-12/evaluation.json:maintainability.review"
+              ]
+            }
+          ],
+          "status": "pass"
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "README supplies real help/view/render/test/smoke commands and Python fallback. Equivalent documented module CLI/help/render behavior was executed by frozen evaluator; separate frozen test failure is retained.",
+              "evidence": [
+                "solution-12/README.md",
+                "frozen-12/evaluation.json:cli",
+                "solution-12/README.md:9-16",
+                "solution-12/README.md:30-41",
+                "solution-12/README.md:60-73",
+                "frozen-12/evaluation.json:readme.commands"
+              ],
+              "source_evidence": [
+                "solution-12/README.md:9-16",
+                "solution-12/README.md:30-41",
+                "solution-12/README.md:60-73",
+                "frozen-12/evaluation.json:readme.commands"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass",
+              "reason": "README correctly states Python3.12+, actual standard-library dependencies and reproducible source/optional packaging setup.",
+              "evidence": [
+                "solution-12/README.md",
+                "frozen-12/evaluation.json:cli",
+                "solution-12/README.md:3-16",
+                "solution-12/requirements.txt:1-2",
+                "solution-12/pyproject.toml:1-10",
+                "frozen-12/evaluation.json:readme.installation"
+              ],
+              "source_evidence": [
+                "solution-12/README.md:3-16",
+                "solution-12/requirements.txt:1-2",
+                "solution-12/pyproject.toml:1-10",
+                "frozen-12/evaluation.json:readme.installation"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass",
+              "reason": "README accurately explains variable growth W, true XW mixing and sequential4D-to3D-to2D perspective; equations match independently validated code.",
+              "evidence": [
+                "solution-12/README.md",
+                "frozen-12/evaluation.json:cli",
+                "solution-12/README.md:43-58",
+                "solution-12/ascii_tree/projection.py:13-88",
+                "frozen-12/evaluation.json:readme.4d_explanation"
+              ],
+              "source_evidence": [
+                "solution-12/README.md:43-58",
+                "solution-12/ascii_tree/projection.py:13-88",
+                "frozen-12/evaluation.json:readme.4d_explanation"
+              ]
+            }
+          ],
+          "status": "pass"
+        }
+      ],
+      "unassessed_subevidence": [],
+      "runtime_summary": {
+        "frozen_discovery": "pass",
+        "frozen_assessed_points": 22,
+        "frozen_assessed_max": 25,
+        "test_count": 38,
+        "test_status": "fail",
+        "geometry_checks": 16,
+        "geometry_status": "pass",
+        "native_checks": 57,
+        "native_pass": 57,
+        "native_fail": 0,
+        "native_diagnostic_fail": 0,
+        "native_failed_named_checks": 0,
+        "native_status": "pass"
+      },
+      "evidence_sha256": {
+        "frozen-12\\evaluation.json": "d77e272173153654901af97b30139a85cfd0804796843e5a2104ee4579556527",
+        "geometry-12.json": "80214bbaa291534a6495a45b2071a4336c29d6c71270fa8fc86c4ebc6483edae",
+        "interactive-12\\report.json": "a68305d47bf4bd131ca6093cd6d783f42eb11f099eb8cddc4d2836ca8e29319f"
+      }
+    }
+  ],
+  "score_policy": "Frozen assessed scores preserved verbatim. Remaining criteria assessed against the frozen rubric using source, all24 fresh standard frames, actual independent geometry and native ConPTY evidence. Confirmed missing deliverables score0; genuine unavailable evidence remains null. No normalization or bonus.",
+  "identity_clues": [],
+  "identity_policy": "No author/model/strategy identifiers found in reviewed source/docs. Model/strategy mappings and native generation metrics were not accessed.",
+  "execution_boundary": "Root executed frozen evaluator first and all apps in the authorized sandbox. Reviewer imported/executed no submission. Controllers made no source/fixture repairs or console-control inheritance repair.",
+  "source_integrity_evidence": "final-source-integrity.json: all132 manifest-listed submitted files remain byte-identical after runtime QA.",
+  "limitations": [
+    "ASCII frames reviewed as text; no visible-font/pixel/video assessment.",
+    "Neutral controller verifies cursor/alternate-screen cleanup; exact console mode flags of an already exited child are unavailable.",
+    "Finite seed42/137 and short sessions do not prove every seed, font, emulator, or long-running soak behavior."
+  ],
+  "findings": [
+    {
+      "solution": 9,
+      "priority": "P2",
+      "issue": "README, implementation notes and final verification document absent. Native Ctrl+C outcome is scored from actual neutral evidence, separately from correct4D math.",
+      "evidence": [
+        "source-hashes.json:solution-9",
+        "interactive-9/report.json"
+      ]
+    },
+    {
+      "solution": 11,
+      "priority": "P2",
+      "issue": "Mode/angle/zoom/reset/seed changes and E in one native input batch export the previous cached frame; paused-frame export can lag. Native46/57 pass with11 failures retained.",
+      "evidence": [
+        "solution-11/ascii_tree/app.py:116-130",
+        "solution-11/ascii_tree/terminal.py:224-236",
+        "interactive-11/report.json"
+      ]
+    },
+    {
+      "solution": 11,
+      "priority": "P2",
+      "issue": "README, implementation notes, requested saved frames and final verification document absent.",
+      "evidence": [
+        "source-hashes.json:solution-11"
+      ]
+    },
+    {
+      "solution": 12,
+      "priority": "P2",
+      "issue": "Frozen test fallback discover -s tests skips tests/__init__.py .tmp initialization:38 tests run with3 missing-directory errors. No fixture created/repaired; documented alternate spelling is not a passing frozen run.",
+      "evidence": [
+        "frozen-12/evaluation.json:tests",
+        "solution-12/tests/__init__.py:1-5"
+      ]
+    },
+    {
+      "solution": 12,
+      "priority": "P2",
+      "issue": "README and interactive demo link absent VALIDATION.md; supplied validation logs do not supply the requested self-contained final report.",
+      "evidence": [
+        "solution-12/README.md:73",
+        "solution-12/docs/INTERACTIVE_DEMO.md:23",
+        "source-hashes.json:solution-12"
+      ]
+    }
+  ],
+  "publication": {
+    "original_review_sha256": "ff31a558bccc0279caafc506fc953b5a2f2d0a532ab4db2666d33bb5c9f2ae77",
+    "only_local_path_strings_redacted": true,
+    "changed_string_values": 32,
+    "scores_gates_and_acceptance_unchanged": true,
+    "original_review_completed_before_identity_disclosure": true
+  }
+}

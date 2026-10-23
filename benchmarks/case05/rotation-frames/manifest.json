@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "case": "case05",
+  "arm": "A",
+  "scope": "Post-evaluation real CLI exports; not benchmark timing or native TTY evidence",
+  "model_calls": 0,
+  "cli_render_invocations": 12,
+  "source_file_count": 40,
+  "source_files_manifest_sha256": "619a5dab4529e1ad3ab553324ffe74d14ac6bee5e7266e02b28f20341be123ec",
+  "source_hashes_verified_before_after": true,
+  "source_modified": false,
+  "angle_zero_matches_frozen": true,
+  "distinct_frame_sha256_count": 12,
+  "frames": [
+    {
+      "file": "xw-000.txt",
+      "sha256": "ea8e4b6fa566decdff54bcc58375e160a43be63dd4b2179ee19c371a3a663111",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 0
+    },
+    {
+      "file": "xw-030.txt",
+      "sha256": "7bf9ff6d5c1aed6adceaba3d258035b0970016b316a96b8b4ccc133874504f7d",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 30
+    },
+    {
+      "file": "xw-060.txt",
+      "sha256": "de81ff9619b5f01ff6d9734887bd19843dbcfecb537cec766adc34c030f8edca",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 60
+    },
+    {
+      "file": "xw-090.txt",
+      "sha256": "10ba0ead523daf4e1f4816a0c5facb1fc2c1f7294b83e977e68202f06782c5d0",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 90
+    },
+    {
+      "file": "xw-120.txt",
+      "sha256": "22a9cf8dbaecdee6dfa9b945f7ad0461561a93e7680b9eae2d1889f07ea46889",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 120
+    },
+    {
+      "file": "xw-150.txt",
+      "sha256": "7748881a4f09e91f4842d9d6b4278449a251c0088bd13a5a4e3f4aa3dac91424",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 150
+    },
+    {
+      "file": "xw-180.txt",
+      "sha256": "1f731decbddce28d6ac96c5d36827be6e140ca640f20b35e1291ea183248c51e",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 180
+    },
+    {
+      "file": "xw-210.txt",
+      "sha256": "5f7f21aaad3cb8d9c32d59da633d446172a5fdc857a78881ee4eb95c52249c74",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 210
+    },
+    {
+      "file": "xw-240.txt",
+      "sha256": "489e33588189812b0e0c71ba58937ce7f366225f8f894768ceee2b909bfe58ef",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 240
+    },
+    {
+      "file": "xw-270.txt",
+      "sha256": "59c86974dc2187d2d814115aab7e1dafe82f376b5ee13ed5f3e0961244f8bacb",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 270
+    },
+    {
+      "file": "xw-300.txt",
+      "sha256": "e3b4651630ded42120bd0f15e90c925e7cf3405fc6b42bd9ef33d95baa3f567e",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 300
+    },
+    {
+      "file": "xw-330.txt",
+      "sha256": "8899cea775815b116c363d00f8070c5ea17123c385f76414c2d91c10b22b163e",
+      "bytes": 2430,
+      "seed": 42,
+      "mode": "4d",
+      "width": 80,
+      "height": 30,
+      "xw_degrees": 330
+    }
+  ]
+}

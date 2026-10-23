@@ -1,0 +1,23 @@
+ ASCII TREE EXPLORER   [2D]   seed 42   PAUSED                                 
+ yaw   25.0  pitch  -7.0  XW    0.0 deg  zoom 1.00                             
+ Orthographic front projection                                                 
+                                                                               
+                                                                               
+                                          *o*                                  
+                                 *:'   \o:|'*                                  
+                                *:'o|**'|'/:*:o                                
+                              *o|o|:\/**o/|o*/'//                              
+                              'o::\:':**::'|*o'*.                              
+                              '*'**||||:|':|*o:                                
+                               o\\:\|\|:*/:|o|                                 
+                                  **\\\:*|//'                                  
+                                     \||/\/:                                   
+                                      |//                                      
+                                      ||                                       
+                                      ||                                       
+                                      |||                                      
+                                                                               
+                                                                               
+ 1/2/3 mode | Arrows orbit | [ ] XW | +/- zoom | Space play                    
+ G seed | R reset | E export | H help | Q quit                                 
+ Same tree; arrows orbit in 3D / 4D                                            
