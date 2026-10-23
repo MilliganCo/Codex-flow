@@ -1,0 +1,8 @@
+# OPTIONAL MANUAL EXAMPLE ONLY. The installer never applies this file.
+# Current documented schema checked 2026-10-05. Verify your installed version first.
+# Merge keys into an existing [agents] table; do NOT append a duplicate table.
+# The cap excludes the primary/coordinator. Omit it to keep Codex's own default.
+# Do not change permissions or model settings merely to enable delegation.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 2

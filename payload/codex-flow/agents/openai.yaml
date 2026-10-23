@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Flow"
+  short_description: "Focused coding, review, recovery and repo setup"
+  default_prompt: "Use $codex-flow to choose the smallest sufficient workflow for this task."

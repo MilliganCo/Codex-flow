@@ -1,0 +1,13 @@
+name: Bug report
+description: Report a reproducible failure without private logs or credentials
+body:
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Versions, sanitized error category, and verification commands

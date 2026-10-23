@@ -1,0 +1,37 @@
+# Rollback
+
+Preserve current artifacts and local edits before restoring anything. Runtime shutdown, local proposal rollback and global skill uninstall are different operations. None requires disabling the host sandbox.
+
+## Stop a runtime execution
+
+```powershell
+python codex-flow.py --repo <project> runs list
+python codex-flow.py --repo <project> runs cancel <run-id>
+python codex-flow.py --repo <project> runs show <run-id>
+```
+
+Cancellation writes a request consumed by the owning wrapper, which terminates its process tree. Verify the final status and actual process exit; a request alone is not proof of termination. Keep `events.jsonl`, `metrics.json`, diagnostics and produced source for diagnosis.
+
+For future runs, omit `--enable` and set project `enabled` to false. Set `mercury` and `harness2` false as well. No global host config change is needed. Event replay is read-only and never restarts a task.
+
+## Restore a local instruction proposal
+
+`GuardedHarness.rollback(proposal_id)` is a Python library method, not a CLI command. It reads the stored proposal record and restores the previous project-local active text only when the current hash matches the adopted hash. If someone edited that text, rollback refuses to overwrite their work.
+
+An operator using the library must pass the same project root and reviewed proposal ID. Inspect `.codex-flow/lessons/proposal-<id>.json` and its recorded previous text locally. Do not share these files without reviewing them. There is no command named `codex-flow rollback` in the current runtime.
+
+## Existing global skill installation
+
+The unchanged offline installer owns its manifest and targeted backups. Start with:
+
+```powershell
+python payload/codex-flow/scripts/flowctl.py uninstall --dry-run
+```
+
+Use the same physical `--codex-home`/`--skills-dir` choices used at installation. Inspect the listed files and preserve any local edits. Only after review, execute the same uninstall without `--dry-run`. The helper restores/removes only owned files and preserves text outside its managed global block. Edited managed content may cause a safe refusal; reconcile it instead of deleting the manifest or forcing replacement.
+
+Backups and installation records may contain private instructions. Keep them local. Project `.codex-flow` data is separate from global uninstall and is not automatically erased.
+
+## Restore source
+
+Use the recorded pre-change source snapshot or a known reviewed Git commit in a separate recovery checkout. Compare with current dirty changes before applying selected files. Do not run `git reset --hard`, `git clean`, bulk directory deletion or blind backup restore against a user's active workspace. A proposed restore should identify exact paths and preserve current changes first.

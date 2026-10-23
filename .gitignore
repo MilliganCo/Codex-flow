@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.venv/
+build/
+dist/
+*.egg-info/
+docs/internal/
+.codex-flow/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+auth.json
+local-runs/
+# Preserved original distribution notes; superseded by current bilingual docs.
+CODEX_AGENT_UPGRADE_PROMPT_RU.md
+README_RU.md
+SHA256SUMS.txt
+START_HERE_RU.txt
+TEST-REPORT.md

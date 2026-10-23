@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "mode": "safe",
+  "max_agents": 3,
+  "max_depth": 1,
+  "max_attempts": 1,
+  "timeout_s": 1200,
+  "model": "gpt-6.1-sol",
+  "effort": "xhigh",
+  "mercury": false,
+  "harness2": false,
+  "max_refinements": 1,
+  "allow_paid_api": false
+}

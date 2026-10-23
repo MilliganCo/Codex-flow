@@ -1,0 +1,27 @@
+name: Offline checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  offline:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Offline unit and integration checks
+        run: python -B -m unittest discover -s tests -v
+      - name: Compile and package
+        run: |
+          python -m compileall -q runtime payload/codex-flow/scripts
+          python tools/build.py
+          python dist/codex-flow.pyz --help
+      - name: Scan tracked tree and all history
+        run: python tools/security_scan.py --history

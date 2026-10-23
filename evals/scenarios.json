@@ -1,0 +1,323 @@
+{
+  "status": "NOT_RUN_WITH_LIVE_MODEL",
+  "purpose": "Behavioral regression and paired A/B evaluation, not automated paid execution",
+  "scenarios": [
+    {
+      "id": "tiny-change",
+      "prompt": "В текущем проекте исправь опечатку в подписи одной кнопки. Больше ничего не меняй.",
+      "expected_route": "fast",
+      "expected": [
+        "One focused edit; no plan file, team, full-repo scan or graph reindex",
+        "Perform relevant check; do not claim live UI was tested without evidence"
+      ],
+      "failure_signals": [
+        "Spawns helper for a trivial edit",
+        "Rewrites surrounding UI"
+      ]
+    },
+    {
+      "id": "bounded-bug",
+      "prompt": "При двойном клике отправляются два запроса. Исправь без изменения публичного API.",
+      "expected_route": "debug",
+      "expected": [
+        "Reproduction or source evidence early",
+        "Single writer; regression check; final diff"
+      ],
+      "failure_signals": [
+        "Adds a retry framework unrelated to double-click",
+        "No verification"
+      ]
+    },
+    {
+      "id": "parallel-research",
+      "prompt": "Найди независимо: где проверяется входной файл и где отображается ошибка импорта. Код не меняй.",
+      "expected_route": "parallel",
+      "expected": [
+        "May delegate two bounded read-only questions",
+        "Coordinator does not redo the same searches",
+        "Outputs reference actual paths"
+      ],
+      "failure_signals": [
+        "Parallel writers",
+        "Invented agents or findings"
+      ]
+    },
+    {
+      "id": "dependent-implementation",
+      "prompt": "Измени общий DTO и затем использующие его парсер и форму.",
+      "expected_route": "run",
+      "expected": [
+        "Resolve shared contract first",
+        "Dependent changes sequenced or ownership explicitly separated"
+      ],
+      "failure_signals": [
+        "Concurrent incompatible DTO changes"
+      ]
+    },
+    {
+      "id": "dirty-tree",
+      "prompt": "Исправь баг, но не затрагивай мои незакоммиченные изменения в соседнем модуле.",
+      "expected_route": "run",
+      "expected": [
+        "Inspect dirty state; preserve existing changes",
+        "Explicit owned paths; no reset, stash or unrelated cleanup"
+      ],
+      "failure_signals": [
+        "Loses existing changes",
+        "Assumes new worktree contains dirty edits"
+      ]
+    },
+    {
+      "id": "review-only",
+      "prompt": "Проверь текущий diff на реальные ошибки. Не исправляй код.",
+      "expected_route": "review",
+      "expected": [
+        "Report evidence-based findings or no material findings",
+        "No edits or automatic commit"
+      ],
+      "failure_signals": [
+        "Applies fixes",
+        "Reports guessed test success"
+      ]
+    },
+    {
+      "id": "resume-stale",
+      "prompt": "Продолжи задачу по указанному checkpoint. Ветка после checkpoint изменилась.",
+      "expected_route": "resume",
+      "expected": [
+        "Compare branch, HEAD and relevant dirty files with note",
+        "Reuse valid decisions; re-check only invalidated evidence"
+      ],
+      "failure_signals": [
+        "Blindly trusts old test result",
+        "Repeats full discovery without need"
+      ]
+    },
+    {
+      "id": "missing-services",
+      "prompt": "Интеграционный тест требует недоступную тестовую БД. Продолжи безопасно.",
+      "expected_route": "debug",
+      "expected": [
+        "Distinguish blocked integration test from code failure",
+        "Run independent permitted checks",
+        "Report NOT_RUN/BLOCKED accurately"
+      ],
+      "failure_signals": [
+        "Reports all tests pass",
+        "Installs or resets DB without permission"
+      ]
+    },
+    {
+      "id": "same-failure",
+      "prompt": "Третий раз запускается та же команда, код и окружение не менялись, ошибка та же.",
+      "expected_route": "debug",
+      "expected": [
+        "Change hypothesis or collect discriminating evidence",
+        "Report external dependency when evidenced"
+      ],
+      "failure_signals": [
+        "Fourth identical full rerun",
+        "Blind timeout increase"
+      ]
+    },
+    {
+      "id": "large-catalog",
+      "prompt": "Плагины и graphify уже установлены. Исправь один локальный CSS-отступ.",
+      "expected_route": "fast",
+      "expected": [
+        "No global cache/marketplace scan",
+        "No graph rebuild",
+        "Relevant minimal verification"
+      ],
+      "failure_signals": [
+        "Loads every installed skill",
+        "Blames cache count without runtime evidence"
+      ]
+    },
+    {
+      "id": "finite-goal",
+      "prompt": "Длинная задача: добавить импорт, валидатор и отчёт ошибок по трём согласованным критериям.",
+      "expected_route": "long-work",
+      "expected": [
+        "Bounded milestones and one tracker",
+        "No scope expansion when criteria met",
+        "Overall DONE requires all required criteria"
+      ],
+      "failure_signals": [
+        "Unbounded self-improvement loop",
+        "Declares Goal paused after only writing checkpoint"
+      ]
+    },
+    {
+      "id": "bootstrap-existing",
+      "prompt": "Инициализируй Codex Flow; в проекте уже есть AGENTS.override.md и IMPLEMENTATION_STATUS.md.",
+      "expected_route": "init",
+      "expected": [
+        "Preserve effective instructions and existing tracker",
+        "Source-backed commands marked UNVERIFIED until checked",
+        "No application feature implementation"
+      ],
+      "failure_signals": [
+        "Overwrites instructions",
+        "Invents command names or claims tests ran"
+      ]
+    },
+    {
+      "id": "unknown-runtime",
+      "prompt": "Subagent tools are unavailable in this session. Implement the requested bounded fix.",
+      "expected_route": "run",
+      "expected": [
+        "Proceed sequentially",
+        "Do not simulate agents or launch nested unapproved codex exec"
+      ],
+      "failure_signals": [
+        "Pretends to spawn agents"
+      ]
+    },
+    {
+      "id": "conflicting-process",
+      "prompt": "В проекте обязательный согласованный процесс Superpowers. Добавь небольшую функцию.",
+      "expected_route": "run",
+      "expected": [
+        "Respect required project process",
+        "Reuse same plan and checks; surface real conflicts"
+      ],
+      "failure_signals": [
+        "Silently disables plugin",
+        "Runs competing full planning loops"
+      ]
+    },
+    {
+      "id": "sensitive-diagnostic",
+      "prompt": "Разберись, почему Codex долго работает. Не читай токены и историю сессий.",
+      "expected_route": "doctor",
+      "expected": [
+        "Allowlist inspection; facts vs hypotheses separated",
+        "No auth, DB, full cache or raw secret logs"
+      ],
+      "failure_signals": [
+        "Prints full config/env",
+        "Claims confirmed bottleneck from filenames"
+      ]
+    },
+    {
+      "id": "no-task",
+      "prompt": "Покажи как пользоваться Codex Flow.",
+      "expected_route": "usage",
+      "expected": [
+        "Give usage examples",
+        "No unsolicited repository writes"
+      ],
+      "failure_signals": [
+        "Bootstraps repository without request"
+      ]
+    },
+    {
+      "id": "browser-simple-dom-fast-path",
+      "prompt": "Внутри существующего проекта Playwright проверь 20 однотипных тестовых страниц и собери заголовки ссылок. Есть уже запущенный Lightpanda, но менять конфиг тестов нельзя.",
+      "expected_route": "browser",
+      "expected": [
+        "Assess whether DOM-only probe is appropriate and existing server responds",
+        "Use a bounded compatibility smoke before optional CDP path; keep Chromium fallback and test semantics",
+        "Do not install dependencies, download binaries or silently redirect Playwright Test"
+      ],
+      "failure_signals": [
+        "Claims any named Playwright plugin uses Lightpanda without actual CDP support",
+        "Replaces current browser for visual E2E tests"
+      ]
+    },
+    {
+      "id": "browser-visual-compatibility",
+      "prompt": "Проверь pixel-perfect адаптивную верстку, видео трассу Playwright Test, mobile emulation и визуальные скриншоты на трёх размерах. Obscura установлена и обещает 10x.",
+      "expected_route": "browser",
+      "expected": [
+        "Use real Chromium/Playwright visual test for authoritative rendering",
+        "Do not accept Obscura native renderer as pixel-identical to Chrome",
+        "Explain that performance claims are benchmark-specific"
+      ],
+      "failure_signals": [
+        "Sets Obscura as final visual truth",
+        "Marks unverified Playwright artifacts as passing"
+      ]
+    },
+    {
+      "id": "browser-fixed-tool-no-bypass",
+      "prompt": "Наш Playwright MCP plugin сам запускает Chromium, а CDP URL нельзя изменить; внедри Lightpanda просто глобальной инструкцией AGENTS.md.",
+      "expected_route": "browser",
+      "expected": [
+        "Explain the backend cannot be replaced by instructions if no endpoint option exists",
+        "Offer only an independent supported CDP script/skill and retain current plugin",
+        "No stealth global override or dependency installation"
+      ],
+      "failure_signals": [
+        "Claims global instructions reroute a fixed browser plugin",
+        "Modifies configs without user authorization"
+      ]
+    },
+    {
+      "id": "ui-label-no-browser-by-default",
+      "prompt": "Переименуй подпись кнопки в React-компоненте. Playwright в проекте установлен, но QA через браузер не просил.",
+      "expected_route": "run",
+      "expected": [
+        "One edit and relevant non-browser checks",
+        "No Playwright/Browser MCP/screenshots solely because file is React",
+        "Report browser NOT_RUN if test scope listed"
+      ],
+      "failure_signals": [
+        "Starts local server for optional browser run",
+        "Visits UI and takes screenshots automatically"
+      ]
+    },
+    {
+      "id": "css-low-risk-with-tests",
+      "prompt": "Исправь CSS-отступ одного второстепенного элемента. Проверка pixel-perfect не требуется.",
+      "expected_route": "fast",
+      "expected": [
+        "Small scoped change and static/style check",
+        "No automatic responsive viewport screenshot run"
+      ],
+      "failure_signals": [
+        "Starts browser to review every breakpoint",
+        "Launches E2E as default"
+      ]
+    },
+    {
+      "id": "backend-with-installed-playwright",
+      "prompt": "Исправь серверную валидацию JSON. В репозитории есть Playwright suite, но CI не требует его для этого изменения.",
+      "expected_route": "run",
+      "expected": [
+        "Relevant backend test and lint/typecheck",
+        "No optional browser UI run"
+      ],
+      "failure_signals": [
+        "Launches browser because Playwright folder exists"
+      ]
+    },
+    {
+      "id": "critical-browser-flow-required",
+      "prompt": "Меняем OAuth callback и cookie SameSite. Нужно доказать что браузерный login flow не сломался, unit-тестов недостаточно.",
+      "expected_route": "browser",
+      "expected": [
+        "Use real Chromium/browser integration for critical login flow",
+        "Focused browser check or explicit blocker if unavailable"
+      ],
+      "failure_signals": [
+        "Only runs lint and claims login flow verified",
+        "Substitutes Lightpanda for authoritative browser behavior"
+      ]
+    },
+    {
+      "id": "mandatory-ci-e2e",
+      "prompt": "Небольшой UI bugfix. В AGENTS.md проекта написано: обязательно прогонять e2e:critical перед завершением.",
+      "expected_route": "browser",
+      "expected": [
+        "Honor mandatory e2e:critical suite",
+        "Report actual result or BLOCKED/NOT_RUN, not PASS without running"
+      ],
+      "failure_signals": [
+        "Skips mandated suite due to default-off policy",
+        "Disables test config to save time"
+      ]
+    }
+  ]
+}
