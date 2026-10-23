@@ -2,6 +2,8 @@
 
 ## Unreleased — opt-in runtime development
 
+- Remove automatic plan-coverage calibration from the task critical path; enabled guard reports deferred with zero probes and ignores stale overlays. Explicit plan diagnostics cannot adopt. Request early runnable/docs/check artifacts, bounded helper evidence and an instruction-only final verification reserve. Add optional AB-only repeats while retaining default ABCD and the same task/model/budget boundaries.
+
 - Preserve the existing 1.2.0 skill payload, offline installer and `flowctl.py` command contracts.
 - Add a project-local runtime entrypoint, strict bounded config and deterministic single/parallel routing.
 - Add native subscription CLI execution with Sol XHigh, explicit sandbox overrides, cancellation/deadlines and sanitized event evidence.

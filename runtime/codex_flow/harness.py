@@ -5,6 +5,19 @@ import hashlib, json, math
 from .contracts import PolicyError, inside
 from .telemetry import write_json, utc
 
+def runtime_guard():
+    """Do not spend a task's budget calibrating an unvalidated proxy objective.
+
+    Plan coverage and faster plan generation do not measure application quality.
+    Keep this enabled guard explicit, but defer calibration outside the task's
+    critical path. No active instruction file is loaded or promoted implicitly.
+    """
+    return {'status':'deferred','mode':'Harness2-inspired','upstream_probes':0,
+            'inspired_probes':0,'runs':[],'decision':{'adopted':False},
+            'application_quality_eligible':False,
+            'reason':'no independent application-quality calibration; online plan probes disabled',
+            'limitation':'guard only; no measured optimizer benefit or upstream Harness2 execution'}
+
 @dataclass(frozen=True)
 class HarnessProposal:
     id: str

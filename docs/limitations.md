@@ -22,8 +22,8 @@ This list describes implementation boundaries, not missing evidence disguised as
 
 - Mercury is external and optional. Current source passed a real free-only typed smoke; case04 recorded one successful call in each of B/C. This is not a routing-accuracy or availability guarantee, and configuration remains disabled by default. Case02 still has zero successful calls; later evidence does not change its integration status.
 - Free pricing/provider/build guarantees depend on the trusted external adapter's checks; no external provider implementation is bundled.
-- The local optimizer is Harness²-inspired and measures plan coverage. Both benchmark and normal opt-in `run` currently use the same hardcoded ASCII Tree planning brief; it is not a general task-specific optimizer and does not establish application-quality gains. Existing project proposal limits can refuse repeated probes; history is preserved.
-- Explicitly configured Harness-inspired probes add two planning calls before a normal run. Their plan-coverage metric does not establish final application quality; account for their overhead separately.
+- The Harness²-inspired runtime guard defers calibration with zero automatic probes and no implicit overlay loading. It does not establish optimizer benefit. The explicit library planning diagnostic is narrow, cannot adopt, and is outside the automatic task path. Historical probes and proposal records remain preserved.
+- Early deliverables and a final20% verification reserve are coordinator instructions, not hard phase scheduling. Actual adherence requires run evidence; outer deadlines and shared request limits remain enforced.
 
 ## Measurement and acceptance
 

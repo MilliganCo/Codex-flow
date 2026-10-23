@@ -32,7 +32,7 @@ flowchart LR
     gate --> route[Single or parallel route]
     mercury[Optional free-only typed decision] --> route
     route --> root[Sol 6.1 XHigh coordinator]
-    probes[Optional bounded plan probes] --> root
+    guard[Optional guard: defer uncalibrated optimization] --> root
     root --> helpers[Native read-only evidence helpers]
     helpers --> root
     root --> artifact[Application and finite checks]
@@ -52,7 +52,9 @@ One locked `RequestBudget` limits inference requests across a task's planning pr
 
 `GuardedHarness` records a proposal, measured baseline/candidate evidence and an eligibility decision. Safety and completeness must both pass; improvement is higher quality, or equal quality with shorter measured duration. Adoption is explicit and project-local. Rollback checks that the adopted file is unchanged before restoring the previous text.
 
-The benchmark and an explicitly configured `run` measure a pair of **plan-coverage** probes and can adopt the resulting instruction proposal. Both require opt-in, and those probes consume additional subscription quota/time. This is Harness²-inspired behavior, not execution of the [upstream Harness²](https://github.com/google-research/harness2) optimizer.
+When enabled, the runtime guard defers uncalibrated optimization without model calls or implicit loading of old overlays. The explicit library planning diagnostic remains available, but cannot adopt instructions: plan coverage and faster plan generation do not establish application quality. Historical cases retain their original probes and adoption records. This is Harness²-inspired behavior, not execution of the upstream optimizer.
+
+The coordinator policy requests an early runnable slice, current documentation, one bounded helper review while implementation continues, and a final 20 percent planning reserve for verification and handoff. The reserve is an instruction, not an enforced phase timer. The outer task timeout and shared request cap remain enforced.
 
 ## Evidence boundary
 

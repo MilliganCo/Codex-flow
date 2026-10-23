@@ -18,3 +18,4 @@ examples/ascii-tree/*/examples/*.txt -whitespace
 benchmarks/protocol/TREE_BENCHMARK_TASK.md -whitespace
 benchmarks/case05/solutions/** -text -whitespace
 benchmarks/case05/rotation-frames/*.txt -whitespace
+benchmarks/case06/solutions/** -text -whitespace

@@ -30,7 +30,13 @@ class BenchmarkWiringTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name).resolve()
 
-    def test_parallel_arms_share_prompt_safe_deny_targets_and_per_arm_probe_budget(self):
+    def test_parallel_arms_share_prompt_safe_deny_targets_and_per_arm_budget(self):
+        self.assert_execution('ABCD')
+
+    def test_ab_only_creates_and_executes_two_fresh_concurrent_arms(self):
+        self.assert_execution('AB')
+
+    def assert_execution(self, groups):
         experiment = self.root / "new-experiment"
         task = self.root / "task.md"
         task.write_text("Synthetic common task; no implementation or real experiment solutions.", encoding="utf-8")
@@ -61,20 +67,11 @@ class BenchmarkWiringTests(unittest.TestCase):
                     "all_requests_usage": {"input_tokens": 10, "output_tokens": 2, "cached_tokens": 0},
                     "subscription": {"requests": [{"model": "gpt-6.1-sol", "effort": "xhigh"}]}}
 
-        def fake_probe(exe, workspace, run_root, cfg, **kwargs):
-            budget = kwargs["request_budget"]
-            group = workspace.name[-1]
-            budget.reserve()
-            budget.reserve()
-            with lock:
-                budgets[group] = budget
-                self.assertEqual(set(kwargs["denied_reads"]), {previous, evaluator.parent, protected})
-                self.assertTrue(all(p.exists() for p in kwargs["denied_reads"]))
-            return {"inspired_probes": 2, "decision": {"adopted": False},
-                    "runs": [observation(), observation()]}
-
         def fake_run(exe, workspace, cfg, prompt, run_root, **kwargs):
             group = workspace.name[-1]
+            self.assertEqual(cfg.model, 'gpt-6.1-sol')
+            self.assertEqual(cfg.effort, 'xhigh')
+            self.assertEqual(cfg.max_model_requests, 80)
             budget = kwargs["request_budget"]
             budget.reserve()
             with lock:
@@ -97,33 +94,46 @@ class BenchmarkWiringTests(unittest.TestCase):
              patch.object(benchmark.subprocess, "run", return_value=subprocess.CompletedProcess([], 0, "codex-cli offline-fixture", "")), \
              patch.object(benchmark, "hardware", return_value={}), \
              patch("codex_flow.mercury.MercuryBridge", return_value=mercury), \
-             patch.object(benchmark, "probe", side_effect=fake_probe), \
+             patch.object(benchmark, "probe") as probes, \
              patch.object(benchmark, "run", side_effect=fake_run), \
              patch.object(benchmark, "ThreadPoolExecutor", wraps=ThreadPoolExecutor) as pools:
             result = benchmark.execute(experiment, task, evaluator, timeout=30, execute=True,
-                                       protect_paths=(protected,))
-        self.assertEqual(set(result), set("ABCD"))
-        self.assertTrue(all(result[g]["status"] == "completed_unverified" for g in "ABCD"))
-        self.assertEqual({g: result[g]["model_requests_total"] for g in "ABCD"}, {"A": 1, "B": 3, "C": 1, "D": 3})
-        self.assertEqual(len({id(budget) for budget in budgets.values()}), 4)
+                                       protect_paths=(protected,), groups=groups)
+        probes.assert_not_called()
+        self.assertEqual(set(result), set(groups))
+        self.assertTrue(all(result[g]["status"] == "completed_unverified" for g in groups))
+        self.assertEqual({g: result[g]["model_requests_total"] for g in groups}, {g: 1 for g in groups})
+        self.assertEqual(len({id(budget) for budget in budgets.values()}), len(groups))
         self.assertEqual({entry[0] for entry in calls.values()}, {task.read_text()})
         self.assertEqual(len({entry[1] for entry in calls.values()}), 1)
         self.assertEqual(set(calls["A"][1]), {previous, evaluator.parent, protected})
         self.assertNotIn(ignored, calls["A"][1])
         self.assertFalse(calls["A"][2])
-        self.assertTrue(all(calls[g][2] for g in "BCD"))
+        self.assertTrue(all(calls[g][2] for g in groups if g != 'A'))
         self.assertNotEqual(thread_ids["A"], thread_ids["B"])
-        self.assertNotEqual(thread_ids["C"], thread_ids["D"])
+        if 'C' in groups:self.assertNotEqual(thread_ids["C"], thread_ids["D"])
+        else:
+            self.assertFalse((experiment/'workspace-C').exists())
+            self.assertFalse((experiment/'workspace-D').exists())
         self.assertNotIn(main_thread, thread_ids.values())
-        self.assertEqual(pools.call_count, 2)
+        self.assertEqual(pools.call_count, len(groups)//2)
         pools.assert_called_with(max_workers=2)
         manifest = json.loads((experiment / "experiment-manifest.json").read_text())
         self.assertFalse(manifest["isolation"]["cross_arm_read_isolation"])
         self.assertTrue(manifest["isolation"]["shared_deny_policy"])
+        self.assertEqual(manifest['selected_groups'], list(groups))
+        self.assertEqual(result['B']['details']['harness']['status'], 'deferred')
+        self.assertEqual(result['B']['harness_inspired_probes'], 0)
+        self.assertEqual(manifest['task_sha256'], benchmark.sha(task))
+        self.assertEqual(manifest['evaluator_sha256'], benchmark.sha(evaluator))
+        self.assertEqual(manifest['rubric_sha256'], benchmark.sha(evaluator.with_name('rubric.json')))
 
     def test_real_probe_wiring_passes_same_budget_and_deny_targets_to_both_phases(self):
         workspace, probes, protected = (self.root / name for name in ("workspace", "probes", "protected"))
         for folder in (workspace, probes, protected): folder.mkdir()
+        active = workspace/'.codex-flow/lessons/active.txt'
+        active.parent.mkdir(parents=True)
+        active.write_text('preserve old diagnostic instructions')
         budget = RequestBudget(3)
         seen = []
         def fake_run(exe, directory, cfg, prompt, run_directory, **kwargs):
@@ -141,7 +151,9 @@ class BenchmarkWiringTests(unittest.TestCase):
         self.assertEqual(budget.used, 2)
         self.assertEqual(budget.reserve(), 3)
         self.assertEqual(result["decision"]["proposal"]["instructions"], seen[1])
-        self.assertEqual((workspace / ".codex-flow/lessons/active.txt").read_text(), seen[1])
+        self.assertEqual(active.read_text(), 'preserve old diagnostic instructions')
+        self.assertFalse(result['decision']['adopted'])
+        self.assertFalse(result['application_quality_eligible'])
 
     def test_missing_deny_target_rejected_without_process_or_directory_creation(self):
         missing = self.root / "missing-target"

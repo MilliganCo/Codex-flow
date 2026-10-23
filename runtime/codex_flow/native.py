@@ -36,7 +36,9 @@ def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gate
                          'this multi-agent execution. Your FIRST TOOL ACTION must spawn exactly one independent '
                          'read-only worker using the native spawn tool, BEFORE editing application files or running '
                          'shell commands. This is a required execution step, not a discretionary recommendation. '
-                         'Give the worker a bounded independent evidence task and receive its evidence before integration. '
+                         'Give the worker one bounded independent acceptance/test review task, with concise actionable '
+                         'findings and limitations. Continue useful implementation immediately while it works; do not '
+                         'wait for its plan; receive its evidence before final integration. '
                          'A failed spawn is degraded execution: report it and do not retry. Never ask helpers to delegate.')
     overrides={
         'model_provider':'flow_subscription','model_reasoning_effort':cfg.effort,'approval_policy':'never',
@@ -127,6 +129,8 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
     if gateway is not None:gateway.trace=trace
     started=time.monotonic()
     profiles=role_profiles(workspace,named_permissions=bool(denied_reads)) if parallel else None
+    if parallel:
+        instructions+='\nController task time budget: '+str(cfg.timeout_s)+' seconds including native execution. Plan the final '+str(max(1,round(cfg.timeout_s*.2)))+' seconds for verification, documentation and handoff; do not claim an enforced phase timer.'
     command=argv(exe,workspace,cfg,parallel=parallel,instructions=instructions,gateway=gateway,denied_reads=denied_reads,profiles=profiles)
     trace.emit('execution.start',{'model':cfg.model,'effort':cfg.effort,'sandbox':'workspace-write',
                                'parallel':parallel,'max_agents':cfg.max_agents,'task_sha256':hashlib.sha256(prompt.encode()).hexdigest()})

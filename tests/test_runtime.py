@@ -307,7 +307,7 @@ class HarnessTests(TemporaryTests):
 
 
 class BenchmarkProbeTests(TemporaryTests):
-    def test_adopted_candidate_is_exact_native_probe_instruction_text(self):
+    def test_plan_proxy_cannot_adopt_even_when_candidate_is_faster(self):
         workspace = self.root / "workspace"
         workspace.mkdir()
         probes = self.root / "probes"
@@ -326,9 +326,10 @@ class BenchmarkProbeTests(TemporaryTests):
         self.assertEqual(run.call_count, 2)
         self.assertEqual(prompts[0], prompts[1])
         self.assertNotEqual(instructions[0], instructions[1])
-        self.assertTrue(result["decision"]["adopted"])
+        self.assertFalse(result["decision"]["adopted"])
+        self.assertFalse(result['application_quality_eligible'])
         self.assertEqual(result["decision"]["proposal"]["instructions"], instructions[1])
-        self.assertEqual((workspace / ".codex-flow/lessons/active.txt").read_text(), instructions[1])
+        self.assertFalse((workspace / ".codex-flow/lessons/active.txt").exists())
         self.assertEqual(result["upstream_probes"], 0)
         self.assertEqual(result["inspired_probes"], 2)
         self.assertEqual(result["status"], "degraded")

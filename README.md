@@ -48,12 +48,12 @@ Routing uses explicit independent-step counts and ownership conflicts, with dete
 |---|---|
 | Native Codex | Root Sol XHigh through a nonce-protected loopback subscription gateway; no sandbox bypass |
 | Mercury | External, explicitly trusted free-only adapter; no provider code or credentials bundled |
-| Harness-inspired probes | Local measured plan comparison and guarded adoption; upstream Harness² executor is not used |
+| Harness-inspired guard | Defers uncalibrated optimization; explicit plan diagnostics cannot adopt; upstream executor is not used |
 | Telemetry | Request model/effort, actual response model and usage; unknown or incomplete totals remain null |
 
 The current Mercury bridge has completed a real free-only typed smoke after forwarding the user's existing Windows system proxy to the Node child with `--use-env-proxy`. Model/build/provider checks passed; reported usage cost was zero. Proxy values were not logged and global settings were not edited. Mercury remains disabled by default. The earlier frozen benchmark used a prior bridge with zero successful Mercury calls; this later smoke does not retroactively activate Mercury in that experiment.
 
-When explicitly configured, both normal execution and the benchmark can run a pair of measured planning probes. The Harness-inspired result remains degraded because plan coverage does not demonstrate an improvement in application quality. These probes consume additional subscription time/quota. See [integrations](docs/integrations.md).
+When enabled, the Harness-inspired runtime guard reports deferred calibration with zero automatic online probes. Plan coverage did not establish application-quality gains, so old coverage-only overlays are no longer applied. Explicit library diagnostics cannot adopt instructions. Historical benchmark records retain their original behavior. See [integrations](docs/integrations.md).
 
 ## Safety and evidence
 

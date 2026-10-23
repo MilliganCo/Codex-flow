@@ -5,11 +5,15 @@ The benchmark is a reproducible case study, not a promise of speed. Use the same
 | Group | Native helpers | Mercury | Optimization |
 |---|---|---|---|
 | A | Disabled | Disabled | Disabled |
-| B | Enabled when routing permits | External free-only adapter | Local measured Harness²-inspired probes |
+| B | Enabled when routing permits | External free-only adapter | Harness²-inspired guard; calibration deferred |
 | C | Enabled when routing permits | External free-only adapter | Disabled |
-| D | Enabled when routing permits | Disabled | Local measured Harness²-inspired probes |
+| D | Enabled when routing permits | Disabled | Harness²-inspired guard; calibration deferred |
 
 The root model/effort stays Sol 6.1 XHigh. Optional helper defaults differ and must be reported from actual evidence. If Mercury has no successful calls, B is degraded and the B/D contrast does not measure Mercury's value. Local plan probes are not upstream Harness² execution.
+
+Cases02/04/05 used the old automatic two-probe policy. Current execution removes it;
+the enabled guard performs no active optimization. A future B/C comparison with this
+guard alone is not an active-optimizer ablation. Keep treatment versions explicit.
 
 ## Runner commands
 
@@ -22,6 +26,10 @@ python codex-flow.py benchmark report --root <experiment-root>
 ```
 
 Without `--execute`, the command returns its plan and performs native CLI/login preflight without model generation. With `--execute`, it creates one scaffold commit and detached worktrees, launches A/B concurrently, then C/D concurrently. Each arm shares a hard budget of at most 80 inference requests across its planning probes, root and gateway-routed helpers, plus its wall-clock deadline. The runner records task/evaluator/rubric/runtime hashes, CLI version and execution metrics.
+
+Use `--groups AB` for an explicitly scoped A/B repeat; the default remains `ABCD`.
+Only selected worktrees and runs are created. A repeat at the case05 limit must pass
+`--timeout 1500`; the general command default remains1200 seconds.
 
 Use repeatable `--protect-path <existing-path>` only for reviewed targets that already exist. The runner adds existing prior experiment roots and the hidden evaluator directory to one identical deny policy supplied to every arm. Do not supply future output paths, reciprocal current-peer targets or blanket parent directories.
 

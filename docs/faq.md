@@ -14,7 +14,7 @@ No. Mercury uses an explicitly selected external adapter and separate provider a
 
 ## Is this the upstream Harness² optimizer?
 
-No. The local module is Harness²-inspired. It compares bounded measured proposals with safety/completeness gates and project-local adoption/rollback. The benchmark's probe metric is plan coverage, not final application quality. The upstream executor is not used.
+No. The local module is Harness²-inspired. Current execution defers uncalibrated optimization without automatic probes or stale overlays. Explicit plan diagnostics cannot adopt; generic library comparison/rollback remains available. No measured optimizer benefit or upstream execution is claimed.
 
 ## Are three agents and one delegation level hard guarantees?
 

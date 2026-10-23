@@ -6,7 +6,7 @@ This is an evidence boundary, not a claim that the entire requested architecture
 |---|---|---|
 | Existing Codex Flow compatibility | pass | Legacy skill/helper contracts retained; offline regression checks passed |
 | Mercury free-only integration | pass | Real typed smoke with validated model/build/provider and reported cost 0; disabled by default; no routing-accuracy claim |
-| Harness²-inspired optimization | degraded | Bounded measured plan probes, guarded adoption/rollback; plan coverage is not application quality |
+| Harness²-inspired optimization | deferred | Enabled guard, zero automatic online probes, no stale overlay; explicit plan diagnostics cannot adopt; optimizer benefit unproven |
 | Upstream Harness² executor | blocked | Unsafe upstream execution path excluded; not silently substituted or claimed active |
 | Native root/helper capability | pass | Separate bounded proofs plus case05: B/C/D used 1/2/1 direct children; scoped journal audit observed depth one |
 | Kernel tool boundary | pass | Zero-model-call synthetic check: normal read/write passed, private sentinel/SQLite operations raised `PermissionError`, host fixture remained usable |

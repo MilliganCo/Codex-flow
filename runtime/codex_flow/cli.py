@@ -11,12 +11,22 @@ from .telemetry import write_json, replay
 FLOW_INSTRUCTIONS='''You are the Codex Flow coordinator, GPT-6.1 Sol xhigh. Keep task acceptance fixed.
 Use native subagents only when independent work exists. Maximum three helpers globally,
 maximum one delegation level, never ask helpers to delegate. Prefer at most two helpers.
-The coordinator is the sole integrator. Give helpers read-only research/review or exact
-disjoint file ownership inside this workspace; no shared file writes. Use Sol medium for
-implementation and Sol high for review where available. Read applicable project rules.
+The coordinator is the sole writer and integrator. Give each helper one independent
+read-only evidence task with a narrow scope, concrete acceptance condition and concise
+output: actionable findings, file/line evidence, checks and limitations. Use Sol medium
+for bounded research and Sol high for review where available. Read applicable project rules.
 For an explicitly parallel run, use at least one independent read-only native helper;
 receive its evidence before final integration. A failed spawn is degraded execution,
 never proof of delegation. Do not repeatedly retry an unavailable helper.
+Continue implementing while the helper works; do not wait for a generic plan. Start with
+a runnable vertical slice, a documented launch command and a finite smoke check. Keep
+required documentation and artifacts current as features land, rather than leaving them
+until the end. Map the task's acceptance conditions to concrete checks; distinguish unit
+simulations from actual platform behavior. Prioritize unverified critical boundaries.
+Reserve the final 20 percent of the task's time budget for verification, required artifacts,
+documentation and handoff. This is a planning target, not a guaranteed runtime timer.
+Integrate helper findings once; follow up only for a concrete unresolved defect. Do not
+duplicate its assigned investigation or rerun unchanged checks without new evidence.
 All work must stay within the assigned workspace. Do not read sibling workspaces/evaluators,
 global user files, credentials, memories or prior solutions. Do not use paid APIs, internet,
 publication, deployment, sandbox bypass, global config changes or external applications.
@@ -53,6 +63,7 @@ def main(argv=None):
     s=sub.add_parser('runs');s.add_argument('action',choices=['list','show','cancel','replay']);s.add_argument('run_id',nargs='?')
     b=sub.add_parser('benchmark');b.add_argument('action',choices=['tree','report']);b.add_argument('--task-file',type=Path);b.add_argument('--root',type=Path);b.add_argument('--evaluator',type=Path);b.add_argument('--mercury-root',type=Path);b.add_argument('--execute',action='store_true');b.add_argument('--timeout',type=int,default=1200)
     b.add_argument('--protect-path',type=Path,action='append',default=[])
+    b.add_argument('--groups',choices=['AB','ABCD'],default='ABCD')
     args=p.parse_args(argv)
     try:
         repo=args.repo.resolve();cfg=load(args.config or repo/'.codex-flow/config.json')
@@ -89,10 +100,8 @@ def main(argv=None):
                 request_budget=RequestBudget(cfg.max_model_requests)
                 harness=None
                 if cfg.harness2 and not args.no_harness2:
-                    from .benchmark import probe
-                    probe_root=repo/'.codex-flow/probes'/uuid.uuid4().hex
-                    probe_root.mkdir(parents=True)
-                    harness=probe(cli,repo,probe_root,cfg,deadline=started+cfg.timeout_s,request_budget=request_budget)
+                    from .harness import runtime_guard
+                    harness=runtime_guard()
                 instructions=FLOW_INSTRUCTIONS if decision.strategy=='parallel' else BASE_INSTRUCTIONS
                 active=repo/'.codex-flow/lessons/active.txt'
                 if harness and harness['decision']['adopted']:instructions=active.read_text(encoding='utf-8')
@@ -146,7 +155,7 @@ def main(argv=None):
             from .benchmark import execute,report
             if args.action=='tree':
                 if not args.root or not args.task_file or not args.evaluator:raise PolicyError('--root, --task-file and frozen --evaluator required')
-                measured=execute(args.root,args.task_file,args.evaluator,args.codex,args.mercury_root,args.timeout,execute=args.execute,protect_paths=args.protect_path)
+                measured=execute(args.root,args.task_file,args.evaluator,args.codex,args.mercury_root,args.timeout,execute=args.execute,protect_paths=args.protect_path,groups=args.groups)
                 out=({'experiment':str(args.root),'groups':{g:{k:m.get(k) for k in ('status','total_arm_s','mercury_real_calls','multi_agent_verified','model_requests_total','input_tokens','output_tokens')} for g,m in measured.items()}}
                      if args.execute else measured)
             else:
