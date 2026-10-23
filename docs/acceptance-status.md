@@ -1,4 +1,4 @@
-# Acceptance status — 2026-10-23
+# Acceptance status — 2026-10-24
 
 This is an evidence boundary, not a claim that the entire requested architecture has passed. Status values are `pass`, `degraded`, `deferred`, `blocked` and `notimplemented`. Independent integration proofs, packaged-demo verification and frozen benchmarks are separate records; later success does not rewrite an earlier run.
 
@@ -18,10 +18,25 @@ This is an evidence boundary, not a claim that the entire requested architecture
 | Doctor, integration status, cancel, event replay | pass | Implemented CLI controls; replay does not resume inference |
 | Runtime TUI / native-session resume | notimplemented | No such commands or interface shipped |
 | Real 2D/3D/4D demos | pass | Accepted old case02 originals preserved; labelled packaged portability patch passed Windows/Ubuntu CI |
-| Local core verification | pass | 196 tests after orchestration fixes: Windows 178 passed/18 skipped; WSL 196 passed; static checks and build passed |
+| Local core verification | pass | Latest 254 tests: Windows 233 passed/21 symlink skips; WSL 254 passed; static checks and zipapp build passed |
 | Private CI | pass | Confirmed green for f757663: all 192 core tests on Windows/Ubuntu; packaged examples, static checks, build and 454-object all-history scan passed |
 | License selection | blocked | Owner decision pending; repository remains private |
 | Host configuration preservation | pass | Process-local overrides; no copied auth tokens, global-setting rewrites or sandbox bypass |
+
+## Latest balanced repeat
+
+[Case08](../benchmarks/case08/README.md) accepted both 97-point artifacts after all
+26 criteria were assessed and five gates passed. Both passed native 57/57 and
+headless 25/25. A finished in 1120.781 seconds; B failed at 1094.797 seconds with an
+incomplete upstream body read and unknown failed-request usage. This is not
+successful faster completion. Four MCP status calls and one used direct worker
+were observed. Latest-head private CI is tracked on the published commit; previous CI rows are
+named historical evidence.
+
+The separate model-free MCP snapshot proof passed 15 SDK checks and 10 controller
+checks. Host non-project config semantics and all 15 installed skill/AGENTS/manifest
+files remain unchanged. Native project registration changed; auth content was not
+copied and no host sandbox configuration was disabled.
 
 ## Native proof and its limits
 

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "evidence/orchestration-analysis.json": {
+      "original_sha256": "7bc79011c4012c2cbebad148c31990fd1a2dd29f2628e8eb643dd9483b8a68d1",
+      "public_sha256": "7bc79011c4012c2cbebad148c31990fd1a2dd29f2628e8eb643dd9483b8a68d1"
+    },
+    "evidence/blind-review-source-integrity.json": {
+      "original_sha256": "f9a272fc3ce8c1cc7e625fb04c75ed6a668a08d6532683fd2880e766e93dab6b",
+      "public_sha256": "f9a272fc3ce8c1cc7e625fb04c75ed6a668a08d6532683fd2880e766e93dab6b"
+    }
+  },
+  "app_sources_modified": false,
+  "original_evidence_manifest_preserved": true
+}

@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "correction": "The original execution receipts set timeout_cleanup_verified from normal outer-process completion. That does not independently prove descendant cleanup. The original records are retained unchanged.",
+  "outer_timeout_observed": false,
+  "descendant_cleanup_independently_verified": false,
+  "original_records": {
+    "frozen-15-execution.json": {
+      "sha256": "29f25a168e0d77b2243d5e5bc1d8fbd7463784753ab2880736111589fab0cfb2",
+      "original_timeout_cleanup_verified_field": true
+    },
+    "frozen-16-execution.json": {
+      "sha256": "584af7d037a8102f806ea55c042cafea34aa96bb390c3bbb6690b1ffc2313869",
+      "original_timeout_cleanup_verified_field": true
+    }
+  },
+  "source_or_evaluator_modified": false
+}

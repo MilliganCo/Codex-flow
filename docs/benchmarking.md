@@ -1,6 +1,13 @@
 # Benchmarking
 
-Latest [case06](../benchmarks/case06/README.md) is an explicitly scoped A/B repeat
+Latest [case08](../benchmarks/case08/README.md) retains the same 1500-second,
+80-request A/B contract. Both artifacts scored 97, with headless 25/25 and native
+57/57. A completed; B failed during upstream body reading, so no speedup follows.
+The MCP candidate, successful prerequisite, aborted case07, raw NaN probes,
+corrected checker bookkeeping and post-freeze security changes remain separate.
+
+
+Previous [case06](../benchmarks/case06/README.md) is an explicitly scoped A/B repeat
 of the unchanged task/evaluator/rubric and 1500-second/80-request limit. Both fresh
 artifacts were accepted: solo 97, updated Flow 98; the difference is one aesthetic
 point. Both passed headless 25/25 and native 57/57. Raw auxiliary geometry failures

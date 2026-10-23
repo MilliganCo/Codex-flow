@@ -1,0 +1,29 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "measurements": [
+    {
+      "mode": "2d",
+      "size": "100x40",
+      "samples": 15,
+      "median_ms": 29.92,
+      "max_ms": 34.83
+    },
+    {
+      "mode": "3d",
+      "size": "100x40",
+      "samples": 15,
+      "median_ms": 20.36,
+      "max_ms": 29.16
+    },
+    {
+      "mode": "4d",
+      "size": "100x40",
+      "samples": 15,
+      "median_ms": 24.78,
+      "max_ms": 45.72
+    }
+  ],
+  "segments": 1127,
+  "leaves": 4129
+}

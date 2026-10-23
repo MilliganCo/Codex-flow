@@ -1,0 +1,528 @@
+{
+  "solution_id": 15,
+  "independent": true,
+  "checks": [
+    {
+      "name": "rotation.canonical_basis",
+      "status": "pass",
+      "degrees": 0,
+      "actual": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "rotation.orthogonal_determinant",
+      "status": "pass",
+      "degrees": 0,
+      "determinant": 1.0
+    },
+    {
+      "name": "rotation.basis_inverse_norm",
+      "status": "pass",
+      "degrees": 0
+    },
+    {
+      "name": "rotation.canonical_basis",
+      "status": "pass",
+      "degrees": 37,
+      "actual": [
+        [
+          0.7986355100472928,
+          0.0,
+          0.0,
+          0.6018150231520483
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.6018150231520483,
+          0.0,
+          0.0,
+          0.7986355100472928
+        ]
+      ]
+    },
+    {
+      "name": "rotation.orthogonal_determinant",
+      "status": "pass",
+      "degrees": 37,
+      "determinant": 1.0
+    },
+    {
+      "name": "rotation.basis_inverse_norm",
+      "status": "pass",
+      "degrees": 37
+    },
+    {
+      "name": "rotation.canonical_basis",
+      "status": "pass",
+      "degrees": 90,
+      "actual": [
+        [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          6.123233995736766e-17
+        ]
+      ]
+    },
+    {
+      "name": "rotation.orthogonal_determinant",
+      "status": "pass",
+      "degrees": 90,
+      "determinant": 1.0
+    },
+    {
+      "name": "rotation.basis_inverse_norm",
+      "status": "pass",
+      "degrees": 90
+    },
+    {
+      "name": "model.finite_xyzw",
+      "status": "pass",
+      "seed": 42,
+      "skeleton_points": 654,
+      "full_points": 5904,
+      "edges": 653,
+      "foliage_points": 5250
+    },
+    {
+      "name": "model.rooted_connected_positive",
+      "status": "pass",
+      "seed": 42,
+      "reachable": 654,
+      "parent_references_valid": true,
+      "minimum_xyz_length": 0.12053386901643909,
+      "minimum_radius": 0.009,
+      "maximum_children": 6
+    },
+    {
+      "name": "model.xyz_rank3",
+      "status": "pass",
+      "seed": 42,
+      "point_set": "skeleton",
+      "rank": 3,
+      "tolerance": 1.2815996913203983e-09,
+      "scale": 12.815996913203982
+    },
+    {
+      "name": "model.variable_w",
+      "status": "pass",
+      "seed": 42,
+      "point_set": "skeleton",
+      "w_span": 5.0,
+      "unique_w": 649
+    },
+    {
+      "name": "model.xyz_rank3",
+      "status": "pass",
+      "seed": 42,
+      "point_set": "full",
+      "rank": 3,
+      "tolerance": 1.2990137623718114e-09,
+      "scale": 12.990137623718114
+    },
+    {
+      "name": "model.variable_w",
+      "status": "pass",
+      "seed": 42,
+      "point_set": "full",
+      "w_span": 5.0,
+      "unique_w": 649
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 0,
+      "points": 5904,
+      "max_norm_error": 0.0,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 37,
+      "points": 5904,
+      "max_norm_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 8.881784197001252e-16
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 90,
+      "points": 5904,
+      "max_norm_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "name": "projection.full_sequential",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 0,
+      "points": 5904,
+      "yaw_radians": 0.4363323129985824,
+      "pitch_radians": -0.12217304763960307,
+      "image_size": [
+        100,
+        40
+      ],
+      "max_component_error": 0.0,
+      "compared_stage": "screen coordinates including aspect"
+    },
+    {
+      "name": "projection.full_sequential",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 37,
+      "points": 5904,
+      "yaw_radians": 0.4363323129985824,
+      "pitch_radians": -0.12217304763960307,
+      "image_size": [
+        100,
+        40
+      ],
+      "max_component_error": 0.0,
+      "compared_stage": "screen coordinates including aspect"
+    },
+    {
+      "name": "model.stable_across_modes_angles",
+      "status": "pass",
+      "seed": 42,
+      "original_fingerprint": "6b02098150dc927415dbeda423a809a5f5254da9667e6d6a3cd387fd9654b750",
+      "keys": [
+        "1",
+        "2",
+        "right",
+        "up",
+        "3",
+        "]",
+        "[",
+        "+",
+        "-",
+        "r"
+      ]
+    },
+    {
+      "name": "model.finite_xyzw",
+      "status": "pass",
+      "seed": 137,
+      "skeleton_points": 654,
+      "full_points": 5927,
+      "edges": 653,
+      "foliage_points": 5273
+    },
+    {
+      "name": "model.rooted_connected_positive",
+      "status": "pass",
+      "seed": 137,
+      "reachable": 654,
+      "parent_references_valid": true,
+      "minimum_xyz_length": 0.11981240519905237,
+      "minimum_radius": 0.009,
+      "maximum_children": 6
+    },
+    {
+      "name": "model.xyz_rank3",
+      "status": "pass",
+      "seed": 137,
+      "point_set": "skeleton",
+      "rank": 3,
+      "tolerance": 1.3354098104910827e-09,
+      "scale": 13.354098104910825
+    },
+    {
+      "name": "model.variable_w",
+      "status": "pass",
+      "seed": 137,
+      "point_set": "skeleton",
+      "w_span": 5.0,
+      "unique_w": 649
+    },
+    {
+      "name": "model.xyz_rank3",
+      "status": "pass",
+      "seed": 137,
+      "point_set": "full",
+      "rank": 3,
+      "tolerance": 1.3558639642103954e-09,
+      "scale": 13.558639642103953
+    },
+    {
+      "name": "model.variable_w",
+      "status": "pass",
+      "seed": 137,
+      "point_set": "full",
+      "w_span": 5.0,
+      "unique_w": 649
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 0,
+      "points": 5927,
+      "max_norm_error": 0.0,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 37,
+      "points": 5927,
+      "max_norm_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 8.881784197001252e-16
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 90,
+      "points": 5927,
+      "max_norm_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "name": "projection.full_sequential",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 0,
+      "points": 5927,
+      "yaw_radians": 0.4363323129985824,
+      "pitch_radians": -0.12217304763960307,
+      "image_size": [
+        100,
+        40
+      ],
+      "max_component_error": 0.0,
+      "compared_stage": "screen coordinates including aspect"
+    },
+    {
+      "name": "projection.full_sequential",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 37,
+      "points": 5927,
+      "yaw_radians": 0.4363323129985824,
+      "pitch_radians": -0.12217304763960307,
+      "image_size": [
+        100,
+        40
+      ],
+      "max_component_error": 0.0,
+      "compared_stage": "screen coordinates including aspect"
+    },
+    {
+      "name": "model.stable_across_modes_angles",
+      "status": "pass",
+      "seed": 137,
+      "original_fingerprint": "80f553184e4cba010a7b87efd4f939a081dbd316f8bded49c0ce84da6ef5c0fc",
+      "keys": [
+        "1",
+        "2",
+        "right",
+        "up",
+        "3",
+        "]",
+        "[",
+        "+",
+        "-",
+        "r"
+      ]
+    },
+    {
+      "name": "projection.boundary",
+      "status": "pass",
+      "input": "zero_w_denominator",
+      "result": null
+    },
+    {
+      "name": "projection.boundary",
+      "status": "pass",
+      "input": "near_w_denominator",
+      "result": null
+    },
+    {
+      "name": "projection.boundary",
+      "status": "pass",
+      "input": "beyond_w_plane",
+      "result": null
+    },
+    {
+      "name": "projection.boundary",
+      "status": "fail",
+      "input": "nonfinite_coordinate",
+      "result": [
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "name": "projection.camera_boundary",
+      "status": "pass",
+      "depth": "0.0",
+      "result": null
+    },
+    {
+      "name": "projection.camera_boundary",
+      "status": "pass",
+      "depth": "1e-12",
+      "result": null
+    },
+    {
+      "name": "projection.camera_boundary",
+      "status": "pass",
+      "depth": "-0.1",
+      "result": null
+    },
+    {
+      "name": "projection.camera_boundary",
+      "status": "fail",
+      "depth": "nan",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    }
+  ],
+  "adapter": {
+    "plane": "XW",
+    "sigma": 1,
+    "units": "radians",
+    "vectors": "column",
+    "order": "XW then 4D perspective then yaw then pitch then 3D perspective then terminal aspect",
+    "production": "ascii_tree.math4d"
+  },
+  "source_hashes_before": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "IMPLEMENTATION_NOTES.md": "fe4364b3a4b1b7b4b8df7497bd6dbbf6c12fd2fdc4edd50b0a2fc72cedeb0524",
+    "INTERACTIVE_DEMO.md": "3b378bab7cfaa594eed9bb8ac65f91b054ac54dbb96046f43307fd49db9d3007",
+    "README.md": "c8a3470bb04724ac8fa12f6324a442e803ac37003e95fa672c41abc10828178c",
+    "VERIFICATION.md": "2d7cf526ca8b2832120a2d287208c9fd2b10bd090245c5e797d6be42dd32be5f",
+    "ascii-tree.ps1": "18562c616529c1315198c47e5ea5dfd89c1a9b13f6a0cbc80fa01f75d187ea29",
+    "pyproject.toml": "4dac8df26dbfc618163ecab19da2555265fa84f7dff708cc098154c5276c8d5c",
+    "run.py": "c63697bdbc25406caf93046a1cc0436941808698fb8a3f536ab851aeafff813d",
+    "smoke_test.py": "6fe34c8716860f48b52be68018dd5ba72d9bdae8b00840399486b675b1a33dcc",
+    "ascii_tree/__init__.py": "6f142d54d106f9c049346759bc83ffc79314062af62b54b526b7751608697f8c",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/app.py": "f890c2ab50b2a678b84b1bb725a944ba4cbd2f9ca0d1fc7668eb5f6dc6474848",
+    "ascii_tree/cli.py": "cc64530ece7824de8690b61d0068b6c0b542d165f0b3ac95fcfab02150300869",
+    "ascii_tree/geometry.py": "c0866f388225cd7fa00da55a85914d0756fb406f912afe6fa7bb09755a0b022e",
+    "ascii_tree/math4d.py": "6a56a633d5b5539e1abbba98a886944133f6c5e24140e560745d274cc34b7d7b",
+    "ascii_tree/render.py": "800f7c49ce76d15dbeaf1bfe6d500a75a2b799f858dbbc5fa1a8bcf450ac1a3d",
+    "ascii_tree/terminal.py": "37df066dbbb4025ca29ba7657df4b305c54d009a89fc638025089d71c562b264",
+    "examples/manifest.json": "fb7083201fd796bed58d9c63cb9359becf26d264e8d6b6aad9bb11825c97709f",
+    "examples/seed42-2d.txt": "dd71bd9245a7934c1e27e7ae66ffd800cd2eb34dc498f77f4932796f2041bbbe",
+    "examples/seed42-3d.txt": "05e3e2d1837c8852c381f65c3dd7abb1d19a7407c55f3358fa5ba48573f1344a",
+    "examples/seed42-4d-xw0.txt": "3929d94bf8517dc4c32fc250d242693c763b706620e8e7962944a3ba03541df4",
+    "examples/seed42-4d-xw55.txt": "7d94c4ca108ea3748a43d86c146b1b3c02ea7a999a9e3c32c2e7f19d91166086",
+    "examples/seed7-2d.txt": "3f13cd2922791179c07770aaacd9f356274f186f8fa0e9dc9ccec2bbc186bf00",
+    "examples/seed7-3d.txt": "1914dffd608ab5ad2da97bae1ad3d5e873366a987e56d4a8d262106aa2c7f21b",
+    "examples/seed7-4d-xw35.txt": "7b6e78f049b6fcdec2783d1f5d34a205ad31d8ca50197bd3253ec890ee8b552d",
+    "exports/tree-42-3d-0001.txt": "81fb08933327e1d1d1c22574cebf601144a80be37b98aeb4cceb67a7fddfd263",
+    "tests/__init__.py": "5c097e0d252bbcaa736cb494abccbef3324583cfff0af313ac3ec36a77d88b34",
+    "tests/test_app.py": "75a9e2bc78eda80c137ed9c2297d7396cd50b0411c2b742784ee39475be27edc",
+    "tests/test_cli.py": "67de81829c6ed8460942e2cbd277a6c0f7665b865e68a76e2b1c9ddb3b2fe873",
+    "tests/test_examples.py": "152395bda913fbfc11ec170394a99345ac078e2612903066c0a3bb98c140d2a7",
+    "tests/test_geometry.py": "38215ad0eac37fd1d9f2098367b7fd375bb0c28db36c15d73858d6fd06904c42",
+    "tests/test_render.py": "4c0604a6e88e1328a7475d0bf70acda85d7ac92fd336695a64da0cca6ab95996",
+    "tools/benchmark.py": "f626f2bd23f2ca2d49c9ffaa21f2f88becc89d62024e620330f2a209e1c4330e",
+    "tools/generate_samples.py": "57513d39a8e024ca5201a4ad034632ffe6e3cd5dc412be046b55df214d2d32ac"
+  },
+  "source_hashes_after": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "IMPLEMENTATION_NOTES.md": "fe4364b3a4b1b7b4b8df7497bd6dbbf6c12fd2fdc4edd50b0a2fc72cedeb0524",
+    "INTERACTIVE_DEMO.md": "3b378bab7cfaa594eed9bb8ac65f91b054ac54dbb96046f43307fd49db9d3007",
+    "README.md": "c8a3470bb04724ac8fa12f6324a442e803ac37003e95fa672c41abc10828178c",
+    "VERIFICATION.md": "2d7cf526ca8b2832120a2d287208c9fd2b10bd090245c5e797d6be42dd32be5f",
+    "ascii-tree.ps1": "18562c616529c1315198c47e5ea5dfd89c1a9b13f6a0cbc80fa01f75d187ea29",
+    "pyproject.toml": "4dac8df26dbfc618163ecab19da2555265fa84f7dff708cc098154c5276c8d5c",
+    "run.py": "c63697bdbc25406caf93046a1cc0436941808698fb8a3f536ab851aeafff813d",
+    "smoke_test.py": "6fe34c8716860f48b52be68018dd5ba72d9bdae8b00840399486b675b1a33dcc",
+    "ascii_tree/__init__.py": "6f142d54d106f9c049346759bc83ffc79314062af62b54b526b7751608697f8c",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/app.py": "f890c2ab50b2a678b84b1bb725a944ba4cbd2f9ca0d1fc7668eb5f6dc6474848",
+    "ascii_tree/cli.py": "cc64530ece7824de8690b61d0068b6c0b542d165f0b3ac95fcfab02150300869",
+    "ascii_tree/geometry.py": "c0866f388225cd7fa00da55a85914d0756fb406f912afe6fa7bb09755a0b022e",
+    "ascii_tree/math4d.py": "6a56a633d5b5539e1abbba98a886944133f6c5e24140e560745d274cc34b7d7b",
+    "ascii_tree/render.py": "800f7c49ce76d15dbeaf1bfe6d500a75a2b799f858dbbc5fa1a8bcf450ac1a3d",
+    "ascii_tree/terminal.py": "37df066dbbb4025ca29ba7657df4b305c54d009a89fc638025089d71c562b264",
+    "examples/manifest.json": "fb7083201fd796bed58d9c63cb9359becf26d264e8d6b6aad9bb11825c97709f",
+    "examples/seed42-2d.txt": "dd71bd9245a7934c1e27e7ae66ffd800cd2eb34dc498f77f4932796f2041bbbe",
+    "examples/seed42-3d.txt": "05e3e2d1837c8852c381f65c3dd7abb1d19a7407c55f3358fa5ba48573f1344a",
+    "examples/seed42-4d-xw0.txt": "3929d94bf8517dc4c32fc250d242693c763b706620e8e7962944a3ba03541df4",
+    "examples/seed42-4d-xw55.txt": "7d94c4ca108ea3748a43d86c146b1b3c02ea7a999a9e3c32c2e7f19d91166086",
+    "examples/seed7-2d.txt": "3f13cd2922791179c07770aaacd9f356274f186f8fa0e9dc9ccec2bbc186bf00",
+    "examples/seed7-3d.txt": "1914dffd608ab5ad2da97bae1ad3d5e873366a987e56d4a8d262106aa2c7f21b",
+    "examples/seed7-4d-xw35.txt": "7b6e78f049b6fcdec2783d1f5d34a205ad31d8ca50197bd3253ec890ee8b552d",
+    "exports/tree-42-3d-0001.txt": "81fb08933327e1d1d1c22574cebf601144a80be37b98aeb4cceb67a7fddfd263",
+    "tests/__init__.py": "5c097e0d252bbcaa736cb494abccbef3324583cfff0af313ac3ec36a77d88b34",
+    "tests/test_app.py": "75a9e2bc78eda80c137ed9c2297d7396cd50b0411c2b742784ee39475be27edc",
+    "tests/test_cli.py": "67de81829c6ed8460942e2cbd277a6c0f7665b865e68a76e2b1c9ddb3b2fe873",
+    "tests/test_examples.py": "152395bda913fbfc11ec170394a99345ac078e2612903066c0a3bb98c140d2a7",
+    "tests/test_geometry.py": "38215ad0eac37fd1d9f2098367b7fd375bb0c28db36c15d73858d6fd06904c42",
+    "tests/test_render.py": "4c0604a6e88e1328a7475d0bf70acda85d7ac92fd336695a64da0cca6ab95996",
+    "tools/benchmark.py": "f626f2bd23f2ca2d49c9ffaa21f2f88becc89d62024e620330f2a209e1c4330e",
+    "tools/generate_samples.py": "57513d39a8e024ca5201a4ad034632ffe6e3cd5dc412be046b55df214d2d32ac"
+  },
+  "source_unchanged": true,
+  "check_count": 41,
+  "status": "fail"
+}

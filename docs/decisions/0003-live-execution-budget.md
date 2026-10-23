@@ -91,3 +91,20 @@ from both assigned workspaces, so this trigger does not affect that experiment.
 Its exact16 files match explicit curated commit `f52b7e45f7beddf0d3ef9a7c64bb66da91f51d18`
 after LF normalization. Latest-source verification is separate: WSL252 passed;
 Windows231 passed with21 symlink skips; Ruff/mypy15 modules/build passed.
+
+## Body-read diagnostics after the trial
+
+Case08 B request28 received HTTP200 headers but its body read did not return
+normally. Its original exception type/partial bytes were not retained, so the
+cause cannot be retrospectively classified as timeout, network, provider or TLS.
+The original failed status, missing usage and records stay unchanged.
+
+Current source adds fixed type-only `failure_category` and `failure_phase`,
+read-attempt duration even on failure, and `response_read_completed`. It never
+logs exception text or partial content. A separate close-error regression exposed
+that completion could be marked before response close succeeded; publication of
+completion and the body now waits for successful close. Error responses always
+use the fixed error body. There is still one attempt, with no retry or provider
+fallback. These subsequent diagnostics are outside the frozen timings. Combined
+verification: WSL254 passed; Windows233 passed with21 symlink skips; static/build
+passed. Historical case08 usage remains null when its failed request is unknown.

@@ -1,8 +1,10 @@
 """Budget-control wiring through loopback, with fake upstream only."""
 import copy
+import http.client
 import json
 from pathlib import Path
 import sys
+import ssl
 import threading
 import unittest
 
@@ -25,6 +27,48 @@ def payload():
 
 class BudgetGatewayTests(unittest.TestCase):
     call=fixture.SubscriptionTests.call
+
+    def test_read_failure_types_are_private_timed_and_never_retried(self):
+        private='synthetic private body and exception context'
+        cases=[(TimeoutError(private),'timeout'),
+               (http.client.IncompleteRead(private.encode(),99),'incomplete_read'),
+               (ssl.SSLError(private),'tls_error'),
+               (ConnectionResetError(private),'connection_reset'),
+               (OSError(private),'io_error'),(ValueError(private),'stream_state_error')]
+        for error,category in cases:
+            class BrokenRead(fixture.Response):
+                def read(self,limit):raise error
+            opener=fixture.Opener(BrokenRead())
+            with self.subTest(category=category),SubscriptionGateway(opener=opener) as gateway:
+                status,body=self.call(gateway)
+                report=gateway.summary();record=report['requests'][0]
+            self.assertIn(status,(403,502))
+            self.assertEqual(record['reason'],'upstream_read_error')
+            self.assertEqual(record['failure_category'],category)
+            self.assertEqual(record['failure_phase'],'body_read')
+            self.assertFalse(record['response_read_completed'])
+            self.assertGreaterEqual(record['upstream_body_read_s'],0)
+            self.assertEqual(report['completed_requests'],0)
+            self.assertIsNone(report['aggregate_usage'])
+            self.assertEqual(len(opener.requests),1)
+            self.assertNotIn(private,json.dumps(report))
+            self.assertNotIn(private.encode(),body)
+
+    def test_close_failure_cannot_be_counted_completed_or_return_upstream_body(self):
+        class BrokenClose(fixture.Response):
+            def __exit__(self,*args):raise OSError('private close context')
+        opener=fixture.Opener(BrokenClose())
+        with SubscriptionGateway(opener=opener) as gateway:
+            status,body=self.call(gateway)
+            report=gateway.summary();record=report['requests'][0]
+        self.assertEqual(status,502)
+        self.assertEqual(record['status'],'failed')
+        self.assertEqual(record['failure_phase'],'response_close')
+        self.assertTrue(record['response_read_completed'])
+        self.assertEqual(report['completed_requests'],0)
+        self.assertEqual(len(opener.requests),1)
+        self.assertNotIn(b'private generated text',body)
+        self.assertNotIn('private close context',json.dumps(report))
 
     def test_single_forwards_original_bytes_with_shared_deadline(self):
         opener=fixture.Opener()

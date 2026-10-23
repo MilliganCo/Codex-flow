@@ -1,0 +1,15 @@
+{
+  "platform": "win32",
+  "backend": "actual Windows ConPTY",
+  "checks": [
+    "startup 100x40",
+    "mode keys 1/2/3, arrows, XW ], export E",
+    "native key-driven exports match exact expected 2D/3D/4D rasters",
+    "help, animation pause/resume, zoom/reset, new seed",
+    "native resize 100x40 -> 20x8 -> 8x4 -> 1x1 -> 100x40",
+    "Q exit 0, cursor + alternate screen restored",
+    "fresh startup, real Ctrl+C exit 130, terminal restored",
+    "seed 43 startup, real Esc exit 0, console modes restored"
+  ],
+  "status": "PASS"
+}

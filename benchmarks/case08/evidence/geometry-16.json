@@ -1,0 +1,575 @@
+{
+  "solution_id": 16,
+  "independent": true,
+  "checks": [
+    {
+      "name": "rotation.canonical_basis",
+      "status": "pass",
+      "degrees": 0,
+      "actual": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "rotation.orthogonal_determinant",
+      "status": "pass",
+      "degrees": 0,
+      "determinant": 1.0
+    },
+    {
+      "name": "rotation.basis_inverse_norm",
+      "status": "pass",
+      "degrees": 0
+    },
+    {
+      "name": "rotation.canonical_basis",
+      "status": "pass",
+      "degrees": 37,
+      "actual": [
+        [
+          0.7986355100472928,
+          0.0,
+          0.0,
+          0.6018150231520483
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          -0.6018150231520483,
+          0.0,
+          0.0,
+          0.7986355100472928
+        ]
+      ]
+    },
+    {
+      "name": "rotation.orthogonal_determinant",
+      "status": "pass",
+      "degrees": 37,
+      "determinant": 1.0
+    },
+    {
+      "name": "rotation.basis_inverse_norm",
+      "status": "pass",
+      "degrees": 37
+    },
+    {
+      "name": "rotation.canonical_basis",
+      "status": "pass",
+      "degrees": 90,
+      "actual": [
+        [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          6.123233995736766e-17
+        ]
+      ]
+    },
+    {
+      "name": "rotation.orthogonal_determinant",
+      "status": "pass",
+      "degrees": 90,
+      "determinant": 1.0
+    },
+    {
+      "name": "rotation.basis_inverse_norm",
+      "status": "pass",
+      "degrees": 90
+    },
+    {
+      "name": "model.finite_xyzw",
+      "status": "pass",
+      "seed": 42,
+      "skeleton_points": 1128,
+      "full_points": 5257,
+      "edges": 1127,
+      "foliage_points": 4129
+    },
+    {
+      "name": "model.rooted_connected_positive",
+      "status": "pass",
+      "seed": 42,
+      "reachable": 1128,
+      "parent_references_valid": true,
+      "minimum_xyz_length": 0.10244433196631621,
+      "minimum_radius": 0.00069381312,
+      "maximum_children": 3
+    },
+    {
+      "name": "model.xyz_rank3",
+      "status": "pass",
+      "seed": 42,
+      "point_set": "skeleton",
+      "rank": 3,
+      "tolerance": 1.3165909915799027e-09,
+      "scale": 13.165909915799027
+    },
+    {
+      "name": "model.variable_w",
+      "status": "pass",
+      "seed": 42,
+      "point_set": "skeleton",
+      "w_span": 8.026271274183621,
+      "unique_w": 1128
+    },
+    {
+      "name": "model.xyz_rank3",
+      "status": "pass",
+      "seed": 42,
+      "point_set": "full",
+      "rank": 3,
+      "tolerance": 1.3738745081358339e-09,
+      "scale": 13.738745081358338
+    },
+    {
+      "name": "model.variable_w",
+      "status": "pass",
+      "seed": 42,
+      "point_set": "full",
+      "w_span": 8.026271274183621,
+      "unique_w": 1128
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 0,
+      "points": 5257,
+      "max_norm_error": 0.0,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 37,
+      "points": 5257,
+      "max_norm_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 8.881784197001252e-16
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 90,
+      "points": 5257,
+      "max_norm_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "name": "projection.full_sequential",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 0,
+      "points": 5257,
+      "yaw_radians": 0.45,
+      "pitch_radians": 0.08,
+      "image_size": [
+        100,
+        40
+      ],
+      "max_component_error": 0.0,
+      "compared_stage": "4D perspective, camera and 3D perspective before auto-fit screen closure"
+    },
+    {
+      "name": "projection.full_sequential",
+      "status": "pass",
+      "seed": 42,
+      "degrees": 37,
+      "points": 5257,
+      "yaw_radians": 0.45,
+      "pitch_radians": 0.08,
+      "image_size": [
+        100,
+        40
+      ],
+      "max_component_error": 0.0,
+      "compared_stage": "4D perspective, camera and 3D perspective before auto-fit screen closure"
+    },
+    {
+      "name": "projection.screen_coordinate_api",
+      "status": "not_assessed",
+      "reason": "Production screen() is a nested closure inside render(); no callable pre-raster screen API. Aspect and full-model auto-fit formula reviewed from source without substituting a renderer.",
+      "seed": 42
+    },
+    {
+      "name": "model.stable_across_modes_angles",
+      "status": "pass",
+      "seed": 42,
+      "original_fingerprint": "22b482ed5c2f1cd1892142abde8c31db8f88b37d1725c37944999e7f44dd3c24",
+      "keys": [
+        "1",
+        "2",
+        "right",
+        "up",
+        "3",
+        "]",
+        "[",
+        "+",
+        "-",
+        "r"
+      ]
+    },
+    {
+      "name": "model.finite_xyzw",
+      "status": "pass",
+      "seed": 137,
+      "skeleton_points": 1128,
+      "full_points": 5260,
+      "edges": 1127,
+      "foliage_points": 4132
+    },
+    {
+      "name": "model.rooted_connected_positive",
+      "status": "pass",
+      "seed": 137,
+      "reachable": 1128,
+      "parent_references_valid": true,
+      "minimum_xyz_length": 0.09107356832505874,
+      "minimum_radius": 0.00069381312,
+      "maximum_children": 3
+    },
+    {
+      "name": "model.xyz_rank3",
+      "status": "pass",
+      "seed": 137,
+      "point_set": "skeleton",
+      "rank": 3,
+      "tolerance": 1.3528270319920502e-09,
+      "scale": 13.528270319920502
+    },
+    {
+      "name": "model.variable_w",
+      "status": "pass",
+      "seed": 137,
+      "point_set": "skeleton",
+      "w_span": 8.15991632836521,
+      "unique_w": 1128
+    },
+    {
+      "name": "model.xyz_rank3",
+      "status": "pass",
+      "seed": 137,
+      "point_set": "full",
+      "rank": 3,
+      "tolerance": 1.4047323658457015e-09,
+      "scale": 14.047323658457014
+    },
+    {
+      "name": "model.variable_w",
+      "status": "pass",
+      "seed": 137,
+      "point_set": "full",
+      "w_span": 8.15991632836521,
+      "unique_w": 1128
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 0,
+      "points": 5260,
+      "max_norm_error": 0.0,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 37,
+      "points": 5260,
+      "max_norm_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 1.7763568394002505e-15
+    },
+    {
+      "name": "rotation.full_model_norm_inverse",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 90,
+      "points": 5260,
+      "max_norm_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "name": "projection.full_sequential",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 0,
+      "points": 5260,
+      "yaw_radians": 0.45,
+      "pitch_radians": 0.08,
+      "image_size": [
+        100,
+        40
+      ],
+      "max_component_error": 0.0,
+      "compared_stage": "4D perspective, camera and 3D perspective before auto-fit screen closure"
+    },
+    {
+      "name": "projection.full_sequential",
+      "status": "pass",
+      "seed": 137,
+      "degrees": 37,
+      "points": 5260,
+      "yaw_radians": 0.45,
+      "pitch_radians": 0.08,
+      "image_size": [
+        100,
+        40
+      ],
+      "max_component_error": 0.0,
+      "compared_stage": "4D perspective, camera and 3D perspective before auto-fit screen closure"
+    },
+    {
+      "name": "projection.screen_coordinate_api",
+      "status": "not_assessed",
+      "reason": "Production screen() is a nested closure inside render(); no callable pre-raster screen API. Aspect and full-model auto-fit formula reviewed from source without substituting a renderer.",
+      "seed": 137
+    },
+    {
+      "name": "model.stable_across_modes_angles",
+      "status": "pass",
+      "seed": 137,
+      "original_fingerprint": "15a503aa5fb9e64a88cb8a6f03a44a4bf2825fcd1e9dfaa51b20bf5b7f17c5da",
+      "keys": [
+        "1",
+        "2",
+        "right",
+        "up",
+        "3",
+        "]",
+        "[",
+        "+",
+        "-",
+        "r"
+      ]
+    },
+    {
+      "name": "projection.boundary",
+      "status": "pass",
+      "input": "zero_w_denominator",
+      "result": [
+        17.77777777777778,
+        -62.22222222222223,
+        12.0,
+        17.77777777777778
+      ]
+    },
+    {
+      "name": "projection.boundary",
+      "status": "pass",
+      "input": "near_w_denominator",
+      "result": [
+        17.77777777777778,
+        -62.22222222222223,
+        12.0,
+        17.77777777777778
+      ]
+    },
+    {
+      "name": "projection.boundary",
+      "status": "pass",
+      "input": "beyond_w_plane",
+      "result": [
+        17.77777777777778,
+        -62.22222222222223,
+        12.0,
+        17.77777777777778
+      ]
+    },
+    {
+      "name": "projection.boundary",
+      "status": "fail",
+      "input": "nonfinite_coordinate",
+      "result": [
+        "nan",
+        "nan",
+        4.8,
+        "nan"
+      ]
+    },
+    {
+      "name": "projection.camera_boundary",
+      "status": "pass",
+      "depth_input": "32.0",
+      "result": [
+        0.0,
+        0.0,
+        4.8,
+        6.666666666666667
+      ]
+    },
+    {
+      "name": "projection.camera_boundary",
+      "status": "pass",
+      "depth_input": "31.999999999999",
+      "result": [
+        0.0,
+        0.0,
+        4.8,
+        6.666666666666667
+      ]
+    },
+    {
+      "name": "projection.camera_boundary",
+      "status": "pass",
+      "depth_input": "100.0",
+      "result": [
+        0.0,
+        0.0,
+        4.8,
+        6.666666666666667
+      ]
+    },
+    {
+      "name": "projection.camera_boundary",
+      "status": "fail",
+      "depth_input": "nan",
+      "result": [
+        "nan",
+        "nan",
+        4.8,
+        "nan"
+      ]
+    }
+  ],
+  "adapter": {
+    "plane": "XW",
+    "sigma": 1,
+    "units": "radians",
+    "vectors": "column",
+    "order": "XW then 4D perspective then yaw then pitch then 3D perspective then terminal aspect",
+    "production": "ascii_tree.geometry"
+  },
+  "source_hashes_before": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "IMPLEMENTATION_NOTES.md": "c817bb4b9c5897f483d3669ba2aeaeaeb7b86702e57c1edf3569d73738a202f2",
+    "INTERACTIVE_DEMO.md": "3835a2b575658a504440274e218e34f4ade0fe2b1f290bc29a021cb9d8b1a0b3",
+    "README.md": "3b561a41b98e363056585394a035414df50ed1e70cb4a8f54065760d0c0d553f",
+    "VERIFICATION.md": "e4b5d9b6157c54639d24acda0abfcb36002deba743958d284f56e71f00f6eb51",
+    "pyproject.toml": "a86acf482506cefb75b1f2be5159a516a99d5a29ac8cfe7c1cdadfc662775a58",
+    "requirements.txt": "2cc5b4443a0ccf8c1375ff2b2dffebad448ef3a2235e701e8b4ddfe62c05f9bb",
+    "artifacts/benchmark.json": "0115f89107427f31ace184da44cafee63a1860846269318d4d757f5b87c8754c",
+    "artifacts/terminal-1.vt": "b55531f7a81038b789e1b2cb285532788245d277ed2b210b8b1775d69967e3ce",
+    "artifacts/terminal-2.vt": "bc0d9c8d73bbe572b2a935fd011458e10961d9f7961bf7141ca77fd9257dc847",
+    "artifacts/terminal-3.vt": "6a9f1e54c5bb4dc86912860838a336256f8a3f971bb23a96891b3bf8a2cc6e2b",
+    "artifacts/terminal-smoke.json": "b65c52f01ae10c1090cade940f317cbab7a3422823dcc7186848bf2cfbd54328",
+    "artifacts/verification.json": "c08263db4e6e5de72a3d0dedfa44753f2110dfc77594d385e1c1a8bd2f4a4e25",
+    "ascii_tree/__init__.py": "0eac910ff59061670840e7139dca17d9b7d337fdb0edc70302438db08c909478",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/cli.py": "51041f238d7c677f2666689a586eb6df6031d9d0a2da8f8f36755dbb87c81a8f",
+    "ascii_tree/geometry.py": "ed08204ae6704979bd353c454603743a036018a4503b94238ad00dc21f8b9477",
+    "ascii_tree/model.py": "d7446aa9f19c5064704d28b1f8fb6d06b59dc85f5f56623fc3ceddb40b96ed09",
+    "ascii_tree/render.py": "ff10504ce30357ee116945178507d6b7dd0d2446a2d472cea647dde957c629bf",
+    "ascii_tree/state.py": "72997b89d70db2f9756f31619897bf4bebd95dcd91e33c23bc576016916761f3",
+    "ascii_tree/terminal.py": "929b755a75c7daf4214eceb2b56c0695bc7b9833b220b595b1763cd3125f7346",
+    "examples/manifest.json": "8b9f30a8c5554765c76e63d5b25e5d9e0b29bdc1bdd820c9686eea62d5445ac7",
+    "examples/seed-42-2d.txt": "5b9b2bf60de46bdacd67654261dbb32920f79b701ffad1c734c2f417631f66e7",
+    "examples/seed-42-3d.txt": "d56bd75bc4c7e53f57a6db83b21bc0253608f136d0b4cb9cef605e01d5b0ed05",
+    "examples/seed-42-4d-xw-0.txt": "a9d4a2ebb58c8742af75262ab487bfe8e6a6bfbc61fcf44173c30188b83948be",
+    "examples/seed-42-4d-xw-45.txt": "d0cbea2c30b73a64682637fb8bf2439c69f3281fe37be417049403882be9d05e",
+    "examples/seed-43-2d.txt": "fc2e13f434cf589ee0a156362691adfede5feed6b88d608cf86061e19bfef3e6",
+    "examples/seed-43-3d.txt": "8e2c54d0cf3cb91df704af933e261027361ffb51930162584b77813d4a952836",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_model.py": "564cb38ba5ae301a230b663723a3aa208c8059698b601d66163c6bd75e4e9b0f",
+    "tests/test_render.py": "c3bb888d7e6574e6f351c54f076cc5f2f6ea1163e07df3c7ffcf59743151f9c7",
+    "tests/test_state_cli.py": "9ab476a2c6271b152e6a2780cea9fbe92b655edfaa96b46bb542a43f8f385387",
+    "tools/console_child.py": "c1980e83170a94eb9cd1334e7197cc154dfb63ee5931f5db684f7ddd866d4cbb",
+    "tools/regenerate_examples.py": "943649f7e9d5e958349746454d32d256bb820a17908892e2b28408f2cd58a0f3",
+    "tools/smoke.py": "0333fea78b8b652e668b69edfbec13405a8e9d07d5b1b703070a869985763a24",
+    "tools/terminal_smoke.py": "9f36da4e0b0de7cbf254d4e9f07ec72b8dc7646399c86a22ade0edf48dd09640"
+  },
+  "source_hashes_after": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "IMPLEMENTATION_NOTES.md": "c817bb4b9c5897f483d3669ba2aeaeaeb7b86702e57c1edf3569d73738a202f2",
+    "INTERACTIVE_DEMO.md": "3835a2b575658a504440274e218e34f4ade0fe2b1f290bc29a021cb9d8b1a0b3",
+    "README.md": "3b561a41b98e363056585394a035414df50ed1e70cb4a8f54065760d0c0d553f",
+    "VERIFICATION.md": "e4b5d9b6157c54639d24acda0abfcb36002deba743958d284f56e71f00f6eb51",
+    "pyproject.toml": "a86acf482506cefb75b1f2be5159a516a99d5a29ac8cfe7c1cdadfc662775a58",
+    "requirements.txt": "2cc5b4443a0ccf8c1375ff2b2dffebad448ef3a2235e701e8b4ddfe62c05f9bb",
+    "artifacts/benchmark.json": "0115f89107427f31ace184da44cafee63a1860846269318d4d757f5b87c8754c",
+    "artifacts/terminal-1.vt": "b55531f7a81038b789e1b2cb285532788245d277ed2b210b8b1775d69967e3ce",
+    "artifacts/terminal-2.vt": "bc0d9c8d73bbe572b2a935fd011458e10961d9f7961bf7141ca77fd9257dc847",
+    "artifacts/terminal-3.vt": "6a9f1e54c5bb4dc86912860838a336256f8a3f971bb23a96891b3bf8a2cc6e2b",
+    "artifacts/terminal-smoke.json": "b65c52f01ae10c1090cade940f317cbab7a3422823dcc7186848bf2cfbd54328",
+    "artifacts/verification.json": "c08263db4e6e5de72a3d0dedfa44753f2110dfc77594d385e1c1a8bd2f4a4e25",
+    "ascii_tree/__init__.py": "0eac910ff59061670840e7139dca17d9b7d337fdb0edc70302438db08c909478",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/cli.py": "51041f238d7c677f2666689a586eb6df6031d9d0a2da8f8f36755dbb87c81a8f",
+    "ascii_tree/geometry.py": "ed08204ae6704979bd353c454603743a036018a4503b94238ad00dc21f8b9477",
+    "ascii_tree/model.py": "d7446aa9f19c5064704d28b1f8fb6d06b59dc85f5f56623fc3ceddb40b96ed09",
+    "ascii_tree/render.py": "ff10504ce30357ee116945178507d6b7dd0d2446a2d472cea647dde957c629bf",
+    "ascii_tree/state.py": "72997b89d70db2f9756f31619897bf4bebd95dcd91e33c23bc576016916761f3",
+    "ascii_tree/terminal.py": "929b755a75c7daf4214eceb2b56c0695bc7b9833b220b595b1763cd3125f7346",
+    "examples/manifest.json": "8b9f30a8c5554765c76e63d5b25e5d9e0b29bdc1bdd820c9686eea62d5445ac7",
+    "examples/seed-42-2d.txt": "5b9b2bf60de46bdacd67654261dbb32920f79b701ffad1c734c2f417631f66e7",
+    "examples/seed-42-3d.txt": "d56bd75bc4c7e53f57a6db83b21bc0253608f136d0b4cb9cef605e01d5b0ed05",
+    "examples/seed-42-4d-xw-0.txt": "a9d4a2ebb58c8742af75262ab487bfe8e6a6bfbc61fcf44173c30188b83948be",
+    "examples/seed-42-4d-xw-45.txt": "d0cbea2c30b73a64682637fb8bf2439c69f3281fe37be417049403882be9d05e",
+    "examples/seed-43-2d.txt": "fc2e13f434cf589ee0a156362691adfede5feed6b88d608cf86061e19bfef3e6",
+    "examples/seed-43-3d.txt": "8e2c54d0cf3cb91df704af933e261027361ffb51930162584b77813d4a952836",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_model.py": "564cb38ba5ae301a230b663723a3aa208c8059698b601d66163c6bd75e4e9b0f",
+    "tests/test_render.py": "c3bb888d7e6574e6f351c54f076cc5f2f6ea1163e07df3c7ffcf59743151f9c7",
+    "tests/test_state_cli.py": "9ab476a2c6271b152e6a2780cea9fbe92b655edfaa96b46bb542a43f8f385387",
+    "tools/console_child.py": "c1980e83170a94eb9cd1334e7197cc154dfb63ee5931f5db684f7ddd866d4cbb",
+    "tools/regenerate_examples.py": "943649f7e9d5e958349746454d32d256bb820a17908892e2b28408f2cd58a0f3",
+    "tools/smoke.py": "0333fea78b8b652e668b69edfbec13405a8e9d07d5b1b703070a869985763a24",
+    "tools/terminal_smoke.py": "9f36da4e0b0de7cbf254d4e9f07ec72b8dc7646399c86a22ade0edf48dd09640"
+  },
+  "source_unchanged": true,
+  "check_count": 43,
+  "status": "fail"
+}

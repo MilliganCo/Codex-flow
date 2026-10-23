@@ -10,11 +10,13 @@ import copy
 from collections import Counter
 import hashlib
 import hmac
+import http.client
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import re
 import secrets
 import socket
+import ssl
 import threading
 import time
 import urllib.error
@@ -82,6 +84,22 @@ class _Validation(ValueError):
 
 class _ControlRejected(_Validation):
     """A fixed execution-control reason, never an upstream/raw error."""
+
+
+def _failure_category(error):
+    """Fixed type labels only; never persist exception messages or payloads."""
+    if isinstance(error, _ControlRejected): return 'control'
+    if isinstance(error, _Validation): return 'validation'
+    if isinstance(error, urllib.error.HTTPError): return 'http_error'
+    if isinstance(error, http.client.IncompleteRead): return 'incomplete_read'
+    if isinstance(error, TimeoutError): return 'timeout'
+    if isinstance(error, ssl.SSLError): return 'tls_error'
+    if isinstance(error, ConnectionResetError): return 'connection_reset'
+    if isinstance(error, ConnectionError): return 'connection_error'
+    if isinstance(error, http.client.HTTPException): return 'http_protocol_error'
+    if isinstance(error, OSError): return 'io_error'
+    if isinstance(error, ValueError): return 'stream_state_error'
+    return 'unexpected_error'
 
 
 def _mime(value):
@@ -267,6 +285,7 @@ class SubscriptionGateway:
         record['upstream_open_s']=None
         record['upstream_body_read_s']=None
         record['response_buffered']=True
+        record['response_read_completed']=None
         for header, field in (("Session_id", "session_sha256"),
                               ("Conversation_id", "conversation_sha256"),
                               ("X-Request-ID", "request_sha256")):
@@ -381,6 +400,7 @@ class SubscriptionGateway:
                 started = time.monotonic()
                 updates = {"status": "failed", "http_status": None}
                 failure_stage = "request_validation"
+                failure_phase = "request_validation"
                 response = None
                 request_bytes_read = 0
                 reply_status, reply_body, reply_type = 502, b'{"error":{"type":"subscription_transport_rejected"}}', "application/json"
@@ -455,6 +475,7 @@ class SubscriptionGateway:
                     with owner._lock:
                         owner._check_control()
                     failure_stage = "upstream_open_error"
+                    failure_phase = "upstream_open"
                     opened=time.monotonic()
                     with owner.opener.open(request, timeout=owner._open_timeout()) as response:
                         updates['upstream_open_s']=round(time.monotonic()-opened,6)
@@ -471,19 +492,29 @@ class SubscriptionGateway:
                         if encoding not in ("identity", ""):
                             raise _Validation("response_encoding")
                         failure_stage = "upstream_read_error"
+                        failure_phase = "body_read"
                         read_started=time.monotonic()
-                        body = response.read(MAX_RESPONSE_BYTES + 1)
-                        updates['upstream_body_read_s']=round(time.monotonic()-read_started,6)
+                        updates['response_read_completed']=False
+                        try:
+                            body = response.read(MAX_RESPONSE_BYTES + 1)
+                            updates['response_read_completed']=True
+                        finally:
+                            updates['upstream_body_read_s']=round(time.monotonic()-read_started,6)
                         owner._check_control()
                         updates["response_bytes"] = len(body)
+                        failure_phase = "response_validation"
                         if len(body) > MAX_RESPONSE_BYTES:
                             raise _Validation("response_size_limit")
                         if inference:
                             updates.update(_completed_metadata(body, content_type))
-                            updates["status"] = "completed"
-                            updates["reason"] = "completed"
                             content_type = "text/event-stream"
-                        reply_status, reply_body, reply_type = status, body, content_type
+                        failure_phase = "response_close"
+                    # A context-manager close failure must not count as delivered
+                    # completion or forward a response body under an error status.
+                    if inference:
+                        updates["status"] = "completed"
+                        updates["reason"] = "completed"
+                    reply_status, reply_body, reply_type = status, body, content_type
                 except Exception as error:
                     if not isinstance(error,_ControlRejected):
                         try:owner._check_control()
@@ -494,8 +525,14 @@ class SubscriptionGateway:
                         updates["http_status"] = error.code
                     updates["reason"] = (error.code if isinstance(error, _Validation) else
                                          "upstream_http_error" if isinstance(error, urllib.error.HTTPError) else failure_stage)
+                    updates['status']='failed'
+                    updates['failure_phase']=failure_phase
+                    updates['failure_category']=_failure_category(error)
+                    if isinstance(error,http.client.IncompleteRead) and isinstance(error.partial,bytes):
+                        updates['partial_response_bytes']=len(error.partial)
                     # Fixed errors only; request, upstream bodies, and exception text are never logged.
                     reply_status = 403 if isinstance(error, ValueError) else 502
+                    reply_body=b'{"error":{"type":"subscription_transport_rejected"}}'
                     if isinstance(error,_ControlRejected):
                         with owner._lock:owner._control_rejections[error.code]+=1
                         reply_status={'request_budget_exhausted':429,'deadline_exhausted':408,'cancelled':503}[error.code]

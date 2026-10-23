@@ -1,0 +1,636 @@
+{
+  "schema": 1,
+  "experiment_id": "tree-case-20261024-08",
+  "analysis_kind": "controller_metadata_only",
+  "input_sha256": {
+    "metrics.json": "56892284c4b7f03311656d882738896fc3b8a6bbfd34f1975303eb1e12695ae8",
+    "metrics-A.json": "987879a96a350e102a122232277ebba6681a4947a08824d5b03e9b6f1855e61a",
+    "run-A/control.json": "f7d76ef529187f54a2ee4c2720d44c476086fa03cde0eedb3893ac0c342f4a52",
+    "metrics-B.json": "509d0f1e5847d9c526530ea1a9167b897cc631d4d8cc3426cccbf249e2597381",
+    "run-B/control.json": "458f4f8acd807a7c261331e3ff1131159e5b7ecc00d21ae72f64df51db81f01b",
+    "run-A/events.jsonl": "007258d8ed838024658a18a8b2c286bee21a34bcba6e83f6928a4ea24b42f5e9",
+    "run-B/events.jsonl": "7dff2e218597880c65137751064384f9fe382a46ea6bdf911edafb8e46cd88ef"
+  },
+  "termination_guard": "Final A/B metric/control statuses only; no process liveness query",
+  "arms": {
+    "A": {
+      "status": "completed_unverified",
+      "started_utc": "2026-10-23T21:12:19.056562+00:00",
+      "ended_utc": "2026-10-23T21:30:59.609462+00:00",
+      "total_arm_s": 1120.781,
+      "preparation_s": 0.062,
+      "native_elapsed_s": 1120.579,
+      "native_thread_started_s": 22.844,
+      "deadline_status": {
+        "configured_arm_limit_s": 1500,
+        "deadline_censored": false,
+        "cancelled": false,
+        "stop_reason": null,
+        "reported_execution_budget": {
+          "phase": "stabilize",
+          "elapsed_s": 1120.719000000041,
+          "remaining_s": 379.280999999959,
+          "time_fraction": 0.7471460000000273,
+          "request_fraction": 0.425,
+          "requests_used": 34,
+          "requests_remaining": 46
+        }
+      },
+      "reported_tool_calls": 27,
+      "reported_failed_calls": 3,
+      "requests": {
+        "request_records_available": true,
+        "declared_shared_request_total": 34,
+        "declared_request_count": 34,
+        "observed_request_count": 34,
+        "declared_completed_requests": 34,
+        "declared_count_matches_records": true,
+        "request_sequences_unique_positive": true,
+        "request_status_counts": {
+          "completed": 34
+        },
+        "budget_used": 34,
+        "budget_limit": 80,
+        "peak_concurrent_requests": 1,
+        "control_rejections": {},
+        "profiles": [
+          {
+            "profile_index": 0,
+            "requested_model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "actual_response_model": "gpt-6.1-sol",
+            "request_count": 34,
+            "usage": {
+              "request_records": 34,
+              "completed_requests": 34,
+              "known_completed_usage_records": 34,
+              "complete_usage_coverage": true,
+              "aggregate_usage": {
+                "input_tokens": 1741246,
+                "output_tokens": 43201,
+                "total_tokens": 1784447,
+                "cached_tokens": 481536,
+                "reasoning_tokens": 10305
+              },
+              "known_completed_usage": {
+                "input_tokens": 1741246,
+                "output_tokens": 43201,
+                "total_tokens": 1784447,
+                "cached_tokens": 481536,
+                "reasoning_tokens": 10305
+              },
+              "unknown_usage_is_not_zero": true
+            },
+            "timings": {
+              "duration_s": {
+                "known_observations": 34,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 904.218,
+                "min_s": 3.078,
+                "median_s": 13.0705,
+                "p95_nearest_rank_s": 89.516,
+                "max_s": 111.078
+              },
+              "upstream_open_s": {
+                "known_observations": 34,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 44.796,
+                "min_s": 0.969,
+                "median_s": 1.18,
+                "p95_nearest_rank_s": 2.515,
+                "max_s": 2.703
+              },
+              "upstream_body_read_s": {
+                "known_observations": 34,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 859.252,
+                "min_s": 1.86,
+                "median_s": 11.898499999999999,
+                "p95_nearest_rank_s": 88.344,
+                "max_s": 109.891
+              }
+            },
+            "known_interval_union_s": 904.2179999999998
+          }
+        ],
+        "usage": {
+          "request_records": 34,
+          "completed_requests": 34,
+          "known_completed_usage_records": 34,
+          "complete_usage_coverage": true,
+          "aggregate_usage": {
+            "input_tokens": 1741246,
+            "output_tokens": 43201,
+            "total_tokens": 1784447,
+            "cached_tokens": 481536,
+            "reasoning_tokens": 10305
+          },
+          "known_completed_usage": {
+            "input_tokens": 1741246,
+            "output_tokens": 43201,
+            "total_tokens": 1784447,
+            "cached_tokens": 481536,
+            "reasoning_tokens": 10305
+          },
+          "unknown_usage_is_not_zero": true
+        },
+        "timings": {
+          "duration_s": {
+            "known_observations": 34,
+            "missing_or_invalid_observations": 0,
+            "sum_known_s": 904.218,
+            "min_s": 3.078,
+            "median_s": 13.0705,
+            "p95_nearest_rank_s": 89.516,
+            "max_s": 111.078
+          },
+          "upstream_open_s": {
+            "known_observations": 34,
+            "missing_or_invalid_observations": 0,
+            "sum_known_s": 44.796,
+            "min_s": 0.969,
+            "median_s": 1.18,
+            "p95_nearest_rank_s": 2.515,
+            "max_s": 2.703
+          },
+          "upstream_body_read_s": {
+            "known_observations": 34,
+            "missing_or_invalid_observations": 0,
+            "sum_known_s": 859.252,
+            "min_s": 1.86,
+            "median_s": 11.898499999999999,
+            "p95_nearest_rank_s": 88.344,
+            "max_s": 109.891
+          }
+        },
+        "intervals": {
+          "known_intervals": 34,
+          "missing_or_ambiguous_intervals": 0,
+          "duplicate_completion_sequences": 0,
+          "complete_interval_coverage": true,
+          "union_s": 904.2179999999998,
+          "within_native_window_union_s": 904.2179999999998,
+          "unclassified_native_window_s": 216.3610000000001,
+          "first_inferred_request_start_s": 23.5,
+          "last_observed_completion_s": 1119.11,
+          "last_completion_to_native_end_s": 1.469000000000051,
+          "profile_overlaps": [],
+          "basis": "Trace completion elapsed minus request duration; approximate alignment, not first-token or generation timing"
+        },
+        "profiles_are_requests_not_agents": true,
+        "profile_overlap_is_not_helper_critical_path": true,
+        "timing_boundary": "Open includes connect/TLS/upstream header wait; buffered body-read includes upstream generation and network wait; none is pure transport or TTFT"
+      },
+      "native_children": {
+        "native_child_count": null,
+        "parent_link_metadata_verified": false,
+        "children": null,
+        "child_records_with_positive_native_tokens": null,
+        "usage_attribution": "Native child metadata only; requested profiles and MCP audit counts do not establish caller identity"
+      },
+      "mcp_budget": {
+        "configured": false,
+        "publisher_failed": null,
+        "audit_valid": null,
+        "healthy": null,
+        "status_calls": null,
+        "successful_calls": null,
+        "unavailable_calls": null,
+        "phase_counts": null,
+        "use_evidence": "not_configured",
+        "audit_counts_identify_root_or_worker": false
+      },
+      "tools": {
+        "completed_tool_events": {
+          "command_execution": 27
+        },
+        "deduplicated_completed_tool_items": {
+          "command_execution": 27
+        },
+        "completed_item_status_counts": {
+          "completed": 24,
+          "failed": 3
+        },
+        "items_without_valid_identity_hash": 0,
+        "tool_duration_observations": {
+          "command_execution": {
+            "known_observations": 27,
+            "missing_or_invalid_observations": 0,
+            "sum_known_s": 356.816,
+            "min_s": 0.234,
+            "median_s": 0.531,
+            "p95_nearest_rank_s": 76.438,
+            "max_s": 225.547
+          }
+        },
+        "operation_classes_observed": 24,
+        "repeated_operation_classes": 2,
+        "repeat_events_after_first": 3,
+        "operation_repeat_counts": [
+          {
+            "tool_type": "command_execution",
+            "operation_hmac_sha256": "5433fee9ea137385b52e07561736ba94b848911689dbcc601ef903062e50bd0b",
+            "completed_events": 3
+          },
+          {
+            "tool_type": "command_execution",
+            "operation_hmac_sha256": "dac5c4e68377798d0debf2be12f68a5e109f8e87447067949202084bbf7a38e9",
+            "completed_events": 2
+          }
+        ],
+        "unclassified_native_item_completed_error_events": 1,
+        "native_error_or_turn_failed_events": 0,
+        "interpretation": "Within-run HMAC grouping only. Repeated command text is not proof of waste; MCP/collab operation hashes group tool names, not complete arguments. Missing IDs limit deduplication."
+      },
+      "root_cli_usage": {
+        "input_tokens": 1741246,
+        "output_tokens": 43201,
+        "cached_tokens": 481536
+      },
+      "do_not_add_root_cli_or_child_usage_to_gateway_aggregate": true
+    },
+    "B": {
+      "status": "failed",
+      "started_utc": "2026-10-23T21:12:20.109312+00:00",
+      "ended_utc": "2026-10-23T21:30:33.602157+00:00",
+      "total_arm_s": 1094.797,
+      "preparation_s": 1.062,
+      "native_elapsed_s": 1093.563,
+      "native_thread_started_s": 23.438,
+      "deadline_status": {
+        "configured_arm_limit_s": 1500,
+        "deadline_censored": false,
+        "cancelled": false,
+        "stop_reason": null,
+        "reported_execution_budget": {
+          "phase": "stabilize",
+          "elapsed_s": 1094.719000000041,
+          "remaining_s": 405.280999999959,
+          "time_fraction": 0.729812666666694,
+          "request_fraction": 0.35,
+          "requests_used": 28,
+          "requests_remaining": 52
+        }
+      },
+      "reported_tool_calls": 20,
+      "reported_failed_calls": 7,
+      "requests": {
+        "request_records_available": true,
+        "declared_shared_request_total": 28,
+        "declared_request_count": 28,
+        "observed_request_count": 28,
+        "declared_completed_requests": 27,
+        "declared_count_matches_records": true,
+        "request_sequences_unique_positive": true,
+        "request_status_counts": {
+          "completed": 27,
+          "failed": 1
+        },
+        "budget_used": 28,
+        "budget_limit": 80,
+        "peak_concurrent_requests": 2,
+        "control_rejections": {},
+        "profiles": [
+          {
+            "profile_index": 0,
+            "requested_model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "actual_response_model": "gpt-6.1-sol",
+            "request_count": 3,
+            "usage": {
+              "request_records": 3,
+              "completed_requests": 3,
+              "known_completed_usage_records": 3,
+              "complete_usage_coverage": true,
+              "aggregate_usage": {
+                "input_tokens": 64655,
+                "output_tokens": 649,
+                "total_tokens": 65304,
+                "cached_tokens": 0,
+                "reasoning_tokens": 11
+              },
+              "known_completed_usage": {
+                "input_tokens": 64655,
+                "output_tokens": 649,
+                "total_tokens": 65304,
+                "cached_tokens": 0,
+                "reasoning_tokens": 11
+              },
+              "unknown_usage_is_not_zero": true
+            },
+            "timings": {
+              "duration_s": {
+                "known_observations": 3,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 19.108,
+                "min_s": 3.468,
+                "median_s": 5.078,
+                "p95_nearest_rank_s": 10.562,
+                "max_s": 10.562
+              },
+              "upstream_open_s": {
+                "known_observations": 3,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 3.187,
+                "min_s": 0.953,
+                "median_s": 1.109,
+                "p95_nearest_rank_s": 1.125,
+                "max_s": 1.125
+              },
+              "upstream_body_read_s": {
+                "known_observations": 3,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 15.921,
+                "min_s": 2.359,
+                "median_s": 3.953,
+                "p95_nearest_rank_s": 9.609,
+                "max_s": 9.609
+              }
+            },
+            "known_interval_union_s": 19.107999999999997
+          },
+          {
+            "profile_index": 1,
+            "requested_model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "actual_response_model": null,
+            "request_count": 1,
+            "usage": {
+              "request_records": 1,
+              "completed_requests": 0,
+              "known_completed_usage_records": 0,
+              "complete_usage_coverage": false,
+              "aggregate_usage": null,
+              "known_completed_usage": null,
+              "unknown_usage_is_not_zero": true
+            },
+            "timings": {
+              "duration_s": {
+                "known_observations": 1,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 56.594,
+                "min_s": 56.594,
+                "median_s": 56.594,
+                "p95_nearest_rank_s": 56.594,
+                "max_s": 56.594
+              },
+              "upstream_open_s": {
+                "known_observations": 1,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 1.359,
+                "min_s": 1.359,
+                "median_s": 1.359,
+                "p95_nearest_rank_s": 1.359,
+                "max_s": 1.359
+              },
+              "upstream_body_read_s": {
+                "known_observations": 0,
+                "missing_or_invalid_observations": 1,
+                "sum_known_s": null,
+                "min_s": null,
+                "median_s": null,
+                "p95_nearest_rank_s": null,
+                "max_s": null
+              }
+            },
+            "known_interval_union_s": 56.59400000000005
+          },
+          {
+            "profile_index": 2,
+            "requested_model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "actual_response_model": "gpt-6.1-sol",
+            "request_count": 24,
+            "usage": {
+              "request_records": 24,
+              "completed_requests": 24,
+              "known_completed_usage_records": 24,
+              "complete_usage_coverage": true,
+              "aggregate_usage": {
+                "input_tokens": 1091689,
+                "output_tokens": 40064,
+                "total_tokens": 1131753,
+                "cached_tokens": 350208,
+                "reasoning_tokens": 10186
+              },
+              "known_completed_usage": {
+                "input_tokens": 1091689,
+                "output_tokens": 40064,
+                "total_tokens": 1131753,
+                "cached_tokens": 350208,
+                "reasoning_tokens": 10186
+              },
+              "unknown_usage_is_not_zero": true
+            },
+            "timings": {
+              "duration_s": {
+                "known_observations": 24,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 835.592,
+                "min_s": 3.188,
+                "median_s": 16.7735,
+                "p95_nearest_rank_s": 96.5,
+                "max_s": 109.219
+              },
+              "upstream_open_s": {
+                "known_observations": 24,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 29.233,
+                "min_s": 0.954,
+                "median_s": 1.1095000000000002,
+                "p95_nearest_rank_s": 1.859,
+                "max_s": 2.015
+              },
+              "upstream_body_read_s": {
+                "known_observations": 24,
+                "missing_or_invalid_observations": 0,
+                "sum_known_s": 806.205,
+                "min_s": 2.094,
+                "median_s": 15.6095,
+                "p95_nearest_rank_s": 95.375,
+                "max_s": 108.141
+              }
+            },
+            "known_interval_union_s": 835.5919999999999
+          }
+        ],
+        "usage": {
+          "request_records": 28,
+          "completed_requests": 27,
+          "known_completed_usage_records": 27,
+          "complete_usage_coverage": false,
+          "aggregate_usage": null,
+          "known_completed_usage": {
+            "input_tokens": 1156344,
+            "output_tokens": 40713,
+            "total_tokens": 1197057,
+            "cached_tokens": 350208,
+            "reasoning_tokens": 10197
+          },
+          "unknown_usage_is_not_zero": true
+        },
+        "timings": {
+          "duration_s": {
+            "known_observations": 28,
+            "missing_or_invalid_observations": 0,
+            "sum_known_s": 911.294,
+            "min_s": 3.188,
+            "median_s": 11.711,
+            "p95_nearest_rank_s": 96.5,
+            "max_s": 109.219
+          },
+          "upstream_open_s": {
+            "known_observations": 28,
+            "missing_or_invalid_observations": 0,
+            "sum_known_s": 33.779,
+            "min_s": 0.953,
+            "median_s": 1.1095000000000002,
+            "p95_nearest_rank_s": 1.859,
+            "max_s": 2.015
+          },
+          "upstream_body_read_s": {
+            "known_observations": 27,
+            "missing_or_invalid_observations": 1,
+            "sum_known_s": 822.126,
+            "min_s": 2.094,
+            "median_s": 9.688,
+            "p95_nearest_rank_s": 95.375,
+            "max_s": 108.141
+          }
+        },
+        "intervals": {
+          "known_intervals": 28,
+          "missing_or_ambiguous_intervals": 0,
+          "duplicate_completion_sequences": 0,
+          "complete_interval_coverage": true,
+          "union_s": 895.248,
+          "within_native_window_union_s": 895.248,
+          "unclassified_native_window_s": 198.31500000000005,
+          "first_inferred_request_start_s": 24.484,
+          "last_observed_completion_s": 1091.141,
+          "last_completion_to_native_end_s": 2.4220000000000255,
+          "profile_overlaps": [
+            {
+              "left_profile_index": 0,
+              "right_profile_index": 1,
+              "overlap_s": 0.0
+            },
+            {
+              "left_profile_index": 0,
+              "right_profile_index": 2,
+              "overlap_s": 16.04599999999982
+            },
+            {
+              "left_profile_index": 1,
+              "right_profile_index": 2,
+              "overlap_s": 0.0
+            }
+          ],
+          "basis": "Trace completion elapsed minus request duration; approximate alignment, not first-token or generation timing"
+        },
+        "profiles_are_requests_not_agents": true,
+        "profile_overlap_is_not_helper_critical_path": true,
+        "timing_boundary": "Open includes connect/TLS/upstream header wait; buffered body-read includes upstream generation and network wait; none is pure transport or TTFT"
+      },
+      "native_children": {
+        "native_child_count": 1,
+        "parent_link_metadata_verified": true,
+        "children": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "depth": 1,
+            "tokens_used": 65304
+          }
+        ],
+        "child_records_with_positive_native_tokens": 1,
+        "usage_attribution": "Native child metadata only; requested profiles and MCP audit counts do not establish caller identity"
+      },
+      "mcp_budget": {
+        "configured": true,
+        "publisher_failed": false,
+        "audit_valid": true,
+        "healthy": true,
+        "status_calls": 4,
+        "successful_calls": 4,
+        "unavailable_calls": 0,
+        "phase_counts": {
+          "build": 3,
+          "stabilize": 1
+        },
+        "use_evidence": "observed",
+        "audit_counts_identify_root_or_worker": false,
+        "phase_schema_valid": true,
+        "valid_audit_count_arithmetic": true
+      },
+      "tools": {
+        "completed_tool_events": {
+          "command_execution": 16,
+          "mcp_tool_call": 4
+        },
+        "deduplicated_completed_tool_items": {
+          "command_execution": 16,
+          "mcp_tool_call": 4
+        },
+        "completed_item_status_counts": {
+          "failed": 5,
+          "completed": 15
+        },
+        "items_without_valid_identity_hash": 0,
+        "tool_duration_observations": {
+          "command_execution": {
+            "known_observations": 16,
+            "missing_or_invalid_observations": 0,
+            "sum_known_s": 58.935,
+            "min_s": 0.203,
+            "median_s": 1.8980000000000001,
+            "p95_nearest_rank_s": 13.453,
+            "max_s": 13.453
+          },
+          "mcp_tool_call": {
+            "known_observations": 4,
+            "missing_or_invalid_observations": 0,
+            "sum_known_s": 0.20400000000000001,
+            "min_s": 0.016,
+            "median_s": 0.016,
+            "p95_nearest_rank_s": 0.156,
+            "max_s": 0.156
+          }
+        },
+        "operation_classes_observed": 16,
+        "repeated_operation_classes": 2,
+        "repeat_events_after_first": 4,
+        "operation_repeat_counts": [
+          {
+            "tool_type": "command_execution",
+            "operation_hmac_sha256": "960453c8ee9f94401f215d0515fccaa948d89ac8af6ef92ad12c27491392b014",
+            "completed_events": 2
+          },
+          {
+            "tool_type": "mcp_tool_call",
+            "operation_hmac_sha256": "4a787fe76733b04d7f5c6b897f9f453e7ccbf6e815f3cd6cc865bb50a97a0da2",
+            "completed_events": 4
+          }
+        ],
+        "unclassified_native_item_completed_error_events": 1,
+        "native_error_or_turn_failed_events": 2,
+        "interpretation": "Within-run HMAC grouping only. Repeated command text is not proof of waste; MCP/collab operation hashes group tool names, not complete arguments. Missing IDs limit deduplication."
+      },
+      "root_cli_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cached_tokens": null
+      },
+      "do_not_add_root_cli_or_child_usage_to_gateway_aggregate": true
+    }
+  },
+  "limits": [
+    "No app source, evaluation, blind mapping, history or global state read",
+    "No application quality, causal module contribution, polling-waste or speedup claim",
+    "Inference request durations and profile intervals can overlap and are not additive wall time",
+    "Request profiles are not agent identities; MCP audit counts do not identify the caller",
+    "Upstream open/read fields do not isolate generation, pure transport or time to first token",
+    "Unclassified time is an observation remainder, not a diagnosed cause"
+  ],
+  "models_or_sdk_invoked": false
+}

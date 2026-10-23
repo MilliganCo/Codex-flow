@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "command": "python tools/smoke.py --terminal",
+  "unit_tests": 30,
+  "headless_modes": 3,
+  "native_console": "PASS",
+  "saved_frames": 6,
+  "saved_frame_dimensions": "100x40",
+  "sample_ascii_and_sha256": "PASS",
+  "elapsed_seconds": 9.321
+}

@@ -8,6 +8,13 @@ The coordinator profile is `gpt-6.1-sol` with `xhigh` reasoning. Native helpers 
 
 **Status:** private development. No project license has been selected. There is no validated universal speedup or quota-saving claim. Runtime completion is distinct from independent acceptance.
 
+Latest [case08](benchmarks/case08/README.md): independent artifact scores **97/97**,
+headless 25/25 and native 57/57 each. Solo completed in 1120.781 seconds; Flow
+stopped on an upstream body-read error at 1094.797 seconds. Its failed duration
+does not establish acceleration. [67 unchanged files](benchmarks/case08/source-publication.json),
+working demonstrations, auxiliary limits and failed attempts are retained.
+Current hardening passed 254 offline tests; rollback is documented.
+
 ## Start with a dry run
 
 Use Python 3.11+ and an existing Codex CLI. Python 3.12 is the benchmark preference. The runtime uses the standard library; it does not install dependencies or provision model accounts.

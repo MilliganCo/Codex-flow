@@ -22,6 +22,12 @@
  WSL, with231 Windows passes and21 symlink skips. No performance claim is assigned
  to this subsequent security hardening.
 
+- Preserve case08 B's body-read failure and unknown usage. Add prospective fixed
+ error-type/phase diagnostics and failed-read duration without raw responses or
+ exception text. Mark completion only after successful response close; a failed
+ close returns a fixed error body and cannot count as completed. No retries or
+ fallback were added. Both254-test suites passed (Windows233/21 skipped).
+
 - Independent case06 repeat: solo 97/Flow 98, both completed within 1500 seconds,
  43/36 native requests, headless 25/25 and native 57/57 each. Preserve 69 unchanged
  submitted files, raw failed auxiliary rotation assertions and their observed-value

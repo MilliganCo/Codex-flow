@@ -1,0 +1,470 @@
+{
+  "solution_id": 16,
+  "independent": true,
+  "expected_check_count": 57,
+  "complete_protocol": true,
+  "checks": [
+    {
+      "name": "startup",
+      "status": "pass",
+      "marker": "ASCII TREE EXPLORER"
+    },
+    {
+      "name": "2d.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "01-2d.txt"
+    },
+    {
+      "name": "2d.ascii_lf",
+      "status": "pass",
+      "sha256": "055f323d6d162d8d0805cc1fe7e4df5010f81324f8b808b19fc1b1af766d80a5"
+    },
+    {
+      "name": "2d.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "3d.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "02-3d.txt"
+    },
+    {
+      "name": "3d.ascii_lf",
+      "status": "pass",
+      "sha256": "8b701faceb08e8585205ec28dda9b932cc259bbef5907b18d3a4caa707bb9f6d"
+    },
+    {
+      "name": "3d.comparison",
+      "status": "pass",
+      "relation": "exact oracle",
+      "embedded_3d_roundtrip": {
+        "status": "pass",
+        "changed": true,
+        "restored": true,
+        "exports": [
+          "3d-turned",
+          "3d-restored"
+        ]
+      }
+    },
+    {
+      "name": "4d.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "05-4d.txt"
+    },
+    {
+      "name": "4d.ascii_lf",
+      "status": "pass",
+      "sha256": "f2ae5cc1758a15446b0f2ad93d0e8a7453306f20d6046914c885c74de6982696"
+    },
+    {
+      "name": "4d.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "three_distinct_modes",
+      "status": "pass"
+    },
+    {
+      "name": "xw-plus.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "06-xw-plus.txt"
+    },
+    {
+      "name": "xw-plus.ascii_lf",
+      "status": "pass",
+      "sha256": "036ac7ebe08d2794d86e2bb0cefc3941a3804243f7cde483f6c2f31363f80a1c"
+    },
+    {
+      "name": "xw-plus.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "xw-reverse.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "07-xw-reverse.txt"
+    },
+    {
+      "name": "xw-reverse.ascii_lf",
+      "status": "pass",
+      "sha256": "f2ae5cc1758a15446b0f2ad93d0e8a7453306f20d6046914c885c74de6982696"
+    },
+    {
+      "name": "xw-reverse.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "rotated.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "08-rotated.txt"
+    },
+    {
+      "name": "rotated.ascii_lf",
+      "status": "pass",
+      "sha256": "a4b38e31a5d30f9488b388ad49d6c7ceb43ff561f84c16f4837d5ae2cafed5e7"
+    },
+    {
+      "name": "rotated.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "zoom-plus.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "09-zoom-plus.txt"
+    },
+    {
+      "name": "zoom-plus.ascii_lf",
+      "status": "pass",
+      "sha256": "851d8da90bc8dd7afac859fbc1529005add9d9a7e2b1c6bf44dcd5164feda53f"
+    },
+    {
+      "name": "zoom-plus.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "zoom-reverse.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "10-zoom-reverse.txt"
+    },
+    {
+      "name": "zoom-reverse.ascii_lf",
+      "status": "pass",
+      "sha256": "a4b38e31a5d30f9488b388ad49d6c7ceb43ff561f84c16f4837d5ae2cafed5e7"
+    },
+    {
+      "name": "zoom-reverse.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "help",
+      "status": "pass",
+      "marker": "ASCII TREE EXPLORER / FIELD GUIDE"
+    },
+    {
+      "name": "help-closed.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "11-help-closed.txt"
+    },
+    {
+      "name": "help-closed.ascii_lf",
+      "status": "pass",
+      "sha256": "a4b38e31a5d30f9488b388ad49d6c7ceb43ff561f84c16f4837d5ae2cafed5e7"
+    },
+    {
+      "name": "help-closed.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "animated-paused.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "12-animated-paused.txt"
+    },
+    {
+      "name": "animated-paused.ascii_lf",
+      "status": "pass",
+      "sha256": "a2689c77f90631e8132d755b0c66ee8ee6e74bbe34ac98d849403005a77397d3"
+    },
+    {
+      "name": "animated-paused.comparison",
+      "status": "pass",
+      "relation": "changed"
+    },
+    {
+      "name": "paused-stable.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "13-paused-stable.txt"
+    },
+    {
+      "name": "paused-stable.ascii_lf",
+      "status": "pass",
+      "sha256": "a2689c77f90631e8132d755b0c66ee8ee6e74bbe34ac98d849403005a77397d3"
+    },
+    {
+      "name": "paused-stable.comparison",
+      "status": "pass",
+      "relation": "paused exact bytes"
+    },
+    {
+      "name": "reset.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "14-reset.txt"
+    },
+    {
+      "name": "reset.ascii_lf",
+      "status": "pass",
+      "sha256": "f2ae5cc1758a15446b0f2ad93d0e8a7453306f20d6046914c885c74de6982696"
+    },
+    {
+      "name": "reset.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "new-seed.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "15-new-seed.txt"
+    },
+    {
+      "name": "new-seed.ascii_lf",
+      "status": "pass",
+      "sha256": "9491a8d01570ad9b844ec5aeae89c542f5e5e1ec599dc3dd00a51530be2e8cdc"
+    },
+    {
+      "name": "new-seed.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "resize-small.dimensions",
+      "status": "pass",
+      "expected": [
+        29,
+        7
+      ],
+      "snapshot": "16-resize-small.txt"
+    },
+    {
+      "name": "resize-small.ascii_lf",
+      "status": "pass",
+      "sha256": "43a9941020e0e99edf74a1162288fae531fab1b808a2b738e3f0116888538476"
+    },
+    {
+      "name": "resize-small.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "resize-minimum.dimensions",
+      "status": "pass",
+      "expected": [
+        1,
+        1
+      ],
+      "snapshot": "17-resize-minimum.txt"
+    },
+    {
+      "name": "resize-minimum.ascii_lf",
+      "status": "pass",
+      "sha256": "f3743a0a18e53d13922cc21a70d783d875a12560c22ff8d28bda5f5ca9fe05c3"
+    },
+    {
+      "name": "resize-minimum.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "resize-restored.dimensions",
+      "status": "pass",
+      "expected": [
+        99,
+        35
+      ],
+      "snapshot": "18-resize-restored.txt"
+    },
+    {
+      "name": "resize-restored.ascii_lf",
+      "status": "pass",
+      "sha256": "9491a8d01570ad9b844ec5aeae89c542f5e5e1ec599dc3dd00a51530be2e8cdc"
+    },
+    {
+      "name": "resize-restored.comparison",
+      "status": "pass",
+      "relation": "exact oracle"
+    },
+    {
+      "name": "q.exit_code",
+      "status": "pass",
+      "actual": 0
+    },
+    {
+      "name": "q.restore",
+      "status": "pass",
+      "cursor_show": true,
+      "alternate_leave": true
+    },
+    {
+      "name": "esc.exit_code",
+      "status": "pass",
+      "actual": 0
+    },
+    {
+      "name": "esc.restore",
+      "status": "pass",
+      "cursor_show": true,
+      "alternate_leave": true
+    },
+    {
+      "name": "ctrl_c.exit_code",
+      "status": "pass",
+      "actual": 130
+    },
+    {
+      "name": "ctrl_c.restore",
+      "status": "pass",
+      "cursor_show": true,
+      "alternate_leave": true
+    }
+  ],
+  "source_hashes_before": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "IMPLEMENTATION_NOTES.md": "c817bb4b9c5897f483d3669ba2aeaeaeb7b86702e57c1edf3569d73738a202f2",
+    "INTERACTIVE_DEMO.md": "3835a2b575658a504440274e218e34f4ade0fe2b1f290bc29a021cb9d8b1a0b3",
+    "README.md": "3b561a41b98e363056585394a035414df50ed1e70cb4a8f54065760d0c0d553f",
+    "VERIFICATION.md": "e4b5d9b6157c54639d24acda0abfcb36002deba743958d284f56e71f00f6eb51",
+    "pyproject.toml": "a86acf482506cefb75b1f2be5159a516a99d5a29ac8cfe7c1cdadfc662775a58",
+    "requirements.txt": "2cc5b4443a0ccf8c1375ff2b2dffebad448ef3a2235e701e8b4ddfe62c05f9bb",
+    "artifacts/benchmark.json": "0115f89107427f31ace184da44cafee63a1860846269318d4d757f5b87c8754c",
+    "artifacts/terminal-1.vt": "b55531f7a81038b789e1b2cb285532788245d277ed2b210b8b1775d69967e3ce",
+    "artifacts/terminal-2.vt": "bc0d9c8d73bbe572b2a935fd011458e10961d9f7961bf7141ca77fd9257dc847",
+    "artifacts/terminal-3.vt": "6a9f1e54c5bb4dc86912860838a336256f8a3f971bb23a96891b3bf8a2cc6e2b",
+    "artifacts/terminal-smoke.json": "b65c52f01ae10c1090cade940f317cbab7a3422823dcc7186848bf2cfbd54328",
+    "artifacts/verification.json": "c08263db4e6e5de72a3d0dedfa44753f2110dfc77594d385e1c1a8bd2f4a4e25",
+    "ascii_tree/__init__.py": "0eac910ff59061670840e7139dca17d9b7d337fdb0edc70302438db08c909478",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/cli.py": "51041f238d7c677f2666689a586eb6df6031d9d0a2da8f8f36755dbb87c81a8f",
+    "ascii_tree/geometry.py": "ed08204ae6704979bd353c454603743a036018a4503b94238ad00dc21f8b9477",
+    "ascii_tree/model.py": "d7446aa9f19c5064704d28b1f8fb6d06b59dc85f5f56623fc3ceddb40b96ed09",
+    "ascii_tree/render.py": "ff10504ce30357ee116945178507d6b7dd0d2446a2d472cea647dde957c629bf",
+    "ascii_tree/state.py": "72997b89d70db2f9756f31619897bf4bebd95dcd91e33c23bc576016916761f3",
+    "ascii_tree/terminal.py": "929b755a75c7daf4214eceb2b56c0695bc7b9833b220b595b1763cd3125f7346",
+    "examples/manifest.json": "8b9f30a8c5554765c76e63d5b25e5d9e0b29bdc1bdd820c9686eea62d5445ac7",
+    "examples/seed-42-2d.txt": "5b9b2bf60de46bdacd67654261dbb32920f79b701ffad1c734c2f417631f66e7",
+    "examples/seed-42-3d.txt": "d56bd75bc4c7e53f57a6db83b21bc0253608f136d0b4cb9cef605e01d5b0ed05",
+    "examples/seed-42-4d-xw-0.txt": "a9d4a2ebb58c8742af75262ab487bfe8e6a6bfbc61fcf44173c30188b83948be",
+    "examples/seed-42-4d-xw-45.txt": "d0cbea2c30b73a64682637fb8bf2439c69f3281fe37be417049403882be9d05e",
+    "examples/seed-43-2d.txt": "fc2e13f434cf589ee0a156362691adfede5feed6b88d608cf86061e19bfef3e6",
+    "examples/seed-43-3d.txt": "8e2c54d0cf3cb91df704af933e261027361ffb51930162584b77813d4a952836",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_model.py": "564cb38ba5ae301a230b663723a3aa208c8059698b601d66163c6bd75e4e9b0f",
+    "tests/test_render.py": "c3bb888d7e6574e6f351c54f076cc5f2f6ea1163e07df3c7ffcf59743151f9c7",
+    "tests/test_state_cli.py": "9ab476a2c6271b152e6a2780cea9fbe92b655edfaa96b46bb542a43f8f385387",
+    "tools/console_child.py": "c1980e83170a94eb9cd1334e7197cc154dfb63ee5931f5db684f7ddd866d4cbb",
+    "tools/regenerate_examples.py": "943649f7e9d5e958349746454d32d256bb820a17908892e2b28408f2cd58a0f3",
+    "tools/smoke.py": "0333fea78b8b652e668b69edfbec13405a8e9d07d5b1b703070a869985763a24",
+    "tools/terminal_smoke.py": "9f36da4e0b0de7cbf254d4e9f07ec72b8dc7646399c86a22ade0edf48dd09640"
+  },
+  "adapter": {
+    "module": "ascii_tree",
+    "initial_seed": 42,
+    "initial_mode": "2d",
+    "plane": "XW",
+    "initial_yaw_degrees": 25.783100780887047,
+    "initial_pitch_degrees": 4.583662361046586,
+    "yaw_step_degrees": 6.875493541569878,
+    "pitch_step_degrees": 5.729577951308233,
+    "xw_step_degrees": 6.875493541569878,
+    "zoom_factor": 1.12,
+    "next_seed": "seed + 1",
+    "export_readiness": "Changed actual export file within 5 seconds; Saved status is cropped out at 1x1 by both production UIs, so console visibility is not a readiness requirement.",
+    "view_flags": [
+      "view",
+      "--seed",
+      "42",
+      "--mode",
+      "2d",
+      "--export-dir"
+    ],
+    "export_name": "tree-SEED-MODE.txt"
+  },
+  "status": "pass",
+  "check_count": 57,
+  "source_hashes_after": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "IMPLEMENTATION_NOTES.md": "c817bb4b9c5897f483d3669ba2aeaeaeb7b86702e57c1edf3569d73738a202f2",
+    "INTERACTIVE_DEMO.md": "3835a2b575658a504440274e218e34f4ade0fe2b1f290bc29a021cb9d8b1a0b3",
+    "README.md": "3b561a41b98e363056585394a035414df50ed1e70cb4a8f54065760d0c0d553f",
+    "VERIFICATION.md": "e4b5d9b6157c54639d24acda0abfcb36002deba743958d284f56e71f00f6eb51",
+    "pyproject.toml": "a86acf482506cefb75b1f2be5159a516a99d5a29ac8cfe7c1cdadfc662775a58",
+    "requirements.txt": "2cc5b4443a0ccf8c1375ff2b2dffebad448ef3a2235e701e8b4ddfe62c05f9bb",
+    "artifacts/benchmark.json": "0115f89107427f31ace184da44cafee63a1860846269318d4d757f5b87c8754c",
+    "artifacts/terminal-1.vt": "b55531f7a81038b789e1b2cb285532788245d277ed2b210b8b1775d69967e3ce",
+    "artifacts/terminal-2.vt": "bc0d9c8d73bbe572b2a935fd011458e10961d9f7961bf7141ca77fd9257dc847",
+    "artifacts/terminal-3.vt": "6a9f1e54c5bb4dc86912860838a336256f8a3f971bb23a96891b3bf8a2cc6e2b",
+    "artifacts/terminal-smoke.json": "b65c52f01ae10c1090cade940f317cbab7a3422823dcc7186848bf2cfbd54328",
+    "artifacts/verification.json": "c08263db4e6e5de72a3d0dedfa44753f2110dfc77594d385e1c1a8bd2f4a4e25",
+    "ascii_tree/__init__.py": "0eac910ff59061670840e7139dca17d9b7d337fdb0edc70302438db08c909478",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/cli.py": "51041f238d7c677f2666689a586eb6df6031d9d0a2da8f8f36755dbb87c81a8f",
+    "ascii_tree/geometry.py": "ed08204ae6704979bd353c454603743a036018a4503b94238ad00dc21f8b9477",
+    "ascii_tree/model.py": "d7446aa9f19c5064704d28b1f8fb6d06b59dc85f5f56623fc3ceddb40b96ed09",
+    "ascii_tree/render.py": "ff10504ce30357ee116945178507d6b7dd0d2446a2d472cea647dde957c629bf",
+    "ascii_tree/state.py": "72997b89d70db2f9756f31619897bf4bebd95dcd91e33c23bc576016916761f3",
+    "ascii_tree/terminal.py": "929b755a75c7daf4214eceb2b56c0695bc7b9833b220b595b1763cd3125f7346",
+    "examples/manifest.json": "8b9f30a8c5554765c76e63d5b25e5d9e0b29bdc1bdd820c9686eea62d5445ac7",
+    "examples/seed-42-2d.txt": "5b9b2bf60de46bdacd67654261dbb32920f79b701ffad1c734c2f417631f66e7",
+    "examples/seed-42-3d.txt": "d56bd75bc4c7e53f57a6db83b21bc0253608f136d0b4cb9cef605e01d5b0ed05",
+    "examples/seed-42-4d-xw-0.txt": "a9d4a2ebb58c8742af75262ab487bfe8e6a6bfbc61fcf44173c30188b83948be",
+    "examples/seed-42-4d-xw-45.txt": "d0cbea2c30b73a64682637fb8bf2439c69f3281fe37be417049403882be9d05e",
+    "examples/seed-43-2d.txt": "fc2e13f434cf589ee0a156362691adfede5feed6b88d608cf86061e19bfef3e6",
+    "examples/seed-43-3d.txt": "8e2c54d0cf3cb91df704af933e261027361ffb51930162584b77813d4a952836",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_model.py": "564cb38ba5ae301a230b663723a3aa208c8059698b601d66163c6bd75e4e9b0f",
+    "tests/test_render.py": "c3bb888d7e6574e6f351c54f076cc5f2f6ea1163e07df3c7ffcf59743151f9c7",
+    "tests/test_state_cli.py": "9ab476a2c6271b152e6a2780cea9fbe92b655edfaa96b46bb542a43f8f385387",
+    "tools/console_child.py": "c1980e83170a94eb9cd1334e7197cc154dfb63ee5931f5db684f7ddd866d4cbb",
+    "tools/regenerate_examples.py": "943649f7e9d5e958349746454d32d256bb820a17908892e2b28408f2cd58a0f3",
+    "tools/smoke.py": "0333fea78b8b652e668b69edfbec13405a8e9d07d5b1b703070a869985763a24",
+    "tools/terminal_smoke.py": "9f36da4e0b0de7cbf254d4e9f07ec72b8dc7646399c86a22ade0edf48dd09640"
+  },
+  "source_unchanged": true
+}

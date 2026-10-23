@@ -1,0 +1,1813 @@
+{
+  "schema": 1,
+  "experiment_id": "tree-case-20261024-08",
+  "created_utc": "2026-10-23T21:12:18.619934+00:00",
+  "task_sha256": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+  "scaffold_git_sha": "5fd940eb7454ee322863b3f0bd7d0d71aca88cfe",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "executed_raw_runtime_sha256": {
+    "benchmark.py": "f8504644902d67a5a71e57d366dbda409ff7bbfd9dcffb95774f916e852fde07",
+    "budget.py": "a7dfa2d4b53fc7e2ec7e2117606489a6dfe692c1dfba7e581c5db6ff762bde44",
+    "budget_stdio.py": "0bcd1e3ad46999150f4937240c1ebc2cdfa783f151dd06901ac1c1936cd65bcc",
+    "cli.py": "1d01c2e47b1f72c9d974dc9a25102c2444c0be7bab5e51f9dd01df82888dc651",
+    "config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "native.py": "a204ada59ac8057ce735042f5f55f31d40c3d827c66ba8ffc53aa82a0fdafb88",
+    "native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "subscription.py": "d6d7d792ae9f476b755b5ecadfd2ec6f821c41af3a66403ca5eb5c29f7cd728f",
+    "telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1"
+  },
+  "runtime_publication_equivalence": {
+    "source_json_sha256": "0f6ea3f6159541cbaa939b5d1fc9ea2e254c508f61933ab23a8d86f13bd7bf55",
+    "frozen_runtime_source_commit": "3d325f666e1f767ba3d881349f42c3412c6688c6",
+    "private_publication_commit": "f52b7e45f7beddf0d3ef9a7c64bb66da91f51d18",
+    "files": {
+      "codex-flow.py": {
+        "executed_raw_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+        "published_blob_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+        "normalized_lf_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/__init__.py": {
+        "executed_raw_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+        "published_blob_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+        "normalized_lf_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/benchmark.py": {
+        "executed_raw_sha256": "f8504644902d67a5a71e57d366dbda409ff7bbfd9dcffb95774f916e852fde07",
+        "published_blob_sha256": "f8504644902d67a5a71e57d366dbda409ff7bbfd9dcffb95774f916e852fde07",
+        "normalized_lf_sha256": "f8504644902d67a5a71e57d366dbda409ff7bbfd9dcffb95774f916e852fde07",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/budget.py": {
+        "executed_raw_sha256": "a7dfa2d4b53fc7e2ec7e2117606489a6dfe692c1dfba7e581c5db6ff762bde44",
+        "published_blob_sha256": "a7dfa2d4b53fc7e2ec7e2117606489a6dfe692c1dfba7e581c5db6ff762bde44",
+        "normalized_lf_sha256": "a7dfa2d4b53fc7e2ec7e2117606489a6dfe692c1dfba7e581c5db6ff762bde44",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/budget_stdio.py": {
+        "executed_raw_sha256": "0bcd1e3ad46999150f4937240c1ebc2cdfa783f151dd06901ac1c1936cd65bcc",
+        "published_blob_sha256": "0bcd1e3ad46999150f4937240c1ebc2cdfa783f151dd06901ac1c1936cd65bcc",
+        "normalized_lf_sha256": "0bcd1e3ad46999150f4937240c1ebc2cdfa783f151dd06901ac1c1936cd65bcc",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/cli.py": {
+        "executed_raw_sha256": "1d01c2e47b1f72c9d974dc9a25102c2444c0be7bab5e51f9dd01df82888dc651",
+        "published_blob_sha256": "1d01c2e47b1f72c9d974dc9a25102c2444c0be7bab5e51f9dd01df82888dc651",
+        "normalized_lf_sha256": "1d01c2e47b1f72c9d974dc9a25102c2444c0be7bab5e51f9dd01df82888dc651",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/config.py": {
+        "executed_raw_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+        "published_blob_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+        "normalized_lf_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/contracts.py": {
+        "executed_raw_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+        "published_blob_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+        "normalized_lf_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/doctor.py": {
+        "executed_raw_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+        "published_blob_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+        "normalized_lf_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/harness.py": {
+        "executed_raw_sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+        "published_blob_sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+        "normalized_lf_sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/mercury.py": {
+        "executed_raw_sha256": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+        "published_blob_sha256": "d9b534f213b39a28bdbe916f2ecdfec0ca83475459e041fd086f75bc8e51d1d6",
+        "normalized_lf_sha256": "d9b534f213b39a28bdbe916f2ecdfec0ca83475459e041fd086f75bc8e51d1d6",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/native.py": {
+        "executed_raw_sha256": "a204ada59ac8057ce735042f5f55f31d40c3d827c66ba8ffc53aa82a0fdafb88",
+        "published_blob_sha256": "a204ada59ac8057ce735042f5f55f31d40c3d827c66ba8ffc53aa82a0fdafb88",
+        "normalized_lf_sha256": "a204ada59ac8057ce735042f5f55f31d40c3d827c66ba8ffc53aa82a0fdafb88",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/native_metadata.py": {
+        "executed_raw_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+        "published_blob_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+        "normalized_lf_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/policy.py": {
+        "executed_raw_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+        "published_blob_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+        "normalized_lf_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/subscription.py": {
+        "executed_raw_sha256": "d6d7d792ae9f476b755b5ecadfd2ec6f821c41af3a66403ca5eb5c29f7cd728f",
+        "published_blob_sha256": "d6d7d792ae9f476b755b5ecadfd2ec6f821c41af3a66403ca5eb5c29f7cd728f",
+        "normalized_lf_sha256": "d6d7d792ae9f476b755b5ecadfd2ec6f821c41af3a66403ca5eb5c29f7cd728f",
+        "normalized_lf_equal": true
+      },
+      "runtime/codex_flow/telemetry.py": {
+        "executed_raw_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+        "published_blob_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+        "normalized_lf_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+        "normalized_lf_equal": true
+      }
+    },
+    "runtime_snapshot_sha256": "262d599c623e951c6655bcaad60d21e99803674d61fd1bf67ec96596a52c9aa6",
+    "launcher_and_all_15_modules_covered": true,
+    "canonical_inputs": {
+      "task": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+      "evaluator": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+      "rubric": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+    },
+    "runtime_file_count": 16,
+    "pinned_executable_sha256_from_snapshot": "e757246b4de87359e660647fa9514955a0971ff6a30affdd8c145d1d5ece7b84",
+    "budget_feedback_contract": {
+      "condition": "B only",
+      "channel": "native MCP flow_budget.status",
+      "shared_monotonic_deadline": true,
+      "developer_input_suffix": false,
+      "inference_request_payload_unchanged": true,
+      "phase_thresholds": [
+        0.5,
+        0.75
+      ],
+      "prerequisite_sha256": "b233bf1e11a95db7f59021384ef92f8a08ed9d531731e9e83a9f028702dc3465",
+      "mcp_audit_counts_do_not_identify_root_or_worker": true,
+      "prerequisite_native_usage_is_benchmark_credit": false
+    },
+    "claim": "Python source content matches the explicit publication commit after LF normalization; executed raw SHAs remain unchanged",
+    "git_blob_attestation": "External fixed-commit blob attestation supplied; this helper validates snapshot/hash contracts without invoking Git",
+    "raw_git_blob_byte_identity_claimed": false,
+    "latest_main_equivalence_claimed": false,
+    "post_freeze_boundary": "Only the explicit case08 frozen runtime is represented; case05 and later main changes are not relabeled as this execution"
+  },
+  "requested_root_model": "gpt-6.1-sol",
+  "requested_root_effort": "xhigh",
+  "codex_version": "codex-cli 0.163.0-alpha.11.1",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "hardware": {
+    "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16,
+    "ram_bytes": 68635971584,
+    "machine": "AMD64"
+  },
+  "timeout_s_per_arm": 1500,
+  "model_request_budget_per_arm": 80,
+  "order": [
+    [
+      "A",
+      "B"
+    ]
+  ],
+  "selected_groups": [
+    "A",
+    "B"
+  ],
+  "flow_treatment": {
+    "harness": "enabled guard; calibration deferred; zero automatic online probes",
+    "helper": "bounded readonly evidence; instruction requests concurrent root implementation",
+    "phase_reserve": "final 20 percent planning instruction; not independently enforced"
+  },
+  "terminal_original_process_identity_guards_passed": true,
+  "original_process_identity_guards": {
+    "A": {
+      "original_process_dead": true,
+      "basis": "original_pid_absent",
+      "unique_monitored_identity_available": true
+    },
+    "B": {
+      "original_process_dead": true,
+      "basis": "original_pid_absent",
+      "unique_monitored_identity_available": true
+    }
+  },
+  "evaluated_source_binding": {
+    "source_hashes_json_sha256": "4d003b86196e25978b20042fcfcab2f9cc21ea56efd57a463ed6a8718de32b53",
+    "all_filtered_eligible_files_match_evaluated_snapshot": true,
+    "raw_byte_sha256_not_normalized": true
+  },
+  "pid_guard_scope": "Original A/B root process identities only; numeric PID reuse requires distinct current creation FILETIME; no names, signals, descendants or monitor liveness inference",
+  "historical_case05_reference": {
+    "experiment_id": "tree-case-20261023-05",
+    "quality_scores": {
+      "A": 97,
+      "B": 89
+    },
+    "runtime_prefix": "343d395",
+    "same_runtime_claimed": false,
+    "pooled_with_case08": false
+  },
+  "historical_case06_reference": {
+    "experiment_id": "tree-case-20261023-06",
+    "quality_scores": {
+      "A": 97,
+      "B": 98
+    },
+    "same_runtime_claimed": false,
+    "pooled_with_case08": false,
+    "current_performance_or_causal_estimate": false
+  },
+  "historical_case07_reference": {
+    "experiment_id": "tree-case-20261023-07",
+    "status": "aborted_before_grading",
+    "quality_assessed": false,
+    "pooled_with_case08": false,
+    "original_records_preserved": true
+  },
+  "prerequisite_accounting": {
+    "successful_compatibility_proof": "budget-mcp-prerequisite-20261024-01",
+    "kind": "budget_mcp_multiturn_prerequisite",
+    "included_in_arm_requests_or_usage": false,
+    "mcp_audit_counts_identify_caller": false,
+    "sha256_from_runtime_snapshot": "b233bf1e11a95db7f59021384ef92f8a08ed9d531731e9e83a9f028702dc3465"
+  },
+  "reviewer_declared_blind_complete": true,
+  "rubric_criteria": 26,
+  "critical_gates": [
+    "4d.coordinates",
+    "4d.variable_w",
+    "4d.rotation_math",
+    "4d.projection",
+    "reliability.headless"
+  ],
+  "strict_profile_and_history_isolation": "degraded; shared auth/rollouts and historical metadata import possible",
+  "hard_helper_readonly_depth": "instruction-only; not verified by this report",
+  "causal_module_contribution": "not established by this single case",
+  "speedup_percent": null,
+  "raw_evidence_boundary": "Local-only native request bodies/private instructions, native/auth state, journals/databases and raw stderr; common frozen task brief is published in protocol; no original source changes",
+  "arms": {
+    "A": {
+      "anonymous_review_id": "solution-15",
+      "execution_status": "completed_unverified",
+      "native_exit_code": 0,
+      "total_arm_s": 1120.781,
+      "deadline_censored": false,
+      "orchestration_frontload_s": 0.062,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 97,
+      "artifact_accepted": true,
+      "critical_gates": {
+        "4d.coordinates": "pass",
+        "4d.variable_w": "pass",
+        "4d.rotation_math": "pass",
+        "4d.projection": "pass",
+        "reliability.headless": "pass"
+      },
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        }
+      ],
+      "native_delegation": {
+        "reported_orchestration_status": null,
+        "reported_delegation_evidence": "not_exposed",
+        "reported_multi_agent_verified": false,
+        "native_child_count": null,
+        "parent_link_verified": false,
+        "child_model_metadata": [],
+        "peak_concurrent_agents": 1,
+        "requested_effort_is_not_identity_proof": true,
+        "hard_readonly_or_depth_verified": false
+      },
+      "usage": {
+        "native_requests_total_including_probes": 34,
+        "request_records_observed": 34,
+        "completed_requests_observed": 34,
+        "censored_or_incomplete_requests": 0,
+        "phase_usage_evidence": [
+          {
+            "phase": "main",
+            "request_records_available": true,
+            "requests": 34,
+            "completed_requests": 34
+          }
+        ],
+        "all_phase_request_evidence_available": true,
+        "aggregate_usage": {
+          "input_tokens": 1741246,
+          "output_tokens": 43201,
+          "total_tokens": 1784447,
+          "cached_tokens": 481536,
+          "reasoning_tokens": 10305
+        },
+        "known_completed_usage_lower_bound": {
+          "input_tokens": 1741246,
+          "output_tokens": 43201,
+          "total_tokens": 1784447,
+          "cached_tokens": 481536,
+          "reasoning_tokens": 10305
+        },
+        "usage_known_completed_requests": 34,
+        "requested_profiles": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "requests": 34
+          }
+        ],
+        "requested_profile_counts_are_requests_not_agents": true,
+        "actual_response_models": [
+          "gpt-6.1-sol"
+        ],
+        "money_boundary": "Native subscription usage is not actual API billing; unknown charges/quota deltas remain null"
+      },
+      "budget_feedback": {
+        "channel": "native MCP flow_budget.status",
+        "configured": false,
+        "use_status": "not_configured",
+        "used_proven": null,
+        "healthy": null,
+        "publisher_failed": null,
+        "audit_valid": null,
+        "status_calls": null,
+        "successful_calls": null,
+        "unavailable_calls": null,
+        "observed_phase_counts": null,
+        "phase_counts_verified": false,
+        "mcp_audit_counts_identify_caller": false,
+        "gateway_guidance": {
+          "enabled": false,
+          "applied_requests": 0,
+          "statuses": {
+            "disabled": 34
+          }
+        },
+        "scope": "MCP configuration, successful audited calls and channel health are separate; no caller/acceptance/benefit inference",
+        "prerequisite_usage_included_in_arm_usage": false,
+        "request_budget_snapshots": [
+          {
+            "request_sequence": 1,
+            "phase": "build",
+            "elapsed_s": 23.640000000130385,
+            "remaining_s": 1476.3599999998696,
+            "requests_used": 1,
+            "requests_remaining": 79,
+            "time_fraction": 0.015760000000086923,
+            "request_fraction": 0.0125
+          },
+          {
+            "request_sequence": 2,
+            "phase": "build",
+            "elapsed_s": 31.312000000150874,
+            "remaining_s": 1468.6879999998491,
+            "requests_used": 2,
+            "requests_remaining": 78,
+            "time_fraction": 0.02087466666676725,
+            "request_fraction": 0.025
+          },
+          {
+            "request_sequence": 3,
+            "phase": "build",
+            "elapsed_s": 39.35899999993853,
+            "remaining_s": 1460.6410000000615,
+            "requests_used": 3,
+            "requests_remaining": 77,
+            "time_fraction": 0.026239333333292356,
+            "request_fraction": 0.0375
+          },
+          {
+            "request_sequence": 4,
+            "phase": "build",
+            "elapsed_s": 44.890000000130385,
+            "remaining_s": 1455.1099999998696,
+            "requests_used": 4,
+            "requests_remaining": 76,
+            "time_fraction": 0.02992666666675359,
+            "request_fraction": 0.05
+          },
+          {
+            "request_sequence": 5,
+            "phase": "build",
+            "elapsed_s": 54.78099999995902,
+            "remaining_s": 1445.219000000041,
+            "requests_used": 5,
+            "requests_remaining": 75,
+            "time_fraction": 0.03652066666663935,
+            "request_fraction": 0.0625
+          },
+          {
+            "request_sequence": 6,
+            "phase": "build",
+            "elapsed_s": 65.32799999997951,
+            "remaining_s": 1434.6720000000205,
+            "requests_used": 6,
+            "requests_remaining": 74,
+            "time_fraction": 0.04355199999998634,
+            "request_fraction": 0.075
+          },
+          {
+            "request_sequence": 7,
+            "phase": "build",
+            "elapsed_s": 146.23399999993853,
+            "remaining_s": 1353.7660000000615,
+            "requests_used": 7,
+            "requests_remaining": 73,
+            "time_fraction": 0.09748933333329235,
+            "request_fraction": 0.0875
+          },
+          {
+            "request_sequence": 8,
+            "phase": "build",
+            "elapsed_s": 217.31200000015087,
+            "remaining_s": 1282.6879999998491,
+            "requests_used": 8,
+            "requests_remaining": 72,
+            "time_fraction": 0.14487466666676724,
+            "request_fraction": 0.1
+          },
+          {
+            "request_sequence": 9,
+            "phase": "build",
+            "elapsed_s": 223.93700000015087,
+            "remaining_s": 1276.0629999998491,
+            "requests_used": 9,
+            "requests_remaining": 71,
+            "time_fraction": 0.14929133333343392,
+            "request_fraction": 0.1125
+          },
+          {
+            "request_sequence": 10,
+            "phase": "build",
+            "elapsed_s": 320.98399999993853,
+            "remaining_s": 1179.0160000000615,
+            "requests_used": 10,
+            "requests_remaining": 70,
+            "time_fraction": 0.21398933333329234,
+            "request_fraction": 0.125
+          },
+          {
+            "request_sequence": 11,
+            "phase": "build",
+            "elapsed_s": 343.155999999959,
+            "remaining_s": 1156.844000000041,
+            "requests_used": 11,
+            "requests_remaining": 69,
+            "time_fraction": 0.22877066666663934,
+            "request_fraction": 0.1375
+          },
+          {
+            "request_sequence": 12,
+            "phase": "build",
+            "elapsed_s": 366.5,
+            "remaining_s": 1133.5,
+            "requests_used": 12,
+            "requests_remaining": 68,
+            "time_fraction": 0.24433333333333335,
+            "request_fraction": 0.15
+          },
+          {
+            "request_sequence": 13,
+            "phase": "build",
+            "elapsed_s": 373.125,
+            "remaining_s": 1126.875,
+            "requests_used": 13,
+            "requests_remaining": 67,
+            "time_fraction": 0.24875,
+            "request_fraction": 0.1625
+          },
+          {
+            "request_sequence": 14,
+            "phase": "build",
+            "elapsed_s": 402.905999999959,
+            "remaining_s": 1097.094000000041,
+            "requests_used": 14,
+            "requests_remaining": 66,
+            "time_fraction": 0.2686039999999727,
+            "request_fraction": 0.175
+          },
+          {
+            "request_sequence": 15,
+            "phase": "build",
+            "elapsed_s": 430.6870000001509,
+            "remaining_s": 1069.3129999998491,
+            "requests_used": 15,
+            "requests_remaining": 65,
+            "time_fraction": 0.2871246666667672,
+            "request_fraction": 0.1875
+          },
+          {
+            "request_sequence": 16,
+            "phase": "build",
+            "elapsed_s": 508.75,
+            "remaining_s": 991.25,
+            "requests_used": 16,
+            "requests_remaining": 64,
+            "time_fraction": 0.33916666666666667,
+            "request_fraction": 0.2
+          },
+          {
+            "request_sequence": 17,
+            "phase": "build",
+            "elapsed_s": 516.405999999959,
+            "remaining_s": 983.594000000041,
+            "requests_used": 17,
+            "requests_remaining": 63,
+            "time_fraction": 0.34427066666663936,
+            "request_fraction": 0.2125
+          },
+          {
+            "request_sequence": 18,
+            "phase": "build",
+            "elapsed_s": 599.75,
+            "remaining_s": 900.25,
+            "requests_used": 18,
+            "requests_remaining": 62,
+            "time_fraction": 0.3998333333333333,
+            "request_fraction": 0.225
+          },
+          {
+            "request_sequence": 19,
+            "phase": "build",
+            "elapsed_s": 614.6720000000205,
+            "remaining_s": 885.3279999999795,
+            "requests_used": 19,
+            "requests_remaining": 61,
+            "time_fraction": 0.409781333333347,
+            "request_fraction": 0.2375
+          },
+          {
+            "request_sequence": 20,
+            "phase": "build",
+            "elapsed_s": 618.4220000000205,
+            "remaining_s": 881.5779999999795,
+            "requests_used": 20,
+            "requests_remaining": 60,
+            "time_fraction": 0.412281333333347,
+            "request_fraction": 0.25
+          },
+          {
+            "request_sequence": 21,
+            "phase": "build",
+            "elapsed_s": 693.9839999999385,
+            "remaining_s": 806.0160000000615,
+            "requests_used": 21,
+            "requests_remaining": 59,
+            "time_fraction": 0.46265599999995904,
+            "request_fraction": 0.2625
+          },
+          {
+            "request_sequence": 22,
+            "phase": "build",
+            "elapsed_s": 717.3120000001509,
+            "remaining_s": 782.6879999998491,
+            "requests_used": 22,
+            "requests_remaining": 58,
+            "time_fraction": 0.4782080000001006,
+            "request_fraction": 0.275
+          },
+          {
+            "request_sequence": 23,
+            "phase": "build",
+            "elapsed_s": 725.6720000000205,
+            "remaining_s": 774.3279999999795,
+            "requests_used": 23,
+            "requests_remaining": 57,
+            "time_fraction": 0.483781333333347,
+            "request_fraction": 0.2875
+          },
+          {
+            "request_sequence": 24,
+            "phase": "build",
+            "elapsed_s": 738.594000000041,
+            "remaining_s": 761.405999999959,
+            "requests_used": 24,
+            "requests_remaining": 56,
+            "time_fraction": 0.4923960000000273,
+            "request_fraction": 0.3
+          },
+          {
+            "request_sequence": 25,
+            "phase": "build",
+            "elapsed_s": 749.875,
+            "remaining_s": 750.125,
+            "requests_used": 25,
+            "requests_remaining": 55,
+            "time_fraction": 0.4999166666666667,
+            "request_fraction": 0.3125
+          },
+          {
+            "request_sequence": 26,
+            "phase": "stabilize",
+            "elapsed_s": 793.3279999999795,
+            "remaining_s": 706.6720000000205,
+            "requests_used": 26,
+            "requests_remaining": 54,
+            "time_fraction": 0.5288853333333197,
+            "request_fraction": 0.325
+          },
+          {
+            "request_sequence": 27,
+            "phase": "stabilize",
+            "elapsed_s": 800.4839999999385,
+            "remaining_s": 699.5160000000615,
+            "requests_used": 27,
+            "requests_remaining": 53,
+            "time_fraction": 0.533655999999959,
+            "request_fraction": 0.3375
+          },
+          {
+            "request_sequence": 28,
+            "phase": "stabilize",
+            "elapsed_s": 918.8279999999795,
+            "remaining_s": 581.1720000000205,
+            "requests_used": 28,
+            "requests_remaining": 52,
+            "time_fraction": 0.6125519999999863,
+            "request_fraction": 0.35
+          },
+          {
+            "request_sequence": 29,
+            "phase": "stabilize",
+            "elapsed_s": 959.0470000000205,
+            "remaining_s": 540.9529999999795,
+            "requests_used": 29,
+            "requests_remaining": 51,
+            "time_fraction": 0.6393646666666803,
+            "request_fraction": 0.3625
+          },
+          {
+            "request_sequence": 30,
+            "phase": "stabilize",
+            "elapsed_s": 1002.9220000000205,
+            "remaining_s": 497.0779999999795,
+            "requests_used": 30,
+            "requests_remaining": 50,
+            "time_fraction": 0.6686146666666803,
+            "request_fraction": 0.375
+          },
+          {
+            "request_sequence": 31,
+            "phase": "stabilize",
+            "elapsed_s": 1025.219000000041,
+            "remaining_s": 474.780999999959,
+            "requests_used": 31,
+            "requests_remaining": 49,
+            "time_fraction": 0.6834793333333606,
+            "request_fraction": 0.3875
+          },
+          {
+            "request_sequence": 32,
+            "phase": "stabilize",
+            "elapsed_s": 1028.4529999999795,
+            "remaining_s": 471.5470000000205,
+            "requests_used": 32,
+            "requests_remaining": 48,
+            "time_fraction": 0.6856353333333197,
+            "request_fraction": 0.4
+          },
+          {
+            "request_sequence": 33,
+            "phase": "stabilize",
+            "elapsed_s": 1084.655999999959,
+            "remaining_s": 415.344000000041,
+            "requests_used": 33,
+            "requests_remaining": 47,
+            "time_fraction": 0.7231039999999727,
+            "request_fraction": 0.4125
+          },
+          {
+            "request_sequence": 34,
+            "phase": "stabilize",
+            "elapsed_s": 1107.25,
+            "remaining_s": 392.75,
+            "requests_used": 34,
+            "requests_remaining": 46,
+            "time_fraction": 0.7381666666666666,
+            "request_fraction": 0.425
+          }
+        ],
+        "passive_request_phase_counts": {
+          "build": 25,
+          "stabilize": 9
+        },
+        "requests_missing_budget_snapshot": 0,
+        "phase_source": "subscription.requests.execution_budget; passive observations, not proof of agent exposure",
+        "mcp_phase_source": "budget_tool.phases from successful audited status calls only; invalid-audit counts remain unverified"
+      },
+      "request_timings": {
+        "request_records_available": true,
+        "fields": {
+          "duration_s": {
+            "observations": 34,
+            "sum_s": 904.218,
+            "min_s": 3.078,
+            "max_s": 111.078,
+            "mean_s": 26.59464705882353
+          },
+          "upstream_open_s": {
+            "observations": 34,
+            "sum_s": 44.796,
+            "min_s": 0.969,
+            "max_s": 2.703,
+            "mean_s": 1.3175294117647058
+          },
+          "upstream_body_read_s": {
+            "observations": 34,
+            "sum_s": 859.252,
+            "min_s": 1.86,
+            "max_s": 109.891,
+            "mean_s": 25.27211764705882
+          }
+        },
+        "scope": "Per-request gateway duration/open/body-read observations; overlapping requests are not additive task latency",
+        "pure_transport_overhead_measured": false,
+        "upstream_open_boundary": "Includes connect/TLS and upstream waiting until response headers",
+        "body_read_boundary": "Includes buffered upstream streaming/generation and network waiting; not pure network overhead"
+      },
+      "root_cli_usage": {
+        "input_tokens": 1741246,
+        "output_tokens": 43201,
+        "cached_tokens": 481536
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "mercury_successful_calls": 0,
+      "harness_inspired_probes": 0,
+      "upstream_harness2_calls": 0,
+      "harness_runtime_guard": {
+        "status": "disabled",
+        "application_quality_eligible": null,
+        "calibration_deferred": false,
+        "active_optimizer_benefit_proven": false
+      },
+      "mercury_reported_usage": {},
+      "harness_adoption": {
+        "eligible": null,
+        "adopted": null,
+        "rollback_recorded": false,
+        "rolled_back": null
+      },
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 25,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "pass",
+        "tests_run": 45,
+        "test_errors": null,
+        "normalization_to_100": false
+      },
+      "supplemental_cli": {
+        "status": "not_run",
+        "frames": null,
+        "reason": "No supplemental CLI run supplied; frozen CLI evidence remains authoritative"
+      },
+      "supplement_does_not_amend_frozen": true,
+      "independent_geometry": {
+        "status": "fail",
+        "seeds": [
+          42,
+          137
+        ]
+      },
+      "independent_native": {
+        "status": "pass",
+        "passed": 57,
+        "failed": 0,
+        "not_assessed": 0,
+        "partial": 0,
+        "actual_check_count": 57,
+        "reported_check_count": 57,
+        "reported_expected_check_count": 57,
+        "reported_complete_protocol": true,
+        "required_protocol_check_count": 57,
+        "protocol_pass_proven": true,
+        "original_status_preserved": true,
+        "normalization_to_57": false,
+        "nonpass_checks": [],
+        "visible_terminal_font_assessed": false
+      },
+      "root_probe_pid_samples": {
+        "main": {
+          "samples": 111,
+          "input_rows": 112,
+          "state_counts": {
+            "alive": 111,
+            "dead": 1
+          },
+          "process_status_counts": {
+            "alive": 111,
+            "dead": 1
+          },
+          "sample_status_counts": {
+            "observed": 111,
+            "unavailable": 1
+          },
+          "invalid_observed_numeric_rows": 0,
+          "first_observed_utc": "2026-10-23T21:12:31.157929+00:00",
+          "last_observed_utc": "2026-10-23T21:30:51.306509+00:00",
+          "max_observed_working_set_bytes": 207163392,
+          "max_reported_peak_working_set_bytes": 671924224,
+          "first_observed_cumulative_cpu_s": 11.96875,
+          "last_observed_cumulative_cpu_s": 52.515625,
+          "observed_cpu_delta_s": 40.546875,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case08-A-source.zip",
+        "sha256": "b39a49a3876fc6046a68d005e3dd0bbe34fb4c18023ac67fd4b8dab5b5754de2",
+        "archive_bytes": 40224,
+        "file_count": 33,
+        "archive_version": 1,
+        "packaging_filter_version": 2,
+        "local_only": true
+      }
+    },
+    "B": {
+      "anonymous_review_id": "solution-16",
+      "execution_status": "failed",
+      "native_exit_code": 1,
+      "total_arm_s": 1094.797,
+      "deadline_censored": false,
+      "orchestration_frontload_s": 1.062,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 97,
+      "artifact_accepted": true,
+      "critical_gates": {
+        "4d.coordinates": "pass",
+        "4d.variable_w": "pass",
+        "4d.rotation_math": "pass",
+        "4d.projection": "pass",
+        "reliability.headless": "pass"
+      },
+      "categories": [
+        {
+          "id": "2d",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "2d.seed_variation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "score": 13,
+          "max": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.geometry",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "3d.occlusion",
+              "score": 5,
+              "max": 5,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "score": 20,
+          "max": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.coordinates",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.variable_w",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.rotation_math",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            },
+            {
+              "id": "4d.projection",
+              "score": 4,
+              "max": 4,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "score": 12,
+          "max": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.export",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "ux.interactive_controls",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            },
+            {
+              "id": "ux.stable_object",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "score": 9,
+          "max": 12,
+          "status": "partial",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "score": 9,
+              "max": 12,
+              "status": "partial"
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "score": 10,
+          "max": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.tiny",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.resize",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "score": 9,
+          "max": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "score": 3,
+              "max": 3,
+              "status": "pass"
+            },
+            {
+              "id": "tests.coverage",
+              "score": 6,
+              "max": 6,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "score": 7,
+          "max": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "score": 7,
+              "max": 7,
+              "status": "pass"
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "score": 5,
+          "max": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            },
+            {
+              "id": "readme.installation",
+              "score": 1,
+              "max": 1,
+              "status": "pass"
+            },
+            {
+              "id": "readme.4d_explanation",
+              "score": 2,
+              "max": 2,
+              "status": "pass"
+            }
+          ]
+        }
+      ],
+      "native_delegation": {
+        "reported_orchestration_status": "verified",
+        "reported_delegation_evidence": "native_parent_link_and_usage_metadata",
+        "reported_multi_agent_verified": true,
+        "native_child_count": 1,
+        "parent_link_verified": true,
+        "child_model_metadata": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "depth": 1,
+            "tokens_used": 65304
+          }
+        ],
+        "peak_concurrent_agents": null,
+        "requested_effort_is_not_identity_proof": true,
+        "hard_readonly_or_depth_verified": false
+      },
+      "usage": {
+        "native_requests_total_including_probes": 28,
+        "request_records_observed": 28,
+        "completed_requests_observed": 27,
+        "censored_or_incomplete_requests": 1,
+        "phase_usage_evidence": [
+          {
+            "phase": "main",
+            "request_records_available": true,
+            "requests": 28,
+            "completed_requests": 27
+          }
+        ],
+        "all_phase_request_evidence_available": true,
+        "aggregate_usage": null,
+        "known_completed_usage_lower_bound": {
+          "input_tokens": 1156344,
+          "output_tokens": 40713,
+          "total_tokens": 1197057,
+          "cached_tokens": 350208,
+          "reasoning_tokens": 10197
+        },
+        "usage_known_completed_requests": 27,
+        "requested_profiles": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "requests": 25
+          },
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "requests": 3
+          }
+        ],
+        "requested_profile_counts_are_requests_not_agents": true,
+        "actual_response_models": [
+          "gpt-6.1-sol"
+        ],
+        "money_boundary": "Native subscription usage is not actual API billing; unknown charges/quota deltas remain null"
+      },
+      "budget_feedback": {
+        "channel": "native MCP flow_budget.status",
+        "configured": true,
+        "use_status": "observed",
+        "used_proven": true,
+        "healthy": true,
+        "publisher_failed": false,
+        "audit_valid": true,
+        "status_calls": 4,
+        "successful_calls": 4,
+        "unavailable_calls": 0,
+        "observed_phase_counts": {
+          "build": 3,
+          "stabilize": 1
+        },
+        "phase_counts_verified": true,
+        "mcp_audit_counts_identify_caller": false,
+        "gateway_guidance": {
+          "enabled": false,
+          "applied_requests": 0,
+          "statuses": {
+            "disabled": 28
+          }
+        },
+        "scope": "MCP configuration, successful audited calls and channel health are separate; no caller/acceptance/benefit inference",
+        "prerequisite_usage_included_in_arm_usage": false,
+        "request_budget_snapshots": [
+          {
+            "request_sequence": 1,
+            "phase": "build",
+            "elapsed_s": 25.640000000130385,
+            "remaining_s": 1474.3599999998696,
+            "requests_used": 1,
+            "requests_remaining": 79,
+            "time_fraction": 0.017093333333420255,
+            "request_fraction": 0.0125
+          },
+          {
+            "request_sequence": 2,
+            "phase": "build",
+            "elapsed_s": 35.42200000002049,
+            "remaining_s": 1464.5779999999795,
+            "requests_used": 2,
+            "requests_remaining": 78,
+            "time_fraction": 0.023614666666680325,
+            "request_fraction": 0.025
+          },
+          {
+            "request_sequence": 3,
+            "phase": "build",
+            "elapsed_s": 35.96900000004098,
+            "remaining_s": 1464.030999999959,
+            "requests_used": 3,
+            "requests_remaining": 77,
+            "time_fraction": 0.023979333333360654,
+            "request_fraction": 0.0375
+          },
+          {
+            "request_sequence": 4,
+            "phase": "build",
+            "elapsed_s": 43.29700000002049,
+            "remaining_s": 1456.7029999999795,
+            "requests_used": 4,
+            "requests_remaining": 76,
+            "time_fraction": 0.028864666666680326,
+            "request_fraction": 0.05
+          },
+          {
+            "request_sequence": 5,
+            "phase": "build",
+            "elapsed_s": 43.71900000004098,
+            "remaining_s": 1456.280999999959,
+            "requests_used": 5,
+            "requests_remaining": 75,
+            "time_fraction": 0.02914600000002732,
+            "request_fraction": 0.0625
+          },
+          {
+            "request_sequence": 6,
+            "phase": "build",
+            "elapsed_s": 48.67200000002049,
+            "remaining_s": 1451.3279999999795,
+            "requests_used": 6,
+            "requests_remaining": 74,
+            "time_fraction": 0.03244800000001366,
+            "request_fraction": 0.075
+          },
+          {
+            "request_sequence": 7,
+            "phase": "build",
+            "elapsed_s": 50.0,
+            "remaining_s": 1450.0,
+            "requests_used": 7,
+            "requests_remaining": 73,
+            "time_fraction": 0.03333333333333333,
+            "request_fraction": 0.0875
+          },
+          {
+            "request_sequence": 8,
+            "phase": "build",
+            "elapsed_s": 60.07799999997951,
+            "remaining_s": 1439.9220000000205,
+            "requests_used": 8,
+            "requests_remaining": 72,
+            "time_fraction": 0.04005199999998634,
+            "request_fraction": 0.1
+          },
+          {
+            "request_sequence": 9,
+            "phase": "build",
+            "elapsed_s": 69.875,
+            "remaining_s": 1430.125,
+            "requests_used": 9,
+            "requests_remaining": 71,
+            "time_fraction": 0.04658333333333333,
+            "request_fraction": 0.1125
+          },
+          {
+            "request_sequence": 10,
+            "phase": "build",
+            "elapsed_s": 93.26500000013039,
+            "remaining_s": 1406.7349999998696,
+            "requests_used": 10,
+            "requests_remaining": 70,
+            "time_fraction": 0.06217666666675359,
+            "request_fraction": 0.125
+          },
+          {
+            "request_sequence": 11,
+            "phase": "build",
+            "elapsed_s": 205.76500000013039,
+            "remaining_s": 1294.2349999998696,
+            "requests_used": 11,
+            "requests_remaining": 69,
+            "time_fraction": 0.1371766666667536,
+            "request_fraction": 0.1375
+          },
+          {
+            "request_sequence": 12,
+            "phase": "build",
+            "elapsed_s": 294.9529999999795,
+            "remaining_s": 1205.0470000000205,
+            "requests_used": 12,
+            "requests_remaining": 68,
+            "time_fraction": 0.19663533333331967,
+            "request_fraction": 0.15
+          },
+          {
+            "request_sequence": 13,
+            "phase": "build",
+            "elapsed_s": 308.1400000001304,
+            "remaining_s": 1191.8599999998696,
+            "requests_used": 13,
+            "requests_remaining": 67,
+            "time_fraction": 0.20542666666675358,
+            "request_fraction": 0.1625
+          },
+          {
+            "request_sequence": 14,
+            "phase": "build",
+            "elapsed_s": 320.0150000001304,
+            "remaining_s": 1179.9849999998696,
+            "requests_used": 14,
+            "requests_remaining": 66,
+            "time_fraction": 0.21334333333342026,
+            "request_fraction": 0.175
+          },
+          {
+            "request_sequence": 15,
+            "phase": "build",
+            "elapsed_s": 337.875,
+            "remaining_s": 1162.125,
+            "requests_used": 15,
+            "requests_remaining": 65,
+            "time_fraction": 0.22525,
+            "request_fraction": 0.1875
+          },
+          {
+            "request_sequence": 16,
+            "phase": "build",
+            "elapsed_s": 341.2650000001304,
+            "remaining_s": 1158.7349999998696,
+            "requests_used": 16,
+            "requests_remaining": 64,
+            "time_fraction": 0.22751000000008692,
+            "request_fraction": 0.2
+          },
+          {
+            "request_sequence": 17,
+            "phase": "build",
+            "elapsed_s": 468.219000000041,
+            "remaining_s": 1031.780999999959,
+            "requests_used": 17,
+            "requests_remaining": 63,
+            "time_fraction": 0.31214600000002735,
+            "request_fraction": 0.2125
+          },
+          {
+            "request_sequence": 18,
+            "phase": "build",
+            "elapsed_s": 478.219000000041,
+            "remaining_s": 1021.780999999959,
+            "requests_used": 18,
+            "requests_remaining": 62,
+            "time_fraction": 0.318812666666694,
+            "request_fraction": 0.225
+          },
+          {
+            "request_sequence": 19,
+            "phase": "build",
+            "elapsed_s": 549.5,
+            "remaining_s": 950.5,
+            "requests_used": 19,
+            "requests_remaining": 61,
+            "time_fraction": 0.36633333333333334,
+            "request_fraction": 0.2375
+          },
+          {
+            "request_sequence": 20,
+            "phase": "build",
+            "elapsed_s": 565.5779999999795,
+            "remaining_s": 934.4220000000205,
+            "requests_used": 20,
+            "requests_remaining": 60,
+            "time_fraction": 0.37705199999998634,
+            "request_fraction": 0.25
+          },
+          {
+            "request_sequence": 21,
+            "phase": "build",
+            "elapsed_s": 604.9529999999795,
+            "remaining_s": 895.0470000000205,
+            "requests_used": 21,
+            "requests_remaining": 59,
+            "time_fraction": 0.40330199999998634,
+            "request_fraction": 0.2625
+          },
+          {
+            "request_sequence": 22,
+            "phase": "build",
+            "elapsed_s": 617.780999999959,
+            "remaining_s": 882.219000000041,
+            "requests_used": 22,
+            "requests_remaining": 58,
+            "time_fraction": 0.4118539999999727,
+            "request_fraction": 0.275
+          },
+          {
+            "request_sequence": 23,
+            "phase": "build",
+            "elapsed_s": 655.594000000041,
+            "remaining_s": 844.405999999959,
+            "requests_used": 23,
+            "requests_remaining": 57,
+            "time_fraction": 0.43706266666669397,
+            "request_fraction": 0.2875
+          },
+          {
+            "request_sequence": 24,
+            "phase": "build",
+            "elapsed_s": 743.6870000001509,
+            "remaining_s": 756.3129999998491,
+            "requests_used": 24,
+            "requests_remaining": 56,
+            "time_fraction": 0.4957913333334339,
+            "request_fraction": 0.3
+          },
+          {
+            "request_sequence": 25,
+            "phase": "stabilize",
+            "elapsed_s": 793.2650000001304,
+            "remaining_s": 706.7349999998696,
+            "requests_used": 25,
+            "requests_remaining": 55,
+            "time_fraction": 0.5288433333334203,
+            "request_fraction": 0.3125
+          },
+          {
+            "request_sequence": 26,
+            "phase": "stabilize",
+            "elapsed_s": 899.875,
+            "remaining_s": 600.125,
+            "requests_used": 26,
+            "requests_remaining": 54,
+            "time_fraction": 0.5999166666666667,
+            "request_fraction": 0.325
+          },
+          {
+            "request_sequence": 27,
+            "phase": "stabilize",
+            "elapsed_s": 949.155999999959,
+            "remaining_s": 550.844000000041,
+            "requests_used": 27,
+            "requests_remaining": 53,
+            "time_fraction": 0.6327706666666394,
+            "request_fraction": 0.3375
+          },
+          {
+            "request_sequence": 28,
+            "phase": "stabilize",
+            "elapsed_s": 1035.7029999999795,
+            "remaining_s": 464.2970000000205,
+            "requests_used": 28,
+            "requests_remaining": 52,
+            "time_fraction": 0.690468666666653,
+            "request_fraction": 0.35
+          }
+        ],
+        "passive_request_phase_counts": {
+          "build": 24,
+          "stabilize": 4
+        },
+        "requests_missing_budget_snapshot": 0,
+        "phase_source": "subscription.requests.execution_budget; passive observations, not proof of agent exposure",
+        "mcp_phase_source": "budget_tool.phases from successful audited status calls only; invalid-audit counts remain unverified"
+      },
+      "request_timings": {
+        "request_records_available": true,
+        "fields": {
+          "duration_s": {
+            "observations": 28,
+            "sum_s": 911.294,
+            "min_s": 3.188,
+            "max_s": 109.219,
+            "mean_s": 32.546214285714285
+          },
+          "upstream_open_s": {
+            "observations": 28,
+            "sum_s": 33.779,
+            "min_s": 0.953,
+            "max_s": 2.015,
+            "mean_s": 1.2063928571428573
+          },
+          "upstream_body_read_s": {
+            "observations": 27,
+            "sum_s": 822.126,
+            "min_s": 2.094,
+            "max_s": 108.141,
+            "mean_s": 30.44911111111111
+          }
+        },
+        "scope": "Per-request gateway duration/open/body-read observations; overlapping requests are not additive task latency",
+        "pure_transport_overhead_measured": false,
+        "upstream_open_boundary": "Includes connect/TLS and upstream waiting until response headers",
+        "body_read_boundary": "Includes buffered upstream streaming/generation and network waiting; not pure network overhead"
+      },
+      "root_cli_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cached_tokens": null
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "mercury_successful_calls": 1,
+      "harness_inspired_probes": 0,
+      "upstream_harness2_calls": 0,
+      "harness_runtime_guard": {
+        "status": "deferred",
+        "application_quality_eligible": false,
+        "calibration_deferred": true,
+        "active_optimizer_benefit_proven": false
+      },
+      "mercury_reported_usage": {
+        "cost": 0,
+        "input_tokens": 146,
+        "output_tokens": 1
+      },
+      "harness_adoption": {
+        "eligible": null,
+        "adopted": false,
+        "rollback_recorded": false,
+        "rolled_back": null
+      },
+      "frozen_evaluator": {
+        "discovery_status": "pass",
+        "raw_assessed_points": 25,
+        "raw_assessed_max": 25,
+        "unassessed_max": 75,
+        "tests_status": "pass",
+        "tests_run": 31,
+        "test_errors": null,
+        "normalization_to_100": false
+      },
+      "supplemental_cli": {
+        "status": "not_run",
+        "frames": null,
+        "reason": "No supplemental CLI run supplied; frozen CLI evidence remains authoritative"
+      },
+      "supplement_does_not_amend_frozen": true,
+      "independent_geometry": {
+        "status": "fail",
+        "seeds": [
+          42,
+          137
+        ]
+      },
+      "independent_native": {
+        "status": "pass",
+        "passed": 57,
+        "failed": 0,
+        "not_assessed": 0,
+        "partial": 0,
+        "actual_check_count": 57,
+        "reported_check_count": 57,
+        "reported_expected_check_count": 57,
+        "reported_complete_protocol": true,
+        "required_protocol_check_count": 57,
+        "protocol_pass_proven": true,
+        "original_status_preserved": true,
+        "normalization_to_57": false,
+        "nonpass_checks": [],
+        "visible_terminal_font_assessed": false
+      },
+      "root_probe_pid_samples": {
+        "main": {
+          "samples": 109,
+          "input_rows": 112,
+          "state_counts": {
+            "alive": 109,
+            "dead": 3
+          },
+          "process_status_counts": {
+            "alive": 109,
+            "dead": 3
+          },
+          "sample_status_counts": {
+            "observed": 109,
+            "unavailable": 3
+          },
+          "invalid_observed_numeric_rows": 0,
+          "first_observed_utc": "2026-10-23T21:12:31.157929+00:00",
+          "last_observed_utc": "2026-10-23T21:30:31.298990+00:00",
+          "max_observed_working_set_bytes": 209649664,
+          "max_reported_peak_working_set_bytes": 671526912,
+          "first_observed_cumulative_cpu_s": 10.84375,
+          "last_observed_cumulative_cpu_s": 50.78125,
+          "observed_cpu_delta_s": 39.9375,
+          "scope": "Root CLI PID late-start samples only; not descendants, unsampled intervals or remote model compute"
+        }
+      },
+      "local_source_archive": {
+        "archive": "case08-B-source.zip",
+        "sha256": "d943d01d9a034cd09e2121b990d77cca9290be2968b56f71a33b334f5ccc2575",
+        "archive_bytes": 36560,
+        "file_count": 30,
+        "archive_version": 1,
+        "packaging_filter_version": 2,
+        "local_only": true
+      }
+    }
+  }
+}

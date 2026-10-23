@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "initial_geometry_attempt": "geometry-15-execution.json",
+  "initial_report_created": false,
+  "original_attempt_preserved": true,
+  "cause": "Checker expected manifest variable rebound to projection tuple; final source hashing iterated coordinate values",
+  "corrected_checker": "geometry_case08_independent_v2.py",
+  "corrected_sha256": "45ee3c54bae1b97fb5695154999f5e6b9c4c97c6454ffed7eb40103bcc8eb0f0",
+  "changes": "Three references rename manifest variable; no mathematical/app/threshold change",
+  "new_launcher": "verify_case08_check_v2.py",
+  "new_launcher_sha256": "02e724bd3198f9858cd3c689d901bb6f091853c399900bff72a2db28ad68a3d8",
+  "stderr_now_retained_local_only": true,
+  "application_sources_modified": false,
+  "frozen_task_evaluator_rubric_modified": false,
+  "second_attempt_explicitly_separate": true
+}

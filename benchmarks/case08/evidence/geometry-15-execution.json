@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "kind": "geometry",
+  "solution_id": 15,
+  "exit_code": 1,
+  "wall_clock_s": 2.625,
+  "timeout_s": 600,
+  "sdk_cli_timed_out": false,
+  "launch_error": null,
+  "checker_sha256": "569b3a147cad4944bb6e83913767058139a902f9b46e160d1d0113f10264bb8f",
+  "checker_support_sha256": {
+    "geometry_case08_independent.py": "569b3a147cad4944bb6e83913767058139a902f9b46e160d1d0113f10264bb8f",
+    "conpty_case08_neutral.py": "d7c59cf9a3a999dd64d6d796cc9e8ce501d157000db990e2a9f4b9c59daaa6f9"
+  },
+  "checker_support_unchanged": true,
+  "source_files_checked": 34,
+  "submitted_source_unchanged": true,
+  "source_integrity_error": null,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_bytes": 772,
+  "stderr_sha256": "3de167770ff0fa37cfd3ba140e7b0593abc0257054d596c1984ce70857f3cdcd",
+  "permission_profile_sha256": "ad0f2cc2f7f61a13ff8fb0cba5d6c8c826e2f0fe876351be4e6773497fe2692d",
+  "checker_permission": "read-only verifier outside writable evaluation root",
+  "network_enabled": false,
+  "model_calls": 0,
+  "boundary": "Existing official CLI setup; user .codex/.agents tool reads denied; no auth copying",
+  "timeout_boundary": "600-second CLI timeout; descendant cleanup is not independently established on timeout",
+  "frozen_evaluator_status_amended": false
+}

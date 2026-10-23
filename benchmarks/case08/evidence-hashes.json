@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "experiment_id": "tree-case-20261024-08",
+  "source_hashes": [
+    {
+      "label": "frozen experiment manifest",
+      "sha256": "abf371bd21658e8683db8b8d317ed0004dc292ed1ba5626657a9acd0aec6311e"
+    },
+    {
+      "label": "final blind review",
+      "sha256": "1d1509f058b6bbe39618cc24763c8aa6d8b4e9982219c12551fbc9ae9d2d254d"
+    },
+    {
+      "label": "frozen rubric",
+      "sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+    },
+    {
+      "label": "private mapping",
+      "sha256": "2526342e691c59183a4af82fa2caa4dc16e9bf5636fac69f3a589b0aa5f1ef4f",
+      "redistributed": false
+    },
+    {
+      "label": "LF publication equivalence",
+      "sha256": "0f6ea3f6159541cbaa939b5d1fc9ea2e254c508f61933ab23a8d86f13bd7bf55"
+    },
+    {
+      "label": "explicit frozen runtime snapshot",
+      "sha256": "262d599c623e951c6655bcaad60d21e99803674d61fd1bf67ec96596a52c9aa6"
+    },
+    {
+      "label": "evaluated anonymous source hashes",
+      "sha256": "4d003b86196e25978b20042fcfcab2f9cc21ea56efd57a463ed6a8718de32b53"
+    },
+    {
+      "label": "root/probe PID sampling",
+      "sha256": "ca1263f4dc8aa783d2607a7142afa86b2125fcf301155adc7ae11c347a70027b"
+    },
+    {
+      "group": "A",
+      "label": "frozen final metrics",
+      "sha256": "987879a96a350e102a122232277ebba6681a4947a08824d5b03e9b6f1855e61a"
+    },
+    {
+      "group": "A",
+      "label": "frozen_evaluator",
+      "sha256": "d7da5888d513431dfaba56e9a8252dd948b333403e536c759a386ff9e254235e"
+    },
+    {
+      "group": "A",
+      "label": "geometry",
+      "sha256": "740ddd480670ab763a57cf9fa029fbdcf5af10d4d5d427be2c3774deb08e9d2b"
+    },
+    {
+      "group": "A",
+      "label": "native_terminal",
+      "sha256": "0fe73c2c227976ea59125f9501b175746942c4b4d470f391a9626c9fa67b1ebd"
+    },
+    {
+      "group": "B",
+      "label": "frozen final metrics",
+      "sha256": "509d0f1e5847d9c526530ea1a9167b897cc631d4d8cc3426cccbf249e2597381"
+    },
+    {
+      "group": "B",
+      "label": "frozen_evaluator",
+      "sha256": "9e38b058057faa722dae26ddfdd46743dc447dcd0628f313370fca0006dc5dcb"
+    },
+    {
+      "group": "B",
+      "label": "geometry",
+      "sha256": "3339aaa750d1c13840f7651160d0b7e0e6cc61a63acc36a657dd767e3292b508"
+    },
+    {
+      "group": "B",
+      "label": "native_terminal",
+      "sha256": "25236b0df83f106ed590571693ec6a7681bb44901b7cf93dee115c854db0916f"
+    }
+  ],
+  "raw_sources_redistributed": false,
+  "runtime_publication_equivalence_source_sha256": "0f6ea3f6159541cbaa939b5d1fc9ea2e254c508f61933ab23a8d86f13bd7bf55"
+}

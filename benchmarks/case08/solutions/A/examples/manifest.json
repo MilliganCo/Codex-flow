@@ -1,0 +1,135 @@
+[
+  {
+    "file": "seed42-2d.txt",
+    "seed": 42,
+    "options": {
+      "mode": "2d",
+      "width": 100,
+      "height": 40,
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "dd71bd9245a7934c1e27e7ae66ffd800cd2eb34dc498f77f4932796f2041bbbe",
+    "nodes": 654,
+    "segments": 653,
+    "leaves": 5250
+  },
+  {
+    "file": "seed42-3d.txt",
+    "seed": 42,
+    "options": {
+      "mode": "3d",
+      "width": 100,
+      "height": 40,
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "05e3e2d1837c8852c381f65c3dd7abb1d19a7407c55f3358fa5ba48573f1344a",
+    "nodes": 654,
+    "segments": 653,
+    "leaves": 5250
+  },
+  {
+    "file": "seed42-4d-xw0.txt",
+    "seed": 42,
+    "options": {
+      "mode": "4d",
+      "width": 100,
+      "height": 40,
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "3929d94bf8517dc4c32fc250d242693c763b706620e8e7962944a3ba03541df4",
+    "nodes": 654,
+    "segments": 653,
+    "leaves": 5250
+  },
+  {
+    "file": "seed42-4d-xw55.txt",
+    "seed": 42,
+    "options": {
+      "mode": "4d",
+      "width": 100,
+      "height": 40,
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4": 55,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "7d94c4ca108ea3748a43d86c146b1b3c02ea7a999a9e3c32c2e7f19d91166086",
+    "nodes": 654,
+    "segments": 653,
+    "leaves": 5250
+  },
+  {
+    "file": "seed7-2d.txt",
+    "seed": 7,
+    "options": {
+      "mode": "2d",
+      "width": 100,
+      "height": 40,
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "3f13cd2922791179c07770aaacd9f356274f186f8fa0e9dc9ccec2bbc186bf00",
+    "nodes": 654,
+    "segments": 653,
+    "leaves": 5247
+  },
+  {
+    "file": "seed7-3d.txt",
+    "seed": 7,
+    "options": {
+      "mode": "3d",
+      "width": 100,
+      "height": 40,
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "1914dffd608ab5ad2da97bae1ad3d5e873366a987e56d4a8d262106aa2c7f21b",
+    "nodes": 654,
+    "segments": 653,
+    "leaves": 5247
+  },
+  {
+    "file": "seed7-4d-xw35.txt",
+    "seed": 7,
+    "options": {
+      "mode": "4d",
+      "width": 100,
+      "height": 40,
+      "yaw": 25.0,
+      "pitch": -7.0,
+      "angle4": 35,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "7b6e78f049b6fcdec2783d1f5d34a205ad31d8ca50197bd3253ec890ee8b552d",
+    "nodes": 654,
+    "segments": 653,
+    "leaves": 5247
+  }
+]
