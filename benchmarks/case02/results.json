@@ -1,0 +1,461 @@
+{
+  "schema": 1,
+  "experiment_id": "tree-case-20261023-02",
+  "created_utc": "2026-10-23T11:51:29.106699+00:00",
+  "task_sha256": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "codex_version": "codex-cli 0.163.0-alpha.11.1",
+  "root_model": "gpt-6.1-sol",
+  "requested_effort": "xhigh",
+  "timeout_s_per_arm": 1200,
+  "order": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "C",
+      "D"
+    ]
+  ],
+  "independent_blind_review": true,
+  "validity": "degraded: Mercury zero successes; native helpers not confirmed; physical read isolation incomplete",
+  "interpretation": "Four accepted artifacts. Deadline-censored runs are not completion latency. This case does not establish full-component speed or quality gains.",
+  "usage_boundary": "No transport observer in this frozen version. Root usage, where present, excludes unknown child usage. Aggregate totals and money remain null.",
+  "raw_evidence_location": "Retained locally by the owner; raw native journals and personal paths are excluded from GitHub.",
+  "arms": {
+    "A": {
+      "requested_strategy": "single",
+      "execution_status": "timed_out",
+      "total_arm_s": 1200.937,
+      "deadline_censored": true,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 95,
+      "accepted": true,
+      "categories": {
+        "2d": {
+          "score": 12,
+          "max": 12
+        },
+        "3d": {
+          "score": 13,
+          "max": 13
+        },
+        "4d": {
+          "score": 20,
+          "max": 20
+        },
+        "ux": {
+          "score": 12,
+          "max": 12
+        },
+        "aesthetics": {
+          "score": 9,
+          "max": 12
+        },
+        "reliability": {
+          "score": 10,
+          "max": 10
+        },
+        "tests": {
+          "score": 8,
+          "max": 9
+        },
+        "maintainability": {
+          "score": 6,
+          "max": 7
+        },
+        "readme": {
+          "score": 5,
+          "max": 5
+        }
+      },
+      "submitted_tests_passed": 35,
+      "frozen_headless_points": 25,
+      "frozen_headless_max": 25,
+      "independent_native_checks": 57,
+      "independent_native_failed": 0,
+      "independent_geometry": {
+        "status": "passed",
+        "checks": [
+          {
+            "seed": 42,
+            "vertices": 839,
+            "segments": 838,
+            "spans_xyzw": [
+              11.86721749247619,
+              16.203689838387522,
+              18.505571357519436,
+              12.0
+            ],
+            "xyz_scalar_triple_product": 1821.5024971926018,
+            "tested_planes": [
+              "xw",
+              "yw",
+              "zw"
+            ],
+            "explicit_projection_pipeline": "passed",
+            "geometry_unchanged": "passed"
+          },
+          {
+            "seed": 137,
+            "vertices": 839,
+            "segments": 838,
+            "spans_xyzw": [
+              17.30013523384609,
+              18.117764689990192,
+              14.335278605079464,
+              12.0
+            ],
+            "xyz_scalar_triple_product": 1906.2243169637845,
+            "tested_planes": [
+              "xw",
+              "yw",
+              "zw"
+            ],
+            "explicit_projection_pipeline": "passed",
+            "geometry_unchanged": "passed"
+          }
+        ]
+      },
+      "mercury_successful_calls": 0,
+      "harness2_upstream_calls": 0,
+      "harness_inspired_probes": 0,
+      "native_helpers_verified": false,
+      "aggregate_usage": null,
+      "root_cli_usage": {
+        "input_tokens": null,
+        "output_tokens": null
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "tool_calls": 21,
+      "failed_tool_calls": 2,
+      "anonymous_review_id": "solution-2",
+      "source_archive_sha256": "107adec4d0dc316e5c68656e862df4661435d867f9511888921363d9e921ef31"
+    },
+    "B": {
+      "requested_strategy": "flow + Mercury + inspired probes",
+      "execution_status": "timed_out",
+      "total_arm_s": 1201.562,
+      "deadline_censored": true,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 97,
+      "accepted": true,
+      "categories": {
+        "2d": {
+          "score": 12,
+          "max": 12
+        },
+        "3d": {
+          "score": 13,
+          "max": 13
+        },
+        "4d": {
+          "score": 20,
+          "max": 20
+        },
+        "ux": {
+          "score": 12,
+          "max": 12
+        },
+        "aesthetics": {
+          "score": 10,
+          "max": 12
+        },
+        "reliability": {
+          "score": 10,
+          "max": 10
+        },
+        "tests": {
+          "score": 9,
+          "max": 9
+        },
+        "maintainability": {
+          "score": 6,
+          "max": 7
+        },
+        "readme": {
+          "score": 5,
+          "max": 5
+        }
+      },
+      "submitted_tests_passed": 47,
+      "frozen_headless_points": 25,
+      "frozen_headless_max": 25,
+      "independent_native_checks": 57,
+      "independent_native_failed": 0,
+      "independent_geometry": {
+        "status": "passed",
+        "checks": [
+          {
+            "seed": 42,
+            "vertices": 599,
+            "segments": 598,
+            "spans_xyzw": [
+              14.030363525838364,
+              12.772262003275799,
+              13.872802063920034,
+              8.615808871195618
+            ],
+            "xyz_scalar_triple_product": 965.7453585280559,
+            "tested_planes": [
+              "xw"
+            ],
+            "explicit_projection_pipeline": "passed",
+            "geometry_unchanged": "passed"
+          },
+          {
+            "seed": 137,
+            "vertices": 599,
+            "segments": 598,
+            "spans_xyzw": [
+              14.083987648824866,
+              12.30268841429699,
+              14.284536982323322,
+              8.730582181469032
+            ],
+            "xyz_scalar_triple_product": 1356.5490723924995,
+            "tested_planes": [
+              "xw"
+            ],
+            "explicit_projection_pipeline": "passed",
+            "geometry_unchanged": "passed"
+          }
+        ]
+      },
+      "mercury_successful_calls": 0,
+      "harness2_upstream_calls": 0,
+      "harness_inspired_probes": 2,
+      "native_helpers_verified": false,
+      "aggregate_usage": null,
+      "root_cli_usage": {
+        "input_tokens": null,
+        "output_tokens": null
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "tool_calls": 26,
+      "failed_tool_calls": 6,
+      "anonymous_review_id": "solution-1",
+      "source_archive_sha256": "0ac744aec2ca8b85b66ea5e924c9db85a14012cba9e70ae7d2c3559395574feb"
+    },
+    "C": {
+      "requested_strategy": "flow + Mercury; no inspired probes",
+      "execution_status": "completed_unverified",
+      "total_arm_s": 1040.469,
+      "deadline_censored": false,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 95,
+      "accepted": true,
+      "categories": {
+        "2d": {
+          "score": 12,
+          "max": 12
+        },
+        "3d": {
+          "score": 13,
+          "max": 13
+        },
+        "4d": {
+          "score": 20,
+          "max": 20
+        },
+        "ux": {
+          "score": 12,
+          "max": 12
+        },
+        "aesthetics": {
+          "score": 9,
+          "max": 12
+        },
+        "reliability": {
+          "score": 10,
+          "max": 10
+        },
+        "tests": {
+          "score": 8,
+          "max": 9
+        },
+        "maintainability": {
+          "score": 6,
+          "max": 7
+        },
+        "readme": {
+          "score": 5,
+          "max": 5
+        }
+      },
+      "submitted_tests_passed": 46,
+      "frozen_headless_points": 25,
+      "frozen_headless_max": 25,
+      "independent_native_checks": 57,
+      "independent_native_failed": 0,
+      "independent_geometry": {
+        "status": "passed",
+        "checks": [
+          {
+            "seed": 42,
+            "vertices": 1093,
+            "segments": 1092,
+            "spans_xyzw": [
+              10.234748991093973,
+              13.175706009013428,
+              10.058373132782414,
+              5.108768692406835
+            ],
+            "xyz_scalar_triple_product": 560.5047617730454,
+            "tested_planes": [
+              "xw"
+            ],
+            "explicit_projection_pipeline": "passed",
+            "checked_projection_points": 30,
+            "geometry_unchanged": "passed"
+          },
+          {
+            "seed": 137,
+            "vertices": 1093,
+            "segments": 1092,
+            "spans_xyzw": [
+              8.147037501033772,
+              12.004502050998932,
+              8.878635093397925,
+              4.534003817459525
+            ],
+            "xyz_scalar_triple_product": 351.50561348696806,
+            "tested_planes": [
+              "xw"
+            ],
+            "explicit_projection_pipeline": "passed",
+            "checked_projection_points": 30,
+            "geometry_unchanged": "passed"
+          }
+        ]
+      },
+      "mercury_successful_calls": 0,
+      "harness2_upstream_calls": 0,
+      "harness_inspired_probes": 0,
+      "native_helpers_verified": false,
+      "aggregate_usage": null,
+      "root_cli_usage": {
+        "input_tokens": 1875011,
+        "output_tokens": 42722
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "tool_calls": 23,
+      "failed_tool_calls": 1,
+      "anonymous_review_id": "solution-4",
+      "source_archive_sha256": "ef383fe0c2a96c9d3ec5427a641b3dda7e132013a87ff330a290a12a6604ebde"
+    },
+    "D": {
+      "requested_strategy": "flow + inspired probes; no Mercury",
+      "execution_status": "timed_out",
+      "total_arm_s": 1201.109,
+      "deadline_censored": true,
+      "time_to_first_accepted_artifact_s": null,
+      "quality_score": 96,
+      "accepted": true,
+      "categories": {
+        "2d": {
+          "score": 12,
+          "max": 12
+        },
+        "3d": {
+          "score": 13,
+          "max": 13
+        },
+        "4d": {
+          "score": 20,
+          "max": 20
+        },
+        "ux": {
+          "score": 12,
+          "max": 12
+        },
+        "aesthetics": {
+          "score": 9,
+          "max": 12
+        },
+        "reliability": {
+          "score": 10,
+          "max": 10
+        },
+        "tests": {
+          "score": 9,
+          "max": 9
+        },
+        "maintainability": {
+          "score": 6,
+          "max": 7
+        },
+        "readme": {
+          "score": 5,
+          "max": 5
+        }
+      },
+      "submitted_tests_passed": 43,
+      "frozen_headless_points": 25,
+      "frozen_headless_max": 25,
+      "independent_native_checks": 57,
+      "independent_native_failed": 0,
+      "independent_geometry": {
+        "status": "passed",
+        "checks": [
+          {
+            "seed": 42,
+            "vertices": 753,
+            "segments": 752,
+            "spans_xyzw": [
+              17.309231923458604,
+              15.578855002146542,
+              17.580748641938573,
+              8.0
+            ],
+            "xyz_scalar_triple_product": 1935.3612958963915,
+            "tested_planes": [
+              "xw"
+            ],
+            "explicit_projection_pipeline": "passed",
+            "checked_projection_points": 21,
+            "geometry_unchanged": "passed"
+          },
+          {
+            "seed": 137,
+            "vertices": 753,
+            "segments": 752,
+            "spans_xyzw": [
+              20.246052632348068,
+              15.911230759060672,
+              17.024547820549614,
+              8.0
+            ],
+            "xyz_scalar_triple_product": 2252.6146474293673,
+            "tested_planes": [
+              "xw"
+            ],
+            "explicit_projection_pipeline": "passed",
+            "checked_projection_points": 21,
+            "geometry_unchanged": "passed"
+          }
+        ]
+      },
+      "mercury_successful_calls": 0,
+      "harness2_upstream_calls": 0,
+      "harness_inspired_probes": 2,
+      "native_helpers_verified": false,
+      "aggregate_usage": null,
+      "root_cli_usage": {
+        "input_tokens": null,
+        "output_tokens": null
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "tool_calls": 18,
+      "failed_tool_calls": 3,
+      "anonymous_review_id": "solution-3",
+      "source_archive_sha256": "a7083429a04289a82eedb4cdcec561a29d5803a0919a0649490a19b32a4146de"
+    }
+  }
+}

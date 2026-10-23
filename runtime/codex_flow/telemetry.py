@@ -43,7 +43,7 @@ class Trace:
         with self.path.open('a',encoding='utf-8') as f:f.write(json.dumps(event,ensure_ascii=False)+'\n')
 
 def replay(path:Path):
-    counts={}; usage=None; errors=0
+    counts:dict[str,int]={}; usage=None; errors=0
     with path.open(encoding='utf-8') as f:
         for line in f:
             if len(line)>65536: raise ValueError('oversized event')

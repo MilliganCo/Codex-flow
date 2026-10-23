@@ -14,7 +14,10 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import urllib.request
+import time
 from typing import Callable
+from .contracts import inside, PolicyError
 
 
 MODEL = "inception/mercury-decide:free"
@@ -49,7 +52,7 @@ SAFE_ENUMS = {
 
 def _abstract_state(state: dict) -> dict:
     """Copy only bounded facts; never forward arbitrary text or paths."""
-    safe = {}
+    safe: dict[str, object] = {}
     for field, allowed in SAFE_ENUMS.items():
         value = state.get(field)
         if isinstance(value, str) and value in allowed:
@@ -74,6 +77,7 @@ def _result(status, reason, *, confidence=None, attempts=0, usage=None, route="r
 def _load_external_key(root: Path):
     """Only the explicitly trusted credential helper is imported, and only opt-in."""
     path = root / "experiment" / "decision_credentials.py"
+    inside(root, path)
     if path.is_symlink():
         raise ValueError("credential_helper_symlink")
     spec = importlib.util.spec_from_file_location("_codex_flow_external_mercury_credentials", path)
@@ -106,6 +110,7 @@ class MercuryBridge:
     def decide(self, state: dict, enabled: bool = False) -> dict:
         if enabled is not True:
             return _result("SKIPPED", "disabled")
+        started=time.monotonic()
         if self.external_root is None:
             return _result("SKIPPED", "external_installation_not_configured")
         if not isinstance(state, dict):
@@ -115,6 +120,10 @@ class MercuryBridge:
             return _result("SKIPPED", "no_safe_abstract_state")
         directory = self.external_root / "experiment"
         client = directory / "decision_client.mjs"
+        try:
+            inside(self.external_root, client)
+        except PolicyError:
+            return _result("UNAVAILABLE", "external_adapter_unavailable")
         if self.external_root.is_symlink() or directory.is_symlink() or client.is_symlink() or not client.is_file():
             return _result("UNAVAILABLE", "external_adapter_unavailable")
         node = shutil.which("node")
@@ -135,9 +144,16 @@ class MercuryBridge:
                          "false": "A single worker or deterministic routing is more appropriate."}}}}
         env = {name: value for name, value in os.environ.items()
                if name.upper() in {"SYSTEMROOT", "WINDIR", "TEMP", "TMP"}}
+        # Preserve the user's configured transport, including Windows system proxy.
+        # Node fetch otherwise ignores it and can receive a different network policy.
+        # Values stay in the child environment and never enter logs or argv.
+        proxies = urllib.request.getproxies()
+        for scheme in ("http", "https"):
+            if proxies.get(scheme):
+                env[scheme.upper() + "_PROXY"] = proxies[scheme]
         env["OPENROUTER_API_KEY"] = key
         try:
-            completed = self.runner([node, "--input-type=module", "--eval", NODE_WRAPPER, client.resolve().as_uri()],
+            completed = self.runner([node, "--use-env-proxy", "--input-type=module", "--eval", NODE_WRAPPER, client.resolve().as_uri()],
                                     input=json.dumps(request, allow_nan=False),
                                     env=env, capture_output=True, text=True, encoding="utf-8", timeout=self.timeout_s)
         except subprocess.TimeoutExpired:
@@ -161,7 +177,11 @@ class MercuryBridge:
             if not isinstance(completed.stdout, str) or len(completed.stdout.encode("utf-8")) > MAX_OUTPUT_BYTES:
                 raise ValueError("invalid_output")
             outcome = json.loads(completed.stdout)
-            return self._validate(outcome)
+            validated=self._validate(outcome)
+            validated['wall_clock_s']=round(time.monotonic()-started,6)
+            latency=outcome.get('latency_ms')
+            validated['inference_latency_ms']=latency if type(latency) in (int,float) and math.isfinite(latency) and 0<=latency<=12000 else None
+            return validated
         except (ValueError, TypeError, KeyError, AttributeError):
             return _result("REJECTED", "invalid_client_output", attempts=None)
 

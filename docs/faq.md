@@ -10,7 +10,7 @@ No. Runtime process arguments request `gpt-6.1-sol` and `xhigh`. Host files are 
 
 ## Is Mercury included or paid through my ChatGPT subscription?
 
-No. Mercury uses an explicitly selected external adapter and separate provider authentication. Its source and credentials are not redistributed. Only verified free-only calls are supported. The initial Node shutdown problem was fixed, but the subsequent free-only smoke was rejected with HTTP 403, zero inference attempts and zero successful calls. Fallback remains deterministic until valid live evidence establishes otherwise.
+No. Mercury uses an explicitly selected external adapter and separate provider authentication. Its source and credentials are not redistributed. Only verified free-only calls are supported. The current bridge completed one real typed smoke with verified zero cost after forwarding the existing Windows system proxy to the Node child. Mercury still defaults to disabled. The frozen case study used an earlier bridge with zero successful calls; the later smoke cannot be counted as benchmark activity.
 
 ## Is this the upstream Harness² optimizer?
 
@@ -18,7 +18,7 @@ No. The local module is Harness²-inspired. It compares bounded measured proposa
 
 ## Are three agents and one delegation level hard guarantees?
 
-The current CLI receives a concurrent-helper cap of three. Maximum total helpers and depth=1 are instruction-only restrictions; hard runtime enforcement is unverified. Native helper execution, filesystem isolation and per-helper usage require actual evidence. Helpers share the workspace unless separately isolated.
+The current CLI receives a concurrent-helper cap of three. Maximum total helpers, depth=1 and helper read-only ownership are instruction-only restrictions. Custom roles inherit parent permissions, so they have no separate hard read-only sandbox. A shared gateway budget caps inference requests at 80 including probes, but request counts do not establish agent identities.
 
 ## Does `max_attempts: 2` automatically retry a failed run?
 
@@ -26,11 +26,11 @@ No. The field is validated but the current wrapper executes one attempt, with au
 
 ## Is the benchmark strictly isolated?
 
-It uses separate worktrees, ephemeral native contexts and workspace home/temp/cache directories. It shares credential home for native login reuse and does not copy tokens. A boundary probe showed sibling reads are possible under `workspace-write`, so reports explicitly state degraded read isolation.
+It uses separate worktrees with their own home, temp and cache directories plus project-local native SQLite/logs. Single-agent parents are ephemeral; parallel parents persist because native workers need their parent rollout. Authentication/rollout storage remains shared. Reciprocal Windows deny profiles interfered through shared ACLs, so all arms now use the same policy protecting existing evaluator/prior-solution paths. Current-peer reads remain a soft prohibition; isolation is explicitly degraded.
 
 ## Why are usage and cost values null?
 
-The native stream exposes some root usage but not reliable aggregate helper usage or quota deltas. Unknown is `null`. Subscription usage is not an actual paid API charge, and no API-equivalent estimate is presented as spending.
+Root CLI usage and gateway totals are separate. The nonce-protected loopback gateway forwards only to the fixed official subscription upstream and records requested model/effort, actual response model and usage. It totals usage only when every observed request completes with complete counters. Missing/incomplete totals and quota deltas stay `null`. Requests do not identify agents, and response metadata does not independently confirm reasoning effort. Subscription usage is not a paid API charge.
 
 ## Can I resume a runtime session or open a dashboard?
 

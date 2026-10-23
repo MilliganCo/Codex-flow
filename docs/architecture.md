@@ -7,6 +7,7 @@ Codex Flow has two compatible layers. `payload/codex-flow/` retains the 1.2.0 sk
 | `cli.py`, `config.py` | Public command parsing, bounded project-local settings and explicit enabling |
 | `contracts.py`, `policy.py` | Serializable task/route records, dependency readiness and deterministic routing |
 | `native.py` | Native CLI discovery, subscription check, process-local overrides, timeout/cancellation |
+| `subscription.py` | Nonce-protected loopback forwarding to fixed subscription upstream, shared request budget and response metadata |
 | `mercury.py`, `harness.py` | Optional external typed decisions and project-local measured proposals |
 | `telemetry.py`, `doctor.py`, `benchmark.py` | Sanitized evidence, metadata preflight and experiment lifecycle |
 
@@ -15,12 +16,18 @@ Codex Flow has two compatible layers. `payload/codex-flow/` retains the 1.2.0 sk
 1. Parse configuration and task text; reject unknown fields or unsupported bounds.
 2. Select single or parallel execution from independence and risk rules. An optional validated Mercury result is advisory.
 3. Start one root Sol XHigh native turn with explicit sandbox/config overrides. Native delegation belongs to that turn; helpers have bounded instructions and ownership.
-4. Consume native JSON events, record sanitized metadata, and capture supported root usage.
+4. Observe native events plus subscription request/completion metadata; preserve root usage and complete gateway totals separately.
 5. Return completion state and artifacts for independent verification.
 
 `ExecutionPlan.ready_batches()` validates dependency identifiers, rejects cycles and avoids overlapping paths within one batch. It is a library contract; the current `run` command does not automatically extract a complete task graph from arbitrary prose.
 
-The coordinator is the integrator. Sol medium is the requested default helper profile; review instructions can request stronger review reasoning where the host supports it. Per-helper profile enforcement and aggregate helper accounting must be verified from actual host evidence. Do not infer them from the role description alone.
+The coordinator is the sole integrator/writer. Generated native role files request Sol medium for default/worker/awaiter, Sol high for reviewer and Luna medium for explorer. All instruct helpers to gather evidence without application writes or further delegation. They **inherit parent permissions**; no hard per-role read-only sandbox or delegation-depth enforcement is claimed. Their configured names are not evidence that workers actually ran.
+
+## Subscription transport
+
+The native CLI supplies subscription authentication to a `127.0.0.1` gateway with a fresh per-run nonce. It forwards only the fixed official `https://chatgpt.com/backend-api/codex` models/responses routes, disallows redirects and API-key-style credentials, and never chooses an alternate provider. Request bodies and completed responses are bounded; sensitive payloads are processed in memory rather than persisted in telemetry.
+
+One locked `RequestBudget` limits inference requests across a task's planning probes, root and gateway-routed helpers to at most 80. Metadata GETs are counted separately. The gateway records requested model/effort, response `actual_model`, completion usage and status. The response does not independently echo reasoning effort. Complete totals require every observed request to finish with valid usage; requests alone do not identify agents.
 
 ## Optimization boundary
 
@@ -30,6 +37,6 @@ The benchmark and an explicitly configured `run` measure a pair of **plan-covera
 
 ## Evidence boundary
 
-Run JSONL events have timestamps, trace/task identifiers, event type, sanitized payload, duration and error category. Root usage is retained when exposed. Unknown aggregate helper usage is `null`. Concurrent-helper cap is native configuration; maximum total helpers and depth are instruction-only limits. There is no live TUI or authoritative billing ledger.
+Run JSONL events have timestamps, trace/task identifiers, event type, sanitized payload, duration and error category. Root usage and gateway all-request usage have separate fields. Missing/incomplete aggregate usage remains `null`. Concurrent-helper cap is native configuration; read-only ownership, maximum total helpers and depth are instruction-only limits. There is no live TUI or authoritative billing ledger.
 
-Separate worktrees isolate writes and Git state, but share Git history and native credential home. Current `workspace-write` execution permits sibling reads. Isolation is therefore degraded for adversarial or confidential multi-workspace workloads; it is not a hard read boundary.
+Single-agent parents are ephemeral; parallel parents are persisted because native workers need their rollout. SQLite/logs are project-local, but the native auth/rollout container remains shared. Separate worktrees isolate writes and artifact locations, not read confidentiality. Reciprocal Windows profiles interfered through shared `CodexSandboxUsers` deny ACLs, so all benchmark arms now use the same existing-target deny policy. Hidden evaluator/prior solutions are protected; current-peer reading remains prohibited by instructions and physically soft. This is explicitly degraded isolation.

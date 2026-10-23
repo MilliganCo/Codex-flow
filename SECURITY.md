@@ -18,7 +18,11 @@ Include the affected commit/version, exact component, platform, minimal reproduc
 
 ## Known security boundaries
 
-The runtime requests `workspace-write`, never a bypass mode, and leaves host config files unchanged. It supplies a noninteractive `never` approval policy and disables shell-network access through process-local overrides. These do not authorize work beyond the task or provide full read confinement. A local test showed sibling reads possible. Native credential home remains shared; the wrapper does not copy tokens into the project. Environment filtering and log redaction are defensive measures, not guarantees against arbitrary secret formats.
+The runtime uses workspace-based native permissions, never a bypass mode, and leaves host config files unchanged. Explicit denies use a named profile extending `:workspace`. It supplies a noninteractive `never` approval policy and disables shell-network access through process-local overrides. These do not authorize work beyond the task or provide full read confinement.
+
+The loopback subscription gateway requires a fresh per-run nonce, has a fixed official upstream with redirects disabled, rejects API-key-style credentials and enforces a shared inference-request budget of at most 80. Native authentication is forwarded in memory; it is not copied into the project or logged. Request/response bounds and sanitized metadata reduce exposure without making the gateway safe against a compromised local process.
+
+Single-agent parents are ephemeral; parallel parents persist because workers need their rollout. Native SQLite/logs are project-local, while authentication/rollout storage is shared. Custom helper roles inherit parent permissions: read-only ownership and depth are instruction-only. Reciprocal Windows deny profiles interfered through shared `CodexSandboxUsers` ACLs; current benchmark arms use an identical existing-target policy protecting evaluator/prior solutions. Current-peer reads remain soft/degraded. Missing protected targets are rejected after case03 created directories and was aborted. Environment filtering and redaction are defensive measures, not guarantees against arbitrary secret formats.
 
 The optional Mercury adapter root is a trust decision because external Python code is loaded for credential retrieval. Do not select an untrusted source tree. Disabled integration must remain side-effect free. No paid API fallback is supported.
 

@@ -33,7 +33,7 @@ python codex-flow.py --repo <project> runs list
 python codex-flow.py --repo <project> runs show <run-id>
 ```
 
-The run prints a JSON result. `completed_unverified` means a native turn completed successfully; independently inspect artifacts and run relevant tests before acceptance. Timeout and cancellation terminate the spawned process tree. Cancellation is cooperative at the wrapper's polling boundary, so a cancellation request is not instantaneous completion.
+The run prints a JSON result. `completed_unverified` means a native turn completed successfully; independently inspect artifacts and run relevant tests before acceptance. Root usage and complete gateway totals are separate. A hard shared inference budget defaults to 80 including optional probes. Timeout and cancellation terminate the spawned process tree; cancellation is consumed at the wrapper polling boundary, so a request is not instantaneous completion.
 
 For independent work, start with a reviewed dry run:
 
@@ -41,7 +41,7 @@ For independent work, start with a reviewed dry run:
 python codex-flow.py --repo <project> run --task-file <task.md> --independent-steps 2 --max-agents 2 --dry-run
 ```
 
-The integer is a caller-supplied independence hint, not source analysis. Confirm disjoint ownership before enabling the execution. Use the current project's instructions and preserve dirty files.
+The integer is a caller-supplied independence hint, not source analysis. The coordinator owns application writes; generated helper roles gather evidence and inherit the parent's permissions. Their read-only/depth restrictions are instructions, not separate hard sandboxes. Parallel parents persist for native worker rollouts; SQLite/logs are project-local while native auth/rollouts remain shared. Review [isolation limits](safety-and-permissions.md) before using confidential workspaces, and preserve dirty files.
 
 ## Keep the original skill
 

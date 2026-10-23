@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import sys
 import json
 from pathlib import Path
 import shutil
@@ -13,9 +14,8 @@ from unittest.mock import Mock, patch
 
 ROOT = Path(__file__).resolve().parents[1]
 REAL_NODE = shutil.which("node")
-spec = importlib.util.spec_from_file_location("flow_mercury", ROOT / "runtime/codex_flow/mercury.py")
-mercury = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(mercury)
+sys.path.insert(0, str(ROOT / 'runtime'))
+from codex_flow import mercury
 
 
 class MercuryTests(unittest.TestCase):
@@ -57,6 +57,17 @@ class MercuryTests(unittest.TestCase):
         self.assertEqual(result["usage"]["cost"], 0)
         self.assertEqual(self.runner.call_args.kwargs["timeout"], 12)
 
+    def test_existing_proxy_is_child_environment_only(self):
+        proxy='http://proxy.example.invalid:8080'
+        with patch.object(mercury.urllib.request,'getproxies',return_value={'https':proxy,'ftp':'ftp://unused.invalid'}):
+            self.bridge.decide({'complexity':'high'},enabled=True)
+        call=self.runner.call_args
+        self.assertEqual(call.kwargs['env']['HTTPS_PROXY'],proxy)
+        self.assertNotIn('FTP_PROXY',call.kwargs['env'])
+        self.assertIn('--use-env-proxy',call.args[0])
+        self.assertNotIn(proxy,str(call.args))
+        self.assertNotIn(proxy,call.kwargs['input'])
+
     def test_free_text_paths_and_secrets_never_forwarded(self):
         self.bridge.decide({"complexity": "high", "independent_steps": 3, "risk_level": "low",
                             "conflicting_paths": ["C:/secret"], "prompt": "sk-secret",
@@ -65,7 +76,7 @@ class MercuryTests(unittest.TestCase):
         self.assertEqual(request["state"], {"complexity": "high", "independent_steps": 3, "risk_level": "low"})
         environment = self.runner.call_args.kwargs["env"]
         self.assertEqual(environment["OPENROUTER_API_KEY"], "test-key")
-        self.assertLessEqual(set(environment), {"SYSTEMROOT", "SystemRoot", "WINDIR", "windir", "TEMP", "TMP", "OPENROUTER_API_KEY"})
+        self.assertLessEqual(set(environment), {"SYSTEMROOT", "SystemRoot", "WINDIR", "windir", "TEMP", "TMP", "OPENROUTER_API_KEY", "HTTP_PROXY", "HTTPS_PROXY"})
 
     def test_unsafe_only_state_skips_credentials(self):
         result = self.bridge.decide({"complexity": "C:/secret", "independent_steps": "free text"}, enabled=True)

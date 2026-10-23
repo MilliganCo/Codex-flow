@@ -22,7 +22,7 @@ Tests should use disposable homes/workspaces and injected provider runners. CI a
 
 Do not rewrite `payload/codex-flow/scripts/flowctl.py` or managed installation behavior for an unrelated runtime change. Preserve marker protections, ownership validation, encoding, local customizations, targeted backups and rollback. No silent model substitution, sandbox bypass, provider fallback, dependency installation or global reconfiguration.
 
-Keep integration labels honest: local plan probes are Harness²-inspired; the external Mercury adapter is not bundled. A configured component is not validated until evidence establishes it. Unknown usage remains null, and subscription usage is not an API billing estimate.
+Keep integration labels honest: local plan probes are Harness²-inspired; the external Mercury adapter is not bundled. A configured component is not validated until evidence establishes it. Preserve the loopback gateway's fixed upstream, nonce checks and shared request budget. Requested effort, actual response model/usage and agent identities are separate evidence. Unknown usage remains null, and subscription usage is not an API billing estimate.
 
 ## Benchmark independence
 

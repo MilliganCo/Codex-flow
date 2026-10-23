@@ -46,20 +46,26 @@ Routing uses explicit independent-step counts and ownership conflicts, with dete
 
 | Component | Boundary and current limitation |
 |---|---|
-| Native Codex | Subscription transport, root Sol XHigh, `workspace-write`, no sandbox bypass |
+| Native Codex | Root Sol XHigh through a nonce-protected loopback subscription gateway; no sandbox bypass |
 | Mercury | External, explicitly trusted free-only adapter; no provider code or credentials bundled |
 | Harness-inspired probes | Local measured plan comparison and guarded adoption; upstream Harness² executor is not used |
-| Telemetry | Sanitized events and root usage; aggregate helper usage remains unknown when unavailable |
+| Telemetry | Request model/effort, actual response model and usage; unknown or incomplete totals remain null |
 
-The initial Windows Node shutdown issue was fixed by a natural-exit wrapper. A subsequent free-only smoke was rejected with HTTP 403, zero inference attempts and zero successful calls. Treat Mercury as unavailable until an explicit live check records a valid response and verified zero cost. The adapter falls back to deterministic routing. This is a local integration observation, not a provider-wide outage claim.
+The current Mercury bridge has completed a real free-only typed smoke after forwarding the user's existing Windows system proxy to the Node child with `--use-env-proxy`. Model/build/provider checks passed; reported usage cost was zero. Proxy values were not logged and global settings were not edited. Mercury remains disabled by default. The earlier frozen benchmark used a prior bridge with zero successful Mercury calls; this later smoke does not retroactively activate Mercury in that experiment.
 
 When explicitly configured, both normal execution and the benchmark can run a pair of measured planning probes. The Harness-inspired result remains degraded because plan coverage does not demonstrate an improvement in application quality. These probes consume additional subscription time/quota. See [integrations](docs/integrations.md).
 
 ## Safety and evidence
 
-The runtime is off until `--enable` or project configuration opts in. Host configuration files are not rewritten. Execution uses process-local CLI overrides, an ephemeral session and separate workspace home/temp directories. The existing `CODEX_HOME` is shared for native credential reuse; tokens are not copied into projects. `workspace-write` restricts writes but **does not establish isolation from sibling reads**. This limits benchmark independence and is recorded as degraded isolation.
+The runtime is off until `--enable` or project configuration opts in. A loopback gateway forwards only to the fixed official subscription upstream, requires a fresh per-run nonce, and enforces a shared inference-request budget of at most 80 including probes. Native authentication is forwarded in memory; tokens are not copied into projects and host configuration files are not rewritten.
 
-Unknown metrics use `null`, including aggregate helper tokens, quota deltas and actual API cost when not measured. Root usage remains available separately. `max_attempts` is a bounded configuration field; the current wrapper makes one attempt with automatic transport retries disabled.
+Single-agent execution is ephemeral. Parallel parents persist because native workers require a parent rollout; SQLite/logs and workspace home/temp/cache are project-local, while the native auth/rollout container remains shared. Custom helper roles inherit parent permissions. Their read-only ownership and depth restrictions are instructions, not separate hard sandboxes.
+
+On this Windows sandbox, reciprocal per-arm deny rules interfered through shared `CodexSandboxUsers` ACLs. The benchmark now gives every arm the same deny policy for existing evaluator/prior-solution targets. Current peer reads remain a soft prohibition: **physical read isolation is degraded**. See [safety](docs/safety-and-permissions.md).
+
+Gateway totals are available only when every observed request completes with usable usage. Request counts do not identify agents; top-level unknown totals, quota deltas and actual API cost remain `null`. Root CLI usage is retained separately. `max_attempts` is a bounded configuration field; the current wrapper makes one attempt with automatic transport retries disabled.
+
+The frozen case02 applications scored A=95, B=97, C=95 and D=96, but Mercury had zero successful calls and helper execution was unconfirmed. Those scores do not validate a full-component speedup. Case03 was aborted after future deny targets became directories; its evidence remains immutable. Case04 started at 2026-10-23 14:00:48 UTC with A/B running against its frozen runtime; no final result is claimed. See [benchmark evidence](docs/benchmarking.md).
 
 ## Existing installation and checks
 

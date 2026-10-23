@@ -368,7 +368,8 @@ class NativeTests(TemporaryTests):
         self.assertEqual(command[command.index("--sandbox") + 1], "workspace-write")
         self.assertIn("--ignore-user-config", command)
         self.assertIn("--ignore-rules", command)
-        self.assertIn("--ephemeral", command)
+        self.assertNotIn("--ephemeral", command)
+        self.assertIn("--ephemeral",native.argv('codex',self.root,Config(),parallel=False))
         self.assertFalse(options["sandbox_workspace_write.network_access"])
         provider = options["model_provider"]
         self.assertEqual(options["model_providers." + provider + ".base_url"], "https://chatgpt.com/backend-api/codex")

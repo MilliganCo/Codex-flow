@@ -16,12 +16,17 @@ def sample(pid):
     k.OpenProcess.restype=wintypes.HANDLE;k.OpenProcess.argtypes=[wintypes.DWORD,wintypes.BOOL,wintypes.DWORD]
     k.CloseHandle.argtypes=[wintypes.HANDLE]
     ps.GetProcessMemoryInfo.argtypes=[wintypes.HANDLE,ctypes.POINTER(Memory),wintypes.DWORD]
+    k.GetProcessTimes.argtypes=[wintypes.HANDLE,*([ctypes.POINTER(wintypes.FILETIME)]*4)]
     h=k.OpenProcess(0x410,False,pid)
     if not h:return None
     try:
         m=Memory();m.cb=ctypes.sizeof(m)
         if not ps.GetProcessMemoryInfo(h,ctypes.byref(m),m.cb):return None
-        return {'pid':pid,'working_set_bytes':m.working_set,'peak_working_set_bytes':m.peak_working_set}
+        times=[wintypes.FILETIME() for _ in range(4)]
+        cpu=None
+        if k.GetProcessTimes(h,*(ctypes.byref(t) for t in times)):
+            cpu=sum((t.dwHighDateTime<<32)+t.dwLowDateTime for t in times[2:])/10_000_000
+        return {'pid':pid,'working_set_bytes':m.working_set,'peak_working_set_bytes':m.peak_working_set,'cumulative_cpu_s':cpu}
     finally:k.CloseHandle(h)
 
 def main():

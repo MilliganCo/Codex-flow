@@ -4,9 +4,11 @@ Integration states are evidence, not feature badges. Disabled, configured, reach
 
 ## Native Codex
 
-The runtime uses an existing [Codex CLI](https://github.com/openai/codex), requires native ChatGPT subscription login and launches a process-local subscription provider contract. It does not open or copy auth token files. It rejects API-key fallback. Availability in `doctor --deep` means the model/effort appears in native metadata; it does not prove a generation request completed.
+The runtime uses an existing [Codex CLI](https://github.com/openai/codex), requires native ChatGPT subscription login and launches a process-local subscription provider contract through a loopback gateway. It does not open or copy auth token files. The native CLI supplies authentication, which the gateway forwards in memory only to the fixed official subscription upstream. A fresh per-run nonce protects the listener; redirects and API-key-style credentials are rejected. Availability in `doctor --deep` means the model/effort appears in native metadata; it does not prove a generation request completed.
 
-The requested root is `gpt-6.1-sol` with `xhigh`. Parallel mode enables native multi-agent execution, requests a maximum of three concurrent helpers and Sol medium defaults. Maximum total helpers and delegation depth are stated in instructions only; no verified native hard limit is claimed for them.
+The root requests `gpt-6.1-sol` with `xhigh`. Generated helper profiles request Sol medium for default/worker/awaiter, Luna medium for explorer and Sol high for reviewer. Native concurrency is capped at three helpers. All custom roles inherit parent permissions; their read-only ownership, maximum total count and depth are instruction-only. Parallel parent persistence is required for native worker rollouts; role-file existence or different request profiles alone does not prove a distinct helper ran.
+
+The shared gateway inference budget is at most 80 requests across probes/root/gateway-routed helpers. It records request model/effort, actual response model and usage; response metadata does not independently echo reasoning effort. Complete usage aggregates require every observed request to finish with complete usage. Worker identities and subscription quota deltas remain separate evidence questions.
 
 ## Mercury: external and free-only
 
@@ -24,7 +26,11 @@ python codex-flow.py doctor --mercury-root <trusted-external-root> --live-mercur
 
 This is an external provider request, unlike the default doctor. It requires an already configured external free-only adapter and its own authentication. It does not reuse ChatGPT subscription quota for OpenRouter.
 
-**Current local integration status:** the initial Windows Node shutdown issue was fixed with a bounded natural-exit wrapper without editing the external installation. A subsequent free-only smoke returned `REJECTED`, `http_403`, `inference_attempts: 0`, `successful_calls: 0`. Mercury remains unavailable/degraded until actual per-run evidence says otherwise. An HTTP 403 does not establish a provider-wide outage or authorize a paid fallback.
+**Current source: validated typed smoke.** A natural-exit wrapper fixed the initial Windows Node shutdown issue. The subsequent HTTP 403 was resolved by forwarding the user's existing configured Windows system proxy into the Node subprocess and using `--use-env-proxy`. Proxy values were not logged, global settings were not changed, and the external installation was not modified.
+
+The real free-only smoke returned `OBSERVED` with probability `0.9947798753220525`, `successful_calls: 1`, `inference_attempts: 1`, and usage `{ "cost": 0, "input_tokens": 144, "output_tokens": 1 }`. Expected model/build/provider and zero-cost checks were adapter-validated. This validates one actual typed routing call in the current environment, not routing accuracy, general uptime or every future invocation. Configuration still defaults to disabled.
+
+**Frozen benchmark: degraded Mercury.** The active frozen case study was launched with an earlier copied runtime and recorded zero successful Mercury calls. The later current-source smoke must not be counted in those arms or used to relabel B as fully active. Its earlier HTTP 403 evidence remains valid for the runtime that actually executed the experiment. Any comparison using the corrected bridge needs a new frozen experiment ID.
 
 ## Harness²-inspired local probes
 

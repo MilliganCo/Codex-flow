@@ -19,12 +19,13 @@ class Config:
     harness2: bool = False
     max_refinements: int = 1
     allow_paid_api: bool = False
+    max_model_requests: int = 80
 
     def __post_init__(self):
         for name in ('enabled','mercury','harness2','allow_paid_api'):
             if type(getattr(self,name)) is not bool: raise PolicyError('expected boolean: '+name)
         for name, lo, hi in [('schema_version',1,1),('max_agents',1,3),('max_depth',1,1),
-                             ('max_attempts',1,2),('timeout_s',1,3600),('max_refinements',1,2)]:
+                             ('max_attempts',1,2),('timeout_s',1,3600),('max_refinements',1,2),('max_model_requests',1,80)]:
             v=getattr(self,name)
             if type(v) is not int or not lo <= v <= hi: raise PolicyError('invalid bound: '+name)
         if self.mode not in ('safe','benchmark','experimental'): raise PolicyError('invalid mode')
