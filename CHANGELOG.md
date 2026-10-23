@@ -17,6 +17,8 @@ Frozen case02 artifact scores are A=95/B=97/C=95/D=96, with zero successful Merc
 
 Current source adds mandatory parallel developer instructions, exact owned parent-linked metadata with positive child usage, and an explicit degraded orchestration outcome when no helper is verified. A separate ordinary-controller prerequisite observed one real child and a correct artifact; a zero-model concurrent fixture check passed protected-state denials. Case05 is a new frozen comparison in progress. Add accepted case02 demos, actual 4D rotation exports, example CI and frozen evaluation inputs. No project license is introduced.
 
+Fix a subsequently reproduced P2 in `runs list/show/replay/cancel`: validate roots, folders and record/cancel paths before access so links cannot redirect outside the project. Eleven focused regressions and the combined 192-test suites passed in WSL/local Windows with recorded symlink skips. This source-only fix does not modify frozen case05. Original private development history is retained.
+
 ## 1.2.0 — existing baseline
 
 Existing selective browser verification routes, safe managed-global-block upgrade protections, installer tests and workflow references. Historical validation is recorded in `TEST-REPORT.md`; it does not cover the new runtime.

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "repository_visibility_at_publication": "PRIVATE",
+  "commit": "d5fb49a891d1f2c5ee9d518395eb4bfbf11ada33",
+  "run_url": "https://github.com/MilliganCo/Codex-flow/actions/runs/39987763791",
+  "status": "completed",
+  "conclusion": "success",
+  "platforms": {
+    "ubuntu-latest": {
+      "job_id": 120531288706,
+      "core": {
+        "run": 181,
+        "passed": 181,
+        "skipped": 0,
+        "duration_s": 4.679
+      },
+      "solo_example": {
+        "run": 36,
+        "passed": 35,
+        "skipped": 1
+      },
+      "flow_example": {
+        "run": 47,
+        "passed": 45,
+        "skipped": 2
+      }
+    },
+    "windows-latest": {
+      "job_id": 120531289215,
+      "core": {
+        "run": 181,
+        "passed": 181,
+        "skipped": 0,
+        "duration_s": 15.336
+      },
+      "solo_example": {
+        "run": 36,
+        "passed": 36,
+        "skipped": 0
+      },
+      "flow_example": {
+        "run": 47,
+        "passed": 47,
+        "skipped": 0
+      }
+    }
+  },
+  "all_platforms": {
+    "headless_render_invocations": 18,
+    "headless_checks": [
+      "2D/3D/4D",
+      "ASCII/no ANSI",
+      "80x30 dimensions",
+      "repeat byte determinism",
+      "seed variation"
+    ],
+    "static_checks": "passed",
+    "compile_and_zipapp": "passed",
+    "tracked_tree_and_all_history_scan": {
+      "passed": true,
+      "checked_objects": 442
+    },
+    "model_calls": 0,
+    "interactive_terminal_test": "not run by this example CI smoke"
+  },
+  "prior_failure": {
+    "run_url": "https://github.com/MilliganCo/Codex-flow/actions/runs/39984950835",
+    "cause": "Solo snapshot used a full-float repr fingerprint; Ubuntu disagreed with stored Windows fingerprints",
+    "correction": "Explicit post-benchmark packaged-demo canonical identity patch; original source archives/scores unchanged"
+  },
+  "scope": "Only the named commit and jobs were verified; this is not a claim that later source is already green, that native models ran in CI, or that every possible secret format is detectable",
+  "recorded_utc": "2026-10-23T16:38:02.085924+00:00"
+}

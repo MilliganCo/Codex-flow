@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "finding": "P2: existing run-record symlinks could redirect inspection/replay reads or cancellation writes outside the selected project",
+  "reproduction": {
+    "environment": "WSL, owned temporary synthetic fixtures only",
+    "confirmed_cases": 6,
+    "real_credentials_or_external_project_data": false,
+    "model_calls": 0,
+    "native_sandbox_calls": 0
+  },
+  "fix": {
+    "scope": ["runtime/codex_flow/cli.py: runs branch", "tests/test_runs_boundary.py"],
+    "behavior": "Resolve and validate the runs root, run folder and selected record before glob/stat/exists/read/replay/touch; reject outside or dangling outside targets with a fixed boundary error",
+    "normal_utf8_records_and_cancel": "preserved",
+    "outside_payload_in_error": false
+  },
+  "verification": {
+    "focused_wsl": {"run": 11, "passed": 11, "skipped": 0},
+    "focused_local_windows": {"run": 11, "passed": 2, "skipped": 9},
+    "combined_wsl": {"run": 192, "passed": 192, "skipped": 0},
+    "combined_local_windows": {"run": 192, "passed": 174, "skipped": 18},
+    "ruff_and_mypy": "passed",
+    "independent_read_only_review": "no actionable findings"
+  },
+  "benchmark_boundary": "This source-only fix follows the frozen case05 runtime 343d395 and does not rewrite its 14 executed source files, hashes, outcomes or performance evidence",
+  "limitations": ["Static path validation is not protection against adversarial same-user TOCTOU races", "No remote execution or remote compromise was demonstrated"]
+}

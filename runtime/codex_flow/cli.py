@@ -5,7 +5,7 @@ from dataclasses import asdict, replace
 from pathlib import Path
 import json, sys, uuid, time
 from .config import Config, load
-from .contracts import PolicyError
+from .contracts import PolicyError, inside
 from .telemetry import write_json, replay
 
 FLOW_INSTRUCTIONS='''You are the Codex Flow coordinator, GPT-6.1 Sol xhigh. Keep task acceptance fixed.
@@ -117,22 +117,31 @@ def main(argv=None):
                     except PolicyError:out['harness2']['rollback_error']='active instruction drift; preserved for review'
                 write_json(repo/'.codex-flow/runs'/out['run_id']/'metrics.json',out)
         elif args.command=='runs':
-            root=repo/'.codex-flow/runs'
+            def checked_record_path(path):
+                try:return inside(repo,path)
+                except (PolicyError,OSError):raise PolicyError('run record boundary refused') from None
+            root=checked_record_path(repo/'.codex-flow/runs')
             if args.action=='list':
                 out=[]
-                for d in root.glob('*'):
-                    state=d/'metrics.json' if (d/'metrics.json').exists() else d/'control.json'
-                    if state.is_file():out.append({'run_id':d.name,**json.loads(state.read_text())})
+                for candidate in root.glob('*'):
+                    d=checked_record_path(candidate)
+                    if not d.is_dir():continue
+                    metrics=checked_record_path(d/'metrics.json')
+                    state=metrics if metrics.exists() else checked_record_path(d/'control.json')
+                    if state.is_file():out.append({'run_id':d.name,**json.loads(state.read_text(encoding='utf-8'))})
             else:
                 if not args.run_id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in args.run_id):raise PolicyError('invalid run id')
-                folder=root/args.run_id
+                folder=checked_record_path(root/args.run_id)
                 if not folder.is_dir():raise PolicyError('run missing')
-                if args.action=='cancel':(folder/'cancel.request').touch();out={'cancel_requested':True}
-                elif args.action=='replay':out=replay(folder/'events.jsonl')
+                if args.action=='cancel':checked_record_path(folder/'cancel.request').touch();out={'cancel_requested':True}
+                elif args.action=='replay':out=replay(checked_record_path(folder/'events.jsonl'))
                 else:
-                    state=folder/'metrics.json' if (folder/'metrics.json').exists() else folder/'control.json'
-                    out=json.loads(state.read_text())
-                    if not (folder/'metrics.json').exists() and (folder/'events.jsonl').exists():out['trace']=replay(folder/'events.jsonl')
+                    metrics=checked_record_path(folder/'metrics.json')
+                    state=metrics if metrics.exists() else checked_record_path(folder/'control.json')
+                    out=json.loads(state.read_text(encoding='utf-8'))
+                    if not metrics.exists():
+                        events=checked_record_path(folder/'events.jsonl')
+                        if events.exists():out['trace']=replay(events)
         else:
             from .benchmark import execute,report
             if args.action=='tree':
