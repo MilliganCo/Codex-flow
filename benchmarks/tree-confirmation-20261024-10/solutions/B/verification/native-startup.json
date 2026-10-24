@@ -1,0 +1,22 @@
+{
+  "native_tty": true,
+  "platform": "win32",
+  "arguments": [
+    "--seed",
+    "137",
+    "--mode",
+    "3d",
+    "--frames",
+    "2"
+  ],
+  "application_return_code": 0,
+  "console_modes_before": [
+    503,
+    7
+  ],
+  "console_modes_after": [
+    503,
+    7
+  ],
+  "console_modes_restored": true
+}

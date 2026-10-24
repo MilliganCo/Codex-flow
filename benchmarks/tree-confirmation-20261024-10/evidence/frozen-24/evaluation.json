@@ -1,0 +1,1372 @@
+{
+  "schema": 1,
+  "solution": "solutions/A",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "cli": {
+    "prefix": [
+      "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-c",
+      "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())"
+    ],
+    "source": "pyproject project.scripts",
+    "entrypoint": "ascii-tree",
+    "render_tokens": [
+      "render"
+    ],
+    "flags": {
+      "seed": "--seed",
+      "width": "--width",
+      "height": "--height",
+      "mode": "--mode",
+      "output": "--output",
+      "angle3": "--yaw",
+      "angle4": "--angle4"
+    },
+    "mode_values": {
+      "2d": "2d",
+      "3d": "3d",
+      "4d": "4d"
+    },
+    "help": {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "--help"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.14,
+      "stdout": "usage: ascii-tree [-h] [--version] {view,render} ...\r\n\r\nExplore one procedural tree in 2D, 3D and true XW-rotated 4D.\r\n\r\npositional arguments:\r\n  {view,render}\r\n    view         Interactive explorer; one plain frame when no TTY is attached\r\n    render       Deterministic, plain ASCII frame (no TTY needed)\r\n\r\noptions:\r\n  -h, --help     show this help message and exit\r\n  --version      show program's version number and exit\r\n",
+      "stderr": "",
+      "stdout_bytes": 427,
+      "stdout_sha256": "f71ab63014fca511e71ad4835c4ab4ff979a01c00efe93c84677a31486c80bcc"
+    },
+    "render_help": {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--help"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.156,
+      "stdout": "usage: ascii-tree render [-h] [--seed SEED] [--mode {2d,3d,4d}]\r\n                         [--width WIDTH] [--height HEIGHT] [--yaw YAW]\r\n                         [--pitch PITCH] [--angle4 ANGLE4] [--zoom ZOOM]\r\n                         [--aspect ASPECT] [--time TIME] [--output OUTPUT]\r\n\r\nDeterministic, plain ASCII frame (no TTY needed)\r\n\r\noptions:\r\n  -h, --help         show this help message and exit\r\n  --seed SEED        integer tree seed (default: 42)\r\n  --mode {2d,3d,4d}\r\n  --width WIDTH      columns, 1..500; view fallback size\r\n  --height HEIGHT    rows, 1..240; view fallback size\r\n  --yaw YAW          3D camera azimuth in degrees\r\n  --pitch PITCH      3D camera tilt in degrees\r\n  --angle4 ANGLE4    4D XW rotation in degrees\r\n  --zoom ZOOM        magnification, 0.15..5\r\n  --aspect ASPECT    cell height / width, 0.5..4\r\n  --time TIME        deterministic wind time in seconds\r\n  --output OUTPUT    .txt path; default: stdout\r\n",
+      "stderr": "",
+      "stdout_bytes": 941,
+      "stdout_sha256": "164374b701fa10c49f6a44af345f5db6cfce7a2cebd86988249af1dc2e27ab79"
+    }
+  },
+  "discovery_probes": [
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "--help"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.14,
+      "stdout": "usage: ascii-tree [-h] [--version] {view,render} ...\r\n\r\nExplore one procedural tree in 2D, 3D and true XW-rotated 4D.\r\n\r\npositional arguments:\r\n  {view,render}\r\n    view         Interactive explorer; one plain frame when no TTY is attached\r\n    render       Deterministic, plain ASCII frame (no TTY needed)\r\n\r\noptions:\r\n  -h, --help     show this help message and exit\r\n  --version      show program's version number and exit\r\n",
+      "stderr": "",
+      "stdout_bytes": 427,
+      "stdout_sha256": "f71ab63014fca511e71ad4835c4ab4ff979a01c00efe93c84677a31486c80bcc"
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--help"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.156,
+      "stdout": "usage: ascii-tree render [-h] [--seed SEED] [--mode {2d,3d,4d}]\r\n                         [--width WIDTH] [--height HEIGHT] [--yaw YAW]\r\n                         [--pitch PITCH] [--angle4 ANGLE4] [--zoom ZOOM]\r\n                         [--aspect ASPECT] [--time TIME] [--output OUTPUT]\r\n\r\nDeterministic, plain ASCII frame (no TTY needed)\r\n\r\noptions:\r\n  -h, --help         show this help message and exit\r\n  --seed SEED        integer tree seed (default: 42)\r\n  --mode {2d,3d,4d}\r\n  --width WIDTH      columns, 1..500; view fallback size\r\n  --height HEIGHT    rows, 1..240; view fallback size\r\n  --yaw YAW          3D camera azimuth in degrees\r\n  --pitch PITCH      3D camera tilt in degrees\r\n  --angle4 ANGLE4    4D XW rotation in degrees\r\n  --zoom ZOOM        magnification, 0.15..5\r\n  --aspect ASPECT    cell height / width, 0.5..4\r\n  --time TIME        deterministic wind time in seconds\r\n  --output OUTPUT    .txt path; default: stdout\r\n",
+      "stderr": "",
+      "stdout_bytes": 941,
+      "stdout_sha256": "164374b701fa10c49f6a44af345f5db6cfce7a2cebd86988249af1dc2e27ab79"
+    }
+  ],
+  "frames": [
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-24\\2d-42.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.313,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-24\\2d-42.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 307,
+        "sha256": "e9531192a5ad6f39f8cd0d6fc30b31d61d0ca490f7f1a0e9b7fe0c7fcc540cd7",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\2d-137.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\2d-137.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 607,
+        "sha256": "aad76fda395df0e611e5ebf8384f7f74192d92053f19b4e499eb77370f65440c",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-24\\3d-42.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.188,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-24\\3d-42.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 304,
+        "sha256": "2a7cd9b4a30b076d6f5923ad6f7ae144afba1edf22e1962dcf1d71cf3f660d88",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\3d-137.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.234,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\3d-137.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 603,
+        "sha256": "2bdde8ade9262b14cd34b8104eb1800415680839376e282727ef464c3996ac86",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-24\\4d-42.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.156,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-24\\4d-42.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 338,
+        "sha256": "6baed4321ff50eb3aa079407002ac6e50fc8f43c7960caae31d6596754917bec",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\4d-137.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\4d-137.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 675,
+        "sha256": "2237d61be95cf5a3cd26985c65f94ae4f98eee9c55f9bc40e2d907c850ca0eaa",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-24\\2d-42-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-24\\2d-42-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 307,
+        "sha256": "e9531192a5ad6f39f8cd0d6fc30b31d61d0ca490f7f1a0e9b7fe0c7fcc540cd7",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\2d-137-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.265,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\2d-137-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 607,
+        "sha256": "aad76fda395df0e611e5ebf8384f7f74192d92053f19b4e499eb77370f65440c",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-24\\3d-42-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.265,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-24\\3d-42-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 304,
+        "sha256": "2a7cd9b4a30b076d6f5923ad6f7ae144afba1edf22e1962dcf1d71cf3f660d88",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\3d-137-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\3d-137-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 603,
+        "sha256": "2bdde8ade9262b14cd34b8104eb1800415680839376e282727ef464c3996ac86",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-24\\4d-42-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-24\\4d-42-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 338,
+        "sha256": "6baed4321ff50eb3aa079407002ac6e50fc8f43c7960caae31d6596754917bec",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\4d-137-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.203,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\4d-137-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 675,
+        "sha256": "2237d61be95cf5a3cd26985c65f94ae4f98eee9c55f9bc40e2d907c850ca0eaa",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "137",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-24\\2d-137-same-size.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.297,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 137,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-24\\2d-137-same-size.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 363,
+        "sha256": "a1894f47e5471eb1c0f690fd09912b6a82dc93dd98624d29b417ec2a054508aa",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "42",
+        "--width",
+        "2",
+        "--height",
+        "2",
+        "--output",
+        "evidence\\frozen-24\\2d-tiny.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.281,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 42,
+      "width": 2,
+      "height": 2,
+      "output": "evidence\\frozen-24\\2d-tiny.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 2,
+        "line_widths": [
+          2
+        ],
+        "nonspace_characters": 4,
+        "sha256": "ec2dad91f7a531b13ae2ce55fa3819ed92f3430680e798a1606efd7d4788404f",
+        "bytes": 6,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "2",
+        "--height",
+        "2",
+        "--output",
+        "evidence\\frozen-24\\3d-tiny.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.234,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 2,
+      "height": 2,
+      "output": "evidence\\frozen-24\\3d-tiny.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 2,
+        "line_widths": [
+          2
+        ],
+        "nonspace_characters": 4,
+        "sha256": "df79c1b9f27d1e8e4717da70d3bcf275eff4a8c3c2dfe39eee0e2dfcdbe8820c",
+        "bytes": 6,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "2",
+        "--height",
+        "2",
+        "--output",
+        "evidence\\frozen-24\\4d-tiny.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.188,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 2,
+      "height": 2,
+      "output": "evidence\\frozen-24\\4d-tiny.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 2,
+        "line_widths": [
+          2
+        ],
+        "nonspace_characters": 4,
+        "sha256": "df79c1b9f27d1e8e4717da70d3bcf275eff4a8c3c2dfe39eee0e2dfcdbe8820c",
+        "bytes": 6,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\3d-angle-0.txt",
+        "--yaw",
+        "0"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.187,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\3d-angle-0.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 519,
+        "sha256": "7cc99a5529f9f7aade9e4ecc2f1dcdbbf66cd6fa2051f828cdef691dd1a21a44",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\3d-angle-37.txt",
+        "--yaw",
+        "37"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.25,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\3d-angle-37.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 521,
+        "sha256": "c5adcc298ca23c1d9a0c841da2c79b9c5fce16dda954131e58c973b81ad0a40b",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\4d-angle-0.txt",
+        "--angle4",
+        "0"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.203,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\4d-angle-0.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 556,
+        "sha256": "1b55e8262e1d788de08ee63119a7df026f6df72cdc010b0a6f63905e4959489f",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "import sys; from ascii_tree.cli import entrypoint as entry; sys.argv[0]='ascii-tree'; sys.exit(entry())",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-24\\4d-angle-37.txt",
+        "--angle4",
+        "37"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.219,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-24\\4d-angle-37.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 493,
+        "sha256": "db9342489791f6ac6479ca8bf150b626b662a522c9b1293e5a5ab2162956fd4f",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    }
+  ],
+  "tests": {
+    "command": [
+      "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "status": "pass",
+    "returncode": 0,
+    "timeout": false,
+    "duration_s": 6.125,
+    "stdout": "",
+    "stderr": "test_cli_interactive_branch_and_ctrl_c_exit_code (test_app.LoopTests.test_cli_interactive_branch_and_ctrl_c_exit_code) ... ok\r\ntest_export_failure_is_visible_and_loop_survives (test_app.LoopTests.test_export_failure_is_visible_and_loop_survives) ... ok\r\ntest_finite_duration_shutdown (test_app.LoopTests.test_finite_duration_shutdown) ... ok\r\ntest_keyboardinterrupt_restores_context (test_app.LoopTests.test_keyboardinterrupt_restores_context) ... ok\r\ntest_startup_all_modes_resize_export_and_shutdown (test_app.LoopTests.test_startup_all_modes_resize_export_and_shutdown) ... ok\r\ntest_animation_elapsed_time_not_polling_interval (test_app.StateTests.test_animation_elapsed_time_not_polling_interval) ... ok\r\ntest_animation_pause_help_and_reset (test_app.StateTests.test_animation_pause_help_and_reset) ... ok\r\ntest_export_matches_current_frame_and_does_not_overwrite (test_app.StateTests.test_export_matches_current_frame_and_does_not_overwrite) ... ok\r\ntest_key_bounds_and_2d_no_camera_rotation (test_app.StateTests.test_key_bounds_and_2d_no_camera_rotation) ... ok\r\ntest_minimum_narrow_and_help_sizes (test_app.StateTests.test_minimum_narrow_and_help_sizes) ... ok\r\ntest_mode_camera_help_export_and_reset_preserve_object (test_app.StateTests.test_mode_camera_help_export_and_reset_preserve_object) ... ok\r\ntest_only_g_replaces_tree (test_app.StateTests.test_only_g_replaces_tree) ... ok\r\ntest_ui_explicitly_explains_4d_projection (test_app.StateTests.test_ui_explicitly_explains_4d_projection) ... ok\r\ntest_failed_startup_still_restores_terminal (test_app.TerminalTests.test_failed_startup_still_restores_terminal) ... ok\r\ntest_redraw_uses_cursor_addresses_and_skips_identical_rows (test_app.TerminalTests.test_redraw_uses_cursor_addresses_and_skips_identical_rows) ... ok\r\ntest_resize_queries_the_active_output_buffer (test_app.TerminalTests.test_resize_queries_the_active_output_buffer) ... ok\r\ntest_split_arrow_sequences_and_escape (test_app.TerminalTests.test_split_arrow_sequences_and_escape) ... ok\r\ntest_terminal_restored_after_exception (test_app.TerminalTests.test_terminal_restored_after_exception) ... ok\r\ntest_cli_all_modes_and_tiny_frames (test_cli.CLITests.test_cli_all_modes_and_tiny_frames) ... ok\r\ntest_headless_export_dimensions_ascii_and_byte_determinism (test_cli.CLITests.test_headless_export_dimensions_ascii_and_byte_determinism) ... ok\r\ntest_help_and_no_arguments (test_cli.CLITests.test_help_and_no_arguments) ... ok\r\ntest_invalid_inputs_fail_cleanly (test_cli.CLITests.test_invalid_inputs_fail_cleanly) ... ok\r\ntest_no_tty_view_is_single_plain_frame_not_animation_spam (test_cli.CLITests.test_no_tty_view_is_single_plain_frame_not_animation_spam) ... ok\r\ntest_output_error_is_clear (test_cli.CLITests.test_output_error_is_clear) ... ok\r\ntest_bounded_for_many_seeds (test_geometry.GeometryTests.test_bounded_for_many_seeds) ... ok\r\ntest_connected_acyclic_parent_graph (test_geometry.GeometryTests.test_connected_acyclic_parent_graph) ... ok\r\ntest_finite_coordinates_and_nonplanar_zw (test_geometry.GeometryTests.test_finite_coordinates_and_nonplanar_zw) ... ok\r\ntest_positive_lengths_taper_and_growth (test_geometry.GeometryTests.test_positive_lengths_taper_and_growth) ... ok\r\ntest_seed_42_is_reproducible (test_geometry.GeometryTests.test_seed_42_is_reproducible) ... ok\r\ntest_several_seeds_have_distinct_geometry (test_geometry.GeometryTests.test_several_seeds_have_distinct_geometry) ... ok\r\ntest_2d_ignores_camera_but_3d_uses_z (test_render.ProjectionTests.test_2d_ignores_camera_but_3d_uses_z) ... ok\r\ntest_4d_perspective_and_near_plane (test_render.ProjectionTests.test_4d_perspective_and_near_plane) ... ok\r\ntest_matrix_is_orthonormal_and_nondegenerate (test_render.ProjectionTests.test_matrix_is_orthonormal_and_nondegenerate) ... ok\r\ntest_nonfinite_or_unbounded_options_rejected (test_render.ProjectionTests.test_nonfinite_or_unbounded_options_rejected) ... ok\r\ntest_xw_quarter_turn_mixes_components (test_render.ProjectionTests.test_xw_quarter_turn_mixes_components) ... ok\r\ntest_2d_wood_is_one_connected_pixel_silhouette (test_render.RenderTests.test_2d_wood_is_one_connected_pixel_silhouette) ... ok\r\ntest_byte_determinism_including_time (test_render.RenderTests.test_byte_determinism_including_time) ... ok\r\ntest_cell_aspect_compensates_horizontal_distance (test_render.RenderTests.test_cell_aspect_compensates_horizontal_distance) ... ok\r\ntest_clipping_and_extreme_views_are_finite (test_render.RenderTests.test_clipping_and_extreme_views_are_finite) ... ok\r\ntest_complete_renderer_occludes_back_branch (test_render.RenderTests.test_complete_renderer_occludes_back_branch) ... ok\r\ntest_depth_buffer_front_wins_in_either_draw_order (test_render.RenderTests.test_depth_buffer_front_wins_in_either_draw_order) ... ok\r\ntest_different_seeds_different_frames (test_render.RenderTests.test_different_seeds_different_frames) ... ok\r\ntest_raster_rejects_offscreen_and_nonfinite_depth (test_render.RenderTests.test_raster_rejects_offscreen_and_nonfinite_depth) ... ok\r\ntest_sizes_printable_ascii_no_ansi (test_render.RenderTests.test_sizes_printable_ascii_no_ansi) ... ok\r\ntest_wind_time_changes_frame (test_render.RenderTests.test_wind_time_changes_frame) ... ok\r\ntest_yaw_pitch_and_xw_visibly_change_projection (test_render.RenderTests.test_yaw_pitch_and_xw_visibly_change_projection) ... ok\r\ntest_real_console_input_resize_animation_export_quit_and_ctrl_c (test_windows_console.NativeWindowsConsoleTests.test_real_console_input_resize_animation_export_quit_and_ctrl_c) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 47 tests in 5.829s\r\n\r\nOK\r\n",
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "observed_test_count": 47
+  },
+  "categories": [
+    {
+      "id": "2d",
+      "max": 12,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "2d.determinism",
+          "max": 3,
+          "score": 3,
+          "status": "pass",
+          "evidence": [
+            "2d-42.txt",
+            "2d-42-repeat.txt"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "2d.seed_variation",
+          "max": 2,
+          "score": 2,
+          "status": "pass",
+          "evidence": [
+            "2d-42.txt",
+            "2d-137-same-size.txt"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "2d.procedural_morphology",
+          "max": 7,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code and frame review: organic procedural connected tapered branching"
+        }
+      ]
+    },
+    {
+      "id": "3d",
+      "max": 13,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "3d.angular_change",
+          "max": 4,
+          "score": 4,
+          "status": "pass",
+          "evidence": [
+            "evidence\\frozen-24\\3d-angle-0.txt",
+            "evidence\\frozen-24\\3d-angle-37.txt"
+          ],
+          "reason": "Changed bytes are necessary evidence; source review must separately establish true transformations"
+        },
+        {
+          "id": "3d.geometry",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and supplied tests: finite connected nonplanar XYZ"
+        },
+        {
+          "id": "3d.occlusion",
+          "max": 5,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind mathematics/code review: valid depth ordering and shading"
+        }
+      ]
+    },
+    {
+      "id": "4d",
+      "max": 20,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "4d.angular_change",
+          "max": 4,
+          "score": 4,
+          "status": "pass",
+          "evidence": [
+            "evidence\\frozen-24\\4d-angle-0.txt",
+            "evidence\\frozen-24\\4d-angle-37.txt"
+          ],
+          "reason": "Changed bytes are necessary evidence; source review must separately establish true transformations"
+        },
+        {
+          "id": "4d.coordinates",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and tests: actual finite XYZW coordinates"
+        },
+        {
+          "id": "4d.variable_w",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and tests: W varies across vertices"
+        },
+        {
+          "id": "4d.rotation_math",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and tests: true XW/YW/ZW rotation mixing W and space"
+        },
+        {
+          "id": "4d.projection",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and tests: actual 4D to 3D to 2D with safe perspective"
+        }
+      ]
+    },
+    {
+      "id": "ux",
+      "max": 12,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "ux.help",
+          "max": 2,
+          "score": 2,
+          "status": "pass",
+          "evidence": [
+            "cli.help"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "ux.export",
+          "max": 2,
+          "score": 2,
+          "status": "pass",
+          "evidence": [
+            "frames[0:6].frame"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "ux.interactive_controls",
+          "max": 6,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "separate blind interactive smoke of required controls"
+        },
+        {
+          "id": "ux.stable_object",
+          "max": 2,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and interactive smoke: switching modes preserves geometry"
+        }
+      ]
+    },
+    {
+      "id": "aesthetics",
+      "max": 12,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "aesthetics.blind_frames",
+          "max": 12,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "separate blind review of two seeds without strategy identifiers"
+        }
+      ]
+    },
+    {
+      "id": "reliability",
+      "max": 10,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "reliability.headless",
+          "max": 3,
+          "score": 3,
+          "status": "pass",
+          "evidence": [
+            "frames[0:6]"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "reliability.tiny",
+          "max": 2,
+          "score": 2,
+          "status": "pass",
+          "evidence": [
+            "*-tiny.txt"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "reliability.resize",
+          "max": 2,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "separate blind interactive terminal resize smoke"
+        },
+        {
+          "id": "reliability.ctrl_c",
+          "max": 3,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "separate blind interactive shutdown/Ctrl+C smoke"
+        }
+      ]
+    },
+    {
+      "id": "tests",
+      "max": 9,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "tests.execution",
+          "max": 3,
+          "score": 3,
+          "status": "pass",
+          "evidence": [
+            "tests"
+          ],
+          "reason": "Zero tests or unknown test counts cannot establish a passing test suite"
+        },
+        {
+          "id": "tests.coverage",
+          "max": 6,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind review of meaningful tests for the ten task obligations"
+        }
+      ]
+    },
+    {
+      "id": "maintainability",
+      "max": 7,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "maintainability.review",
+          "max": 7,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind independent source review"
+        }
+      ]
+    },
+    {
+      "id": "readme",
+      "max": 5,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "readme.commands",
+          "max": 2,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind README review and commands actually executed by evaluator"
+        },
+        {
+          "id": "readme.installation",
+          "max": 1,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind README review: reproducible actual dependencies and setup"
+        },
+        {
+          "id": "readme.4d_explanation",
+          "max": 2,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind README review: accurate 4D geometry and projection explanation"
+        }
+      ]
+    }
+  ],
+  "quality_score": null,
+  "accepted": null,
+  "acceptance_reason": "Blind review and interactive checks remain required",
+  "discovery_status": "pass",
+  "discovery_reason": null,
+  "repeat_determinism": [
+    {
+      "mode": "2d",
+      "seed": 42,
+      "status": "pass"
+    },
+    {
+      "mode": "2d",
+      "seed": 137,
+      "status": "pass"
+    },
+    {
+      "mode": "3d",
+      "seed": 42,
+      "status": "pass"
+    },
+    {
+      "mode": "3d",
+      "seed": 137,
+      "status": "pass"
+    },
+    {
+      "mode": "4d",
+      "seed": 42,
+      "status": "pass"
+    },
+    {
+      "mode": "4d",
+      "seed": 137,
+      "status": "pass"
+    }
+  ],
+  "assessed_points": 25,
+  "assessed_max": 25,
+  "unassessed_max": 75
+}

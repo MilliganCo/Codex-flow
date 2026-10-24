@@ -1,0 +1,1371 @@
+{
+  "schema": 1,
+  "solution": "solutions/B",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "cli": {
+    "prefix": [
+      "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "ascii_tree"
+    ],
+    "source": "README command",
+    "render_tokens": [
+      "render"
+    ],
+    "flags": {
+      "seed": "--seed",
+      "width": "--width",
+      "height": "--height",
+      "mode": "--mode",
+      "output": "--output",
+      "angle3": "--yaw",
+      "angle4": "--angle4d"
+    },
+    "mode_values": {
+      "2d": "2d",
+      "3d": "3d",
+      "4d": "4d"
+    },
+    "help": {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "--help"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.14,
+      "stdout": "usage: __main__.py [-h] [--version] {view,render} ...\r\n\r\nASCII Tree Explorer | one tree, three projections\r\n\r\npositional arguments:\r\n  {view,render}\r\n    view         interactive explorer\r\n    render       deterministic plain ASCII frame\r\n\r\noptions:\r\n  -h, --help     show this help message and exit\r\n  --version      show program's version number and exit\r\n",
+      "stderr": "",
+      "stdout_bytes": 358,
+      "stdout_sha256": "6bc0638c429cf20384d3e8920aa5ba8dc56ad6754799e4dc44e6c20a602ca6d6"
+    },
+    "render_help": {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--help"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.141,
+      "stdout": "usage: __main__.py render [-h] [--seed SEED] [--mode {2d,3d,4d}]\r\n                          [--width WIDTH] [--height HEIGHT] [--yaw YAW]\r\n                          [--pitch PITCH] [--angle4d ANGLE4D] [--zoom ZOOM]\r\n                          [--aspect ASPECT] [--time TIME] [--output OUTPUT]\r\n\r\noptions:\r\n  -h, --help         show this help message and exit\r\n  --seed SEED\r\n  --mode {2d,3d,4d}\r\n  --width WIDTH\r\n  --height HEIGHT\r\n  --yaw YAW          3D yaw in degrees\r\n  --pitch PITCH      3D pitch in degrees\r\n  --angle4d ANGLE4D  XW rotation in degrees\r\n  --zoom ZOOM\r\n  --aspect ASPECT    cell width/height (default .5)\r\n  --time TIME        deterministic animation seconds\r\n  --output OUTPUT    file path; otherwise stdout\r\n",
+      "stderr": "",
+      "stdout_bytes": 730,
+      "stdout_sha256": "b57ba90fa91dfd402d1e0beab73ba6076fd8207e4c4b86f7513de1669a729a3e"
+    }
+  },
+  "discovery_probes": [
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "--help"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.14,
+      "stdout": "usage: __main__.py [-h] [--version] {view,render} ...\r\n\r\nASCII Tree Explorer | one tree, three projections\r\n\r\npositional arguments:\r\n  {view,render}\r\n    view         interactive explorer\r\n    render       deterministic plain ASCII frame\r\n\r\noptions:\r\n  -h, --help     show this help message and exit\r\n  --version      show program's version number and exit\r\n",
+      "stderr": "",
+      "stdout_bytes": 358,
+      "stdout_sha256": "6bc0638c429cf20384d3e8920aa5ba8dc56ad6754799e4dc44e6c20a602ca6d6"
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--help"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.141,
+      "stdout": "usage: __main__.py render [-h] [--seed SEED] [--mode {2d,3d,4d}]\r\n                          [--width WIDTH] [--height HEIGHT] [--yaw YAW]\r\n                          [--pitch PITCH] [--angle4d ANGLE4D] [--zoom ZOOM]\r\n                          [--aspect ASPECT] [--time TIME] [--output OUTPUT]\r\n\r\noptions:\r\n  -h, --help         show this help message and exit\r\n  --seed SEED\r\n  --mode {2d,3d,4d}\r\n  --width WIDTH\r\n  --height HEIGHT\r\n  --yaw YAW          3D yaw in degrees\r\n  --pitch PITCH      3D pitch in degrees\r\n  --angle4d ANGLE4D  XW rotation in degrees\r\n  --zoom ZOOM\r\n  --aspect ASPECT    cell width/height (default .5)\r\n  --time TIME        deterministic animation seconds\r\n  --output OUTPUT    file path; otherwise stdout\r\n",
+      "stderr": "",
+      "stdout_bytes": 730,
+      "stdout_sha256": "b57ba90fa91dfd402d1e0beab73ba6076fd8207e4c4b86f7513de1669a729a3e"
+    }
+  ],
+  "frames": [
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-23\\2d-42.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.281,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-23\\2d-42.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 209,
+        "sha256": "18a45ece95c013d91924a1c96552081937eb3f3f0f308d0f5f80bf05ec11dce8",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\2d-137.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\2d-137.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 373,
+        "sha256": "c56d4eed5affd461c12606e5d61ae5a514dcb772a08a2dc1c92bb5f07c8ad0c6",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-23\\3d-42.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-23\\3d-42.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 220,
+        "sha256": "f00210713b0985b27e89a58a21fd98ec493015a56a6cc034469cd5085df86607",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\3d-137.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.234,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\3d-137.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 392,
+        "sha256": "427f7baeef9a196525283ef84177fc17c245de0195022d8e8fcd441113586674",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-23\\4d-42.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-23\\4d-42.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 272,
+        "sha256": "104b84019dbf6e0b461710e38402e0418be8ef96adfd5289c9d2eb61cebce246",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\4d-137.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.156,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\4d-137.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 488,
+        "sha256": "4580ef5697f9e4670c08889acd1f4a134b14f37c5b9f841c776301c1a7df6820",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-23\\2d-42-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.157,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-23\\2d-42-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 209,
+        "sha256": "18a45ece95c013d91924a1c96552081937eb3f3f0f308d0f5f80bf05ec11dce8",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\2d-137-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.265,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\2d-137-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 373,
+        "sha256": "c56d4eed5affd461c12606e5d61ae5a514dcb772a08a2dc1c92bb5f07c8ad0c6",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-23\\3d-42-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.266,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-23\\3d-42-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 220,
+        "sha256": "f00210713b0985b27e89a58a21fd98ec493015a56a6cc034469cd5085df86607",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\3d-137-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\3d-137-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 392,
+        "sha256": "427f7baeef9a196525283ef84177fc17c245de0195022d8e8fcd441113586674",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-23\\4d-42-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.157,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-23\\4d-42-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 272,
+        "sha256": "104b84019dbf6e0b461710e38402e0418be8ef96adfd5289c9d2eb61cebce246",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "137",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\4d-137-repeat.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 137,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\4d-137-repeat.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 488,
+        "sha256": "4580ef5697f9e4670c08889acd1f4a134b14f37c5b9f841c776301c1a7df6820",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "137",
+        "--width",
+        "80",
+        "--height",
+        "30",
+        "--output",
+        "evidence\\frozen-23\\2d-137-same-size.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.266,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 137,
+      "width": 80,
+      "height": 30,
+      "output": "evidence\\frozen-23\\2d-137-same-size.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 30,
+        "line_widths": [
+          80
+        ],
+        "nonspace_characters": 247,
+        "sha256": "e31f224504c11c651d9af46225ce24f6aa44841ce3a918124eddbd868739bc51",
+        "bytes": 2430,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "2d",
+        "--seed",
+        "42",
+        "--width",
+        "2",
+        "--height",
+        "2",
+        "--output",
+        "evidence\\frozen-23\\2d-tiny.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.25,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "2d",
+      "seed": 42,
+      "width": 2,
+      "height": 2,
+      "output": "evidence\\frozen-23\\2d-tiny.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 2,
+        "line_widths": [
+          2
+        ],
+        "nonspace_characters": 4,
+        "sha256": "38d183f7bbec959834037e65b74efb03d3d0b39f29227deb9b460ff2e4dc9212",
+        "bytes": 6,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "2",
+        "--height",
+        "2",
+        "--output",
+        "evidence\\frozen-23\\3d-tiny.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.25,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 2,
+      "height": 2,
+      "output": "evidence\\frozen-23\\3d-tiny.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 2,
+        "line_widths": [
+          2
+        ],
+        "nonspace_characters": 4,
+        "sha256": "bb5bc04c1d77c36bc710741f6f4f653b90f733032c46cd7974289a0141729057",
+        "bytes": 6,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "2",
+        "--height",
+        "2",
+        "--output",
+        "evidence\\frozen-23\\4d-tiny.txt"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.188,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 2,
+      "height": 2,
+      "output": "evidence\\frozen-23\\4d-tiny.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 2,
+        "line_widths": [
+          2
+        ],
+        "nonspace_characters": 4,
+        "sha256": "bb5bc04c1d77c36bc710741f6f4f653b90f733032c46cd7974289a0141729057",
+        "bytes": 6,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\3d-angle-0.txt",
+        "--yaw",
+        "0"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.187,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\3d-angle-0.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 369,
+        "sha256": "5a82459b52f204154ee845448d01b77a443dfd926ca963a0fc922a4b274d8dd0",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "3d",
+        "--seed",
+        "42",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\3d-angle-37.txt",
+        "--yaw",
+        "37"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.172,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "3d",
+      "seed": 42,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\3d-angle-37.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 357,
+        "sha256": "17639bedab2e3e2fe79043cb3ea9e9d109156ac3f82bbd3bacc15b46bdfc27f4",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\4d-angle-0.txt",
+        "--angle4d",
+        "0"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.203,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\4d-angle-0.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 409,
+        "sha256": "abc09c9bb447f91516e383c7c3b3a2f61b0944375c60ae677286e13ba588b5fa",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    },
+    {
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--mode",
+        "4d",
+        "--seed",
+        "42",
+        "--width",
+        "100",
+        "--height",
+        "40",
+        "--output",
+        "evidence\\frozen-23\\4d-angle-37.txt",
+        "--angle4d",
+        "37"
+      ],
+      "status": "pass",
+      "returncode": 0,
+      "timeout": false,
+      "duration_s": 0.203,
+      "stdout": "",
+      "stderr": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "4d",
+      "seed": 42,
+      "width": 100,
+      "height": 40,
+      "output": "evidence\\frozen-23\\4d-angle-37.txt",
+      "frame": {
+        "printable_ascii": true,
+        "no_ansi": true,
+        "size_ok": true,
+        "line_count": 40,
+        "line_widths": [
+          100
+        ],
+        "nonspace_characters": 389,
+        "sha256": "c8ac911dad09bc692669aa2cfd81e596d3fb1acd7d8ba8329c72ce4b4387c4d2",
+        "bytes": 4040,
+        "status": "pass"
+      }
+    }
+  ],
+  "tests": {
+    "command": [
+      "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "status": "pass",
+    "returncode": 0,
+    "timeout": false,
+    "duration_s": 4.703,
+    "stdout": "",
+    "stderr": "test_nonfinite_and_malformed_coordinates_rejected (test_geometry_render.GeometryTests.test_nonfinite_and_malformed_coordinates_rejected) ... ok\r\ntest_perspective_near_plane_clips (test_geometry_render.GeometryTests.test_perspective_near_plane_clips) ... ok\r\ntest_xw_matrix_mixes_and_preserves_norm (test_geometry_render.GeometryTests.test_xw_matrix_mixes_and_preserves_norm) ... ok\r\ntest_3d_camera_changes_frame (test_geometry_render.RenderTests.test_3d_camera_changes_frame) ... ok\r\ntest_4d_angle_changes_frame_and_keeps_tree (test_geometry_render.RenderTests.test_4d_angle_changes_frame_and_keeps_tree) ... ok\r\ntest_all_camera_validation_boundaries (test_geometry_render.RenderTests.test_all_camera_validation_boundaries) ... ok\r\ntest_empty_and_nonfinite_tree_rejected (test_geometry_render.RenderTests.test_empty_and_nonfinite_tree_rejected) ... ok\r\ntest_frame_sizes_ascii_deterministic_all_modes (test_geometry_render.RenderTests.test_frame_sizes_ascii_deterministic_all_modes) ... ok\r\ntest_near_plane_through_production_renderer (test_geometry_render.RenderTests.test_near_plane_through_production_renderer) ... ok\r\ntest_occlusion_crossing_segments_order_independent (test_geometry_render.RenderTests.test_occlusion_crossing_segments_order_independent) ... ok\r\ntest_real_render_path_occlusion (test_geometry_render.RenderTests.test_real_render_path_occlusion) ... ok\r\ntest_safe_extreme_views_and_animation (test_geometry_render.RenderTests.test_safe_extreme_views_and_animation) ... ok\r\ntest_subpixel_horizontal_branch_is_connected (test_geometry_render.RenderTests.test_subpixel_horizontal_branch_is_connected) ... ok\r\ntest_bad_seed_and_degenerate_direction (test_model.ModelTests.test_bad_seed_and_degenerate_direction) ... ok\r\ntest_connected_finite_tapered_graph (test_model.ModelTests.test_connected_finite_tapered_graph) ... ok\r\ntest_deterministic_geometry (test_model.ModelTests.test_deterministic_geometry) ... ok\r\ntest_seeds_have_different_geometry (test_model.ModelTests.test_seeds_have_different_geometry) ... ok\r\ntest_spatial_and_age_variation (test_model.ModelTests.test_spatial_and_age_variation) ... ok\r\ntest_switch_modes_preserves_identity (test_model.ModelTests.test_switch_modes_preserves_identity) ... ok\r\ntest_finite_view_frames_argument (test_terminal_cli.CLITests.test_finite_view_frames_argument) ... ok\r\ntest_headless_view_exits_once_without_ansi (test_terminal_cli.CLITests.test_headless_view_exits_once_without_ansi) ... ok\r\ntest_help_startup_and_shutdown (test_terminal_cli.CLITests.test_help_startup_and_shutdown) ... ok\r\ntest_invalid_cli_fails_cleanly (test_terminal_cli.CLITests.test_invalid_cli_fails_cleanly) ... ok\r\ntest_missing_output_parent_clean_error (test_terminal_cli.CLITests.test_missing_output_parent_clean_error) ... ok\r\ntest_render_file_bytes_reproducible (test_terminal_cli.CLITests.test_render_file_bytes_reproducible) ... ok\r\ntest_2d_ignores_camera_but_animates (test_terminal_cli.ControllerTests.test_2d_ignores_camera_but_animates) ... ok\r\ntest_all_controls (test_terminal_cli.ControllerTests.test_all_controls) ... ok\r\ntest_atomic_file_replace_and_failure_preserves_old_file (test_terminal_cli.ControllerTests.test_atomic_file_replace_and_failure_preserves_old_file) ... ok\r\ntest_compose_resize_help_and_tiny (test_terminal_cli.ControllerTests.test_compose_resize_help_and_tiny) ... ok\r\ntest_ctrl_c_cleans_up_simulation (test_terminal_cli.ControllerTests.test_ctrl_c_cleans_up_simulation) ... ok\r\ntest_ctrl_c_key_cleans_up_simulation (test_terminal_cli.ControllerTests.test_ctrl_c_key_cleans_up_simulation) ... ok\r\ntest_export_is_exact_and_no_overwrite (test_terminal_cli.ControllerTests.test_export_is_exact_and_no_overwrite) ... ok\r\ntest_run_resize_export_and_cleanup_simulation (test_terminal_cli.ControllerTests.test_run_resize_export_and_cleanup_simulation) ... ok\r\ntest_zoom_tilt_and_time_bounds (test_terminal_cli.ControllerTests.test_zoom_tilt_and_time_bounds) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 34 tests in 4.381s\r\n\r\nOK\r\n",
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "observed_test_count": 34
+  },
+  "categories": [
+    {
+      "id": "2d",
+      "max": 12,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "2d.determinism",
+          "max": 3,
+          "score": 3,
+          "status": "pass",
+          "evidence": [
+            "2d-42.txt",
+            "2d-42-repeat.txt"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "2d.seed_variation",
+          "max": 2,
+          "score": 2,
+          "status": "pass",
+          "evidence": [
+            "2d-42.txt",
+            "2d-137-same-size.txt"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "2d.procedural_morphology",
+          "max": 7,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code and frame review: organic procedural connected tapered branching"
+        }
+      ]
+    },
+    {
+      "id": "3d",
+      "max": 13,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "3d.angular_change",
+          "max": 4,
+          "score": 4,
+          "status": "pass",
+          "evidence": [
+            "evidence\\frozen-23\\3d-angle-0.txt",
+            "evidence\\frozen-23\\3d-angle-37.txt"
+          ],
+          "reason": "Changed bytes are necessary evidence; source review must separately establish true transformations"
+        },
+        {
+          "id": "3d.geometry",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and supplied tests: finite connected nonplanar XYZ"
+        },
+        {
+          "id": "3d.occlusion",
+          "max": 5,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind mathematics/code review: valid depth ordering and shading"
+        }
+      ]
+    },
+    {
+      "id": "4d",
+      "max": 20,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "4d.angular_change",
+          "max": 4,
+          "score": 4,
+          "status": "pass",
+          "evidence": [
+            "evidence\\frozen-23\\4d-angle-0.txt",
+            "evidence\\frozen-23\\4d-angle-37.txt"
+          ],
+          "reason": "Changed bytes are necessary evidence; source review must separately establish true transformations"
+        },
+        {
+          "id": "4d.coordinates",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and tests: actual finite XYZW coordinates"
+        },
+        {
+          "id": "4d.variable_w",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and tests: W varies across vertices"
+        },
+        {
+          "id": "4d.rotation_math",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and tests: true XW/YW/ZW rotation mixing W and space"
+        },
+        {
+          "id": "4d.projection",
+          "max": 4,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and tests: actual 4D to 3D to 2D with safe perspective"
+        }
+      ]
+    },
+    {
+      "id": "ux",
+      "max": 12,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "ux.help",
+          "max": 2,
+          "score": 2,
+          "status": "pass",
+          "evidence": [
+            "cli.help"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "ux.export",
+          "max": 2,
+          "score": 2,
+          "status": "pass",
+          "evidence": [
+            "frames[0:6].frame"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "ux.interactive_controls",
+          "max": 6,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "separate blind interactive smoke of required controls"
+        },
+        {
+          "id": "ux.stable_object",
+          "max": 2,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind code review and interactive smoke: switching modes preserves geometry"
+        }
+      ]
+    },
+    {
+      "id": "aesthetics",
+      "max": 12,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "aesthetics.blind_frames",
+          "max": 12,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "separate blind review of two seeds without strategy identifiers"
+        }
+      ]
+    },
+    {
+      "id": "reliability",
+      "max": 10,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "reliability.headless",
+          "max": 3,
+          "score": 3,
+          "status": "pass",
+          "evidence": [
+            "frames[0:6]"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "reliability.tiny",
+          "max": 2,
+          "score": 2,
+          "status": "pass",
+          "evidence": [
+            "*-tiny.txt"
+          ],
+          "reason": ""
+        },
+        {
+          "id": "reliability.resize",
+          "max": 2,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "separate blind interactive terminal resize smoke"
+        },
+        {
+          "id": "reliability.ctrl_c",
+          "max": 3,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "separate blind interactive shutdown/Ctrl+C smoke"
+        }
+      ]
+    },
+    {
+      "id": "tests",
+      "max": 9,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "tests.execution",
+          "max": 3,
+          "score": 3,
+          "status": "pass",
+          "evidence": [
+            "tests"
+          ],
+          "reason": "Zero tests or unknown test counts cannot establish a passing test suite"
+        },
+        {
+          "id": "tests.coverage",
+          "max": 6,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind review of meaningful tests for the ten task obligations"
+        }
+      ]
+    },
+    {
+      "id": "maintainability",
+      "max": 7,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "maintainability.review",
+          "max": 7,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind independent source review"
+        }
+      ]
+    },
+    {
+      "id": "readme",
+      "max": 5,
+      "score": null,
+      "status": "not-assessed",
+      "evidence": [],
+      "reason": "Some criteria require separate blind review",
+      "criteria": [
+        {
+          "id": "readme.commands",
+          "max": 2,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind README review and commands actually executed by evaluator"
+        },
+        {
+          "id": "readme.installation",
+          "max": 1,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind README review: reproducible actual dependencies and setup"
+        },
+        {
+          "id": "readme.4d_explanation",
+          "max": 2,
+          "score": null,
+          "status": "not-assessed",
+          "evidence": [],
+          "reason": "blind README review: accurate 4D geometry and projection explanation"
+        }
+      ]
+    }
+  ],
+  "quality_score": null,
+  "accepted": null,
+  "acceptance_reason": "Blind review and interactive checks remain required",
+  "discovery_status": "pass",
+  "discovery_reason": null,
+  "repeat_determinism": [
+    {
+      "mode": "2d",
+      "seed": 42,
+      "status": "pass"
+    },
+    {
+      "mode": "2d",
+      "seed": 137,
+      "status": "pass"
+    },
+    {
+      "mode": "3d",
+      "seed": 42,
+      "status": "pass"
+    },
+    {
+      "mode": "3d",
+      "seed": 137,
+      "status": "pass"
+    },
+    {
+      "mode": "4d",
+      "seed": 42,
+      "status": "pass"
+    },
+    {
+      "mode": "4d",
+      "seed": 137,
+      "status": "pass"
+    }
+  ],
+  "assessed_points": 25,
+  "assessed_max": 25,
+  "unassessed_max": 75
+}

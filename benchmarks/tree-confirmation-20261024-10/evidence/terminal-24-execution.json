@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "terminal",
+  "solution_id": 24,
+  "attempt_tag": null,
+  "exit_code": 1,
+  "wall_clock_s": 13.5,
+  "timeout_s": 600,
+  "sdk_cli_timed_out": false,
+  "launch_error": null,
+  "checker_sha256": "b1565d32274f695d33c76efb12950f87ddde52e7d6aa700ddfe90109a304f0ca",
+  "checker_support_sha256": {
+    "native57_case10.py": "b1565d32274f695d33c76efb12950f87ddde52e7d6aa700ddfe90109a304f0ca",
+    "conpty_case10_neutral.py": "d7c59cf9a3a999dd64d6d796cc9e8ce501d157000db990e2a9f4b9c59daaa6f9"
+  },
+  "checker_support_unchanged": true,
+  "source_files_checked": 34,
+  "submitted_source_unchanged": true,
+  "source_integrity_error": null,
+  "stdout_sha256": "60fc2d39690e387a78b113588530a407d23692bd5b41d9b495fb37bdb8a00d34",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "permission_profile_sha256": "988c5b98093acf8b62637023100aa8aa3566cb9d490732fdffe0860735dc6730",
+  "checker_permission": "read-only verifier outside writable evaluation root",
+  "network_enabled": false,
+  "model_calls": 0,
+  "boundary": "Existing official CLI setup; user .codex/.agents tool reads denied; no auth copying",
+  "timeout_boundary": "600-second CLI timeout; descendant cleanup is not independently established on timeout",
+  "frozen_evaluator_status_amended": false
+}

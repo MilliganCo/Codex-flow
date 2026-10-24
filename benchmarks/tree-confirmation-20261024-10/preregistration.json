@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "confirmation_id": "tree-confirmation-20261024-10",
+  "experiment_id": "tree-case-20261024-10",
+  "created_utc": "2026-10-24T07:41:13.754925+00:00",
+  "denominator": 1,
+  "groups": [
+    "A",
+    "B"
+  ],
+  "parallel_arms": true,
+  "timeout_s_per_arm": 1500,
+  "max_native_requests_per_arm": 80,
+  "root_model_both": "gpt-6.1-sol",
+  "root_effort_both": "xhigh",
+  "canonical_inputs": {
+    "task": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+    "evaluator": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+    "rubric": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+  },
+  "auxiliary_evidence_inputs": {
+    "protocol_sha256": {
+      "conpty-case10-protocol.md": "578c7c9bce0e8c8ddb8dabca1de4502a4d63b13ea6e6e05a25ee4e11ec9b2098",
+      "geometry-case10-protocol.md": "b14efd22c9958f9ba48ddc85828700284395767e5bc7855e65ce1b429140fabb"
+    },
+    "neutral_helper_sha256": "d7c59cf9a3a999dd64d6d796cc9e8ce501d157000db990e2a9f4b9c59daaa6f9",
+    "changes_task_weights_or_criteria": false
+  },
+  "runtime_source_commit": "8d3913cbee77cc91c482a13fed12c031170d4594",
+  "runtime_file_count": 16,
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+    "runtime/codex_flow/budget.py": "7bd53b1f9e15e427609716d1ef544bc9ab6e92f8cedc36db27cf7f0aae022cf5",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "4ed5834e90c30065cd59bf6895ca9025dec8095156836d7bf9e856151662f55a",
+    "runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "8bddedba48aa1c6d0ca6f518934c52d5f508356d98f434ed845b35fe213ac464",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "runtime_snapshot_sha256": "4cf91104b850ed95757ab6c8d7a8699bdc0ac07f1cc23c0e347056f73fca2866",
+  "codex_sha256": "e757246b4de87359e660647fa9514955a0971ff6a30affdd8c145d1d5ece7b84",
+  "prerequisite_sha256": "d20b2fdb4ff925fa524e58b58c2805d0a4b8bfb6609d46a18f07875d0063279b",
+  "changed_runtime_files": [
+    "runtime/codex_flow/cli.py",
+    "runtime/codex_flow/native.py"
+  ],
+  "changed_policy": {
+    "chief_owns_critical_numeric_parsing_security_atomic_primitives": true,
+    "chief_verifies_boundary_tests": true,
+    "initial_helper": "existing reviewer/high",
+    "initial_helper_task": "requirements risk pass; no tools, files, polling or delegation",
+    "low_risk_medium_proposals_optional": true,
+    "ordinary_budget_status_maximum": 2,
+    "budget_status_stages": [
+      "first runnable slice",
+      "before final verification"
+    ],
+    "batch_status_with_necessary_independent_work_when_supported": true,
+    "no_post_acceptance_status": true,
+    "worker_does_not_call_status": true,
+    "boundaries_are_instructions_not_new_OS_enforcement": true
+  },
+  "primary_success_criterion": {
+    "denominator": 1,
+    "both_native_arms_completed_normally": true,
+    "both_independently_accepted": true,
+    "quality_B_greater_or_equal_A": true,
+    "elapsed_metric": "total_arm_s_A / total_arm_s_B",
+    "minimum_elapsed_ratio": 1.1,
+    "claim_scope": "one changed-policy focused confirmation only"
+  },
+  "no_replacement_pooling_or_cherry_picking": true,
+  "attempt_count": 1,
+  "retry_allowed": false,
+  "retain_failures_and_policy_deviations": true,
+  "online_optimization_probes": 0,
+  "max_free_mercury_inference_attempts_B": 1,
+  "developer_input_suffix": false,
+  "inference_request_payload_unchanged": true,
+  "future_independent_grading_ids": [
+    23,
+    24
+  ],
+  "controller_grades_or_launches_monitor": false,
+  "limitations": [
+    "Original denominator-three primary remains failed regardless of this result",
+    "One focused changed-policy confirmation; no universal/statistical superiority claim",
+    "Shared auth/rollout state and physical read isolation remain degraded",
+    "Role, ownership and status-frequency instructions are not OS hard boundaries",
+    "Observed deviations remain in the result; no claimed intended-policy effect if ignored"
+  ],
+  "publication_kind": "derived_allowlisted_preregistration",
+  "original_raw_preregistration_sha256": "44522f8f631354c44533c8772aa4f15564f916629ef7641b144bcf7466568306",
+  "original_raw_preregistration_retained_locally": true,
+  "private_protection_paths_and_predecessor_artifact_history_omitted": true,
+  "predecessor_negative_context": {
+    "series_id": "stream-suite-20261024-01",
+    "denominator": 3,
+    "original_primary_passed": false,
+    "context_only": true,
+    "replaced_or_pooled_by_confirmation": false
+  },
+  "results": null,
+  "results_or_current_execution_not_read": true
+}

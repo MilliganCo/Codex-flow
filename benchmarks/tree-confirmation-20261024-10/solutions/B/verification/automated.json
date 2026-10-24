@@ -1,0 +1,64 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "checks": [
+    {
+      "name": "unittest",
+      "return_code": 0,
+      "seconds": 3.98,
+      "stdout": "",
+      "stderr": "test_nonfinite_and_malformed_coordinates_rejected (test_geometry_render.GeometryTests.test_nonfinite_and_malformed_coordinates_rejected) ... ok\ntest_perspective_near_plane_clips (test_geometry_render.GeometryTests.test_perspective_near_plane_clips) ... ok\ntest_xw_matrix_mixes_and_preserves_norm (test_geometry_render.GeometryTests.test_xw_matrix_mixes_and_preserves_norm) ... ok\ntest_3d_camera_changes_frame (test_geometry_render.RenderTests.test_3d_camera_changes_frame) ... ok\ntest_4d_angle_changes_frame_and_keeps_tree (test_geometry_render.RenderTests.test_4d_angle_changes_frame_and_keeps_tree) ... ok\ntest_all_camera_validation_boundaries (test_geometry_render.RenderTests.test_all_camera_validation_boundaries) ... ok\ntest_empty_and_nonfinite_tree_rejected (test_geometry_render.RenderTests.test_empty_and_nonfinite_tree_rejected) ... ok\ntest_frame_sizes_ascii_deterministic_all_modes (test_geometry_render.RenderTests.test_frame_sizes_ascii_deterministic_all_modes) ... ok\ntest_near_plane_through_production_renderer (test_geometry_render.RenderTests.test_near_plane_through_production_renderer) ... ok\ntest_occlusion_crossing_segments_order_independent (test_geometry_render.RenderTests.test_occlusion_crossing_segments_order_independent) ... ok\ntest_real_render_path_occlusion (test_geometry_render.RenderTests.test_real_render_path_occlusion) ... ok\ntest_safe_extreme_views_and_animation (test_geometry_render.RenderTests.test_safe_extreme_views_and_animation) ... ok\ntest_subpixel_horizontal_branch_is_connected (test_geometry_render.RenderTests.test_subpixel_horizontal_branch_is_connected) ... ok\ntest_bad_seed_and_degenerate_direction (test_model.ModelTests.test_bad_seed_and_degenerate_direction) ... ok\ntest_connected_finite_tapered_graph (test_model.ModelTests.test_connected_finite_tapered_graph) ... ok\ntest_deterministic_geometry (test_model.ModelTests.test_deterministic_geometry) ... ok\ntest_seeds_have_different_geometry (test_model.ModelTests.test_seeds_have_different_geometry) ... ok\ntest_spatial_and_age_variation (test_model.ModelTests.test_spatial_and_age_variation) ... ok\ntest_switch_modes_preserves_identity (test_model.ModelTests.test_switch_modes_preserves_identity) ... ok\ntest_finite_view_frames_argument (test_terminal_cli.CLITests.test_finite_view_frames_argument) ... ok\ntest_headless_view_exits_once_without_ansi (test_terminal_cli.CLITests.test_headless_view_exits_once_without_ansi) ... ok\ntest_help_startup_and_shutdown (test_terminal_cli.CLITests.test_help_startup_and_shutdown) ... ok\ntest_invalid_cli_fails_cleanly (test_terminal_cli.CLITests.test_invalid_cli_fails_cleanly) ... ok\ntest_missing_output_parent_clean_error (test_terminal_cli.CLITests.test_missing_output_parent_clean_error) ... ok\ntest_render_file_bytes_reproducible (test_terminal_cli.CLITests.test_render_file_bytes_reproducible) ... ok\ntest_2d_ignores_camera_but_animates (test_terminal_cli.ControllerTests.test_2d_ignores_camera_but_animates) ... ok\ntest_all_controls (test_terminal_cli.ControllerTests.test_all_controls) ... ok\ntest_atomic_file_replace_and_failure_preserves_old_file (test_terminal_cli.ControllerTests.test_atomic_file_replace_and_failure_preserves_old_file) ... ok\ntest_compose_resize_help_and_tiny (test_terminal_cli.ControllerTests.test_compose_resize_help_and_tiny) ... ok\ntest_ctrl_c_cleans_up_simulation (test_terminal_cli.ControllerTests.test_ctrl_c_cleans_up_simulation) ... ok\ntest_ctrl_c_key_cleans_up_simulation (test_terminal_cli.ControllerTests.test_ctrl_c_key_cleans_up_simulation) ... ok\ntest_export_is_exact_and_no_overwrite (test_terminal_cli.ControllerTests.test_export_is_exact_and_no_overwrite) ... ok\ntest_run_resize_export_and_cleanup_simulation (test_terminal_cli.ControllerTests.test_run_resize_export_and_cleanup_simulation) ... ok\ntest_zoom_tilt_and_time_bounds (test_terminal_cli.ControllerTests.test_zoom_tilt_and_time_bounds) ... ok\n\n----------------------------------------------------------------------\nRan 34 tests in 3.746s\n\nOK\n"
+    },
+    {
+      "name": "smoke",
+      "return_code": 0,
+      "seconds": 0.841,
+      "stdout": "PASS: 2D/3D/4D CLI, 100x40 ASCII exports, XW change, tiny headless view\n",
+      "stderr": ""
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "seed-42-2d.txt",
+      "passed": true
+    },
+    {
+      "file": "seed-42-3d.txt",
+      "passed": true
+    },
+    {
+      "file": "seed-42-4d-xw-0.txt",
+      "passed": true
+    },
+    {
+      "file": "seed-42-4d-xw-45.txt",
+      "passed": true
+    },
+    {
+      "file": "seed-137-2d.txt",
+      "passed": true
+    },
+    {
+      "file": "seed-137-3d.txt",
+      "passed": true
+    }
+  ],
+  "render_100x40_benchmark": {
+    "2d": {
+      "median_ms": 18.34,
+      "max_ms": 21.55,
+      "frames": 10
+    },
+    "3d": {
+      "median_ms": 20.5,
+      "max_ms": 22.22,
+      "frames": 10
+    },
+    "4d": {
+      "median_ms": 26.58,
+      "max_ms": 38.44,
+      "frames": 10
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,65 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows",
+  "size": [
+    100,
+    40
+  ],
+  "frames_per_case": 12,
+  "cases": [
+    {
+      "seed": 42,
+      "mode": "2d",
+      "segments": 549,
+      "leaves": 2928,
+      "generation_ms": 17.038,
+      "mean_ms": 14.944,
+      "max_ms": 24.515
+    },
+    {
+      "seed": 42,
+      "mode": "3d",
+      "segments": 549,
+      "leaves": 2928,
+      "generation_ms": 17.038,
+      "mean_ms": 26.908,
+      "max_ms": 32.092
+    },
+    {
+      "seed": 42,
+      "mode": "4d",
+      "segments": 549,
+      "leaves": 2928,
+      "generation_ms": 17.038,
+      "mean_ms": 17.741,
+      "max_ms": 22.425
+    },
+    {
+      "seed": 7,
+      "mode": "2d",
+      "segments": 549,
+      "leaves": 2955,
+      "generation_ms": 16.802,
+      "mean_ms": 13.822,
+      "max_ms": 17.232
+    },
+    {
+      "seed": 7,
+      "mode": "3d",
+      "segments": 549,
+      "leaves": 2955,
+      "generation_ms": 16.802,
+      "mean_ms": 15.829,
+      "max_ms": 19.319
+    },
+    {
+      "seed": 7,
+      "mode": "4d",
+      "segments": 549,
+      "leaves": 2955,
+      "generation_ms": 16.802,
+      "mean_ms": 18.643,
+      "max_ms": 24.629
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "source_commit": "8d3913cbee77cc91c482a13fed12c031170d4594",
+  "file_count": 16,
+  "original_raw_snapshot_sha256": "4cf91104b850ed95757ab6c8d7a8699bdc0ac07f1cc23c0e347056f73fca2866",
+  "comparison_target": "private-release staged Git index; uncommitted publication candidate",
+  "publication_commit": null,
+  "active_HEAD_raw_equivalence_claimed": false,
+  "only_allowed_index_byte_difference": "CRLF to LF; all other bytes must be equal",
+  "all_index_AST_dumps_equal": true,
+  "AST_python_version": "3.12.10",
+  "AST_scope": "Exact sixteen trusted runtime files; AST parse only, no runtime execution; not a generic compatibility promise",
+  "executed_bytes_identity": "Per-file frozen raw SHA256 is authoritative; a normalized Git commit label alone does not identify Windows executed bytes",
+  "index_or_source_modified": false,
+  "files": {
+    "codex-flow.py": {
+      "frozen_path": "frozen-runtime-20261024-10/codex-flow.py",
+      "executed_raw_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+      "published_index_sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+      "index_blob_oid": "48756429c53cc0043a8ade320d015f015231a070",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "3480653ff14d0d235c2992818f0d20357bc455936225d883228b2808bbd43772",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/__init__.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/__init__.py",
+      "executed_raw_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+      "published_index_sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+      "index_blob_oid": "e2a2c678dbff6c41fa94c4eb9482ee1ce7c9ce94",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "38b3a9314cfc7f81e00d19044ab4d83b72aad9d4816260e6ee348d45d516b59b",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/benchmark.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/benchmark.py",
+      "executed_raw_sha256": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+      "published_index_sha256": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+      "index_blob_oid": "b6f7c00dcc7aa5795f35e95eb48feb320ed41e20",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "041fa1f06939762dbd3f11de575402b76dcfbd0bdb5d725b613da057c69a698a",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/budget.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/budget.py",
+      "executed_raw_sha256": "7bd53b1f9e15e427609716d1ef544bc9ab6e92f8cedc36db27cf7f0aae022cf5",
+      "published_index_sha256": "7bd53b1f9e15e427609716d1ef544bc9ab6e92f8cedc36db27cf7f0aae022cf5",
+      "index_blob_oid": "965d2f4b6307791fafdf966a56609150d3718742",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "eaace2e33c454d36b78f9c7f7f553d92c2c6dc0fd2958d600a73fefcbea6d0e6",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/budget_stdio.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/budget_stdio.py",
+      "executed_raw_sha256": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+      "published_index_sha256": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+      "index_blob_oid": "7b65ab73265d12d942649847d747c7ff1a45e851",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "482b0466a6466eec0fc66a445d8f19dd2ae91ee49b07c6eef2c3e3dc0c748ba0",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/cli.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/cli.py",
+      "executed_raw_sha256": "4ed5834e90c30065cd59bf6895ca9025dec8095156836d7bf9e856151662f55a",
+      "published_index_sha256": "4ed5834e90c30065cd59bf6895ca9025dec8095156836d7bf9e856151662f55a",
+      "index_blob_oid": "0c52b6c8fc8875fccf0beb9e74099b43f9edc935",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "2fdef70294ede9e12d9f7db5fe36dc0dda26be46e880e102aefe881c8a1629b7",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/config.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/config.py",
+      "executed_raw_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+      "published_index_sha256": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+      "index_blob_oid": "d4f6b4ade2f851b4f830f414ac799a81f61b0cb4",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "0c07f9264903aca0ac6ac81df801e6875e699ffeaed83f33f076f92262b14ee3",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/contracts.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/contracts.py",
+      "executed_raw_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+      "published_index_sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+      "index_blob_oid": "874d6cee20087f9aa3d3ff42ef04cbbfc80cec1f",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "476b09b62314dbe562d36455c241157e874d159a95f7b409b801442bda7c5621",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/doctor.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/doctor.py",
+      "executed_raw_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+      "published_index_sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+      "index_blob_oid": "8464c7b718b22a687e321d98a2be7fc2be03e08c",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "855b0b582d4bd778b889076378d93f25ed3407fdfaca627e63354fdec6ac36dc",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/harness.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/harness.py",
+      "executed_raw_sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+      "published_index_sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+      "index_blob_oid": "bf019ac17b98858871b698b343946d054c0cba23",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "67e1ed93c0d6d9d81278732909c9c242a33c1c6adab6a112ea87f4c09ee09e87",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/mercury.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/mercury.py",
+      "executed_raw_sha256": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+      "published_index_sha256": "d9b534f213b39a28bdbe916f2ecdfec0ca83475459e041fd086f75bc8e51d1d6",
+      "index_blob_oid": "5f23453e7d28694ea9e662d06794444057063a40",
+      "normalization": "crlf_to_lf",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "e2822aace83fe19f7695e10ac236c9db14359802e6c0d57da2664681a7f3586a",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/native.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/native.py",
+      "executed_raw_sha256": "8bddedba48aa1c6d0ca6f518934c52d5f508356d98f434ed845b35fe213ac464",
+      "published_index_sha256": "8bddedba48aa1c6d0ca6f518934c52d5f508356d98f434ed845b35fe213ac464",
+      "index_blob_oid": "b74878240a6e410453c1aae419569ae7a258ca18",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "006a79cd6c2e2fb3bc8dd4f79671b63f9ea2be963dbbfa150b764ed3d802dcc8",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/native_metadata.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/native_metadata.py",
+      "executed_raw_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+      "published_index_sha256": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+      "index_blob_oid": "c6c34401e9f59c9f938bc2b6b69e95bad361329d",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "c530f986798712b2af9856fa300a13b4e4796ac4be423388cf28b6a79d67e5d8",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/policy.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/policy.py",
+      "executed_raw_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+      "published_index_sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+      "index_blob_oid": "ce0c625935592a7b4c5bc7eed32a1e6e765f8449",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "822529b4d654104588a05a2cf7371a7e5555dc1386a99e15b15aa06108860595",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/subscription.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/subscription.py",
+      "executed_raw_sha256": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+      "published_index_sha256": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+      "index_blob_oid": "572c3acade94878734e2562bd1060990c188cf8f",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "ec582c1734f7c63a153b012f82fffb4e4e70a15b324401a13701918d12ba98d3",
+      "current_main_raw_equals_frozen": true
+    },
+    "runtime/codex_flow/telemetry.py": {
+      "frozen_path": "frozen-runtime-20261024-10/runtime/codex_flow/telemetry.py",
+      "executed_raw_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+      "published_index_sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+      "index_blob_oid": "d093cad3aebae341228d220b4722b48c0ccd8085",
+      "normalization": "none",
+      "ast_dumps_equal": true,
+      "ast_dump_sha256": "d6f9ba724ca2f409a9638c9879190361bebf494469a17d378a64c513ba1e97fc",
+      "current_main_raw_equals_frozen": true
+    }
+  }
+}

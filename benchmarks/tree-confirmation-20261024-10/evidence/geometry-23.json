@@ -1,0 +1,1510 @@
+{
+  "schema": 1,
+  "solution_id": 23,
+  "protocol": "geometry-case10-protocol.md",
+  "checks": [
+    {
+      "name": "rotation exact canonical basis",
+      "seed": null,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 0,
+      "actual_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "rotation orthogonality determinant and inverse",
+      "seed": null,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 0,
+      "orthogonality_max_abs": 0.0,
+      "determinant": 1.0,
+      "inverse_max_abs": 0.0
+    },
+    {
+      "name": "rotation exact canonical basis",
+      "seed": null,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 37,
+      "actual_matrix": [
+        [
+          0.7986355100472928,
+          0.0,
+          0.0,
+          -0.6018150231520483
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.6018150231520483,
+          0.0,
+          0.0,
+          0.7986355100472928
+        ]
+      ]
+    },
+    {
+      "name": "rotation orthogonality determinant and inverse",
+      "seed": null,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 37,
+      "orthogonality_max_abs": 0.0,
+      "determinant": 1.0,
+      "inverse_max_abs": 0.0
+    },
+    {
+      "name": "rotation exact canonical basis",
+      "seed": null,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 90,
+      "actual_matrix": [
+        [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          6.123233995736766e-17
+        ]
+      ]
+    },
+    {
+      "name": "rotation orthogonality determinant and inverse",
+      "seed": null,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 90,
+      "orthogonality_max_abs": 0.0,
+      "determinant": 1.0,
+      "inverse_max_abs": 0.0
+    },
+    {
+      "name": "skeleton: finite actual XYZW",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1224
+    },
+    {
+      "name": "skeleton: affine XYZ rank 3",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "rank": 3,
+      "translated_scale": 11.486562384847286,
+      "pivot_tolerance": 1.1486562384847286e-09
+    },
+    {
+      "name": "skeleton: variable stored W",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "distinct_w": 613,
+      "w_span": 1.1213414882403225
+    },
+    {
+      "name": "full model: finite actual XYZW",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1896
+    },
+    {
+      "name": "full model: affine XYZ rank 3",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "rank": 3,
+      "translated_scale": 11.7347162641551,
+      "pivot_tolerance": 1.1734716264155101e-09
+    },
+    {
+      "name": "full model: variable stored W",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "distinct_w": 613,
+      "w_span": 1.1213414882403225
+    },
+    {
+      "name": "connected rooted positive branching graph",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "segment_count": 612,
+      "graph_vertices": 613,
+      "reached": 613,
+      "root_count": 1,
+      "branching": true,
+      "valid_parent_links": true,
+      "finite_positive_radii": true,
+      "positive_lengths": true,
+      "minimum_length": 0.11409973513242619
+    },
+    {
+      "name": "full production points rotation norm and inverse",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1896,
+      "angle_degrees": 0,
+      "norm_max_abs": 0.0,
+      "inverse_max_abs": 0.0
+    },
+    {
+      "name": "full production points rotation norm and inverse",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1896,
+      "angle_degrees": 37,
+      "norm_max_abs": 1.7763568394002505e-15,
+      "inverse_max_abs": 8.881784197001252e-16
+    },
+    {
+      "name": "full production points rotation norm and inverse",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1896,
+      "angle_degrees": 90,
+      "norm_max_abs": 1.7763568394002505e-15,
+      "inverse_max_abs": 0.0
+    },
+    {
+      "name": "actual private production projection coverage",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 0,
+      "observed_calls": 1896,
+      "expected_calls": 1896,
+      "full_branch_leaf_coverage": true,
+      "method": "observational sys.setprofile return events; prior profiler restored in finally",
+      "source": "solutions/B\\ascii_tree\\render.py",
+      "source_sha256": "da5f2d1a0568ddbdefbcbf829d614f9abf8366c6a840d422c144c69d23a88816",
+      "exact_code_identity": true
+    },
+    {
+      "name": "full production sequential 4D-to-3D-to-screen",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "points_compared": 1896,
+      "max_abs_error": 0.0,
+      "clipped": 0,
+      "view": {
+        "width": 100,
+        "height": 40,
+        "yaw": 25,
+        "pitch": -7,
+        "hyper_angle": 0,
+        "zoom": 1,
+        "time": 0,
+        "aspect": 0.5
+      }
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "zero 4D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "near 4D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "behind 4D plane",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "zero 3D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "near 3D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "behind 3D plane",
+      "exception": null
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 0,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 0,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 0,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 1,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 1,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 1,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 2,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 2,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 2,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 3,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 3,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 3,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "actual private production projection coverage",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 37,
+      "observed_calls": 1896,
+      "expected_calls": 1896,
+      "full_branch_leaf_coverage": true,
+      "method": "observational sys.setprofile return events; prior profiler restored in finally",
+      "source": "solutions/B\\ascii_tree\\render.py",
+      "source_sha256": "da5f2d1a0568ddbdefbcbf829d614f9abf8366c6a840d422c144c69d23a88816",
+      "exact_code_identity": true
+    },
+    {
+      "name": "full production sequential 4D-to-3D-to-screen",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "points_compared": 1896,
+      "max_abs_error": 0.0,
+      "clipped": 0,
+      "view": {
+        "width": 100,
+        "height": 40,
+        "yaw": 25,
+        "pitch": -7,
+        "hyper_angle": 37,
+        "zoom": 1,
+        "time": 0,
+        "aspect": 0.5
+      }
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "zero 4D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "near 4D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "behind 4D plane",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "zero 3D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "near 3D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "behind 3D plane",
+      "exception": null
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 0,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 0,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 0,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 1,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 1,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 1,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 2,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 2,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 2,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 3,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 3,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 3,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "zero denominator",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "near denominator",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "behind",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "ordinary",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "nan W",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "infinite W",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "zero distance",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "nan distance",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "zero denominator",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "near denominator",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "behind",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "ordinary",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "nan Z",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "infinite Z",
+      "exception": "ValueError"
+    },
+    {
+      "name": "stable complete model through mode and angle controls",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "before": "3b195b8562cd109baaee41020a6d2921cb8a8928046c889e44d2ebfde7dfc47c",
+      "after": "3b195b8562cd109baaee41020a6d2921cb8a8928046c889e44d2ebfde7dfc47c",
+      "controlled": "3b195b8562cd109baaee41020a6d2921cb8a8928046c889e44d2ebfde7dfc47c",
+      "includes": "all dataclass fields: graph, XYZW, radii, foliage"
+    },
+    {
+      "name": "deterministic complete production model",
+      "seed": 42,
+      "status": "pass",
+      "auxiliary": false,
+      "fingerprint": "3b195b8562cd109baaee41020a6d2921cb8a8928046c889e44d2ebfde7dfc47c"
+    },
+    {
+      "name": "skeleton: finite actual XYZW",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1224
+    },
+    {
+      "name": "skeleton: affine XYZ rank 3",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "rank": 3,
+      "translated_scale": 12.085348341847261,
+      "pivot_tolerance": 1.2085348341847261e-09
+    },
+    {
+      "name": "skeleton: variable stored W",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "distinct_w": 613,
+      "w_span": 1.1886830744854697
+    },
+    {
+      "name": "full model: finite actual XYZW",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1896
+    },
+    {
+      "name": "full model: affine XYZ rank 3",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "rank": 3,
+      "translated_scale": 12.34572160963632,
+      "pivot_tolerance": 1.234572160963632e-09
+    },
+    {
+      "name": "full model: variable stored W",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "distinct_w": 613,
+      "w_span": 1.1886830744854697
+    },
+    {
+      "name": "connected rooted positive branching graph",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "segment_count": 612,
+      "graph_vertices": 613,
+      "reached": 613,
+      "root_count": 1,
+      "branching": true,
+      "valid_parent_links": true,
+      "finite_positive_radii": true,
+      "positive_lengths": true,
+      "minimum_length": 0.10342102575983796
+    },
+    {
+      "name": "full production points rotation norm and inverse",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1896,
+      "angle_degrees": 0,
+      "norm_max_abs": 0.0,
+      "inverse_max_abs": 0.0
+    },
+    {
+      "name": "full production points rotation norm and inverse",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1896,
+      "angle_degrees": 37,
+      "norm_max_abs": 1.7763568394002505e-15,
+      "inverse_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "name": "full production points rotation norm and inverse",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "point_count": 1896,
+      "angle_degrees": 90,
+      "norm_max_abs": 1.7763568394002505e-15,
+      "inverse_max_abs": 0.0
+    },
+    {
+      "name": "actual private production projection coverage",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 0,
+      "observed_calls": 1896,
+      "expected_calls": 1896,
+      "full_branch_leaf_coverage": true,
+      "method": "observational sys.setprofile return events; prior profiler restored in finally",
+      "source": "solutions/B\\ascii_tree\\render.py",
+      "source_sha256": "da5f2d1a0568ddbdefbcbf829d614f9abf8366c6a840d422c144c69d23a88816",
+      "exact_code_identity": true
+    },
+    {
+      "name": "full production sequential 4D-to-3D-to-screen",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "points_compared": 1896,
+      "max_abs_error": 0.0,
+      "clipped": 0,
+      "view": {
+        "width": 100,
+        "height": 40,
+        "yaw": 25,
+        "pitch": -7,
+        "hyper_angle": 0,
+        "zoom": 1,
+        "time": 0,
+        "aspect": 0.5
+      }
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "zero 4D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "near 4D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "behind 4D plane",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "zero 3D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "near 3D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "case": "behind 3D plane",
+      "exception": null
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 0,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 0,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 0,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 1,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 1,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 1,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 2,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 2,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 2,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 3,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 3,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 0,
+      "coordinate": 3,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "actual private production projection coverage",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "angle_degrees": 37,
+      "observed_calls": 1896,
+      "expected_calls": 1896,
+      "full_branch_leaf_coverage": true,
+      "method": "observational sys.setprofile return events; prior profiler restored in finally",
+      "source": "solutions/B\\ascii_tree\\render.py",
+      "source_sha256": "da5f2d1a0568ddbdefbcbf829d614f9abf8366c6a840d422c144c69d23a88816",
+      "exact_code_identity": true
+    },
+    {
+      "name": "full production sequential 4D-to-3D-to-screen",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "points_compared": 1896,
+      "max_abs_error": 0.0,
+      "clipped": 0,
+      "view": {
+        "width": 100,
+        "height": 40,
+        "yaw": 25,
+        "pitch": -7,
+        "hyper_angle": 37,
+        "zoom": 1,
+        "time": 0,
+        "aspect": 0.5
+      }
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "zero 4D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "near 4D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "behind 4D plane",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "zero 3D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "near 3D denominator",
+      "exception": null
+    },
+    {
+      "name": "actual production sequential perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "case": "behind 3D plane",
+      "exception": null
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 0,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 0,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 0,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 1,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 1,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 1,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 2,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 2,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 2,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 3,
+      "input": "nan",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 3,
+      "input": "inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary production projection nonfinite input",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "angle_degrees": 37,
+      "coordinate": 3,
+      "input": "-inf",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "zero denominator",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "near denominator",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "behind",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "ordinary",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "nan W",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "infinite W",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "zero distance",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 4D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "nan distance",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "zero denominator",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "near denominator",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "behind",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "ordinary",
+      "exception": null
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "nan Z",
+      "exception": "ValueError"
+    },
+    {
+      "name": "auxiliary public 3D perspective guard",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": true,
+      "case": "infinite Z",
+      "exception": "ValueError"
+    },
+    {
+      "name": "stable complete model through mode and angle controls",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "before": "25923649ce36e734dd713ee42ee5a2286764fb95d34bc7aa8108b2202a815ac3",
+      "after": "25923649ce36e734dd713ee42ee5a2286764fb95d34bc7aa8108b2202a815ac3",
+      "controlled": "25923649ce36e734dd713ee42ee5a2286764fb95d34bc7aa8108b2202a815ac3",
+      "includes": "all dataclass fields: graph, XYZW, radii, foliage"
+    },
+    {
+      "name": "deterministic complete production model",
+      "seed": 137,
+      "status": "pass",
+      "auxiliary": false,
+      "fingerprint": "25923649ce36e734dd713ee42ee5a2286764fb95d34bc7aa8108b2202a815ac3"
+    }
+  ],
+  "source_before": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "DEMO.md": "95349bef90e0156657942361512ec3bedf4f00e1c716a716d62122001c457e75",
+    "IMPLEMENTATION_NOTES.md": "2b8be609b026048205a9869e9ac5ab48d004965abde1613e75c1dbf1cc6bc232",
+    "README.md": "a418967118c4a0521ea6455cfdeda71aa7aea90cc2f6185a0f17b1b09d6b2d0c",
+    "VERIFICATION.md": "5278f6356cc9f62eb7f0b9dc8ca06c176ba02620994463e00ff826c7ca459a1f",
+    "pyproject.toml": "92001c3f43cebebb9d02c62a05f904a22e335d70b7018cb7cc177125be692e16",
+    "requirements.txt": "ff430609b0db41f2a11f81108357960bd2d85ad7acc9a8bb516e311bedf80dec",
+    "ascii_tree/__init__.py": "7ebf8039c6a19a305ac96349cc087aa8ced2f0d6c09c9fe6ee808b52c8e46061",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/cli.py": "2f0ca80302a11908fb37c48cdfa5dcc5af1167c53ffe0b19571fbf717beb0371",
+    "ascii_tree/export.py": "e79aea8407c13603aee889b76bab47339804a88c6f7ff87b3455e348f024efd4",
+    "ascii_tree/geometry.py": "559aaed57087e3b30d042a9460da1bc184e289d9397ce76600ced9222776009b",
+    "ascii_tree/model.py": "bc2c2c65e6f0c3d8ed6a57754fed6e3d88e1b3e5ad89148b665aa2c4b1f2d61a",
+    "ascii_tree/render.py": "da5f2d1a0568ddbdefbcbf829d614f9abf8366c6a840d422c144c69d23a88816",
+    "ascii_tree/terminal.py": "b90903760c251ed3972af3e517d21932b0dc72e10bc20900aad718e95e5b1ab0",
+    "exports/tree-42-4d-0001.txt": "8bef81f3267145ae294c4d679a724918c765470acc6cd040b8e452851c19be24",
+    "exports/tree-42-4d-0002.txt": "8bef81f3267145ae294c4d679a724918c765470acc6cd040b8e452851c19be24",
+    "samples/contact-sheet.png": "6cc6ce6204ad0e0a4e61689842cb3b3d4f70bf612aa2c04c6fa20d06f3cb3de3",
+    "samples/manifest.json": "0b4145a4997fe22863336fd0e2499d1d69aa4dc7c72c8fdad9d32b60f43f7057",
+    "samples/seed-137-2d.txt": "c56d4eed5affd461c12606e5d61ae5a514dcb772a08a2dc1c92bb5f07c8ad0c6",
+    "samples/seed-137-3d.txt": "427f7baeef9a196525283ef84177fc17c245de0195022d8e8fcd441113586674",
+    "samples/seed-42-2d.txt": "49414a03fa9ef84d53282c7294b3d5892420f6638e07466ccfcbd542fbf6908f",
+    "samples/seed-42-3d.txt": "fa1699ee48df1a1e2d2f9f58724ba6e5ef7f19ba737bd63ff09bb0bc945a155a",
+    "samples/seed-42-4d-xw-0.txt": "abc09c9bb447f91516e383c7c3b3a2f61b0944375c60ae677286e13ba588b5fa",
+    "samples/seed-42-4d-xw-45.txt": "485c165a260aaf679dd6c2928684ef2bbc740c36424f42b5df090a4a44097610",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_geometry_render.py": "541c8eda7bea4e3403d9a2b685dae76bf188833c1a970114a6d35b451c272867",
+    "tests/test_model.py": "4035bd6c85ca12bd9712324cc55aee97bf3d268d62ac6b57bbe5939e202d3e98",
+    "tests/test_terminal_cli.py": "c833a56665298721292d590c7201fbc184781049c2f3459550a148f42768caed",
+    "tools/build_samples.py": "91f753aff8676a6dc587dcc7f618cec2932aee3ed16d70eae8337e44623b7095",
+    "tools/make_preview.py": "8edfe5ca3fd177739d53007869810ac4310762f929d89224a125f74ba0aa9dc2",
+    "tools/native_probe.py": "dfa70ae93e5e15cc4f2dca347331277b88526fb9e92a2316eff536d1826101df",
+    "tools/smoke.py": "eba75ccd188aa6d7bc299c47524e6c31ba6ebd994e9da7a502bcb7eb3160b1ee",
+    "tools/verify.py": "b3a2e8d22b1fac04f088393c7e4d325c42609097294eb2f77633049c518e07f3",
+    "verification/automated.json": "bdda9c02ef43bfb04e97cfa98769e41a11ec19097fa779d383d103b544800188",
+    "verification/native-controls.json": "caaf5024fc27f5854d39be4d00e337aa88bf430118f721f9c2c36f9dbfdac125",
+    "verification/native-ctrl-c.json": "d82138523384bc0a4799a34f073d1d21171ff50a3a897284e934075bd41348f1",
+    "verification/native-startup.json": "42bd01569e3ab84f2c4c5a21a04e4efc2a6736151ee3a6373dde5026115dceb5"
+  },
+  "baseline_matches": true,
+  "checker_sha256": "9af719952ba5e708ae4636dfba42edc724783d970fb75cef9ff5fd0a8a0ce3b8",
+  "complete": true,
+  "error": null,
+  "rotation_convention": {
+    "plane": "XW",
+    "spatial_axis": 0,
+    "w_axis": 3,
+    "sigma": 1,
+    "vectors": "column",
+    "units": "radians",
+    "order": "center/normalize, XW, 4D perspective, yaw, pitch, 3D perspective, aspect and viewport"
+  },
+  "tolerances": {
+    "rotation_rel_abs": 1e-10,
+    "projection_rel": 2e-10,
+    "projection_abs": 2e-09
+  },
+  "source_after": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "DEMO.md": "95349bef90e0156657942361512ec3bedf4f00e1c716a716d62122001c457e75",
+    "IMPLEMENTATION_NOTES.md": "2b8be609b026048205a9869e9ac5ab48d004965abde1613e75c1dbf1cc6bc232",
+    "README.md": "a418967118c4a0521ea6455cfdeda71aa7aea90cc2f6185a0f17b1b09d6b2d0c",
+    "VERIFICATION.md": "5278f6356cc9f62eb7f0b9dc8ca06c176ba02620994463e00ff826c7ca459a1f",
+    "pyproject.toml": "92001c3f43cebebb9d02c62a05f904a22e335d70b7018cb7cc177125be692e16",
+    "requirements.txt": "ff430609b0db41f2a11f81108357960bd2d85ad7acc9a8bb516e311bedf80dec",
+    "ascii_tree/__init__.py": "7ebf8039c6a19a305ac96349cc087aa8ced2f0d6c09c9fe6ee808b52c8e46061",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/cli.py": "2f0ca80302a11908fb37c48cdfa5dcc5af1167c53ffe0b19571fbf717beb0371",
+    "ascii_tree/export.py": "e79aea8407c13603aee889b76bab47339804a88c6f7ff87b3455e348f024efd4",
+    "ascii_tree/geometry.py": "559aaed57087e3b30d042a9460da1bc184e289d9397ce76600ced9222776009b",
+    "ascii_tree/model.py": "bc2c2c65e6f0c3d8ed6a57754fed6e3d88e1b3e5ad89148b665aa2c4b1f2d61a",
+    "ascii_tree/render.py": "da5f2d1a0568ddbdefbcbf829d614f9abf8366c6a840d422c144c69d23a88816",
+    "ascii_tree/terminal.py": "b90903760c251ed3972af3e517d21932b0dc72e10bc20900aad718e95e5b1ab0",
+    "exports/tree-42-4d-0001.txt": "8bef81f3267145ae294c4d679a724918c765470acc6cd040b8e452851c19be24",
+    "exports/tree-42-4d-0002.txt": "8bef81f3267145ae294c4d679a724918c765470acc6cd040b8e452851c19be24",
+    "samples/contact-sheet.png": "6cc6ce6204ad0e0a4e61689842cb3b3d4f70bf612aa2c04c6fa20d06f3cb3de3",
+    "samples/manifest.json": "0b4145a4997fe22863336fd0e2499d1d69aa4dc7c72c8fdad9d32b60f43f7057",
+    "samples/seed-137-2d.txt": "c56d4eed5affd461c12606e5d61ae5a514dcb772a08a2dc1c92bb5f07c8ad0c6",
+    "samples/seed-137-3d.txt": "427f7baeef9a196525283ef84177fc17c245de0195022d8e8fcd441113586674",
+    "samples/seed-42-2d.txt": "49414a03fa9ef84d53282c7294b3d5892420f6638e07466ccfcbd542fbf6908f",
+    "samples/seed-42-3d.txt": "fa1699ee48df1a1e2d2f9f58724ba6e5ef7f19ba737bd63ff09bb0bc945a155a",
+    "samples/seed-42-4d-xw-0.txt": "abc09c9bb447f91516e383c7c3b3a2f61b0944375c60ae677286e13ba588b5fa",
+    "samples/seed-42-4d-xw-45.txt": "485c165a260aaf679dd6c2928684ef2bbc740c36424f42b5df090a4a44097610",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_geometry_render.py": "541c8eda7bea4e3403d9a2b685dae76bf188833c1a970114a6d35b451c272867",
+    "tests/test_model.py": "4035bd6c85ca12bd9712324cc55aee97bf3d268d62ac6b57bbe5939e202d3e98",
+    "tests/test_terminal_cli.py": "c833a56665298721292d590c7201fbc184781049c2f3459550a148f42768caed",
+    "tools/build_samples.py": "91f753aff8676a6dc587dcc7f618cec2932aee3ed16d70eae8337e44623b7095",
+    "tools/make_preview.py": "8edfe5ca3fd177739d53007869810ac4310762f929d89224a125f74ba0aa9dc2",
+    "tools/native_probe.py": "dfa70ae93e5e15cc4f2dca347331277b88526fb9e92a2316eff536d1826101df",
+    "tools/smoke.py": "eba75ccd188aa6d7bc299c47524e6c31ba6ebd994e9da7a502bcb7eb3160b1ee",
+    "tools/verify.py": "b3a2e8d22b1fac04f088393c7e4d325c42609097294eb2f77633049c518e07f3",
+    "verification/automated.json": "bdda9c02ef43bfb04e97cfa98769e41a11ec19097fa779d383d103b544800188",
+    "verification/native-controls.json": "caaf5024fc27f5854d39be4d00e337aa88bf430118f721f9c2c36f9dbfdac125",
+    "verification/native-ctrl-c.json": "d82138523384bc0a4799a34f073d1d21171ff50a3a897284e934075bd41348f1",
+    "verification/native-startup.json": "42bd01569e3ab84f2c4c5a21a04e4efc2a6736151ee3a6373dde5026115dceb5"
+  },
+  "source_unchanged": true,
+  "core_failed": [],
+  "auxiliary_failed_count": 0,
+  "core_all_passed": true
+}

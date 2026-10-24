@@ -24,3 +24,4 @@ benchmarks/case08/solutions/** -text -whitespace
 benchmarks/case08/evidence/frozen-*/*.txt -text -whitespace
 # Publication manifests refer to exact source, report and padded-frame bytes.
 benchmarks/stream-suite-20261024-01/** -text -whitespace
+benchmarks/tree-confirmation-20261024-10/** -text -whitespace

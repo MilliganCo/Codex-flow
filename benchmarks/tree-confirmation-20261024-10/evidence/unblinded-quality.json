@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "confirmation_id": "tree-confirmation-20261024-10",
+  "blind_review_seal_sha256": "dc45049c18f544036933ed647e169ec99b7657c672aa7b8ac84fa7db6ab1e44f",
+  "blind_review_sha256": "a47e45110e43cf5d96d53f11f7c5defca0bbadd9ae1c977093f3094082d0bdcc",
+  "sealed_before_map_read": true,
+  "quality": {
+    "B": {
+      "anonymous_id": "solution-23",
+      "quality_score": 94,
+      "accepted": true
+    },
+    "A": {
+      "anonymous_id": "solution-24",
+      "quality_score": 88,
+      "accepted": true
+    }
+  }
+}

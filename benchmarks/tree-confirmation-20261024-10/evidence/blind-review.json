@@ -1,0 +1,921 @@
+{
+  "schema": 1,
+  "blind": true,
+  "identities_unavailable_at_seal": true,
+  "scoring_basis": "Unchanged rubric 1.0, all 26 criteria, maximum 100, acceptance >=80 and five original critical criteria pass. No normalization or extra gate.",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "host_execution_boundary": "Application source read only as text; no application import/execution on host. All actual frozen evaluator, geometry and native execution supplied by root official SDK launcher. No application repairs, reruns, or model/API/browser use.",
+  "source_integrity_file": "blind-review-source-integrity.json",
+  "score_invariant": "No quality bonus for word count, test count, report length or formatting. Actual controls, geometry, source and frozen raster evidence only.",
+  "solutions": [
+    {
+      "solution_id": 23,
+      "score": 94,
+      "maximum": 100,
+      "assessed_criteria": 26,
+      "assessed_max": 100,
+      "unassessed_max": 0,
+      "critical_gates": [
+        {
+          "id": "4d.coordinates",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "geometry-23.json"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "geometry-23.json"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "solution-23/ascii_tree/geometry.py",
+            "geometry-23.json"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "geometry-23.json",
+            "case10-api-adapters.md"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "frozen-23/evaluation.json",
+            "frames[0:6]"
+          ]
+        }
+      ],
+      "critical_passed": 5,
+      "accepted": true,
+      "acceptance_reason": "All26 rubric criteria independently adjudicated, score>=80, all5 unchanged critical criteria pass. Native protocol completion is separately reported and is not an added critical gate.",
+      "categories": [
+        {
+          "id": "2d",
+          "max": 12,
+          "score": 11,
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: headless identical arguments produce identical bytes",
+              "evidence": [
+                "frozen-23/evaluation.json",
+                "2d-42.txt",
+                "2d-42-repeat.txt"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: headless seeds 42 and 137 differ",
+              "evidence": [
+                "frozen-23/evaluation.json",
+                "2d-42.txt",
+                "2d-137-same-size.txt"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "max": 7,
+              "score": 6,
+              "status": "partial",
+              "reason": "612 connected positive segments with true recursive orders, asymmetric directions and taper. Both seeded 2D frames are recognizable, but at 80x30 the long lower stem has little visible thickness variation and the upper limbs dominate the sparse crown.",
+              "evidence": [
+                "solution-23/ascii_tree/model.py",
+                "frozen-23/2d-42.txt",
+                "frozen-23/2d-137-same-size.txt",
+                "geometry-23.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "max": 13,
+          "score": 12,
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: Changed bytes are necessary evidence; source review must separately establish true transformations",
+              "evidence": [
+                "frozen-23/evaluation.json",
+                "evidence\\frozen-23\\3d-angle-0.txt",
+                "evidence\\frozen-23\\3d-angle-37.txt"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Both complete skeletons and complete foliage models have finite XYZ, affine rank 3, positive segment lengths/radii and one valid rooted graph.",
+              "evidence": [
+                "geometry-23.json",
+                "solution-23/ascii_tree/model.py"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "max": 5,
+              "score": 4,
+              "status": "partial",
+              "reason": "A real per-cell larger-Z-is-nearer buffer handles wood and leaves with stable ties and branch-surface shading; crossing tests pass. Raster.segment interpolates endpoint Z linearly in screen parameter rather than inverse depth, so ordering for depth-varying perspective segments remains approximate.",
+              "evidence": [
+                "solution-23/ascii_tree/render.py:42",
+                "solution-23/tests/test_geometry_render.py",
+                "frozen-23/evaluation.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "max": 20,
+          "score": 20,
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: Changed bytes are necessary evidence; source review must separately establish true transformations",
+              "evidence": [
+                "frozen-23/evaluation.json",
+                "evidence\\frozen-23\\4d-angle-0.txt",
+                "evidence\\frozen-23\\4d-angle-37.txt"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Every skeleton endpoint and actual leaf has four finite stored components for seeds 42 and 137.",
+              "evidence": [
+                "geometry-23.json"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Skeleton/full W spans are 1.1213414882403225 and 1.1886830744854697 for seeds42/137, above1e-8.",
+              "evidence": [
+                "geometry-23.json"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Actual production XW operator uses fixed sigma+1, passes exact signed basis37/90, identity, orthogonality, determinant+1, norm and inverse at1e-10 including all full-model points.",
+              "evidence": [
+                "solution-23/ascii_tree/geometry.py",
+                "geometry-23.json"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Actual untouched render.project closure observed for all1896 branch/leaf calls at each seed and XW0/37. Sequential4D->3D->screen subpixel output exactly matches independent composition; zero/near/behind denominators clip and nonfinite input is rejected. All138 geometry checks pass.",
+              "evidence": [
+                "geometry-23.json",
+                "case10-api-adapters.md"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "max": 12,
+          "score": 12,
+          "criteria": [
+            {
+              "id": "ux.help",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: documented CLI help starts and reports options",
+              "evidence": [
+                "frozen-23/evaluation.json",
+                "cli.help"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: all six standard frames are printable ASCII without ANSI at exact sizes",
+              "evidence": [
+                "frozen-23/evaluation.json",
+                "frames[0:6].frame"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "max": 6,
+              "score": 6,
+              "status": "pass",
+              "reason": "Independent native57/57 includes three modes, literal brackets, all arrows with embedded3D reversal, zoom, help, animation/pause, reset, newseed, exact exports and q/Esc.",
+              "evidence": [
+                "interactive-23/report.json"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Full graph/XYZW/radii/foliage fingerprints unchanged through mode/angle controls; native three-mode exports shareseed42 and G alone advances to43.",
+              "evidence": [
+                "geometry-23.json",
+                "interactive-23/report.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "max": 12,
+          "score": 8,
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "max": 12,
+              "score": 8,
+              "status": "partial",
+              "reason": "Seed42 has an asymmetric forked crown with readable sloping branches and small leaf sprays. Seed137 spreads into a broader, irregular multi-order crown. Both are recognizable organic trees, with substantial whitespace and clear stem/crown separation. Sparse leaf punctuation and repeated diagonal bundles make them look twiggy; lower stems are long and nearly uniform at80x30. Seed137 at100x40 reveals modest base shading, while foliage remains light. 4D rotations visibly reorganize these same structures.",
+              "evidence": [
+                "frozen-23/2d-42.txt",
+                "frozen-23/2d-137-same-size.txt",
+                "frozen-23/2d-137.txt",
+                "frozen-23/3d-42.txt",
+                "frozen-23/3d-137.txt",
+                "frozen-23/4d-42.txt",
+                "frozen-23/4d-137.txt",
+                "frozen-23/4d-angle-37.txt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "max": 10,
+          "score": 10,
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: all standard mode/seed renders exit successfully without TTY",
+              "evidence": [
+                "frozen-23/evaluation.json",
+                "frames[0:6]"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: 2x2 headless terminal renders all modes without crash, valid bounded ASCII",
+              "evidence": [
+                "frozen-23/evaluation.json",
+                "*-tiny.txt"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Actual ConPTY resizes30x12->1x1->100x40 all produce bounded ASCII and exact state-oracle exports.",
+              "evidence": [
+                "interactive-23/report.json"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Fresh literalCtrlC session exits130, restores cursor and leaves alternate screen. q/Esc each exit0 with both restoration sequences. No signal/input-mode repairs in checker.",
+              "evidence": [
+                "interactive-23/report.json",
+                "interactive-23/ctrl-c-transcript-final.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "max": 9,
+          "score": 9,
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: Zero tests or unknown test counts cannot establish a passing test suite",
+              "evidence": [
+                "frozen-23/evaluation.json",
+                "tests"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "max": 6,
+              "score": 6,
+              "status": "pass",
+              "reason": "Meaningful model, graph/taper, seed/raster determinism, ASCII/dimensions, actual crossing-occlusion, XW math and guards, stable-object, CLI/noTTY, fake-loop cleanup/resize and tiny-size assertions cover all10 requested obligations. Native simulations are explicitly labeled and independent native execution supplies separate proof.",
+              "evidence": [
+                "solution-23/tests/test_model.py",
+                "solution-23/tests/test_geometry_render.py",
+                "solution-23/tests/test_terminal_cli.py"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "max": 7,
+          "score": 7,
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "max": 7,
+              "score": 7,
+              "status": "pass",
+              "reason": "Small standard-library-only modules separate immutable model, finite transform math, rasterizer, CLI, transactional export and native adapter. Bounded recursion, dimensions, camera validation and isolated RNG are clear; runtime dependencies empty and optional build dependency pinned.",
+              "evidence": [
+                "solution-23/ascii_tree",
+                "solution-23/pyproject.toml",
+                "solution-23/requirements.txt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "max": 5,
+          "score": 5,
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "README gives real module help/view/render/test/smoke commands; frozen evaluator ran documented module CLI and test command successfully, and independent native viewer confirmed interactive invocation.",
+              "evidence": [
+                "solution-23/README.md",
+                "frozen-23/evaluation.json",
+                "interactive-23/report.json"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "max": 1,
+              "score": 1,
+              "status": "pass",
+              "reason": "README statesPython3.12+ and standard-library-only direct module execution, with optional accurately separated package installation. Metadata and requirements agree.",
+              "evidence": [
+                "solution-23/README.md",
+                "solution-23/pyproject.toml"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "README accurately explains developmental W, fixed shared graph, signed XW equations,4D perspective factor and subsequent3D camera/terminal projection with clipping.",
+              "evidence": [
+                "solution-23/README.md",
+                "geometry-23.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "frozen": {
+        "assessed_points": 25,
+        "assessed_max": 25,
+        "quality_score": null,
+        "accepted": null,
+        "record_unchanged": true
+      },
+      "geometry": {
+        "complete": true,
+        "pass": 138,
+        "fail": 0,
+        "checks": 138,
+        "auxiliary_failures": 0,
+        "all_core_pass": true,
+        "all_checks_pass": true,
+        "failures_retained": true
+      },
+      "native": {
+        "complete": true,
+        "executed_checks": 57,
+        "passed_checks": 57,
+        "failed_checks": 0,
+        "unexecuted_checks": 0,
+        "all_passed": true,
+        "error": null
+      },
+      "limitations": [
+        "Visible WindowsTerminal GUI/font appearance, Linux/WSL, and original input flags after exit were not assessed.",
+        "Frame judgment is qualitative blind source/raster review, not a font-rendered GUI claim."
+      ]
+    },
+    {
+      "solution_id": 24,
+      "score": 88,
+      "maximum": 100,
+      "assessed_criteria": 26,
+      "assessed_max": 100,
+      "unassessed_max": 0,
+      "critical_gates": [
+        {
+          "id": "4d.coordinates",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "geometry-24.json"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "geometry-24.json"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "geometry-24.json",
+            "solution-24/ascii_tree/projection.py"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "geometry-24.json",
+            "solution-24/ascii_tree/projection.py",
+            "solution-24/ascii_tree/cli.py"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "status": "pass",
+          "passed": true,
+          "evidence": [
+            "frozen-24/evaluation.json",
+            "frames[0:6]"
+          ]
+        }
+      ],
+      "critical_passed": 5,
+      "accepted": true,
+      "acceptance_reason": "All26 rubric criteria independently adjudicated, score>=80, all5 unchanged critical criteria pass. Native protocol completion is separately reported and is not an added critical gate.",
+      "categories": [
+        {
+          "id": "2d",
+          "max": 12,
+          "score": 12,
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: headless identical arguments produce identical bytes",
+              "evidence": [
+                "frozen-24/evaluation.json",
+                "2d-42.txt",
+                "2d-42-repeat.txt"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: headless seeds 42 and 137 differ",
+              "evidence": [
+                "frozen-24/evaluation.json",
+                "2d-42.txt",
+                "2d-137-same-size.txt"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "max": 7,
+              "score": 7,
+              "status": "pass",
+              "reason": "549 connected positive segments with curved leader, spiral scaffold limbs, recursive lateral/twig orders, progressive taper and attached buttress roots. Both seeded2D frames show readable, asymmetric branching and sparse-enough foliage for their silhouette.",
+              "evidence": [
+                "solution-24/ascii_tree/geometry.py",
+                "frozen-24/2d-42.txt",
+                "frozen-24/2d-137-same-size.txt",
+                "geometry-24.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "max": 13,
+          "score": 13,
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: Changed bytes are necessary evidence; source review must separately establish true transformations",
+              "evidence": [
+                "frozen-24/evaluation.json",
+                "evidence\\frozen-24\\3d-angle-0.txt",
+                "evidence\\frozen-24\\3d-angle-37.txt"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Both actual skeletons and complete models have finite XYZ, affine rank3, positive lengths/radii and a valid single rooted skeleton; leaf jitter is not responsible for skeleton rank.",
+              "evidence": [
+                "geometry-24.json"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "max": 5,
+              "score": 5,
+              "status": "pass",
+              "reason": "Real shared depth buffer uses nearer camera distance, inverse-depth interpolation, tapered surfaces and depth/light-aware leaf/wood shading. Source and actual complete-renderer crossing tests establish front/back behavior in either order.",
+              "evidence": [
+                "solution-24/ascii_tree/render.py",
+                "solution-24/tests/test_render.py",
+                "frozen-24/evaluation.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "max": 20,
+          "score": 20,
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: Changed bytes are necessary evidence; source review must separately establish true transformations",
+              "evidence": [
+                "frozen-24/evaluation.json",
+                "evidence\\frozen-24\\4d-angle-0.txt",
+                "evidence\\frozen-24\\4d-angle-37.txt"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "All550 skeleton vertices and3478/3512 full-model points have genuine finite stored XYZW in seeds42/137.",
+              "evidence": [
+                "geometry-24.json"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Stored skeleton W spans7.8284394397348915 and7.001671820027594; full-model spans7.865204543609185 and7.031192925060552. Both models exceed1e-8.",
+              "evidence": [
+                "geometry-24.json"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Production degree-based XW operator uses sigma+1 and passes signed37/90 basis, identity, orthogonality, determinant+1, all-point norm/inverse at1e-10. The actual projector inlines the same operation and its whole path is independently checked.",
+              "evidence": [
+                "geometry-24.json",
+                "solution-24/ascii_tree/projection.py"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Every actual finite seeded skeleton/leaf point atXW0/37 matches independent4D perspective->yaw/pitch->3D perspective->aspect/screen coordinates within8.882e-16; actual zero/near/behind4D/3D guards clip. CLI RenderOptions rejects nonfinite camera/time, and actual generated geometry is finite. However arbitrary direct Point4/distance API inputs propagate NaN/Inf in38 auxiliary probes; those failures remain explicit. Required production projection and finite-input clipping are established, so these out-of-domain API failures do not create a new critical gate or erase the original findings.",
+              "evidence": [
+                "geometry-24.json",
+                "solution-24/ascii_tree/projection.py",
+                "solution-24/ascii_tree/cli.py"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "max": 12,
+          "score": 12,
+          "criteria": [
+            {
+              "id": "ux.help",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: documented CLI help starts and reports options",
+              "evidence": [
+                "frozen-24/evaluation.json",
+                "cli.help"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: all six standard frames are printable ASCII without ANSI at exact sizes",
+              "evidence": [
+                "frozen-24/evaluation.json",
+                "frames[0:6].frame"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "max": 6,
+              "score": 6,
+              "status": "pass",
+              "reason": "All required mode/camera/XW/zoom/help/animation/reset/newseed/export controls, q/Esc, embedded3D reversal and exact headless state-oracle comparisons pass native checks1-55. CtrlC is separately failed under reliability.ctrl_c; no57-pass claim.",
+              "evidence": [
+                "interactive-24/report.json"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Complete production fingerprint survives all mode/angle controls. Independent native three-mode frames use seed42; G advances once to43 with exact oracle.",
+              "evidence": [
+                "geometry-24.json",
+                "interactive-24/report.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "max": 12,
+          "score": 10,
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "max": 12,
+              "score": 10,
+              "status": "partial",
+              "reason": "Seed42 has a tall asymmetric canopy with several distinct limb tiers, visible gaps and a solid stem. Seed137 is wider, forked and less regular, with clear low lateral branches. Both2D silhouettes read as trees;3D/4D add dense leaf clusters and varied bark glyphs with a flared/rooted base. Some upper3D branches are swallowed by leaf punctuation and thicker stems look columnar, preventing full marks.37-degree4D views visibly bend the same canopy/stem rather than translate a static picture.",
+              "evidence": [
+                "frozen-24/2d-42.txt",
+                "frozen-24/2d-137-same-size.txt",
+                "frozen-24/2d-137.txt",
+                "frozen-24/3d-42.txt",
+                "frozen-24/3d-137.txt",
+                "frozen-24/4d-42.txt",
+                "frozen-24/4d-137.txt",
+                "frozen-24/4d-angle-37.txt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "max": 10,
+          "score": 7,
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: all standard mode/seed renders exit successfully without TTY",
+              "evidence": [
+                "frozen-24/evaluation.json",
+                "frames[0:6]"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: 2x2 headless terminal renders all modes without crash, valid bounded ASCII",
+              "evidence": [
+                "frozen-24/evaluation.json",
+                "*-tiny.txt"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "PhysicalConPTY30x12/1x1/restored100x40 resize exports all pass dimension/ASCII and exact same-state oracle checks43-51.",
+              "evidence": [
+                "interactive-24/report.json"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "max": 3,
+              "score": 0,
+              "status": "fail",
+              "reason": "Actual fresh viewer did not exit within5s after literal0x03. OriginalTimeoutError retained, no accepted exit code and no alternate-screen-leave in transcript; native protocol is incomplete at55 successful checks with2 checks unexecuted. Source Windows adapter configures output only and relies on ambient processedCtrlC/signals, whereas authored fixture explicitly clears ignore/SIGINT state. Thus required no-repair nativeCtrlC handling failed in this launch context; q/Esc success does not substitute for it.",
+              "evidence": [
+                "interactive-24/report.json",
+                "interactive-24/ctrl-c-transcript-final.bin",
+                "solution-24/ascii_tree/terminal.py:59",
+                "solution-24/tests/windows_console_driver.py:134"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "max": 9,
+          "score": 8,
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Unchanged frozen evaluator observation: Zero tests or unknown test counts cannot establish a passing test suite",
+              "evidence": [
+                "frozen-24/evaluation.json",
+                "tests"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "max": 6,
+              "score": 5,
+              "status": "partial",
+              "reason": "Meaningful deterministic generation, connected/tapered graph, ASCII/dimensions, math/inverse/clipping, complete-renderer occlusion, stable model, headless CLI, tiny view and fake-loop cleanup tests cover the requested obligations broadly. One point withheld: native fixture closes/re-enters terminal for resize and resetsCtrlC/SIGINT state, so its passing claim misses the actual no-repairCtrlC defect; direct nonfinite-point propagation is also untested. Test count itself earns no bonus.",
+              "evidence": [
+                "solution-24/tests/test_geometry.py",
+                "solution-24/tests/test_render.py",
+                "solution-24/tests/test_cli.py",
+                "solution-24/tests/test_app.py",
+                "solution-24/tests/windows_console_driver.py"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "max": 7,
+          "score": 6,
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "max": 7,
+              "score": 6,
+              "status": "partial",
+              "reason": "Clear immutable indexed graph, separate projector/raster/controller/native modules, local RNG and bounded geometry; no runtime dependencies. One point withheld for inconsistent finite-value contracts: RenderOptions validates camera/time, but public Point4/perspective/projector APIs can return nonfinite output and require callers to know the unstated finite-model precondition.",
+              "evidence": [
+                "solution-24/ascii_tree",
+                "solution-24/pyproject.toml",
+                "solution-24/requirements.txt",
+                "geometry-24.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "max": 5,
+          "score": 0,
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "max": 2,
+              "score": 0,
+              "status": "fail",
+              "reason": "No README file exists in the frozen submission. CLI discovery succeeded through project.scripts metadata; real working commands in source/help do not supply the requested README commands.",
+              "evidence": [
+                "source-hashes.json",
+                "blind-review-source-integrity.json",
+                "solution-24/pyproject.toml",
+                "frozen-24/evaluation.json"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "max": 1,
+              "score": 0,
+              "status": "fail",
+              "reason": "No README installation/setup instructions exist. Empty runtime dependencies in metadata do not substitute for user-facing setup documentation.",
+              "evidence": [
+                "blind-review-source-integrity.json",
+                "solution-24/pyproject.toml"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "max": 2,
+              "score": 0,
+              "status": "fail",
+              "reason": "No README4D explanation exists. Correct code and in-app help establish mathematics elsewhere but cannot count as the requested README explanation.",
+              "evidence": [
+                "blind-review-source-integrity.json",
+                "solution-24/ascii_tree/app.py"
+              ]
+            }
+          ]
+        }
+      ],
+      "frozen": {
+        "assessed_points": 25,
+        "assessed_max": 25,
+        "quality_score": null,
+        "accepted": null,
+        "record_unchanged": true
+      },
+      "geometry": {
+        "complete": true,
+        "pass": 84,
+        "fail": 38,
+        "checks": 122,
+        "auxiliary_failures": 38,
+        "all_core_pass": true,
+        "all_checks_pass": false,
+        "failures_retained": true
+      },
+      "native": {
+        "complete": false,
+        "executed_checks": 55,
+        "passed_checks": 55,
+        "failed_checks": 0,
+        "unexecuted_checks": 2,
+        "all_passed": false,
+        "error": {
+          "type": "TimeoutError",
+          "message": "interactive process failed to exit"
+        }
+      },
+      "limitations": [
+        "Visible WindowsTerminal GUI/font appearance, Linux/WSL, and original input flags after exit were not assessed.",
+        "Frame judgment is qualitative blind source/raster review, not a font-rendered GUI claim."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "native_tty": true,
+  "platform": "win32",
+  "arguments": [
+    "--seed",
+    "42",
+    "--mode",
+    "4d"
+  ],
+  "application_return_code": 130,
+  "console_modes_before": [
+    503,
+    7
+  ],
+  "console_modes_after": [
+    503,
+    7
+  ],
+  "console_modes_restored": true
+}

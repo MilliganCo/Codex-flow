@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "package": "tree-confirmation-20261024-10",
+  "publication_stage": "preregistered metadata only; no results",
+  "file_count_excluding_manifest": 25,
+  "created_utc": "2026-10-24T07:52:45.844988+00:00",
+  "original_raw_preregistration_sha256": "44522f8f631354c44533c8772aa4f15564f916629ef7641b144bcf7466568306",
+  "original_raw_snapshot_sha256": "4cf91104b850ed95757ab6c8d7a8699bdc0ac07f1cc23c0e347056f73fca2866",
+  "prerequisite_raw_sha256": "d20b2fdb4ff925fa524e58b58c2805d0a4b8bfb6609d46a18f07875d0063279b",
+  "prerequisite_benchmark_credit": false,
+  "runtime_file_count": 16,
+  "raw_runtime_and_protocol_and_proof_copied_byte_identically": true,
+  "derived_files": [
+    "preregistration.json",
+    "runtime-publication-equivalence.json"
+  ],
+  "normalization_counts": {
+    "none": 15,
+    "crlf_to_lf": 1
+  },
+  "publication_main_reference": "staged index blobs only; no release commit yet",
+  "package_git_blob_byte_verification": "Deferred to curated publication owner after copying/staging with -text attributes",
+  "original_inputs_and_relevant_index_entries_unchanged": true,
+  "privacy_scan": {
+    "rules_sha256": "d34e6067c03e7921c484558329ea372f72bed09819a23c9c1e63b51801ee57ab",
+    "files_scanned": 26,
+    "findings": [],
+    "history_scanned": false,
+    "limits": "Targeted signature/name scan and explicit metadata allowlist"
+  },
+  "publisher_sha256": "447cd1f69327d04596a6b8dedf6337e7a1318153af391f08b3149d64eeed2a60",
+  "model_calls": 0,
+  "sdk_calls": 0,
+  "app_runs": 0,
+  "active_experiment_results_maps_or_state_read": false,
+  "sha256": {
+    "frozen-runtime/codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "frozen-runtime/runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "frozen-runtime/runtime/codex_flow/benchmark.py": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+    "frozen-runtime/runtime/codex_flow/budget.py": "7bd53b1f9e15e427609716d1ef544bc9ab6e92f8cedc36db27cf7f0aae022cf5",
+    "frozen-runtime/runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "frozen-runtime/runtime/codex_flow/cli.py": "4ed5834e90c30065cd59bf6895ca9025dec8095156836d7bf9e856151662f55a",
+    "frozen-runtime/runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "frozen-runtime/runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "frozen-runtime/runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "frozen-runtime/runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "frozen-runtime/runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "frozen-runtime/runtime/codex_flow/native.py": "8bddedba48aa1c6d0ca6f518934c52d5f508356d98f434ed845b35fe213ac464",
+    "frozen-runtime/runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "frozen-runtime/runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "frozen-runtime/runtime/codex_flow/subscription.py": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+    "frozen-runtime/runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "protocol/TREE_BENCHMARK_TASK.md": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+    "protocol/evaluator.py": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+    "protocol/rubric.json": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+    "protocol/conpty-case10-protocol.md": "578c7c9bce0e8c8ddb8dabca1de4502a4d63b13ea6e6e05a25ee4e11ec9b2098",
+    "protocol/geometry-case10-protocol.md": "b14efd22c9958f9ba48ddc85828700284395767e5bc7855e65ce1b429140fabb",
+    "protocol/conpty_case10_neutral.py": "d7c59cf9a3a999dd64d6d796cc9e8ce501d157000db990e2a9f4b9c59daaa6f9",
+    "prerequisite-result.json": "d20b2fdb4ff925fa524e58b58c2805d0a4b8bfb6609d46a18f07875d0063279b",
+    "preregistration.json": "976c6f1f1db934980b4246d25b8ed07c419167bdee356df3a4fb16dee46a2628",
+    "runtime-publication-equivalence.json": "be82b0c6d1993e952be50dd094836e85288b65539ec47cbd2bdd301e7174b413"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "confirmation_id": "tree-confirmation-20261024-10",
+  "denominator": 1,
+  "runtime_source_commit": "8d3913cbee77cc91c482a13fed12c031170d4594",
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+    "runtime/codex_flow/budget.py": "7bd53b1f9e15e427609716d1ef544bc9ab6e92f8cedc36db27cf7f0aae022cf5",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "4ed5834e90c30065cd59bf6895ca9025dec8095156836d7bf9e856151662f55a",
+    "runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "8bddedba48aa1c6d0ca6f518934c52d5f508356d98f434ed845b35fe213ac464",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "preregistration_sha256": "44522f8f631354c44533c8772aa4f15564f916629ef7641b144bcf7466568306",
+  "execution_result_sha256": "3d26085ea23be879136d731d1b622cf14ca9ae5dc2b48e10b5906dd441e126bb",
+  "blind_review_sha256": "a47e45110e43cf5d96d53f11f7c5defca0bbadd9ae1c977093f3094082d0bdcc",
+  "blind_review_seal_sha256": "dc45049c18f544036933ed647e169ec99b7657c672aa7b8ac84fa7db6ab1e44f",
+  "quality_sealed_before_identity_disclosure": true,
+  "primary_success_criterion": {
+    "denominator": 1,
+    "both_native_arms_completed_normally": true,
+    "both_independently_accepted": true,
+    "quality_B_greater_or_equal_A": true,
+    "elapsed_metric": "total_arm_s_A / total_arm_s_B",
+    "minimum_elapsed_ratio": 1.1,
+    "claim_scope": "one changed-policy focused confirmation only"
+  },
+  "primary_conditions": {
+    "both_native_arms_completed_normally": false,
+    "both_independently_accepted": true,
+    "quality_B_greater_or_equal_A": true,
+    "elapsed_ratio_at_least_1_10": null
+  },
+  "confirmation_passed": false,
+  "elapsed_ratio_A_over_B": null,
+  "speedup_without_quality_loss_proven": false,
+  "arms": {
+    "A": {
+      "anonymous_id": "solution-24",
+      "native_status": "timed_out",
+      "native_exit_code": 1,
+      "completed_normally": false,
+      "observed_total_arm_s": 1499.875,
+      "successful_completion_s": null,
+      "elapsed_is_censored": true,
+      "limit_s": 1500,
+      "native_request_attempts": 25,
+      "completed_requests": 24,
+      "request_termination_counts": {
+        "control": 1,
+        "response_completed": 24
+      },
+      "full_usage": null,
+      "completed_known_usage_lower_bound": {
+        "input_tokens": 1132428,
+        "output_tokens": 43248
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "quality_score": 88,
+      "rubric_accepted": true,
+      "native_checks_passed": 55,
+      "native_checks_executed": 55,
+      "native_checks_unexecuted": 2,
+      "native_protocol_complete": false,
+      "native_error": {
+        "type": "TimeoutError",
+        "message": "interactive process failed to exit"
+      },
+      "geometry_passed": 84,
+      "geometry_checks": 122,
+      "geometry_auxiliary_failures": 38,
+      "geometry_core_passed": true,
+      "source_unchanged": true,
+      "original_metrics_sha256": "5deb381b021e2473c78fab4d4e129387044838a464f2ad38a0d41cca61532665"
+    },
+    "B": {
+      "anonymous_id": "solution-23",
+      "native_status": "completed_unverified",
+      "native_exit_code": 0,
+      "completed_normally": true,
+      "observed_total_arm_s": 1344.609,
+      "successful_completion_s": 1344.609,
+      "elapsed_is_censored": false,
+      "limit_s": 1500,
+      "native_request_attempts": 38,
+      "completed_requests": 38,
+      "request_termination_counts": {
+        "response_completed": 38
+      },
+      "full_usage": {
+        "input_tokens": 2382661,
+        "output_tokens": 48580,
+        "total_tokens": 2431241,
+        "cached_tokens": 644224,
+        "reasoning_tokens": 10670
+      },
+      "completed_known_usage_lower_bound": {
+        "input_tokens": 2382661,
+        "output_tokens": 48580
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "quality_score": 94,
+      "rubric_accepted": true,
+      "native_checks_passed": 57,
+      "native_checks_executed": 57,
+      "native_checks_unexecuted": 0,
+      "native_protocol_complete": true,
+      "native_error": null,
+      "geometry_passed": 138,
+      "geometry_checks": 138,
+      "geometry_auxiliary_failures": 0,
+      "geometry_core_passed": true,
+      "source_unchanged": true,
+      "original_metrics_sha256": "cc94db22e0796c4d8226c329584cb85be2233cc5bf95d7fb505a0e427810feb3"
+    }
+  },
+  "policy_deviations": [],
+  "reviewer_high_parent_link_and_usage_verified": true,
+  "B_requested_effort_counts": {
+    "xhigh": 37,
+    "high": 1
+  },
+  "B_budget_status_calls": 2,
+  "original_three_task_primary_passed": false,
+  "original_cohort_replaced_or_pooled": false,
+  "transport_note": "The interrupted request is typed control/deadline_exhausted, not upstream_read_error",
+  "limits": [
+    "Timeout duration is not successful completion time; no speed ratio is inferred",
+    "Rubric acceptance is distinct from all task requirements and native protocol completion",
+    "One confirmation is descriptive, not statistical or universal proof",
+    "Shared native state and physical read isolation remain degraded",
+    "Historical status-call reduction does not prove elapsed or quota savings"
+  ],
+  "analysis_model_calls": 0,
+  "analysis_app_runs": 0
+}

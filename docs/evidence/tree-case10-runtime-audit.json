@@ -1,0 +1,482 @@
+{
+  "schema": 1,
+  "kind": "tree_case10_censored_runtime_audit",
+  "created_utc": "2026-10-24T08:22:25.333594+00:00",
+  "experiment_id": "tree-case-20261024-10",
+  "runtime_source_commit": "8d3913cbee77cc91c482a13fed12c031170d4594",
+  "runtime_file_count": 16,
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+    "runtime/codex_flow/budget.py": "7bd53b1f9e15e427609716d1ef544bc9ab6e92f8cedc36db27cf7f0aae022cf5",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "4ed5834e90c30065cd59bf6895ca9025dec8095156836d7bf9e856151662f55a",
+    "runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "8bddedba48aa1c6d0ca6f518934c52d5f508356d98f434ed845b35fe213ac464",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "canonical_inputs": {
+    "task": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+    "evaluator": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+    "rubric": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+  },
+  "codex_sha256": "e757246b4de87359e660647fa9514955a0971ff6a30affdd8c145d1d5ece7b84",
+  "input_sha256": {
+    "experiment/metrics.json": "21951aff21fc8178601db7fe0566061054aa4a98af42b35d63c5ae4254b85122",
+    "experiment/metrics-A.json": "5deb381b021e2473c78fab4d4e129387044838a464f2ad38a0d41cca61532665",
+    "experiment/metrics-B.json": "cc94db22e0796c4d8226c329584cb85be2233cc5bf95d7fb505a0e427810feb3",
+    "experiment/experiment-manifest.json": "69856793aff788fd0a79b707c0b57c9a91400f2824fcd6190d27b3898c3a5e81",
+    "experiment/resource-samples.jsonl": "2032fa72e30c07ea156e319d6eb9a8bd643dc0332bdd0c108c96436cfc02fe99",
+    "experiment/resource-monitor-complete.json": "16761e03482c655996f313cf7a129be4a61252e32c4423b96d3731ace033e092",
+    "experiment/run-A/events.jsonl": "32d7e52b6e44f47308e64d2656189c36f306b84409ca533cb3de9c45d893d37c",
+    "experiment/run-A/control.json": "b0086e4377b3201180927a036a8fcc026faf7e4c32a283ed7e5bc32e6fe290a5",
+    "experiment/run-B/events.jsonl": "579a6235d95c9c067e5ccce5a9d3cc9acce5f446c6e70c682476b84bad8f9012",
+    "experiment/run-B/control.json": "523e45683f7a2f81ec0fdd089ce5e2d645b88c9980837d2aff67dcadeb157f42",
+    "runtime/snapshot-hashes.json": "4cf91104b850ed95757ab6c8d7a8699bdc0ac07f1cc23c0e347056f73fca2866",
+    "confirmation/preregistration.json": "44522f8f631354c44533c8772aa4f15564f916629ef7641b144bcf7466568306",
+    "confirmation/preparation-receipt.json": "90526af3ded64f9b9a479e78e677b10d2d9874ad99b2ad0df9e7c38e7d3504f1",
+    "confirmation/execution-result.json": "3d26085ea23be879136d731d1b622cf14ca9ae5dc2b48e10b5906dd441e126bb",
+    "prerequisite/prerequisite-result.json": "d20b2fdb4ff925fa524e58b58c2805d0a4b8bfb6609d46a18f07875d0063279b",
+    "historical/tree-case09/metrics-B.json": "e1e4a56ddd6b1bcbbb08514ee2fa9771aa4fa35a6ecda5302adc63972869b2da",
+    "tooling/pinned-codex.exe": "e757246b4de87359e660647fa9514955a0971ff6a30affdd8c145d1d5ece7b84"
+  },
+  "prerequisite_checks_passed": 21,
+  "prerequisite_is_benchmark_credit": false,
+  "preregistered_criterion": {
+    "denominator": 1,
+    "both_native_arms_completed_normally_required": true,
+    "primary_confirmation_success": false,
+    "known_failed_criteria": [
+      "both_native_arms_completed_normally"
+    ],
+    "quality_non_regression": null,
+    "both_independently_accepted": null,
+    "elapsed_ratio_A_over_B": null,
+    "ratio_reason": "A completion time is censored; timeout elapsed is not completion latency"
+  },
+  "original_three_task_primary_success": false,
+  "original_rows_replaced_or_pooled": false,
+  "predecessor_negative_context_sha256": "49534238677f509f1105eade23f419bc0c90a97384f6959b873a5fd0278afaa5",
+  "confirmation_integrity": {
+    "runtime_unchanged": true,
+    "snapshot_unchanged": true,
+    "prerequisite_unchanged": true,
+    "pinned_executable_unchanged": true,
+    "negative_context_unchanged": true,
+    "canonical_inputs_unchanged": true,
+    "auxiliary_evidence_unchanged": true,
+    "executed_manifest_matches": true
+  },
+  "recorded_policy_deviations": [],
+  "arms": {
+    "A": {
+      "native_status": "timed_out",
+      "elapsed_before_exit_s": 1499.875,
+      "native_completion_time_s": null,
+      "completion_time_censored": true,
+      "native_wall_s": 1499.61,
+      "frontload_s": 0.062,
+      "native_exit_code": 1,
+      "stop_reason": "deadline_exhausted",
+      "attempts": 1,
+      "stdin_writer_stopped": true,
+      "native_turn_completed_events": 0,
+      "native_error_item_count_unclassified": 1,
+      "failed_calls_recorded": 7,
+      "command_items": {
+        "count": 22,
+        "failed": 7
+      },
+      "requests": {
+        "reserved": 25,
+        "completed": 24,
+        "failed": 1,
+        "active_at_end": 0,
+        "limit": 80,
+        "usage_known_requests": 24,
+        "usage_unknown_requests": 1,
+        "semantic_completion": {
+          "true": 24,
+          "false": 1,
+          "unknown": 0
+        },
+        "http_eof_observed": {
+          "true": 0,
+          "false": 25,
+          "unknown": 0
+        },
+        "read_termination_counts": {
+          "control": 1,
+          "response_completed": 24
+        },
+        "failure_category_counts": {
+          "control": 1,
+          "not_recorded": 24
+        },
+        "profiles": [
+          {
+            "requested_effort": "xhigh",
+            "requests": 25,
+            "completed_known": 24,
+            "unknown_usage_requests": 1,
+            "known_completed_usage": {
+              "input_tokens": 1132428,
+              "output_tokens": 43248,
+              "total_tokens": 1175676,
+              "cached_tokens": 263552,
+              "reasoning_tokens": 15575
+            },
+            "all_actual_models_sol61_among_completed": true
+          }
+        ],
+        "failed_request_metadata": [
+          {
+            "sequence": 25,
+            "duration_s": 59.672,
+            "http_status": 200,
+            "upstream_open_s": 1.312,
+            "upstream_body_read_s": 58.36,
+            "upstream_bytes_received": 431662,
+            "response_bytes": null,
+            "partial_response_bytes": null,
+            "status": "failed",
+            "reason": "deadline_exhausted",
+            "failure_category": "control",
+            "failure_phase": "body_read",
+            "read_termination": "control",
+            "semantic_completion_observed": false,
+            "http_eof_observed": false,
+            "last_read_returned_normally": false,
+            "requested_model": "gpt-6.1-sol",
+            "requested_effort": "xhigh",
+            "actual_model": null,
+            "usage": null,
+            "usage_status": null,
+            "reservation_budget": {
+              "elapsed_s": 1439.655999999959,
+              "remaining_s": 60.34400000004098,
+              "requests_used": 25,
+              "requests_remaining": 55
+            }
+          }
+        ]
+      },
+      "known_completed_usage_lower_bound": {
+        "input_tokens": 1132428,
+        "output_tokens": 43248,
+        "total_tokens": 1175676,
+        "cached_tokens": 263552,
+        "reasoning_tokens": 15575
+      },
+      "lower_bound_is_complete_aggregate": false,
+      "all_request_usage": null,
+      "root_cli_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cached_tokens": null
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "final_budget": {
+        "elapsed_s": 1499.8279999999795,
+        "remaining_s": 0.1720000000204891,
+        "requests_used": 25,
+        "requests_remaining": 55
+      },
+      "deadline_control_rejections": 1,
+      "request_limit_satisfied": true,
+      "payload_guidance": {
+        "enabled": false,
+        "applied_requests": 0
+      },
+      "high_child_parent_link_proven": null,
+      "children": null,
+      "budget_tool": {
+        "configured": false,
+        "publisher_failed": null,
+        "audit_valid": null,
+        "status_calls": null,
+        "successful_calls": null,
+        "unavailable_calls": null,
+        "phases": null,
+        "root_stream_mcp_items": 0,
+        "tool_duration": null
+      },
+      "mercury": {
+        "successful_calls": 0,
+        "inference_attempts": null,
+        "bridge_wall_s": null,
+        "cost": null,
+        "input_tokens": null,
+        "output_tokens": null
+      },
+      "harness": {
+        "upstream_probes": 0,
+        "inspired_probes": 0,
+        "guard_status": "not_recorded",
+        "run_count": null
+      },
+      "root_resource_samples": {
+        "sample_count": 150,
+        "finite_observed_sample_count": 149,
+        "process_status_counts": {
+          "alive": 149,
+          "dead": 1
+        },
+        "sample_status_counts": {
+          "observed": 149,
+          "unavailable": 1
+        },
+        "all_samples_match_declared_pid": true,
+        "unique_observed_creation_identity": true,
+        "latest_recorded_process_status": "dead",
+        "max_observed_working_set_bytes": 225349632,
+        "max_recorded_lifetime_peak_working_set_bytes": 668508160,
+        "first_observed_cumulative_cpu_s": 9.28125,
+        "last_observed_cumulative_cpu_s": 61.296875,
+        "cpu_increment_between_observed_endpoints_s": 52.015625,
+        "scope": "Declared native root PID samples only; excludes helpers, app subprocesses and remote model compute"
+      },
+      "quality_score": null,
+      "accepted": null
+    },
+    "B": {
+      "native_status": "completed_unverified",
+      "elapsed_before_exit_s": 1344.609,
+      "native_completion_time_s": 1344.609,
+      "completion_time_censored": false,
+      "native_wall_s": 1343.125,
+      "frontload_s": 1.281,
+      "native_exit_code": 0,
+      "stop_reason": null,
+      "attempts": 1,
+      "stdin_writer_stopped": true,
+      "native_turn_completed_events": 1,
+      "native_error_item_count_unclassified": 1,
+      "failed_calls_recorded": 4,
+      "command_items": {
+        "count": 27,
+        "failed": 4
+      },
+      "requests": {
+        "reserved": 38,
+        "completed": 38,
+        "failed": 0,
+        "active_at_end": 0,
+        "limit": 80,
+        "usage_known_requests": 38,
+        "usage_unknown_requests": 0,
+        "semantic_completion": {
+          "true": 38,
+          "false": 0,
+          "unknown": 0
+        },
+        "http_eof_observed": {
+          "true": 0,
+          "false": 38,
+          "unknown": 0
+        },
+        "read_termination_counts": {
+          "response_completed": 38
+        },
+        "failure_category_counts": {
+          "not_recorded": 38
+        },
+        "profiles": [
+          {
+            "requested_effort": "xhigh",
+            "requests": 37,
+            "completed_known": 37,
+            "unknown_usage_requests": 0,
+            "known_completed_usage": {
+              "input_tokens": 2360525,
+              "output_tokens": 48161,
+              "total_tokens": 2408686,
+              "cached_tokens": 644224,
+              "reasoning_tokens": 10562
+            },
+            "all_actual_models_sol61_among_completed": true
+          },
+          {
+            "requested_effort": "high",
+            "requests": 1,
+            "completed_known": 1,
+            "unknown_usage_requests": 0,
+            "known_completed_usage": {
+              "input_tokens": 22136,
+              "output_tokens": 419,
+              "total_tokens": 22555,
+              "cached_tokens": 0,
+              "reasoning_tokens": 108
+            },
+            "all_actual_models_sol61_among_completed": true
+          }
+        ],
+        "failed_request_metadata": []
+      },
+      "known_completed_usage_lower_bound": {
+        "input_tokens": 2382661,
+        "output_tokens": 48580,
+        "total_tokens": 2431241,
+        "cached_tokens": 644224,
+        "reasoning_tokens": 10670
+      },
+      "lower_bound_is_complete_aggregate": true,
+      "all_request_usage": {
+        "input_tokens": 2382661,
+        "output_tokens": 48580,
+        "total_tokens": 2431241,
+        "cached_tokens": 644224,
+        "reasoning_tokens": 10670
+      },
+      "root_cli_usage": {
+        "input_tokens": 2333782,
+        "output_tokens": 47820,
+        "cached_tokens": 634624
+      },
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "final_budget": {
+        "elapsed_s": 1344.530999999959,
+        "remaining_s": 155.46900000004098,
+        "requests_used": 38,
+        "requests_remaining": 42
+      },
+      "deadline_control_rejections": 0,
+      "request_limit_satisfied": true,
+      "payload_guidance": {
+        "enabled": false,
+        "applied_requests": 0
+      },
+      "high_child_parent_link_proven": true,
+      "children": [
+        {
+          "model": "gpt-6.1-sol",
+          "requested_effort": "high",
+          "depth": 1,
+          "native_metadata_tokens_used": 22555
+        }
+      ],
+      "budget_tool": {
+        "configured": true,
+        "publisher_failed": false,
+        "audit_valid": true,
+        "status_calls": 2,
+        "successful_calls": 2,
+        "unavailable_calls": 0,
+        "phases": {
+          "build": 1,
+          "stabilize": 1,
+          "finalize": 0
+        },
+        "root_stream_mcp_items": 2,
+        "tool_duration": {
+          "count": 2,
+          "sum_s": 0.062,
+          "min_s": 0.031,
+          "median_s": 0.031,
+          "p90_nearest_rank_s": 0.031,
+          "max_s": 0.031
+        }
+      },
+      "mercury": {
+        "successful_calls": 1,
+        "inference_attempts": 1,
+        "bridge_wall_s": 1.219,
+        "cost": 0,
+        "input_tokens": 144,
+        "output_tokens": 1
+      },
+      "harness": {
+        "upstream_probes": 0,
+        "inspired_probes": 0,
+        "guard_status": "deferred",
+        "run_count": 0
+      },
+      "root_resource_samples": {
+        "sample_count": 150,
+        "finite_observed_sample_count": 134,
+        "process_status_counts": {
+          "alive": 134,
+          "dead": 16
+        },
+        "sample_status_counts": {
+          "observed": 134,
+          "unavailable": 16
+        },
+        "all_samples_match_declared_pid": true,
+        "unique_observed_creation_identity": true,
+        "latest_recorded_process_status": "dead",
+        "max_observed_working_set_bytes": 206262272,
+        "max_recorded_lifetime_peak_working_set_bytes": 669446144,
+        "first_observed_cumulative_cpu_s": 8.109375,
+        "last_observed_cumulative_cpu_s": 67.234375,
+        "cpu_increment_between_observed_endpoints_s": 59.125,
+        "scope": "Declared native root PID samples only; excludes helpers, app subprocesses and remote model compute"
+      },
+      "quality_score": null,
+      "accepted": null
+    }
+  },
+  "A_interruption_classification": {
+    "typed_control_deadline_interruption": true,
+    "recorded_upstream_read_error": false,
+    "request_cap_exhausted": false,
+    "unknown_usage_must_not_be_zero_filled": true,
+    "exact_watchdog_subcondition_not_separately_recorded": true
+  },
+  "historical_B_only_comparison": {
+    "historical_case": "tree-case-20261024-09",
+    "current_case": "tree-case-20261024-10",
+    "native_requests": {
+      "historical": 40,
+      "current": 38
+    },
+    "requested_profile_counts": {
+      "historical": {
+        "xhigh": 35,
+        "high": 0,
+        "medium": 5
+      },
+      "current": {
+        "xhigh": 37,
+        "high": 1,
+        "medium": 0
+      }
+    },
+    "mcp_successful_calls": {
+      "historical": 6,
+      "current": 2
+    },
+    "elapsed_s": {
+      "historical": 1277.359,
+      "current": 1344.609
+    },
+    "causal_elapsed_savings": null,
+    "is_new_AB_speed_estimate": false
+  },
+  "limits": [
+    "No applications, anonymous copies, mappings, current scores or native databases were inspected",
+    "A timed out; the preregistered confirmation primary fails independently of later application grades",
+    "The final A request was intentionally interrupted by controller deadline control; this is not recorded as upstream_read_error",
+    "Native watchdog and shared deadline use the same deadline_exhausted label; final shared time can remain slightly positive",
+    "Partial byte counts are not model completion or known usage; A complete-request totals are lower bounds only",
+    "MCP/tool reductions do not establish causal time savings; model profiles, model trajectories and work differ",
+    "Aggregate requested profiles do not identify individual agents; parent-link metadata separately proves a used high child",
+    "Initial helper temporal order and individual MCP callers are not attested by aggregate metadata",
+    "Resource evidence is finite sampled root-PID metadata, not whole-model/whole-process-tree compute or a fresh PID query",
+    "Original denominator-three failure remains unchanged; historical B comparison is descriptive only"
+  ],
+  "audit_model_calls": 0,
+  "audit_sdk_calls": 0,
+  "audit_app_runs": 0,
+  "inputs_unchanged_during_audit": true
+}

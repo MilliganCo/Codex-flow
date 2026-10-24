@@ -11,7 +11,7 @@ modules. Mercury and Harness-inspired probes are optional and disabled by defaul
 
 **Status:** private development. No project license has been selected. There is no validated universal speedup or quota-saving claim. Runtime completion is distinct from independent acceptance.
 
-The latest [fixed three-task series](benchmarks/stream-suite-20261024-01/README.md)
+The complete [fixed three-task series](benchmarks/stream-suite-20261024-01/README.md)
 completed **all six branches and all 147 native requests without transport errors**.
 Scores A/B: Tree **98/96**, Ledger **100/100**, SafeZip **100/100**. Flow was 3.419%
 faster on Tree but slower on both other tasks; acceleration without quality loss
@@ -20,6 +20,13 @@ retained unchanged. The stream fix passed 279 offline checks on Linux; Windows
 passed 258 with 21 platform skips. [Case08](benchmarks/case08/README.md) and every
 earlier negative result remain available. [Rollback](docs/rollback.md) preserves
 the current checkout and host settings.
+
+The separate [changed-policy confirmation](benchmarks/tree-confirmation-20261024-10/README.md)
+scored **Solo 88 / Flow 94**. Flow completed in 1344.609 seconds and passed native
+57/57; Solo reached its 1500-second limit and its Ctrl+C check did not finish.
+The strict speed comparison therefore failed. Both negative admissions remain
+visible; working demonstrations, untouched source and exact runtime snapshots
+are included.
 
 ## Start with a dry run
 

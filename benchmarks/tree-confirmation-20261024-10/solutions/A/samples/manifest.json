@@ -1,0 +1,130 @@
+[
+  {
+    "file": "seed42_2d.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "2d",
+      "yaw": 25,
+      "pitch": 8.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "ab97e0ed8df9d05b8d2d3cffbb28dc44275cadf1175b4b7aa5c4462be24a0ef8"
+  },
+  {
+    "file": "seed42_3d.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "3d",
+      "yaw": 25,
+      "pitch": 8.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "78a0f00e19f55fb8e9856b32ce52a0e49e5a576d31ab564adb087da51b2c4058"
+  },
+  {
+    "file": "seed42_3d_yaw100.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "3d",
+      "yaw": 100,
+      "pitch": 8.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "0a217ed201325129b0f6a0b9ca56c680c356a68486bb94883d3111f37d49e5e4"
+  },
+  {
+    "file": "seed42_4d_xw000.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "4d",
+      "yaw": 25,
+      "pitch": 8.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "1b55e8262e1d788de08ee63119a7df026f6df72cdc010b0a6f63905e4959489f"
+  },
+  {
+    "file": "seed42_4d_xw065.txt",
+    "seed": 42,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "4d",
+      "yaw": 25,
+      "pitch": 8.0,
+      "angle4": 65,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "e01eb4ddcc2ef8910f94a5b5d87bcd874598fedcf8cb6905264bd0a0ea37ecc8"
+  },
+  {
+    "file": "seed7_2d.txt",
+    "seed": 7,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "2d",
+      "yaw": 25,
+      "pitch": 8.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "a1cf0129cce302f15886cd85ee75f0ff9c20bf2e3444873ed2fc3a972424d9a0"
+  },
+  {
+    "file": "seed7_3d.txt",
+    "seed": 7,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "3d",
+      "yaw": 25,
+      "pitch": 8.0,
+      "angle4": 0,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "660c1c912ae5423f6098d94e07d64704b4c33044d34212176fdd9fe675f7c24a"
+  },
+  {
+    "file": "seed7_4d_xw065.txt",
+    "seed": 7,
+    "options": {
+      "width": 100,
+      "height": 40,
+      "mode": "4d",
+      "yaw": 25,
+      "pitch": 8.0,
+      "angle4": 65,
+      "zoom": 1.0,
+      "aspect": 2.0,
+      "time": 0.0
+    },
+    "sha256": "45691ca15f0dbe02a254af530947ee3189b3f99c899f06b52b517e02eecd3a76"
+  }
+]

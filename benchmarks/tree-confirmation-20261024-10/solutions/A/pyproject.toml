@@ -1,0 +1,9 @@
+[project]
+name = "ascii-tree-explorer"
+version = "1.0.0"
+description = "Offline ASCII tree explorer with 2D, 3D and XW-rotated 4D projections"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+ascii-tree = "ascii_tree.cli:entrypoint"

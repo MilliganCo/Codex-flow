@@ -22,6 +22,16 @@ the fixed experiment sources, failures and independent evaluations as evidence.
 Для отката исправления чтения создайте отдельный каталог командой выше. Она
 сохраняет текущие правки и результаты. Глобальные настройки и sandbox не меняются.
 
+To inspect the previous coordination policy while keeping the terminal-aware
+reader, use its exact retained runtime for a dry run from the repository root:
+
+```powershell
+python benchmarks/stream-suite-20261024-01/frozen-runtime/codex-flow.py --repo <project> run "Describe the task" --dry-run
+```
+
+This invokes the frozen source-`6c30bbe` runtime without overwriting current code
+or installing a global skill. Review its plan before any explicit execution.
+
 ## Stop a runtime execution
 
 ```powershell
