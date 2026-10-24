@@ -192,6 +192,9 @@ class BenchmarkWiringTests(unittest.TestCase):
         for role, path in profiles.items():
             self.assertEqual(json.loads(config["agents." + role + ".config_file"]), str(path))
             role_config = tomllib.loads(path.read_text())
+            if role == "reviewer":
+                self.assertEqual(role_config["model"], "gpt-6.1-sol")
+                self.assertEqual(role_config["model_reasoning_effort"], "high")
             self.assertFalse({"permissions", "default_permissions", "sandbox_mode", "approval_policy"} & role_config.keys())
             self.assertLessEqual(set(role_config["features"]), {"apps", "plugins", "memories", "request_permissions_tool"})
             self.assertTrue(all(value is False for value in role_config["features"].values()))

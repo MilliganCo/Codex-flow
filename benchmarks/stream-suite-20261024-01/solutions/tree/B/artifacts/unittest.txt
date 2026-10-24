@@ -1,0 +1,31 @@
+test_controls_animation_reset (test_app.AppTests.test_controls_animation_reset) ... ok
+test_export_is_current_clean_frame_and_preserves_existing_files (test_app.AppTests.test_export_is_current_clean_frame_and_preserves_existing_files) ... ok
+test_loop_restores_on_interrupt_and_io_error (test_app.AppTests.test_loop_restores_on_interrupt_and_io_error) ... ok
+test_resize_and_minimum_layout (test_app.AppTests.test_resize_and_minimum_layout) ... ok
+test_switching_modes_preserves_object (test_app.AppTests.test_switching_modes_preserves_object) ... ok
+test_ui_loop_lifecycle_simulated_resize_and_quit (test_app.AppTests.test_ui_loop_lifecycle_simulated_resize_and_quit) ... ok
+test_file_export_ascii_and_dimensions (test_cli.CliTests.test_file_export_ascii_and_dimensions) ... ok
+test_headless_stdout_deterministic (test_cli.CliTests.test_headless_stdout_deterministic) ... ok
+test_help (test_cli.CliTests.test_help) ... ok
+test_invalid_args_fail_cleanly (test_cli.CliTests.test_invalid_args_fail_cleanly) ... ok
+test_minimum_headless_frame (test_cli.CliTests.test_minimum_headless_frame) ... ok
+test_view_non_tty_does_not_hang_or_write_ansi (test_cli.CliTests.test_view_non_tty_does_not_hang_or_write_ansi) ... ok
+test_deterministic_graph_and_seed_diversity (test_model.ModelTests.test_deterministic_graph_and_seed_diversity) ... ok
+test_graph_is_finite_connected_and_tapered (test_model.ModelTests.test_graph_is_finite_connected_and_tapered) ... ok
+test_3d_orbit_and_tilt_change_projection (test_render.RenderTests.test_3d_orbit_and_tilt_change_projection) ... ok
+test_camera_rotation_reverses_world_space_occlusion (test_render.RenderTests.test_camera_rotation_reverses_world_space_occlusion) ... ok
+test_deterministic_frames (test_render.RenderTests.test_deterministic_frames) ... ok
+test_digital_centerline_is_connected (test_render.RenderTests.test_digital_centerline_is_connected) ... ok
+test_exact_ascii_dimensions (test_render.RenderTests.test_exact_ascii_dimensions) ... ok
+test_occlusion_at_crossing_is_order_independent (test_render.RenderTests.test_occlusion_at_crossing_is_order_independent) ... ok
+test_parameter_validation (test_render.RenderTests.test_parameter_validation) ... ok
+test_perspective_depth_interpolation (test_render.RenderTests.test_perspective_depth_interpolation) ... ok
+test_projection_clips_eye_planes (test_render.RenderTests.test_projection_clips_eye_planes) ... ok
+test_real_tree_segment_order_does_not_affect_frame (test_render.RenderTests.test_real_tree_segment_order_does_not_affect_frame) ... ok
+test_true_xw_rotation_orthogonal_invertible (test_render.RenderTests.test_true_xw_rotation_orthogonal_invertible) ... ok
+test_variable_w_and_xw_rotation_change_frame (test_render.RenderTests.test_variable_w_and_xw_rotation_change_frame) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 2.943s
+
+OK

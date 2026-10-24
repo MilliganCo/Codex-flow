@@ -1,0 +1,20 @@
+{
+  "app_runs": 0,
+  "checks": 54,
+  "criteria": 20,
+  "evaluator_sha256": "6e94529e5d6b06c9f5b0ebc1ae6327706a4682d90386015bcdfc026b960741df",
+  "fixture_counts": {
+    "invalid_fixture_cases": 32,
+    "valid_fixture_cases": 16
+  },
+  "model_calls": 0,
+  "rubric_sha256": "696f3f1f2ec9cc6246c5f72cb297d4dccb2482fb4eae9c5a516e15c096bd52f4",
+  "schema": 1,
+  "scope": "pure_oracle_and_fixture_validation_only_no_app_imports_or_execution",
+  "sdk_calls": 0,
+  "self_test_subprocess_guard": true,
+  "status": "passed",
+  "task": "safezip-v1.0",
+  "task_sha256": "4b732cd8658cc2c8426ade124ad48be2492993615440ddc3bce8f2d85ded0568",
+  "total_max": 100
+}

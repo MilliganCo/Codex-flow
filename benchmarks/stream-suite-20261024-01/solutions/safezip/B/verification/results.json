@@ -1,0 +1,25 @@
+{
+  "exact_manifest_bytes": "passed",
+  "linux_macos_native_commit": "not run on Windows",
+  "platform": "win32",
+  "python": "3.12.10",
+  "readme_help_inspect_extract": "passed",
+  "source_and_example_unchanged": "passed",
+  "staging_cleanup": "passed",
+  "symlink_destination_real_check": "skipped: Windows account lacks symlink creation permission",
+  "unittest": {
+    "failed": 0,
+    "passed": 34,
+    "skipped": 1,
+    "tests": 35
+  },
+  "verified_file_sha256": {
+    "README.md": "c7c4fcd2801514423ef41d732be8a7b532e5573ef371e4b238410ccaede4df1b",
+    "VERIFICATION.md": "cfe43fe1a5a8e27b5085adbed08086a353940373c6d7ed7da27b5f01e6832136",
+    "examples\\sample.zip": "1a26ab0571a0e72f433c2fb13b7337358790559deb2363b5cad38101a0973892",
+    "safezip\\__init__.py": "1827d146238ba4ce3a00f8adb858fd0c0854ef87c5c190b0a58eefd21cb845b5",
+    "safezip\\__main__.py": "118505bcb0ce248745a1c6a8dda8ac546c3e34116d13c0555cd5ca525fff9237",
+    "safezip\\core.py": "88dec5e291f5338bfabbdd6b952b2f2593d3000ce4f9c9206ab81e66bf3aa2fa",
+    "tests\\test_safezip.py": "2f5f2660c3ac6e4176c5ca45fd145764ceded6e2e3f6a201d8cb588749f34acf"
+  }
+}

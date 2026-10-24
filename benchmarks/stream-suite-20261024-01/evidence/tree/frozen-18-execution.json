@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "kind": "frozen_tree_evaluation",
+  "solution_id": 18,
+  "exit_code": 0,
+  "wall_clock_s": 8.016,
+  "timeout_s": 600,
+  "sdk_cli_timed_out": false,
+  "launch_error": null,
+  "submitted_source_unchanged": true,
+  "checker_support_unchanged": true,
+  "integrity_errors": {},
+  "source_files_checked": 41,
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "model_calls": 0,
+  "network_enabled": false,
+  "stdout_sha256": "cf5439528a991ed632f542aadd917138e919f64f9924b30e50ed67726ffac152",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "permission_profile_sha256": "3d6f10b1fa863ad15b312a719bbbc70e7b3ea2e2f584db07dfdd5dd53ad4e8ee",
+  "timeout_boundary": "CLI timeout; descendants not independently established on timeout"
+}

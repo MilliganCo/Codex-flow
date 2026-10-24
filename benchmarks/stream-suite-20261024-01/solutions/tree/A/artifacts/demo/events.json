@@ -1,0 +1,107 @@
+[
+  {
+    "screen": "00-start-3d.txt",
+    "keys": [],
+    "seed": 42,
+    "mode": "3d",
+    "angle4d": 0.0,
+    "width": 100,
+    "height": 40
+  },
+  {
+    "screen": "01-same-tree-2d.txt",
+    "keys": [
+      "1"
+    ],
+    "seed": 42,
+    "mode": "2d",
+    "angle4d": 0.0,
+    "width": 100,
+    "height": 40
+  },
+  {
+    "screen": "02-same-tree-4d.txt",
+    "keys": [
+      "3"
+    ],
+    "seed": 42,
+    "mode": "4d",
+    "angle4d": 0.0,
+    "width": 100,
+    "height": 40
+  },
+  {
+    "screen": "03-xw-45.txt",
+    "keys": [
+      "]",
+      "]",
+      "]",
+      "]",
+      "]",
+      "]"
+    ],
+    "seed": 42,
+    "mode": "4d",
+    "angle4d": 45.0,
+    "width": 100,
+    "height": 40
+  },
+  {
+    "screen": "04-orbit-zoom.txt",
+    "keys": [
+      "right",
+      "right",
+      "up",
+      "+"
+    ],
+    "seed": 42,
+    "mode": "4d",
+    "angle4d": 45.0,
+    "width": 100,
+    "height": 40
+  },
+  {
+    "screen": "05-help.txt",
+    "keys": [
+      "h"
+    ],
+    "seed": 42,
+    "mode": "4d",
+    "angle4d": 45.0,
+    "width": 100,
+    "height": 40
+  },
+  {
+    "screen": "06-resize-narrow.txt",
+    "keys": [
+      "h"
+    ],
+    "seed": 42,
+    "mode": "4d",
+    "angle4d": 45.0,
+    "width": 24,
+    "height": 10
+  },
+  {
+    "screen": "07-reset.txt",
+    "keys": [
+      "r"
+    ],
+    "seed": 42,
+    "mode": "4d",
+    "angle4d": 0,
+    "width": 100,
+    "height": 40
+  },
+  {
+    "screen": "08-new-seed43.txt",
+    "keys": [
+      "g"
+    ],
+    "seed": 43,
+    "mode": "4d",
+    "angle4d": 0,
+    "width": 100,
+    "height": 40
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "python": "3.12.10",
+  "platform": "win32",
+  "seed": 42,
+  "segments": 581,
+  "leaves": 1224,
+  "generation_ms": 7.519,
+  "frames": [
+    {
+      "mode": "2d",
+      "width": 100,
+      "height": 40,
+      "repeats": 8,
+      "median_ms": 15.834,
+      "max_ms": 18.612
+    },
+    {
+      "mode": "3d",
+      "width": 100,
+      "height": 40,
+      "repeats": 8,
+      "median_ms": 17.208,
+      "max_ms": 18.259
+    },
+    {
+      "mode": "4d",
+      "width": 100,
+      "height": 40,
+      "repeats": 8,
+      "median_ms": 19.816,
+      "max_ms": 21.106
+    },
+    {
+      "mode": "2d",
+      "width": 500,
+      "height": 200,
+      "repeats": 3,
+      "median_ms": 39.815,
+      "max_ms": 40.166
+    },
+    {
+      "mode": "3d",
+      "width": 500,
+      "height": 200,
+      "repeats": 3,
+      "median_ms": 41.773,
+      "max_ms": 42.65
+    },
+    {
+      "mode": "4d",
+      "width": 500,
+      "height": 200,
+      "repeats": 3,
+      "median_ms": 45.799,
+      "max_ms": 45.993
+    }
+  ],
+  "note": "CPU render only; terminal transport excluded; local measurements, not a guarantee"
+}

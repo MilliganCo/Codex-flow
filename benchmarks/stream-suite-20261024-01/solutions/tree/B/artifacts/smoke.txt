@@ -1,0 +1,2 @@
+PASS: 4 deterministic frames; ASCII 100x40; XW change; same object; 1x1; non-TTY exit.
+Real TTY startup: python tools/native_probe.py --startup

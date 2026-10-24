@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile",
+  "created_utc": "2026-10-24T07:00:03.027879+00:00",
+  "grades": {
+    "solution-19": {
+      "quality_score": 100,
+      "accepted": true,
+      "assessed_points": 100,
+      "assessed_max": 100,
+      "evaluation_sha256": "089e9021dbf79cb4e24bf0148d17857772bb23e964524a4b63dc97dd8895cbb8",
+      "execution_sha256": "a1f2d4d455e4f3639bd1c42ff3b8f300a7dc1b1b7f1f12ad96ae5b792fca01ac"
+    },
+    "solution-20": {
+      "quality_score": 100,
+      "accepted": true,
+      "assessed_points": 100,
+      "assessed_max": 100,
+      "evaluation_sha256": "2c097d77bf7c1299ba4170e414732491e065b7181075af44c452c969366a160e",
+      "execution_sha256": "3b6f75ee552128d83dea5bdbc11496ee2b2a4ebbedd87628b6f8b3583c943d3d"
+    }
+  },
+  "all_anonymous_sources_unchanged": true,
+  "checkers_unchanged": true,
+  "source_file_counts": {
+    "solution-19": 9,
+    "solution-20": 13
+  },
+  "mapping_not_yet_read_in_this_operation": true,
+  "model_calls": 0,
+  "app_runs": 0
+}

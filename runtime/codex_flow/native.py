@@ -34,10 +34,12 @@ def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gate
         instructions += ('\nController execution plan: selected_strategy=parallel; max_helpers='+str(cfg.max_agents)+
                          '; delegation_depth=1 (instruction boundary). The human owner explicitly authorized '
                          'this multi-agent execution. Your FIRST TOOL ACTION must spawn exactly one independent '
-                         'read-only worker using the native spawn tool, BEFORE editing application files or running '
+                         'read-only reviewer with agent_type=reviewer (the provided Sol high profile) using the native spawn tool, BEFORE editing application files or running '
                          'shell commands. This is a required execution step, not a discretionary recommendation. '
-                         'Give the worker one bounded independent acceptance/test review task, with concise actionable '
-                         'findings and limitations. Continue useful implementation immediately while it works; do not '
+                         'Supply the task requirements and request at most five concrete acceptance risks and '
+                         'boundary checks. This initial review uses supplied context only: no tools, file reads, '
+                         'polling or production implementation. Return concise evidence and limitations. Continue useful implementation '
+                         'of a different part immediately while it works; do not '
                          'ask it to wait or poll for files that do not exist yet. It should return available '
                          'requirements evidence and missing prerequisites once. Do not '
                          'wait for its plan; receive its evidence before final integration. '
@@ -124,7 +126,7 @@ def role_profiles(workspace:Path,*,named_permissions:bool):
                               ('explorer','gpt-6-luna','medium'),('reviewer','gpt-6.1-sol','high'),('awaiter','gpt-6.1-sol','medium')]:
         path=folder/(name+'.toml')
         text='model = '+json.dumps(model)+'\nmodel_reasoning_effort = '+json.dumps(effort)+'\n'
-        text+='developer_instructions = "Read-only evidence gathering in the assigned workspace. Never write application files or spawn further agents. Return concise evidence and limitations."\n[features]\napps = false\nplugins = false\nmemories = false\nrequest_permissions_tool = false\n'
+        text+='developer_instructions = "Read-only work in the assigned workspace. Never write files or spawn further agents. Budget status belongs to the coordinator; never query it. Return concise evidence or an explicitly requested low-risk bounded proposal in your final reply, with limitations."\n[features]\napps = false\nplugins = false\nmemories = false\nrequest_permissions_tool = false\n'
         with path.open('x',encoding='utf-8') as f:f.write(text)
         result[name]=path
     return result
@@ -154,8 +156,10 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
         instructions+='\nController task time budget: '+str(cfg.timeout_s)+' seconds including native execution. Plan the final '+str(max(1,round(cfg.timeout_s*.2)))+' seconds for verification, documentation and handoff; do not claim an enforced phase timer.'
     if budget_channel is not None:
         instructions += ('\nThe local flow_budget MCP server exposes the read-only status tool. '
-                         'After the required initial helper spawn, consult status at major stage boundaries '
-                         '(first runnable slice, verification, final handoff). Do not repeatedly poll it. '
+                         'After the required initial reviewer spawn, only the chief consults status, at most twice '
+                         '(first runnable slice and before final verification), unless an explicit verification '
+                         'protocol requires more. Batch it with an already necessary independent tool action when '
+                         'supported; do not create a standalone status-only turn or query after acceptance. '
                          'It reports the shared remaining time and reserved native request attempts. '
                          'Treat unavailable status as missing evidence; do not invent a balance or skip acceptance checks. '
                          'The phase is planning guidance, not proof of completion.')

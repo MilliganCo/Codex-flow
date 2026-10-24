@@ -1,0 +1,28 @@
+{
+  "platform": "win32",
+  "real_tty": true,
+  "label": "final",
+  "startup_only": false,
+  "returncode": 0,
+  "seed": 42,
+  "mode": "4d",
+  "angle4d": 16.0,
+  "yaw": 346.0,
+  "pitch": 14.0,
+  "zoom": 1.1,
+  "time": 0.0,
+  "playing": false,
+  "help_open": false,
+  "same_tree": true,
+  "export_count": 2,
+  "console_before": [
+    503,
+    7
+  ],
+  "console_after": [
+    503,
+    7
+  ],
+  "console_restored": true,
+  "timed_out": false
+}

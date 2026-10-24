@@ -1,0 +1,1112 @@
+{
+  "protocol": "conpty-case09-57",
+  "solution": "solution-18",
+  "checks": [
+    {
+      "number": 1,
+      "name": "startup.marker",
+      "status": "pass"
+    },
+    {
+      "number": 2,
+      "name": "2d.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 3,
+      "name": "2d.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 4,
+      "name": "2d.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 5,
+      "name": "3d.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 6,
+      "name": "3d.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 7,
+      "name": "3d.oracle_and_embedded_camera_roundtrip",
+      "status": "pass"
+    },
+    {
+      "number": 8,
+      "name": "4d.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 9,
+      "name": "4d.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 10,
+      "name": "4d.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 11,
+      "name": "three_distinct_shared_seed_modes",
+      "status": "pass"
+    },
+    {
+      "number": 12,
+      "name": "xw-forward.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 13,
+      "name": "xw-forward.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 14,
+      "name": "xw-forward.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 15,
+      "name": "xw-reverse.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 16,
+      "name": "xw-reverse.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 17,
+      "name": "xw-reverse.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 18,
+      "name": "camera-forward.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 19,
+      "name": "camera-forward.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 20,
+      "name": "camera-forward.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 21,
+      "name": "zoom-in.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 22,
+      "name": "zoom-in.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 23,
+      "name": "zoom-in.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 24,
+      "name": "zoom-out.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 25,
+      "name": "zoom-out.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 26,
+      "name": "zoom-out.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 27,
+      "name": "help.marker",
+      "status": "pass"
+    },
+    {
+      "number": 28,
+      "name": "help-closed.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 29,
+      "name": "help-closed.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 30,
+      "name": "help-closed.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 31,
+      "name": "animation.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 32,
+      "name": "animation.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 33,
+      "name": "animation.changed",
+      "status": "pass"
+    },
+    {
+      "number": 34,
+      "name": "paused.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 35,
+      "name": "paused.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 36,
+      "name": "paused.identical",
+      "status": "pass"
+    },
+    {
+      "number": 37,
+      "name": "reset.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 38,
+      "name": "reset.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 39,
+      "name": "reset.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 40,
+      "name": "new-seed.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 41,
+      "name": "new-seed.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 42,
+      "name": "new-seed.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 43,
+      "name": "resize-30x12.dimensions",
+      "status": "pass",
+      "width": 29,
+      "height": 9
+    },
+    {
+      "number": 44,
+      "name": "resize-30x12.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 45,
+      "name": "resize-30x12.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 46,
+      "name": "resize-1x1.dimensions",
+      "status": "pass",
+      "width": 1,
+      "height": 1
+    },
+    {
+      "number": 47,
+      "name": "resize-1x1.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 48,
+      "name": "resize-1x1.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 49,
+      "name": "resize-restored.dimensions",
+      "status": "pass",
+      "width": 99,
+      "height": 37
+    },
+    {
+      "number": 50,
+      "name": "resize-restored.ascii_lf",
+      "status": "pass"
+    },
+    {
+      "number": 51,
+      "name": "resize-restored.oracle",
+      "status": "pass"
+    },
+    {
+      "number": 52,
+      "name": "q.exit_code",
+      "status": "pass",
+      "returncode": 0
+    },
+    {
+      "number": 53,
+      "name": "q.restore",
+      "status": "pass"
+    },
+    {
+      "number": 54,
+      "name": "escape.exit_code",
+      "status": "pass",
+      "returncode": 0
+    },
+    {
+      "number": 55,
+      "name": "escape.restore",
+      "status": "pass"
+    },
+    {
+      "number": 56,
+      "name": "ctrl-c.exit_code",
+      "status": "pass",
+      "returncode": 0
+    },
+    {
+      "number": 57,
+      "name": "ctrl-c.restore",
+      "status": "pass"
+    }
+  ],
+  "exports": [
+    {
+      "label": "2d",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-2d-001.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "e1828ed7716b77c47a01f0ae629f298ecc011644c5e5e8df19ca6b1d65122699",
+      "bytes": 3700
+    },
+    {
+      "label": "3d",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-3d-002.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "6b63b836fd8f328241c0665cfac95fbeff4ae538642de214970ab5e011b597ed",
+      "bytes": 3700
+    },
+    {
+      "label": "3d-roundtrip-forward",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-3d-003.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "1abcbc8733d93bb88d635030548efecef9edcfa5f66624d9ba6c5d8fac4cc39f",
+      "bytes": 3700
+    },
+    {
+      "label": "3d-roundtrip-reverse",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-3d-004.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "6b63b836fd8f328241c0665cfac95fbeff4ae538642de214970ab5e011b597ed",
+      "bytes": 3700
+    },
+    {
+      "label": "4d",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-005.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "2bcd80913f2b6db0293a80d8b86cab8d0d8ef5920259056f5bf1fd1dfa093fac",
+      "bytes": 3700
+    },
+    {
+      "label": "xw-forward",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-006.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "7c944403a4c336d9279ae7b37ed1f3aa6ec536999eef1ee7483dc973f3ae6e7b",
+      "bytes": 3700
+    },
+    {
+      "label": "xw-reverse",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-007.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "2bcd80913f2b6db0293a80d8b86cab8d0d8ef5920259056f5bf1fd1dfa093fac",
+      "bytes": 3700
+    },
+    {
+      "label": "camera-forward",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-008.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "3c58fd16ae043f81ed83c694a12f0a7d71f544c065191525886e7ff420fe481f",
+      "bytes": 3700
+    },
+    {
+      "label": "zoom-in",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-009.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "470cc8905d3d1cf1a5bbbc255442ee824bf827e397d972d87afd051f486af123",
+      "bytes": 3700
+    },
+    {
+      "label": "zoom-out",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-010.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "adde599e6427597e3bb05c8e8452a558473ab9ac051f1876510fffe244ae9a84",
+      "bytes": 3700
+    },
+    {
+      "label": "help-closed",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-011.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "adde599e6427597e3bb05c8e8452a558473ab9ac051f1876510fffe244ae9a84",
+      "bytes": 3700
+    },
+    {
+      "label": "animation",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-012.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "cecd09e699050efac1778164193b169065d451573246ce8777ec138a52c038f8",
+      "bytes": 3700
+    },
+    {
+      "label": "paused",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-013.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "cecd09e699050efac1778164193b169065d451573246ce8777ec138a52c038f8",
+      "bytes": 3700
+    },
+    {
+      "label": "reset",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-42-4d-014.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "2bcd80913f2b6db0293a80d8b86cab8d0d8ef5920259056f5bf1fd1dfa093fac",
+      "bytes": 3700
+    },
+    {
+      "label": "new-seed",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-43-4d-015.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "523c9d3c7234a7d6e6411d8dac486123a936d37175e15ae5c74eca9dc42d6fe4",
+      "bytes": 3700
+    },
+    {
+      "label": "resize-30x12",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-43-4d-016.txt",
+      "width": 29,
+      "height": 9,
+      "sha256": "21a8a2fafefccb57d8abb74b3e8596724dde123f233ca0ba106eb347c102ed98",
+      "bytes": 270
+    },
+    {
+      "label": "resize-1x1",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-43-4d-017.txt",
+      "width": 1,
+      "height": 1,
+      "sha256": "cdbcae15105d6b781e620813c79c7e868740d4e9cc53ce6f5fcbbc12387adf4b",
+      "bytes": 2
+    },
+    {
+      "label": "resize-restored",
+      "path": "evidence/tree\\interactive-18\\native57-exports-18\\tree-43-4d-018.txt",
+      "width": 99,
+      "height": 37,
+      "sha256": "523c9d3c7234a7d6e6411d8dac486123a936d37175e15ae5c74eca9dc42d6fe4",
+      "bytes": 3700
+    }
+  ],
+  "oracles": [
+    {
+      "label": "2d",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "2d",
+        "--yaw",
+        "-22.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "e1828ed7716b77c47a01f0ae629f298ecc011644c5e5e8df19ca6b1d65122699",
+      "path": "evidence/tree\\interactive-18\\oracle-2d.txt"
+    },
+    {
+      "label": "3d",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "3d",
+        "--yaw",
+        "-22.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "6b63b836fd8f328241c0665cfac95fbeff4ae538642de214970ab5e011b597ed",
+      "path": "evidence/tree\\interactive-18\\oracle-3d.txt"
+    },
+    {
+      "label": "3d-roundtrip-forward",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "3d",
+        "--yaw",
+        "346.0",
+        "--pitch",
+        "14.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "1abcbc8733d93bb88d635030548efecef9edcfa5f66624d9ba6c5d8fac4cc39f",
+      "path": "evidence/tree\\interactive-18\\oracle-3d-roundtrip-forward.txt"
+    },
+    {
+      "label": "3d-roundtrip-reverse",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "3d",
+        "--yaw",
+        "338.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "6b63b836fd8f328241c0665cfac95fbeff4ae538642de214970ab5e011b597ed",
+      "path": "evidence/tree\\interactive-18\\oracle-3d-roundtrip-reverse.txt"
+    },
+    {
+      "label": "4d",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--yaw",
+        "338.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "2bcd80913f2b6db0293a80d8b86cab8d0d8ef5920259056f5bf1fd1dfa093fac",
+      "path": "evidence/tree\\interactive-18\\oracle-4d.txt"
+    },
+    {
+      "label": "xw-forward",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--yaw",
+        "338.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "8",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "7c944403a4c336d9279ae7b37ed1f3aa6ec536999eef1ee7483dc973f3ae6e7b",
+      "path": "evidence/tree\\interactive-18\\oracle-xw-forward.txt"
+    },
+    {
+      "label": "xw-reverse",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--yaw",
+        "338.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "2bcd80913f2b6db0293a80d8b86cab8d0d8ef5920259056f5bf1fd1dfa093fac",
+      "path": "evidence/tree\\interactive-18\\oracle-xw-reverse.txt"
+    },
+    {
+      "label": "camera-forward",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--yaw",
+        "346.0",
+        "--pitch",
+        "14.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "3c58fd16ae043f81ed83c694a12f0a7d71f544c065191525886e7ff420fe481f",
+      "path": "evidence/tree\\interactive-18\\oracle-camera-forward.txt"
+    },
+    {
+      "label": "zoom-in",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--yaw",
+        "346.0",
+        "--pitch",
+        "14.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.1",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "470cc8905d3d1cf1a5bbbc255442ee824bf827e397d972d87afd051f486af123",
+      "path": "evidence/tree\\interactive-18\\oracle-zoom-in.txt"
+    },
+    {
+      "label": "zoom-out",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--yaw",
+        "346.0",
+        "--pitch",
+        "14.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "0.9900000000000001",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "adde599e6427597e3bb05c8e8452a558473ab9ac051f1876510fffe244ae9a84",
+      "path": "evidence/tree\\interactive-18\\oracle-zoom-out.txt"
+    },
+    {
+      "label": "help-closed",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--yaw",
+        "346.0",
+        "--pitch",
+        "14.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "0.9900000000000001",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "adde599e6427597e3bb05c8e8452a558473ab9ac051f1876510fffe244ae9a84",
+      "path": "evidence/tree\\interactive-18\\oracle-help-closed.txt"
+    },
+    {
+      "label": "reset",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "42",
+        "--mode",
+        "4d",
+        "--yaw",
+        "-22.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "2bcd80913f2b6db0293a80d8b86cab8d0d8ef5920259056f5bf1fd1dfa093fac",
+      "path": "evidence/tree\\interactive-18\\oracle-reset.txt"
+    },
+    {
+      "label": "new-seed",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "43",
+        "--mode",
+        "4d",
+        "--yaw",
+        "-22.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "523c9d3c7234a7d6e6411d8dac486123a936d37175e15ae5c74eca9dc42d6fe4",
+      "path": "evidence/tree\\interactive-18\\oracle-new-seed.txt"
+    },
+    {
+      "label": "resize-30x12",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "29",
+        "--height",
+        "9",
+        "--seed",
+        "43",
+        "--mode",
+        "4d",
+        "--yaw",
+        "-22.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "21a8a2fafefccb57d8abb74b3e8596724dde123f233ca0ba106eb347c102ed98",
+      "path": "evidence/tree\\interactive-18\\oracle-resize-30x12.txt"
+    },
+    {
+      "label": "resize-1x1",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "1",
+        "--height",
+        "1",
+        "--seed",
+        "43",
+        "--mode",
+        "4d",
+        "--yaw",
+        "-22.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "cdbcae15105d6b781e620813c79c7e868740d4e9cc53ce6f5fcbbc12387adf4b",
+      "path": "evidence/tree\\interactive-18\\oracle-resize-1x1.txt"
+    },
+    {
+      "label": "resize-restored",
+      "command": [
+        "[LOCAL_ROOT]\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "-m",
+        "ascii_tree",
+        "render",
+        "--width",
+        "99",
+        "--height",
+        "37",
+        "--seed",
+        "43",
+        "--mode",
+        "4d",
+        "--yaw",
+        "-22.0",
+        "--pitch",
+        "8.0",
+        "--angle4d",
+        "0.0",
+        "--zoom",
+        "1.0",
+        "--time",
+        "0"
+      ],
+      "returncode": 0,
+      "sha256": "523c9d3c7234a7d6e6411d8dac486123a936d37175e15ae5c74eca9dc42d6fe4",
+      "path": "evidence/tree\\interactive-18\\oracle-resize-restored.txt"
+    }
+  ],
+  "errors": [],
+  "source_before": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "artifacts/frames/manifest.json": "eddf21efcddb7cf515f0f67d183454ed623f7ae0afb7823809951fb52af1f1a4",
+    "artifacts/frames/seed42-2d.txt": "32c59c03e7d0c950240a3c9a4eaa40ecb6e94462fa7931972b279e26b58b3ab4",
+    "artifacts/frames/seed42-3d.txt": "9176d3740bc161a5caea82fba948eadd32e2ef5be2c046c01358a9b12dfa6895",
+    "artifacts/frames/seed42-4d-xw0.txt": "c744fd05366b90f4635609487b11be9ad1f44cfb524f767ee623679ebb1ce248",
+    "artifacts/frames/seed42-4d-xw35.txt": "1d9ae14169fde7ea44d1cf65616294d259dfd24a807c69c0a53368d252d49ff1",
+    "artifacts/frames/seed43-2d.txt": "0e804ea00511b7f9748760803d800dd61d70bf00b5d6e6d19b6481ff57cf2c23",
+    "artifacts/frames/seed43-3d.txt": "07371225ac8020dc2c52361a6be9172229cdf3db1239463931fe7c1fa2a11613",
+    "artifacts/native-controls.json": "c5ce75b4bc8b1887ad4b519d722948e0abe0a1da4ce92b4e990147e230eb2d21",
+    "artifacts/native-ctrlc-raw.json": "7b232dbf7c08b8d81096f6dd68d16a806d11ef413f601ab26ccaccabbf038d6f",
+    "artifacts/native-ctrlc.json": "2713621f3d2b7c9d36f4f608d01356fdd12989118689b1b43f46649f69abbcba",
+    "artifacts/native-escape.json": "076ac4d68c135285d7f2e7e2cbd5a48c8cc7adf2b72a01e27f72ae3252c52301",
+    "artifacts/native-final.json": "9faaebeeb2c830211f24b42dadf00fa833d4865343da2580e2afa95a26505567",
+    "artifacts/native-startup.json": "9bdbd92654520d14cf8debe84613f2d5386453bd03fb4b07ce50d4c372e33713",
+    "artifacts/performance.json": "4bd9d1fe1864b10df73792f6f8d5e370a39f65e53d2964169209d367ad5da943",
+    "artifacts/probe-exports/tree-42-4d-001.txt": "227ca9056482f25be5e50cb7b05c50cf6487cdfb050ab7c63ba2084274130d8e",
+    "artifacts/probe-exports/tree-42-4d-002.txt": "d64335707919e978dcb81c12035e01b0964c58b8ac14cf5aa8070b8365733808",
+    "artifacts/smoke.txt": "192e67d8d53ecbc02e218c6d2025467d7702e25c78e985b87660916e739157f9",
+    "artifacts/unittest.txt": "8e256f9f92b5d747512cedf3f68521a8703daec0d5ae376d615de9dc8bf7e41a",
+    "artifacts/verification.json": "859c7c42e5b478f0c31dba9300b510eb9ead3f8099c3991ff6eda28d56566e17",
+    "ascii_tree/__init__.py": "49faff6001e3da9db88b1ff8c32fa11b102c9926a3216c45903a0241c50ae3dc",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/app.py": "4eb13493c591b2f4844e8bc4c80af62f87b8a79d949a9b830c0d7f5d66a8788e",
+    "ascii_tree/cli.py": "aec2973303bab334af8fe960d5931906f7281d21fbf49ecf9ac1b99cdac7b8fd",
+    "ascii_tree/model.py": "efdfcd226104ee9d4e3a16580848174579a51d95edf3ea2a47f2d52102a00f9e",
+    "ascii_tree/render.py": "0a53f606b475a633f8c7ac838987337570ce7b75d4fca22196eb324a88b7fc83",
+    "ascii_tree/terminal.py": "20db25e8202f69ac30575c754504c79a7199c5907d75f2201b8d8aecade0b6d3",
+    "IMPLEMENTATION_NOTES.md": "e648673e233f4c920d7076a2a36896386dfeed420093554b7883c388cd6d80cb",
+    "INTERACTIVE_DEMO.md": "673df75c8d642f28976260bd172b8cf2550930fbdbcaa2e2530a0f97278029e8",
+    "pyproject.toml": "6e791e4a343fc89db00ede3927f496c3b5fa3c1382a8a32a3031b453c9573956",
+    "README.md": "133221fcbc70ee13ee8df5d21c16cbbec0d716d8f5e1ca6e36e04ea395185806",
+    "tests/test_app.py": "cf1c8ce4b090f9e3e94c2ee3489841e4082ac5b063f2f054aabee745b2ad173e",
+    "tests/test_cli.py": "3f3cac0776ab1fac25399b07549caf3dd2d1005033798ef81f685ab4fe644acf",
+    "tests/test_model.py": "76c7141f2cecdb29a598022d37ac02394bd4526a42706d602bc1310ceef89276",
+    "tests/test_render.py": "10ffb0a1d943e0285b55b1c5773cb394083f63933c9786346773930dc0ef29cb",
+    "tools/benchmark.py": "e03e2f7a33c025c3d9b22aefa004cd68674f69f50496a6ce9fd8e57f6bd75fdc",
+    "tools/generate_samples.py": "4a1bc0a094421f2b9b588f651eeaa95540003368c05864f4cc36e43e38f8c4dd",
+    "tools/native_probe.py": "33f3cf280747c268442daf35e02804fdd30f572effcfe93eb39ca71dce2b8a49",
+    "tools/smoke.py": "c2607220933340c6148f06553ff10f9b1ef52b1d126c37d2b599f8e58e3c00f9",
+    "tools/verify.py": "573c675b77f56eeabdbed90a4af92dbef5dd2553817ef685bd79cfd3b30b8365",
+    "VERIFICATION.md": "9108f85bd84c00ca336bcde0be92f696d1754fbdfcc9a76baf7405e04c893af9"
+  },
+  "checker_hashes": {
+    "native57_case09.py": "8d7b23f4f974e62303f9f8f5b930b11c0b6a6510319402ea0dffb73ff28db4d3",
+    "conpty_case09_neutral.py": "d7c59cf9a3a999dd64d6d796cc9e8ce501d157000db990e2a9f4b9c59daaa6f9",
+    "evaluator.py": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+    "rubric.json": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+  },
+  "adapter": {
+    "module": "ascii_tree",
+    "plane": "XW",
+    "initial_yaw": -22,
+    "initial_pitch": 8,
+    "initial_angle4d": 0,
+    "next_seed": "seed+1",
+    "yaw_step": 8,
+    "pitch_step": 6,
+    "xw_step": 8,
+    "zoom_in": 1.1,
+    "zoom_out": 0.9,
+    "viewport_100x40": [
+      99,
+      37
+    ],
+    "viewport_30x12": [
+      29,
+      9
+    ],
+    "viewport_1x1": [
+      1,
+      1
+    ]
+  },
+  "transcripts": [
+    {
+      "session": "main",
+      "path": "evidence/tree\\interactive-18\\conpty-main.bin",
+      "sha256": "220162eb3bda7f0077337b26879a785c97349255ce1396d5c3dfa416c8c48c67",
+      "bytes": 55451
+    },
+    {
+      "session": "escape",
+      "path": "evidence/tree\\interactive-18\\conpty-escape.bin",
+      "sha256": "1586b2159397ada1996c597a13ae9e85db5bfc9053215db8749bc23e54dc92c6",
+      "bytes": 2986
+    },
+    {
+      "session": "ctrl-c",
+      "path": "evidence/tree\\interactive-18\\conpty-ctrl-c.bin",
+      "sha256": "1586b2159397ada1996c597a13ae9e85db5bfc9053215db8749bc23e54dc92c6",
+      "bytes": 2986
+    }
+  ],
+  "source_after": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "artifacts/frames/manifest.json": "eddf21efcddb7cf515f0f67d183454ed623f7ae0afb7823809951fb52af1f1a4",
+    "artifacts/frames/seed42-2d.txt": "32c59c03e7d0c950240a3c9a4eaa40ecb6e94462fa7931972b279e26b58b3ab4",
+    "artifacts/frames/seed42-3d.txt": "9176d3740bc161a5caea82fba948eadd32e2ef5be2c046c01358a9b12dfa6895",
+    "artifacts/frames/seed42-4d-xw0.txt": "c744fd05366b90f4635609487b11be9ad1f44cfb524f767ee623679ebb1ce248",
+    "artifacts/frames/seed42-4d-xw35.txt": "1d9ae14169fde7ea44d1cf65616294d259dfd24a807c69c0a53368d252d49ff1",
+    "artifacts/frames/seed43-2d.txt": "0e804ea00511b7f9748760803d800dd61d70bf00b5d6e6d19b6481ff57cf2c23",
+    "artifacts/frames/seed43-3d.txt": "07371225ac8020dc2c52361a6be9172229cdf3db1239463931fe7c1fa2a11613",
+    "artifacts/native-controls.json": "c5ce75b4bc8b1887ad4b519d722948e0abe0a1da4ce92b4e990147e230eb2d21",
+    "artifacts/native-ctrlc-raw.json": "7b232dbf7c08b8d81096f6dd68d16a806d11ef413f601ab26ccaccabbf038d6f",
+    "artifacts/native-ctrlc.json": "2713621f3d2b7c9d36f4f608d01356fdd12989118689b1b43f46649f69abbcba",
+    "artifacts/native-escape.json": "076ac4d68c135285d7f2e7e2cbd5a48c8cc7adf2b72a01e27f72ae3252c52301",
+    "artifacts/native-final.json": "9faaebeeb2c830211f24b42dadf00fa833d4865343da2580e2afa95a26505567",
+    "artifacts/native-startup.json": "9bdbd92654520d14cf8debe84613f2d5386453bd03fb4b07ce50d4c372e33713",
+    "artifacts/performance.json": "4bd9d1fe1864b10df73792f6f8d5e370a39f65e53d2964169209d367ad5da943",
+    "artifacts/probe-exports/tree-42-4d-001.txt": "227ca9056482f25be5e50cb7b05c50cf6487cdfb050ab7c63ba2084274130d8e",
+    "artifacts/probe-exports/tree-42-4d-002.txt": "d64335707919e978dcb81c12035e01b0964c58b8ac14cf5aa8070b8365733808",
+    "artifacts/smoke.txt": "192e67d8d53ecbc02e218c6d2025467d7702e25c78e985b87660916e739157f9",
+    "artifacts/unittest.txt": "8e256f9f92b5d747512cedf3f68521a8703daec0d5ae376d615de9dc8bf7e41a",
+    "artifacts/verification.json": "859c7c42e5b478f0c31dba9300b510eb9ead3f8099c3991ff6eda28d56566e17",
+    "ascii_tree/__init__.py": "49faff6001e3da9db88b1ff8c32fa11b102c9926a3216c45903a0241c50ae3dc",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/app.py": "4eb13493c591b2f4844e8bc4c80af62f87b8a79d949a9b830c0d7f5d66a8788e",
+    "ascii_tree/cli.py": "aec2973303bab334af8fe960d5931906f7281d21fbf49ecf9ac1b99cdac7b8fd",
+    "ascii_tree/model.py": "efdfcd226104ee9d4e3a16580848174579a51d95edf3ea2a47f2d52102a00f9e",
+    "ascii_tree/render.py": "0a53f606b475a633f8c7ac838987337570ce7b75d4fca22196eb324a88b7fc83",
+    "ascii_tree/terminal.py": "20db25e8202f69ac30575c754504c79a7199c5907d75f2201b8d8aecade0b6d3",
+    "IMPLEMENTATION_NOTES.md": "e648673e233f4c920d7076a2a36896386dfeed420093554b7883c388cd6d80cb",
+    "INTERACTIVE_DEMO.md": "673df75c8d642f28976260bd172b8cf2550930fbdbcaa2e2530a0f97278029e8",
+    "pyproject.toml": "6e791e4a343fc89db00ede3927f496c3b5fa3c1382a8a32a3031b453c9573956",
+    "README.md": "133221fcbc70ee13ee8df5d21c16cbbec0d716d8f5e1ca6e36e04ea395185806",
+    "tests/test_app.py": "cf1c8ce4b090f9e3e94c2ee3489841e4082ac5b063f2f054aabee745b2ad173e",
+    "tests/test_cli.py": "3f3cac0776ab1fac25399b07549caf3dd2d1005033798ef81f685ab4fe644acf",
+    "tests/test_model.py": "76c7141f2cecdb29a598022d37ac02394bd4526a42706d602bc1310ceef89276",
+    "tests/test_render.py": "10ffb0a1d943e0285b55b1c5773cb394083f63933c9786346773930dc0ef29cb",
+    "tools/benchmark.py": "e03e2f7a33c025c3d9b22aefa004cd68674f69f50496a6ce9fd8e57f6bd75fdc",
+    "tools/generate_samples.py": "4a1bc0a094421f2b9b588f651eeaa95540003368c05864f4cc36e43e38f8c4dd",
+    "tools/native_probe.py": "33f3cf280747c268442daf35e02804fdd30f572effcfe93eb39ca71dce2b8a49",
+    "tools/smoke.py": "c2607220933340c6148f06553ff10f9b1ef52b1d126c37d2b599f8e58e3c00f9",
+    "tools/verify.py": "573c675b77f56eeabdbed90a4af92dbef5dd2553817ef685bd79cfd3b30b8365",
+    "VERIFICATION.md": "9108f85bd84c00ca336bcde0be92f696d1754fbdfcc9a76baf7405e04c893af9"
+  },
+  "sources_unchanged": true,
+  "executed_checks": 57,
+  "unexecuted_check_numbers": [],
+  "smoke_completion": "pass"
+}

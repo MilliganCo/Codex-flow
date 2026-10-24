@@ -1,0 +1,11 @@
+{
+  "unit_tests": 26,
+  "unit_failures": 0,
+  "unit_errors": 0,
+  "smoke": "pass",
+  "saved_frames_verified": 6,
+  "native_exports_verified": 2,
+  "native_tty_not_run_by_this_script": true,
+  "final_native_export_matches_headless": true,
+  "final_native_console_restored": true
+}

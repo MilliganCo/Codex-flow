@@ -1,0 +1,55 @@
+test_2d_animation_is_visible_breeze (test_app.StateTests.test_2d_animation_is_visible_breeze) ... ok
+test_all_sizes_including_minimum (test_app.StateTests.test_all_sizes_including_minimum) ... ok
+test_export_is_tree_only_and_never_overwrites (test_app.StateTests.test_export_is_tree_only_and_never_overwrites) ... ok
+test_help_and_quit (test_app.StateTests.test_help_and_quit) ... ok
+test_keys_camera_zoom_hyper_rotation_and_reset (test_app.StateTests.test_keys_camera_zoom_hyper_rotation_and_reset) ... ok
+test_only_g_replaces_object_and_is_reproducible (test_app.StateTests.test_only_g_replaces_object_and_is_reproducible) ... ok
+test_play_pause_and_4d_animation (test_app.StateTests.test_play_pause_and_4d_animation) ... ok
+test_switch_modes_keeps_exact_object (test_app.StateTests.test_switch_modes_keeps_exact_object) ... ok
+test_zoom_and_pitch_clamps (test_app.StateTests.test_zoom_and_pitch_clamps) ... ok
+test_ansi_lifecycle_and_draw_do_not_append_frames (test_app.TerminalTests.test_ansi_lifecycle_and_draw_do_not_append_frames) ... ok
+test_keyboard_interrupt_always_leaves_terminal (test_app.TerminalTests.test_keyboard_interrupt_always_leaves_terminal) ... ok
+test_split_posix_arrows_and_escape (test_app.TerminalTests.test_split_posix_arrows_and_escape) ... ok
+test_startup_resize_switch_export_and_shutdown (test_app.TerminalTests.test_startup_resize_switch_export_and_shutdown) ... ok
+test_windows_extended_arrow_and_raw_ctrl_c (test_app.TerminalTests.test_windows_extended_arrow_and_raw_ctrl_c) ... ok
+test_file_export_matches_stdout_exactly (test_cli.CLITests.test_file_export_matches_stdout_exactly) ... ok
+test_headless_is_deterministic_and_has_clean_bytes (test_cli.CLITests.test_headless_is_deterministic_and_has_clean_bytes) ... ok
+test_help_and_version (test_cli.CLITests.test_help_and_version) ... ok
+test_invalid_input_is_finite_failure_without_traceback (test_cli.CLITests.test_invalid_input_is_finite_failure_without_traceback) ... ok
+test_large_but_finite_time_and_angles_do_not_overflow (test_cli.CLITests.test_large_but_finite_time_and_angles_do_not_overflow) ... ok
+test_minimal_headless_frame (test_cli.CLITests.test_minimal_headless_frame) ... ok
+test_module_entrypoint (test_cli.CLITests.test_module_entrypoint) ... ok
+test_output_error_is_reported (test_cli.CLITests.test_output_error_is_reported) ... ok
+test_view_without_tty_exits_with_useful_message_and_no_ansi (test_cli.CLITests.test_view_without_tty_exits_with_useful_message_and_no_ansi) ... ok
+test_4d_perspective_and_near_plane_guard (test_model.HyperRotationTests.test_4d_perspective_and_near_plane_guard) ... ok
+test_orthonormal_matrix_and_positive_determinant (test_model.HyperRotationTests.test_orthonormal_matrix_and_positive_determinant) ... ok
+test_xw_basis_actually_mixes_components (test_model.HyperRotationTests.test_xw_basis_actually_mixes_components) ... ok
+test_multiple_seeds_have_distinct_geometry (test_model.ModelTests.test_multiple_seeds_have_distinct_geometry) ... ok
+test_one_connected_acyclic_graph (test_model.ModelTests.test_one_connected_acyclic_graph) ... ok
+test_positive_lengths_radii_finite_coordinates_and_bounded_recursion (test_model.ModelTests.test_positive_lengths_radii_finite_coordinates_and_bounded_recursion) ... ok
+test_real_spatial_volume_and_variable_w (test_model.ModelTests.test_real_spatial_volume_and_variable_w) ... ok
+test_seed_determinism (test_model.ModelTests.test_seed_determinism) ... ok
+test_trunk_has_visible_taper_and_multiple_orders (test_model.ModelTests.test_trunk_has_visible_taper_and_multiple_orders) ... ok
+test_w_grows_along_every_branch (test_model.ModelTests.test_w_grows_along_every_branch) ... ok
+test_depth_is_perspective_correctly_interpolated (test_render.OcclusionTests.test_depth_is_perspective_correctly_interpolated) ... ok
+test_near_segment_hides_far_segment_in_both_draw_orders (test_render.OcclusionTests.test_near_segment_hides_far_segment_in_both_draw_orders) ... ok
+test_offscreen_fragments_do_not_wrap (test_render.OcclusionTests.test_offscreen_fragments_do_not_wrap) ... ok
+test_thick_near_wood_occludes_distant_leaf (test_render.OcclusionTests.test_thick_near_wood_occludes_distant_leaf) ... ok
+test_2d_fixed_xy_view_ignores_camera_rotation (test_render.RenderTests.test_2d_fixed_xy_view_ignores_camera_rotation) ... ok
+test_3d_rotation_changes_substantial_part_of_image (test_render.RenderTests.test_3d_rotation_changes_substantial_part_of_image) ... ok
+test_3d_rotation_moves_depth_and_projected_endpoints (test_render.RenderTests.test_3d_rotation_moves_depth_and_projected_endpoints) ... ok
+test_4d_angle_changes_image_without_changing_tree (test_render.RenderTests.test_4d_angle_changes_image_without_changing_tree) ... ok
+test_aspect_and_zoom_change_projection (test_render.RenderTests.test_aspect_and_zoom_change_projection) ... ok
+test_deterministic_breeze_preserves_joint_identity (test_render.RenderTests.test_deterministic_breeze_preserves_joint_identity) ... ok
+test_dimensions_ascii_and_no_ansi (test_render.RenderTests.test_dimensions_ascii_and_no_ansi) ... ok
+test_every_4d_quadrant_and_extreme_zoom_is_safe (test_render.RenderTests.test_every_4d_quadrant_and_extreme_zoom_is_safe) ... ok
+test_invalid_settings_are_rejected (test_render.RenderTests.test_invalid_settings_are_rejected) ... ok
+test_near_planes_and_nonfinite_projection_are_safe (test_render.RenderTests.test_near_planes_and_nonfinite_projection_are_safe) ... ok
+test_nonempty_and_varied_seeds (test_render.RenderTests.test_nonempty_and_varied_seeds) ... ok
+test_repeatable_frame_bytes (test_render.RenderTests.test_repeatable_frame_bytes) ... ok
+test_saved_examples_match_parameters_and_hashes (test_samples.SampleTests.test_saved_examples_match_parameters_and_hashes) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 5.734s
+
+OK

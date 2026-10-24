@@ -112,61 +112,152 @@ def _encoding(value):
     return encoding if encoding in {"identity", "gzip", "br", "deflate", ""} else "other"
 
 
-def _completed_metadata(body, content_type):
-    if _mime(content_type) != "text/event-stream" and not body.lstrip().startswith((b"data:", b"event:")):
-        raise _Validation("response_content_type")
-    completed = None
-    # SSE events may contain multiple data lines; output deltas are never retained.
-    data = []
-    def consume():
-        nonlocal completed
-        if not data:
+class _ResponseFrames:
+    """Incremental SSE framing; only a complete terminal frame proves success."""
+    def __init__(self) -> None:
+        self.pending = b''
+        self.data: list[bytes] = []
+        self.offset = 0
+        self.completed: dict[str, Any] | None = None
+        self.completed_end: int | None = None
+        self.swallow_lf = False
+
+    def feed(self, chunk: bytes, *, eof=False) -> None:
+        self.pending += chunk
+        if self.swallow_lf and self.pending:
+            if self.pending.startswith(b'\n'):
+                self.pending = self.pending[1:]
+                self.offset += 1
+            self.swallow_lf = False
+        while self.pending:
+            ends = [n for n in (self.pending.find(b'\r'), self.pending.find(b'\n')) if n >= 0]
+            if not ends:
+                break
+            end = min(ends)
+            size = 2 if self.pending[end:end+2] == b'\r\n' else 1
+            if self.pending[end:] == b'\r':
+                self.swallow_lf = True
+            line, self.pending = self.pending[:end], self.pending[end+size:]
+            if self.offset == 0:
+                line = line.removeprefix(b'\xef\xbb\xbf')
+            self.offset += end + size
+            if line == b'':
+                self.consume()
+            elif line.startswith(b'data:'):
+                self.data.append(line[5:].removeprefix(b' '))
+
+    def consume(self) -> None:
+        if not self.data:
             return
-        raw = "\n".join(data)
-        data.clear()
-        if raw == "[DONE]":
+        raw = b'\n'.join(self.data)
+        self.data.clear()
+        if raw == b'[DONE]':
             return
         try:
-            event = json.loads(raw)
+            event = json.loads(raw.decode('utf-8'))
+        except UnicodeError:
+            raise _Validation('response_utf8') from None
         except (ValueError, TypeError):
-            raise _Validation("sse_event_json") from None
+            raise _Validation('sse_event_json') from None
         if not isinstance(event, dict):
-            raise _Validation("sse_event_schema")
-        if event.get("type") == "response.completed":
-            if completed is not None:
-                raise _Validation("sse_duplicate_completion")
-            response = event.get("response")
-            if not isinstance(response, dict):
-                raise _Validation("sse_completion_schema")
-            model = response.get("model")
-            if not isinstance(model, str) or not re.fullmatch(r"[A-Za-z0-9._:/-]{1,128}", model):
-                model = None
-            raw_usage = response.get("usage")
-            usage = {}
-            if isinstance(raw_usage, dict):
-                for key in ("input_tokens", "output_tokens", "total_tokens"):
-                    if _number(raw_usage.get(key)):
-                        usage[key] = raw_usage[key]
-                for key, field in (("input_tokens_details", "cached_tokens"),
-                                   ("output_tokens_details", "reasoning_tokens")):
-                    nested = raw_usage.get(key)
-                    if isinstance(nested, dict) and _number(nested.get(field)):
-                        usage[key] = {field: nested[field]}
-            usage_status = "known" if all(k in usage for k in ("input_tokens", "output_tokens", "total_tokens")) else ("missing" if not usage else "incomplete")
-            completed = {"actual_model": model, "usage": usage or None, "usage_status": usage_status}
+            raise _Validation('sse_event_schema')
+        kind = event.get('type')
+        if kind in ('response.failed', 'response.incomplete', 'error'):
+            raise _Validation({'response.failed':'sse_response_failed',
+                               'response.incomplete':'sse_response_incomplete', 'error':'sse_error'}[kind])
+        if kind != 'response.completed':
+            return
+        if self.completed is not None:
+            raise _Validation('sse_duplicate_completion')
+        response = event.get('response')
+        if not isinstance(response, dict):
+            raise _Validation('sse_completion_schema')
+        if (response.get('status', 'completed') != 'completed' or response.get('error') is not None
+                or response.get('incomplete_details') is not None):
+            raise _Validation('sse_completion_state')
+        model = response.get('model')
+        if not isinstance(model, str) or not re.fullmatch(r'[A-Za-z0-9._:/-]{1,128}', model):
+            model = None
+        raw_usage = response.get('usage')
+        usage: dict[str, Any] = {}
+        if isinstance(raw_usage, dict):
+            for key in ('input_tokens', 'output_tokens', 'total_tokens'):
+                if _number(raw_usage.get(key)):
+                    usage[key] = raw_usage[key]
+            for key, field in (('input_tokens_details', 'cached_tokens'),
+                               ('output_tokens_details', 'reasoning_tokens')):
+                nested = raw_usage.get(key)
+                if isinstance(nested, dict) and _number(nested.get(field)):
+                    usage[key] = {field: nested[field]}
+        usage_status = 'known' if all(k in usage for k in ('input_tokens','output_tokens','total_tokens')) else ('missing' if not usage else 'incomplete')
+        self.completed = {'actual_model':model, 'usage':usage or None, 'usage_status':usage_status}
+        self.completed_end = self.offset
+
+
+def _completed_metadata(body, content_type):
     try:
-        lines = body.decode("utf-8").splitlines()
+        body.decode('utf-8-sig')  # Comments/event fields must also be valid UTF-8.
     except UnicodeError:
-        raise _Validation("response_utf8") from None
-    for line in lines:
-        if not line:
-            consume()
-        elif line.startswith("data:"):
-            data.append(line[5:].lstrip(" "))
-    consume()
-    if completed is None:
-        raise _Validation("sse_incomplete")
-    return completed
+        raise _Validation('response_utf8') from None
+    sniff = body.removeprefix(b'\xef\xbb\xbf').lstrip()
+    if _mime(content_type) != 'text/event-stream' and not sniff.startswith((b'data:', b'event:', b':')):
+        raise _Validation('response_content_type')
+    frames = _ResponseFrames()
+    frames.feed(body, eof=True)
+    if frames.completed is None:
+        raise _Validation('sse_incomplete')
+    return frames.completed
+
+
+def _read_inference(response, content_type, check_control, updates):
+    """Buffer bounded bytes through model completion, never through an HTTP tail."""
+    body = bytearray()
+    frames = _ResponseFrames()
+    incremental = callable(getattr(response, 'read1', None))
+    read = response.read1 if incremental else response.read
+    updates.update(semantic_completion_observed=False, http_eof_observed=False,
+                   response_read_completed=False, read_termination=None)
+    while True:
+        check_control()
+        updates['response_read_completed'] = False
+        try:
+            chunk = read(min(16384, MAX_RESPONSE_BYTES + 1 - len(body)) if incremental else MAX_RESPONSE_BYTES + 1)
+        except http.client.IncompleteRead as error:
+            # The HTTP framing may break after a complete SSE terminal. Inspect
+            # only already-received bounded bytes; never retry or invent usage.
+            chunk = error.partial
+            if not isinstance(chunk, bytes) or len(body) + len(chunk) > MAX_RESPONSE_BYTES:
+                raise
+            body.extend(chunk)
+            updates['upstream_bytes_received'] = len(body)
+            frames.feed(chunk)
+            if frames.completed is None:
+                raise
+            updates['tail_failure_category'] = 'incomplete_read'
+            updates['read_termination'] = 'completed_before_http_error'
+        else:
+            updates['response_read_completed'] = True
+            body.extend(chunk)
+            updates['upstream_bytes_received'] = len(body)
+            if len(body) > MAX_RESPONSE_BYTES:
+                updates['response_bytes'] = len(body)
+                raise _Validation('response_size_limit')
+            frames.feed(chunk, eof=not chunk)
+            if not chunk and frames.completed is None:
+                updates.update(http_eof_observed=True, read_termination='http_eof', response_bytes=len(body))
+                return bytes(body)  # The caller still requires valid completion.
+        check_control()
+        if frames.completed is not None:
+            assert frames.completed_end is not None
+            body = body[:frames.completed_end]
+            _completed_metadata(bytes(body), content_type)
+            updates.update(semantic_completion_observed=True, response_bytes=len(body))
+            if updates['read_termination'] is None:
+                updates['read_termination'] = 'response_completed'
+            return bytes(body)
+        if not incremental:
+            updates.update(read_termination='buffered_fallback', response_bytes=len(body))
+            return bytes(body)
 
 
 class SubscriptionGateway:
@@ -496,8 +587,11 @@ class SubscriptionGateway:
                         read_started=time.monotonic()
                         updates['response_read_completed']=False
                         try:
-                            body = response.read(MAX_RESPONSE_BYTES + 1)
-                            updates['response_read_completed']=True
+                            if inference:
+                                body = _read_inference(response, content_type, owner._check_control, updates)
+                            else:
+                                body = response.read(MAX_RESPONSE_BYTES + 1)
+                                updates['response_read_completed']=True
                         finally:
                             updates['upstream_body_read_s']=round(time.monotonic()-read_started,6)
                         owner._check_control()
@@ -519,24 +613,34 @@ class SubscriptionGateway:
                     if not isinstance(error,_ControlRejected):
                         try:owner._check_control()
                         except _ControlRejected as stopped:error=stopped
-                    if inference:
+                    terminal_cleanup = (inference and failure_phase == 'response_close'
+                                        and updates.get('semantic_completion_observed') is True
+                                        and not isinstance(error, _Validation))
+                    if terminal_cleanup:
+                        updates.update(status='completed', reason='completed',
+                                       cleanup_failure_category=_failure_category(error))
+                        reply_status, reply_body, reply_type = status, body, content_type
+                    elif inference:
                         self.discard_rejected_body(request_bytes_read)
-                    if isinstance(error, urllib.error.HTTPError):
-                        updates["http_status"] = error.code
-                    updates["reason"] = (error.code if isinstance(error, _Validation) else
-                                         "upstream_http_error" if isinstance(error, urllib.error.HTTPError) else failure_stage)
-                    updates['status']='failed'
-                    updates['failure_phase']=failure_phase
-                    updates['failure_category']=_failure_category(error)
-                    if isinstance(error,http.client.IncompleteRead) and isinstance(error.partial,bytes):
-                        updates['partial_response_bytes']=len(error.partial)
-                    # Fixed errors only; request, upstream bodies, and exception text are never logged.
-                    reply_status = 403 if isinstance(error, ValueError) else 502
-                    reply_body=b'{"error":{"type":"subscription_transport_rejected"}}'
-                    if isinstance(error,_ControlRejected):
-                        with owner._lock:owner._control_rejections[error.code]+=1
-                        reply_status={'request_budget_exhausted':429,'deadline_exhausted':408,'cancelled':503}[error.code]
-                        reply_body=json.dumps({'error':{'type':error.code}}).encode('ascii')
+                    if not terminal_cleanup:
+                        if failure_phase == 'body_read':
+                            updates['read_termination'] = 'control' if isinstance(error, _ControlRejected) else 'read_error'
+                        if isinstance(error, urllib.error.HTTPError):
+                            updates["http_status"] = error.code
+                        updates["reason"] = (error.code if isinstance(error, _Validation) else
+                                             "upstream_http_error" if isinstance(error, urllib.error.HTTPError) else failure_stage)
+                        updates['status']='failed'
+                        updates['failure_phase']=failure_phase
+                        updates['failure_category']=_failure_category(error)
+                        if isinstance(error,http.client.IncompleteRead) and isinstance(error.partial,bytes):
+                            updates['partial_response_bytes']=len(error.partial)
+                        # Fixed errors only; no exception text, partial content or credentials.
+                        reply_status = 403 if isinstance(error, ValueError) else 502
+                        reply_body=b'{"error":{"type":"subscription_transport_rejected"}}'
+                        if isinstance(error,_ControlRejected):
+                            with owner._lock:owner._control_rejections[error.code]+=1
+                            reply_status={'request_budget_exhausted':429,'deadline_exhausted':408,'cancelled':503}[error.code]
+                            reply_body=json.dumps({'error':{'type':error.code}}).encode('ascii')
                 finally:
                     if response is not None:
                         owner._unregister_response(response)

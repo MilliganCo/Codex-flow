@@ -1,0 +1,4 @@
+payment_id,order_id,currency,amount
+p1,001,USD,7.50
+p2,001,USD,2.50
+p3,002,EUR,-1.00

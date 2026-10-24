@@ -1,0 +1,40 @@
+ ASCII TREE EXPLORER   [4D]   seed 42                                                               
+ yaw   40.0  pitch  -3.0  XW   45.0  zoom 1.12  PAUSED                                              
+ONE TREE / THREE VIEWS                                                                              
+                                                                                                    
+1          2D: fixed XY orthographic view                                                           
+2          3D: perspective camera + depth buffer                                                    
+3          4D: XW rotation -> 3D -> 2D projection                                                   
+                                                                                                    
+Arrows     Orbit / tilt in 3D and 4D                                                                
+[ / ]      Rotate XW plane by -/+ 7.5 degrees (4D)                                                  
++ / -      Zoom in / out (= also zooms in)                                                          
+Space      Play / pause breeze and camera animation                                                 
+G          Next seed (seed + 1); same view settings                                                 
+R          Reset camera, XW angle, zoom and time                                                    
+E          Export tree only, ASCII .txt, no ANSI                                                    
+H / ?      Toggle this help; other keys still work                                                  
+Q / Esc    Quit (Ctrl+C also restores the terminal)                                                 
+                                                                                                    
+W is accumulated growth distance along each branch.                                                 
+XW rotation mixes X and W, then perspective projects                                                
+4 coordinates into 3 and the 3D camera into 2.                                                      
+This screen is a projection of 4D data.                                                             
+                                                                                                    
+Resize freely. Very small windows crop the controls.                                                
+Export directory can be set with --export-dir.                                                      
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+ 4D data projection: XW rotation -> 3D -> 2D; W = growth                                            
+ 1/2/3 modes  Arrows orbit  [/] XW  +/- zoom  Space play/pause                                      
+ G seed  R reset  E export  H/? help  Q/Esc quit                                                    
+ H / ? for help  |  E saves the current tree frame                                                  

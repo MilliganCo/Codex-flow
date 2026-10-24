@@ -4,16 +4,22 @@
 
 Codex Flow evolves the existing 1.2.0 workflow skill with an **opt-in, project-local execution runtime**. The original skill, offline installer, bounded doctor and project scaffolding remain available. The new runtime coordinates the native Codex CLI, records execution evidence and supports controlled A/B experiments.
 
-The coordinator profile is `gpt-6.1-sol` with `xhigh` reasoning. Native helpers are used only for independent work; the coordinator integrates their results. Mercury and Harness-inspired probes are optional and disabled by default.
+The coordinator profile is `gpt-6.1-sol` with `xhigh` reasoning. The first independent
+helper is a `reviewer/high` acceptance-risk pass; the chief owns critical
+implementation and verification. Medium code proposals are limited to low-risk
+modules. Mercury and Harness-inspired probes are optional and disabled by default.
 
 **Status:** private development. No project license has been selected. There is no validated universal speedup or quota-saving claim. Runtime completion is distinct from independent acceptance.
 
-Latest [case08](benchmarks/case08/README.md): independent artifact scores **97/97**,
-headless 25/25 and native 57/57 each. Solo completed in 1120.781 seconds; Flow
-stopped on an upstream body-read error at 1094.797 seconds. Its failed duration
-does not establish acceleration. [67 unchanged files](benchmarks/case08/source-publication.json),
-working demonstrations, auxiliary limits and failed attempts are retained.
-Current hardening passed 254 offline tests; rollback is documented.
+The latest [fixed three-task series](benchmarks/stream-suite-20261024-01/README.md)
+completed **all six branches and all 147 native requests without transport errors**.
+Scores A/B: Tree **98/96**, Ledger **100/100**, SafeZip **100/100**. Flow was 3.419%
+faster on Tree but slower on both other tasks; acceleration without quality loss
+was **not established**. All 130 submitted files and actual demonstrations are
+retained unchanged. The stream fix passed 279 offline checks on Linux; Windows
+passed 258 with 21 platform skips. [Case08](benchmarks/case08/README.md) and every
+earlier negative result remain available. [Rollback](docs/rollback.md) preserves
+the current checkout and host settings.
 
 ## Start with a dry run
 

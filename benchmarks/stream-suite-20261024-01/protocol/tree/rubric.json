@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "total_max": 100,
+  "independent": true,
+  "acceptance": {
+    "minimum_score": 80,
+    "required": ["4d.coordinates", "4d.variable_w", "4d.rotation_math", "4d.projection", "reliability.headless"],
+    "unassessed_policy": "Unknown values remain null, not zero. Acceptance requires all criteria assessed and all critical criteria passing. Partial assessed points are not a complete score."
+  },
+  "categories": [
+    {"id": "2d", "name": "2D procedural branched tree and determinism", "max": 12, "criteria": [
+      {"id": "2d.determinism", "max": 3, "method": "headless identical arguments produce identical bytes"},
+      {"id": "2d.seed_variation", "max": 2, "method": "headless seeds 42 and 137 differ"},
+      {"id": "2d.procedural_morphology", "max": 7, "method": "blind code and frame review: organic procedural connected tapered branching"}
+    ]},
+    {"id": "3d", "name": "3D XYZ rotation depth and occlusion", "max": 13, "criteria": [
+      {"id": "3d.angular_change", "max": 4, "method": "same seed and size, documented angle changes raster"},
+      {"id": "3d.geometry", "max": 4, "method": "blind code review and supplied tests: finite connected nonplanar XYZ"},
+      {"id": "3d.occlusion", "max": 5, "method": "blind mathematics/code review: valid depth ordering and shading"}
+    ]},
+    {"id": "4d", "name": "4D XYZW variable W hyperplane rotation and sequential projection", "max": 20, "criteria": [
+      {"id": "4d.angular_change", "max": 4, "method": "same seed and size, documented hyperplane angle changes raster"},
+      {"id": "4d.coordinates", "max": 4, "method": "blind code review and tests: actual finite XYZW coordinates"},
+      {"id": "4d.variable_w", "max": 4, "method": "blind code review and tests: W varies across vertices"},
+      {"id": "4d.rotation_math", "max": 4, "method": "blind code review and tests: true XW/YW/ZW rotation mixing W and space"},
+      {"id": "4d.projection", "max": 4, "method": "blind code review and tests: actual 4D to 3D to 2D with safe perspective"}
+    ]},
+    {"id": "ux", "name": "UX controls help stable object and export", "max": 12, "criteria": [
+      {"id": "ux.help", "max": 2, "method": "documented CLI help starts and reports options"},
+      {"id": "ux.export", "max": 2, "method": "all six standard frames are printable ASCII without ANSI at exact sizes"},
+      {"id": "ux.interactive_controls", "max": 6, "method": "separate blind interactive smoke of required controls"},
+      {"id": "ux.stable_object", "max": 2, "method": "blind code review and interactive smoke: switching modes preserves geometry"}
+    ]},
+    {"id": "aesthetics", "name": "Organic appearance crown branching and shading", "max": 12, "criteria": [
+      {"id": "aesthetics.blind_frames", "max": 12, "method": "separate blind review of two seeds without strategy identifiers"}
+    ]},
+    {"id": "reliability", "name": "Resize Ctrl+C headless tiny terminal and crashes", "max": 10, "criteria": [
+      {"id": "reliability.headless", "max": 3, "method": "all standard mode/seed renders exit successfully without TTY"},
+      {"id": "reliability.tiny", "max": 2, "method": "2x2 headless terminal renders all modes without crash, valid bounded ASCII"},
+      {"id": "reliability.resize", "max": 2, "method": "separate blind interactive terminal resize smoke"},
+      {"id": "reliability.ctrl_c", "max": 3, "method": "separate blind interactive shutdown/Ctrl+C smoke"}
+    ]},
+    {"id": "tests", "name": "Meaningful reproducible test coverage", "max": 9, "criteria": [
+      {"id": "tests.execution", "max": 3, "method": "documented or standard Python test command exits zero with nonzero test count"},
+      {"id": "tests.coverage", "max": 6, "method": "blind review of meaningful tests for the ten task obligations"}
+    ]},
+    {"id": "maintainability", "name": "Modularity source and dependencies", "max": 7, "criteria": [
+      {"id": "maintainability.review", "max": 7, "method": "blind independent source review"}
+    ]},
+    {"id": "readme", "name": "Real setup commands and explanation of 4D", "max": 5, "criteria": [
+      {"id": "readme.commands", "max": 2, "method": "blind README review and commands actually executed by evaluator"},
+      {"id": "readme.installation", "max": 1, "method": "blind README review: reproducible actual dependencies and setup"},
+      {"id": "readme.4d_explanation", "max": 2, "method": "blind README review: accurate 4D geometry and projection explanation"}
+    ]}
+  ]
+}

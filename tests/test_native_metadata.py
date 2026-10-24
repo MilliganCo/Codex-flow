@@ -144,7 +144,8 @@ class MetadataTests(unittest.TestCase):
         actual = instructions(True)
         self.assertTrue(actual.startswith(original))
         for required in ('selected_strategy=parallel', 'max_helpers=2', 'delegation_depth=1',
-                         'human owner explicitly authorized', 'FIRST TOOL ACTION', 'exactly one', 'read-only worker',
+                         'human owner explicitly authorized', 'FIRST TOOL ACTION', 'exactly one', 'read-only reviewer',
+                         'agent_type=reviewer', 'Sol high profile', 'no tools, file reads',
                          'required execution step', 'BEFORE editing', 'receive its evidence', 'do not retry'):
             self.assertIn(required, actual)
 

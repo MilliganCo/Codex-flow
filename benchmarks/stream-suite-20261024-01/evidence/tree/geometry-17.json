@@ -1,0 +1,909 @@
+{
+  "protocol": "geometry-case09",
+  "solution": "solution-17",
+  "checks": [
+    {
+      "property": "rotation.signed_basis",
+      "seed": null,
+      "status": "pass",
+      "degrees": 0.0,
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source": "ascii_tree/projection.py:rotate_xw"
+    },
+    {
+      "property": "rotation.orthogonal",
+      "seed": null,
+      "status": "pass",
+      "degrees": 0.0
+    },
+    {
+      "property": "rotation.determinant",
+      "seed": null,
+      "status": "pass",
+      "degrees": 0.0,
+      "determinant": 1.0
+    },
+    {
+      "property": "rotation.inverse",
+      "seed": null,
+      "status": "pass",
+      "degrees": 0.0
+    },
+    {
+      "property": "rotation.zero_identity",
+      "seed": null,
+      "status": "pass"
+    },
+    {
+      "property": "rotation.signed_basis",
+      "seed": null,
+      "status": "pass",
+      "degrees": 37.0,
+      "matrix": [
+        [
+          0.7986355100472928,
+          0.0,
+          0.0,
+          -0.6018150231520483
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.6018150231520483,
+          0.0,
+          0.0,
+          0.7986355100472928
+        ]
+      ],
+      "source": "ascii_tree/projection.py:rotate_xw"
+    },
+    {
+      "property": "rotation.orthogonal",
+      "seed": null,
+      "status": "pass",
+      "degrees": 37.0
+    },
+    {
+      "property": "rotation.determinant",
+      "seed": null,
+      "status": "pass",
+      "degrees": 37.0,
+      "determinant": 1.0
+    },
+    {
+      "property": "rotation.inverse",
+      "seed": null,
+      "status": "pass",
+      "degrees": 37.0
+    },
+    {
+      "property": "rotation.signed_basis",
+      "seed": null,
+      "status": "pass",
+      "degrees": 90.0,
+      "matrix": [
+        [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          6.123233995736766e-17
+        ]
+      ],
+      "source": "ascii_tree/projection.py:rotate_xw"
+    },
+    {
+      "property": "rotation.orthogonal",
+      "seed": null,
+      "status": "pass",
+      "degrees": 90.0
+    },
+    {
+      "property": "rotation.determinant",
+      "seed": null,
+      "status": "pass",
+      "degrees": 90.0,
+      "determinant": 1.0
+    },
+    {
+      "property": "rotation.inverse",
+      "seed": null,
+      "status": "pass",
+      "degrees": 90.0
+    },
+    {
+      "property": "skeleton.finite_xyzw",
+      "seed": 42,
+      "status": "pass",
+      "point_count": 1162,
+      "unique_points": 582
+    },
+    {
+      "property": "skeleton.affine_xyz_rank",
+      "seed": 42,
+      "status": "pass",
+      "rank": 3,
+      "scale": 15.57869818610967,
+      "pivot_tolerance": 1.557869818610967e-09
+    },
+    {
+      "property": "skeleton.variable_w",
+      "seed": 42,
+      "status": "pass",
+      "w_span": 5.70201888396505,
+      "distinct_w": 582
+    },
+    {
+      "property": "full_model.finite_xyzw",
+      "seed": 42,
+      "status": "pass",
+      "point_count": 2386,
+      "unique_points": 1806
+    },
+    {
+      "property": "full_model.affine_xyz_rank",
+      "seed": 42,
+      "status": "pass",
+      "rank": 3,
+      "scale": 16.313971793672337,
+      "pivot_tolerance": 1.6313971793672337e-09
+    },
+    {
+      "property": "full_model.variable_w",
+      "seed": 42,
+      "status": "pass",
+      "w_span": 5.812323189041262,
+      "distinct_w": 1806
+    },
+    {
+      "property": "graph.connected_rooted_branching",
+      "seed": 42,
+      "status": "pass",
+      "edge_count": 581,
+      "root_count": 1,
+      "reachable_count": 581,
+      "max_children": 2
+    },
+    {
+      "property": "graph.positive_lengths_radii",
+      "seed": 42,
+      "status": "pass",
+      "min_length": 0.11297139776276596,
+      "min_radius": 9.006325982041861e-06,
+      "leaf_count": 1224
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 42,
+      "status": "pass",
+      "degrees": 0.0,
+      "point_count": 2386,
+      "max_norm_squared_error": 0.0,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 42,
+      "status": "pass",
+      "degrees": 37.0,
+      "point_count": 2386,
+      "max_norm_squared_error": 5.684341886080802e-14,
+      "max_inverse_component_error": 1.7763568394002505e-15
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 42,
+      "status": "pass",
+      "degrees": 90.0,
+      "point_count": 2386,
+      "max_norm_squared_error": 5.684341886080802e-14,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "property": "projection.full_sequential_composition",
+      "seed": 42,
+      "status": "pass",
+      "point_count": 2386,
+      "compared": 2386,
+      "clipped": 0,
+      "max_absolute_error": 0.0,
+      "parameters": {
+        "width": 100,
+        "height": 40,
+        "scale": 1.9524756710339146,
+        "center": [
+          0.17148150165041054,
+          7.789349093054835,
+          -0.8174239455757171,
+          2.851009441982525
+        ],
+        "yaw": 25.0,
+        "pitch": -8.0,
+        "angle4d": 0.0,
+        "aspect": 2.0,
+        "time": 0.0
+      },
+      "source": "ascii_tree/projection.py:Projector.__call__"
+    },
+    {
+      "property": "projection.full_sequential_composition",
+      "seed": 42,
+      "status": "pass",
+      "point_count": 2386,
+      "compared": 2386,
+      "clipped": 0,
+      "max_absolute_error": 0.0,
+      "parameters": {
+        "width": 100,
+        "height": 40,
+        "scale": 1.9524756710339146,
+        "center": [
+          0.17148150165041054,
+          7.789349093054835,
+          -0.8174239455757171,
+          2.851009441982525
+        ],
+        "yaw": 25.0,
+        "pitch": -8.0,
+        "angle4d": 37.0,
+        "aspect": 2.0,
+        "time": 0.0
+      },
+      "source": "ascii_tree/projection.py:Projector.__call__"
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "4D denominator 18.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "4D denominator 17.999999999999",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "4D denominator 18.1",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "3D denominator 30.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "3D denominator 29.999999999999",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "3D denominator 31.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite x nan",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite x inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite x -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite y nan",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite y inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite y -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite z nan",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite z inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite z -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite w nan",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite w inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite w -inf",
+      "result": null
+    },
+    {
+      "property": "model.stable_across_modes_angles",
+      "seed": 42,
+      "status": "pass",
+      "initial_fingerprint": "0c2268720288d0b2a208bd862dc4a59aa13d24faf10c9aa7538940e23c31ca10",
+      "transitions": [
+        {
+          "key": "1",
+          "fingerprint": "0c2268720288d0b2a208bd862dc4a59aa13d24faf10c9aa7538940e23c31ca10"
+        },
+        {
+          "key": "2",
+          "fingerprint": "0c2268720288d0b2a208bd862dc4a59aa13d24faf10c9aa7538940e23c31ca10"
+        },
+        {
+          "key": "3",
+          "fingerprint": "0c2268720288d0b2a208bd862dc4a59aa13d24faf10c9aa7538940e23c31ca10"
+        },
+        {
+          "key": "]",
+          "fingerprint": "0c2268720288d0b2a208bd862dc4a59aa13d24faf10c9aa7538940e23c31ca10"
+        },
+        {
+          "key": "right",
+          "fingerprint": "0c2268720288d0b2a208bd862dc4a59aa13d24faf10c9aa7538940e23c31ca10"
+        },
+        {
+          "key": "up",
+          "fingerprint": "0c2268720288d0b2a208bd862dc4a59aa13d24faf10c9aa7538940e23c31ca10"
+        },
+        {
+          "key": "[",
+          "fingerprint": "0c2268720288d0b2a208bd862dc4a59aa13d24faf10c9aa7538940e23c31ca10"
+        },
+        {
+          "key": "r",
+          "fingerprint": "0c2268720288d0b2a208bd862dc4a59aa13d24faf10c9aa7538940e23c31ca10"
+        }
+      ]
+    },
+    {
+      "property": "model.new_seed_operation",
+      "seed": 42,
+      "status": "pass",
+      "new_seed": 43
+    },
+    {
+      "property": "skeleton.finite_xyzw",
+      "seed": 137,
+      "status": "pass",
+      "point_count": 1162,
+      "unique_points": 582
+    },
+    {
+      "property": "skeleton.affine_xyz_rank",
+      "seed": 137,
+      "status": "pass",
+      "rank": 3,
+      "scale": 16.207167907159366,
+      "pivot_tolerance": 1.6207167907159367e-09
+    },
+    {
+      "property": "skeleton.variable_w",
+      "seed": 137,
+      "status": "pass",
+      "w_span": 6.012564739832951,
+      "distinct_w": 582
+    },
+    {
+      "property": "full_model.finite_xyzw",
+      "seed": 137,
+      "status": "pass",
+      "point_count": 2404,
+      "unique_points": 1824
+    },
+    {
+      "property": "full_model.affine_xyz_rank",
+      "seed": 137,
+      "status": "pass",
+      "rank": 3,
+      "scale": 16.62741759654514,
+      "pivot_tolerance": 1.6627417596545141e-09
+    },
+    {
+      "property": "full_model.variable_w",
+      "seed": 137,
+      "status": "pass",
+      "w_span": 6.123622918280086,
+      "distinct_w": 1824
+    },
+    {
+      "property": "graph.connected_rooted_branching",
+      "seed": 137,
+      "status": "pass",
+      "edge_count": 581,
+      "root_count": 1,
+      "reachable_count": 581,
+      "max_children": 2
+    },
+    {
+      "property": "graph.positive_lengths_radii",
+      "seed": 137,
+      "status": "pass",
+      "min_length": 0.12753633795623384,
+      "min_radius": 1.1016508633054068e-05,
+      "leaf_count": 1242
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 137,
+      "status": "pass",
+      "degrees": 0.0,
+      "point_count": 2404,
+      "max_norm_squared_error": 0.0,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 137,
+      "status": "pass",
+      "degrees": 37.0,
+      "point_count": 2404,
+      "max_norm_squared_error": 5.684341886080802e-14,
+      "max_inverse_component_error": 1.7763568394002505e-15
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 137,
+      "status": "pass",
+      "degrees": 90.0,
+      "point_count": 2404,
+      "max_norm_squared_error": 5.684341886080802e-14,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "property": "projection.full_sequential_composition",
+      "seed": 137,
+      "status": "pass",
+      "point_count": 2404,
+      "compared": 2404,
+      "clipped": 0,
+      "max_absolute_error": 0.0,
+      "parameters": {
+        "width": 100,
+        "height": 40,
+        "scale": 1.8819833401231338,
+        "center": [
+          -0.09722253601161013,
+          8.103583953579683,
+          1.762596412481538,
+          3.0062823699164753
+        ],
+        "yaw": 25.0,
+        "pitch": -8.0,
+        "angle4d": 0.0,
+        "aspect": 2.0,
+        "time": 0.0
+      },
+      "source": "ascii_tree/projection.py:Projector.__call__"
+    },
+    {
+      "property": "projection.full_sequential_composition",
+      "seed": 137,
+      "status": "pass",
+      "point_count": 2404,
+      "compared": 2404,
+      "clipped": 0,
+      "max_absolute_error": 0.0,
+      "parameters": {
+        "width": 100,
+        "height": 40,
+        "scale": 1.8819833401231338,
+        "center": [
+          -0.09722253601161013,
+          8.103583953579683,
+          1.762596412481538,
+          3.0062823699164753
+        ],
+        "yaw": 25.0,
+        "pitch": -8.0,
+        "angle4d": 37.0,
+        "aspect": 2.0,
+        "time": 0.0
+      },
+      "source": "ascii_tree/projection.py:Projector.__call__"
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "4D denominator 18.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "4D denominator 17.999999999999",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "4D denominator 18.1",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "3D denominator 30.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "3D denominator 29.999999999999",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "3D denominator 31.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite x nan",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite x inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite x -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite y nan",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite y inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite y -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite z nan",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite z inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite z -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite w nan",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite w inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite w -inf",
+      "result": null
+    },
+    {
+      "property": "model.stable_across_modes_angles",
+      "seed": 137,
+      "status": "pass",
+      "initial_fingerprint": "6171d4085e4607851cba98991410cd0f6e376d24b0ce87444b2c89bd2bb38930",
+      "transitions": [
+        {
+          "key": "1",
+          "fingerprint": "6171d4085e4607851cba98991410cd0f6e376d24b0ce87444b2c89bd2bb38930"
+        },
+        {
+          "key": "2",
+          "fingerprint": "6171d4085e4607851cba98991410cd0f6e376d24b0ce87444b2c89bd2bb38930"
+        },
+        {
+          "key": "3",
+          "fingerprint": "6171d4085e4607851cba98991410cd0f6e376d24b0ce87444b2c89bd2bb38930"
+        },
+        {
+          "key": "]",
+          "fingerprint": "6171d4085e4607851cba98991410cd0f6e376d24b0ce87444b2c89bd2bb38930"
+        },
+        {
+          "key": "right",
+          "fingerprint": "6171d4085e4607851cba98991410cd0f6e376d24b0ce87444b2c89bd2bb38930"
+        },
+        {
+          "key": "up",
+          "fingerprint": "6171d4085e4607851cba98991410cd0f6e376d24b0ce87444b2c89bd2bb38930"
+        },
+        {
+          "key": "[",
+          "fingerprint": "6171d4085e4607851cba98991410cd0f6e376d24b0ce87444b2c89bd2bb38930"
+        },
+        {
+          "key": "r",
+          "fingerprint": "6171d4085e4607851cba98991410cd0f6e376d24b0ce87444b2c89bd2bb38930"
+        }
+      ]
+    },
+    {
+      "property": "model.new_seed_operation",
+      "seed": 137,
+      "status": "pass",
+      "new_seed": 138
+    }
+  ],
+  "errors": [],
+  "source_before": {
+    ".gitignore": "d399d9ffc24ba4f1334e908550294eff5bea8fbfa204fc7e10ea2c7c8bf8e9e9",
+    "artifacts/benchmark.json": "3ed4cf036bc70dd4768cee3fe7adfab1c847754393c09f7b76efbb49d092311e",
+    "artifacts/demo/00-start-3d.txt": "ea1edd9333035c35f4206632094203772a8cd675d2ed5df062e18fc8290e573a",
+    "artifacts/demo/01-same-tree-2d.txt": "c141ba56d53e635fc996553098c51c9c931abc8dea0072258655043a0ec6266e",
+    "artifacts/demo/02-same-tree-4d.txt": "a579fafb82d88ac05a138532eb4860aaa2f9077d6af311d307074cb2fefb237f",
+    "artifacts/demo/03-xw-45.txt": "b2b2ffe4ae505ae3eab9b4815d509690f86672fc88b278b56ada3535dabf0cfd",
+    "artifacts/demo/04-orbit-zoom.txt": "540046ef966a06440e2e270112a064e9bcdd83f26c317898a469584b7ea1254e",
+    "artifacts/demo/05-help.txt": "adc5a7a52712c7cb69f0d4f16cc5feaab0985f817810542fe9136fb8aeead87f",
+    "artifacts/demo/06-resize-narrow.txt": "b4a190665de76c4d25dc6a00ddeba0aee75e6d53b1ea6614c4b9d1264ab115d5",
+    "artifacts/demo/07-reset.txt": "8e05a27f23d3e5b606bd8809256ad53d3aba4ab80809ff75b0558ac2d979411f",
+    "artifacts/demo/08-new-seed43.txt": "e8d5cd840890ac71a686e137aeda2f10733ea2c2e0a3e7ac17e0df8433919017",
+    "artifacts/demo/events.json": "1663ca212512ca4f016c979b9cca0588377b65759b197eb45516b00f596b15dd",
+    "artifacts/pty/tree-seed42-4d-001.txt": "ab2568489277eb922a1b5b554f3446def651f94566bc0b501ea736a68f6774c3",
+    "artifacts/pty/tree-seed43-3d-002.txt": "e1e5d4ffc4d384dc683924aa98da71f3570f6d8f60f79119a1fcf376f03e1ace",
+    "artifacts/tests.txt": "e382d67d1cc8b3ab4a4943e94493d742b359e91f70373ca3bd0631f7cc3a1552",
+    "ascii-tree.py": "2ed2fb0eb8febc6d53dcca3eb7b2b75f331453414359f793cd364d88b1116ecf",
+    "ascii_tree/__init__.py": "3cfe323cb437ccbd4f127e6a6199c9e5e6afe59b4b396dcc68dee1015f65ed38",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/app.py": "6c07e92b179713541b661a64e41e30e35536d09a81e532a31d97910fdaf9b938",
+    "ascii_tree/cli.py": "902d02bcf5bbd3cfe18ff4e830d1dcc7a7f5148276ad636ae6ca56ca7671288f",
+    "ascii_tree/model.py": "bd23f06c038f40515c97dba62b3eac3ecf076ea4870b8c9c0ba93b7c53dc6ff7",
+    "ascii_tree/projection.py": "59b1ce3e78219ea2efd014358b4987d44d8cb21616b38d8d35967df882593104",
+    "ascii_tree/render.py": "51184af2e645131fb730af6049473a22006391be0c02634a7342ea5bfcec677a",
+    "ascii_tree/terminal.py": "d7ad2603a7898c12669ef28ad88204c798c1f5a7ef70d374e85721b2010f0bd5",
+    "DEMO.md": "9c0ab378dab9a687ed347c7f43b12e7d739d058783b4f9769e676b25c34d9668",
+    "IMPLEMENTATION_NOTES.md": "f75b49ff805e0ca57ee4651486865e0feaca5d6a3f7ca30a7cc4115a6ef619a6",
+    "pyproject.toml": "f2768e6e7d3fb7a05e0f17289fbb4a6ff43047dd1a796b28586e6e533a037c9d",
+    "README.md": "684bb5a0a8b7c2a8d0a83b02251615017f1670152a222ce1df6cdbed58ba3485",
+    "samples/manifest.json": "2c96c44b270e2f9ea35596f0c0a0c02fe6f24533d06888c56e58a2c8682e696b",
+    "samples/seed42-2d.txt": "b0e46c12367d4aa2c7fe8cb5b009d6f0f495574c6186074169a91dafa5096080",
+    "samples/seed42-3d.txt": "4828b681e46a60ebf247f416b2364a50967dfd94cb34ba77cd7e03e4fd6da493",
+    "samples/seed42-4d-xw000.txt": "6ba11f7d10e97afd3405d6c65ab0a3de3e8917d3037222d5d9c21fcf6ebed114",
+    "samples/seed42-4d-xw045.txt": "3369c6ea98d71b0c97c02807b08a54e95f961339db9f0cdb34e4fc58a782ce9e",
+    "samples/seed43-2d.txt": "543514e097f0d3c28025a229c79faa5ddcdbc8b9bf187b940a08da8d89a97571",
+    "samples/seed43-3d.txt": "30c8854283a9bb0ca14e1610ca04df89385e5918b219f606124dfce4ac6b252f",
+    "samples/seed43-4d-xw000.txt": "12d2abe68418a6183b013d4a0d017692d99bd5dffd287a7ca80d65ac4ae348e1",
+    "samples/seed43-4d-xw045.txt": "c50714040db2ac98aa2dfafe911df2044b43f74a502ad5504978361db52e8092",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_app.py": "847a594c2216d91dba15d3425ffcb4bd9fc158a43e259a3952d781da3d6cbd49",
+    "tests/test_cli.py": "5858a01fb62328c75c77f5de27c6244ad89b44a06e91d4b51a2261612fa017a7",
+    "tests/test_model.py": "b264a61d85d54ba0ebc125d57fdb59fa04fa7eb101299ebf73aec71c42f8172f",
+    "tests/test_render.py": "f506089b5dd9fd73ba08bbe75a4f706b02a4c945ebc4522988eb75ff2ec9ed91",
+    "tests/test_samples.py": "710e6b00ec62b66424d384a487ed78a735dc243dd2e25bfeb352007a6d65ff08",
+    "tools/benchmark.py": "c9bd3cf5bded508710973ae17249a9c61994f7fc17cb46a4176277373a573dac",
+    "tools/demo.py": "5a075ba63f912b97fd799446449d490bf9ebb9d6a0f52b73cfbc87f7502f3110",
+    "tools/generate_samples.py": "e97a342b23cb489e9781fd5dc87337d460d4a45ba4f910852f07443953157f79",
+    "tools/smoke.py": "3027ea9024e914673f65b4704bea36b33f44ab5d3d5e2c8d1b2e56af30eba068",
+    "tools/tty_probe.py": "b83fef111d02dc606a3c17ead9902b42616a42936badaf891889dbb528062b7c",
+    "VALIDATION.md": "4af77bb95b0753576f4c7de98fd061d19dc251f019e36dd13a2a21b4e0fe31b1"
+  },
+  "checker_hashes": {
+    "geometry_case09.py": "27723723c78c9a9aafe864630efec4ec976baa07c911141b1a7fdcf8bab33737",
+    "evaluator.py": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+    "rubric.json": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+  },
+  "adapter": {
+    "plane": "XW",
+    "sigma": 1,
+    "vector_orientation": "column",
+    "rotation_order": "XW, 4D perspective, yaw, pitch, 3D perspective, cell aspect",
+    "operator_units": "radians"
+  },
+  "source_after": {
+    ".gitignore": "d399d9ffc24ba4f1334e908550294eff5bea8fbfa204fc7e10ea2c7c8bf8e9e9",
+    "artifacts/benchmark.json": "3ed4cf036bc70dd4768cee3fe7adfab1c847754393c09f7b76efbb49d092311e",
+    "artifacts/demo/00-start-3d.txt": "ea1edd9333035c35f4206632094203772a8cd675d2ed5df062e18fc8290e573a",
+    "artifacts/demo/01-same-tree-2d.txt": "c141ba56d53e635fc996553098c51c9c931abc8dea0072258655043a0ec6266e",
+    "artifacts/demo/02-same-tree-4d.txt": "a579fafb82d88ac05a138532eb4860aaa2f9077d6af311d307074cb2fefb237f",
+    "artifacts/demo/03-xw-45.txt": "b2b2ffe4ae505ae3eab9b4815d509690f86672fc88b278b56ada3535dabf0cfd",
+    "artifacts/demo/04-orbit-zoom.txt": "540046ef966a06440e2e270112a064e9bcdd83f26c317898a469584b7ea1254e",
+    "artifacts/demo/05-help.txt": "adc5a7a52712c7cb69f0d4f16cc5feaab0985f817810542fe9136fb8aeead87f",
+    "artifacts/demo/06-resize-narrow.txt": "b4a190665de76c4d25dc6a00ddeba0aee75e6d53b1ea6614c4b9d1264ab115d5",
+    "artifacts/demo/07-reset.txt": "8e05a27f23d3e5b606bd8809256ad53d3aba4ab80809ff75b0558ac2d979411f",
+    "artifacts/demo/08-new-seed43.txt": "e8d5cd840890ac71a686e137aeda2f10733ea2c2e0a3e7ac17e0df8433919017",
+    "artifacts/demo/events.json": "1663ca212512ca4f016c979b9cca0588377b65759b197eb45516b00f596b15dd",
+    "artifacts/pty/tree-seed42-4d-001.txt": "ab2568489277eb922a1b5b554f3446def651f94566bc0b501ea736a68f6774c3",
+    "artifacts/pty/tree-seed43-3d-002.txt": "e1e5d4ffc4d384dc683924aa98da71f3570f6d8f60f79119a1fcf376f03e1ace",
+    "artifacts/tests.txt": "e382d67d1cc8b3ab4a4943e94493d742b359e91f70373ca3bd0631f7cc3a1552",
+    "ascii-tree.py": "2ed2fb0eb8febc6d53dcca3eb7b2b75f331453414359f793cd364d88b1116ecf",
+    "ascii_tree/__init__.py": "3cfe323cb437ccbd4f127e6a6199c9e5e6afe59b4b396dcc68dee1015f65ed38",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/app.py": "6c07e92b179713541b661a64e41e30e35536d09a81e532a31d97910fdaf9b938",
+    "ascii_tree/cli.py": "902d02bcf5bbd3cfe18ff4e830d1dcc7a7f5148276ad636ae6ca56ca7671288f",
+    "ascii_tree/model.py": "bd23f06c038f40515c97dba62b3eac3ecf076ea4870b8c9c0ba93b7c53dc6ff7",
+    "ascii_tree/projection.py": "59b1ce3e78219ea2efd014358b4987d44d8cb21616b38d8d35967df882593104",
+    "ascii_tree/render.py": "51184af2e645131fb730af6049473a22006391be0c02634a7342ea5bfcec677a",
+    "ascii_tree/terminal.py": "d7ad2603a7898c12669ef28ad88204c798c1f5a7ef70d374e85721b2010f0bd5",
+    "DEMO.md": "9c0ab378dab9a687ed347c7f43b12e7d739d058783b4f9769e676b25c34d9668",
+    "IMPLEMENTATION_NOTES.md": "f75b49ff805e0ca57ee4651486865e0feaca5d6a3f7ca30a7cc4115a6ef619a6",
+    "pyproject.toml": "f2768e6e7d3fb7a05e0f17289fbb4a6ff43047dd1a796b28586e6e533a037c9d",
+    "README.md": "684bb5a0a8b7c2a8d0a83b02251615017f1670152a222ce1df6cdbed58ba3485",
+    "samples/manifest.json": "2c96c44b270e2f9ea35596f0c0a0c02fe6f24533d06888c56e58a2c8682e696b",
+    "samples/seed42-2d.txt": "b0e46c12367d4aa2c7fe8cb5b009d6f0f495574c6186074169a91dafa5096080",
+    "samples/seed42-3d.txt": "4828b681e46a60ebf247f416b2364a50967dfd94cb34ba77cd7e03e4fd6da493",
+    "samples/seed42-4d-xw000.txt": "6ba11f7d10e97afd3405d6c65ab0a3de3e8917d3037222d5d9c21fcf6ebed114",
+    "samples/seed42-4d-xw045.txt": "3369c6ea98d71b0c97c02807b08a54e95f961339db9f0cdb34e4fc58a782ce9e",
+    "samples/seed43-2d.txt": "543514e097f0d3c28025a229c79faa5ddcdbc8b9bf187b940a08da8d89a97571",
+    "samples/seed43-3d.txt": "30c8854283a9bb0ca14e1610ca04df89385e5918b219f606124dfce4ac6b252f",
+    "samples/seed43-4d-xw000.txt": "12d2abe68418a6183b013d4a0d017692d99bd5dffd287a7ca80d65ac4ae348e1",
+    "samples/seed43-4d-xw045.txt": "c50714040db2ac98aa2dfafe911df2044b43f74a502ad5504978361db52e8092",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_app.py": "847a594c2216d91dba15d3425ffcb4bd9fc158a43e259a3952d781da3d6cbd49",
+    "tests/test_cli.py": "5858a01fb62328c75c77f5de27c6244ad89b44a06e91d4b51a2261612fa017a7",
+    "tests/test_model.py": "b264a61d85d54ba0ebc125d57fdb59fa04fa7eb101299ebf73aec71c42f8172f",
+    "tests/test_render.py": "f506089b5dd9fd73ba08bbe75a4f706b02a4c945ebc4522988eb75ff2ec9ed91",
+    "tests/test_samples.py": "710e6b00ec62b66424d384a487ed78a735dc243dd2e25bfeb352007a6d65ff08",
+    "tools/benchmark.py": "c9bd3cf5bded508710973ae17249a9c61994f7fc17cb46a4176277373a573dac",
+    "tools/demo.py": "5a075ba63f912b97fd799446449d490bf9ebb9d6a0f52b73cfbc87f7502f3110",
+    "tools/generate_samples.py": "e97a342b23cb489e9781fd5dc87337d460d4a45ba4f910852f07443953157f79",
+    "tools/smoke.py": "3027ea9024e914673f65b4704bea36b33f44ab5d3d5e2c8d1b2e56af30eba068",
+    "tools/tty_probe.py": "b83fef111d02dc606a3c17ead9902b42616a42936badaf891889dbb528062b7c",
+    "VALIDATION.md": "4af77bb95b0753576f4c7de98fd061d19dc251f019e36dd13a2a21b4e0fe31b1"
+  },
+  "sources_unchanged": true,
+  "completion": "complete",
+  "all_checks_passed": true
+}

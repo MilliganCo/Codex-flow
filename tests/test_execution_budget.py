@@ -142,7 +142,8 @@ class GuidanceTests(unittest.TestCase):
             result, _ = append_budget_guidance(self.payload, snapshot)
             text = result['input'][-1]['content'][0]['text']
             self.assertIn('phase=' + phase, text)
-            for phrase in ['existing ownership and permissions', 'Read-only workers return evidence only',
+            for phrase in ['existing ownership and permissions', 'Read-only workers return evidence or requested proposal text',
+                           'never write files or delegate',
                            'Do not start new delegation beyond the existing approved helper plan', 'never proves acceptance',
                            'Do not skip required tests', 'verified acceptance or a concrete blocker']:
                 self.assertIn(phrase, text)

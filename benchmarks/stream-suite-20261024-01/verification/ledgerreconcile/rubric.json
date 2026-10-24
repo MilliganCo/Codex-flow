@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile-v1.0",
+  "total_max": 100,
+  "acceptance": {
+    "minimum_score": 100,
+    "required": [
+      "L01",
+      "L02",
+      "L03",
+      "L04",
+      "L05",
+      "L06",
+      "L07",
+      "L08",
+      "L09",
+      "L10",
+      "L11",
+      "L12",
+      "L13",
+      "L14",
+      "L15",
+      "L16",
+      "L17",
+      "L18",
+      "L19",
+      "L20"
+    ],
+    "source_unchanged": true
+  },
+  "timeouts": {
+    "fixture_s": 10,
+    "authored_tests_s": 90
+  },
+  "criteria": [
+    {
+      "id": "L01",
+      "max": 5,
+      "requirement": "basic CLI/schema"
+    },
+    {
+      "id": "L02",
+      "max": 5,
+      "requirement": "exact cents"
+    },
+    {
+      "id": "L03",
+      "max": 5,
+      "requirement": "signed payments/refunds"
+    },
+    {
+      "id": "L04",
+      "max": 5,
+      "requirement": "currency totals"
+    },
+    {
+      "id": "L05",
+      "max": 5,
+      "requirement": "string IDs/sorting"
+    },
+    {
+      "id": "L06",
+      "max": 5,
+      "requirement": "row permutation determinism"
+    },
+    {
+      "id": "L07",
+      "max": 5,
+      "requirement": "payment idempotence"
+    },
+    {
+      "id": "L08",
+      "max": 5,
+      "requirement": "conflicting payment rejection"
+    },
+    {
+      "id": "L09",
+      "max": 5,
+      "requirement": "duplicate order rejection"
+    },
+    {
+      "id": "L10",
+      "max": 5,
+      "requirement": "unknown order rejection"
+    },
+    {
+      "id": "L11",
+      "max": 5,
+      "requirement": "currency mismatch"
+    },
+    {
+      "id": "L12",
+      "max": 5,
+      "requirement": "invalid money/bounds"
+    },
+    {
+      "id": "L13",
+      "max": 5,
+      "requirement": "headers/malformed CSV"
+    },
+    {
+      "id": "L14",
+      "max": 5,
+      "requirement": "BOM/quotes/UTF-8"
+    },
+    {
+      "id": "L15",
+      "max": 5,
+      "requirement": "empty/header-only semantics"
+    },
+    {
+      "id": "L16",
+      "max": 5,
+      "requirement": "atomic failure"
+    },
+    {
+      "id": "L17",
+      "max": 5,
+      "requirement": "existing output preservation"
+    },
+    {
+      "id": "L18",
+      "max": 5,
+      "requirement": "help/space paths/controlled exits"
+    },
+    {
+      "id": "L19",
+      "max": 5,
+      "requirement": "authored unittest >=5"
+    },
+    {
+      "id": "L20",
+      "max": 5,
+      "requirement": "actual README smoke"
+    }
+  ]
+}

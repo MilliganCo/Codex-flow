@@ -2,6 +2,26 @@
 
 Preserve current artifacts and local edits before restoring anything. Runtime shutdown, local proposal rollback and global skill uninstall are different operations. None requires disabling the host sandbox.
 
+## Before the terminal-aware stream change
+
+The previous private `main` commit is
+`4b5fddd3e18514a379b30d3cbb513dd20b9d1d44`. Recover it into a new directory:
+
+```powershell
+git worktree add --detach ../codex-flow-before-stream-fix 4b5fddd3e18514a379b30d3cbb513dd20b9d1d44
+```
+
+The development backup `before-terminal-stream-fix-20261024.bundle` separately
+preserves the pre-change development history. Keep that bundle local. Do not
+publish its history or use it to overwrite an active checkout.
+
+The stream parser and helper-proposal policy are project code. Restoring this
+checkout requires no global configuration, skill, MCP or sandbox changes. Keep
+the fixed experiment sources, failures and independent evaluations as evidence.
+
+Для отката исправления чтения создайте отдельный каталог командой выше. Она
+сохраняет текущие правки и результаты. Глобальные настройки и sandbox не меняются.
+
 ## Stop a runtime execution
 
 ```powershell

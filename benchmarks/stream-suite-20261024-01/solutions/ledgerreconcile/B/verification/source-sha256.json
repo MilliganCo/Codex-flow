@@ -1,0 +1,12 @@
+{
+  ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+  "README.md": "f2764496cfa42819e31a63c4b9e6fb3526d1bf6996fa29317de07f852b10a4c2",
+  "TASK.md": "4067a85c658b3f9d057b2e7b65aafdadc90bc422fc8d01ebafb209852893ee6e",
+  "VERIFICATION.md": "089e9501c79ea06071cc8aadf7fe26024ce3bb885b6848072c7108d27adc2330",
+  "examples/orders.csv": "15ea5ed7896863ee24b276eba2ffd9c460ad74671077a9aa67a43d833e721d09",
+  "examples/payments.csv": "a686e97e9f423bfa19d830ba46e60ed54d2b5fa557ad65a2ee9b05a4d253c3b5",
+  "ledgerreconcile/__init__.py": "a1541b4fa806d1d02f95409c4d506cc84cffcec44c6709297ab45dd3a27b1da7",
+  "ledgerreconcile/__main__.py": "ab7a4defbe9785b877820b6f0730d8a2c9ffbcad5fc62ee979be02b772c98275",
+  "ledgerreconcile/core.py": "d0d4261a17189658a479a1256c8d093f782280e17a75a8a201290474faccc895",
+  "tests/test_ledgerreconcile.py": "8d92f8a4f74b878a86c37d80c7f77811ec080ec9752c9fb88bc6a7ad8e528f2b"
+}

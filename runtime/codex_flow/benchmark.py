@@ -3,7 +3,7 @@ from __future__ import annotations
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import replace
 from pathlib import Path
-import hashlib, json, os, platform, shutil, subprocess, sys, time
+import hashlib, json, os, platform, re, shutil, subprocess, sys, time
 from .config import Config
 from .contracts import PolicyError
 from .native import run, executable, subscription
@@ -77,7 +77,29 @@ def probe(exe,workspace,run_root,cfg,*,deadline=None,request_budget=None,denied_
             'decision':decision,'application_quality_eligible':False,'runs':[o[0] for o in observations],
             'limitation':'one plan-coverage pair; does not establish application-quality improvement'}
 
-def prepare(root,task,evaluator,exe,timeout,groups='ABCD'):
+def task_contract(value=None):
+    default = {'id':'ascii-tree.v1',
+               'acceptance':'score>=80 AND actual 4D geometry/rotation/projection AND runnable app',
+               'quality_scores':{'2d':12,'3d':13,'4d':20,'ux':12,'aesthetics':12,'reliability':10,'tests':9,'maintainability':7,'readme':5},
+               'terminal':'headless generation; independent Windows ConPTY evaluation'}
+    if value is None:
+        return default
+    if not isinstance(value,dict) or set(value)!=set(default):
+        raise PolicyError('invalid benchmark task contract')
+    if (not isinstance(value['id'],str) or not re.fullmatch(r'[a-z][a-z0-9_.-]{0,63}',value['id'])
+            or any(not isinstance(value[k],str) or not 1<=len(value[k])<=1024 for k in ('acceptance','terminal'))):
+        raise PolicyError('invalid benchmark task identity')
+    scores=value['quality_scores']
+    if (not isinstance(scores,dict) or not 1<=len(scores)<=26
+            or any(not isinstance(k,str) or not re.fullmatch(r'[A-Za-z0-9_.-]{1,64}',k)
+                   or type(v) is not int or not 1<=v<=100 for k,v in scores.items())
+            or sum(scores.values())!=100):
+        raise PolicyError('invalid benchmark quality weights')
+    return dict(value,quality_scores=dict(scores))
+
+
+def prepare(root,task,evaluator,exe,timeout,groups='ABCD',contract=None):
+    selected_contract=task_contract(contract)
     if root.exists():raise PolicyError('experiment root already exists; never overwrite a frozen experiment')
     if not task.is_file() or not evaluator.is_file():raise PolicyError('task/evaluator missing')
     root.mkdir(parents=True)
@@ -90,13 +112,15 @@ def prepare(root,task,evaluator,exe,timeout,groups='ABCD'):
     commit=git(scaffold,'rev-parse','HEAD')
     for group in groups:git(scaffold,'worktree','add','--detach',str(root/('workspace-'+group)),commit)
     frozen=root/'frozen';frozen.mkdir()
-    (frozen/'TREE_BENCHMARK_TASK.md').write_bytes(task.read_bytes())
+    frozen_name='TREE_BENCHMARK_TASK.md' if contract is None else 'TASK.md'
+    (frozen/frozen_name).write_bytes(task.read_bytes())
     manifest={'experiment_id':root.name,'created_utc':utc(),'calendar_date':utc().split('T')[0],'calendar_timezone':'UTC','task_sha256':sha(task),
               'scaffold_sha':commit,'evaluator_sha256':sha(evaluator),'rubric_sha256':sha(evaluator.with_name('rubric.json')),
               'codex_version':subprocess.run([exe,'--version'],capture_output=True,text=True,timeout=10).stdout.strip(),
               'root_model':'gpt-6.1-sol','root_effort':'xhigh','os':platform.platform(),'python':platform.python_version(),
               'cpu_count':os.cpu_count(),'timeout_s_per_arm':timeout,'max_helpers':3,'max_depth':1,
-              'hardware':hardware(),'terminal':'headless generation; independent Windows ConPTY evaluation',
+              'hardware':hardware(),'terminal':selected_contract['terminal'],
+              'task_kind':selected_contract['id'],'frozen_task_file':frozen_name,
               'selected_groups':list(groups),'initial_order':[list(pair) for pair in (('A','B'),('C','D')) if all(g in groups for g in pair)],'auth_class':'ChatGPT subscription; common credential home, no token copying',
               'isolation':{'worktrees':True,'home_temp_cache':True,'shared_codex_auth_home':True,
                            'project_sqlite_logs':True,'parallel_parent_persistence':True,'cross_arm_read_isolation':False,
@@ -105,24 +129,25 @@ def prepare(root,task,evaluator,exe,timeout,groups='ABCD'):
               'validity':'degraded physical read isolation; independent contexts/workspaces and no operator transfer; Harness2-inspired only; per-arm provider trace required',
               'max_model_requests_per_arm_including_probes':80,
               'flow_treatment':{'harness':'enabled guard; calibration deferred; zero automatic online probes',
-                                'helper':'bounded readonly evidence; instruction requests concurrent root implementation',
+                                'helper':'bounded readonly evidence or inline implementation proposal; root remains sole application-file writer',
                                 'phase_reserve':'final 20 percent planning instruction; not independently enforced'},
-              'acceptance':'score>=80 AND actual 4D geometry/rotation/projection AND runnable app',
-              'quality_scores_frozen':{'2d':12,'3d':13,'4d':20,'ux':12,'aesthetics':12,'reliability':10,'tests':9,'maintainability':7,'readme':5},
+              'acceptance':selected_contract['acceptance'],
+              'quality_scores_frozen':selected_contract['quality_scores'],
               'runtime_sha256':{p.name:sha(p) for p in Path(__file__).parent.glob('*.py')}}
     write_json(root/'experiment-manifest.json',manifest)
     return manifest
 
-def execute(root:Path,task:Path,evaluator:Path,codex=None,mercury_root=None,timeout=1200,*,execute=False,protect_paths=(),groups='ABCD'):
+def execute(root:Path,task:Path,evaluator:Path,codex=None,mercury_root=None,timeout=1200,*,execute=False,protect_paths=(),groups='ABCD',contract=None):
     if type(timeout) is not int or not 1<=timeout<=3600:raise PolicyError('invalid timeout')
     if groups not in ('AB','ABCD'):raise PolicyError('groups must be AB or ABCD')
+    task_contract(contract)
     exe=executable(codex);subscription(exe)
     root=root.resolve();task=task.resolve();evaluator=evaluator.resolve()
     protect_paths=tuple(Path(p).resolve() for p in protect_paths)
     if any(not p.exists() for p in protect_paths):raise PolicyError('protected read paths must already exist')
     if not execute:return {'dry_run':True,'groups':list(groups),'root':str(root),'provider_calls':0,'isolation_limit':'shared auth; filesystem read isolation unavailable'}
-    manifest=prepare(root,task,evaluator,exe,timeout,groups)
-    prompt=(root/'frozen/TREE_BENCHMARK_TASK.md').read_text(encoding='utf-8-sig')
+    manifest=prepare(root,task,evaluator,exe,timeout,groups,contract=contract)
+    prompt=(root/'frozen'/manifest.get('frozen_task_file','TREE_BENCHMARK_TASK.md')).read_text(encoding='utf-8-sig')
     cfg=Config(enabled=True,mode='benchmark',timeout_s=timeout)
     # Reciprocal per-arm read denials are unsafe on this Windows sandbox version:
     # its CodexSandboxUsers deny ACLs affect concurrently running native profiles.

@@ -1,0 +1,303 @@
+{
+  "schema": 1,
+  "series_id": "stream-suite-20261024-01",
+  "denominator": 3,
+  "runtime_source_commit": "6c30bbe69a76c846257196cedd378c8a1c5d2eff",
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+    "runtime/codex_flow/budget.py": "7bd53b1f9e15e427609716d1ef544bc9ab6e92f8cedc36db27cf7f0aae022cf5",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "136d81fda7e391725f564f4061f2320007a86391727a14a6132e22e7edf13b2a",
+    "runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "833f51497ea80a7ab5c4938d1181e5feda83ca8b6c05137ddb14db18caf671a7",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "preregistration_sha256": "29738973c7d70c343d764b706ccffae3858ee498630534ac34ddb5834ae58451",
+  "rows": [
+    {
+      "task": "tree",
+      "experiment_id": "tree-case-20261024-09",
+      "metrics": {
+        "A": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "total_arm_s": 1322.578,
+          "native_wall_clock_s": 1322.391,
+          "orchestration_frontload_s": 0.078,
+          "native_request_count": 30,
+          "completed_requests": 30,
+          "transport_errors": 0,
+          "requested_effort_counts": {
+            "xhigh": 30
+          },
+          "actual_models": [
+            "gpt-6.1-sol"
+          ],
+          "usage": {
+            "input_tokens": 1564486,
+            "output_tokens": 45741,
+            "total_tokens": 1610227,
+            "cached_tokens": 389888,
+            "reasoning_tokens": 11002
+          },
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_child_count": null,
+          "multi_agent_verified": false,
+          "budget_status_successful_calls": null,
+          "mercury_successful_calls": 0,
+          "harness_upstream_probes": 0,
+          "harness_inspired_probes": 0,
+          "quality_score": 98,
+          "accepted": true,
+          "original_metrics_sha256": "5c19fe419466fc38c113960e5113da5e0cf1bc074017d394a859b9821145b9a9"
+        },
+        "B": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "total_arm_s": 1277.359,
+          "native_wall_clock_s": 1276.125,
+          "orchestration_frontload_s": 1.031,
+          "native_request_count": 40,
+          "completed_requests": 40,
+          "transport_errors": 0,
+          "requested_effort_counts": {
+            "xhigh": 35,
+            "medium": 5
+          },
+          "actual_models": [
+            "gpt-6.1-sol"
+          ],
+          "usage": {
+            "input_tokens": 2196469,
+            "output_tokens": 42087,
+            "total_tokens": 2238556,
+            "cached_tokens": 390144,
+            "reasoning_tokens": 11087
+          },
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_child_count": 1,
+          "multi_agent_verified": true,
+          "budget_status_successful_calls": 6,
+          "mercury_successful_calls": 1,
+          "harness_upstream_probes": 0,
+          "harness_inspired_probes": 0,
+          "quality_score": 96,
+          "accepted": true,
+          "original_metrics_sha256": "e1e4a56ddd6b1bcbbb08514ee2fa9771aa4fa35a6ecda5302adc63972869b2da"
+        }
+      },
+      "quality_seal_sha256": "df1c4e7700afd0a7b414d75e16e3a27f39cba48a44b389d677837aaacd762acd",
+      "retained_in_denominator": true,
+      "time_ratio_A_over_B": 1.0354003846999944,
+      "elapsed_reduction_B_percent": 3.4190043989844154,
+      "quality_B_ge_A": false
+    },
+    {
+      "task": "ledgerreconcile",
+      "experiment_id": "ledger-case-20261024-01",
+      "metrics": {
+        "A": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "total_arm_s": 573.031,
+          "native_wall_clock_s": 572.828,
+          "orchestration_frontload_s": 0.062,
+          "native_request_count": 13,
+          "completed_requests": 13,
+          "transport_errors": 0,
+          "requested_effort_counts": {
+            "xhigh": 13
+          },
+          "actual_models": [
+            "gpt-6.1-sol"
+          ],
+          "usage": {
+            "input_tokens": 398537,
+            "output_tokens": 20017,
+            "total_tokens": 418554,
+            "cached_tokens": 130944,
+            "reasoning_tokens": 7267
+          },
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_child_count": null,
+          "multi_agent_verified": false,
+          "budget_status_successful_calls": null,
+          "mercury_successful_calls": 0,
+          "harness_upstream_probes": 0,
+          "harness_inspired_probes": 0,
+          "quality_score": 100,
+          "accepted": true,
+          "original_metrics_sha256": "a7774d7083f9843fdf62756a5ff3f9cea3959836b7f1e238695c1d195c99818f"
+        },
+        "B": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "total_arm_s": 630.516,
+          "native_wall_clock_s": 629.172,
+          "orchestration_frontload_s": 1.187,
+          "native_request_count": 19,
+          "completed_requests": 19,
+          "transport_errors": 0,
+          "requested_effort_counts": {
+            "xhigh": 16,
+            "medium": 3
+          },
+          "actual_models": [
+            "gpt-6.1-sol"
+          ],
+          "usage": {
+            "input_tokens": 602506,
+            "output_tokens": 22200,
+            "total_tokens": 624706,
+            "cached_tokens": 28800,
+            "reasoning_tokens": 6373
+          },
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_child_count": 1,
+          "multi_agent_verified": true,
+          "budget_status_successful_calls": 4,
+          "mercury_successful_calls": 1,
+          "harness_upstream_probes": 0,
+          "harness_inspired_probes": 0,
+          "quality_score": 100,
+          "accepted": true,
+          "original_metrics_sha256": "44d8c309450a754a8cc1a9f514c2ef3fa38bfd357c5e3881381688fcca843aa6"
+        }
+      },
+      "quality_seal_sha256": "6beca4c98e505d56f70eb1745e9edf8ccecc7da968f288b9fc9f0a438e583504",
+      "retained_in_denominator": true,
+      "time_ratio_A_over_B": 0.9088286419377145,
+      "elapsed_reduction_B_percent": -10.031743483336864,
+      "quality_B_ge_A": true
+    },
+    {
+      "task": "safezip",
+      "experiment_id": "safezip-case-20261024-01",
+      "metrics": {
+        "A": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "total_arm_s": 821.328,
+          "native_wall_clock_s": 821.078,
+          "orchestration_frontload_s": 0.078,
+          "native_request_count": 17,
+          "completed_requests": 17,
+          "transport_errors": 0,
+          "requested_effort_counts": {
+            "xhigh": 17
+          },
+          "actual_models": [
+            "gpt-6.1-sol"
+          ],
+          "usage": {
+            "input_tokens": 578169,
+            "output_tokens": 28808,
+            "total_tokens": 606977,
+            "cached_tokens": 121344,
+            "reasoning_tokens": 12932
+          },
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_child_count": null,
+          "multi_agent_verified": false,
+          "budget_status_successful_calls": null,
+          "mercury_successful_calls": 0,
+          "harness_upstream_probes": 0,
+          "harness_inspired_probes": 0,
+          "quality_score": 100,
+          "accepted": true,
+          "original_metrics_sha256": "5758b4236b97fb45aeaf20c70561ffa9260c6c1682ab63122f57cfd8cd2bb3d9"
+        },
+        "B": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "total_arm_s": 1090.875,
+          "native_wall_clock_s": 1089.531,
+          "orchestration_frontload_s": 1.156,
+          "native_request_count": 28,
+          "completed_requests": 28,
+          "transport_errors": 0,
+          "requested_effort_counts": {
+            "xhigh": 22,
+            "medium": 6
+          },
+          "actual_models": [
+            "gpt-6.1-sol"
+          ],
+          "usage": {
+            "input_tokens": 1057368,
+            "output_tokens": 38631,
+            "total_tokens": 1095999,
+            "cached_tokens": 201600,
+            "reasoning_tokens": 15452
+          },
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_child_count": 1,
+          "multi_agent_verified": true,
+          "budget_status_successful_calls": 5,
+          "mercury_successful_calls": 1,
+          "harness_upstream_probes": 0,
+          "harness_inspired_probes": 0,
+          "quality_score": 100,
+          "accepted": true,
+          "original_metrics_sha256": "66be4993e2de03cee8c553d547d6fe7f5ecea3d8622f65d8135d6c225dfe9af4"
+        }
+      },
+      "quality_seal_sha256": "8b6f8eef1250389115c7c22d07bc5edd92f5ca5ca302af31299e55e648d0d510",
+      "retained_in_denominator": true,
+      "time_ratio_A_over_B": 0.7529075283602612,
+      "elapsed_reduction_B_percent": -32.81843550932149,
+      "quality_B_ge_A": true
+    }
+  ],
+  "primary_success_criterion": {
+    "all_three_pairs_required": true,
+    "both_arms_native_completed_per_task": true,
+    "both_arms_independently_accepted_per_task": true,
+    "quality_B_greater_or_equal_A_each_task": true,
+    "speed_metric": "geometric_mean(total_arm_s_A / total_arm_s_B) across all three tasks",
+    "minimum_geometric_mean_ratio": 1.1,
+    "denominator": 3,
+    "failed_cancelled_timed_out_or_missing_rows_cannot_satisfy_criterion": true,
+    "claim_scope": "measured suite advantage only; no universal or statistical superiority claim"
+  },
+  "primary_conditions": {
+    "all_three_pairs_required": true,
+    "both_arms_native_completed_per_task": true,
+    "both_arms_independently_accepted_per_task": true,
+    "quality_B_greater_or_equal_A_each_task": false,
+    "geometric_mean_ratio_at_least_1_10": false
+  },
+  "primary_passed": false,
+  "geometric_mean_time_ratio_A_over_B": 0.8914780526541455,
+  "total_native_requests": 147,
+  "total_transport_errors": 0,
+  "retained_failures": [
+    "Tree quality B96 < A98",
+    "Ledger elapsed B > A",
+    "SafeZip elapsed B > A"
+  ],
+  "speedup_without_quality_loss_proven": false,
+  "limitations": [
+    "One pair per task; no statistical or universal superiority claim",
+    "Native auth/rollout state is shared; current-peer physical read isolation is degraded",
+    "Aesthetic scores are subjective; complete per-criterion evidence is retained",
+    "Known usage is not a subscription quota or monetary cost calculation"
+  ],
+  "analysis_model_calls": 0,
+  "analysis_app_runs": 0
+}

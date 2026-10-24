@@ -57,7 +57,8 @@ class BudgetStdioTests(unittest.TestCase):
         self.assertEqual(result['budget'], self.budget)
         self.assertEqual(result['sample_age_s'], 0.)
         self.assertFalse(reply['result']['isError'])
-        for text in ('existing ownership and permissions', 'Read-only workers return evidence only',
+        for text in ('existing ownership and permissions', 'Read-only workers return evidence or requested proposal text',
+                     'never write files or delegate',
                      'never proves acceptance', 'Do not skip required tests'):
             self.assertIn(text, result['guidance'])
         logs = list(self.audit.glob('*.jsonl'))

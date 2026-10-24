@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "task": "safezip",
+  "grade_seal_sha256": "04ba26436b3d1255b36ad95aa6466bdc52f50894c165a28003e239179e4de138",
+  "sealed_before_map_read": true,
+  "quality": {
+    "A": {
+      "quality_score": 100,
+      "accepted": true,
+      "assessed_points": 100,
+      "assessed_max": 100,
+      "evaluation_sha256": "cf5635d39a2270a5138db767133a8311fed32c159043b58ec888425670ed5c8d",
+      "execution_sha256": "f8d3e8db6f5dc47fdbb923052cb7cc9964269b4de6dea9349230b197fa9bd713",
+      "anonymous_id": "solution-21"
+    },
+    "B": {
+      "quality_score": 100,
+      "accepted": true,
+      "assessed_points": 100,
+      "assessed_max": 100,
+      "evaluation_sha256": "46f8a0c5fa51c87f435580b43d9686c7f94c5802482190ac0ec98d703199eb9a",
+      "execution_sha256": "46bab95d28b40b3187731e876d76ba0af0a3c9c1fa0c9cac690c70c023bba6a0",
+      "anonymous_id": "solution-22"
+    }
+  }
+}

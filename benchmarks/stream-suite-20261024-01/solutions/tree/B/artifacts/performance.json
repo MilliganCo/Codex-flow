@@ -1,0 +1,26 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "seed": 42,
+  "dimensions": [
+    100,
+    40
+  ],
+  "results": {
+    "2d": {
+      "median_ms": 11.568,
+      "max_ms": 23.297,
+      "frames": 20
+    },
+    "3d": {
+      "median_ms": 17.482,
+      "max_ms": 21.556,
+      "frames": 20
+    },
+    "4d": {
+      "median_ms": 14.29,
+      "max_ms": 15.788,
+      "frames": 20
+    }
+  }
+}

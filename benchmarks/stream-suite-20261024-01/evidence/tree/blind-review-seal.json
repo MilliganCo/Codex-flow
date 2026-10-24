@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "stage": "complete",
+  "blind": true,
+  "independent": true,
+  "files": {
+    "blind-review.json": "3a30f1bc17e62fff9c475a3929dd4b9a6402e6d66001cfd5733c313cd3101ef2",
+    "blind-review.md": "d9b527dd5969955c1c2db2ccc6e7fd3229047a3f1c0372e91fa5571ea23430e2",
+    "blind-review-source-integrity.json": "d8a3e98842d6d4f2ac9d5d4888530f3e260d3f1b9e22dad81538ccf6f4d765ba"
+  },
+  "checker_hashes": {
+    "geometry_case09.py": "27723723c78c9a9aafe864630efec4ec976baa07c911141b1a7fdcf8bab33737",
+    "native57_case09.py": "8d7b23f4f974e62303f9f8f5b930b11c0b6a6510319402ea0dffb73ff28db4d3",
+    "conpty_case09_neutral.py": "d7c59cf9a3a999dd64d6d796cc9e8ce501d157000db990e2a9f4b9c59daaa6f9",
+    "evaluator.py": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+    "rubric.json": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+  },
+  "frozen_evaluation_json_hashes": {
+    "frozen-17/evaluation.json": "6b91e64bb10a69ef51b6878cbe1a979d574292edc28f8a2d67249dafb3e56ac0",
+    "frozen-18/evaluation.json": "aae28e2693a29f46eeec4a82977591673e462e407c0bd604be21a9fe596833a1"
+  },
+  "solutions": [
+    {
+      "id": "solution-17",
+      "quality_score": 98,
+      "accepted": true
+    },
+    {
+      "id": "solution-18",
+      "quality_score": 96,
+      "accepted": true
+    }
+  ]
+}

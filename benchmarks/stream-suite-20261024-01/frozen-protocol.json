@@ -1,0 +1,255 @@
+{
+  "schema": 1,
+  "series_id": "stream-suite-20261024-01",
+  "denominator": 3,
+  "task_order": [
+    "tree",
+    "ledgerreconcile",
+    "safezip"
+  ],
+  "groups": [
+    "A",
+    "B"
+  ],
+  "parallel_arms": true,
+  "runtime_source_commit": "6c30bbe69a76c846257196cedd378c8a1c5d2eff",
+  "runtime_file_count": 16,
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+    "runtime/codex_flow/budget.py": "7bd53b1f9e15e427609716d1ef544bc9ab6e92f8cedc36db27cf7f0aae022cf5",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "136d81fda7e391725f564f4061f2320007a86391727a14a6132e22e7edf13b2a",
+    "runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "833f51497ea80a7ab5c4938d1181e5feda83ca8b6c05137ddb14db18caf671a7",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "codex_sha256": "e757246b4de87359e660647fa9514955a0971ff6a30affdd8c145d1d5ece7b84",
+  "primary_success_criterion": {
+    "all_three_pairs_required": true,
+    "both_arms_native_completed_per_task": true,
+    "both_arms_independently_accepted_per_task": true,
+    "quality_B_greater_or_equal_A_each_task": true,
+    "speed_metric": "geometric_mean(total_arm_s_A / total_arm_s_B) across all three tasks",
+    "minimum_geometric_mean_ratio": 1.1,
+    "denominator": 3,
+    "failed_cancelled_timed_out_or_missing_rows_cannot_satisfy_criterion": true,
+    "claim_scope": "measured suite advantage only; no universal or statistical superiority claim"
+  },
+  "analysis_policy": {
+    "retain_all_rows": true,
+    "no_retries": true,
+    "no_until_win": true,
+    "no_grade_dependent_task_selection": true,
+    "no_pooling_prior_cases": true,
+    "elapsed_includes_per_arm_orchestration": true,
+    "unknown_usage_is_null_not_zero": true,
+    "grading_not_implemented_in_controller": true
+  },
+  "prerequisite_sha256": "be2b2fe0483b90b348d45dd40718d3b815173270ede4295e12d16031328027a0",
+  "task_rows": [
+    {
+      "key": "tree",
+      "experiment_id": "tree-case-20261024-09",
+      "sha256": {
+        "task": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+        "evaluator": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+        "rubric": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+      },
+      "contract": null,
+      "scheduled": true,
+      "timeout_s_per_arm": 1500,
+      "max_native_requests_per_arm": 80
+    },
+    {
+      "key": "ledgerreconcile",
+      "experiment_id": "ledger-case-20261024-01",
+      "sha256": {
+        "task": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+        "evaluator": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+        "rubric": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+        "selftest": "dbef9230f2985aed4d89f6e889f200117c9325c5bfa1016b869da02327ce8ce2"
+      },
+      "contract": {
+        "id": "ledgerreconcile.v1",
+        "acceptance": "Accepted under the frozen task/evaluator/rubric, including every critical gate",
+        "quality_scores": {
+          "L01": 5,
+          "L02": 5,
+          "L03": 5,
+          "L04": 5,
+          "L05": 5,
+          "L06": 5,
+          "L07": 5,
+          "L08": 5,
+          "L09": 5,
+          "L10": 5,
+          "L11": 5,
+          "L12": 5,
+          "L13": 5,
+          "L14": 5,
+          "L15": 5,
+          "L16": 5,
+          "L17": 5,
+          "L18": 5,
+          "L19": 5,
+          "L20": 5
+        },
+        "terminal": "offline CLI; independent Windows SDK CLI evaluation"
+      },
+      "scheduled": true,
+      "timeout_s_per_arm": 1500,
+      "max_native_requests_per_arm": 80
+    },
+    {
+      "key": "safezip",
+      "experiment_id": "safezip-case-20261024-01",
+      "sha256": {
+        "task": "4b732cd8658cc2c8426ade124ad48be2492993615440ddc3bce8f2d85ded0568",
+        "evaluator": "6e94529e5d6b06c9f5b0ebc1ae6327706a4682d90386015bcdfc026b960741df",
+        "rubric": "696f3f1f2ec9cc6246c5f72cb297d4dccb2482fb4eae9c5a516e15c096bd52f4",
+        "selftest": "9771f5593be7d9b182f5e43773d32db4c059ae6e681ae45fa7341f20dea1983b"
+      },
+      "contract": {
+        "id": "safezip.v1",
+        "acceptance": "Accepted under the frozen task/evaluator/rubric, including every critical gate",
+        "quality_scores": {
+          "Z01": 5,
+          "Z02": 5,
+          "Z03": 5,
+          "Z04": 5,
+          "Z05": 5,
+          "Z06": 5,
+          "Z07": 5,
+          "Z08": 5,
+          "Z09": 5,
+          "Z10": 5,
+          "Z11": 5,
+          "Z12": 5,
+          "Z13": 5,
+          "Z14": 5,
+          "Z15": 5,
+          "Z16": 5,
+          "Z17": 5,
+          "Z18": 5,
+          "Z19": 5,
+          "Z20": 5
+        },
+        "terminal": "offline CLI; independent Windows SDK CLI evaluation"
+      },
+      "scheduled": true,
+      "timeout_s_per_arm": 1500,
+      "max_native_requests_per_arm": 80
+    }
+  ],
+  "suite_inputs": {
+    "tasks": {
+      "tree": {
+        "experiment_id": "tree-case-20261024-09",
+        "sha256": {
+          "task": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+          "evaluator": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+          "rubric": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+        },
+        "contract": null
+      },
+      "ledgerreconcile": {
+        "experiment_id": "ledger-case-20261024-01",
+        "sha256": {
+          "task": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+          "evaluator": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+          "rubric": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+          "selftest": "dbef9230f2985aed4d89f6e889f200117c9325c5bfa1016b869da02327ce8ce2"
+        },
+        "contract": {
+          "id": "ledgerreconcile.v1",
+          "acceptance": "Accepted under the frozen task/evaluator/rubric, including every critical gate",
+          "quality_scores": {
+            "L01": 5,
+            "L02": 5,
+            "L03": 5,
+            "L04": 5,
+            "L05": 5,
+            "L06": 5,
+            "L07": 5,
+            "L08": 5,
+            "L09": 5,
+            "L10": 5,
+            "L11": 5,
+            "L12": 5,
+            "L13": 5,
+            "L14": 5,
+            "L15": 5,
+            "L16": 5,
+            "L17": 5,
+            "L18": 5,
+            "L19": 5,
+            "L20": 5
+          },
+          "terminal": "offline CLI; independent Windows SDK CLI evaluation"
+        }
+      },
+      "safezip": {
+        "experiment_id": "safezip-case-20261024-01",
+        "sha256": {
+          "task": "4b732cd8658cc2c8426ade124ad48be2492993615440ddc3bce8f2d85ded0568",
+          "evaluator": "6e94529e5d6b06c9f5b0ebc1ae6327706a4682d90386015bcdfc026b960741df",
+          "rubric": "696f3f1f2ec9cc6246c5f72cb297d4dccb2482fb4eae9c5a516e15c096bd52f4",
+          "selftest": "9771f5593be7d9b182f5e43773d32db4c059ae6e681ae45fa7341f20dea1983b"
+        },
+        "contract": {
+          "id": "safezip.v1",
+          "acceptance": "Accepted under the frozen task/evaluator/rubric, including every critical gate",
+          "quality_scores": {
+            "Z01": 5,
+            "Z02": 5,
+            "Z03": 5,
+            "Z04": 5,
+            "Z05": 5,
+            "Z06": 5,
+            "Z07": 5,
+            "Z08": 5,
+            "Z09": 5,
+            "Z10": 5,
+            "Z11": 5,
+            "Z12": 5,
+            "Z13": 5,
+            "Z14": 5,
+            "Z15": 5,
+            "Z16": 5,
+            "Z17": 5,
+            "Z18": 5,
+            "Z19": 5,
+            "Z20": 5
+          },
+          "terminal": "offline CLI; independent Windows SDK CLI evaluation"
+        }
+      }
+    },
+    "taskpack_sha256": {
+      "private/ledgerreconcile/evaluator.py": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+      "private/ledgerreconcile/rubric.json": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+      "private/ledgerreconcile/selftest-result.json": "dbef9230f2985aed4d89f6e889f200117c9325c5bfa1016b869da02327ce8ce2",
+      "private/safezip/evaluator.py": "6e94529e5d6b06c9f5b0ebc1ae6327706a4682d90386015bcdfc026b960741df",
+      "private/safezip/rubric.json": "696f3f1f2ec9cc6246c5f72cb297d4dccb2482fb4eae9c5a516e15c096bd52f4",
+      "private/safezip/selftest-result.json": "9771f5593be7d9b182f5e43773d32db4c059ae6e681ae45fa7341f20dea1983b",
+      "tasks/ledgerreconcile.md": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+      "tasks/safezip.md": "4b732cd8658cc2c8426ade124ad48be2492993615440ddc3bce8f2d85ded0568"
+    }
+  },
+  "preregistration_sha256": "29738973c7d70c343d764b706ccffae3858ee498630534ac34ddb5834ae58451",
+  "contains_credentials": false,
+  "contains_native_state": false,
+  "original_files_unchanged": true,
+  "model_calls": 0,
+  "application_runs": 0,
+  "execution_status": "Generation was active when protocol was staged; results are separate"
+}

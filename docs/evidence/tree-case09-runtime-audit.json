@@ -1,0 +1,600 @@
+{
+  "schema": 1,
+  "kind": "tree_case09_metadata_runtime_audit",
+  "created_utc": "2026-10-24T06:48:20.391653+00:00",
+  "experiment_id": "tree-case-20261024-09",
+  "runtime_source_commit": "6c30bbe69a76c846257196cedd378c8a1c5d2eff",
+  "runtime_file_count": 16,
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+    "runtime/codex_flow/budget.py": "7bd53b1f9e15e427609716d1ef544bc9ab6e92f8cedc36db27cf7f0aae022cf5",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "136d81fda7e391725f564f4061f2320007a86391727a14a6132e22e7edf13b2a",
+    "runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "833f51497ea80a7ab5c4938d1181e5feda83ca8b6c05137ddb14db18caf671a7",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "input_sha256": {
+    "experiment/metrics.json": "0e53c1da474982920664a2262f4fe234046ba43f4fc5283c8c6c3afbb05134c8",
+    "experiment/metrics-A.json": "5c19fe419466fc38c113960e5113da5e0cf1bc074017d394a859b9821145b9a9",
+    "experiment/metrics-B.json": "e1e4a56ddd6b1bcbbb08514ee2fa9771aa4fa35a6ecda5302adc63972869b2da",
+    "experiment/experiment-manifest.json": "2b54b95c854f0ede08570de4cd6fae59fc27c1a2fc26f94f5fd0594fead2c976",
+    "experiment/resource-samples.jsonl": "b7651c8d725f3aba2b971ec13cccfee4592f517342c85105fb224aaf3f038e51",
+    "experiment/resource-monitor-complete.json": "16761e03482c655996f313cf7a129be4a61252e32c4423b96d3731ace033e092",
+    "experiment/run-A/events.jsonl": "252238fe2427321c0134fa03345898abe070921088ec539789f9588c1c47b550",
+    "experiment/run-A/control.json": "1fac13dd49b2e1226160d551d190d58740876415a20a478a3280e8bb87cecd98",
+    "experiment/run-B/events.jsonl": "d1d7e8a23a50cd72433239cc42e88e31697247e334358f3ca2b68ac56bf57944",
+    "experiment/run-B/control.json": "90055162b02f3fa87f7083fa698e8ed87a79ee19f0306fc0a59d18ed3042bd56",
+    "runtime/snapshot-hashes.json": "f4a41859e976b33ede0da84ff841b15b9fb622f14fc45cc7dc5776f723cd63ac",
+    "suite/preregistration.json": "29738973c7d70c343d764b706ccffae3858ee498630534ac34ddb5834ae58451",
+    "suite/preparation-receipt.json": "369d0037488ff980b9ea24b1a59cde08984bb9a67d7afc43e0db10f4b64127de",
+    "prerequisite/prerequisite-result.json": "be2b2fe0483b90b348d45dd40718d3b815173270ede4295e12d16031328027a0"
+  },
+  "canonical_inputs": {
+    "task": "4670d453b1d4f80e6f69dd4564982a66f69be31cfadcc57c6d5b96cca9abd904",
+    "evaluator": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+    "rubric": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+  },
+  "inputs_unchanged_during_audit": true,
+  "resource_monitor": {
+    "finished": true,
+    "interval_s": 10,
+    "groups_match_AB": true
+  },
+  "audit_model_calls": 0,
+  "audit_app_runs": 0,
+  "audit_sdk_calls": 0,
+  "arms": {
+    "A": {
+      "native_status": "completed_unverified",
+      "native_exit_code": 0,
+      "attempts": 1,
+      "total_arm_s": 1322.578,
+      "native_wall_clock_s": 1322.391,
+      "orchestration_frontload_s": 0.078,
+      "unattributed_arm_accounting_residual_s": 0.109,
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "native_known_usage": {
+        "input_tokens": 1564486,
+        "output_tokens": 45741,
+        "total_tokens": 1610227,
+        "cached_tokens": 389888,
+        "reasoning_tokens": 11002
+      },
+      "root_cli_usage": {
+        "input_tokens": 1564486,
+        "output_tokens": 45741,
+        "cached_tokens": 389888
+      },
+      "profiles": [
+        {
+          "requested_model": "gpt-6.1-sol",
+          "requested_effort": "xhigh",
+          "actual_models": [
+            "gpt-6.1-sol"
+          ],
+          "request_count": 30,
+          "usage": {
+            "input_tokens": 1564486,
+            "output_tokens": 45741,
+            "total_tokens": 1610227,
+            "cached_tokens": 389888,
+            "reasoning_tokens": 11002
+          },
+          "duration": {
+            "count": 30,
+            "sum_s": 1082.393,
+            "min_s": 2.344,
+            "median_s": 11.352,
+            "p90_nearest_rank_s": 96.641,
+            "max_s": 160.172
+          },
+          "interval_union_s": 1082.393
+        }
+      ],
+      "requests": {
+        "count": 30,
+        "completed": 30,
+        "failed": 0,
+        "active_at_end": 0,
+        "max_requests": 80,
+        "peak_concurrent_requests": 1,
+        "models_gets": 6,
+        "all_actual_models_sol61": true,
+        "semantic_completion": {
+          "true": 30,
+          "false": 0,
+          "unknown": 0
+        },
+        "http_eof_observed": {
+          "true": 0,
+          "false": 30,
+          "unknown": 0
+        },
+        "last_read_returned_normally": {
+          "true": 30,
+          "false": 0,
+          "unknown": 0
+        },
+        "read_termination_counts": {
+          "response_completed": 30
+        },
+        "failure_category_counts": {
+          "not_recorded": 30
+        },
+        "cleanup_failure_category_counts": {
+          "not_recorded": 30
+        },
+        "tail_failure_category_counts": {
+          "not_recorded": 30
+        },
+        "content_type_counts": {
+          "application/json": 30
+        },
+        "encoding_counts": {
+          "identity": 30
+        },
+        "usage_status_counts": {
+          "known": 30
+        },
+        "http_status_counts": {
+          "200": 30
+        },
+        "duration": {
+          "count": 30,
+          "sum_s": 1082.393,
+          "min_s": 2.344,
+          "median_s": 11.352,
+          "p90_nearest_rank_s": 96.641,
+          "max_s": 160.172
+        },
+        "upstream_open": {
+          "count": 30,
+          "sum_s": 39.455,
+          "min_s": 1.031,
+          "median_s": 1.258,
+          "p90_nearest_rank_s": 1.625,
+          "max_s": 2.063
+        },
+        "upstream_body_read": {
+          "count": 30,
+          "sum_s": 1023.157,
+          "min_s": 1.031,
+          "median_s": 10.1325,
+          "p90_nearest_rank_s": 92.766,
+          "max_s": 154.25
+        },
+        "interval_union_s": 1082.393,
+        "medium_xhigh_overlap_s": 0.0,
+        "native_wall_minus_request_union_s": 239.998
+      },
+      "budget_compliance": {
+        "native_request_limit_satisfied": true,
+        "absolute_deadline_satisfied_at_final_snapshot": true,
+        "remaining_s": 177.484,
+        "requests_remaining": 50,
+        "final_phase": "finalize",
+        "control_rejection_count": 0
+      },
+      "payload_guidance": {
+        "enabled": false,
+        "applied_requests": 0,
+        "disabled_request_count": 30
+      },
+      "helper_evidence": {
+        "one_parent_linked_used_medium_child_proven": null,
+        "native_child_count_recorded": null,
+        "metadata_status": "not_recorded",
+        "children": null,
+        "profile_buckets_are_not_individual_agent_identity": true,
+        "metadata_tokens_are_not_added_to_transport_usage": true
+      },
+      "budget_tool": {
+        "configured": false,
+        "publisher_failed": null,
+        "status_calls": null,
+        "successful_calls": null,
+        "unavailable_calls": null,
+        "audit_valid": null,
+        "phases": null,
+        "phase_counts_match_successful_calls": null
+      },
+      "mercury": {
+        "successful_calls_recorded": 0,
+        "inference_attempts": null,
+        "bridge_wall_s": null,
+        "inference_latency_ms": null,
+        "free_inference_cost": null,
+        "input_tokens": null,
+        "output_tokens": null
+      },
+      "harness": {
+        "upstream_probes_recorded": 0,
+        "inspired_probes_recorded": 0,
+        "guard_status": "not_recorded",
+        "runs": null,
+        "adopted": null
+      },
+      "native_items": {
+        "type_counts": {
+          "agent_message": 7,
+          "command_execution": 25,
+          "error": 1,
+          "file_change": 11
+        },
+        "unclassified_error_items": 1,
+        "failed_calls_recorded": 3,
+        "command_execution": {
+          "completed_item_count": 25,
+          "failed_item_count": 3,
+          "tool_duration": {
+            "count": 25,
+            "sum_s": 182.411,
+            "min_s": 0.203,
+            "median_s": 0.547,
+            "p90_nearest_rank_s": 20.969,
+            "max_s": 61.969
+          },
+          "repeated_operation_group_sizes": [
+            2,
+            2,
+            2
+          ]
+        },
+        "mcp_tool_call": {
+          "completed_item_count": 0,
+          "failed_item_count": 0,
+          "tool_duration": null,
+          "repeated_operation_group_sizes": []
+        }
+      },
+      "root_resource_sampling": {
+        "sample_count": 132,
+        "finite_observed_sample_count": 131,
+        "process_status_counts": {
+          "alive": 131,
+          "dead": 1
+        },
+        "sample_status_counts": {
+          "observed": 131,
+          "unavailable": 1
+        },
+        "all_samples_match_declared_pid": true,
+        "unique_observed_creation_identity": true,
+        "latest_recorded_process_status": "dead",
+        "max_observed_working_set_bytes": 164806656,
+        "max_recorded_lifetime_peak_working_set_bytes": 667246592,
+        "first_observed_cumulative_cpu_s": 12.296875,
+        "last_observed_cumulative_cpu_s": 57.296875,
+        "cpu_increment_between_observed_endpoints_s": 45.0,
+        "scope": "Declared native root PID samples only; excludes helpers, app subprocesses and remote model compute"
+      },
+      "isolation": {
+        "native_state_tool_read_denial_configured": true,
+        "native_state_tool_read_denial_verified": false,
+        "native_state_content_isolation_verified": false,
+        "full_filesystem_read_isolation_verified": false
+      },
+      "quality_score": null,
+      "accepted": null
+    },
+    "B": {
+      "native_status": "completed_unverified",
+      "native_exit_code": 0,
+      "attempts": 1,
+      "total_arm_s": 1277.359,
+      "native_wall_clock_s": 1276.125,
+      "orchestration_frontload_s": 1.031,
+      "unattributed_arm_accounting_residual_s": 0.203,
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null,
+      "native_known_usage": {
+        "input_tokens": 2196469,
+        "output_tokens": 42087,
+        "total_tokens": 2238556,
+        "cached_tokens": 390144,
+        "reasoning_tokens": 11087
+      },
+      "root_cli_usage": {
+        "input_tokens": 2059522,
+        "output_tokens": 40351,
+        "cached_tokens": 390144
+      },
+      "profiles": [
+        {
+          "requested_model": "gpt-6.1-sol",
+          "requested_effort": "xhigh",
+          "actual_models": [
+            "gpt-6.1-sol"
+          ],
+          "request_count": 35,
+          "usage": {
+            "input_tokens": 2085848,
+            "output_tokens": 41031,
+            "total_tokens": 2126879,
+            "cached_tokens": 390144,
+            "reasoning_tokens": 11026
+          },
+          "duration": {
+            "count": 35,
+            "sum_s": 1028.799,
+            "min_s": 2.75,
+            "median_s": 10.282,
+            "p90_nearest_rank_s": 73.11,
+            "max_s": 227.313
+          },
+          "interval_union_s": 1028.799
+        },
+        {
+          "requested_model": "gpt-6.1-sol",
+          "requested_effort": "medium",
+          "actual_models": [
+            "gpt-6.1-sol"
+          ],
+          "request_count": 5,
+          "usage": {
+            "input_tokens": 110621,
+            "output_tokens": 1056,
+            "total_tokens": 111677,
+            "cached_tokens": 0,
+            "reasoning_tokens": 61
+          },
+          "duration": {
+            "count": 5,
+            "sum_s": 35.5,
+            "min_s": 3.0,
+            "median_s": 4.594,
+            "p90_nearest_rank_s": 18.547,
+            "max_s": 18.547
+          },
+          "interval_union_s": 35.5
+        }
+      ],
+      "requests": {
+        "count": 40,
+        "completed": 40,
+        "failed": 0,
+        "active_at_end": 0,
+        "max_requests": 80,
+        "peak_concurrent_requests": 2,
+        "models_gets": 6,
+        "all_actual_models_sol61": true,
+        "semantic_completion": {
+          "true": 40,
+          "false": 0,
+          "unknown": 0
+        },
+        "http_eof_observed": {
+          "true": 0,
+          "false": 40,
+          "unknown": 0
+        },
+        "last_read_returned_normally": {
+          "true": 40,
+          "false": 0,
+          "unknown": 0
+        },
+        "read_termination_counts": {
+          "response_completed": 40
+        },
+        "failure_category_counts": {
+          "not_recorded": 40
+        },
+        "cleanup_failure_category_counts": {
+          "not_recorded": 40
+        },
+        "tail_failure_category_counts": {
+          "not_recorded": 40
+        },
+        "content_type_counts": {
+          "application/json": 40
+        },
+        "encoding_counts": {
+          "identity": 40
+        },
+        "usage_status_counts": {
+          "known": 40
+        },
+        "http_status_counts": {
+          "200": 40
+        },
+        "duration": {
+          "count": 40,
+          "sum_s": 1064.299,
+          "min_s": 2.75,
+          "median_s": 8.8285,
+          "p90_nearest_rank_s": 63.703,
+          "max_s": 227.313
+        },
+        "upstream_open": {
+          "count": 40,
+          "sum_s": 51.971,
+          "min_s": 0.953,
+          "median_s": 1.203,
+          "p90_nearest_rank_s": 1.719,
+          "max_s": 2.0
+        },
+        "upstream_body_read": {
+          "count": 40,
+          "sum_s": 995.344,
+          "min_s": 1.562,
+          "median_s": 7.469,
+          "p90_nearest_rank_s": 62.515,
+          "max_s": 213.453
+        },
+        "interval_union_s": 1035.893,
+        "medium_xhigh_overlap_s": 28.406,
+        "native_wall_minus_request_union_s": 240.232
+      },
+      "budget_compliance": {
+        "native_request_limit_satisfied": true,
+        "absolute_deadline_satisfied_at_final_snapshot": true,
+        "remaining_s": 222.75,
+        "requests_remaining": 40,
+        "final_phase": "finalize",
+        "control_rejection_count": 0
+      },
+      "payload_guidance": {
+        "enabled": false,
+        "applied_requests": 0,
+        "disabled_request_count": 40
+      },
+      "helper_evidence": {
+        "one_parent_linked_used_medium_child_proven": true,
+        "native_child_count_recorded": 1,
+        "metadata_status": "observed",
+        "children": [
+          {
+            "model": "gpt-6.1-sol",
+            "requested_effort": "medium",
+            "depth": 1,
+            "native_metadata_tokens_used": 111677
+          }
+        ],
+        "profile_buckets_are_not_individual_agent_identity": true,
+        "metadata_tokens_are_not_added_to_transport_usage": true
+      },
+      "budget_tool": {
+        "configured": true,
+        "publisher_failed": false,
+        "status_calls": 6,
+        "successful_calls": 6,
+        "unavailable_calls": 0,
+        "audit_valid": true,
+        "phases": {
+          "build": 3,
+          "stabilize": 2,
+          "finalize": 1
+        },
+        "phase_counts_match_successful_calls": true
+      },
+      "mercury": {
+        "successful_calls_recorded": 1,
+        "inference_attempts": 1,
+        "bridge_wall_s": 0.953,
+        "inference_latency_ms": 442,
+        "free_inference_cost": 0,
+        "input_tokens": 144,
+        "output_tokens": 1
+      },
+      "harness": {
+        "upstream_probes_recorded": 0,
+        "inspired_probes_recorded": 0,
+        "guard_status": "deferred",
+        "runs": 0,
+        "adopted": false
+      },
+      "native_items": {
+        "type_counts": {
+          "agent_message": 9,
+          "command_execution": 28,
+          "error": 1,
+          "file_change": 11,
+          "mcp_tool_call": 6
+        },
+        "unclassified_error_items": 1,
+        "failed_calls_recorded": 3,
+        "command_execution": {
+          "completed_item_count": 28,
+          "failed_item_count": 3,
+          "tool_duration": {
+            "count": 28,
+            "sum_s": 155.387,
+            "min_s": 0.203,
+            "median_s": 1.1795,
+            "p90_nearest_rank_s": 18.907,
+            "max_s": 45.578
+          },
+          "repeated_operation_group_sizes": [
+            3,
+            2,
+            2
+          ]
+        },
+        "mcp_tool_call": {
+          "completed_item_count": 6,
+          "failed_item_count": 0,
+          "tool_duration": {
+            "count": 6,
+            "sum_s": 0.234,
+            "min_s": 0.015,
+            "median_s": 0.016,
+            "p90_nearest_rank_s": 0.141,
+            "max_s": 0.141
+          },
+          "repeated_operation_group_sizes": [
+            6
+          ]
+        }
+      },
+      "root_resource_sampling": {
+        "sample_count": 132,
+        "finite_observed_sample_count": 127,
+        "process_status_counts": {
+          "alive": 127,
+          "dead": 5
+        },
+        "sample_status_counts": {
+          "observed": 127,
+          "unavailable": 5
+        },
+        "all_samples_match_declared_pid": true,
+        "unique_observed_creation_identity": true,
+        "latest_recorded_process_status": "dead",
+        "max_observed_working_set_bytes": 216666112,
+        "max_recorded_lifetime_peak_working_set_bytes": 668344320,
+        "first_observed_cumulative_cpu_s": 11.421875,
+        "last_observed_cumulative_cpu_s": 61.859375,
+        "cpu_increment_between_observed_endpoints_s": 50.4375,
+        "scope": "Declared native root PID samples only; excludes helpers, app subprocesses and remote model compute"
+      },
+      "isolation": {
+        "native_state_tool_read_denial_configured": true,
+        "native_state_tool_read_denial_verified": false,
+        "native_state_content_isolation_verified": false,
+        "full_filesystem_read_isolation_verified": false
+      },
+      "quality_score": null,
+      "accepted": null
+    }
+  },
+  "comparison": {
+    "native_request_count_total": 70,
+    "total_arm_delta_B_minus_A_s": -45.219,
+    "elapsed_ratio_A_over_B": 1.0354,
+    "frontload_delta_B_minus_A_s": 0.953,
+    "native_wall_delta_B_minus_A_s": -46.266,
+    "known_native_usage_delta_B_minus_A": {
+      "input_tokens": 631983,
+      "output_tokens": -3654,
+      "total_tokens": 628329,
+      "cached_tokens": 256,
+      "reasoning_tokens": 85
+    },
+    "quality_non_regression": null,
+    "measured_suite_advantage": null
+  },
+  "interpretation_limits": [
+    "Runtime audit did not read applications, anonymous copies, mappings, grades or native databases",
+    "Native completion is unverified application completion; independent quality/acceptance is not assessed here",
+    "Request intervals use monotonic reservation elapsed plus handler duration; small pre-reservation validation is included in duration",
+    "Body-read/open timings are not TTFT or isolated transport latency; generation and delivery cannot be separated",
+    "Time outside request-interval union is unclassified, not measured orchestration or network waste",
+    "Repeated operation HMAC counts do not prove repeated work was wasteful; hashes and command/message payloads are not published",
+    "A profile bucket is not an agent count; native parent-link metadata independently establishes one used child in B",
+    "MCP aggregate call counts do not attribute individual calls to root or helper",
+    "Mercury cost zero is its observed free adapter call only; native API cost and subscription quota delta remain unknown",
+    "Resource samples cover declared native root processes only, with finite sampling and no fresh PID query in this audit",
+    "No causal module contribution, quality win, statistical superiority or three-task suite advantage is established"
+  ]
+}

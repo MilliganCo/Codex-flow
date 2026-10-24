@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "check": "actual_help",
+      "exit": 0,
+      "passed": true
+    },
+    {
+      "canonical_bytes": true,
+      "check": "readme_smoke",
+      "command": [
+        "python",
+        "-m",
+        "ledgerreconcile",
+        "--orders",
+        "examples/orders.csv",
+        "--payments",
+        "examples/payments.csv",
+        "--output",
+        "verification/example-report.json"
+      ],
+      "exit": 0,
+      "passed": true
+    },
+    {
+      "check": "repeat_preserves_existing_report",
+      "exit": 1,
+      "passed": true
+    },
+    {
+      "check": "source_integrity",
+      "files": 10,
+      "passed": true
+    }
+  ],
+  "platform": "win32",
+  "python": "3.12.10"
+}

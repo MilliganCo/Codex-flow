@@ -54,21 +54,36 @@ class BudgetGatewayTests(unittest.TestCase):
             self.assertNotIn(private,json.dumps(report))
             self.assertNotIn(private.encode(),body)
 
-    def test_close_failure_cannot_be_counted_completed_or_return_upstream_body(self):
+    def test_verified_terminal_survives_close_failure_with_separate_diagnostic(self):
         class BrokenClose(fixture.Response):
             def __exit__(self,*args):raise OSError('private close context')
         opener=fixture.Opener(BrokenClose())
         with SubscriptionGateway(opener=opener) as gateway:
             status,body=self.call(gateway)
             report=gateway.summary();record=report['requests'][0]
+        self.assertEqual(status,200)
+        self.assertEqual(record['status'],'completed')
+        self.assertEqual(record['cleanup_failure_category'],'io_error')
+        self.assertTrue(record['semantic_completion_observed'])
+        self.assertTrue(record['response_read_completed'])
+        self.assertEqual(report['completed_requests'],1)
+        self.assertEqual(len(opener.requests),1)
+        self.assertEqual(body,fixture.sse())
+        self.assertNotIn('private close context',json.dumps(report))
+
+    def test_close_failure_without_verified_terminal_remains_failure(self):
+        class BrokenClose(fixture.Response):
+            def __exit__(self,*args):raise OSError('private close context')
+        opener=fixture.Opener(BrokenClose(fixture.sse(complete=False)))
+        with SubscriptionGateway(opener=opener) as gateway:
+            status,body=self.call(gateway)
+            report=gateway.summary();record=report['requests'][0]
         self.assertEqual(status,502)
         self.assertEqual(record['status'],'failed')
-        self.assertEqual(record['failure_phase'],'response_close')
-        self.assertTrue(record['response_read_completed'])
         self.assertEqual(report['completed_requests'],0)
+        self.assertIsNone(report['aggregate_usage'])
         self.assertEqual(len(opener.requests),1)
         self.assertNotIn(b'private generated text',body)
-        self.assertNotIn('private close context',json.dumps(report))
 
     def test_single_forwards_original_bytes_with_shared_deadline(self):
         opener=fixture.Opener()

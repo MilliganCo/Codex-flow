@@ -1,0 +1,967 @@
+{
+  "protocol": "geometry-case09",
+  "solution": "solution-18",
+  "checks": [
+    {
+      "property": "rotation.signed_basis",
+      "seed": null,
+      "status": "pass",
+      "degrees": 0.0,
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source": "ascii_tree/render.py:rotate_xw"
+    },
+    {
+      "property": "rotation.orthogonal",
+      "seed": null,
+      "status": "pass",
+      "degrees": 0.0
+    },
+    {
+      "property": "rotation.determinant",
+      "seed": null,
+      "status": "pass",
+      "degrees": 0.0,
+      "determinant": 1.0
+    },
+    {
+      "property": "rotation.inverse",
+      "seed": null,
+      "status": "pass",
+      "degrees": 0.0
+    },
+    {
+      "property": "rotation.zero_identity",
+      "seed": null,
+      "status": "pass"
+    },
+    {
+      "property": "rotation.signed_basis",
+      "seed": null,
+      "status": "pass",
+      "degrees": 37.0,
+      "matrix": [
+        [
+          0.7986355100472928,
+          0.0,
+          0.0,
+          -0.6018150231520483
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.6018150231520483,
+          0.0,
+          0.0,
+          0.7986355100472928
+        ]
+      ],
+      "source": "ascii_tree/render.py:rotate_xw"
+    },
+    {
+      "property": "rotation.orthogonal",
+      "seed": null,
+      "status": "pass",
+      "degrees": 37.0
+    },
+    {
+      "property": "rotation.determinant",
+      "seed": null,
+      "status": "pass",
+      "degrees": 37.0,
+      "determinant": 1.0
+    },
+    {
+      "property": "rotation.inverse",
+      "seed": null,
+      "status": "pass",
+      "degrees": 37.0
+    },
+    {
+      "property": "rotation.signed_basis",
+      "seed": null,
+      "status": "pass",
+      "degrees": 90.0,
+      "matrix": [
+        [
+          6.123233995736766e-17,
+          0.0,
+          0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          6.123233995736766e-17
+        ]
+      ],
+      "source": "ascii_tree/render.py:rotate_xw"
+    },
+    {
+      "property": "rotation.orthogonal",
+      "seed": null,
+      "status": "pass",
+      "degrees": 90.0
+    },
+    {
+      "property": "rotation.determinant",
+      "seed": null,
+      "status": "pass",
+      "degrees": 90.0,
+      "determinant": 1.0
+    },
+    {
+      "property": "rotation.inverse",
+      "seed": null,
+      "status": "pass",
+      "degrees": 90.0
+    },
+    {
+      "property": "skeleton.finite_xyzw",
+      "seed": 42,
+      "status": "pass",
+      "point_count": 630,
+      "unique_points": 316
+    },
+    {
+      "property": "skeleton.affine_xyz_rank",
+      "seed": 42,
+      "status": "pass",
+      "rank": 3,
+      "scale": 11.70975161295782,
+      "pivot_tolerance": 1.1709751612957821e-09
+    },
+    {
+      "property": "skeleton.variable_w",
+      "seed": 42,
+      "status": "pass",
+      "w_span": 0.9940123306666666,
+      "distinct_w": 309
+    },
+    {
+      "property": "full_model.finite_xyzw",
+      "seed": 42,
+      "status": "pass",
+      "point_count": 1178,
+      "unique_points": 864
+    },
+    {
+      "property": "full_model.affine_xyz_rank",
+      "seed": 42,
+      "status": "pass",
+      "rank": 3,
+      "scale": 11.924867626744922,
+      "pivot_tolerance": 1.1924867626744922e-09
+    },
+    {
+      "property": "full_model.variable_w",
+      "seed": 42,
+      "status": "pass",
+      "w_span": 0.9940123306666666,
+      "distinct_w": 309
+    },
+    {
+      "property": "graph.connected_rooted_branching",
+      "seed": 42,
+      "status": "pass",
+      "edge_count": 315,
+      "root_count": 1,
+      "reachable_count": 315,
+      "max_children": 2
+    },
+    {
+      "property": "graph.positive_lengths_radii",
+      "seed": 42,
+      "status": "pass",
+      "min_length": 0.13689414376210385,
+      "min_radius": 4.7549281982301714e-05,
+      "leaf_count": 548
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 42,
+      "status": "pass",
+      "degrees": 0.0,
+      "point_count": 1178,
+      "max_norm_squared_error": 0.0,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 42,
+      "status": "pass",
+      "degrees": 37.0,
+      "point_count": 1178,
+      "max_norm_squared_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 8.881784197001252e-16
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 42,
+      "status": "pass",
+      "degrees": 90.0,
+      "point_count": 1178,
+      "max_norm_squared_error": 1.4210854715202004e-14,
+      "max_inverse_component_error": 1.2212453270876722e-15
+    },
+    {
+      "property": "projection.full_sequential_composition",
+      "seed": 42,
+      "status": "pass",
+      "point_count": 1178,
+      "compared": 1178,
+      "clipped": 0,
+      "max_absolute_error": 0.0,
+      "parameters": {
+        "width": 100,
+        "height": 40,
+        "scale": 2.2222222222222223,
+        "center_y": 6.0,
+        "W": "8*(w-.5)",
+        "yaw": -22.0,
+        "pitch": 8.0,
+        "angle4d": 0.0,
+        "aspect": 0.5,
+        "time": 0.0
+      },
+      "source": "ascii_tree/render.py:project"
+    },
+    {
+      "property": "projection.full_sequential_composition",
+      "seed": 42,
+      "status": "pass",
+      "point_count": 1178,
+      "compared": 1178,
+      "clipped": 0,
+      "max_absolute_error": 0.0,
+      "parameters": {
+        "width": 100,
+        "height": 40,
+        "scale": 2.2222222222222223,
+        "center_y": 6.0,
+        "W": "8*(w-.5)",
+        "yaw": -22.0,
+        "pitch": 8.0,
+        "angle4d": 37.0,
+        "aspect": 0.5,
+        "time": 0.0
+      },
+      "source": "ascii_tree/render.py:project"
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "4D denominator 2.5",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "4D denominator 2.499999999999",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "4D denominator 2.6",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "3D denominator -24.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "3D denominator -23.999999999999",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "3D denominator -25.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "fail",
+      "case": "nonfinite x nan",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "fail",
+      "case": "nonfinite x inf",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "fail",
+      "case": "nonfinite x -inf",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "fail",
+      "case": "nonfinite y nan",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "fail",
+      "case": "nonfinite y inf",
+      "result": [
+        49.5,
+        "nan",
+        "inf",
+        0.0
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite y -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "fail",
+      "case": "nonfinite z nan",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "fail",
+      "case": "nonfinite z inf",
+      "result": [
+        "nan",
+        "nan",
+        "inf",
+        0.0
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite z -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "fail",
+      "case": "nonfinite w nan",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "pass",
+      "case": "nonfinite w inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 42,
+      "status": "fail",
+      "case": "nonfinite w -inf",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "model.stable_across_modes_angles",
+      "seed": 42,
+      "status": "pass",
+      "initial_fingerprint": "3c40139986cad47c9b2488b86e0903ce5fdae403ed5a85722f57cffb89eac239",
+      "transitions": [
+        {
+          "key": "1",
+          "fingerprint": "3c40139986cad47c9b2488b86e0903ce5fdae403ed5a85722f57cffb89eac239"
+        },
+        {
+          "key": "2",
+          "fingerprint": "3c40139986cad47c9b2488b86e0903ce5fdae403ed5a85722f57cffb89eac239"
+        },
+        {
+          "key": "3",
+          "fingerprint": "3c40139986cad47c9b2488b86e0903ce5fdae403ed5a85722f57cffb89eac239"
+        },
+        {
+          "key": "]",
+          "fingerprint": "3c40139986cad47c9b2488b86e0903ce5fdae403ed5a85722f57cffb89eac239"
+        },
+        {
+          "key": "right",
+          "fingerprint": "3c40139986cad47c9b2488b86e0903ce5fdae403ed5a85722f57cffb89eac239"
+        },
+        {
+          "key": "up",
+          "fingerprint": "3c40139986cad47c9b2488b86e0903ce5fdae403ed5a85722f57cffb89eac239"
+        },
+        {
+          "key": "[",
+          "fingerprint": "3c40139986cad47c9b2488b86e0903ce5fdae403ed5a85722f57cffb89eac239"
+        },
+        {
+          "key": "r",
+          "fingerprint": "3c40139986cad47c9b2488b86e0903ce5fdae403ed5a85722f57cffb89eac239"
+        }
+      ]
+    },
+    {
+      "property": "model.new_seed_operation",
+      "seed": 42,
+      "status": "pass",
+      "new_seed": 43
+    },
+    {
+      "property": "skeleton.finite_xyzw",
+      "seed": 137,
+      "status": "pass",
+      "point_count": 630,
+      "unique_points": 316
+    },
+    {
+      "property": "skeleton.affine_xyz_rank",
+      "seed": 137,
+      "status": "pass",
+      "rank": 3,
+      "scale": 11.83776543938706,
+      "pivot_tolerance": 1.183776543938706e-09
+    },
+    {
+      "property": "skeleton.variable_w",
+      "seed": 137,
+      "status": "pass",
+      "w_span": 0.9940123306666666,
+      "distinct_w": 309
+    },
+    {
+      "property": "full_model.finite_xyzw",
+      "seed": 137,
+      "status": "pass",
+      "point_count": 1178,
+      "unique_points": 864
+    },
+    {
+      "property": "full_model.affine_xyz_rank",
+      "seed": 137,
+      "status": "pass",
+      "rank": 3,
+      "scale": 12.084052619672173,
+      "pivot_tolerance": 1.2084052619672174e-09
+    },
+    {
+      "property": "full_model.variable_w",
+      "seed": 137,
+      "status": "pass",
+      "w_span": 0.9940123306666666,
+      "distinct_w": 309
+    },
+    {
+      "property": "graph.connected_rooted_branching",
+      "seed": 137,
+      "status": "pass",
+      "edge_count": 315,
+      "root_count": 1,
+      "reachable_count": 315,
+      "max_children": 2
+    },
+    {
+      "property": "graph.positive_lengths_radii",
+      "seed": 137,
+      "status": "pass",
+      "min_length": 0.1302658220174362,
+      "min_radius": 4.7549281982301714e-05,
+      "leaf_count": 548
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 137,
+      "status": "pass",
+      "degrees": 0.0,
+      "point_count": 1178,
+      "max_norm_squared_error": 0.0,
+      "max_inverse_component_error": 0.0
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 137,
+      "status": "pass",
+      "degrees": 37.0,
+      "point_count": 1178,
+      "max_norm_squared_error": 2.842170943040401e-14,
+      "max_inverse_component_error": 8.881784197001252e-16
+    },
+    {
+      "property": "rotation.full_points_norm_inverse",
+      "seed": 137,
+      "status": "pass",
+      "degrees": 90.0,
+      "point_count": 1178,
+      "max_norm_squared_error": 1.4210854715202004e-14,
+      "max_inverse_component_error": 1.3322676295501878e-15
+    },
+    {
+      "property": "projection.full_sequential_composition",
+      "seed": 137,
+      "status": "pass",
+      "point_count": 1178,
+      "compared": 1178,
+      "clipped": 0,
+      "max_absolute_error": 0.0,
+      "parameters": {
+        "width": 100,
+        "height": 40,
+        "scale": 2.2222222222222223,
+        "center_y": 6.0,
+        "W": "8*(w-.5)",
+        "yaw": -22.0,
+        "pitch": 8.0,
+        "angle4d": 0.0,
+        "aspect": 0.5,
+        "time": 0.0
+      },
+      "source": "ascii_tree/render.py:project"
+    },
+    {
+      "property": "projection.full_sequential_composition",
+      "seed": 137,
+      "status": "pass",
+      "point_count": 1178,
+      "compared": 1178,
+      "clipped": 0,
+      "max_absolute_error": 0.0,
+      "parameters": {
+        "width": 100,
+        "height": 40,
+        "scale": 2.2222222222222223,
+        "center_y": 6.0,
+        "W": "8*(w-.5)",
+        "yaw": -22.0,
+        "pitch": 8.0,
+        "angle4d": 37.0,
+        "aspect": 0.5,
+        "time": 0.0
+      },
+      "source": "ascii_tree/render.py:project"
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "4D denominator 2.5",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "4D denominator 2.499999999999",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "4D denominator 2.6",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "3D denominator -24.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "3D denominator -23.999999999999",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "3D denominator -25.0",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "fail",
+      "case": "nonfinite x nan",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "fail",
+      "case": "nonfinite x inf",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "fail",
+      "case": "nonfinite x -inf",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "fail",
+      "case": "nonfinite y nan",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "fail",
+      "case": "nonfinite y inf",
+      "result": [
+        49.5,
+        "nan",
+        "inf",
+        0.0
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite y -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "fail",
+      "case": "nonfinite z nan",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "fail",
+      "case": "nonfinite z inf",
+      "result": [
+        "nan",
+        "nan",
+        "inf",
+        0.0
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite z -inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "fail",
+      "case": "nonfinite w nan",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "pass",
+      "case": "nonfinite w inf",
+      "result": null
+    },
+    {
+      "property": "projection.pathological_input",
+      "seed": 137,
+      "status": "fail",
+      "case": "nonfinite w -inf",
+      "result": [
+        "nan",
+        "nan",
+        "nan",
+        "nan"
+      ]
+    },
+    {
+      "property": "model.stable_across_modes_angles",
+      "seed": 137,
+      "status": "pass",
+      "initial_fingerprint": "1cc1fc6ab7a7ad6a0d16c38a1d02ee997b7152907e3c9353c88d7a5227d23eb9",
+      "transitions": [
+        {
+          "key": "1",
+          "fingerprint": "1cc1fc6ab7a7ad6a0d16c38a1d02ee997b7152907e3c9353c88d7a5227d23eb9"
+        },
+        {
+          "key": "2",
+          "fingerprint": "1cc1fc6ab7a7ad6a0d16c38a1d02ee997b7152907e3c9353c88d7a5227d23eb9"
+        },
+        {
+          "key": "3",
+          "fingerprint": "1cc1fc6ab7a7ad6a0d16c38a1d02ee997b7152907e3c9353c88d7a5227d23eb9"
+        },
+        {
+          "key": "]",
+          "fingerprint": "1cc1fc6ab7a7ad6a0d16c38a1d02ee997b7152907e3c9353c88d7a5227d23eb9"
+        },
+        {
+          "key": "right",
+          "fingerprint": "1cc1fc6ab7a7ad6a0d16c38a1d02ee997b7152907e3c9353c88d7a5227d23eb9"
+        },
+        {
+          "key": "up",
+          "fingerprint": "1cc1fc6ab7a7ad6a0d16c38a1d02ee997b7152907e3c9353c88d7a5227d23eb9"
+        },
+        {
+          "key": "[",
+          "fingerprint": "1cc1fc6ab7a7ad6a0d16c38a1d02ee997b7152907e3c9353c88d7a5227d23eb9"
+        },
+        {
+          "key": "r",
+          "fingerprint": "1cc1fc6ab7a7ad6a0d16c38a1d02ee997b7152907e3c9353c88d7a5227d23eb9"
+        }
+      ]
+    },
+    {
+      "property": "model.new_seed_operation",
+      "seed": 137,
+      "status": "pass",
+      "new_seed": 138
+    }
+  ],
+  "errors": [],
+  "source_before": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "artifacts/frames/manifest.json": "eddf21efcddb7cf515f0f67d183454ed623f7ae0afb7823809951fb52af1f1a4",
+    "artifacts/frames/seed42-2d.txt": "32c59c03e7d0c950240a3c9a4eaa40ecb6e94462fa7931972b279e26b58b3ab4",
+    "artifacts/frames/seed42-3d.txt": "9176d3740bc161a5caea82fba948eadd32e2ef5be2c046c01358a9b12dfa6895",
+    "artifacts/frames/seed42-4d-xw0.txt": "c744fd05366b90f4635609487b11be9ad1f44cfb524f767ee623679ebb1ce248",
+    "artifacts/frames/seed42-4d-xw35.txt": "1d9ae14169fde7ea44d1cf65616294d259dfd24a807c69c0a53368d252d49ff1",
+    "artifacts/frames/seed43-2d.txt": "0e804ea00511b7f9748760803d800dd61d70bf00b5d6e6d19b6481ff57cf2c23",
+    "artifacts/frames/seed43-3d.txt": "07371225ac8020dc2c52361a6be9172229cdf3db1239463931fe7c1fa2a11613",
+    "artifacts/native-controls.json": "c5ce75b4bc8b1887ad4b519d722948e0abe0a1da4ce92b4e990147e230eb2d21",
+    "artifacts/native-ctrlc-raw.json": "7b232dbf7c08b8d81096f6dd68d16a806d11ef413f601ab26ccaccabbf038d6f",
+    "artifacts/native-ctrlc.json": "2713621f3d2b7c9d36f4f608d01356fdd12989118689b1b43f46649f69abbcba",
+    "artifacts/native-escape.json": "076ac4d68c135285d7f2e7e2cbd5a48c8cc7adf2b72a01e27f72ae3252c52301",
+    "artifacts/native-final.json": "9faaebeeb2c830211f24b42dadf00fa833d4865343da2580e2afa95a26505567",
+    "artifacts/native-startup.json": "9bdbd92654520d14cf8debe84613f2d5386453bd03fb4b07ce50d4c372e33713",
+    "artifacts/performance.json": "4bd9d1fe1864b10df73792f6f8d5e370a39f65e53d2964169209d367ad5da943",
+    "artifacts/probe-exports/tree-42-4d-001.txt": "227ca9056482f25be5e50cb7b05c50cf6487cdfb050ab7c63ba2084274130d8e",
+    "artifacts/probe-exports/tree-42-4d-002.txt": "d64335707919e978dcb81c12035e01b0964c58b8ac14cf5aa8070b8365733808",
+    "artifacts/smoke.txt": "192e67d8d53ecbc02e218c6d2025467d7702e25c78e985b87660916e739157f9",
+    "artifacts/unittest.txt": "8e256f9f92b5d747512cedf3f68521a8703daec0d5ae376d615de9dc8bf7e41a",
+    "artifacts/verification.json": "859c7c42e5b478f0c31dba9300b510eb9ead3f8099c3991ff6eda28d56566e17",
+    "ascii_tree/__init__.py": "49faff6001e3da9db88b1ff8c32fa11b102c9926a3216c45903a0241c50ae3dc",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/app.py": "4eb13493c591b2f4844e8bc4c80af62f87b8a79d949a9b830c0d7f5d66a8788e",
+    "ascii_tree/cli.py": "aec2973303bab334af8fe960d5931906f7281d21fbf49ecf9ac1b99cdac7b8fd",
+    "ascii_tree/model.py": "efdfcd226104ee9d4e3a16580848174579a51d95edf3ea2a47f2d52102a00f9e",
+    "ascii_tree/render.py": "0a53f606b475a633f8c7ac838987337570ce7b75d4fca22196eb324a88b7fc83",
+    "ascii_tree/terminal.py": "20db25e8202f69ac30575c754504c79a7199c5907d75f2201b8d8aecade0b6d3",
+    "IMPLEMENTATION_NOTES.md": "e648673e233f4c920d7076a2a36896386dfeed420093554b7883c388cd6d80cb",
+    "INTERACTIVE_DEMO.md": "673df75c8d642f28976260bd172b8cf2550930fbdbcaa2e2530a0f97278029e8",
+    "pyproject.toml": "6e791e4a343fc89db00ede3927f496c3b5fa3c1382a8a32a3031b453c9573956",
+    "README.md": "133221fcbc70ee13ee8df5d21c16cbbec0d716d8f5e1ca6e36e04ea395185806",
+    "tests/test_app.py": "cf1c8ce4b090f9e3e94c2ee3489841e4082ac5b063f2f054aabee745b2ad173e",
+    "tests/test_cli.py": "3f3cac0776ab1fac25399b07549caf3dd2d1005033798ef81f685ab4fe644acf",
+    "tests/test_model.py": "76c7141f2cecdb29a598022d37ac02394bd4526a42706d602bc1310ceef89276",
+    "tests/test_render.py": "10ffb0a1d943e0285b55b1c5773cb394083f63933c9786346773930dc0ef29cb",
+    "tools/benchmark.py": "e03e2f7a33c025c3d9b22aefa004cd68674f69f50496a6ce9fd8e57f6bd75fdc",
+    "tools/generate_samples.py": "4a1bc0a094421f2b9b588f651eeaa95540003368c05864f4cc36e43e38f8c4dd",
+    "tools/native_probe.py": "33f3cf280747c268442daf35e02804fdd30f572effcfe93eb39ca71dce2b8a49",
+    "tools/smoke.py": "c2607220933340c6148f06553ff10f9b1ef52b1d126c37d2b599f8e58e3c00f9",
+    "tools/verify.py": "573c675b77f56eeabdbed90a4af92dbef5dd2553817ef685bd79cfd3b30b8365",
+    "VERIFICATION.md": "9108f85bd84c00ca336bcde0be92f696d1754fbdfcc9a76baf7405e04c893af9"
+  },
+  "checker_hashes": {
+    "geometry_case09.py": "27723723c78c9a9aafe864630efec4ec976baa07c911141b1a7fdcf8bab33737",
+    "evaluator.py": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+    "rubric.json": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+  },
+  "adapter": {
+    "plane": "XW",
+    "sigma": 1,
+    "vector_orientation": "column",
+    "rotation_order": "XW, 4D perspective, yaw, pitch, 3D perspective, cell aspect",
+    "operator_units": "degrees"
+  },
+  "source_after": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "artifacts/frames/manifest.json": "eddf21efcddb7cf515f0f67d183454ed623f7ae0afb7823809951fb52af1f1a4",
+    "artifacts/frames/seed42-2d.txt": "32c59c03e7d0c950240a3c9a4eaa40ecb6e94462fa7931972b279e26b58b3ab4",
+    "artifacts/frames/seed42-3d.txt": "9176d3740bc161a5caea82fba948eadd32e2ef5be2c046c01358a9b12dfa6895",
+    "artifacts/frames/seed42-4d-xw0.txt": "c744fd05366b90f4635609487b11be9ad1f44cfb524f767ee623679ebb1ce248",
+    "artifacts/frames/seed42-4d-xw35.txt": "1d9ae14169fde7ea44d1cf65616294d259dfd24a807c69c0a53368d252d49ff1",
+    "artifacts/frames/seed43-2d.txt": "0e804ea00511b7f9748760803d800dd61d70bf00b5d6e6d19b6481ff57cf2c23",
+    "artifacts/frames/seed43-3d.txt": "07371225ac8020dc2c52361a6be9172229cdf3db1239463931fe7c1fa2a11613",
+    "artifacts/native-controls.json": "c5ce75b4bc8b1887ad4b519d722948e0abe0a1da4ce92b4e990147e230eb2d21",
+    "artifacts/native-ctrlc-raw.json": "7b232dbf7c08b8d81096f6dd68d16a806d11ef413f601ab26ccaccabbf038d6f",
+    "artifacts/native-ctrlc.json": "2713621f3d2b7c9d36f4f608d01356fdd12989118689b1b43f46649f69abbcba",
+    "artifacts/native-escape.json": "076ac4d68c135285d7f2e7e2cbd5a48c8cc7adf2b72a01e27f72ae3252c52301",
+    "artifacts/native-final.json": "9faaebeeb2c830211f24b42dadf00fa833d4865343da2580e2afa95a26505567",
+    "artifacts/native-startup.json": "9bdbd92654520d14cf8debe84613f2d5386453bd03fb4b07ce50d4c372e33713",
+    "artifacts/performance.json": "4bd9d1fe1864b10df73792f6f8d5e370a39f65e53d2964169209d367ad5da943",
+    "artifacts/probe-exports/tree-42-4d-001.txt": "227ca9056482f25be5e50cb7b05c50cf6487cdfb050ab7c63ba2084274130d8e",
+    "artifacts/probe-exports/tree-42-4d-002.txt": "d64335707919e978dcb81c12035e01b0964c58b8ac14cf5aa8070b8365733808",
+    "artifacts/smoke.txt": "192e67d8d53ecbc02e218c6d2025467d7702e25c78e985b87660916e739157f9",
+    "artifacts/unittest.txt": "8e256f9f92b5d747512cedf3f68521a8703daec0d5ae376d615de9dc8bf7e41a",
+    "artifacts/verification.json": "859c7c42e5b478f0c31dba9300b510eb9ead3f8099c3991ff6eda28d56566e17",
+    "ascii_tree/__init__.py": "49faff6001e3da9db88b1ff8c32fa11b102c9926a3216c45903a0241c50ae3dc",
+    "ascii_tree/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "ascii_tree/app.py": "4eb13493c591b2f4844e8bc4c80af62f87b8a79d949a9b830c0d7f5d66a8788e",
+    "ascii_tree/cli.py": "aec2973303bab334af8fe960d5931906f7281d21fbf49ecf9ac1b99cdac7b8fd",
+    "ascii_tree/model.py": "efdfcd226104ee9d4e3a16580848174579a51d95edf3ea2a47f2d52102a00f9e",
+    "ascii_tree/render.py": "0a53f606b475a633f8c7ac838987337570ce7b75d4fca22196eb324a88b7fc83",
+    "ascii_tree/terminal.py": "20db25e8202f69ac30575c754504c79a7199c5907d75f2201b8d8aecade0b6d3",
+    "IMPLEMENTATION_NOTES.md": "e648673e233f4c920d7076a2a36896386dfeed420093554b7883c388cd6d80cb",
+    "INTERACTIVE_DEMO.md": "673df75c8d642f28976260bd172b8cf2550930fbdbcaa2e2530a0f97278029e8",
+    "pyproject.toml": "6e791e4a343fc89db00ede3927f496c3b5fa3c1382a8a32a3031b453c9573956",
+    "README.md": "133221fcbc70ee13ee8df5d21c16cbbec0d716d8f5e1ca6e36e04ea395185806",
+    "tests/test_app.py": "cf1c8ce4b090f9e3e94c2ee3489841e4082ac5b063f2f054aabee745b2ad173e",
+    "tests/test_cli.py": "3f3cac0776ab1fac25399b07549caf3dd2d1005033798ef81f685ab4fe644acf",
+    "tests/test_model.py": "76c7141f2cecdb29a598022d37ac02394bd4526a42706d602bc1310ceef89276",
+    "tests/test_render.py": "10ffb0a1d943e0285b55b1c5773cb394083f63933c9786346773930dc0ef29cb",
+    "tools/benchmark.py": "e03e2f7a33c025c3d9b22aefa004cd68674f69f50496a6ce9fd8e57f6bd75fdc",
+    "tools/generate_samples.py": "4a1bc0a094421f2b9b588f651eeaa95540003368c05864f4cc36e43e38f8c4dd",
+    "tools/native_probe.py": "33f3cf280747c268442daf35e02804fdd30f572effcfe93eb39ca71dce2b8a49",
+    "tools/smoke.py": "c2607220933340c6148f06553ff10f9b1ef52b1d126c37d2b599f8e58e3c00f9",
+    "tools/verify.py": "573c675b77f56eeabdbed90a4af92dbef5dd2553817ef685bd79cfd3b30b8365",
+    "VERIFICATION.md": "9108f85bd84c00ca336bcde0be92f696d1754fbdfcc9a76baf7405e04c893af9"
+  },
+  "sources_unchanged": true,
+  "completion": "complete",
+  "all_checks_passed": false
+}

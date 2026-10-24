@@ -28,6 +28,14 @@ The coordinator is the sole integrator/writer. Generated native role files reque
 
 For an admitted parallel invocation, developer instructions explicitly require one read-only helper as the first tool action. After process exit, the observer checks only the exact CLI-observed root ID/cwd and JSON-linked direct child metadata with positive usage. Missing/incompatible metadata stays unknown. `orchestration_status` is `verified` only with accepted native evidence, otherwise `degraded` with `helper_not_observed`; this is separate from application completion and does not prove helper completion, hard depth enforcement or peak agent concurrency.
 
+The current first helper is `reviewer/high`: a supplied-context acceptance-risk
+pass, without tools, file reads or production coding. The chief implements and
+verifies critical numerical, parsing/security and transactional boundaries.
+Medium proposals are reserved for independent low-risk modules. Only the chief
+normally queries budget status, at most twice, batched with necessary work when
+supported; there is no post-acceptance status turn. These instruction changes
+require their own measured confirmation; see [the decision](decisions/0005-risk-review-and-budget-batching.md).
+
 ```mermaid
 flowchart LR
     task[Authorized task and project config] --> gate[Deterministic risk and ownership gate]

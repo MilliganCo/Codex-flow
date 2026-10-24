@@ -98,7 +98,7 @@ class BudgetStdio:
         if age > 10.:
             return unavailable('status_stale')
         budget = value['budget']
-        guidance = ('Honor existing ownership and permissions. Read-only workers return evidence only; never write files or delegate. '
+        guidance = ('Honor existing ownership and permissions. Read-only workers return evidence or requested proposal text; never write files or delegate. '
                     'Do not start delegation beyond the existing approved helper plan. ' + POLICY[budget['phase']]
                     + ' This phase never proves acceptance. Do not skip required tests. Stop only on verified acceptance or a concrete blocker within your assigned task.')
         return {'status': 'ok', 'budget': budget, 'sample_age_s': round(max(0., age), 6), 'guidance': guidance}

@@ -307,7 +307,7 @@ def append_budget_guidance(payload: dict[str, Any], snapshot: dict[str, Any]) ->
     phase = snapshot['phase']
     text = (f"{_MARKER}\nphase={phase}; seconds_remaining={snapshot['remaining_s']:.1f}; "
             f"requests_remaining={snapshot['requests_remaining']}; reserved_attempts={snapshot['requests_used']}. "
-            'Honor existing ownership and permissions. Read-only workers return evidence only and never write files or delegate. '
+            'Honor existing ownership and permissions. Read-only workers return evidence or requested proposal text; never write files or delegate. '
             'Do not start new delegation beyond the existing approved helper plan. '
             + _POLICIES[phase] + ' This phase never proves acceptance. Do not skip required tests. '
             'Stop only on verified acceptance or a concrete blocker within your assigned task.')

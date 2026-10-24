@@ -1,0 +1,1757 @@
+{
+  "schema": 1,
+  "stage": "complete",
+  "blind": true,
+  "independent": true,
+  "date": "2026-10-24",
+  "scope": [
+    "solution-17",
+    "solution-18"
+  ],
+  "rubric_version": "1.0",
+  "rubric_sha256": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466",
+  "evaluator_sha256": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+  "criteria_count": 26,
+  "critical_gate_count": 5,
+  "maximum_score": 100,
+  "method": "Anonymous production-source text review, actual frozen ASCII frames for seeds42/137, unchanged frozen evaluator, new source-derived full-model geometry adapters and real 57-check native ConPTY protocol. Application/test code ran only through root reviewed official SDK launcher; no source modifications, repairs, reruns, API/network calls, identity maps, prior cases or prior scores were used.",
+  "acceptance": {
+    "minimum_score": 80,
+    "required": [
+      "4d.coordinates",
+      "4d.variable_w",
+      "4d.rotation_math",
+      "4d.projection",
+      "reliability.headless"
+    ],
+    "unassessed_policy": "Unknown values remain null, not zero. Acceptance requires all criteria assessed and all critical criteria passing. Partial assessed points are not a complete score."
+  },
+  "solutions": [
+    {
+      "id": "solution-17",
+      "quality_score": 98,
+      "accepted": true,
+      "categories": [
+        {
+          "id": "2d",
+          "name": "2D procedural branched tree and determinism",
+          "max": 12,
+          "score": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Independent frozen renders repeated both seeds with identical bytes.",
+              "evidence": [
+                "repeat_determinism",
+                "2d-42.txt",
+                "2d-42-repeat.txt",
+                "2d-137.txt",
+                "2d-137-repeat.txt"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Seed 42 and 137 produce different frames at matched 80x30 dimensions.",
+              "evidence": [
+                "2d-42.txt",
+                "2d-137-same-size.txt"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "max": 7,
+              "score": 7,
+              "status": "pass",
+              "reason": "Bounded seeded growth produces one crooked tapered trunk, asymmetric spiral scaffold limbs, recursive higher-order branches and sparse tip foliage; both seeds show connected readable branch silhouettes.",
+              "evidence": [
+                "ascii_tree/model.py:generate_tree",
+                "2d-42.txt",
+                "2d-137.txt",
+                "geometry:graph.connected_rooted_branching",
+                "geometry:graph.positive_lengths_radii"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "name": "3D XYZ rotation depth and occlusion",
+          "max": 13,
+          "score": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Documented yaw 0 and 37 generate distinct frozen frames; the native 3D arrow roundtrip changes and exactly restores the CLI oracle.",
+              "evidence": [
+                "3d-angle-0.txt",
+                "3d-angle-37.txt",
+                "native:7"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "All actual segment endpoints and foliage points are finite; both skeleton and full-model affine XYZ ranks are 3 for both seeds. One rooted connected skeleton has genuine branching and positive radii/lengths.",
+              "evidence": [
+                "ascii_tree/model.py",
+                "geometry:skeleton.affine_xyz_rank",
+                "geometry:full_model.affine_xyz_rank",
+                "geometry:graph.connected_rooted_branching"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "max": 5,
+              "score": 5,
+              "status": "pass",
+              "reason": "Per-cell z-buffer selects the smaller positive camera depth; segment depth uses reciprocal perspective interpolation, surface thickness and depth/light-dependent ASCII glyphs. Crossing-segment draw-order and interpolation tests pass.",
+              "evidence": [
+                "ascii_tree/render.py:Raster",
+                "ascii_tree/render.py:render",
+                "tests/test_render.py",
+                "frozen:tests"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "name": "4D XYZW variable W hyperplane rotation and sequential projection",
+          "max": 20,
+          "score": 20,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Frozen XW 0/37 frames differ; native literal] and[ match one-step and reversed-angle CLI oracles.",
+              "evidence": [
+                "4d-angle-0.txt",
+                "4d-angle-37.txt",
+                "native:12-17"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "The actual production graph and every foliage vertex store finite XYZW, with no unrelated3D-tree substitution.",
+              "evidence": [
+                "ascii_tree/model.py",
+                "geometry:skeleton.finite_xyzw",
+                "geometry:full_model.finite_xyzw"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "W spans are positive on the actual skeleton and full model for both seeds, above 1e-8; source derives W from branch growth.",
+              "evidence": [
+                "ascii_tree/model.py:generate_tree",
+                "geometry:skeleton.variable_w",
+                "geometry:full_model.variable_w"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Production XW operator has fixed sigma +1; all four basis vectors at 37/90 degrees match signed sine/cosine. SO(4) matrix orthogonality, determinant +1, identity and inverse hold; full-model 4D norms and inverse transforms pass.",
+              "evidence": [
+                "ascii_tree/projection.py:rotate_xw",
+                "geometry:rotation.signed_basis",
+                "geometry:rotation.orthogonal",
+                "geometry:rotation.determinant",
+                "geometry:rotation.full_points_norm_inverse"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Every actual full-model point at XW 0/37 for both seeds matches independent 4D perspective, yaw/pitch, 3D perspective, image scale and character aspect; both eye-plane guards safely reject zero/near/behind denominators. Explicit nonfinite points are rejected.",
+              "evidence": [
+                "ascii_tree/projection.py:Projector.__call__",
+                "geometry:projection.full_sequential_composition",
+                "geometry:projection.pathological_input"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "name": "UX controls help stable object and export",
+          "max": 12,
+          "score": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Actual documented CLI help exits0; actual native help toggle produces the production marker.",
+              "evidence": [
+                "frozen:cli.help",
+                "native:27",
+                "README.md"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "All six standard frozen mode/seed exports have exact dimensions and printable ASCII with LF only; native current-frame exports exactly match CLI states.",
+              "evidence": [
+                "frozen:frames[0:6]",
+                "native:2-51"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "max": 6,
+              "score": 6,
+              "status": "pass",
+              "reason": "Unmodified production viewer passes exactly 57 real ConPTY checks, covering mode selection, arrows and reverse, literal brackets, documented zoom factors, help, animation/pause, reset, new seed, export and shutdown.",
+              "evidence": [
+                "native:checks1-57",
+                "interactive-17/report.json",
+                "ascii_tree/app.py",
+                "ascii_tree/terminal.py"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Complete graph/XYZW/radii/foliage structural fingerprints remain unchanged through 1/2/3, angles and reset for both seeds; native mode exports use the same seed. Only G regenerates seed +1.",
+              "evidence": [
+                "geometry:model.stable_across_modes_angles",
+                "geometry:model.new_seed_operation",
+                "native:4,7,10,42",
+                "ascii_tree/app.py"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "name": "Organic appearance crown branching and shading",
+          "max": 12,
+          "score": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "max": 12,
+              "score": 10,
+              "status": "pass",
+              "reason": "Recognizable organic trees with a coherent tapered trunk, uneven multi-order branches, varied foliage sprays and visible bark depth/light shading. Seeds differ clearly. Dense upper twigs/foliage can merge into punctuation texture; some high 4D foliage touches/crops the top border. Subjective 10/12.",
+              "evidence": [
+                "2d-42.txt",
+                "3d-42.txt",
+                "4d-42.txt",
+                "2d-137.txt",
+                "3d-137.txt",
+                "4d-137.txt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "name": "Resize Ctrl+C headless tiny terminal and crashes",
+          "max": 10,
+          "score": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "All six standard seed/mode renders run successfully without a TTY.",
+              "evidence": [
+                "frozen:frames[0:6]"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Frozen 2x2 renders pass all modes; actual native 1x1 resize/export also matches a bounded 1x1 CLI frame.",
+              "evidence": [
+                "frozen:*-tiny.txt",
+                "native:46-48"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Real ConPTY resizes 100x40 to 30x12 to 1x1 and back preserve state; all exact viewport/oracle comparisons pass.",
+              "evidence": [
+                "native:43-51"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Three actual native sessions receive q, literal Esc 0x1B and Ctrl+C 0x03; all exit0 and emit both cursor-show and alternate-screen-leave sequences. This does not claim a post-exit query of original console-mode flags.",
+              "evidence": [
+                "native:52-57",
+                "interactive-17/conpty-main.bin",
+                "interactive-17/conpty-escape.bin",
+                "interactive-17/conpty-ctrl-c.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "name": "Meaningful reproducible test coverage",
+          "max": 9,
+          "score": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Documented unittest discover command actually exits 0 with nonzero test count. Test count is evidence only and contributes no size bonus.",
+              "evidence": [
+                "frozen:tests"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "max": 6,
+              "score": 6,
+              "status": "pass",
+              "reason": "Meaningful assertions cover all ten task obligations: deterministic and varied seeds, graph/radii/finite coordinates, exact frame sizes/ASCII, 3D camera/occlusion, 4D math/W/raster change, shared object, headless/nonTTY/lifecycle and minimum dimensions. Independent native evidence supplements lifecycle mocks.",
+              "evidence": [
+                "tests/test_model.py",
+                "tests/test_render.py",
+                "tests/test_app.py",
+                "tests/test_cli.py"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "name": "Modularity source and dependencies",
+          "max": 7,
+          "score": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "max": 7,
+              "score": 7,
+              "status": "pass",
+              "reason": "Immutable geometry dataclasses and pure projection/raster APIs separate the model, UI state, CLI and platform terminal handling. The bounded generator and dependency-free runtime are straightforward to inspect; configuration, exports and deterministic rendering have focused tests. No points are awarded for file count or documentation volume.",
+              "evidence": [
+                "ascii_tree/model.py",
+                "ascii_tree/render.py",
+                "ascii_tree/app.py",
+                "ascii_tree/terminal.py",
+                "ascii_tree/cli.py",
+                "pyproject.toml"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "name": "Real setup commands and explanation of 4D",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "README module/script commands correspond to the actual CLI and were exercised by the unchanged evaluator and native/headless oracles.",
+              "evidence": [
+                "README.md",
+                "frozen:cli",
+                "frozen:tests",
+                "native:oracles"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "max": 1,
+              "score": 1,
+              "status": "pass",
+              "reason": "Python 3.12+ module launch needs no third-party runtime dependencies; optional packaging pins setuptools 75.8.0 and defines the actual entrypoint.",
+              "evidence": [
+                "README.md",
+                "pyproject.toml"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "README accurately describes stored growth W, centering/scaling, the signed XW rotation, sequential4D and3D perspectives, camera and text-cell aspect.",
+              "evidence": [
+                "README.md",
+                "ascii_tree/projection.py"
+              ]
+            }
+          ]
+        }
+      ],
+      "critical_gates": [
+        {
+          "id": "4d.coordinates",
+          "status": "pass",
+          "passed": true,
+          "score": 4,
+          "max": 4,
+          "reason": "The actual production graph and every foliage vertex store finite XYZW, with no unrelated3D-tree substitution.",
+          "evidence": [
+            "ascii_tree/model.py",
+            "geometry:skeleton.finite_xyzw",
+            "geometry:full_model.finite_xyzw"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "status": "pass",
+          "passed": true,
+          "score": 4,
+          "max": 4,
+          "reason": "W spans are positive on the actual skeleton and full model for both seeds, above 1e-8; source derives W from branch growth.",
+          "evidence": [
+            "ascii_tree/model.py:generate_tree",
+            "geometry:skeleton.variable_w",
+            "geometry:full_model.variable_w"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "status": "pass",
+          "passed": true,
+          "score": 4,
+          "max": 4,
+          "reason": "Production XW operator has fixed sigma +1; all four basis vectors at 37/90 degrees match signed sine/cosine. SO(4) matrix orthogonality, determinant +1, identity and inverse hold; full-model 4D norms and inverse transforms pass.",
+          "evidence": [
+            "ascii_tree/projection.py:rotate_xw",
+            "geometry:rotation.signed_basis",
+            "geometry:rotation.orthogonal",
+            "geometry:rotation.determinant",
+            "geometry:rotation.full_points_norm_inverse"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "status": "pass",
+          "passed": true,
+          "score": 4,
+          "max": 4,
+          "reason": "Every actual full-model point at XW 0/37 for both seeds matches independent 4D perspective, yaw/pitch, 3D perspective, image scale and character aspect; both eye-plane guards safely reject zero/near/behind denominators. Explicit nonfinite points are rejected.",
+          "evidence": [
+            "ascii_tree/projection.py:Projector.__call__",
+            "geometry:projection.full_sequential_composition",
+            "geometry:projection.pathological_input"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "status": "pass",
+          "passed": true,
+          "score": 3,
+          "max": 3,
+          "reason": "All six standard seed/mode renders run successfully without a TTY.",
+          "evidence": [
+            "frozen:frames[0:6]"
+          ]
+        }
+      ],
+      "assessed_criteria": 26,
+      "unassessed_criteria": [],
+      "frozen_evaluator": {
+        "path": "frozen-17/evaluation.json",
+        "sha256": "6b91e64bb10a69ef51b6878cbe1a979d574292edc28f8a2d67249dafb3e56ac0",
+        "observations_passed": 25,
+        "observations_max": 25,
+        "amended": false,
+        "test_count": 50,
+        "test_exit_code": 0
+      },
+      "native": {
+        "path": "interactive-17/report.json",
+        "executed_checks": 57,
+        "passed_checks": 57,
+        "smoke_completion": "pass",
+        "runtime_repairs": false
+      },
+      "geometry": {
+        "path": "geometry-17.json",
+        "executed_checks": 79,
+        "passed_checks": 79,
+        "failed_checks": 0,
+        "completion": "complete",
+        "all_checks_passed": true,
+        "failed_auxiliary_observations": [],
+        "measurements": [
+          {
+            "property": "skeleton.finite_xyzw",
+            "seed": 42,
+            "status": "pass",
+            "point_count": 1162,
+            "unique_points": 582
+          },
+          {
+            "property": "skeleton.affine_xyz_rank",
+            "seed": 42,
+            "status": "pass",
+            "rank": 3,
+            "scale": 15.57869818610967,
+            "pivot_tolerance": 1.557869818610967e-09
+          },
+          {
+            "property": "skeleton.variable_w",
+            "seed": 42,
+            "status": "pass",
+            "w_span": 5.70201888396505,
+            "distinct_w": 582
+          },
+          {
+            "property": "full_model.finite_xyzw",
+            "seed": 42,
+            "status": "pass",
+            "point_count": 2386,
+            "unique_points": 1806
+          },
+          {
+            "property": "full_model.affine_xyz_rank",
+            "seed": 42,
+            "status": "pass",
+            "rank": 3,
+            "scale": 16.313971793672337,
+            "pivot_tolerance": 1.6313971793672337e-09
+          },
+          {
+            "property": "full_model.variable_w",
+            "seed": 42,
+            "status": "pass",
+            "w_span": 5.812323189041262,
+            "distinct_w": 1806
+          },
+          {
+            "property": "graph.connected_rooted_branching",
+            "seed": 42,
+            "status": "pass",
+            "edge_count": 581,
+            "root_count": 1,
+            "reachable_count": 581,
+            "max_children": 2
+          },
+          {
+            "property": "graph.positive_lengths_radii",
+            "seed": 42,
+            "status": "pass",
+            "min_length": 0.11297139776276596,
+            "min_radius": 9.006325982041861e-06,
+            "leaf_count": 1224
+          },
+          {
+            "property": "projection.full_sequential_composition",
+            "seed": 42,
+            "status": "pass",
+            "point_count": 2386,
+            "compared": 2386,
+            "clipped": 0,
+            "max_absolute_error": 0.0,
+            "parameters": {
+              "width": 100,
+              "height": 40,
+              "scale": 1.9524756710339146,
+              "center": [
+                0.17148150165041054,
+                7.789349093054835,
+                -0.8174239455757171,
+                2.851009441982525
+              ],
+              "yaw": 25.0,
+              "pitch": -8.0,
+              "angle4d": 0.0,
+              "aspect": 2.0,
+              "time": 0.0
+            },
+            "source": "ascii_tree/projection.py:Projector.__call__"
+          },
+          {
+            "property": "projection.full_sequential_composition",
+            "seed": 42,
+            "status": "pass",
+            "point_count": 2386,
+            "compared": 2386,
+            "clipped": 0,
+            "max_absolute_error": 0.0,
+            "parameters": {
+              "width": 100,
+              "height": 40,
+              "scale": 1.9524756710339146,
+              "center": [
+                0.17148150165041054,
+                7.789349093054835,
+                -0.8174239455757171,
+                2.851009441982525
+              ],
+              "yaw": 25.0,
+              "pitch": -8.0,
+              "angle4d": 37.0,
+              "aspect": 2.0,
+              "time": 0.0
+            },
+            "source": "ascii_tree/projection.py:Projector.__call__"
+          },
+          {
+            "property": "skeleton.finite_xyzw",
+            "seed": 137,
+            "status": "pass",
+            "point_count": 1162,
+            "unique_points": 582
+          },
+          {
+            "property": "skeleton.affine_xyz_rank",
+            "seed": 137,
+            "status": "pass",
+            "rank": 3,
+            "scale": 16.207167907159366,
+            "pivot_tolerance": 1.6207167907159367e-09
+          },
+          {
+            "property": "skeleton.variable_w",
+            "seed": 137,
+            "status": "pass",
+            "w_span": 6.012564739832951,
+            "distinct_w": 582
+          },
+          {
+            "property": "full_model.finite_xyzw",
+            "seed": 137,
+            "status": "pass",
+            "point_count": 2404,
+            "unique_points": 1824
+          },
+          {
+            "property": "full_model.affine_xyz_rank",
+            "seed": 137,
+            "status": "pass",
+            "rank": 3,
+            "scale": 16.62741759654514,
+            "pivot_tolerance": 1.6627417596545141e-09
+          },
+          {
+            "property": "full_model.variable_w",
+            "seed": 137,
+            "status": "pass",
+            "w_span": 6.123622918280086,
+            "distinct_w": 1824
+          },
+          {
+            "property": "graph.connected_rooted_branching",
+            "seed": 137,
+            "status": "pass",
+            "edge_count": 581,
+            "root_count": 1,
+            "reachable_count": 581,
+            "max_children": 2
+          },
+          {
+            "property": "graph.positive_lengths_radii",
+            "seed": 137,
+            "status": "pass",
+            "min_length": 0.12753633795623384,
+            "min_radius": 1.1016508633054068e-05,
+            "leaf_count": 1242
+          },
+          {
+            "property": "projection.full_sequential_composition",
+            "seed": 137,
+            "status": "pass",
+            "point_count": 2404,
+            "compared": 2404,
+            "clipped": 0,
+            "max_absolute_error": 0.0,
+            "parameters": {
+              "width": 100,
+              "height": 40,
+              "scale": 1.8819833401231338,
+              "center": [
+                -0.09722253601161013,
+                8.103583953579683,
+                1.762596412481538,
+                3.0062823699164753
+              ],
+              "yaw": 25.0,
+              "pitch": -8.0,
+              "angle4d": 0.0,
+              "aspect": 2.0,
+              "time": 0.0
+            },
+            "source": "ascii_tree/projection.py:Projector.__call__"
+          },
+          {
+            "property": "projection.full_sequential_composition",
+            "seed": 137,
+            "status": "pass",
+            "point_count": 2404,
+            "compared": 2404,
+            "clipped": 0,
+            "max_absolute_error": 0.0,
+            "parameters": {
+              "width": 100,
+              "height": 40,
+              "scale": 1.8819833401231338,
+              "center": [
+                -0.09722253601161013,
+                8.103583953579683,
+                1.762596412481538,
+                3.0062823699164753
+              ],
+              "yaw": 25.0,
+              "pitch": -8.0,
+              "angle4d": 37.0,
+              "aspect": 2.0,
+              "time": 0.0
+            },
+            "source": "ascii_tree/projection.py:Projector.__call__"
+          }
+        ]
+      },
+      "limitations": [
+        "Subjective frame assessment uses saved ASCII rasters, not a visible-font GUI screenshot.",
+        "Some4D crown tips are cropped at the top; dense small branches can merge visually.",
+        "Native restoration proves the two required real transcript sequences; original console modes were not queried after exit."
+      ],
+      "execution_receipts": [
+        "frozen-17-execution.json",
+        "geometry-17-execution.json",
+        "terminal-17-execution.json"
+      ],
+      "source_integrity_file": "blind-review-source-integrity.json"
+    },
+    {
+      "id": "solution-18",
+      "quality_score": 96,
+      "accepted": true,
+      "categories": [
+        {
+          "id": "2d",
+          "name": "2D procedural branched tree and determinism",
+          "max": 12,
+          "score": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "2d.determinism",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Independent frozen renders repeated both seeds with identical bytes.",
+              "evidence": [
+                "repeat_determinism",
+                "2d-42.txt",
+                "2d-42-repeat.txt",
+                "2d-137.txt",
+                "2d-137-repeat.txt"
+              ]
+            },
+            {
+              "id": "2d.seed_variation",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Seed 42 and 137 produce different frames at matched 80x30 dimensions.",
+              "evidence": [
+                "2d-42.txt",
+                "2d-137-same-size.txt"
+              ]
+            },
+            {
+              "id": "2d.procedural_morphology",
+              "max": 7,
+              "score": 7,
+              "status": "pass",
+              "reason": "Bounded seeded growth produces one crooked tapered trunk, asymmetric spiral scaffold limbs, recursive higher-order branches and sparse tip foliage; both seeds show connected readable branch silhouettes.",
+              "evidence": [
+                "ascii_tree/model.py:generate_tree",
+                "2d-42.txt",
+                "2d-137.txt",
+                "geometry:graph.connected_rooted_branching",
+                "geometry:graph.positive_lengths_radii"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3d",
+          "name": "3D XYZ rotation depth and occlusion",
+          "max": 13,
+          "score": 13,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "3d.angular_change",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Documented yaw 0 and 37 generate distinct frozen frames; the native 3D arrow roundtrip changes and exactly restores the CLI oracle.",
+              "evidence": [
+                "3d-angle-0.txt",
+                "3d-angle-37.txt",
+                "native:7"
+              ]
+            },
+            {
+              "id": "3d.geometry",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "All actual segment endpoints and foliage points are finite; both skeleton and full-model affine XYZ ranks are 3 for both seeds. One rooted connected skeleton has genuine branching and positive radii/lengths.",
+              "evidence": [
+                "ascii_tree/model.py",
+                "geometry:skeleton.affine_xyz_rank",
+                "geometry:full_model.affine_xyz_rank",
+                "geometry:graph.connected_rooted_branching"
+              ]
+            },
+            {
+              "id": "3d.occlusion",
+              "max": 5,
+              "score": 5,
+              "status": "pass",
+              "reason": "Per-cell z-buffer selects the smaller positive camera depth; segment depth uses reciprocal perspective interpolation, surface thickness and depth/light-dependent ASCII glyphs. Crossing-segment draw-order and interpolation tests pass.",
+              "evidence": [
+                "ascii_tree/render.py:Raster",
+                "ascii_tree/render.py:render_tree",
+                "tests/test_render.py",
+                "frozen:tests"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4d",
+          "name": "4D XYZW variable W hyperplane rotation and sequential projection",
+          "max": 20,
+          "score": 19,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "4d.angular_change",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Frozen XW 0/37 frames differ; native literal] and[ match one-step and reversed-angle CLI oracles.",
+              "evidence": [
+                "4d-angle-0.txt",
+                "4d-angle-37.txt",
+                "native:12-17"
+              ]
+            },
+            {
+              "id": "4d.coordinates",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "The actual production graph and every foliage vertex store finite XYZW, with no unrelated3D-tree substitution.",
+              "evidence": [
+                "ascii_tree/model.py",
+                "geometry:skeleton.finite_xyzw",
+                "geometry:full_model.finite_xyzw"
+              ]
+            },
+            {
+              "id": "4d.variable_w",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "W spans are positive on the actual skeleton and full model for both seeds, above 1e-8; source derives W from branch growth.",
+              "evidence": [
+                "ascii_tree/model.py:generate_tree",
+                "geometry:skeleton.variable_w",
+                "geometry:full_model.variable_w"
+              ]
+            },
+            {
+              "id": "4d.rotation_math",
+              "max": 4,
+              "score": 4,
+              "status": "pass",
+              "reason": "Production XW operator has fixed sigma +1; all four basis vectors at 37/90 degrees match signed sine/cosine. SO(4) matrix orthogonality, determinant +1, identity and inverse hold; full-model 4D norms and inverse transforms pass.",
+              "evidence": [
+                "ascii_tree/render.py:rotate_xw",
+                "geometry:rotation.signed_basis",
+                "geometry:rotation.orthogonal",
+                "geometry:rotation.determinant",
+                "geometry:rotation.full_points_norm_inverse"
+              ]
+            },
+            {
+              "id": "4d.projection",
+              "max": 4,
+              "score": 3,
+              "status": "pass",
+              "reason": "Every actual full-model point at XW 0/37 for both seeds matches independent 4D perspective, yaw/pitch, 3D perspective, image scale and character aspect; both eye-plane guards safely reject zero/near/behind denominators. Deduct 1 point: direct projection of malformed NaN/Inf model points yields nonfinite outputs in 18 auxiliary checks; this is retained as a defensive-input defect. The five existing functional gates pass on the complete finite production models and validated CLI views; no new auxiliary gate is introduced.",
+              "evidence": [
+                "ascii_tree/render.py:project",
+                "geometry:projection.full_sequential_composition",
+                "geometry:projection.pathological_input"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "name": "UX controls help stable object and export",
+          "max": 12,
+          "score": 12,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "ux.help",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Actual documented CLI help exits0; actual native help toggle produces the production marker.",
+              "evidence": [
+                "frozen:cli.help",
+                "native:27",
+                "README.md"
+              ]
+            },
+            {
+              "id": "ux.export",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "All six standard frozen mode/seed exports have exact dimensions and printable ASCII with LF only; native current-frame exports exactly match CLI states.",
+              "evidence": [
+                "frozen:frames[0:6]",
+                "native:2-51"
+              ]
+            },
+            {
+              "id": "ux.interactive_controls",
+              "max": 6,
+              "score": 6,
+              "status": "pass",
+              "reason": "Unmodified production viewer passes exactly 57 real ConPTY checks, covering mode selection, arrows and reverse, literal brackets, documented zoom factors, help, animation/pause, reset, new seed, export and shutdown.",
+              "evidence": [
+                "native:checks1-57",
+                "interactive-18/report.json",
+                "ascii_tree/app.py",
+                "ascii_tree/terminal.py"
+              ]
+            },
+            {
+              "id": "ux.stable_object",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Complete graph/XYZW/radii/foliage structural fingerprints remain unchanged through 1/2/3, angles and reset for both seeds; native mode exports use the same seed. Only G regenerates seed +1.",
+              "evidence": [
+                "geometry:model.stable_across_modes_angles",
+                "geometry:model.new_seed_operation",
+                "native:4,7,10,42",
+                "ascii_tree/app.py"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "aesthetics",
+          "name": "Organic appearance crown branching and shading",
+          "max": 12,
+          "score": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "aesthetics.blind_frames",
+              "max": 12,
+              "score": 9,
+              "status": "pass",
+              "reason": "Recognizable asymmetric tapered trees with visible limb hierarchy and airy foliage clusters; seeds have distinct silhouettes. Small repeated leaf bouquets and angular twig tangles read more as a sparse scaffold than a full organic crown, with coarser bark shading; some upper views touch/crop the frame. Subjective 9/12.",
+              "evidence": [
+                "2d-42.txt",
+                "3d-42.txt",
+                "4d-42.txt",
+                "2d-137.txt",
+                "3d-137.txt",
+                "4d-137.txt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reliability",
+          "name": "Resize Ctrl+C headless tiny terminal and crashes",
+          "max": 10,
+          "score": 10,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "reliability.headless",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "All six standard seed/mode renders run successfully without a TTY.",
+              "evidence": [
+                "frozen:frames[0:6]"
+              ]
+            },
+            {
+              "id": "reliability.tiny",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Frozen 2x2 renders pass all modes; actual native 1x1 resize/export also matches a bounded 1x1 CLI frame.",
+              "evidence": [
+                "frozen:*-tiny.txt",
+                "native:46-48"
+              ]
+            },
+            {
+              "id": "reliability.resize",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "Real ConPTY resizes 100x40 to 30x12 to 1x1 and back preserve state; all exact viewport/oracle comparisons pass.",
+              "evidence": [
+                "native:43-51"
+              ]
+            },
+            {
+              "id": "reliability.ctrl_c",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Three actual native sessions receive q, literal Esc 0x1B and Ctrl+C 0x03; all exit0 and emit both cursor-show and alternate-screen-leave sequences. This does not claim a post-exit query of original console-mode flags.",
+              "evidence": [
+                "native:52-57",
+                "interactive-18/conpty-main.bin",
+                "interactive-18/conpty-escape.bin",
+                "interactive-18/conpty-ctrl-c.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tests",
+          "name": "Meaningful reproducible test coverage",
+          "max": 9,
+          "score": 9,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "tests.execution",
+              "max": 3,
+              "score": 3,
+              "status": "pass",
+              "reason": "Documented unittest discover command actually exits 0 with nonzero test count. Test count is evidence only and contributes no size bonus.",
+              "evidence": [
+                "frozen:tests"
+              ]
+            },
+            {
+              "id": "tests.coverage",
+              "max": 6,
+              "score": 6,
+              "status": "pass",
+              "reason": "Meaningful assertions cover all ten task obligations: deterministic and varied seeds, graph/radii/finite coordinates, exact frame sizes/ASCII, 3D camera/occlusion, 4D math/W/raster change, shared object, headless/nonTTY/lifecycle and minimum dimensions. Independent native evidence supplements lifecycle mocks.",
+              "evidence": [
+                "tests/test_model.py",
+                "tests/test_render.py",
+                "tests/test_app.py",
+                "tests/test_cli.py"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "name": "Modularity source and dependencies",
+          "max": 7,
+          "score": 7,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "maintainability.review",
+              "max": 7,
+              "score": 7,
+              "status": "pass",
+              "reason": "Immutable geometry dataclasses and pure projection/raster APIs separate the model, UI state, CLI and platform terminal handling. The bounded generator and dependency-free runtime are straightforward to inspect; configuration, exports and deterministic rendering have focused tests. No points are awarded for file count or documentation volume.",
+              "evidence": [
+                "ascii_tree/model.py",
+                "ascii_tree/render.py",
+                "ascii_tree/app.py",
+                "ascii_tree/terminal.py",
+                "ascii_tree/cli.py",
+                "pyproject.toml"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "readme",
+          "name": "Real setup commands and explanation of 4D",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "criteria": [
+            {
+              "id": "readme.commands",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "README module/script commands correspond to the actual CLI and were exercised by the unchanged evaluator and native/headless oracles.",
+              "evidence": [
+                "README.md",
+                "frozen:cli",
+                "frozen:tests",
+                "native:oracles"
+              ]
+            },
+            {
+              "id": "readme.installation",
+              "max": 1,
+              "score": 1,
+              "status": "pass",
+              "reason": "Python 3.12+ module launch needs no third-party runtime dependencies; optional packaging pins setuptools 75.8.0 and defines the actual entrypoint.",
+              "evidence": [
+                "README.md",
+                "pyproject.toml"
+              ]
+            },
+            {
+              "id": "readme.4d_explanation",
+              "max": 2,
+              "score": 2,
+              "status": "pass",
+              "reason": "README accurately describes stored growth W, centering/scaling, the signed XW rotation, sequential4D and3D perspectives, camera and text-cell aspect.",
+              "evidence": [
+                "README.md",
+                "ascii_tree/render.py"
+              ]
+            }
+          ]
+        }
+      ],
+      "critical_gates": [
+        {
+          "id": "4d.coordinates",
+          "status": "pass",
+          "passed": true,
+          "score": 4,
+          "max": 4,
+          "reason": "The actual production graph and every foliage vertex store finite XYZW, with no unrelated3D-tree substitution.",
+          "evidence": [
+            "ascii_tree/model.py",
+            "geometry:skeleton.finite_xyzw",
+            "geometry:full_model.finite_xyzw"
+          ]
+        },
+        {
+          "id": "4d.variable_w",
+          "status": "pass",
+          "passed": true,
+          "score": 4,
+          "max": 4,
+          "reason": "W spans are positive on the actual skeleton and full model for both seeds, above 1e-8; source derives W from branch growth.",
+          "evidence": [
+            "ascii_tree/model.py:generate_tree",
+            "geometry:skeleton.variable_w",
+            "geometry:full_model.variable_w"
+          ]
+        },
+        {
+          "id": "4d.rotation_math",
+          "status": "pass",
+          "passed": true,
+          "score": 4,
+          "max": 4,
+          "reason": "Production XW operator has fixed sigma +1; all four basis vectors at 37/90 degrees match signed sine/cosine. SO(4) matrix orthogonality, determinant +1, identity and inverse hold; full-model 4D norms and inverse transforms pass.",
+          "evidence": [
+            "ascii_tree/render.py:rotate_xw",
+            "geometry:rotation.signed_basis",
+            "geometry:rotation.orthogonal",
+            "geometry:rotation.determinant",
+            "geometry:rotation.full_points_norm_inverse"
+          ]
+        },
+        {
+          "id": "4d.projection",
+          "status": "pass",
+          "passed": true,
+          "score": 3,
+          "max": 4,
+          "reason": "Every actual full-model point at XW 0/37 for both seeds matches independent 4D perspective, yaw/pitch, 3D perspective, image scale and character aspect; both eye-plane guards safely reject zero/near/behind denominators. Deduct 1 point: direct projection of malformed NaN/Inf model points yields nonfinite outputs in 18 auxiliary checks; this is retained as a defensive-input defect. The five existing functional gates pass on the complete finite production models and validated CLI views; no new auxiliary gate is introduced.",
+          "evidence": [
+            "ascii_tree/render.py:project",
+            "geometry:projection.full_sequential_composition",
+            "geometry:projection.pathological_input"
+          ]
+        },
+        {
+          "id": "reliability.headless",
+          "status": "pass",
+          "passed": true,
+          "score": 3,
+          "max": 3,
+          "reason": "All six standard seed/mode renders run successfully without a TTY.",
+          "evidence": [
+            "frozen:frames[0:6]"
+          ]
+        }
+      ],
+      "assessed_criteria": 26,
+      "unassessed_criteria": [],
+      "frozen_evaluator": {
+        "path": "frozen-18/evaluation.json",
+        "sha256": "aae28e2693a29f46eeec4a82977591673e462e407c0bd604be21a9fe596833a1",
+        "observations_passed": 25,
+        "observations_max": 25,
+        "amended": false,
+        "test_count": 26,
+        "test_exit_code": 0
+      },
+      "native": {
+        "path": "interactive-18/report.json",
+        "executed_checks": 57,
+        "passed_checks": 57,
+        "smoke_completion": "pass",
+        "runtime_repairs": false
+      },
+      "geometry": {
+        "path": "geometry-18.json",
+        "executed_checks": 79,
+        "passed_checks": 61,
+        "failed_checks": 18,
+        "completion": "complete",
+        "all_checks_passed": false,
+        "failed_auxiliary_observations": [
+          {
+            "property": "projection.pathological_input",
+            "seed": 42,
+            "status": "fail",
+            "case": "nonfinite x nan",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 42,
+            "status": "fail",
+            "case": "nonfinite x inf",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 42,
+            "status": "fail",
+            "case": "nonfinite x -inf",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 42,
+            "status": "fail",
+            "case": "nonfinite y nan",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 42,
+            "status": "fail",
+            "case": "nonfinite y inf",
+            "result": [
+              49.5,
+              "nan",
+              "inf",
+              0.0
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 42,
+            "status": "fail",
+            "case": "nonfinite z nan",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 42,
+            "status": "fail",
+            "case": "nonfinite z inf",
+            "result": [
+              "nan",
+              "nan",
+              "inf",
+              0.0
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 42,
+            "status": "fail",
+            "case": "nonfinite w nan",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 42,
+            "status": "fail",
+            "case": "nonfinite w -inf",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 137,
+            "status": "fail",
+            "case": "nonfinite x nan",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 137,
+            "status": "fail",
+            "case": "nonfinite x inf",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 137,
+            "status": "fail",
+            "case": "nonfinite x -inf",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 137,
+            "status": "fail",
+            "case": "nonfinite y nan",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 137,
+            "status": "fail",
+            "case": "nonfinite y inf",
+            "result": [
+              49.5,
+              "nan",
+              "inf",
+              0.0
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 137,
+            "status": "fail",
+            "case": "nonfinite z nan",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 137,
+            "status": "fail",
+            "case": "nonfinite z inf",
+            "result": [
+              "nan",
+              "nan",
+              "inf",
+              0.0
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 137,
+            "status": "fail",
+            "case": "nonfinite w nan",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          },
+          {
+            "property": "projection.pathological_input",
+            "seed": 137,
+            "status": "fail",
+            "case": "nonfinite w -inf",
+            "result": [
+              "nan",
+              "nan",
+              "nan",
+              "nan"
+            ]
+          }
+        ],
+        "measurements": [
+          {
+            "property": "skeleton.finite_xyzw",
+            "seed": 42,
+            "status": "pass",
+            "point_count": 630,
+            "unique_points": 316
+          },
+          {
+            "property": "skeleton.affine_xyz_rank",
+            "seed": 42,
+            "status": "pass",
+            "rank": 3,
+            "scale": 11.70975161295782,
+            "pivot_tolerance": 1.1709751612957821e-09
+          },
+          {
+            "property": "skeleton.variable_w",
+            "seed": 42,
+            "status": "pass",
+            "w_span": 0.9940123306666666,
+            "distinct_w": 309
+          },
+          {
+            "property": "full_model.finite_xyzw",
+            "seed": 42,
+            "status": "pass",
+            "point_count": 1178,
+            "unique_points": 864
+          },
+          {
+            "property": "full_model.affine_xyz_rank",
+            "seed": 42,
+            "status": "pass",
+            "rank": 3,
+            "scale": 11.924867626744922,
+            "pivot_tolerance": 1.1924867626744922e-09
+          },
+          {
+            "property": "full_model.variable_w",
+            "seed": 42,
+            "status": "pass",
+            "w_span": 0.9940123306666666,
+            "distinct_w": 309
+          },
+          {
+            "property": "graph.connected_rooted_branching",
+            "seed": 42,
+            "status": "pass",
+            "edge_count": 315,
+            "root_count": 1,
+            "reachable_count": 315,
+            "max_children": 2
+          },
+          {
+            "property": "graph.positive_lengths_radii",
+            "seed": 42,
+            "status": "pass",
+            "min_length": 0.13689414376210385,
+            "min_radius": 4.7549281982301714e-05,
+            "leaf_count": 548
+          },
+          {
+            "property": "projection.full_sequential_composition",
+            "seed": 42,
+            "status": "pass",
+            "point_count": 1178,
+            "compared": 1178,
+            "clipped": 0,
+            "max_absolute_error": 0.0,
+            "parameters": {
+              "width": 100,
+              "height": 40,
+              "scale": 2.2222222222222223,
+              "center_y": 6.0,
+              "W": "8*(w-.5)",
+              "yaw": -22.0,
+              "pitch": 8.0,
+              "angle4d": 0.0,
+              "aspect": 0.5,
+              "time": 0.0
+            },
+            "source": "ascii_tree/render.py:project"
+          },
+          {
+            "property": "projection.full_sequential_composition",
+            "seed": 42,
+            "status": "pass",
+            "point_count": 1178,
+            "compared": 1178,
+            "clipped": 0,
+            "max_absolute_error": 0.0,
+            "parameters": {
+              "width": 100,
+              "height": 40,
+              "scale": 2.2222222222222223,
+              "center_y": 6.0,
+              "W": "8*(w-.5)",
+              "yaw": -22.0,
+              "pitch": 8.0,
+              "angle4d": 37.0,
+              "aspect": 0.5,
+              "time": 0.0
+            },
+            "source": "ascii_tree/render.py:project"
+          },
+          {
+            "property": "skeleton.finite_xyzw",
+            "seed": 137,
+            "status": "pass",
+            "point_count": 630,
+            "unique_points": 316
+          },
+          {
+            "property": "skeleton.affine_xyz_rank",
+            "seed": 137,
+            "status": "pass",
+            "rank": 3,
+            "scale": 11.83776543938706,
+            "pivot_tolerance": 1.183776543938706e-09
+          },
+          {
+            "property": "skeleton.variable_w",
+            "seed": 137,
+            "status": "pass",
+            "w_span": 0.9940123306666666,
+            "distinct_w": 309
+          },
+          {
+            "property": "full_model.finite_xyzw",
+            "seed": 137,
+            "status": "pass",
+            "point_count": 1178,
+            "unique_points": 864
+          },
+          {
+            "property": "full_model.affine_xyz_rank",
+            "seed": 137,
+            "status": "pass",
+            "rank": 3,
+            "scale": 12.084052619672173,
+            "pivot_tolerance": 1.2084052619672174e-09
+          },
+          {
+            "property": "full_model.variable_w",
+            "seed": 137,
+            "status": "pass",
+            "w_span": 0.9940123306666666,
+            "distinct_w": 309
+          },
+          {
+            "property": "graph.connected_rooted_branching",
+            "seed": 137,
+            "status": "pass",
+            "edge_count": 315,
+            "root_count": 1,
+            "reachable_count": 315,
+            "max_children": 2
+          },
+          {
+            "property": "graph.positive_lengths_radii",
+            "seed": 137,
+            "status": "pass",
+            "min_length": 0.1302658220174362,
+            "min_radius": 4.7549281982301714e-05,
+            "leaf_count": 548
+          },
+          {
+            "property": "projection.full_sequential_composition",
+            "seed": 137,
+            "status": "pass",
+            "point_count": 1178,
+            "compared": 1178,
+            "clipped": 0,
+            "max_absolute_error": 0.0,
+            "parameters": {
+              "width": 100,
+              "height": 40,
+              "scale": 2.2222222222222223,
+              "center_y": 6.0,
+              "W": "8*(w-.5)",
+              "yaw": -22.0,
+              "pitch": 8.0,
+              "angle4d": 0.0,
+              "aspect": 0.5,
+              "time": 0.0
+            },
+            "source": "ascii_tree/render.py:project"
+          },
+          {
+            "property": "projection.full_sequential_composition",
+            "seed": 137,
+            "status": "pass",
+            "point_count": 1178,
+            "compared": 1178,
+            "clipped": 0,
+            "max_absolute_error": 0.0,
+            "parameters": {
+              "width": 100,
+              "height": 40,
+              "scale": 2.2222222222222223,
+              "center_y": 6.0,
+              "W": "8*(w-.5)",
+              "yaw": -22.0,
+              "pitch": 8.0,
+              "angle4d": 37.0,
+              "aspect": 0.5,
+              "time": 0.0
+            },
+            "source": "ascii_tree/render.py:project"
+          }
+        ]
+      },
+      "limitations": [
+        "18 failed auxiliary malformed-point checks are retained: render.project accepts NaN/Inf coordinates and can return nonfinite projections. No such values occurred anywhere in the two generated production models; CLI View parameters reject nonfinite values.",
+        "Zoom+ then- multiplies by .99, as implemented/documented in the adapter; the native oracle used that state without imposing a new exact inverse requirement.",
+        "Sparse foliage bouquets/coarse shading and some upper clipping limit crown naturalism.",
+        "Subjective frame assessment uses saved ASCII rasters, not a visible-font GUI screenshot.",
+        "Native restoration proves transcript sequences; original console modes were not queried after exit."
+      ],
+      "execution_receipts": [
+        "frozen-18-execution.json",
+        "geometry-18-execution.json",
+        "terminal-18-execution.json"
+      ],
+      "source_integrity_file": "blind-review-source-integrity.json"
+    }
+  ],
+  "source_integrity": {
+    "path": "blind-review-source-integrity.json",
+    "files_checked": 90,
+    "all_unchanged": true,
+    "includes_checker_evaluator_and_frozen_json_hashes": true
+  },
+  "support": {
+    "adapters": "verification/tree/CASE09_ADAPTERS.md",
+    "protocols": {
+      "geometry-case09-protocol.md": "796302c25e3711985393124ca0c8a816ac66c3350eb132d7ffc879f4f44e3620",
+      "conpty-case09-protocol.md": "782714f1cdbfd92e0cbe76418d1105e63404cc3bbc19db2f05ae02b9f611e026"
+    },
+    "checker_hashes": {
+      "geometry_case09.py": "27723723c78c9a9aafe864630efec4ec976baa07c911141b1a7fdcf8bab33737",
+      "native57_case09.py": "8d7b23f4f974e62303f9f8f5b930b11c0b6a6510319402ea0dffb73ff28db4d3",
+      "conpty_case09_neutral.py": "d7c59cf9a3a999dd64d6d796cc9e8ce501d157000db990e2a9f4b9c59daaa6f9",
+      "evaluator.py": "a6e5e461f36a377a647f29db94519ccbc805a7d06937321550d589710889f653",
+      "rubric.json": "74aa2e1de107aac0226d1df352970fe4ba0e5ec56cc777ce49983d851879c466"
+    }
+  },
+  "attempts": {
+    "sdk_runs": 6,
+    "per_solution": [
+      "unchanged frozen evaluator",
+      "independent geometry",
+      "native57"
+    ],
+    "execution_retries": 0,
+    "execution_timeouts": 0,
+    "execution_errors": 0,
+    "application_source_repairs": 0,
+    "failed_auxiliary_checks_retained": 18,
+    "preexecution_checker_cli_adaptation": "Added aliases and output-dir mapping before first execution; no behavioral criteria changed."
+  },
+  "proof_boundaries": [
+    "Geometry totals are auxiliary observations, not a normalized quality score or a new acceptance gate.",
+    "No claim that solution-18 geometry is all-pass:18 direct nonfinite-point failures remain in the original JSON and the review.",
+    "The unchanged frozen evaluator JSONs remain partial observations and are not overwritten by the completed blind score.",
+    "Aesthetic scores are subjective judgments of the observed rasters; documentation length, test count, output format and strategy identity add no quality points.",
+    "Linux/WSL, visible-font GUI appearance and post-exit original console input flags are not independently assessed here."
+  ]
+}
