@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "finished_utc": "2026-10-25T06:10:42.085923+00:00",
+  "key": "ledgerreconcile",
+  "experiment_id": "ledger-case-20261024-02",
+  "controller_status": "finished",
+  "failure_category": null,
+  "integrity": {
+    "frozen_runtime_unchanged": true,
+    "snapshot_manifest_unchanged": true,
+    "inputs_unchanged": true,
+    "executable_unchanged": true,
+    "prerequisite_unchanged": true,
+    "executed_manifest_matches": true
+  },
+  "policy_violations": [],
+  "groups": [
+    "A",
+    "B"
+  ],
+  "arms": {
+    "A": {
+      "status": "failed",
+      "metrics_sha256": "0c69bafdb86dabe9a4cfbd4643aa66b9969ae1099931b339cf4034f7b979ea20",
+      "total_arm_s": 451.344,
+      "orchestration_frontload_s": 0.094,
+      "model_requests_total": 9,
+      "budget_tool": {
+        "configured": false,
+        "publisher_failed": null,
+        "status_calls": null,
+        "successful_calls": null,
+        "unavailable_calls": null,
+        "audit_valid": null
+      },
+      "budget_feedback_use_status": "unknown",
+      "mercury_successful_calls": 0,
+      "online_probe_counts": {
+        "harness2_real_probes": 0,
+        "harness_inspired_probes": 0
+      },
+      "quality_score": null,
+      "accepted": null
+    },
+    "B": {
+      "status": "failed",
+      "metrics_sha256": "5141c925f75f3569f17633a04681f6d5a495ecce696b96469788776db7f535fe",
+      "total_arm_s": 63.86,
+      "orchestration_frontload_s": 1.813,
+      "model_requests_total": 2,
+      "budget_tool": {
+        "configured": true,
+        "publisher_failed": false,
+        "status_calls": 0,
+        "successful_calls": 0,
+        "unavailable_calls": 0,
+        "audit_valid": true
+      },
+      "budget_feedback_use_status": "not_observed",
+      "mercury_successful_calls": 1,
+      "online_probe_counts": {
+        "harness2_real_probes": 0,
+        "harness_inspired_probes": 0
+      },
+      "quality_score": null,
+      "accepted": null
+    }
+  },
+  "retained_in_denominator": true,
+  "denominator": 2,
+  "quality_assessed_by_controller": false,
+  "speed_claim": null,
+  "retry_allowed": false,
+  "both_arms_native_completed": false,
+  "resource_monitor_launched_by_controller": false
+}

@@ -4,6 +4,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'runtime'))
@@ -29,6 +30,29 @@ class NativeBudgetTests(unittest.TestCase):
         self.assertEqual(result['execution_budget']['remaining_s'],40)
         self.assertEqual(result['execution_budget']['phase'],'stabilize')
         self.assertEqual(result['status'],'completed_unverified')
+
+    def test_final_native_command_has_one_budget_context_and_preserves_caller_and_safety(self):
+        process=fixture.Process(fixture.Input(),[{'type':'turn.completed','usage':{}}])
+        channel=SimpleNamespace(runtime_root=self.root/'snapshot',status_file=self.root/'status.json',
+                                audit_dir=self.root/'audit')
+        original='Caller context: keep all requirements and literal content.'
+        with patch.object(native,'subscription'),patch.object(native.subprocess,'Popen',return_value=process) as launch:
+            native._run('fake',self.root,Config(timeout_s=90), 'Unchanged task', self.root/'run',
+                        parallel=True,instructions=original,budget_channel=channel)
+        command=launch.call_args.args[0]
+        options={command[i+1].split('=',1)[0]:json.loads(command[i+1].split('=',1)[1])
+                 for i,value in enumerate(command[:-1]) if value=='-c'}
+        text=options['developer_instructions']
+        self.assertTrue(text.startswith(original))
+        self.assertEqual(text.count('Controller: selected_strategy=parallel'),1)
+        self.assertEqual(text.count('flow_budget.status'),1)
+        self.assertIn('90 seconds',text)
+        self.assertEqual(options['model_reasoning_effort'],'xhigh')
+        self.assertEqual(options['model_providers.flow_subscription.request_max_retries'],0)
+        self.assertEqual(options['model_providers.flow_subscription.stream_max_retries'],0)
+        self.assertFalse(options['sandbox_workspace_write.network_access'])
+        self.assertTrue(options['mcp_servers.flow_budget.enabled'])
+        self.assertEqual(options['mcp_servers.flow_budget.enabled_tools'],['status'])
 
     def test_operation_hashes_repeat_only_within_run_without_command_persistence(self):
         command='synthetic private command and arguments'

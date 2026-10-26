@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "preregistration_sha256": "f04507f9caa0033c728cb3d0b854a28a166df5415a32c6c30a0fdc547bf24db6",
+  "attempts": [
+    {
+      "id": "stream-prerequisite-20261024-03",
+      "receipt_sha256": "02acc58f7e43eeb832ad3f0498352bece4e8fdca7fbfd94834b7e0697e626821",
+      "source_commit": "e1b6875826ecc578d608899a8bec31ddfdf22d06",
+      "success": false,
+      "requests": 4,
+      "completed_requests": 3,
+      "wall_clock_s": 178.0,
+      "budget_tool": {
+        "configured": true,
+        "publisher_failed": false,
+        "status_calls": 0,
+        "successful_calls": 0,
+        "unavailable_calls": 0,
+        "audit_valid": true,
+        "phases": {}
+      },
+      "benchmark_credit": false
+    },
+    {
+      "id": "stream-prerequisite-20261024-04",
+      "receipt_sha256": "bbc358899a1134dfada35c8baa5c3f4ea423d17a271e8d5346c859b148ba929c",
+      "source_commit": "e1b6875826ecc578d608899a8bec31ddfdf22d06",
+      "success": false,
+      "requests": 6,
+      "completed_requests": 6,
+      "wall_clock_s": 86.141,
+      "budget_tool": {
+        "configured": true,
+        "publisher_failed": true,
+        "status_calls": 3,
+        "successful_calls": 3,
+        "unavailable_calls": 0,
+        "audit_valid": true,
+        "phases": {
+          "build": 3
+        }
+      },
+      "benchmark_credit": false
+    },
+    {
+      "id": "stream-prerequisite-20261024-05",
+      "receipt_sha256": "c1d7842f15cf8915d08c02e4583edbae2ec3f8ac6e0de3f7f035273b929eaaf0",
+      "source_commit": "ae4ba13953ebe8ca997c7ae81c8e3ce3a9dfc811",
+      "success": true,
+      "requests": 6,
+      "completed_requests": 6,
+      "wall_clock_s": 103.938,
+      "budget_tool": {
+        "configured": true,
+        "publisher_failed": false,
+        "publisher_error_counts": {},
+        "publisher_retry_attempts": 0,
+        "publisher_recovered_publications": 0,
+        "publisher_failed_publications": 0,
+        "publisher_last_errno": null,
+        "publisher_last_winerror": null,
+        "status_calls": 3,
+        "successful_calls": 3,
+        "unavailable_calls": 0,
+        "audit_valid": true,
+        "phases": {
+          "build": 3
+        }
+      },
+      "benchmark_credit": false
+    }
+  ],
+  "reason_for_04": "Owner reported and resolved connection problem after 03; historical network cause not independently identified",
+  "reason_for_05": "Changed code after local Windows metadata replacement reproduction and regression checks",
+  "total_setup_native_requests": 16,
+  "total_setup_semantically_completed": 15,
+  "benchmark_task_attempts_retried": false,
+  "analysis_model_calls": 0,
+  "analysis_app_runs": 0
+}

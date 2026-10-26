@@ -1,0 +1,4 @@
+payment_id,order_id,currency,amount
+p1,001,USD,10.0
+p2,002,EUR,3.00
+refund2,002,EUR,-0.50

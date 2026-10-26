@@ -1,0 +1,4041 @@
+{
+  "schema": 1,
+  "kind": "owned_cli_orchestration_metadata_audit",
+  "created_utc": "2026-10-25T05:55:16.613182+00:00",
+  "write_scope": "one new metadata-only JSON; immutable experiments preserved",
+  "scope": [
+    "ledger-case-20261024-01 A/B",
+    "safezip-case-20261024-01 A/B",
+    "exact owned-cwd SQLite rows bound by SHA256 to native telemetry; exact matched rollout only",
+    "original frozen09 and current committed generic instruction text"
+  ],
+  "excluded": [
+    "application source inspection",
+    "hidden graders and cases",
+    "unrelated native histories or broad SQL",
+    "auth/credentials",
+    "model/application/SDK/Git execution"
+  ],
+  "cases": {
+    "ledger": {
+      "arms": {
+        "A": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "attempts": 1,
+          "total_arm_s": 573.031,
+          "native_wall_clock_s": 572.828,
+          "orchestration_frontload_s": 0.062,
+          "request_count": 13,
+          "profiles": {
+            "xhigh": {
+              "request_count": 13,
+              "usage": {
+                "input_tokens": 398537,
+                "output_tokens": 20017,
+                "cached_tokens": 130944,
+                "reasoning_tokens": 7267,
+                "total_tokens": 418554
+              },
+              "duration_sum_s": 497.516,
+              "interval_union_s": 497.516,
+              "open_sum_s": 17.924,
+              "body_read_sum_s": 472.327
+            }
+          },
+          "all_requests_usage": {
+            "input_tokens": 398537,
+            "output_tokens": 20017,
+            "total_tokens": 418554,
+            "cached_tokens": 130944,
+            "reasoning_tokens": 7267
+          },
+          "root_cli_usage": {
+            "input_tokens": 398537,
+            "output_tokens": 20017,
+            "cached_tokens": 130944
+          },
+          "transport": {
+            "completed_count": 13,
+            "semantic_completion_count": 13,
+            "read_termination_counts": {
+              "response_completed": 13
+            },
+            "failed_request_count": 0,
+            "request_duration_sum_s": 497.516,
+            "request_interval_union_s": 497.516,
+            "medium_xhigh_overlap_s": 0.0,
+            "medium_outside_xhigh_union_s": 0.0,
+            "native_wall_outside_request_union_s": 75.312
+          },
+          "budget_tool": {
+            "configured": false
+          },
+          "mercury": {
+            "successful_calls": 0,
+            "free_inference_attempts": null,
+            "cost_usd": null,
+            "wall_clock_s": null
+          },
+          "harness_inspired_probes": 0,
+          "upstream_harness_probes": 0,
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_tool_items": {
+            "command_execution": {
+              "completed_item_count": 12,
+              "status_counts": {
+                "failed": 2,
+                "completed": 10
+              },
+              "duration_observation_count": 12,
+              "duration_sum_s": 11.953,
+              "repeated_operation_digest_counts": [],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            },
+            "mcp_tool_call": {
+              "completed_item_count": 0,
+              "status_counts": {},
+              "duration_observation_count": 0,
+              "duration_sum_s": null,
+              "repeated_operation_digest_counts": [],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            },
+            "collab_tool_call": {
+              "completed_item_count": 0,
+              "status_counts": {},
+              "duration_observation_count": 0,
+              "duration_sum_s": null,
+              "repeated_operation_digest_counts": [],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            }
+          },
+          "native_completed_item_type_counts": {
+            "error": 1,
+            "agent_message": 7,
+            "command_execution": 12,
+            "file_change": 3
+          },
+          "owned_sessions": {
+            "exact_cwd_row_count": 0,
+            "matched_session_count": 0,
+            "parent_link_verified": null,
+            "sessions": [],
+            "unattributed_gateway_sequences": null,
+            "limitation": "A persisted own-cwd session absent; no wider lookup. Per-request gateway profiles are observed; unmatched root-level requests are not assigned to a cause."
+          },
+          "requests": [
+            {
+              "sequence": 1,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 24.156,
+              "native_trace_end_s": 29.125,
+              "duration_s": 4.969,
+              "upstream_open_s": 1.063,
+              "upstream_body_read_s": 3.906,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20185,
+                "output_tokens": 213,
+                "cached_tokens": 0,
+                "reasoning_tokens": 0,
+                "total_tokens": 20398
+              }
+            },
+            {
+              "sequence": 2,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 30.671,
+              "native_trace_end_s": 36.562,
+              "duration_s": 5.891,
+              "upstream_open_s": 1.0,
+              "upstream_body_read_s": 4.891,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20809,
+                "output_tokens": 125,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 60,
+                "total_tokens": 20934
+              }
+            },
+            {
+              "sequence": 3,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 37.921,
+              "native_trace_end_s": 42.89,
+              "duration_s": 4.969,
+              "upstream_open_s": 1.141,
+              "upstream_body_read_s": 3.828,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 21123,
+                "output_tokens": 139,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 42,
+                "total_tokens": 21262
+              }
+            },
+            {
+              "sequence": 4,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 44.328,
+              "native_trace_end_s": 49.671,
+              "duration_s": 5.343,
+              "upstream_open_s": 1.781,
+              "upstream_body_read_s": 3.562,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 21528,
+                "output_tokens": 118,
+                "cached_tokens": 0,
+                "reasoning_tokens": 55,
+                "total_tokens": 21646
+              }
+            },
+            {
+              "sequence": 5,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 49.765,
+              "native_trace_end_s": 61.578,
+              "duration_s": 11.813,
+              "upstream_open_s": 1.266,
+              "upstream_body_read_s": 10.547,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 21957,
+                "output_tokens": 355,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 220,
+                "total_tokens": 22312
+              }
+            },
+            {
+              "sequence": 6,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 62.796,
+              "native_trace_end_s": 80.718,
+              "duration_s": 17.922,
+              "upstream_open_s": 1.047,
+              "upstream_body_read_s": 16.875,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 22389,
+                "output_tokens": 713,
+                "cached_tokens": 20224,
+                "reasoning_tokens": 516,
+                "total_tokens": 23102
+              }
+            },
+            {
+              "sequence": 7,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 82.125,
+              "native_trace_end_s": 220.0,
+              "duration_s": 137.875,
+              "upstream_open_s": 1.109,
+              "upstream_body_read_s": 135.125,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 24324,
+                "output_tokens": 6300,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 2055,
+                "total_tokens": 30624
+              }
+            },
+            {
+              "sequence": 8,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 241.312,
+              "native_trace_end_s": 255.359,
+              "duration_s": 14.047,
+              "upstream_open_s": 2.063,
+              "upstream_body_read_s": 11.984,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 30648,
+                "output_tokens": 428,
+                "cached_tokens": 20992,
+                "reasoning_tokens": 232,
+                "total_tokens": 31076
+              }
+            },
+            {
+              "sequence": 9,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 256.875,
+              "native_trace_end_s": 437.312,
+              "duration_s": 180.437,
+              "upstream_open_s": 1.016,
+              "upstream_body_read_s": 173.89,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 31303,
+                "output_tokens": 8031,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 1440,
+                "total_tokens": 39334
+              }
+            },
+            {
+              "sequence": 10,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 442.015,
+              "native_trace_end_s": 445.671,
+              "duration_s": 3.656,
+              "upstream_open_s": 1.156,
+              "upstream_body_read_s": 2.469,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 39358,
+                "output_tokens": 134,
+                "cached_tokens": 0,
+                "reasoning_tokens": 0,
+                "total_tokens": 39492
+              }
+            },
+            {
+              "sequence": 11,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 448.765,
+              "native_trace_end_s": 467.468,
+              "duration_s": 18.703,
+              "upstream_open_s": 1.188,
+              "upstream_body_read_s": 17.5,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 46196,
+                "output_tokens": 708,
+                "cached_tokens": 21504,
+                "reasoning_tokens": 367,
+                "total_tokens": 46904
+              }
+            },
+            {
+              "sequence": 12,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 475.531,
+              "native_trace_end_s": 545.406,
+              "duration_s": 69.875,
+              "upstream_open_s": 1.125,
+              "upstream_body_read_s": 68.719,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 48251,
+                "output_tokens": 2122,
+                "cached_tokens": 0,
+                "reasoning_tokens": 1768,
+                "total_tokens": 50373
+              }
+            },
+            {
+              "sequence": 13,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 549.109,
+              "native_trace_end_s": 571.125,
+              "duration_s": 22.016,
+              "upstream_open_s": 2.969,
+              "upstream_body_read_s": 19.031,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 50466,
+                "output_tokens": 631,
+                "cached_tokens": 22144,
+                "reasoning_tokens": 512,
+                "total_tokens": 51097
+              }
+            }
+          ],
+          "evidence_paths": [
+            "experiments/ledger-case-20261024-01/metrics-A.json",
+            "experiments/ledger-case-20261024-01/run-A/events.jsonl",
+            "experiments/ledger-case-20261024-01/workspace-A/.codex-flow/native-state/state_5.sqlite"
+          ],
+          "filesystem_isolation": "project SQLite path separate but shared rollout/auth container; no strict profile/state isolation claim",
+          "known_uncached_input_tokens": 267593,
+          "cache_share_of_input": 0.328562,
+          "known_usage_request_count": 13,
+          "unknown_usage_request_count": 0
+        },
+        "B": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "attempts": 1,
+          "total_arm_s": 630.516,
+          "native_wall_clock_s": 629.172,
+          "orchestration_frontload_s": 1.187,
+          "request_count": 19,
+          "profiles": {
+            "medium": {
+              "request_count": 3,
+              "usage": {
+                "input_tokens": 61783,
+                "output_tokens": 699,
+                "cached_tokens": 0,
+                "reasoning_tokens": 75,
+                "total_tokens": 62482
+              },
+              "duration_sum_s": 26.282,
+              "interval_union_s": 26.282,
+              "open_sum_s": 3.626,
+              "body_read_sum_s": 22.64
+            },
+            "xhigh": {
+              "request_count": 16,
+              "usage": {
+                "input_tokens": 540723,
+                "output_tokens": 21501,
+                "cached_tokens": 28800,
+                "reasoning_tokens": 6298,
+                "total_tokens": 562224
+              },
+              "duration_sum_s": 530.347,
+              "interval_union_s": 530.347,
+              "open_sum_s": 34.878,
+              "body_read_sum_s": 487.892
+            }
+          },
+          "all_requests_usage": {
+            "input_tokens": 602506,
+            "output_tokens": 22200,
+            "total_tokens": 624706,
+            "cached_tokens": 28800,
+            "reasoning_tokens": 6373
+          },
+          "root_cli_usage": {
+            "input_tokens": 516852,
+            "output_tokens": 21205,
+            "cached_tokens": 28800
+          },
+          "transport": {
+            "completed_count": 19,
+            "semantic_completion_count": 19,
+            "read_termination_counts": {
+              "response_completed": 19
+            },
+            "failed_request_count": 0,
+            "request_duration_sum_s": 556.629,
+            "request_interval_union_s": 534.424,
+            "medium_xhigh_overlap_s": 22.205,
+            "medium_outside_xhigh_union_s": 4.077,
+            "native_wall_outside_request_union_s": 94.748
+          },
+          "budget_tool": {
+            "configured": true,
+            "publisher_failed": false,
+            "status_calls": 4,
+            "successful_calls": 4,
+            "unavailable_calls": 0,
+            "audit_valid": true,
+            "phases": {
+              "build": 4
+            }
+          },
+          "mercury": {
+            "successful_calls": 1,
+            "free_inference_attempts": 1,
+            "cost_usd": 0,
+            "wall_clock_s": 1.125
+          },
+          "harness_inspired_probes": 0,
+          "upstream_harness_probes": 0,
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_tool_items": {
+            "command_execution": {
+              "completed_item_count": 8,
+              "status_counts": {
+                "failed": 2,
+                "completed": 6
+              },
+              "duration_observation_count": 8,
+              "duration_sum_s": 29.438,
+              "repeated_operation_digest_counts": [],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            },
+            "mcp_tool_call": {
+              "completed_item_count": 4,
+              "status_counts": {
+                "completed": 4
+              },
+              "duration_observation_count": 4,
+              "duration_sum_s": 0.203,
+              "repeated_operation_digest_counts": [
+                4
+              ],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            },
+            "collab_tool_call": {
+              "completed_item_count": 0,
+              "status_counts": {},
+              "duration_observation_count": 0,
+              "duration_sum_s": null,
+              "repeated_operation_digest_counts": [],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            }
+          },
+          "native_completed_item_type_counts": {
+            "error": 1,
+            "agent_message": 6,
+            "command_execution": 8,
+            "mcp_tool_call": 4,
+            "file_change": 4
+          },
+          "owned_sessions": {
+            "exact_cwd_row_count": 2,
+            "matched_session_count": 2,
+            "parent_link_verified": true,
+            "sessions": [
+              {
+                "role": "chief",
+                "actual_model_metadata": "gpt-6.1-sol",
+                "requested_effort_metadata": "xhigh",
+                "native_role_metadata": null,
+                "rollout_sha256": "85366c2e260a368cff98b95c90f298d03ee0e73025e9edb867933470f5c563d6",
+                "rollout_bytes": 482493,
+                "global_path_and_raw_identity_withheld": true,
+                "native_tool_counts": {
+                  "spawn_agent": 1,
+                  "exec": 13
+                },
+                "nested_tool_counts": {
+                  "exec_command": 8,
+                  "mcp__flow_budget__status": 4,
+                  "apply_patch": 4,
+                  "write_stdin": 2
+                },
+                "tool_timeline": [
+                  {
+                    "time_s": 36.118,
+                    "native_tool": "spawn_agent",
+                    "nested_tool_counts": {},
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 41.169,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "153d7a710114139b8a29b6b6c8ca3bf4b9185fb984597fd1432e05b09644dcf3",
+                        "categories": [
+                          "inventory",
+                          "location",
+                          "git_metadata_command"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 47.448,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "mcp__flow_budget__status": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "54d04d45c46c7649dfc9988ddb2b40453682a1b1d007fc5c5148427248756be1",
+                        "categories": [
+                          "inventory"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 54.483,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "9b305490afbc6a87807c1f4452389be4931caebd88fbe95c5ea4ae61d5aff3eb",
+                        "categories": [
+                          "inventory",
+                          "existence",
+                          "documentation_read"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 77.585,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "704e2ba32e6b4d081d8ece8bda714b6bb6a89b33ac29de2795787d5ab724777d",
+                        "categories": [
+                          "inventory",
+                          "task_read"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 199.245,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1
+                    },
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "production": 3,
+                        "examples": 2,
+                        "documentation": 1
+                      },
+                      "path_count": 6
+                    }
+                  },
+                  {
+                    "time_s": 236.156,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "mcp__flow_budget__status": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "eeb1107cbb4652ca0deccfb991aedecee3c9b606968d761bdfa21d9f8afe7ffc",
+                        "categories": [
+                          "inventory",
+                          "assertions",
+                          "help_smoke",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 1
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 284.192,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "2d36052c0f79e15cf8bde7ce2a79a5a00b98ff5e12ade9428e82bbe467d1b011",
+                        "categories": [
+                          "inventory",
+                          "assertions",
+                          "help_smoke",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 2
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "production": 2
+                      },
+                      "path_count": 2
+                    }
+                  },
+                  {
+                    "time_s": 462.307,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1
+                    },
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "tests": 1
+                      },
+                      "path_count": 1
+                    }
+                  },
+                  {
+                    "time_s": 473.101,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "mcp__flow_budget__status": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "1da636d5d9edc4cd5ca55a57e5e1a61d435db66e0e41704da62555a8cd1fcfec",
+                        "categories": [
+                          "unit_tests"
+                        ],
+                        "mutation_generation": 3
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 486.956,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "write_stdin": 1
+                    },
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 592.082,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "40d737710c18a4f482eb697419995dbc0133c92374a99a8cb05bfb1c6b7cc712",
+                        "categories": [
+                          "inventory",
+                          "task_read",
+                          "source_read",
+                          "unit_tests",
+                          "assertions",
+                          "help_smoke",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 4
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "documentation": 1
+                      },
+                      "path_count": 1
+                    }
+                  },
+                  {
+                    "time_s": 609.566,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "write_stdin": 1
+                    },
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 613.752,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "mcp__flow_budget__status": 1
+                    },
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  }
+                ],
+                "per_request_usage_records": [
+                  {
+                    "time_s": 36.128,
+                    "usage": {
+                      "input_tokens": 21361,
+                      "output_tokens": 245,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 0,
+                      "total_tokens": 21606
+                    },
+                    "gateway_sequence": 1
+                  },
+                  {
+                    "time_s": 41.244,
+                    "usage": {
+                      "input_tokens": 21629,
+                      "output_tokens": 126,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 0,
+                      "total_tokens": 21755
+                    },
+                    "gateway_sequence": 2
+                  },
+                  {
+                    "time_s": 47.595,
+                    "usage": {
+                      "input_tokens": 22732,
+                      "output_tokens": 207,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 76,
+                      "total_tokens": 22939
+                    },
+                    "gateway_sequence": 4
+                  },
+                  {
+                    "time_s": 54.604,
+                    "usage": {
+                      "input_tokens": 23406,
+                      "output_tokens": 266,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 80,
+                      "total_tokens": 23672
+                    },
+                    "gateway_sequence": 6
+                  },
+                  {
+                    "time_s": 77.816,
+                    "usage": {
+                      "input_tokens": 24551,
+                      "output_tokens": 327,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 53,
+                      "total_tokens": 24878
+                    },
+                    "gateway_sequence": 9
+                  },
+                  {
+                    "time_s": 199.255,
+                    "usage": {
+                      "input_tokens": 26090,
+                      "output_tokens": 5627,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 1598,
+                      "total_tokens": 31717
+                    },
+                    "gateway_sequence": 10
+                  },
+                  {
+                    "time_s": 236.165,
+                    "usage": {
+                      "input_tokens": 31741,
+                      "output_tokens": 671,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 243,
+                      "total_tokens": 32412
+                    },
+                    "gateway_sequence": 11
+                  },
+                  {
+                    "time_s": 284.2,
+                    "usage": {
+                      "input_tokens": 33158,
+                      "output_tokens": 1579,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 1034,
+                      "total_tokens": 34737
+                    },
+                    "gateway_sequence": 12
+                  },
+                  {
+                    "time_s": 462.316,
+                    "usage": {
+                      "input_tokens": 34939,
+                      "output_tokens": 7878,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 1034,
+                      "total_tokens": 42817
+                    },
+                    "gateway_sequence": 13
+                  },
+                  {
+                    "time_s": 473.108,
+                    "usage": {
+                      "input_tokens": 42841,
+                      "output_tokens": 309,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 35,
+                      "total_tokens": 43150
+                    },
+                    "gateway_sequence": 14
+                  },
+                  {
+                    "time_s": 486.964,
+                    "usage": {
+                      "input_tokens": 44237,
+                      "output_tokens": 59,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 17,
+                      "total_tokens": 44296
+                    },
+                    "gateway_sequence": 15
+                  },
+                  {
+                    "time_s": 592.089,
+                    "usage": {
+                      "input_tokens": 44820,
+                      "output_tokens": 3332,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 1552,
+                      "total_tokens": 48152
+                    },
+                    "gateway_sequence": 16
+                  },
+                  {
+                    "time_s": 609.574,
+                    "usage": {
+                      "input_tokens": 48212,
+                      "output_tokens": 87,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 45,
+                      "total_tokens": 48299
+                    },
+                    "gateway_sequence": 17
+                  },
+                  {
+                    "time_s": 613.761,
+                    "usage": {
+                      "input_tokens": 48431,
+                      "output_tokens": 73,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 49,
+                      "total_tokens": 48504
+                    },
+                    "gateway_sequence": 18
+                  },
+                  {
+                    "time_s": 627.606,
+                    "usage": {
+                      "input_tokens": 48704,
+                      "output_tokens": 419,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 289,
+                      "total_tokens": 49123
+                    },
+                    "gateway_sequence": 19
+                  }
+                ],
+                "literal_exact_command_repeats": [],
+                "fixed_output_marker_counts": {},
+                "matched_gateway_request_count": 15,
+                "usage_total_from_individual_records": {
+                  "input_tokens": 516852,
+                  "output_tokens": 21205,
+                  "cached_tokens": 28800,
+                  "reasoning_tokens": 6105,
+                  "total_tokens": 538057
+                }
+              },
+              {
+                "role": "child",
+                "actual_model_metadata": "gpt-6.1-sol",
+                "requested_effort_metadata": "medium",
+                "native_role_metadata": "worker",
+                "rollout_sha256": "1938a4e0d4dfc114b70043fb68c43ea459ab2f3736b470a4baf5377ced898514",
+                "rollout_bytes": 190522,
+                "global_path_and_raw_identity_withheld": true,
+                "native_tool_counts": {
+                  "exec": 2
+                },
+                "nested_tool_counts": {
+                  "exec_command": 2
+                },
+                "tool_timeline": [
+                  {
+                    "time_s": 42.243,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "8b508565d4ae961a501591265cbb176484b831e994b304c0fa22bf5fb29e0c74",
+                        "categories": [
+                          "inventory",
+                          "git_metadata_command"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 48.303,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "48e3f8521778fe54c9bb10f64a439265f9e3d36146c0c2080a6afff23094a603",
+                        "categories": [
+                          "inventory"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  }
+                ],
+                "per_request_usage_records": [
+                  {
+                    "time_s": 42.253,
+                    "usage": {
+                      "input_tokens": 20322,
+                      "output_tokens": 111,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 26,
+                      "total_tokens": 20433
+                    },
+                    "gateway_sequence": 3
+                  },
+                  {
+                    "time_s": 48.392,
+                    "usage": {
+                      "input_tokens": 20652,
+                      "output_tokens": 100,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 13,
+                      "total_tokens": 20752
+                    },
+                    "gateway_sequence": 5
+                  },
+                  {
+                    "time_s": 67.503,
+                    "usage": {
+                      "input_tokens": 20809,
+                      "output_tokens": 488,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 36,
+                      "total_tokens": 21297
+                    },
+                    "gateway_sequence": 7
+                  }
+                ],
+                "literal_exact_command_repeats": [],
+                "fixed_output_marker_counts": {},
+                "matched_gateway_request_count": 3,
+                "usage_total_from_individual_records": {
+                  "input_tokens": 61783,
+                  "output_tokens": 699,
+                  "cached_tokens": 0,
+                  "reasoning_tokens": 75,
+                  "total_tokens": 62482
+                }
+              }
+            ],
+            "unattributed_gateway_sequences": [
+              8
+            ],
+            "limitation": "A persisted own-cwd session absent; no wider lookup. Per-request gateway profiles are observed; unmatched root-level requests are not assigned to a cause."
+          },
+          "requests": [
+            {
+              "sequence": 1,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 25.078,
+              "native_trace_end_s": 36.141,
+              "duration_s": 11.063,
+              "upstream_open_s": 1.203,
+              "upstream_body_read_s": 9.86,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 21361,
+                "output_tokens": 245,
+                "cached_tokens": 0,
+                "reasoning_tokens": 0,
+                "total_tokens": 21606
+              }
+            },
+            {
+              "sequence": 2,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 36.86,
+              "native_trace_end_s": 41.219,
+              "duration_s": 4.359,
+              "upstream_open_s": 0.984,
+              "upstream_body_read_s": 3.375,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 21629,
+                "output_tokens": 126,
+                "cached_tokens": 0,
+                "reasoning_tokens": 0,
+                "total_tokens": 21755
+              }
+            },
+            {
+              "sequence": 3,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 37.375,
+              "native_trace_end_s": 42.25,
+              "duration_s": 4.875,
+              "upstream_open_s": 1.016,
+              "upstream_body_read_s": 3.859,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20322,
+                "output_tokens": 111,
+                "cached_tokens": 0,
+                "reasoning_tokens": 26,
+                "total_tokens": 20433
+              }
+            },
+            {
+              "sequence": 4,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 43.047,
+              "native_trace_end_s": 47.469,
+              "duration_s": 4.422,
+              "upstream_open_s": 1.078,
+              "upstream_body_read_s": 3.344,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 22732,
+                "output_tokens": 207,
+                "cached_tokens": 0,
+                "reasoning_tokens": 76,
+                "total_tokens": 22939
+              }
+            },
+            {
+              "sequence": 5,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 43.828,
+              "native_trace_end_s": 48.328,
+              "duration_s": 4.5,
+              "upstream_open_s": 1.594,
+              "upstream_body_read_s": 2.906,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20652,
+                "output_tokens": 100,
+                "cached_tokens": 0,
+                "reasoning_tokens": 13,
+                "total_tokens": 20752
+              }
+            },
+            {
+              "sequence": 6,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 49.906,
+              "native_trace_end_s": 54.516,
+              "duration_s": 4.61,
+              "upstream_open_s": 1.125,
+              "upstream_body_read_s": 3.485,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 23406,
+                "output_tokens": 266,
+                "cached_tokens": 0,
+                "reasoning_tokens": 80,
+                "total_tokens": 23672
+              }
+            },
+            {
+              "sequence": 7,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 50.531,
+              "native_trace_end_s": 67.438,
+              "duration_s": 16.907,
+              "upstream_open_s": 1.016,
+              "upstream_body_read_s": 15.875,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20809,
+                "output_tokens": 488,
+                "cached_tokens": 0,
+                "reasoning_tokens": 36,
+                "total_tokens": 21297
+              }
+            },
+            {
+              "sequence": 8,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 56.703,
+              "native_trace_end_s": 67.985,
+              "duration_s": 11.282,
+              "upstream_open_s": 1.094,
+              "upstream_body_read_s": 10.188,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 23871,
+                "output_tokens": 296,
+                "cached_tokens": 0,
+                "reasoning_tokens": 193,
+                "total_tokens": 24167
+              }
+            },
+            {
+              "sequence": 9,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 68.219,
+              "native_trace_end_s": 77.578,
+              "duration_s": 9.359,
+              "upstream_open_s": 1.547,
+              "upstream_body_read_s": 7.797,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 24551,
+                "output_tokens": 327,
+                "cached_tokens": 0,
+                "reasoning_tokens": 53,
+                "total_tokens": 24878
+              }
+            },
+            {
+              "sequence": 10,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 79.406,
+              "native_trace_end_s": 199.188,
+              "duration_s": 119.782,
+              "upstream_open_s": 1.063,
+              "upstream_body_read_s": 117.578,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 26090,
+                "output_tokens": 5627,
+                "cached_tokens": 0,
+                "reasoning_tokens": 1598,
+                "total_tokens": 31717
+              }
+            },
+            {
+              "sequence": 11,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 222.438,
+              "native_trace_end_s": 236.188,
+              "duration_s": 13.75,
+              "upstream_open_s": 1.0,
+              "upstream_body_read_s": 12.719,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 31741,
+                "output_tokens": 671,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 243,
+                "total_tokens": 32412
+              }
+            },
+            {
+              "sequence": 12,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 237.797,
+              "native_trace_end_s": 284.188,
+              "duration_s": 46.391,
+              "upstream_open_s": 1.0,
+              "upstream_body_read_s": 45.375,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 33158,
+                "output_tokens": 1579,
+                "cached_tokens": 0,
+                "reasoning_tokens": 1034,
+                "total_tokens": 34737
+              }
+            },
+            {
+              "sequence": 13,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 292.922,
+              "native_trace_end_s": 462.203,
+              "duration_s": 169.281,
+              "upstream_open_s": 1.203,
+              "upstream_body_read_s": 161.906,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 34939,
+                "output_tokens": 7878,
+                "cached_tokens": 0,
+                "reasoning_tokens": 1034,
+                "total_tokens": 42817
+              }
+            },
+            {
+              "sequence": 14,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 466.25,
+              "native_trace_end_s": 473.11,
+              "duration_s": 6.86,
+              "upstream_open_s": 1.235,
+              "upstream_body_read_s": 5.625,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 42841,
+                "output_tokens": 309,
+                "cached_tokens": 0,
+                "reasoning_tokens": 35,
+                "total_tokens": 43150
+              }
+            },
+            {
+              "sequence": 15,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 484.156,
+              "native_trace_end_s": 486.985,
+              "duration_s": 2.829,
+              "upstream_open_s": 1.532,
+              "upstream_body_read_s": 1.297,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 44237,
+                "output_tokens": 59,
+                "cached_tokens": 0,
+                "reasoning_tokens": 17,
+                "total_tokens": 44296
+              }
+            },
+            {
+              "sequence": 16,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 487.266,
+              "native_trace_end_s": 592.078,
+              "duration_s": 104.812,
+              "upstream_open_s": 17.11,
+              "upstream_body_read_s": 87.515,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 44820,
+                "output_tokens": 3332,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 1552,
+                "total_tokens": 48152
+              }
+            },
+            {
+              "sequence": 17,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 605.828,
+              "native_trace_end_s": 609.594,
+              "duration_s": 3.766,
+              "upstream_open_s": 1.36,
+              "upstream_body_read_s": 2.406,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 48212,
+                "output_tokens": 87,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 45,
+                "total_tokens": 48299
+              }
+            },
+            {
+              "sequence": 18,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 609.703,
+              "native_trace_end_s": 613.781,
+              "duration_s": 4.078,
+              "upstream_open_s": 1.141,
+              "upstream_body_read_s": 2.937,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 48431,
+                "output_tokens": 73,
+                "cached_tokens": 0,
+                "reasoning_tokens": 49,
+                "total_tokens": 48504
+              }
+            },
+            {
+              "sequence": 19,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 613.922,
+              "native_trace_end_s": 627.625,
+              "duration_s": 13.703,
+              "upstream_open_s": 1.203,
+              "upstream_body_read_s": 12.485,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 48704,
+                "output_tokens": 419,
+                "cached_tokens": 0,
+                "reasoning_tokens": 289,
+                "total_tokens": 49123
+              }
+            }
+          ],
+          "evidence_paths": [
+            "experiments/ledger-case-20261024-01/metrics-B.json",
+            "experiments/ledger-case-20261024-01/run-B/events.jsonl",
+            "experiments/ledger-case-20261024-01/workspace-B/.codex-flow/native-state/state_5.sqlite"
+          ],
+          "filesystem_isolation": "project SQLite path separate but shared rollout/auth container; no strict profile/state isolation claim",
+          "known_uncached_input_tokens": 573706,
+          "cache_share_of_input": 0.0478,
+          "known_usage_request_count": 19,
+          "unknown_usage_request_count": 0
+        }
+      },
+      "B_minus_A": {
+        "total_s": 57.485,
+        "native_s": 56.344,
+        "frontload_s": 1.125,
+        "request_count": 6,
+        "request_union_s": 36.908,
+        "native_outside_request_union_s": 19.436,
+        "usage": {
+          "input_tokens": 203969,
+          "output_tokens": 2183,
+          "total_tokens": 206152,
+          "cached_tokens": -102144,
+          "reasoning_tokens": -894
+        }
+      }
+    },
+    "safezip": {
+      "arms": {
+        "A": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "attempts": 1,
+          "total_arm_s": 821.328,
+          "native_wall_clock_s": 821.078,
+          "orchestration_frontload_s": 0.078,
+          "request_count": 17,
+          "profiles": {
+            "xhigh": {
+              "request_count": 17,
+              "usage": {
+                "input_tokens": 578169,
+                "output_tokens": 28808,
+                "cached_tokens": 121344,
+                "reasoning_tokens": 12932,
+                "total_tokens": 606977
+              },
+              "duration_sum_s": 718.594,
+              "interval_union_s": 718.594,
+              "open_sum_s": 23.36,
+              "body_read_sum_s": 685.704
+            }
+          },
+          "all_requests_usage": {
+            "input_tokens": 578169,
+            "output_tokens": 28808,
+            "total_tokens": 606977,
+            "cached_tokens": 121344,
+            "reasoning_tokens": 12932
+          },
+          "root_cli_usage": {
+            "input_tokens": 578169,
+            "output_tokens": 28808,
+            "cached_tokens": 121344
+          },
+          "transport": {
+            "completed_count": 17,
+            "semantic_completion_count": 17,
+            "read_termination_counts": {
+              "response_completed": 17
+            },
+            "failed_request_count": 0,
+            "request_duration_sum_s": 718.594,
+            "request_interval_union_s": 718.594,
+            "medium_xhigh_overlap_s": 0.0,
+            "medium_outside_xhigh_union_s": 0.0,
+            "native_wall_outside_request_union_s": 102.484
+          },
+          "budget_tool": {
+            "configured": false
+          },
+          "mercury": {
+            "successful_calls": 0,
+            "free_inference_attempts": null,
+            "cost_usd": null,
+            "wall_clock_s": null
+          },
+          "harness_inspired_probes": 0,
+          "upstream_harness_probes": 0,
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_tool_items": {
+            "command_execution": {
+              "completed_item_count": 13,
+              "status_counts": {
+                "completed": 11,
+                "failed": 2
+              },
+              "duration_observation_count": 13,
+              "duration_sum_s": 62.609,
+              "repeated_operation_digest_counts": [
+                2
+              ],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            },
+            "mcp_tool_call": {
+              "completed_item_count": 0,
+              "status_counts": {},
+              "duration_observation_count": 0,
+              "duration_sum_s": null,
+              "repeated_operation_digest_counts": [],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            },
+            "collab_tool_call": {
+              "completed_item_count": 0,
+              "status_counts": {},
+              "duration_observation_count": 0,
+              "duration_sum_s": null,
+              "repeated_operation_digest_counts": [],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            }
+          },
+          "native_completed_item_type_counts": {
+            "error": 1,
+            "agent_message": 6,
+            "command_execution": 13,
+            "file_change": 4
+          },
+          "owned_sessions": {
+            "exact_cwd_row_count": 0,
+            "matched_session_count": 0,
+            "parent_link_verified": null,
+            "sessions": [],
+            "unattributed_gateway_sequences": null,
+            "limitation": "A persisted own-cwd session absent; no wider lookup. Per-request gateway profiles are observed; unmatched root-level requests are not assigned to a cause."
+          },
+          "requests": [
+            {
+              "sequence": 1,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 23.468,
+              "native_trace_end_s": 28.297,
+              "duration_s": 4.829,
+              "upstream_open_s": 1.0,
+              "upstream_body_read_s": 3.829,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20144,
+                "output_tokens": 97,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 0,
+                "total_tokens": 20241
+              }
+            },
+            {
+              "sequence": 2,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 29.609,
+              "native_trace_end_s": 34.093,
+              "duration_s": 4.484,
+              "upstream_open_s": 1.328,
+              "upstream_body_read_s": 3.156,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20363,
+                "output_tokens": 106,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 44,
+                "total_tokens": 20469
+              }
+            },
+            {
+              "sequence": 3,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 35.25,
+              "native_trace_end_s": 40.172,
+              "duration_s": 4.922,
+              "upstream_open_s": 1.015,
+              "upstream_body_read_s": 3.891,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20640,
+                "output_tokens": 129,
+                "cached_tokens": 0,
+                "reasoning_tokens": 28,
+                "total_tokens": 20769
+              }
+            },
+            {
+              "sequence": 4,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 41.718,
+              "native_trace_end_s": 46.203,
+              "duration_s": 4.485,
+              "upstream_open_s": 0.985,
+              "upstream_body_read_s": 3.484,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 21039,
+                "output_tokens": 71,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 30,
+                "total_tokens": 21110
+              }
+            },
+            {
+              "sequence": 5,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 46.25,
+              "native_trace_end_s": 50.453,
+              "duration_s": 4.203,
+              "upstream_open_s": 1.062,
+              "upstream_body_read_s": 3.125,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 22339,
+                "output_tokens": 128,
+                "cached_tokens": 0,
+                "reasoning_tokens": 35,
+                "total_tokens": 22467
+              }
+            },
+            {
+              "sequence": 6,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 51.75,
+              "native_trace_end_s": 61.203,
+              "duration_s": 9.453,
+              "upstream_open_s": 1.157,
+              "upstream_body_read_s": 8.281,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 22545,
+                "output_tokens": 318,
+                "cached_tokens": 0,
+                "reasoning_tokens": 130,
+                "total_tokens": 22863
+              }
+            },
+            {
+              "sequence": 7,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 62.531,
+              "native_trace_end_s": 258.172,
+              "duration_s": 195.641,
+              "upstream_open_s": 1.109,
+              "upstream_body_read_s": 192.188,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 24037,
+                "output_tokens": 7899,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 3166,
+                "total_tokens": 31936
+              }
+            },
+            {
+              "sequence": 8,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 268.812,
+              "native_trace_end_s": 286.468,
+              "duration_s": 17.656,
+              "upstream_open_s": 1.125,
+              "upstream_body_read_s": 16.516,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 31960,
+                "output_tokens": 784,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 516,
+                "total_tokens": 32744
+              }
+            },
+            {
+              "sequence": 9,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 288.078,
+              "native_trace_end_s": 438.14,
+              "duration_s": 150.062,
+              "upstream_open_s": 1.188,
+              "upstream_body_read_s": 142.016,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 33063,
+                "output_tokens": 8076,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 1007,
+                "total_tokens": 41139
+              }
+            },
+            {
+              "sequence": 10,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 452.406,
+              "native_trace_end_s": 460.547,
+              "duration_s": 8.141,
+              "upstream_open_s": 1.297,
+              "upstream_body_read_s": 6.828,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 41163,
+                "output_tokens": 344,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 26,
+                "total_tokens": 41507
+              }
+            },
+            {
+              "sequence": 11,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 472.547,
+              "native_trace_end_s": 477.14,
+              "duration_s": 4.593,
+              "upstream_open_s": 1.765,
+              "upstream_body_read_s": 2.828,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 41603,
+                "output_tokens": 71,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 29,
+                "total_tokens": 41674
+              }
+            },
+            {
+              "sequence": 12,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 482.25,
+              "native_trace_end_s": 488.781,
+              "duration_s": 6.531,
+              "upstream_open_s": 1.703,
+              "upstream_body_read_s": 4.828,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 41732,
+                "output_tokens": 179,
+                "cached_tokens": 0,
+                "reasoning_tokens": 137,
+                "total_tokens": 41911
+              }
+            },
+            {
+              "sequence": 13,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 488.859,
+              "native_trace_end_s": 549.375,
+              "duration_s": 60.516,
+              "upstream_open_s": 1.766,
+              "upstream_body_read_s": 58.64,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 42266,
+                "output_tokens": 3386,
+                "cached_tokens": 0,
+                "reasoning_tokens": 2070,
+                "total_tokens": 45652
+              }
+            },
+            {
+              "sequence": 14,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 568.734,
+              "native_trace_end_s": 604.984,
+              "duration_s": 36.25,
+              "upstream_open_s": 1.438,
+              "upstream_body_read_s": 34.812,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 45712,
+                "output_tokens": 1076,
+                "cached_tokens": 19968,
+                "reasoning_tokens": 1034,
+                "total_tokens": 46788
+              }
+            },
+            {
+              "sequence": 15,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 605.062,
+              "native_trace_end_s": 709.031,
+              "duration_s": 103.969,
+              "upstream_open_s": 1.172,
+              "upstream_body_read_s": 102.719,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 46874,
+                "output_tokens": 2919,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 2096,
+                "total_tokens": 49793
+              }
+            },
+            {
+              "sequence": 16,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 714.437,
+              "native_trace_end_s": 797.859,
+              "duration_s": 83.422,
+              "upstream_open_s": 2.938,
+              "upstream_body_read_s": 80.453,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 49971,
+                "output_tokens": 2603,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 2070,
+                "total_tokens": 52574
+              }
+            },
+            {
+              "sequence": 17,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 799.828,
+              "native_trace_end_s": 819.265,
+              "duration_s": 19.437,
+              "upstream_open_s": 1.312,
+              "upstream_body_read_s": 18.11,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "stabilize",
+              "usage": {
+                "input_tokens": 52718,
+                "output_tokens": 622,
+                "cached_tokens": 9216,
+                "reasoning_tokens": 514,
+                "total_tokens": 53340
+              }
+            }
+          ],
+          "evidence_paths": [
+            "experiments/safezip-case-20261024-01/metrics-A.json",
+            "experiments/safezip-case-20261024-01/run-A/events.jsonl",
+            "experiments/safezip-case-20261024-01/workspace-A/.codex-flow/native-state/state_5.sqlite"
+          ],
+          "filesystem_isolation": "project SQLite path separate but shared rollout/auth container; no strict profile/state isolation claim",
+          "known_uncached_input_tokens": 456825,
+          "cache_share_of_input": 0.209876,
+          "known_usage_request_count": 17,
+          "unknown_usage_request_count": 0
+        },
+        "B": {
+          "status": "completed_unverified",
+          "native_exit_code": 0,
+          "attempts": 1,
+          "total_arm_s": 1090.875,
+          "native_wall_clock_s": 1089.531,
+          "orchestration_frontload_s": 1.156,
+          "request_count": 28,
+          "profiles": {
+            "medium": {
+              "request_count": 6,
+              "usage": {
+                "input_tokens": 132500,
+                "output_tokens": 1512,
+                "cached_tokens": 0,
+                "reasoning_tokens": 475,
+                "total_tokens": 134012
+              },
+              "duration_sum_s": 54.485,
+              "interval_union_s": 54.485,
+              "open_sum_s": 8.468,
+              "body_read_sum_s": 45.954
+            },
+            "xhigh": {
+              "request_count": 22,
+              "usage": {
+                "input_tokens": 924868,
+                "output_tokens": 37119,
+                "cached_tokens": 201600,
+                "reasoning_tokens": 14977,
+                "total_tokens": 961987
+              },
+              "duration_sum_s": 969.954,
+              "interval_union_s": 969.954,
+              "open_sum_s": 43.721,
+              "body_read_sum_s": 915.938
+            }
+          },
+          "all_requests_usage": {
+            "input_tokens": 1057368,
+            "output_tokens": 38631,
+            "total_tokens": 1095999,
+            "cached_tokens": 201600,
+            "reasoning_tokens": 15452
+          },
+          "root_cli_usage": {
+            "input_tokens": 850531,
+            "output_tokens": 34625,
+            "cached_tokens": 182400
+          },
+          "transport": {
+            "completed_count": 28,
+            "semantic_completion_count": 28,
+            "read_termination_counts": {
+              "response_completed": 28
+            },
+            "failed_request_count": 0,
+            "request_duration_sum_s": 1024.439,
+            "request_interval_union_s": 975.078,
+            "medium_xhigh_overlap_s": 49.361,
+            "medium_outside_xhigh_union_s": 5.124,
+            "native_wall_outside_request_union_s": 114.453
+          },
+          "budget_tool": {
+            "configured": true,
+            "publisher_failed": false,
+            "status_calls": 5,
+            "successful_calls": 5,
+            "unavailable_calls": 0,
+            "audit_valid": true,
+            "phases": {
+              "build": 3,
+              "stabilize": 2
+            }
+          },
+          "mercury": {
+            "successful_calls": 1,
+            "free_inference_attempts": 1,
+            "cost_usd": 0,
+            "wall_clock_s": 1.078
+          },
+          "harness_inspired_probes": 0,
+          "upstream_harness_probes": 0,
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null,
+          "native_tool_items": {
+            "command_execution": {
+              "completed_item_count": 14,
+              "status_counts": {
+                "failed": 4,
+                "completed": 10
+              },
+              "duration_observation_count": 14,
+              "duration_sum_s": 31.89,
+              "repeated_operation_digest_counts": [
+                2
+              ],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            },
+            "mcp_tool_call": {
+              "completed_item_count": 5,
+              "status_counts": {
+                "completed": 5
+              },
+              "duration_observation_count": 5,
+              "duration_sum_s": 0.188,
+              "repeated_operation_digest_counts": [
+                5
+              ],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            },
+            "collab_tool_call": {
+              "completed_item_count": 0,
+              "status_counts": {},
+              "duration_observation_count": 0,
+              "duration_sum_s": null,
+              "repeated_operation_digest_counts": [],
+              "repeat_limitation": "same run HMAC equality; changed inputs or code are not represented; equality alone does not prove waste"
+            }
+          },
+          "native_completed_item_type_counts": {
+            "error": 1,
+            "agent_message": 8,
+            "command_execution": 14,
+            "mcp_tool_call": 5,
+            "file_change": 6
+          },
+          "owned_sessions": {
+            "exact_cwd_row_count": 2,
+            "matched_session_count": 2,
+            "parent_link_verified": true,
+            "sessions": [
+              {
+                "role": "chief",
+                "actual_model_metadata": "gpt-6.1-sol",
+                "requested_effort_metadata": "xhigh",
+                "native_role_metadata": null,
+                "rollout_sha256": "cf62b712c6c32449def60f6016d048416917a758e31fa1bb2d443b5b492960f0",
+                "rollout_bytes": 706742,
+                "global_path_and_raw_identity_withheld": true,
+                "native_tool_counts": {
+                  "spawn_agent": 1,
+                  "exec": 17,
+                  "followup_task": 1
+                },
+                "nested_tool_counts": {
+                  "exec_command": 14,
+                  "mcp__flow_budget__status": 5,
+                  "apply_patch": 6
+                },
+                "tool_timeline": [
+                  {
+                    "time_s": 34.369,
+                    "native_tool": "spawn_agent",
+                    "nested_tool_counts": {},
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 39.035,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "c1ef02c3775bc359b20e848e1fce5da540b24770da218156c38eda9ac59ec8b5",
+                        "categories": [
+                          "inventory",
+                          "location",
+                          "git_metadata_command"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 61.433,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "mcp__flow_budget__status": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "e9508062c92b699ef45a53b9b3f90cc8211c7100fefee45d7659bfe58741bf49",
+                        "categories": [
+                          "inventory"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 75.471,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "95c14563572f15617d30da6e8ed3e182862221d140af459584652a6bae5709c6",
+                        "categories": [
+                          "inventory",
+                          "location",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 89.564,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "e63ff79a1a14cdd6130a611495a17d179bbd3098441b42fd6b812e6af85ca5bc",
+                        "categories": [
+                          "inventory",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 118.848,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "39b98fba108aef69e3eaac496f93ce891d56d8a56cf8ff2e16930184ff046dc2",
+                        "categories": [
+                          "source_read",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 379.737,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1
+                    },
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "production": 3,
+                        "documentation": 1
+                      },
+                      "path_count": 4
+                    }
+                  },
+                  {
+                    "time_s": 419.352,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1,
+                      "mcp__flow_budget__status": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "d12846b251b12d9879d11363097db10cf0ed2638edefe18cff8851c767fe4589",
+                        "categories": [
+                          "inventory",
+                          "assertions",
+                          "help_smoke",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 1
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 561.89,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1
+                    },
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "production": 1,
+                        "documentation": 1,
+                        "tests": 1
+                      },
+                      "path_count": 3
+                    }
+                  },
+                  {
+                    "time_s": 584.391,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "1b5496bbfae9919568f5d6d6136d19884444702303cbb24225fe2039c861b56d",
+                        "categories": [
+                          "unit_tests",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 2
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 614.158,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "1b5496bbfae9919568f5d6d6136d19884444702303cbb24225fe2039c861b56d",
+                        "categories": [
+                          "unit_tests",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 3
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "tests": 1
+                      },
+                      "path_count": 1
+                    }
+                  },
+                  {
+                    "time_s": 641.033,
+                    "native_tool": "followup_task",
+                    "nested_tool_counts": {},
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 651.065,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "mcp__flow_budget__status": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "6799953b21efb9ab274f764f6f405647f8931fc05b4318f7bcdd7298a7b85ed8",
+                        "categories": [
+                          "inventory",
+                          "assertions",
+                          "help_smoke",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 3
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 811.769,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1
+                    },
+                    "literal_command_count": 0,
+                    "commands": [],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "production": 1,
+                        "documentation": 1
+                      },
+                      "path_count": 2
+                    }
+                  },
+                  {
+                    "time_s": 858.985,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "771b8ba5d302668d50199f843e3d6dfd2b38ea00ff1e7fba046a2435a1227186",
+                        "categories": [
+                          "unit_tests",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 5
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "tests": 1
+                      },
+                      "path_count": 1
+                    }
+                  },
+                  {
+                    "time_s": 916.457,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1,
+                      "mcp__flow_budget__status": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "9d7e651ae25ba00aa651b0d6f6d07d24c0305db867ef0f05a10587dd9e6e5e54",
+                        "categories": [
+                          "inventory",
+                          "assertions",
+                          "cli_or_fixture",
+                          "fixture_write"
+                        ],
+                        "mutation_generation": 5
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 935.758,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "a0f5299f0ef505e46ba596df56375133e35dd5a99e27f1eedff17c0e68987a59",
+                        "categories": [
+                          "inventory",
+                          "assertions",
+                          "cli_or_fixture",
+                          "fixture_write"
+                        ],
+                        "mutation_generation": 5
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 1037.061,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "apply_patch": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "1f90ae1f1945cc1797af2229ba4ac9c0d88b0b823f5b385412f9f2fe05de39f0",
+                        "categories": [
+                          "inventory",
+                          "unit_tests",
+                          "assertions",
+                          "help_smoke",
+                          "cli_or_fixture",
+                          "fixture_write"
+                        ],
+                        "mutation_generation": 6
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 1,
+                      "file_class_counts": {
+                        "documentation": 1
+                      },
+                      "path_count": 1
+                    }
+                  },
+                  {
+                    "time_s": 1074.624,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "mcp__flow_budget__status": 1,
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "2b492e040bc6c0adece8dcb9b392133e413e5f0bfefb15670e2b09417e44e82c",
+                        "categories": [
+                          "source_read",
+                          "unit_tests",
+                          "assertions",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 6
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  }
+                ],
+                "per_request_usage_records": [
+                  {
+                    "time_s": 34.381,
+                    "usage": {
+                      "input_tokens": 21322,
+                      "output_tokens": 231,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 0,
+                      "total_tokens": 21553
+                    },
+                    "gateway_sequence": 1
+                  },
+                  {
+                    "time_s": 39.133,
+                    "usage": {
+                      "input_tokens": 21576,
+                      "output_tokens": 88,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 0,
+                      "total_tokens": 21664
+                    },
+                    "gateway_sequence": 2
+                  },
+                  {
+                    "time_s": 61.519,
+                    "usage": {
+                      "input_tokens": 22573,
+                      "output_tokens": 647,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 516,
+                      "total_tokens": 23220
+                    },
+                    "gateway_sequence": 4
+                  },
+                  {
+                    "time_s": 75.634,
+                    "usage": {
+                      "input_tokens": 24367,
+                      "output_tokens": 137,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 0,
+                      "total_tokens": 24504
+                    },
+                    "gateway_sequence": 9
+                  },
+                  {
+                    "time_s": 89.735,
+                    "usage": {
+                      "input_tokens": 25085,
+                      "output_tokens": 350,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 121,
+                      "total_tokens": 25435
+                    },
+                    "gateway_sequence": 10
+                  },
+                  {
+                    "time_s": 118.855,
+                    "usage": {
+                      "input_tokens": 25780,
+                      "output_tokens": 386,
+                      "cached_tokens": 22400,
+                      "reasoning_tokens": 234,
+                      "total_tokens": 26166
+                    },
+                    "gateway_sequence": 11
+                  },
+                  {
+                    "time_s": 379.746,
+                    "usage": {
+                      "input_tokens": 27226,
+                      "output_tokens": 9816,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 4081,
+                      "total_tokens": 37042
+                    },
+                    "gateway_sequence": 12
+                  },
+                  {
+                    "time_s": 419.363,
+                    "usage": {
+                      "input_tokens": 37066,
+                      "output_tokens": 1022,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 464,
+                      "total_tokens": 38088
+                    },
+                    "gateway_sequence": 13
+                  },
+                  {
+                    "time_s": 561.899,
+                    "usage": {
+                      "input_tokens": 38733,
+                      "output_tokens": 7272,
+                      "cached_tokens": 21376,
+                      "reasoning_tokens": 1034,
+                      "total_tokens": 46005
+                    },
+                    "gateway_sequence": 14
+                  },
+                  {
+                    "time_s": 584.399,
+                    "usage": {
+                      "input_tokens": 46029,
+                      "output_tokens": 287,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 44,
+                      "total_tokens": 46316
+                    },
+                    "gateway_sequence": 15
+                  },
+                  {
+                    "time_s": 614.166,
+                    "usage": {
+                      "input_tokens": 47481,
+                      "output_tokens": 794,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 516,
+                      "total_tokens": 48275
+                    },
+                    "gateway_sequence": 16
+                  },
+                  {
+                    "time_s": 641.043,
+                    "usage": {
+                      "input_tokens": 49174,
+                      "output_tokens": 522,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 270,
+                      "total_tokens": 49696
+                    },
+                    "gateway_sequence": 17
+                  },
+                  {
+                    "time_s": 651.076,
+                    "usage": {
+                      "input_tokens": 49709,
+                      "output_tokens": 527,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 0,
+                      "total_tokens": 50236
+                    },
+                    "gateway_sequence": 18
+                  },
+                  {
+                    "time_s": 811.782,
+                    "usage": {
+                      "input_tokens": 51362,
+                      "output_tokens": 2779,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 1887,
+                      "total_tokens": 54141
+                    },
+                    "gateway_sequence": 22
+                  },
+                  {
+                    "time_s": 858.994,
+                    "usage": {
+                      "input_tokens": 54165,
+                      "output_tokens": 2533,
+                      "cached_tokens": 4096,
+                      "reasoning_tokens": 700,
+                      "total_tokens": 56698
+                    },
+                    "gateway_sequence": 23
+                  },
+                  {
+                    "time_s": 916.465,
+                    "usage": {
+                      "input_tokens": 57781,
+                      "output_tokens": 2080,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 1552,
+                      "total_tokens": 59861
+                    },
+                    "gateway_sequence": 24
+                  },
+                  {
+                    "time_s": 935.766,
+                    "usage": {
+                      "input_tokens": 60152,
+                      "output_tokens": 699,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 172,
+                      "total_tokens": 60851
+                    },
+                    "gateway_sequence": 25
+                  },
+                  {
+                    "time_s": 1037.07,
+                    "usage": {
+                      "input_tokens": 60961,
+                      "output_tokens": 3370,
+                      "cached_tokens": 48128,
+                      "reasoning_tokens": 1034,
+                      "total_tokens": 64331
+                    },
+                    "gateway_sequence": 26
+                  },
+                  {
+                    "time_s": 1074.633,
+                    "usage": {
+                      "input_tokens": 64452,
+                      "output_tokens": 752,
+                      "cached_tokens": 9600,
+                      "reasoning_tokens": 516,
+                      "total_tokens": 65204
+                    },
+                    "gateway_sequence": 27
+                  },
+                  {
+                    "time_s": 1088.051,
+                    "usage": {
+                      "input_tokens": 65537,
+                      "output_tokens": 333,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 202,
+                      "total_tokens": 65870
+                    },
+                    "gateway_sequence": 28
+                  }
+                ],
+                "literal_exact_command_repeats": [
+                  {
+                    "sha256": "1b5496bbfae9919568f5d6d6136d19884444702303cbb24225fe2039c861b56d",
+                    "times_s": [
+                      584.391,
+                      614.158
+                    ],
+                    "mutation_generations": [
+                      2,
+                      3
+                    ],
+                    "new_patch_between": true,
+                    "waste_proven": false
+                  }
+                ],
+                "fixed_output_marker_counts": {
+                  "module_not_found": 1
+                },
+                "matched_gateway_request_count": 20,
+                "usage_total_from_individual_records": {
+                  "input_tokens": 850531,
+                  "output_tokens": 34625,
+                  "cached_tokens": 182400,
+                  "reasoning_tokens": 13343,
+                  "total_tokens": 885156
+                }
+              },
+              {
+                "role": "child",
+                "actual_model_metadata": "gpt-6.1-sol",
+                "requested_effort_metadata": "medium",
+                "native_role_metadata": "worker",
+                "rollout_sha256": "2d2d5b919133f990a761c7d30a949a1466cb9da995ab70668577d9d40ec23b6c",
+                "rollout_bytes": 269516,
+                "global_path_and_raw_identity_withheld": true,
+                "native_tool_counts": {
+                  "exec": 4
+                },
+                "nested_tool_counts": {
+                  "exec_command": 4
+                },
+                "tool_timeline": [
+                  {
+                    "time_s": 40.326,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "889cff23ceb849a9c217163bdd4a254137455409ce47f9e0c5d1132fb2252c97",
+                        "categories": [
+                          "inventory",
+                          "git_metadata_command"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 45.212,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "bdc560ff7f6dfe45eec6f8a6d81c0aca9d2b1d8bdf0c705f7a3d1005658ba15b",
+                        "categories": [
+                          "inventory"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 49.977,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "4534b851d20839026305b60ace6e987dba95b8be034babead971bdcc16f85e5b",
+                        "categories": [
+                          "inventory",
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  },
+                  {
+                    "time_s": 645.624,
+                    "native_tool": "exec",
+                    "nested_tool_counts": {
+                      "exec_command": 1
+                    },
+                    "literal_command_count": 1,
+                    "commands": [
+                      {
+                        "sha256": "3e92a324c959b2afa1114c6853b9a148308080e1f4375000849444238da46f15",
+                        "categories": [
+                          "cli_or_fixture"
+                        ],
+                        "mutation_generation": 0
+                      }
+                    ],
+                    "patch_metadata": {
+                      "literal_patch_arguments": 0,
+                      "file_class_counts": {},
+                      "path_count": 0
+                    }
+                  }
+                ],
+                "per_request_usage_records": [
+                  {
+                    "time_s": 40.335,
+                    "usage": {
+                      "input_tokens": 20256,
+                      "output_tokens": 94,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 20,
+                      "total_tokens": 20350
+                    },
+                    "gateway_sequence": 3
+                  },
+                  {
+                    "time_s": 45.288,
+                    "usage": {
+                      "input_tokens": 20562,
+                      "output_tokens": 69,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 0,
+                      "total_tokens": 20631
+                    },
+                    "gateway_sequence": 5
+                  },
+                  {
+                    "time_s": 50.061,
+                    "usage": {
+                      "input_tokens": 20922,
+                      "output_tokens": 92,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 20,
+                      "total_tokens": 21014
+                    },
+                    "gateway_sequence": 6
+                  },
+                  {
+                    "time_s": 67.325,
+                    "usage": {
+                      "input_tokens": 21133,
+                      "output_tokens": 729,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 180,
+                      "total_tokens": 21862
+                    },
+                    "gateway_sequence": 7
+                  },
+                  {
+                    "time_s": 645.715,
+                    "usage": {
+                      "input_tokens": 22029,
+                      "output_tokens": 98,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 0,
+                      "total_tokens": 22127
+                    },
+                    "gateway_sequence": 19
+                  },
+                  {
+                    "time_s": 670.767,
+                    "usage": {
+                      "input_tokens": 27598,
+                      "output_tokens": 430,
+                      "cached_tokens": 0,
+                      "reasoning_tokens": 255,
+                      "total_tokens": 28028
+                    },
+                    "gateway_sequence": 20
+                  }
+                ],
+                "literal_exact_command_repeats": [],
+                "fixed_output_marker_counts": {},
+                "matched_gateway_request_count": 6,
+                "usage_total_from_individual_records": {
+                  "input_tokens": 132500,
+                  "output_tokens": 1512,
+                  "cached_tokens": 0,
+                  "reasoning_tokens": 475,
+                  "total_tokens": 134012
+                }
+              }
+            ],
+            "unattributed_gateway_sequences": [
+              8,
+              21
+            ],
+            "limitation": "A persisted own-cwd session absent; no wider lookup. Per-request gateway profiles are observed; unmatched root-level requests are not assigned to a cause."
+          },
+          "requests": [
+            {
+              "sequence": 1,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 23.766,
+              "native_trace_end_s": 34.406,
+              "duration_s": 10.64,
+              "upstream_open_s": 1.172,
+              "upstream_body_read_s": 9.453,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 21322,
+                "output_tokens": 231,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 0,
+                "total_tokens": 21553
+              }
+            },
+            {
+              "sequence": 2,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 35.0,
+              "native_trace_end_s": 39.094,
+              "duration_s": 4.094,
+              "upstream_open_s": 1.172,
+              "upstream_body_read_s": 2.922,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 21576,
+                "output_tokens": 88,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 0,
+                "total_tokens": 21664
+              }
+            },
+            {
+              "sequence": 3,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 35.563,
+              "native_trace_end_s": 40.344,
+              "duration_s": 4.781,
+              "upstream_open_s": 1.0,
+              "upstream_body_read_s": 3.765,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20256,
+                "output_tokens": 94,
+                "cached_tokens": 0,
+                "reasoning_tokens": 20,
+                "total_tokens": 20350
+              }
+            },
+            {
+              "sequence": 4,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 41.36,
+              "native_trace_end_s": 61.469,
+              "duration_s": 20.109,
+              "upstream_open_s": 1.593,
+              "upstream_body_read_s": 18.516,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 22573,
+                "output_tokens": 647,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 516,
+                "total_tokens": 23220
+              }
+            },
+            {
+              "sequence": 5,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 41.922,
+              "native_trace_end_s": 45.266,
+              "duration_s": 3.344,
+              "upstream_open_s": 1.344,
+              "upstream_body_read_s": 2.0,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20562,
+                "output_tokens": 69,
+                "cached_tokens": 0,
+                "reasoning_tokens": 0,
+                "total_tokens": 20631
+              }
+            },
+            {
+              "sequence": 6,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 46.985,
+              "native_trace_end_s": 49.938,
+              "duration_s": 2.953,
+              "upstream_open_s": 1.046,
+              "upstream_body_read_s": 1.907,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 20922,
+                "output_tokens": 92,
+                "cached_tokens": 0,
+                "reasoning_tokens": 20,
+                "total_tokens": 21014
+              }
+            },
+            {
+              "sequence": 7,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 51.781,
+              "native_trace_end_s": 67.266,
+              "duration_s": 15.485,
+              "upstream_open_s": 1.344,
+              "upstream_body_read_s": 14.125,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 21133,
+                "output_tokens": 729,
+                "cached_tokens": 0,
+                "reasoning_tokens": 180,
+                "total_tokens": 21862
+              }
+            },
+            {
+              "sequence": 8,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 63.297,
+              "native_trace_end_s": 70.094,
+              "duration_s": 6.797,
+              "upstream_open_s": 1.047,
+              "upstream_body_read_s": 5.734,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 23701,
+                "output_tokens": 215,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 82,
+                "total_tokens": 23916
+              }
+            },
+            {
+              "sequence": 9,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 70.203,
+              "native_trace_end_s": 75.531,
+              "duration_s": 5.328,
+              "upstream_open_s": 1.657,
+              "upstream_body_read_s": 3.656,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 24367,
+                "output_tokens": 137,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 0,
+                "total_tokens": 24504
+              }
+            },
+            {
+              "sequence": 10,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 77.672,
+              "native_trace_end_s": 89.328,
+              "duration_s": 11.656,
+              "upstream_open_s": 1.063,
+              "upstream_body_read_s": 10.578,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 25085,
+                "output_tokens": 350,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 121,
+                "total_tokens": 25435
+              }
+            },
+            {
+              "sequence": 11,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 91.781,
+              "native_trace_end_s": 118.735,
+              "duration_s": 26.954,
+              "upstream_open_s": 16.172,
+              "upstream_body_read_s": 10.782,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 25780,
+                "output_tokens": 386,
+                "cached_tokens": 22400,
+                "reasoning_tokens": 234,
+                "total_tokens": 26166
+              }
+            },
+            {
+              "sequence": 12,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 120.297,
+              "native_trace_end_s": 379.594,
+              "duration_s": 259.297,
+              "upstream_open_s": 1.047,
+              "upstream_body_read_s": 253.968,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 27226,
+                "output_tokens": 9816,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 4081,
+                "total_tokens": 37042
+              }
+            },
+            {
+              "sequence": 13,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 391.875,
+              "native_trace_end_s": 419.391,
+              "duration_s": 27.516,
+              "upstream_open_s": 1.266,
+              "upstream_body_read_s": 26.219,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 37066,
+                "output_tokens": 1022,
+                "cached_tokens": 0,
+                "reasoning_tokens": 464,
+                "total_tokens": 38088
+              }
+            },
+            {
+              "sequence": 14,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 421.313,
+              "native_trace_end_s": 561.766,
+              "duration_s": 140.453,
+              "upstream_open_s": 1.312,
+              "upstream_body_read_s": 133.985,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 38733,
+                "output_tokens": 7272,
+                "cached_tokens": 21376,
+                "reasoning_tokens": 1034,
+                "total_tokens": 46005
+              }
+            },
+            {
+              "sequence": 15,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 575.703,
+              "native_trace_end_s": 584.406,
+              "duration_s": 8.703,
+              "upstream_open_s": 1.25,
+              "upstream_body_read_s": 7.453,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 46029,
+                "output_tokens": 287,
+                "cached_tokens": 0,
+                "reasoning_tokens": 44,
+                "total_tokens": 46316
+              }
+            },
+            {
+              "sequence": 16,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 590.719,
+              "native_trace_end_s": 614.203,
+              "duration_s": 23.484,
+              "upstream_open_s": 1.344,
+              "upstream_body_read_s": 22.125,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 47481,
+                "output_tokens": 794,
+                "cached_tokens": 0,
+                "reasoning_tokens": 516,
+                "total_tokens": 48275
+              }
+            },
+            {
+              "sequence": 17,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 623.391,
+              "native_trace_end_s": 641.063,
+              "duration_s": 17.672,
+              "upstream_open_s": 1.344,
+              "upstream_body_read_s": 16.312,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 49174,
+                "output_tokens": 522,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 270,
+                "total_tokens": 49696
+              }
+            },
+            {
+              "sequence": 18,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 641.203,
+              "native_trace_end_s": 651.11,
+              "duration_s": 9.907,
+              "upstream_open_s": 1.938,
+              "upstream_body_read_s": 7.953,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 49709,
+                "output_tokens": 527,
+                "cached_tokens": 0,
+                "reasoning_tokens": 0,
+                "total_tokens": 50236
+              }
+            },
+            {
+              "sequence": 19,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 641.266,
+              "native_trace_end_s": 645.688,
+              "duration_s": 4.422,
+              "upstream_open_s": 1.359,
+              "upstream_body_read_s": 3.047,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 22029,
+                "output_tokens": 98,
+                "cached_tokens": 0,
+                "reasoning_tokens": 0,
+                "total_tokens": 22127
+              }
+            },
+            {
+              "sequence": 20,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "medium",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 647.281,
+              "native_trace_end_s": 670.781,
+              "duration_s": 23.5,
+              "upstream_open_s": 2.375,
+              "upstream_body_read_s": 21.11,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 27598,
+                "output_tokens": 430,
+                "cached_tokens": 0,
+                "reasoning_tokens": 255,
+                "total_tokens": 28028
+              }
+            },
+            {
+              "sequence": 21,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 653.156,
+              "native_trace_end_s": 725.25,
+              "duration_s": 72.094,
+              "upstream_open_s": 1.422,
+              "upstream_body_read_s": 70.594,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 50636,
+                "output_tokens": 2279,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 1552,
+                "total_tokens": 52915
+              }
+            },
+            {
+              "sequence": 22,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 725.36,
+              "native_trace_end_s": 811.735,
+              "duration_s": 86.375,
+              "upstream_open_s": 1.39,
+              "upstream_body_read_s": 84.875,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "build",
+              "usage": {
+                "input_tokens": 51362,
+                "output_tokens": 2779,
+                "cached_tokens": 0,
+                "reasoning_tokens": 1887,
+                "total_tokens": 54141
+              }
+            },
+            {
+              "sequence": 23,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 819.672,
+              "native_trace_end_s": 859.0,
+              "duration_s": 39.328,
+              "upstream_open_s": 1.141,
+              "upstream_body_read_s": 38.0,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "stabilize",
+              "usage": {
+                "input_tokens": 54165,
+                "output_tokens": 2533,
+                "cached_tokens": 4096,
+                "reasoning_tokens": 700,
+                "total_tokens": 56698
+              }
+            },
+            {
+              "sequence": 24,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 868.75,
+              "native_trace_end_s": 916.469,
+              "duration_s": 47.719,
+              "upstream_open_s": 1.344,
+              "upstream_body_read_s": 46.344,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "stabilize",
+              "usage": {
+                "input_tokens": 57781,
+                "output_tokens": 2080,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 1552,
+                "total_tokens": 59861
+              }
+            },
+            {
+              "sequence": 25,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 918.063,
+              "native_trace_end_s": 935.797,
+              "duration_s": 17.734,
+              "upstream_open_s": 1.313,
+              "upstream_body_read_s": 16.39,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "stabilize",
+              "usage": {
+                "input_tokens": 60152,
+                "output_tokens": 699,
+                "cached_tokens": 0,
+                "reasoning_tokens": 172,
+                "total_tokens": 60851
+              }
+            },
+            {
+              "sequence": 26,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 943.906,
+              "native_trace_end_s": 1037.063,
+              "duration_s": 93.157,
+              "upstream_open_s": 1.25,
+              "upstream_body_read_s": 91.657,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "stabilize",
+              "usage": {
+                "input_tokens": 60961,
+                "output_tokens": 3370,
+                "cached_tokens": 48128,
+                "reasoning_tokens": 1034,
+                "total_tokens": 64331
+              }
+            },
+            {
+              "sequence": 27,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 1045.75,
+              "native_trace_end_s": 1074.656,
+              "duration_s": 28.906,
+              "upstream_open_s": 1.234,
+              "upstream_body_read_s": 27.656,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "stabilize",
+              "usage": {
+                "input_tokens": 64452,
+                "output_tokens": 752,
+                "cached_tokens": 9600,
+                "reasoning_tokens": 516,
+                "total_tokens": 65204
+              }
+            },
+            {
+              "sequence": 28,
+              "requested_model": "gpt-6.1-sol",
+              "requested_effort": "xhigh",
+              "actual_model": "gpt-6.1-sol",
+              "status": "completed",
+              "native_trace_start_s": 1076.047,
+              "native_trace_end_s": 1088.078,
+              "duration_s": 12.031,
+              "upstream_open_s": 1.25,
+              "upstream_body_read_s": 10.766,
+              "semantic_completion_observed": true,
+              "http_eof_observed": false,
+              "read_termination": "response_completed",
+              "budget_phase": "stabilize",
+              "usage": {
+                "input_tokens": 65537,
+                "output_tokens": 333,
+                "cached_tokens": 0,
+                "reasoning_tokens": 202,
+                "total_tokens": 65870
+              }
+            }
+          ],
+          "evidence_paths": [
+            "experiments/safezip-case-20261024-01/metrics-B.json",
+            "experiments/safezip-case-20261024-01/run-B/events.jsonl",
+            "experiments/safezip-case-20261024-01/workspace-B/.codex-flow/native-state/state_5.sqlite"
+          ],
+          "filesystem_isolation": "project SQLite path separate but shared rollout/auth container; no strict profile/state isolation claim",
+          "known_uncached_input_tokens": 855768,
+          "cache_share_of_input": 0.190662,
+          "known_usage_request_count": 28,
+          "unknown_usage_request_count": 0
+        }
+      },
+      "B_minus_A": {
+        "total_s": 269.547,
+        "native_s": 268.453,
+        "frontload_s": 1.078,
+        "request_count": 11,
+        "request_union_s": 256.484,
+        "native_outside_request_union_s": 11.969,
+        "usage": {
+          "input_tokens": 479199,
+          "output_tokens": 9823,
+          "total_tokens": 489022,
+          "cached_tokens": 80256,
+          "reasoning_tokens": 2520
+        }
+      }
+    }
+  },
+  "instruction_comparison": {
+    "original_source_commit": "6c30bbe69a76c846257196cedd378c8a1c5d2eff",
+    "current_source_commit_reported_by_coordinator": "e1b6875",
+    "source_commits_not_queried_with_git": true,
+    "source_files": {
+      "original/cli.py": {
+        "path": "frozen-runtime-20261024-09/runtime/codex_flow/cli.py",
+        "sha256": "136d81fda7e391725f564f4061f2320007a86391727a14a6132e22e7edf13b2a"
+      },
+      "original/native.py": {
+        "path": "frozen-runtime-20261024-09/runtime/codex_flow/native.py",
+        "sha256": "833f51497ea80a7ab5c4938d1181e5feda83ca8b6c05137ddb14db18caf671a7"
+      },
+      "current/cli.py": {
+        "path": "Codex-flow/runtime/codex_flow/cli.py",
+        "sha256": "8a6508b9f28dde9ac4940aeb52ba917f15c972b08236ecd6a22186c5e9613d88"
+      },
+      "current/native.py": {
+        "path": "Codex-flow/runtime/codex_flow/native.py",
+        "sha256": "a021d83930f9c9c40ececd19be4369a456cff5ac705f22723441a5b53821d67d"
+      }
+    },
+    "original_constraints": [
+      "mandatory FIRST TOOL ACTION worker spawn before shell/editing",
+      "first runnable vertical slice plus early finite smoke and documentation as features land",
+      "MCP status at initial spawn and major stage boundaries including handoff",
+      "initial medium worker may produce bounded implementation proposal; later review needs concrete scope"
+    ],
+    "current_constraints_observed": [
+      "one cohesive bounded code/tests/examples/README slice then acceptance batch; split only for dependency or uncertainty",
+      "initial context-only reviewer/high alongside chief work, no first-tool serialization, no tools/files/polling/production code in initial pass",
+      "MCP optional chief decision support, at most two absent explicit stress protocol; no mandatory checkpoint or status-only turn",
+      "chief owns numerical/parsing/security/atomic boundaries and relevant malformed/empty/nonfinite/near-zero tests; helper evidence integrated once"
+    ],
+    "comparison_limit": "Only instruction source inspected; changed policy is not a new performance result."
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "confidence": "observed",
+      "statement": "Additional native attempts are not all child work: Ledger has 3 medium plus 3 additional xhigh; SafeZip has 6 medium plus 5 additional xhigh compared with A. Gateway counts are not agent counts."
+    },
+    {
+      "id": "F2",
+      "confidence": "observed",
+      "statement": "B chief and child separately performed initial inventory/scope shell calls before first mutation. Ledger chief has 4 shell batches and child 2; SafeZip chief 5 and child 3. These overlap and are semantically related, not byte-identical duplicate commands."
+    },
+    {
+      "id": "F3",
+      "confidence": "observed",
+      "statement": "Ledger has one genuinely standalone final MCP-only batch at 613.752 s. Its status at 473.101 s was batched with unittest, correcting an earlier completed-item-window inference. SafeZip all five MCP calls are batched with shell; reducing MCP call count alone cannot be equated with removing five full model turns."
+    },
+    {
+      "id": "F4",
+      "confidence": "observed",
+      "statement": "SafeZip invokes one explicit helper follow-up at 641.033 s, causing the same child to inspect again at 645.624 s. Its six medium requests span two phases. This is a real extra review phase, but its usefulness or necessity cannot be decided from metadata alone."
+    },
+    {
+      "id": "F5",
+      "confidence": "observed",
+      "statement": "SafeZip has an exact repeated test command at 584.391 and 614.158 s; a test patch intervenes, so waste is not proven. Other similarly classified inventory/smoke/test batches have different command hashes or changing code."
+    },
+    {
+      "id": "F6",
+      "confidence": "observed",
+      "statement": "All 77 requests in these four arms completed semantically, with no transport failure; network cause is not implicated by these records. Cached input varies substantially, so extra input is not equal to extra paid or subscription cost."
+    }
+  ],
+  "proposals": [
+    {
+      "id": "P1",
+      "target": "generic chief instructions",
+      "change": "For bounded CLI tasks, consolidate one necessary task/rules inventory, then implement code, required tests, examples and README as one coherent slice before a finite acceptance batch. Keep substantive security and atomic boundary checks.",
+      "evidence": [
+        "F2",
+        "F5"
+      ],
+      "already_present_in_current_policy": true,
+      "claimed_saved_seconds": null
+    },
+    {
+      "id": "P2",
+      "target": "initial helper contract",
+      "change": "Use one supplied-context reviewer/high in parallel with chief work; no helper initial directory probing or serialized first-tool barrier. Return bounded acceptance risks, integrate once; follow up only for an observed unresolved defect.",
+      "evidence": [
+        "F1",
+        "F2",
+        "F4"
+      ],
+      "already_present_in_current_policy": true,
+      "risk": "high effort can itself take longer; one changed-policy preregistered test required",
+      "claimed_saved_seconds": null
+    },
+    {
+      "id": "P3",
+      "target": "budget-status guidance",
+      "change": "Make chief status optional and batched, maximum two absent an explicit protocol. Remove post-acceptance/final status-only turn. Do not attribute full inference latency to the measured subsecond MCP call itself.",
+      "evidence": [
+        "F3"
+      ],
+      "already_present_in_current_policy": true,
+      "claimed_saved_seconds": null
+    },
+    {
+      "id": "P4",
+      "target": "verification scheduling",
+      "change": "Batch independent finite smoke/help/examples/tests after the coherent implementation. Re-run after meaningful source/test changes or unresolved failures; keep real control/atomic/security tests, not an arbitrary minimum-check reduction.",
+      "evidence": [
+        "F2",
+        "F5"
+      ],
+      "already_present_in_current_policy": true,
+      "claimed_saved_seconds": null
+    },
+    {
+      "id": "P5",
+      "target": "measurement and acceptance",
+      "change": "Retain per-profile request/usage/cache and interval union, plus phase-aware shell classifications. Treat shell/child overlaps, provider scheduling, token generation and caching as separate unknown contributors; require both normal completion and unchanged acceptance for a speed claim.",
+      "evidence": [
+        "F1",
+        "F6"
+      ],
+      "claimed_saved_seconds": null
+    }
+  ],
+  "limitations": [
+    "No hidden grader cases, application source, reasoning text, raw commands or request bodies are included or inspected as standalone source. Rollout argument text is classified locally, never executed.",
+    "Literal command classification can overmatch embedded fixture code; it is an indicator, not a proof that every tagged operation executed. Patch metadata records paths by class only, never application code.",
+    "Open/body-read timings include provider/transport/generation effects; they are not TTFT, isolated transport wait or model-compute time. Concurrent durations must not be added to elapsed time.",
+    "Native time outside request interval union includes startup, shell tools, serialization and uninstrumented gaps; it is not all avoidable orchestration overhead.",
+    "Usage sums use individual gateway/native records, not cumulative token budgets. Unknown API cost/quota remains null. Unattributed xhigh requests have no invented cause.",
+    "One observed pair per task with different implementations cannot establish a causal policy contribution, universal acceleration, or a model-quality explanation. No new performance claim follows from current instruction changes.",
+    "A own-cwd persisted rollout was absent. Exact-cwd lookup was not widened. Shared native state limits strict isolation claims."
+  ],
+  "method": {
+    "request_interval_basis": "native event elapsed-at-completion minus per-request duration; union retains actual overlap, rounded to milliseconds",
+    "own_session_binding": "Exact two cwd spellings only; SHA256(thread id) must match root/child metadata, child source parent link must match root; raw identities and global rollout paths withheld",
+    "native_vs_gateway_accounting": "Individual native token records match gateway usage tuples exactly; unmatched gateway records remain unattributed",
+    "command_classification": "Literal cmd strings and patch path class metadata only; never execute rollout text; same native batch may contain multiple tools",
+    "read_only_checks": [
+      "all 77 requests completed and semantically terminal",
+      "aggregate sums match gateway metrics for all four arms",
+      "every available native per-request usage tuple uniquely matches a gateway record",
+      "all file inputs and exact owned rollouts SHA256-stable during read"
+    ],
+    "output_safety": "Only task-relative evidence paths, hashes, fixed classifications, counts and numeric timings; no raw prompts, commands, response bodies, identities, auth or grader data"
+  },
+  "inputs": [
+    {
+      "path": "experiments/ledger-case-20261024-01/metrics-A.json",
+      "sha256": "a7774d7083f9843fdf62756a5ff3f9cea3959836b7f1e238695c1d195c99818f"
+    },
+    {
+      "path": "experiments/ledger-case-20261024-01/run-A/events.jsonl",
+      "sha256": "bf192396fbe71c54a630fb63b96c6b25e195871446e494fe59fd8ce837977051"
+    },
+    {
+      "path": "experiments/ledger-case-20261024-01/metrics-B.json",
+      "sha256": "44d8c309450a754a8cc1a9f514c2ef3fa38bfd357c5e3881381688fcca843aa6"
+    },
+    {
+      "path": "experiments/ledger-case-20261024-01/run-B/events.jsonl",
+      "sha256": "4a954c409779f8f5cc132bd1faea5bbcb6cc5bf89d2e7268ff25a040f82d140a"
+    },
+    {
+      "path": "experiments/safezip-case-20261024-01/metrics-A.json",
+      "sha256": "5758b4236b97fb45aeaf20c70561ffa9260c6c1682ab63122f57cfd8cd2bb3d9"
+    },
+    {
+      "path": "experiments/safezip-case-20261024-01/run-A/events.jsonl",
+      "sha256": "81ba85a708267d5f632ae77379f361271d00d5911e6617f75b2c9167c0507c9b"
+    },
+    {
+      "path": "experiments/safezip-case-20261024-01/metrics-B.json",
+      "sha256": "66be4993e2de03cee8c553d547d6fe7f5ecea3d8622f65d8135d6c225dfe9af4"
+    },
+    {
+      "path": "experiments/safezip-case-20261024-01/run-B/events.jsonl",
+      "sha256": "a4aafb9522b7084c701804caee0b5688c505345aa248012940730bb3cd95884c"
+    },
+    {
+      "path": "frozen-runtime-20261024-09/runtime/codex_flow/cli.py",
+      "sha256": "136d81fda7e391725f564f4061f2320007a86391727a14a6132e22e7edf13b2a"
+    },
+    {
+      "path": "frozen-runtime-20261024-09/runtime/codex_flow/native.py",
+      "sha256": "833f51497ea80a7ab5c4938d1181e5feda83ca8b6c05137ddb14db18caf671a7"
+    },
+    {
+      "path": "Codex-flow/runtime/codex_flow/cli.py",
+      "sha256": "8a6508b9f28dde9ac4940aeb52ba917f15c972b08236ecd6a22186c5e9613d88"
+    },
+    {
+      "path": "Codex-flow/runtime/codex_flow/native.py",
+      "sha256": "a021d83930f9c9c40ececd19be4369a456cff5ac705f22723441a5b53821d67d"
+    }
+  ]
+}

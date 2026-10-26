@@ -1,0 +1,301 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile",
+  "series": "cohesive-suite-20261024-02",
+  "created_utc": "2026-10-26T12:17:12.572730+00:00",
+  "unblinded_mapping": {
+    "A": "solution-26",
+    "B": "solution-25"
+  },
+  "quality": {
+    "B": {
+      "quality_score": 40,
+      "accepted": false,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "de76af1e074c04b1ead2539a4400aa6fc66652434e718cc2f4831e53796b9603",
+      "execution_sha256": "4648d0d609ee788f38173e8dbc663484134ef8793494ed8a174262aa4626c317",
+      "anonymous_id": "solution-25"
+    },
+    "A": {
+      "quality_score": 0,
+      "accepted": false,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "e6d1abb4e2ef82481beee192eea90ac22c66e8821df72acce4e206b74c0b53eb",
+      "execution_sha256": "ce4c036974bc8555dc6edcabf59cc326419291f6eff41487f3f45fc2ab58ef79",
+      "anonymous_id": "solution-26"
+    }
+  },
+  "file_count": 18,
+  "counts": {
+    "verbatim_source": 8,
+    "derived_report": 7,
+    "verbatim_verification": 3
+  },
+  "source_files_repaired": 0,
+  "all_selected_original_files_unchanged": true,
+  "all_original_selected_inventories_unchanged": true,
+  "source_policy": "All selected application/source and three verifier files are copied byte-identically",
+  "report_policy": "Seven structured reports are derived path-redacted copies with separate raw/published hashes",
+  "seal_policy": "Seal/execution embedded hashes refer to original raw reports, not derived published report bytes",
+  "path_policy": "Owned report paths become references relative to this suite; other local roots become [LOCAL_ROOT]",
+  "scope": "Full eligible source inventories use the unchanged reviewed anonymizer exclusions",
+  "excluded": [
+    "fixtures",
+    "stdout/stderr/raw logs",
+    "private maps",
+    "native state/databases",
+    "auth/credentials"
+  ],
+  "privacy_scan": {
+    "rules_sha256": "d34e6067c03e7921c484558329ea372f72bed09819a23c9c1e63b51801ee57ab",
+    "file_count": 19,
+    "findings": [],
+    "history_scanned": false,
+    "limitations": "Fixed allowlist and targeted signatures/names do not detect every possible sensitive format"
+  },
+  "limits": {
+    "max_file_bytes": 1048576,
+    "max_total_bytes": 16777216,
+    "max_files": 200
+  },
+  "publisher_sha256": "d53bf92b0e5199356c5256e1edcb13e996ba4d2b514edc21bace5a74b0e78490",
+  "model_calls": 0,
+  "sdk_calls": 0,
+  "app_runs": 0,
+  "files": [
+    {
+      "path": "solutions/ledgerreconcile/A/.gitignore",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/solution-26/.gitignore",
+      "raw_sha256": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+      "published_sha256": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+      "raw_bytes": 50,
+      "published_bytes": 50,
+      "transformation": "verbatim_source",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "solutions/ledgerreconcile/A/README.md",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/solution-26/README.md",
+      "raw_sha256": "ad949c0849e4e18b3b3bb3505fbca8ca4d9bae09e6f72f44de0e3b17956c427a",
+      "published_sha256": "ad949c0849e4e18b3b3bb3505fbca8ca4d9bae09e6f72f44de0e3b17956c427a",
+      "raw_bytes": 3695,
+      "published_bytes": 3695,
+      "transformation": "verbatim_source",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "solutions/ledgerreconcile/A/examples/orders.csv",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/solution-26/examples/orders.csv",
+      "raw_sha256": "f00c5539ad48ed3d21453c0825bbf9b4ad5212025ae827a1187bbe17d2ea1c12",
+      "published_sha256": "f00c5539ad48ed3d21453c0825bbf9b4ad5212025ae827a1187bbe17d2ea1c12",
+      "raw_bytes": 49,
+      "published_bytes": 49,
+      "transformation": "verbatim_source",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "solutions/ledgerreconcile/A/examples/payments.csv",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/solution-26/examples/payments.csv",
+      "raw_sha256": "b457b36e69e4aa75b900077dc71fcaf146bc993b2fddeda41a4952c4088715f2",
+      "published_sha256": "b457b36e69e4aa75b900077dc71fcaf146bc993b2fddeda41a4952c4088715f2",
+      "raw_bytes": 80,
+      "published_bytes": 80,
+      "transformation": "verbatim_source",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "solutions/ledgerreconcile/A/ledgerreconcile/__init__.py",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/solution-26/ledgerreconcile/__init__.py",
+      "raw_sha256": "f139acc12a6173f5351e09389615d3cc87a513155145d44283cf84e05108cce1",
+      "published_sha256": "f139acc12a6173f5351e09389615d3cc87a513155145d44283cf84e05108cce1",
+      "raw_bytes": 206,
+      "published_bytes": 206,
+      "transformation": "verbatim_source",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "solutions/ledgerreconcile/A/ledgerreconcile/__main__.py",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/solution-26/ledgerreconcile/__main__.py",
+      "raw_sha256": "292612e649a59db77f7c5775b64640f466c2c95a15c2bb590642330be427b794",
+      "published_sha256": "292612e649a59db77f7c5775b64640f466c2c95a15c2bb590642330be427b794",
+      "raw_bytes": 1282,
+      "published_bytes": 1282,
+      "transformation": "verbatim_source",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "solutions/ledgerreconcile/A/ledgerreconcile/core.py",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/solution-26/ledgerreconcile/core.py",
+      "raw_sha256": "26efdedf2c9dabb13b757743d1a65ac68ff9a4bbb78b857ba81b71be22f76831",
+      "published_sha256": "26efdedf2c9dabb13b757743d1a65ac68ff9a4bbb78b857ba81b71be22f76831",
+      "raw_bytes": 9256,
+      "published_bytes": 9256,
+      "transformation": "verbatim_source",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "evidence/ledgerreconcile/grading-26/evaluation.json",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/grading-26/evaluation.json",
+      "raw_sha256": "e6d1abb4e2ef82481beee192eea90ac22c66e8821df72acce4e206b74c0b53eb",
+      "published_sha256": "6e68be61dce7c629e3a9828b7a9351cb2ce33316e9b5c2ff052ec8e7ff6c9e0c",
+      "raw_bytes": 45300,
+      "published_bytes": 44491,
+      "transformation": "derived_report",
+      "byte_identical": false,
+      "path_replacements": {
+        "owned_or_home_root": 0,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0
+      }
+    },
+    {
+      "path": "evidence/ledgerreconcile/grading-26-execution.json",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/grading-26-execution.json",
+      "raw_sha256": "ce4c036974bc8555dc6edcabf59cc326419291f6eff41487f3f45fc2ab58ef79",
+      "published_sha256": "ce4c036974bc8555dc6edcabf59cc326419291f6eff41487f3f45fc2ab58ef79",
+      "raw_bytes": 1577,
+      "published_bytes": 1577,
+      "transformation": "derived_report",
+      "byte_identical": true,
+      "path_replacements": {
+        "owned_or_home_root": 0,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0
+      }
+    },
+    {
+      "path": "solutions/ledgerreconcile/B/.gitignore",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/solution-25/.gitignore",
+      "raw_sha256": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+      "published_sha256": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+      "raw_bytes": 50,
+      "published_bytes": 50,
+      "transformation": "verbatim_source",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "evidence/ledgerreconcile/grading-25/evaluation.json",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/grading-25/evaluation.json",
+      "raw_sha256": "de76af1e074c04b1ead2539a4400aa6fc66652434e718cc2f4831e53796b9603",
+      "published_sha256": "d429dd04227a4a77c5aef16a2eae0ae916e3a5b2547706661c0d168754dc95d8",
+      "raw_bytes": 28320,
+      "published_bytes": 27533,
+      "transformation": "derived_report",
+      "byte_identical": false,
+      "path_replacements": {
+        "owned_or_home_root": 0,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0
+      }
+    },
+    {
+      "path": "evidence/ledgerreconcile/grading-25-execution.json",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/grading-25-execution.json",
+      "raw_sha256": "4648d0d609ee788f38173e8dbc663484134ef8793494ed8a174262aa4626c317",
+      "published_sha256": "4648d0d609ee788f38173e8dbc663484134ef8793494ed8a174262aa4626c317",
+      "raw_bytes": 1577,
+      "published_bytes": 1577,
+      "transformation": "derived_report",
+      "byte_identical": true,
+      "path_replacements": {
+        "owned_or_home_root": 0,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0
+      }
+    },
+    {
+      "path": "verification/ledgerreconcile/evaluator.py",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/verification-ledgerreconcile-20261024-02/evaluator.py",
+      "raw_sha256": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+      "published_sha256": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+      "raw_bytes": 21064,
+      "published_bytes": 21064,
+      "transformation": "verbatim_verification",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "verification/ledgerreconcile/rubric.json",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/verification-ledgerreconcile-20261024-02/rubric.json",
+      "raw_sha256": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+      "published_sha256": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+      "raw_bytes": 2385,
+      "published_bytes": 2385,
+      "transformation": "verbatim_verification",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "verification/ledgerreconcile/task.md",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/verification-ledgerreconcile-20261024-02/task.md",
+      "raw_sha256": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+      "published_sha256": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+      "raw_bytes": 4300,
+      "published_bytes": 4300,
+      "transformation": "verbatim_verification",
+      "byte_identical": true,
+      "path_replacements": {}
+    },
+    {
+      "path": "evidence/ledgerreconcile/copy-integrity.json",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/copy-integrity.json",
+      "raw_sha256": "414833a3989ad521757a54e3aa187ecd1cd93f318dec82e8d1a3eb85c53d4e70",
+      "published_sha256": "414833a3989ad521757a54e3aa187ecd1cd93f318dec82e8d1a3eb85c53d4e70",
+      "raw_bytes": 1175,
+      "published_bytes": 1175,
+      "transformation": "derived_report",
+      "byte_identical": true,
+      "path_replacements": {
+        "owned_or_home_root": 0,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0
+      }
+    },
+    {
+      "path": "evidence/ledgerreconcile/ledgerreconcile-grade-seal.json",
+      "raw_source": "cohesive-suite-20261024-02/ledgerreconcile-grade-seal.json",
+      "raw_sha256": "99894d25bf6ef6a3b1f6eda074d3cac9c6a91719aba3a0dfa5364f07b8491f51",
+      "published_sha256": "545ed6b8cbab47bbed14a6150fb1f80cd35a78db44f5b878257fbcbcf76cf166",
+      "raw_bytes": 55429,
+      "published_bytes": 55263,
+      "transformation": "derived_report",
+      "byte_identical": false,
+      "path_replacements": {
+        "owned_or_home_root": 2,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0,
+        "changed_strings": 2
+      }
+    },
+    {
+      "path": "evidence/ledgerreconcile/ledgerreconcile-unblinded-quality.json",
+      "raw_source": "cohesive-suite-20261024-02/ledgerreconcile-unblinded-quality.json",
+      "raw_sha256": "8d332aafab85d376aba3347dd4f9d920208f45d0f32a6bcf5276bf8d5bc4fe21",
+      "published_sha256": "8d332aafab85d376aba3347dd4f9d920208f45d0f32a6bcf5276bf8d5bc4fe21",
+      "raw_bytes": 904,
+      "published_bytes": 904,
+      "transformation": "derived_report",
+      "byte_identical": true,
+      "path_replacements": {
+        "owned_or_home_root": 0,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0
+      }
+    }
+  ]
+}

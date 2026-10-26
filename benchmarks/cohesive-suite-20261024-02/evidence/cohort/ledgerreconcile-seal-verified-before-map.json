@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "seal_sha256": "99894d25bf6ef6a3b1f6eda074d3cac9c6a91719aba3a0dfa5364f07b8491f51",
+  "all_grade_receipt_hashes_verified": true,
+  "all_frozen_selected_sources_verified": true,
+  "both_generators_terminal_dead": true,
+  "private_map_read": false,
+  "analysis_model_calls": 0,
+  "analysis_app_runs": 0
+}

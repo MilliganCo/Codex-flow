@@ -1,0 +1,809 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile-v1.0",
+  "criteria": [
+    {
+      "id": "L01",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "basic",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.14,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L02",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "exact-cents",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.157,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "row-limit-exact",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.14,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L03",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "signed",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.172,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L04",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "currencies",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.297,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L05",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "opaque-ids",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.203,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L06",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "permutation-a",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.219,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "permutation-b",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.187,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L07",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "semantic-duplicates",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.172,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L08",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "conflicting-payment",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.25,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "conflicting-order",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.25,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L09",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "duplicate-order",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.219,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L10",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "unknown-order",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.406,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L11",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "currency-mismatch",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.25,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L12",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "invalid-money-0",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.188,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-money-1",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.187,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-money-2",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.235,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-money-3",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.187,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-money-4",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.25,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-money-5",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.297,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-money-6",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.141,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-money-7",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.14,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-order-0",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.125,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-order-1",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.141,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "invalid-order-2",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.125,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "row-limit-exceeded",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.14,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L13",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "zero-byte",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.141,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "extra-header",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.14,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "duplicate-header",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.125,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "broken-quote",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.141,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "empty-id",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.125,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L14",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "quoted-utf8-bom",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.156,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L15",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "header-only",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.266,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "unpaid",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.156,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L16",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "late-invalid-atomic",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.125,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L17",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "existing-output",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.156,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        },
+        {
+          "case": "existing-output-directory",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.156,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L18",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "help",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.141,
+          "capture_complete": true,
+          "stdout_bytes": 466,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e9c9cd3ce01fb4e33a54dd1f0a8092b8c108300a83b1b23b4d9d42f68e550675",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "usage: ledgerreconcile [-h] --orders ORDERS --payments PAYMENTS --output\r\n                       OUTPUT\r\n\r\nReconcile offline UTF-8 order and payment CSVs into an exact-cent JSON report.\r\n\r\noptions:\r\n  -h, --help           show this help message and exit\r\n  --orders ORDERS      orders CSV: order_id,currency,amount\r\n  --payments PAYMENTS  payments CSV: payment_id,order_id,currency,amount\r\n  --output",
+          "stderr_excerpt": ""
+        },
+        {
+          "case": "paths with spaces",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.14,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    },
+    {
+      "id": "L19",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "stdlib-unittest-at-least-five",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.141,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1217,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "23422aadbac4a764c8fc92587ee5360f7288caf079e20078fa0e4a0845896395",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 18, in <module>\r\n    main(module=None)\r\n  File \"[REDACTED]\", line 104, in __init__\r\n    self.parseArgs(argv)\r\n  File \"[REDACTED]\", line 130, in parseArgs\r\n    self._do_discovery(argv[2:])\r\n  File \"[REDACTED]\", line 253, in _do_disc"
+        }
+      ]
+    },
+    {
+      "id": "L20",
+      "max": 5,
+      "score": 0,
+      "status": "fail",
+      "evidence": [
+        {
+          "case": "actual-readme-command",
+          "status": "fail",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.141,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 1290,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"[REDACTED]\", line 35, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"[REDACTED]\", line 23, in main\r\n    report = reconcile(args.orders, args.payments)\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"[REDACTED]\", line 15"
+        }
+      ]
+    }
+  ],
+  "assessed_points": 0,
+  "assessed_max": 100,
+  "unassessed_max": 0,
+  "quality_score": 0,
+  "accepted": false,
+  "source_unchanged": true,
+  "source_sha256_before": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "README.md": "ad949c0849e4e18b3b3bb3505fbca8ca4d9bae09e6f72f44de0e3b17956c427a",
+    "examples/orders.csv": "f00c5539ad48ed3d21453c0825bbf9b4ad5212025ae827a1187bbe17d2ea1c12",
+    "examples/payments.csv": "b457b36e69e4aa75b900077dc71fcaf146bc993b2fddeda41a4952c4088715f2",
+    "ledgerreconcile/__init__.py": "f139acc12a6173f5351e09389615d3cc87a513155145d44283cf84e05108cce1",
+    "ledgerreconcile/__main__.py": "292612e649a59db77f7c5775b64640f466c2c95a15c2bb590642330be427b794",
+    "ledgerreconcile/core.py": "26efdedf2c9dabb13b757743d1a65ac68ff9a4bbb78b857ba81b71be22f76831"
+  },
+  "source_sha256_after": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "README.md": "ad949c0849e4e18b3b3bb3505fbca8ca4d9bae09e6f72f44de0e3b17956c427a",
+    "examples/orders.csv": "f00c5539ad48ed3d21453c0825bbf9b4ad5212025ae827a1187bbe17d2ea1c12",
+    "examples/payments.csv": "b457b36e69e4aa75b900077dc71fcaf146bc993b2fddeda41a4952c4088715f2",
+    "ledgerreconcile/__init__.py": "f139acc12a6173f5351e09389615d3cc87a513155145d44283cf84e05108cce1",
+    "ledgerreconcile/__main__.py": "292612e649a59db77f7c5775b64640f466c2c95a15c2bb590642330be427b794",
+    "ledgerreconcile/core.py": "26efdedf2c9dabb13b757743d1a65ac68ff9a4bbb78b857ba81b71be22f76831"
+  },
+  "rubric_sha256": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+  "model_calls": 0,
+  "submissions_imported_on_host": false,
+  "launch_assertion_is_not_sandbox_attestation": true
+}

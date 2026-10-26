@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "task": "safezip",
+  "seal_sha256": "7ea700f97bf7339961ef2b9158606fd8a25373498cc6e7906d6f927ed2dc4927",
+  "all_recorded_grades_and_sdk_receipts_verified": true,
+  "full_anonymous_inventories_verified": true,
+  "canonical_checkers_verified": true,
+  "original_inventory_multiset_verified": true,
+  "private_map_read": false,
+  "analysis_model_calls": 0,
+  "analysis_app_runs": 0
+}

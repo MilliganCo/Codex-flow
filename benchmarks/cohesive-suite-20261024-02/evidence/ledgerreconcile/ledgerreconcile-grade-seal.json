@@ -1,0 +1,1488 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile",
+  "created_utc": "2026-10-25T14:21:53.853172+00:00",
+  "all_anonymous_sources_unchanged": true,
+  "checkers_unchanged": true,
+  "source_file_counts": {
+    "solution-25": 1,
+    "solution-26": 7
+  },
+  "grades": {
+    "solution-25": {
+      "quality_score": 40,
+      "accepted": false,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "de76af1e074c04b1ead2539a4400aa6fc66652434e718cc2f4831e53796b9603",
+      "execution_sha256": "4648d0d609ee788f38173e8dbc663484134ef8793494ed8a174262aa4626c317"
+    },
+    "solution-26": {
+      "quality_score": 0,
+      "accepted": false,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "e6d1abb4e2ef82481beee192eea90ac22c66e8821df72acce4e206b74c0b53eb",
+      "execution_sha256": "ce4c036974bc8555dc6edcabf59cc326419291f6eff41487f3f45fc2ab58ef79"
+    }
+  },
+  "verdict": "verified_recorded_grades_both_rejected_strict_100",
+  "violations": [],
+  "acceptance": {
+    "minimum_score": 100,
+    "required_criteria": [
+      "L01",
+      "L02",
+      "L03",
+      "L04",
+      "L05",
+      "L06",
+      "L07",
+      "L08",
+      "L09",
+      "L10",
+      "L11",
+      "L12",
+      "L13",
+      "L14",
+      "L15",
+      "L16",
+      "L17",
+      "L18",
+      "L19",
+      "L20"
+    ],
+    "each_criterion_max": 5,
+    "source_unchanged_required": true,
+    "rubric_and_task_strict_100_verified": true,
+    "checker_final_field_expressions": {
+      "quality_score": "earned if assessed == 100 else None",
+      "accepted": "assessed == 100 and earned == 100 and (before == after)",
+      "source_unchanged": "before == after"
+    }
+  },
+  "provenance": {
+    "evaluation_root": "evidence/ledgerreconcile",
+    "verifier_root": "verification/ledgerreconcile",
+    "source_hashes_sha256": "8625540bec89da6497c08be0a1704e35cca82358207fa1ec99757f83d712c1dd",
+    "copy_integrity_sha256": "414833a3989ad521757a54e3aa187ecd1cd93f318dec82e8d1a3eb85c53d4e70",
+    "verified_copy_sha256": "220dd6aa7cd32fdbddbd95b365f0ca46376a15a7bfd9bd95a8ca6488d28e5113",
+    "relocation_receipt_sha256": "df85169e3cf33abb244bd1034e39965e15d7596bbcf1df5a5591757352d242ea",
+    "checker_sha256": {
+      "evaluator.py": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+      "rubric.json": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+      "task.md": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018"
+    },
+    "metadata_and_verifier_match_relocation_receipt": true,
+    "preregistration_sha256_declared": "f04507f9caa0033c728cb3d0b854a28a166df5415a32c6c30a0fdc547bf24db6",
+    "selftest_sha256_declared": "dbef9230f2985aed4d89f6e889f200117c9325c5bfa1016b869da02327ce8ce2"
+  },
+  "source_proofs": {
+    "solution-25": {
+      "current_sha256": {
+        ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8"
+      },
+      "matches_manifest": true,
+      "skipped_paths": []
+    },
+    "solution-26": {
+      "current_sha256": {
+        ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+        "README.md": "ad949c0849e4e18b3b3bb3505fbca8ca4d9bae09e6f72f44de0e3b17956c427a",
+        "examples/orders.csv": "f00c5539ad48ed3d21453c0825bbf9b4ad5212025ae827a1187bbe17d2ea1c12",
+        "examples/payments.csv": "b457b36e69e4aa75b900077dc71fcaf146bc993b2fddeda41a4952c4088715f2",
+        "ledgerreconcile/__init__.py": "f139acc12a6173f5351e09389615d3cc87a513155145d44283cf84e05108cce1",
+        "ledgerreconcile/__main__.py": "292612e649a59db77f7c5775b64640f466c2c95a15c2bb590642330be427b794",
+        "ledgerreconcile/core.py": "26efdedf2c9dabb13b757743d1a65ac68ff9a4bbb78b857ba81b71be22f76831"
+      },
+      "matches_manifest": true,
+      "skipped_paths": []
+    }
+  },
+  "grade_proofs": {
+    "solution-25": {
+      "assessed_points": 40,
+      "assessed_max": 100,
+      "unassessed_max": 0,
+      "all_20_criterion_ids_max_scores_and_aggregation_verified": true,
+      "source_before_after_current_manifest_equal": true,
+      "evaluation_digest_matches_execution_grader_output": true,
+      "outer_execution_completion_fields_verified": true,
+      "outer_execution_fields": {
+        "exit_code": 0,
+        "timed_out": false,
+        "launch_error": null,
+        "capture_complete": true,
+        "sdk_root_exit_observed": true,
+        "timeout_s": 1200,
+        "model_calls": 0,
+        "network_enabled": false,
+        "retry_allowed": false,
+        "raw_capture_is_bounded": true
+      },
+      "outer_stdout_digest_matches_reconstructed_evaluator_summary_crlf": true,
+      "outer_stderr_capture_declares_empty": true,
+      "evidence_cases": 41,
+      "runtime_evidence_cases": 40,
+      "cases_without_runtime_evidence": [
+        {
+          "case": "actual-readme-command",
+          "status": "fail",
+          "reason": "missing_or_invalid_documented_smoke"
+        }
+      ],
+      "runtime_exit_code_counts": {
+        "1": 40
+      },
+      "all_runtime_captures_complete": true,
+      "all_runtime_timeouts_false": true,
+      "criteria": [
+        {
+          "id": "L01",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "basic",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L02",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "exact-cents",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "row-limit-exact",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L03",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "signed",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L04",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "currencies",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L05",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "opaque-ids",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L06",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "permutation-a",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "permutation-b",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L07",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "semantic-duplicates",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L08",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence": [
+            {
+              "case": "conflicting-payment",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "conflicting-order",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L09",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence": [
+            {
+              "case": "duplicate-order",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L10",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence": [
+            {
+              "case": "unknown-order",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L11",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence": [
+            {
+              "case": "currency-mismatch",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L12",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence": [
+            {
+              "case": "invalid-money-0",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-money-1",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-money-2",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-money-3",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-money-4",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-money-5",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-money-6",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-money-7",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-order-0",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-order-1",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "invalid-order-2",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "row-limit-exceeded",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L13",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence": [
+            {
+              "case": "zero-byte",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "extra-header",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "duplicate-header",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "broken-quote",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "empty-id",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L14",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "quoted-utf8-bom",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L15",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "header-only",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "unpaid",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L16",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence": [
+            {
+              "case": "late-invalid-atomic",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L17",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence": [
+            {
+              "case": "existing-output",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "existing-output-directory",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L18",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "help",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            },
+            {
+              "case": "paths with spaces",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 99,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "d3729ca8b076544dd6ed1da50cf6b472c1347cb4b0c1b4092cb19de6bad42cb4"
+            }
+          ]
+        },
+        {
+          "id": "L19",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "stdlib-unittest-at-least-five",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1217,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "23422aadbac4a764c8fc92587ee5360f7288caf079e20078fa0e4a0845896395"
+            }
+          ]
+        },
+        {
+          "id": "L20",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "actual-readme-command",
+              "status": "fail",
+              "reason": "missing_or_invalid_documented_smoke"
+            }
+          ]
+        }
+      ]
+    },
+    "solution-26": {
+      "assessed_points": 0,
+      "assessed_max": 100,
+      "unassessed_max": 0,
+      "all_20_criterion_ids_max_scores_and_aggregation_verified": true,
+      "source_before_after_current_manifest_equal": true,
+      "evaluation_digest_matches_execution_grader_output": true,
+      "outer_execution_completion_fields_verified": true,
+      "outer_execution_fields": {
+        "exit_code": 0,
+        "timed_out": false,
+        "launch_error": null,
+        "capture_complete": true,
+        "sdk_root_exit_observed": true,
+        "timeout_s": 1200,
+        "model_calls": 0,
+        "network_enabled": false,
+        "retry_allowed": false,
+        "raw_capture_is_bounded": true
+      },
+      "outer_stdout_digest_matches_reconstructed_evaluator_summary_crlf": true,
+      "outer_stderr_capture_declares_empty": true,
+      "evidence_cases": 41,
+      "runtime_evidence_cases": 41,
+      "cases_without_runtime_evidence": [],
+      "runtime_exit_code_counts": {
+        "1": 40,
+        "0": 1
+      },
+      "all_runtime_captures_complete": true,
+      "all_runtime_timeouts_false": true,
+      "criteria": [
+        {
+          "id": "L01",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "basic",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L02",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "exact-cents",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "row-limit-exact",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L03",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "signed",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L04",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "currencies",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L05",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "opaque-ids",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L06",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "permutation-a",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "permutation-b",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L07",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "semantic-duplicates",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L08",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "conflicting-payment",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "conflicting-order",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L09",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "duplicate-order",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L10",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "unknown-order",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L11",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "currency-mismatch",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L12",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "invalid-money-0",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-money-1",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-money-2",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-money-3",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-money-4",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-money-5",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-money-6",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-money-7",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-order-0",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-order-1",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "invalid-order-2",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "row-limit-exceeded",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L13",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "zero-byte",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "extra-header",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "duplicate-header",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "broken-quote",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "empty-id",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L14",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "quoted-utf8-bom",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L15",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "header-only",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "unpaid",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L16",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "late-invalid-atomic",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L17",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "existing-output",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            },
+            {
+              "case": "existing-output-directory",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L18",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "help",
+              "status": "pass",
+              "reason": "contract_check",
+              "exit_code": 0,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 466,
+              "stderr_bytes": 0,
+              "stdout_sha256": "e9c9cd3ce01fb4e33a54dd1f0a8092b8c108300a83b1b23b4d9d42f68e550675",
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "case": "paths with spaces",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        },
+        {
+          "id": "L19",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "stdlib-unittest-at-least-five",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1217,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "23422aadbac4a764c8fc92587ee5360f7288caf079e20078fa0e4a0845896395"
+            }
+          ]
+        },
+        {
+          "id": "L20",
+          "max": 5,
+          "score": 0,
+          "status": "fail",
+          "evidence": [
+            {
+              "case": "actual-readme-command",
+              "status": "fail",
+              "reason": "contract_check",
+              "exit_code": 1,
+              "timed_out": false,
+              "capture_complete": true,
+              "stdout_bytes": 0,
+              "stderr_bytes": 1290,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr_sha256": "5792c149230fc1750670a6f43f9bc0226e00524c96477e1dc776846992f3bb1a"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "verification_boundary": {
+    "method": "host stdlib hashing, JSON parsing, AST parsing and filesystem metadata only",
+    "application_imports": 0,
+    "application_executions": 0,
+    "sdk_calls": 0,
+    "model_calls": 0,
+    "identity_maps_read": false,
+    "code_fixes": false,
+    "write_mode": "exclusive create; existing target is not overwritten"
+  },
+  "limitations": [
+    "Existing evaluator and execution records were verified without rerunning submissions or the checker. Execution fields are recorded attestations, not independent sandbox or process-tree attestation.",
+    "Eligible-source equality uses the supplied source-hashes manifest and evaluator SKIP policy. Original workspaces, preregistration content, self-test output and identity maps were not read. Their supplied provenance digests were not independently regenerated.",
+    "Raw execution captures were not read. Their stored stdout digest and byte count match the reconstructed deterministic evaluator summary with Windows CRLF; stderr metadata declares the empty digest. Per-case output hashes are preserved as evaluator evidence.",
+    "Recorded solution-25 score 40 includes negative-case passes while its runtime excerpts report No module named ledgerreconcile. The score is copied unchanged from the actual evaluator output and does not establish a functioning CLI. Both accepted fields are false under strict 100/100."
+  ]
+}

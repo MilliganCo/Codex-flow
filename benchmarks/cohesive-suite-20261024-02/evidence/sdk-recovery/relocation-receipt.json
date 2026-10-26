@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "kind": "cohesive_ledger_sdk_relocation",
+  "created_utc": "2026-10-25T14:15:28.713519+00:00",
+  "task": "ledgerreconcile",
+  "anonymous_ids": [
+    25,
+    26
+  ],
+  "original_grader_sha256": "529db8e73f87d9f7b32a524ee6040a9c83f1540501bf3dc04be4401a40a7754d",
+  "wrapper_sha256": "aef81c37f1c2422448eb085383ea9e0cda0d6b0bfb59a2cd6c7bfc79290f919e",
+  "original_state_sha256": "adb6620d978c9a17c49ade61da9aa1f62688ecf3b8711cfb9c835d0acda9f275",
+  "original_eligible_inventory_multiset_sha256": "efc52b6f722365232c1ad98dbe024e2c39f5c0aa48bc5e9e7885a6e1965b200f",
+  "canonical_inputs": {
+    "task": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+    "evaluator": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+    "rubric": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+    "selftest": "dbef9230f2985aed4d89f6e889f200117c9325c5bfa1016b869da02327ce8ce2"
+  },
+  "preregistration_sha256": "f04507f9caa0033c728cb3d0b854a28a166df5415a32c6c30a0fdc547bf24db6",
+  "copied_metadata_sha256": {
+    "source-hashes.json": "8625540bec89da6497c08be0a1704e35cca82358207fa1ec99757f83d712c1dd",
+    "copy-integrity.json": "414833a3989ad521757a54e3aa187ecd1cd93f318dec82e8d1a3eb85c53d4e70"
+  },
+  "copied_verifier_sha256": {
+    "evaluator.py": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+    "rubric.json": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+    "task.md": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+    "verified-copy.json": "220dd6aa7cd32fdbddbd95b365f0ca46376a15a7bfd9bd95a8ca6488d28e5113"
+  },
+  "file_counts": {
+    "solution-25": 1,
+    "solution-26": 7
+  },
+  "all_original_selected_sources_unchanged": true,
+  "all_copies_byte_identical": true,
+  "terminal_pid_proof": {
+    "A": {
+      "original_process_dead": true,
+      "basis": "original_pid_absent",
+      "unique_observed_identity_available": true
+    },
+    "B": {
+      "original_process_dead": true,
+      "basis": "original_pid_absent",
+      "unique_observed_identity_available": true
+    }
+  },
+  "private_map_read_or_modified": false,
+  "old_failed_sdk_receipts_preserved": true,
+  "source_fixes": false,
+  "acl_changes": false,
+  "sandbox_profile_changes": false,
+  "auth_copied": false,
+  "model_calls": 0,
+  "sdk_calls": 0,
+  "app_runs": 0
+}

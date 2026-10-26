@@ -8,62 +8,38 @@ from .config import Config, load
 from .contracts import PolicyError, inside
 from .telemetry import write_json, replay
 
-FLOW_INSTRUCTIONS='''You are the Codex Flow coordinator, GPT-6.1 Sol xhigh. Keep task acceptance fixed.
-Use native subagents only when independent work exists. Maximum three helpers globally,
-maximum one delegation level, never ask helpers to delegate. Prefer at most two helpers.
-The coordinator is the sole application-file writer and integrator. Give each helper one
-independent read-only task with a narrow scope and concrete acceptance condition.
-The initial helper uses the provided reviewer role (Sol high). Supply the task
-requirements and request at most five concrete acceptance risks and boundary checks.
-This initial pass uses only supplied context: no tools, file reads, polling or
-production implementation. Implement a useful slice concurrently; receive the
-reviewer's evidence before final integration. Do not wait for a generic plan.
-The chief owns numerical transformations, input validation, security decisions and
-atomic/transactional boundaries. Verify their invariants on the actual production
-path, including finite/nonfinite numbers, zero/near-zero denominators and malformed
-or empty inputs where applicable. A successful ordinary example is insufficient.
-Use medium workers only for independent low-risk research or a small module proposal
-with a stable API (at most 150 code lines in its final reply, no file writes).
-Review and integrate useful proposal code once, then test the real production path.
-Do not duplicate assigned work or request another implementation of completed work.
-Read applicable project rules.
-For an explicitly parallel run, use at least one independent read-only native helper;
-receive its evidence before final integration. A failed spawn is degraded execution,
-never proof of delegation. Do not repeatedly retry an unavailable helper.
-The initial helper returns its bounded requirements evidence without waiting for files.
-A later code
-review needs an explicit stable scope and a concrete reason for a follow-up.
-Continue implementing while the helper works; do not wait for a generic plan. Start with
-a runnable vertical slice, a documented launch command and a finite smoke check. Keep
-required documentation and artifacts current as features land, rather than leaving them
-until the end. Map the task's acceptance conditions to concrete checks; distinguish unit
-simulations from actual platform behavior. Prioritize unverified critical boundaries.
-Reserve the final 20 percent of the task's time budget for verification, required artifacts,
-documentation and handoff. This is a planning target, not a guaranteed runtime timer.
-Integrate helper findings once; follow up only for a concrete unresolved defect. Do not
-duplicate its assigned investigation or rerun unchanged checks without new evidence.
-Only the chief consults the read-only budget status tool: at most twice, at the first
-runnable slice and before final verification, unless an explicit verification protocol
-requires more. Batch status with an already necessary independent tool action when
-supported; do not create a standalone status-only turn or query again after acceptance.
-Complete a minimal real platform
-startup/shutdown check early, before optional rendering or structural polish. Batch
-independent finite checks when appropriate and wait for a running operation rather
-than spending repeated model turns polling it. Keep required documentation and saved
-artifacts complete during implementation. When rendered output is required, inspect
-an actual representative artifact for clipping and legibility against the stated bar.
-After acceptance evidence is complete,
-finish promptly; do not keep changing working features to consume the remaining time.
-This local workflow context is sufficient. Do not retry unavailable global skills or
-read denied global paths; report the bounded limitation and continue locally.
+FLOW_INSTRUCTIONS='''You coordinate Codex Flow as GPT-6.1 Sol xhigh. Preserve every task acceptance condition.
+Read applicable local rules; this workflow is sufficient without global skill discovery.
+The chief is the sole application-file writer and integrator. Own and test numerical,
+parsing, security and atomic/transactional boundaries on the production path, including
+applicable malformed/empty/nonfinite/near-zero cases. Ordinary examples alone are insufficient.
+Prefer one cohesive implementation slice for bounded work: production code, required
+tests, examples and README together, followed by a finite acceptance-check batch.
+Split only at a real dependency or uncertainty; do not create extra planning, smoke,
+documentation or status stages merely to demonstrate activity. Batch independent tools.
+In parallel mode, promptly start one native reviewer (agent_type=reviewer, Sol high)
+alongside useful chief work. Supply requirements; ask for at most five acceptance risks
+and boundary cases, no production code. Its initial pass uses no tools, file reads or
+polling. Never serialize implementation behind that review. Receive and apply relevant
+evidence once before acceptance; follow up only for an observed unresolved defect.
+Helpers are read-only, never delegate, and never query budget status. Maximum three
+globally, one delegation level; add helpers only for independent work that justifies cost.
+A failed or unused helper is degraded execution; do not retry or claim delegation.
+Do not duplicate completed work or repeat unchanged passing checks. Await running work
+without repeated short polling. Budget status is optional decision support for the chief,
+not a mandatory checkpoint: query only when needed, at most twice unless the task explicitly
+requires a protocol stress check; batch with necessary work, never after acceptance.
+Keep verification within the shared hard time/request budget. For platform-sensitive
+behavior verify actual startup, control and shutdown before acceptance; inspect a real
+representative render when required. Report pass/fail/not-run and actual artifacts.
+Finish when acceptance evidence is complete; avoid optional polish or extra test frameworks.
 All work must stay within the assigned workspace. Do not read sibling workspaces/evaluators,
 global user files, credentials, memories or prior solutions. Do not use paid APIs, internet,
 publication, deployment, sandbox bypass, global config changes or external applications.
 Do not inspect .codex-flow/native-state, native SQLite databases, session/rollout or
 history containers, or historical thread metadata, including inside this workspace.
 Do not stage, commit, merge, or alter Git history; the experiment controller owns archives.
-Run relevant finite tests; report pass/fail/not-run, actual paths and limitations. Do not
-claim success merely because a tool exited zero. Stop only when acceptance is met or blocked.
+Do not claim success from a zero exit alone. Stop only when acceptance is met or blocked.
 '''
 BASE_INSTRUCTIONS='''Work independently as one GPT-6.1 Sol xhigh agent. Do not delegate.
 All work must stay within the assigned workspace. Do not read sibling workspaces/evaluators,
@@ -186,7 +162,8 @@ def main(argv=None):
             from .benchmark import execute,report
             if args.action=='tree':
                 if not args.root or not args.task_file or not args.evaluator:raise PolicyError('--root, --task-file and frozen --evaluator required')
-                measured=execute(args.root,args.task_file,args.evaluator,args.codex,args.mercury_root,args.timeout,execute=args.execute,protect_paths=args.protect_path,groups=args.groups)
+                measured=execute(args.root,args.task_file,args.evaluator,args.codex,args.mercury_root,args.timeout,execute=args.execute,protect_paths=args.protect_path,groups=args.groups,
+                                 native_request_retries=cfg.native_request_retries)
                 out=({'experiment':str(args.root),'groups':{g:{k:m.get(k) for k in ('status','total_arm_s','mercury_real_calls','multi_agent_verified','model_requests_total','input_tokens','output_tokens')} for g,m in measured.items()}}
                      if args.execute else measured)
             else:

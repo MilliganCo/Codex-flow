@@ -32,6 +32,10 @@ class BudgetChannelTests(unittest.TestCase):
             self.assertEqual(tool.status()['budget']['requests_used'], 1)
         report = channel.summary()
         self.assertEqual(report, {'configured': True, 'publisher_failed': False,
+                         'publisher_error_counts': {}, 'publisher_last_errno': None,
+                         'publisher_retry_attempts': 0, 'publisher_recovered_publications': 0,
+                         'publisher_failed_publications': 0,
+                         'publisher_last_winerror': None,
                          'status_calls': 2, 'successful_calls': 2, 'unavailable_calls': 0,
                          'audit_valid': True, 'phases': {'build': 2}})
         self.assertFalse(channel._thread.is_alive())
@@ -47,6 +51,80 @@ class BudgetChannelTests(unittest.TestCase):
         with patch('codex_flow.telemetry.write_json', side_effect=OSError):
             channel.publish()
         self.assertTrue(channel.summary()['publisher_failed'])
+        self.assertEqual(channel.summary()['publisher_error_counts'], {'io': 1})
+        self.assertEqual(channel.summary()['publisher_failed_publications'], 1)
+
+    def test_validation_and_unrelated_permission_errors_never_retry(self):
+        error = PermissionError(13, 'synthetic error; never record its message')
+        error.winerror = 33
+        for failure, kind in ((error, 'io'), (ValueError('private details'), 'validation')):
+            with self.subTest(kind=kind):
+                channel = BudgetChannel(self.root, ExecutionBudget(100), RequestBudget(80))
+                with patch('codex_flow.telemetry.write_json', side_effect=failure) as write:
+                    channel.publish()
+                self.assertEqual(write.call_count, 1)
+                summary = channel.summary()
+                self.assertTrue(summary['publisher_failed'])
+                self.assertEqual(summary['publisher_error_counts'], {kind: 1})
+                self.assertEqual(summary['publisher_retry_attempts'], 0)
+                self.assertEqual(summary['publisher_failed_publications'], 1)
+                self.assertNotIn('private details', json.dumps(summary))
+                self.assertNotIn('synthetic error', json.dumps(summary))
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows file sharing regression')
+    def test_transient_reader_lock_recovers_atomic_publication_without_hiding_error(self):
+        import threading
+        from codex_flow.telemetry import write_json
+        requests = RequestBudget(80)
+        channel = BudgetChannel(self.root, ExecutionBudget(100), requests)
+        channel.publish()
+        ready, release = threading.Event(), threading.Event()
+        def read():
+            with channel.status_file.open('rb'):
+                ready.set()
+                release.wait(timeout=5)
+        thread = threading.Thread(target=read)
+        thread.start()
+        self.addCleanup(release.set)
+        self.assertTrue(ready.wait(timeout=2))
+        def writing(*args, **kwargs):
+            try:
+                return write_json(*args, **kwargs)
+            except PermissionError:
+                # First attempt genuinely collided. Close that reader before retry.
+                release.set()
+                thread.join(timeout=2)
+                raise
+        requests.reserve()
+        with patch('codex_flow.telemetry.write_json', side_effect=writing):
+            channel.publish()
+        thread.join(timeout=2)
+        self.assertFalse(thread.is_alive())
+        self.assertFalse(channel.publisher_failed)
+        self.assertEqual(json.loads(channel.status_file.read_text())['budget']['requests_used'], 1)
+        self.assertEqual(channel.summary()['publisher_error_counts'], {'io': 1})
+        self.assertEqual(channel.summary()['publisher_recovered_publications'], 1)
+        self.assertEqual(channel.summary()['publisher_retry_attempts'], 1)
+        self.assertEqual(channel.summary()['publisher_failed_publications'], 0)
+        self.assertEqual(list(channel.root.glob('.flow-*.tmp')), [])
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows file sharing reproduction')
+    def test_legacy_read_handle_reproduces_atomic_replace_failure_with_typed_diagnostics(self):
+        channel = BudgetChannel(self.root, ExecutionBudget(100), RequestBudget(80))
+        channel.publish()
+        before = channel.status_file.read_bytes()
+        with channel.status_file.open('rb'):
+            channel.publish()
+            self.assertTrue(channel.publisher_failed)
+            self.assertEqual(channel.status_file.read_bytes(), before)
+        channel.publish()
+        self.assertTrue(channel.publisher_failed)  # Do not hide a recovered failure.
+        summary = channel.summary()
+        self.assertEqual(summary['publisher_error_counts'], {'io': 4})
+        self.assertEqual(summary['publisher_retry_attempts'], 3)
+        self.assertEqual(summary['publisher_failed_publications'], 1)
+        self.assertEqual(summary['publisher_last_errno'], 13)
+        self.assertIn(summary['publisher_last_winerror'], (5, 32))
 
     def test_only_parallel_config_has_readonly_fixed_path_mcp(self):
         channel = BudgetChannel(self.root, ExecutionBudget(100), RequestBudget(80))

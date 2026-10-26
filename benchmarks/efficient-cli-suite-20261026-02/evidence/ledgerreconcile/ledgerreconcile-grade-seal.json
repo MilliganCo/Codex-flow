@@ -1,0 +1,657 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile",
+  "created_utc": "2026-10-26T11:33:45.255312+00:00",
+  "verdict": "pass",
+  "all_anonymous_sources_unchanged": true,
+  "checkers_unchanged": true,
+  "source_file_counts": {
+    "solution-33": 9,
+    "solution-34": 8
+  },
+  "grades": {
+    "solution-33": {
+      "quality_score": 100,
+      "accepted": true,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "a56153a37817b508aa076708cb95a540b193442df060d679e388504b64b7441d",
+      "execution_sha256": "0f85974cd751c8e7518ab95016778292ee5d61d51da5d0f3626080add65a19e3"
+    },
+    "solution-34": {
+      "quality_score": 100,
+      "accepted": true,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "c6ff42854949bd77b5e6f7786647137e03165a6543ad108fc9f02901f7f35221",
+      "execution_sha256": "49f80fe854170f06e488fcc2a78fbc9331a2a8dfe8f22d1f0ec38f550d13a65e"
+    }
+  },
+  "checker_sha256": {
+    "evaluator.py": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+    "rubric.json": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+    "task.md": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018"
+  },
+  "strict_acceptance": {
+    "required_criteria": [
+      "L01",
+      "L02",
+      "L03",
+      "L04",
+      "L05",
+      "L06",
+      "L07",
+      "L08",
+      "L09",
+      "L10",
+      "L11",
+      "L12",
+      "L13",
+      "L14",
+      "L15",
+      "L16",
+      "L17",
+      "L18",
+      "L19",
+      "L20"
+    ],
+    "maximum_points": 100,
+    "minimum_points": 100,
+    "all_criteria_must_pass": true,
+    "sources_must_be_unchanged": true,
+    "acceptance_ast_verified": true,
+    "score_ast_verified": true,
+    "source_unchanged_ast_verified": true
+  },
+  "evidence": {
+    "solution-33": {
+      "criteria": [
+        {
+          "id": "L01",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "basic"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L02",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "exact-cents",
+            "row-limit-exact"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L03",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "signed"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L04",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "currencies"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L05",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "opaque-ids"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L06",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "permutation-a",
+            "permutation-b"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L07",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "semantic-duplicates"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L08",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "conflicting-payment",
+            "conflicting-order"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L09",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "duplicate-order"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L10",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "unknown-order"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L11",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "currency-mismatch"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L12",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "invalid-money-0",
+            "invalid-money-1",
+            "invalid-money-2",
+            "invalid-money-3",
+            "invalid-money-4",
+            "invalid-money-5",
+            "invalid-money-6",
+            "invalid-money-7",
+            "invalid-order-0",
+            "invalid-order-1",
+            "invalid-order-2",
+            "row-limit-exceeded"
+          ],
+          "evidence_count": 12
+        },
+        {
+          "id": "L13",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "zero-byte",
+            "extra-header",
+            "duplicate-header",
+            "broken-quote",
+            "empty-id"
+          ],
+          "evidence_count": 5
+        },
+        {
+          "id": "L14",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "quoted-utf8-bom"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L15",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "header-only",
+            "unpaid"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L16",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "late-invalid-atomic"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L17",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "existing-output",
+            "existing-output-directory"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L18",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "help",
+            "paths with spaces"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L19",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "stdlib-unittest-at-least-five"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L20",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "actual-readme-command"
+          ],
+          "evidence_count": 1
+        }
+      ],
+      "criteria_passed": 20,
+      "evidence_cases_checked": 41,
+      "evidence_streams_rehashed_from_complete_excerpt": 82,
+      "evidence_streams_not_reconstructable_from_excerpt": [],
+      "eligible_inventory_sha256": {
+        ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+        "README.md": "75e1036a59584cbe7eb3f6ad5c99b527204ac3d99199f10350f37fbb95739ce0",
+        "examples/orders.csv": "4fda00c56d94b31aac0d052cae860e4ad9df1862bea1bc95610d0a97330964f7",
+        "examples/payments.csv": "575370c641849881f743e48325fae3f0c6cc64a78664e337a23b6265291b3a02",
+        "ledgerreconcile/__init__.py": "85e482e744cdf0ba34eb282d34d1d50107a5d1cafdcde37cdf4cbf7d61fabf52",
+        "ledgerreconcile/__main__.py": "2489fd3ddc7c52e934525a44f4e8e8dea9979ad7cc8bee3d38c550af7b390a2d",
+        "ledgerreconcile/core.py": "a7163cdd79d05ef2c4ca4aecc3df8e19620f527d6315f0e70e3c8d1a8d21d137",
+        "tests/test_boundaries.py": "9358d43e258de12ca659e853baeaa90be609930659096defc48501186af8f75c",
+        "tests/test_cli.py": "ec6691acb38329006f6e5722db344d1669a7c95bfb8000d5399012adcf6e4f55"
+      },
+      "excluded_paths_not_read": [],
+      "source_links_or_nonordinary_files": [],
+      "python_ast": {
+        "ledgerreconcile/__init__.py": "parsed_without_execution",
+        "ledgerreconcile/__main__.py": "parsed_without_execution",
+        "ledgerreconcile/core.py": "parsed_without_execution",
+        "tests/test_boundaries.py": "parsed_without_execution",
+        "tests/test_cli.py": "parsed_without_execution"
+      },
+      "authored_test_methods_ast": 20,
+      "authored_test_count_from_evidence": 20,
+      "sdk_exit_code": 0,
+      "sdk_root_exit_observed": true,
+      "sdk_capture_complete": true,
+      "sdk_timed_out": false,
+      "sdk_summary_capture_reconstructed_and_bound": true,
+      "sdk_evaluation_raw_hash_bound": true
+    },
+    "solution-34": {
+      "criteria": [
+        {
+          "id": "L01",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "basic"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L02",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "exact-cents",
+            "row-limit-exact"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L03",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "signed"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L04",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "currencies"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L05",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "opaque-ids"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L06",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "permutation-a",
+            "permutation-b"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L07",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "semantic-duplicates"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L08",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "conflicting-payment",
+            "conflicting-order"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L09",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "duplicate-order"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L10",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "unknown-order"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L11",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "currency-mismatch"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L12",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "invalid-money-0",
+            "invalid-money-1",
+            "invalid-money-2",
+            "invalid-money-3",
+            "invalid-money-4",
+            "invalid-money-5",
+            "invalid-money-6",
+            "invalid-money-7",
+            "invalid-order-0",
+            "invalid-order-1",
+            "invalid-order-2",
+            "row-limit-exceeded"
+          ],
+          "evidence_count": 12
+        },
+        {
+          "id": "L13",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "zero-byte",
+            "extra-header",
+            "duplicate-header",
+            "broken-quote",
+            "empty-id"
+          ],
+          "evidence_count": 5
+        },
+        {
+          "id": "L14",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "quoted-utf8-bom"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L15",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "header-only",
+            "unpaid"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L16",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "late-invalid-atomic"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L17",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "existing-output",
+            "existing-output-directory"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L18",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "help",
+            "paths with spaces"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "id": "L19",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "stdlib-unittest-at-least-five"
+          ],
+          "evidence_count": 1
+        },
+        {
+          "id": "L20",
+          "max": 5,
+          "score": 5,
+          "status": "pass",
+          "evidence_cases": [
+            "actual-readme-command"
+          ],
+          "evidence_count": 1
+        }
+      ],
+      "criteria_passed": 20,
+      "evidence_cases_checked": 41,
+      "evidence_streams_rehashed_from_complete_excerpt": 75,
+      "evidence_streams_not_reconstructable_from_excerpt": [
+        {
+          "criterion": "L13",
+          "case": "zero-byte",
+          "stream": "stderr",
+          "declared_bytes": 197,
+          "excerpt_utf8_bytes": 55,
+          "reason": "redacted_or_truncated_excerpt"
+        },
+        {
+          "criterion": "L13",
+          "case": "extra-header",
+          "stream": "stderr",
+          "declared_bytes": 245,
+          "excerpt_utf8_bytes": 100,
+          "reason": "redacted_or_truncated_excerpt"
+        },
+        {
+          "criterion": "L13",
+          "case": "duplicate-header",
+          "stream": "stderr",
+          "declared_bytes": 249,
+          "excerpt_utf8_bytes": 100,
+          "reason": "redacted_or_truncated_excerpt"
+        },
+        {
+          "criterion": "L13",
+          "case": "broken-quote",
+          "stream": "stderr",
+          "declared_bytes": 219,
+          "excerpt_utf8_bytes": 74,
+          "reason": "redacted_or_truncated_excerpt"
+        },
+        {
+          "criterion": "L17",
+          "case": "existing-output",
+          "stream": "stderr",
+          "declared_bytes": 207,
+          "excerpt_utf8_bytes": 59,
+          "reason": "redacted_or_truncated_excerpt"
+        },
+        {
+          "criterion": "L17",
+          "case": "existing-output-directory",
+          "stream": "stderr",
+          "declared_bytes": 217,
+          "excerpt_utf8_bytes": 59,
+          "reason": "redacted_or_truncated_excerpt"
+        },
+        {
+          "criterion": "L18",
+          "case": "help",
+          "stream": "stdout",
+          "declared_bytes": 446,
+          "excerpt_utf8_bytes": 400,
+          "reason": "redacted_or_truncated_excerpt"
+        }
+      ],
+      "eligible_inventory_sha256": {
+        ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+        "README.md": "d6585ed136de68b5486c1c592956e064a34d83e7588c70f42829a68f13835e10",
+        "examples/orders.csv": "4fda00c56d94b31aac0d052cae860e4ad9df1862bea1bc95610d0a97330964f7",
+        "examples/payments.csv": "b3e45a8ecdb425b0343abe9e6c20c05acf377804874d3fa4603051cc14732904",
+        "ledgerreconcile/__init__.py": "e2caa4f72eb9458f858a65af37e918039a6fb031a0c699c4c5477fbc4fd231e5",
+        "ledgerreconcile/__main__.py": "3629bf248466acdba64a59184663f5cfe05ae69de9f53b7a713e29d78fcf6307",
+        "ledgerreconcile/core.py": "58afe8714035dd7e83ea7058c411ee9f663f9fffba9f2473bfe4c254a4ff4863",
+        "tests/test_ledgerreconcile.py": "d2a153ad18bf392e9fda6f370dc5b2b77dc520d84d882076c0680656b3b681e4"
+      },
+      "excluded_paths_not_read": [
+        ".tmp"
+      ],
+      "source_links_or_nonordinary_files": [],
+      "python_ast": {
+        "ledgerreconcile/__init__.py": "parsed_without_execution",
+        "ledgerreconcile/__main__.py": "parsed_without_execution",
+        "ledgerreconcile/core.py": "parsed_without_execution",
+        "tests/test_ledgerreconcile.py": "parsed_without_execution"
+      },
+      "authored_test_methods_ast": 31,
+      "authored_test_count_from_evidence": 31,
+      "sdk_exit_code": 0,
+      "sdk_root_exit_observed": true,
+      "sdk_capture_complete": true,
+      "sdk_timed_out": false,
+      "sdk_summary_capture_reconstructed_and_bound": true,
+      "sdk_evaluation_raw_hash_bound": true
+    }
+  },
+  "provenance": {
+    "method": "Independent blind host-only raw SHA-256, JSON consistency and Python AST audit; no source execution or application imports",
+    "evaluation_base": "evidence/ledgerreconcile",
+    "verification_base": "verification/ledgerreconcile",
+    "source_hashes_sha256": "f4573ac6696e9273b4c7294b23856bb7783b67651f43b19869ef74cbae63cb4d",
+    "copy_integrity_sha256": "ac80e15ca9ef04230a24bfcb691d8dbc2612109ed2a509dc829b44ed710c5b56",
+    "verified_copy_sha256": "220dd6aa7cd32fdbddbd95b365f0ca46376a15a7bfd9bd95a8ca6488d28e5113",
+    "blindness": "No A/B maps, external metrics, performance reports, runtime/native logs, prior series or grades opened",
+    "host_application_runs": 0,
+    "sdk_launches": 0,
+    "model_calls": 0,
+    "only_output_created": "[LOCAL_ROOT]\\efficient-cli-suite-20261026-02\\ledgerreconcile-grade-seal.json"
+  },
+  "limitations": [
+    "Behavioral results are the supplied completed SDK evaluations; this audit did not rerun submissions or the evaluator.",
+    "SDK root exit, capture and isolation assertions are metadata evidence, not independent OS sandbox or descendant-termination attestation.",
+    "Redacted or truncated evidence excerpts cannot independently reconstruct seven solution-34 stream hashes; the original hash fields remain bound by the evaluation raw SHA-256.",
+    "Original pre-copy workspaces, preregistration, self-test source and permission-profile raw bytes were outside the authorized read scope and were not independently rehashed."
+  ],
+  "violations": []
+}

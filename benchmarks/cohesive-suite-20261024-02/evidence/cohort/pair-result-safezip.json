@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "finished_utc": "2026-10-25T14:31:05.413517+00:00",
+  "key": "safezip",
+  "experiment_id": "safezip-case-20261024-02",
+  "controller_status": "not_run",
+  "failure_category": "scheduled_pair_blocked_by_prior_transport_failures",
+  "reason": "Both Ledger arms failed at transport; diagnose recovery before spending another unchanged pair. No quality-based task selection.",
+  "groups": [
+    "A",
+    "B"
+  ],
+  "arms": {
+    "A": {
+      "status": "not_run",
+      "total_arm_s": null,
+      "model_requests_total": 0,
+      "quality_score": null,
+      "accepted": null
+    },
+    "B": {
+      "status": "not_run",
+      "total_arm_s": null,
+      "model_requests_total": 0,
+      "quality_score": null,
+      "accepted": null
+    }
+  },
+  "retained_in_denominator": true,
+  "denominator": 2,
+  "retry_allowed": false,
+  "both_arms_native_completed": false,
+  "speed_claim": null,
+  "protocol_deviation": "Remaining scheduled pair not executed after infrastructure failure; primary criterion fails",
+  "record_owner": "root",
+  "analysis_model_calls": 0,
+  "analysis_app_runs": 0
+}

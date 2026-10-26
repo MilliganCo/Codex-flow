@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile",
+  "grade_seal_sha256": "99894d25bf6ef6a3b1f6eda074d3cac9c6a91719aba3a0dfa5364f07b8491f51",
+  "sealed_before_map_read": true,
+  "quality": {
+    "B": {
+      "quality_score": 40,
+      "accepted": false,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "de76af1e074c04b1ead2539a4400aa6fc66652434e718cc2f4831e53796b9603",
+      "execution_sha256": "4648d0d609ee788f38173e8dbc663484134ef8793494ed8a174262aa4626c317",
+      "anonymous_id": "solution-25"
+    },
+    "A": {
+      "quality_score": 0,
+      "accepted": false,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "e6d1abb4e2ef82481beee192eea90ac22c66e8821df72acce4e206b74c0b53eb",
+      "execution_sha256": "ce4c036974bc8555dc6edcabf59cc326419291f6eff41487f3f45fc2ab58ef79",
+      "anonymous_id": "solution-26"
+    }
+  },
+  "both_native_arms_failed": true,
+  "speedup_proven": false
+}

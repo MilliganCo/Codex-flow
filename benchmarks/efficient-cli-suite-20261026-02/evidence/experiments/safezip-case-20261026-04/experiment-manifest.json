@@ -1,0 +1,98 @@
+{
+  "experiment_id": "safezip-case-20261026-04",
+  "created_utc": "2026-10-26T11:40:45.538895+00:00",
+  "calendar_date": "2026-10-26",
+  "calendar_timezone": "UTC",
+  "task_sha256": "4b732cd8658cc2c8426ade124ad48be2492993615440ddc3bce8f2d85ded0568",
+  "scaffold_sha": "8a2ecf19510e3d70cb7827428c34d75baf084aeb",
+  "evaluator_sha256": "6e94529e5d6b06c9f5b0ebc1ae6327706a4682d90386015bcdfc026b960741df",
+  "rubric_sha256": "696f3f1f2ec9cc6246c5f72cb297d4dccb2482fb4eae9c5a516e15c096bd52f4",
+  "codex_version": "codex-cli 0.164.0-alpha.11.1",
+  "root_model": "gpt-6.1-sol",
+  "root_effort": "xhigh",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "cpu_count": 16,
+  "timeout_s_per_arm": 1500,
+  "max_helpers": 3,
+  "max_depth": 1,
+  "hardware": {
+    "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16,
+    "ram_bytes": 68635971584,
+    "machine": "AMD64"
+  },
+  "terminal": "offline CLI; independent Windows SDK CLI evaluation",
+  "task_kind": "safezip.v1",
+  "frozen_task_file": "TASK.md",
+  "selected_groups": [
+    "A",
+    "B"
+  ],
+  "initial_order": [
+    [
+      "A",
+      "B"
+    ]
+  ],
+  "auth_class": "ChatGPT subscription; common credential home, no token copying",
+  "isolation": {
+    "worktrees": true,
+    "home_temp_cache": true,
+    "shared_codex_auth_home": true,
+    "project_sqlite_logs": true,
+    "parallel_parent_persistence": true,
+    "cross_arm_read_isolation": false,
+    "shared_deny_policy": true,
+    "hidden_evaluator_and_prior_solutions_denied": true,
+    "boundary_smoke": "single deny works; reciprocal Windows profiles interfere through shared CodexSandboxUsers ACL; custom roles inherit parent permissions"
+  },
+  "validity": "degraded physical read isolation; independent contexts/workspaces and no operator transfer; Harness2-inspired only; per-arm provider trace required",
+  "max_model_requests_per_arm_including_probes": 80,
+  "native_request_max_retries_both_arms": 1,
+  "flow_treatment": {
+    "harness": "enabled guard; calibration deferred; zero automatic online probes",
+    "helper": "context-only reviewer/high; root remains sole application-file writer",
+    "phase_reserve": "required finite checks within hard deadline; optional on-demand status"
+  },
+  "acceptance": "Accepted under the frozen task/evaluator/rubric, including every critical gate",
+  "quality_scores_frozen": {
+    "Z01": 5,
+    "Z02": 5,
+    "Z03": 5,
+    "Z04": 5,
+    "Z05": 5,
+    "Z06": 5,
+    "Z07": 5,
+    "Z08": 5,
+    "Z09": 5,
+    "Z10": 5,
+    "Z11": 5,
+    "Z12": 5,
+    "Z13": 5,
+    "Z14": 5,
+    "Z15": 5,
+    "Z16": 5,
+    "Z17": 5,
+    "Z18": 5,
+    "Z19": 5,
+    "Z20": 5
+  },
+  "runtime_sha256": {
+    "benchmark.py": "79941c26485f99a761139b0022e7c7de245a28bfbe98f1a04d5b9dffdcc498ee",
+    "budget.py": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d",
+    "budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "cli.py": "9c8cb98902555c00620a4fe4c1175f43490d092fab1f375be7bdcecad8649dcd",
+    "config.py": "2b64c387744b9892bb9935d58d9d9576330a194fa39a9b71cd9a1768673ccf13",
+    "contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "native.py": "017a63ffccc56b1a03cf9fa93a6562c18bfad0f26b3d09813e48960420c7bff9",
+    "native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "subscription.py": "5faea42fa74475ec23f52e6620afef5aaff8cab19c3640d4ee8a3528b6873948",
+    "telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1"
+  }
+}

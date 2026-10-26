@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "finished_utc": "2026-10-26T09:11:56.377185+00:00",
+  "key": "safezip",
+  "experiment_id": "safezip-case-20261026-03",
+  "controller_status": "finished",
+  "failure_category": null,
+  "integrity": {
+    "frozen_runtime_unchanged": true,
+    "snapshot_manifest_unchanged": true,
+    "inputs_unchanged": true,
+    "executable_unchanged": true,
+    "prerequisite_unchanged": true,
+    "synthetic_recovery_proof_unchanged": true,
+    "pair_protection_record_unchanged": true,
+    "executed_manifest_matches": true
+  },
+  "policy_violations": [],
+  "groups": [
+    "A",
+    "B"
+  ],
+  "arms": {
+    "A": {
+      "status": "completed_unverified",
+      "metrics_sha256": "55381e5024c07d893156b37e3dd1777e037a40b5b8f41d952db251c821896827",
+      "total_arm_s": 997.438,
+      "orchestration_frontload_s": 0.094,
+      "model_requests_total": 12,
+      "native_request_max_retries": 1,
+      "transient_recovery": {
+        "enabled": true,
+        "retry_eligible_failures": 0,
+        "gateway_replays": 0,
+        "scope": "native HTTP retry only; every new upstream attempt reserves the shared budget; no exactly-once backend claim"
+      },
+      "physical_upstream_attempts": 12,
+      "completed_upstream_attempts": 12,
+      "aggregate_usage": {
+        "input_tokens": 435930,
+        "output_tokens": 29571,
+        "total_tokens": 465501,
+        "cached_tokens": 74112,
+        "reasoning_tokens": 12347
+      },
+      "all_requests_usage": {
+        "input_tokens": 435930,
+        "output_tokens": 29571,
+        "total_tokens": 465501,
+        "cached_tokens": 74112,
+        "reasoning_tokens": 12347
+      },
+      "budget_tool": {
+        "configured": false,
+        "publisher_failed": null,
+        "status_calls": null,
+        "successful_calls": null,
+        "unavailable_calls": null,
+        "audit_valid": null
+      },
+      "budget_feedback_use_status": "unknown",
+      "mercury_successful_calls": 0,
+      "online_probe_counts": {
+        "harness2_real_probes": 0,
+        "harness_inspired_probes": 0
+      },
+      "quality_score": null,
+      "accepted": null
+    },
+    "B": {
+      "status": "failed",
+      "metrics_sha256": "133e2e811a6f67aa55bcaa2fac0acc32390b771c78c60abf554b1fa389a1bb6d",
+      "total_arm_s": 37.391,
+      "orchestration_frontload_s": 1.875,
+      "model_requests_total": 1,
+      "native_request_max_retries": 1,
+      "transient_recovery": {
+        "enabled": true,
+        "retry_eligible_failures": 0,
+        "gateway_replays": 0,
+        "scope": "native HTTP retry only; every new upstream attempt reserves the shared budget; no exactly-once backend claim"
+      },
+      "physical_upstream_attempts": 1,
+      "completed_upstream_attempts": 0,
+      "aggregate_usage": null,
+      "all_requests_usage": null,
+      "budget_tool": {
+        "configured": true,
+        "publisher_failed": false,
+        "status_calls": 0,
+        "successful_calls": 0,
+        "unavailable_calls": 0,
+        "audit_valid": true
+      },
+      "budget_feedback_use_status": "not_observed",
+      "mercury_successful_calls": 1,
+      "online_probe_counts": {
+        "harness2_real_probes": 0,
+        "harness_inspired_probes": 0
+      },
+      "quality_score": null,
+      "accepted": null
+    }
+  },
+  "retained_in_denominator": true,
+  "denominator": 2,
+  "quality_assessed_by_controller": false,
+  "speed_claim": null,
+  "pair_rerun_allowed": false,
+  "native_retry_policy": {
+    "native_request_max_retries_both_arms": 1,
+    "native_stream_max_retries_both_arms": 0,
+    "gateway_transient_recovery_enabled": true,
+    "gateway_replays": 0,
+    "max_physical_upstream_attempts_including_all_retries_per_arm": 80
+  },
+  "protect_paths_sha256": "b060e2f43d95b870bc8658256d092618e12ffb504f809683ee0e5e7ce32bbbf4",
+  "both_arms_native_completed": false,
+  "resource_monitor_launched_by_controller": false
+}

@@ -1,0 +1,97 @@
+{
+  "experiment_id": "ledger-case-20261024-02",
+  "created_utc": "2026-10-25T06:03:10.013432+00:00",
+  "calendar_date": "2026-10-25",
+  "calendar_timezone": "UTC",
+  "task_sha256": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+  "scaffold_sha": "ac898f545c541b55d0cd1e898b1a4224c17fdd14",
+  "evaluator_sha256": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+  "rubric_sha256": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+  "codex_version": "codex-cli 0.163.0-alpha.11.1",
+  "root_model": "gpt-6.1-sol",
+  "root_effort": "xhigh",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "cpu_count": 16,
+  "timeout_s_per_arm": 1500,
+  "max_helpers": 3,
+  "max_depth": 1,
+  "hardware": {
+    "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16,
+    "ram_bytes": 68635971584,
+    "machine": "AMD64"
+  },
+  "terminal": "offline CLI; independent Windows SDK CLI evaluation",
+  "task_kind": "ledgerreconcile.v1",
+  "frozen_task_file": "TASK.md",
+  "selected_groups": [
+    "A",
+    "B"
+  ],
+  "initial_order": [
+    [
+      "A",
+      "B"
+    ]
+  ],
+  "auth_class": "ChatGPT subscription; common credential home, no token copying",
+  "isolation": {
+    "worktrees": true,
+    "home_temp_cache": true,
+    "shared_codex_auth_home": true,
+    "project_sqlite_logs": true,
+    "parallel_parent_persistence": true,
+    "cross_arm_read_isolation": false,
+    "shared_deny_policy": true,
+    "hidden_evaluator_and_prior_solutions_denied": true,
+    "boundary_smoke": "single deny works; reciprocal Windows profiles interfere through shared CodexSandboxUsers ACL; custom roles inherit parent permissions"
+  },
+  "validity": "degraded physical read isolation; independent contexts/workspaces and no operator transfer; Harness2-inspired only; per-arm provider trace required",
+  "max_model_requests_per_arm_including_probes": 80,
+  "flow_treatment": {
+    "harness": "enabled guard; calibration deferred; zero automatic online probes",
+    "helper": "bounded readonly evidence or inline implementation proposal; root remains sole application-file writer",
+    "phase_reserve": "final 20 percent planning instruction; not independently enforced"
+  },
+  "acceptance": "Accepted under the frozen task/evaluator/rubric, including every critical gate",
+  "quality_scores_frozen": {
+    "L01": 5,
+    "L02": 5,
+    "L03": 5,
+    "L04": 5,
+    "L05": 5,
+    "L06": 5,
+    "L07": 5,
+    "L08": 5,
+    "L09": 5,
+    "L10": 5,
+    "L11": 5,
+    "L12": 5,
+    "L13": 5,
+    "L14": 5,
+    "L15": 5,
+    "L16": 5,
+    "L17": 5,
+    "L18": 5,
+    "L19": 5,
+    "L20": 5
+  },
+  "runtime_sha256": {
+    "benchmark.py": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+    "budget.py": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d",
+    "budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "cli.py": "8a6508b9f28dde9ac4940aeb52ba917f15c972b08236ecd6a22186c5e9613d88",
+    "config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "native.py": "a021d83930f9c9c40ececd19be4369a456cff5ac705f22723441a5b53821d67d",
+    "native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "subscription.py": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+    "telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1"
+  }
+}

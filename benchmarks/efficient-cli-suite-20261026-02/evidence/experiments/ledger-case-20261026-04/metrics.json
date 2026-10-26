@@ -1,0 +1,1916 @@
+{
+  "A": {
+    "run_id": "run-A",
+    "model_root": "gpt-6.1-sol",
+    "effort_root": "xhigh",
+    "pid": 49092,
+    "status": "completed_unverified",
+    "started_utc": "2026-10-26T11:09:12.334385+00:00",
+    "wall_clock_s": 599.437,
+    "input_tokens": 411157,
+    "output_tokens": 19835,
+    "cached_tokens": 58496,
+    "actual_api_cost_usd": null,
+    "subscription_quota_delta": null,
+    "tool_calls": 10,
+    "failed_calls": 2,
+    "agent_count": 1,
+    "peak_concurrent_agents": 1,
+    "billing_class": "chatgpt_subscription",
+    "shared_auth_home": true,
+    "isolated_sessions": true,
+    "full_filesystem_read_isolation_verified": false,
+    "attempts": 1,
+    "native_exit_code": 0,
+    "depth_and_total_agent_caps": "read-only ownership and depth are instruction-only; native global concurrent cap and hard shared inference budget",
+    "ephemeral_session": true,
+    "parallel_persistence_reason": null,
+    "readonly_child_instructions_configured": false,
+    "native_child_ids": null,
+    "native_child_count": null,
+    "delegation_evidence": "not_exposed",
+    "stdin_writer_stopped": true,
+    "ended_utc": "2026-10-26T11:19:11.735539+00:00",
+    "stderr_bytes_suppressed": 0,
+    "execution_budget": {
+      "phase": "build",
+      "elapsed_s": 599.5779999999977,
+      "remaining_s": 900.4220000000023,
+      "requests_used": 13,
+      "requests_remaining": 67,
+      "time_fraction": 0.3997186666666651,
+      "request_fraction": 0.1625
+    },
+    "budget_tool": {
+      "configured": false
+    },
+    "native_request_max_retries": 1,
+    "subscription": {
+      "request_count": 13,
+      "completed_requests": 13,
+      "active_requests": 0,
+      "peak_concurrent_requests": 1,
+      "models_gets": 4,
+      "requests": [
+        {
+          "sequence": 1,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 22607,
+            "output_tokens": 238,
+            "total_tokens": 22845,
+            "input_tokens_details": {
+              "cached_tokens": 4096
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 6.515,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 148665,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 26.156999999999243,
+            "remaining_s": 1473.8430000000008,
+            "requests_used": 1,
+            "requests_remaining": 79,
+            "time_fraction": 0.017437999999999496,
+            "request_fraction": 0.0125
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.156,
+          "upstream_body_read_s": 5.359,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "a9bdfeacf876542934fa5e3e5d35f501c639f3d4ce76fe13e1f1068b68291106",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 148665,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 2,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 23244,
+            "output_tokens": 254,
+            "total_tokens": 23498,
+            "input_tokens_details": {
+              "cached_tokens": 9216
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 122
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 8.391,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 129917,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 34.54699999999866,
+            "remaining_s": 1465.4530000000013,
+            "requests_used": 2,
+            "requests_remaining": 78,
+            "time_fraction": 0.02303133333333244,
+            "request_fraction": 0.025
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.172,
+          "upstream_body_read_s": 7.203,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "8f88350ac60d7b20da8b32a17ec06c24a07ac2b5dd5e8c884ac3aa1c7773bdc3",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 129917,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 3,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 23790,
+            "output_tokens": 157,
+            "total_tokens": 23947,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 51
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 4.047,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 120683,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 45.29699999999866,
+            "remaining_s": 1454.7030000000013,
+            "requests_used": 3,
+            "requests_remaining": 77,
+            "time_fraction": 0.030197999999999108,
+            "request_fraction": 0.0375
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.016,
+          "upstream_body_read_s": 3.031,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "448c04aeb7902ea826631d343afe1429c33b09de844259a39bede6152ce5bcd5",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 120683,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 4,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 24258,
+            "output_tokens": 169,
+            "total_tokens": 24427,
+            "input_tokens_details": {
+              "cached_tokens": 9216
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 112
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 7.219,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 111177,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 51.43799999999828,
+            "remaining_s": 1448.5620000000017,
+            "requests_used": 4,
+            "requests_remaining": 76,
+            "time_fraction": 0.03429199999999886,
+            "request_fraction": 0.05
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.015,
+          "upstream_body_read_s": 6.204,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "c99d636129b8d1cc53205ab51806210127a8164216b2105da4cde10719eca595",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 111177,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 5,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 24853,
+            "output_tokens": 182,
+            "total_tokens": 25035,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 19
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 4.937,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 137585,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 58.81299999999828,
+            "remaining_s": 1441.1870000000017,
+            "requests_used": 5,
+            "requests_remaining": 75,
+            "time_fraction": 0.039208666666665525,
+            "request_fraction": 0.0625
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.859,
+          "upstream_body_read_s": 4.063,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "f86041d2e00e9a845804ac525310dd95d5253eaca0b6602cfe9fa8686ed67033",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 137585,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 6,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 25157,
+            "output_tokens": 645,
+            "total_tokens": 25802,
+            "input_tokens_details": {
+              "cached_tokens": 4096
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 516
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 25.328,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 147099,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 65.11000000000058,
+            "remaining_s": 1434.8899999999994,
+            "requests_used": 6,
+            "requests_remaining": 74,
+            "time_fraction": 0.04340666666666705,
+            "request_fraction": 0.075
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.25,
+          "upstream_body_read_s": 24.078,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "ed7af23577a1c8c9fe20c7dcd9a30df8085926334b5dcf53efc85d5b9177cd25",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 147099,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 7,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 26972,
+            "output_tokens": 6333,
+            "total_tokens": 33305,
+            "input_tokens_details": {
+              "cached_tokens": 22656
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 2070
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 146.265,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 1322486,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 91.86000000000058,
+            "remaining_s": 1408.1399999999994,
+            "requests_used": 7,
+            "requests_remaining": 73,
+            "time_fraction": 0.06124000000000039,
+            "request_fraction": 0.0875
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.062,
+          "upstream_body_read_s": 143.235,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "a5cb8579dbe8292260f204130ff9c81c72e1b65b5abea59859a59b680f421df7",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 1322486,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 8,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 33329,
+            "output_tokens": 771,
+            "total_tokens": 34100,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 375
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 16.86,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 213292,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 262.5779999999977,
+            "remaining_s": 1237.4220000000023,
+            "requests_used": 8,
+            "requests_remaining": 72,
+            "time_fraction": 0.17505199999999846,
+            "request_fraction": 0.1
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.016,
+          "upstream_body_read_s": 15.828,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "fbb966c749e26326de5e3181f67ec1fb7842c59d41d0fb7b8d97aa94dcba7511",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 213292,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 9,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 34508,
+            "output_tokens": 6836,
+            "total_tokens": 41344,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 461
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 121.188,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 1799243,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 281.3279999999977,
+            "remaining_s": 1218.6720000000023,
+            "requests_used": 9,
+            "requests_remaining": 71,
+            "time_fraction": 0.18755199999999847,
+            "request_fraction": 0.1125
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.094,
+          "upstream_body_read_s": 112.422,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "cae0a4333bab51354381d4847aefe3b75f645bd431d31ecd6ea7d1b28b7b73ed",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 1799243,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 10,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 41368,
+            "output_tokens": 242,
+            "total_tokens": 41610,
+            "input_tokens_details": {
+              "cached_tokens": 9216
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 106
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 7.187,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 135477,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 414.6409999999996,
+            "remaining_s": 1085.3590000000004,
+            "requests_used": 10,
+            "requests_remaining": 70,
+            "time_fraction": 0.2764273333333331,
+            "request_fraction": 0.125
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.984,
+          "upstream_body_read_s": 6.203,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "ba58a055d80ce21ab556db84267fb0b629745eaef6572ef9955f1acb71595daf",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 135477,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 11,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 41691,
+            "output_tokens": 2200,
+            "total_tokens": 43891,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 2070
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 90.688,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 236882,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 425.54699999999866,
+            "remaining_s": 1074.4530000000013,
+            "requests_used": 11,
+            "requests_remaining": 69,
+            "time_fraction": 0.2836979999999991,
+            "request_fraction": 0.1375
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.922,
+          "upstream_body_read_s": 89.766,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "460f5312b649947f64df7dcdc7aff63f8501eb6c8d927a0860a48210057424fa",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 236882,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 12,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 43915,
+            "output_tokens": 1392,
+            "total_tokens": 45307,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 1034
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 55.578,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 238866,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 519.7350000000006,
+            "remaining_s": 980.2649999999994,
+            "requests_used": 12,
+            "requests_remaining": 68,
+            "time_fraction": 0.3464900000000004,
+            "request_fraction": 0.15
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 2.218,
+          "upstream_body_read_s": 53.313,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "d372620fa0d3e82e69d3e0165342f290d2a26c1932c54beed6a1d5cabb95bb11",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 238866,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 13,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 45465,
+            "output_tokens": 416,
+            "total_tokens": 45881,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 304
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 18.844,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 145609,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 579.844000000001,
+            "remaining_s": 920.155999999999,
+            "requests_used": 13,
+            "requests_remaining": 67,
+            "time_fraction": 0.38656266666666733,
+            "request_fraction": 0.1625
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.328,
+          "upstream_body_read_s": 17.391,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "dec4a2e1656f45a05d9475fcac6de0a490bdd77621b974582ad05dfc2b0b1675",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 145609,
+          "usage_status": "known"
+        }
+      ],
+      "aggregate_usage": {
+        "input_tokens": 411157,
+        "output_tokens": 19835,
+        "total_tokens": 430992,
+        "cached_tokens": 58496,
+        "reasoning_tokens": 7240
+      },
+      "actual_models": [
+        "gpt-6.1-sol"
+      ],
+      "budget_used": 13,
+      "budget_max_requests": 80,
+      "control_rejections": {},
+      "budget_guidance": {
+        "enabled": false,
+        "applied_requests": 0,
+        "statuses": {
+          "disabled": 13
+        }
+      },
+      "transient_recovery": {
+        "enabled": true,
+        "retry_eligible_failures": 0,
+        "gateway_replays": 0,
+        "scope": "native HTTP retry only; every new upstream attempt reserves the shared budget; no exactly-once backend claim"
+      },
+      "initial_header_open_cancellation": "bounded by remaining timeout; no response handle exists until open returns",
+      "agent_count": null,
+      "agent_count_limitation": "requests do not identify agents"
+    },
+    "transport_validated": true,
+    "root_cli_usage": {
+      "input_tokens": 411157,
+      "output_tokens": 19835,
+      "cached_tokens": 58496
+    },
+    "all_requests_usage": {
+      "input_tokens": 411157,
+      "output_tokens": 19835,
+      "total_tokens": 430992,
+      "cached_tokens": 58496,
+      "reasoning_tokens": 7240
+    },
+    "read_denials_configured": true,
+    "native_state_may_rehydrate_shared_history": true,
+    "native_state_content_isolation_verified": false,
+    "native_state_tool_read_denial_configured": true,
+    "native_state_tool_read_denial_verified": false,
+    "group": "A",
+    "task_sha256": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+    "scaffold_sha": "a512714de801e89c9c2b913d2cf2f49efcedc918",
+    "total_arm_s": 599.609,
+    "strategy": "single",
+    "orchestration_frontload_s": 0.078,
+    "mercury_real_calls": 0,
+    "harness2_real_probes": 0,
+    "harness_inspired_probes": 0,
+    "time_to_first_working_demo_s": null,
+    "quality_score": null,
+    "tests_passed": null,
+    "tests_total": null,
+    "integration_status": "disabled",
+    "details": {},
+    "observed_role_profile": false,
+    "observed_role_profiles": [],
+    "multi_agent_verified": false,
+    "multi_agent_evidence": null,
+    "model_requests_total": 13,
+    "usage_limitation": null
+  },
+  "B": {
+    "run_id": "run-B",
+    "model_root": "gpt-6.1-sol",
+    "effort_root": "xhigh",
+    "pid": 13196,
+    "status": "completed_unverified",
+    "started_utc": "2026-10-26T11:09:13.332996+00:00",
+    "wall_clock_s": 718.063,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached_tokens": null,
+    "actual_api_cost_usd": null,
+    "subscription_quota_delta": null,
+    "tool_calls": 16,
+    "failed_calls": 3,
+    "agent_count": 2,
+    "peak_concurrent_agents": null,
+    "billing_class": "chatgpt_subscription",
+    "shared_auth_home": true,
+    "isolated_sessions": true,
+    "full_filesystem_read_isolation_verified": false,
+    "attempts": 1,
+    "native_exit_code": 0,
+    "depth_and_total_agent_caps": "read-only ownership and depth are instruction-only; native global concurrent cap and hard shared inference budget",
+    "ephemeral_session": false,
+    "parallel_persistence_reason": "CLI subagents require a persisted parent; project-local sqlite/log state; shared native auth/rollout container",
+    "readonly_child_instructions_configured": true,
+    "native_child_ids": [
+      "daeaf914969470c0a12af8a770ef286ad6e6f1d459580f8ece479b1ac8c4ddcf"
+    ],
+    "native_child_count": 1,
+    "delegation_evidence": "native_parent_link_and_usage_metadata",
+    "stdin_writer_stopped": true,
+    "ended_utc": "2026-10-26T11:21:11.341055+00:00",
+    "stderr_bytes_suppressed": 0,
+    "execution_budget": {
+      "phase": "build",
+      "elapsed_s": 719.1879999999983,
+      "remaining_s": 780.8120000000017,
+      "requests_used": 23,
+      "requests_remaining": 57,
+      "time_fraction": 0.47945866666666553,
+      "request_fraction": 0.2875
+    },
+    "native_metadata": {
+      "status": "observed",
+      "reason": "native_parent_link_and_usage_metadata",
+      "root_sha256": "ade0df57a1158b18ba86d6a307ed493ef85e2199312f8a547681a52918903b79",
+      "children": [
+        {
+          "thread_sha256": "daeaf914969470c0a12af8a770ef286ad6e6f1d459580f8ece479b1ac8c4ddcf",
+          "model": "gpt-6.1-sol",
+          "requested_effort": "high",
+          "depth": 1,
+          "tokens_used": 65056
+        }
+      ],
+      "peak_concurrent_agents": null
+    },
+    "orchestration_status": "verified",
+    "orchestration_reason": "native_parent_link_and_usage_metadata",
+    "budget_tool": {
+      "configured": true,
+      "publisher_failed": false,
+      "publisher_error_counts": {},
+      "publisher_retry_attempts": 0,
+      "publisher_recovered_publications": 0,
+      "publisher_failed_publications": 0,
+      "publisher_last_errno": null,
+      "publisher_last_winerror": null,
+      "status_calls": 0,
+      "successful_calls": 0,
+      "unavailable_calls": 0,
+      "audit_valid": true,
+      "phases": {}
+    },
+    "native_request_max_retries": 1,
+    "subscription": {
+      "request_count": 23,
+      "completed_requests": 22,
+      "active_requests": 0,
+      "peak_concurrent_requests": 2,
+      "models_gets": 4,
+      "requests": [
+        {
+          "sequence": 1,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 23535,
+            "output_tokens": 157,
+            "total_tokens": 23692,
+            "input_tokens_details": {
+              "cached_tokens": 4096
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 5.328,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 131057,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 26.67199999999866,
+            "remaining_s": 1473.3280000000013,
+            "requests_used": 1,
+            "requests_remaining": 79,
+            "time_fraction": 0.01778133333333244,
+            "request_fraction": 0.0125
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.063,
+          "upstream_body_read_s": 4.234,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "0b33493993ae0ff7fa5b83f3d43dddeaa1ea658d73926b37ea4ea15cfc954f0a",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 131057,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 2,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 23937,
+            "output_tokens": 373,
+            "total_tokens": 24310,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 77
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 15.031,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 106108,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 33.61000000000058,
+            "remaining_s": 1466.3899999999994,
+            "requests_used": 2,
+            "requests_remaining": 78,
+            "time_fraction": 0.022406666666667054,
+            "request_fraction": 0.025
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.968,
+          "upstream_body_read_s": 14.063,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "76a786f22315fd6d194a68f6ee7a505857a34b407ad7eeb29eba3fc13bb2a8a8",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 106108,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 3,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 24333,
+            "output_tokens": 171,
+            "total_tokens": 24504,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 4.422,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 133691,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 49.04699999999866,
+            "remaining_s": 1450.9530000000013,
+            "requests_used": 3,
+            "requests_remaining": 77,
+            "time_fraction": 0.03269799999999911,
+            "request_fraction": 0.0375
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.922,
+          "upstream_body_read_s": 3.484,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "427e0f51cd356bfab782ae35acb74acb0cfdbe72f525f11614e2036c4deb9ee9",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 133691,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 4,
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "status": "failed",
+          "actual_model": null,
+          "usage": null,
+          "semantic_completion_observed": false,
+          "duration_s": 0.11,
+          "http_status": null,
+          "reason": "upstream_open_error",
+          "response_content_type": null,
+          "response_encoding": null,
+          "response_bytes": null,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 49.54699999999866,
+            "remaining_s": 1450.4530000000013,
+            "requests_used": 4,
+            "requests_remaining": 76,
+            "time_fraction": 0.03303133333333244,
+            "request_fraction": 0.05
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": null,
+          "upstream_body_read_s": null,
+          "response_buffered": true,
+          "response_read_completed": null,
+          "payload_fingerprint": "0e7dabcde89ea05eea7b0ad0f655891ddb2a6600e617d389855a81c8a705ed09",
+          "retry_eligible": true,
+          "failure_phase": "upstream_open",
+          "failure_category": "connection_reset"
+        },
+        {
+          "sequence": 5,
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 28116,
+            "output_tokens": 2734,
+            "total_tokens": 30850,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 516
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 51.688,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 778083,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 49.875,
+            "remaining_s": 1450.125,
+            "requests_used": 5,
+            "requests_remaining": 75,
+            "time_fraction": 0.03325,
+            "request_fraction": 0.0625
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.813,
+          "upstream_body_read_s": 49.484,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "0e7dabcde89ea05eea7b0ad0f655891ddb2a6600e617d389855a81c8a705ed09",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 778083,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 6,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 24894,
+            "output_tokens": 86,
+            "total_tokens": 24980,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 18
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 4.188,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 113275,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 55.04699999999866,
+            "remaining_s": 1444.9530000000013,
+            "requests_used": 6,
+            "requests_remaining": 74,
+            "time_fraction": 0.036697999999999106,
+            "request_fraction": 0.075
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.0,
+          "upstream_body_read_s": 3.188,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "9386323f49d180a4fc5e3762caa0002f445e8b6f6ec2c957ad357e897bf75031",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 113275,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 7,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 25156,
+            "output_tokens": 168,
+            "total_tokens": 25324,
+            "input_tokens_details": {
+              "cached_tokens": 9600
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 25
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 4.469,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 133807,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 60.75,
+            "remaining_s": 1439.25,
+            "requests_used": 7,
+            "requests_remaining": 73,
+            "time_fraction": 0.0405,
+            "request_fraction": 0.0875
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.985,
+          "upstream_body_read_s": 3.484,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "93640e2c15230196352fb4e51ca36deb9e24050fa182fa30fec8f14547192617",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 133807,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 8,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 25763,
+            "output_tokens": 347,
+            "total_tokens": 26110,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 59
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 8.156,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 176399,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 67.04699999999866,
+            "remaining_s": 1432.9530000000013,
+            "requests_used": 8,
+            "requests_remaining": 72,
+            "time_fraction": 0.044697999999999107,
+            "request_fraction": 0.1
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.844,
+          "upstream_body_read_s": 7.297,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "43ae7ebf68176ed514913a9b00065a087ac2f3e2d6741d9b3e1473da34cda208",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 176399,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 9,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 26408,
+            "output_tokens": 412,
+            "total_tokens": 26820,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 127
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 9.625,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 176727,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 77.125,
+            "remaining_s": 1422.875,
+            "requests_used": 9,
+            "requests_remaining": 71,
+            "time_fraction": 0.051416666666666666,
+            "request_fraction": 0.1125
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.11,
+          "upstream_body_read_s": 8.468,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "f1a3a3ddcd770212f069e9ab7aeab6f49c0f77ad0b00266d07404f4afcbb2349",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 176727,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 10,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 28131,
+            "output_tokens": 296,
+            "total_tokens": 28427,
+            "input_tokens_details": {
+              "cached_tokens": 4096
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 170
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 9.36,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 137757,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 88.2029999999977,
+            "remaining_s": 1411.7970000000023,
+            "requests_used": 10,
+            "requests_remaining": 70,
+            "time_fraction": 0.05880199999999847,
+            "request_fraction": 0.125
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.219,
+          "upstream_body_read_s": 8.141,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "621935291686fb998db6e43ec2fdee456010cf769eef244421f542ccdb19161a",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 137757,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 11,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 28582,
+            "output_tokens": 6049,
+            "total_tokens": 34631,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 2391
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 145.641,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 1185618,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 99.26599999999962,
+            "remaining_s": 1400.7340000000004,
+            "requests_used": 11,
+            "requests_remaining": 69,
+            "time_fraction": 0.06617733333333307,
+            "request_fraction": 0.1375
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.969,
+          "upstream_body_read_s": 143.781,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "68d0c60cbeaa9f96bedcde3d238ad094b683a82da07a50b46e98dbd8b68c9bf6",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 1185618,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 12,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 31351,
+            "output_tokens": 5178,
+            "total_tokens": 36529,
+            "input_tokens_details": {
+              "cached_tokens": 9600
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 1515
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 95.781,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 1141630,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 245.03199999999924,
+            "remaining_s": 1254.9680000000008,
+            "requests_used": 12,
+            "requests_remaining": 68,
+            "time_fraction": 0.16335466666666615,
+            "request_fraction": 0.15
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.078,
+          "upstream_body_read_s": 93.906,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "6624e203160c3a9ff3615ee19bf836a22d8c863ddba1b2210e5b6d94c308825c",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 1141630,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 13,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 36619,
+            "output_tokens": 321,
+            "total_tokens": 36940,
+            "input_tokens_details": {
+              "cached_tokens": 9600
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 225
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 14.39,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 113911,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 342.8129999999983,
+            "remaining_s": 1157.1870000000017,
+            "requests_used": 13,
+            "requests_remaining": 67,
+            "time_fraction": 0.22854199999999886,
+            "request_fraction": 0.1625
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.015,
+          "upstream_body_read_s": 13.375,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "347fca04c219c68db6d50d62ed282e4553752e3f7e4890fe7104b31993fafa14",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 113911,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 14,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 36953,
+            "output_tokens": 394,
+            "total_tokens": 37347,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 7.86,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 197899,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 357.375,
+            "remaining_s": 1142.625,
+            "requests_used": 14,
+            "requests_remaining": 66,
+            "time_fraction": 0.23825,
+            "request_fraction": 0.175
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.094,
+          "upstream_body_read_s": 6.75,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "d1150d28c56e0624b3b0aa7ca45c5a127db87837f06c734d6dd57b44bd77171f",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 197899,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 15,
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 30959,
+            "output_tokens": 3247,
+            "total_tokens": 34206,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 1034
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 44.156,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 802076,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 357.53199999999924,
+            "remaining_s": 1142.4680000000008,
+            "requests_used": 15,
+            "requests_remaining": 65,
+            "time_fraction": 0.23835466666666616,
+            "request_fraction": 0.1875
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.921,
+          "upstream_body_read_s": 42.344,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "ada1d400ddcf6903c742974d81be9feec0aad05a05eb9c0ab5438a7c66b1b7a5",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 802076,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 16,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 37702,
+            "output_tokens": 1371,
+            "total_tokens": 39073,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 1034
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 54.062,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 239446,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 367.2659999999996,
+            "remaining_s": 1132.7340000000004,
+            "requests_used": 16,
+            "requests_remaining": 64,
+            "time_fraction": 0.24484399999999976,
+            "request_fraction": 0.2
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.641,
+          "upstream_body_read_s": 52.406,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "c89af136b55cb7931bf61d9905333bd44878ffa25e453394ff181065e6b1d5ec",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 239446,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 17,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 40466,
+            "output_tokens": 7565,
+            "total_tokens": 48031,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 1731
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 160.015,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 1730080,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 421.4850000000006,
+            "remaining_s": 1078.5149999999994,
+            "requests_used": 17,
+            "requests_remaining": 63,
+            "time_fraction": 0.2809900000000004,
+            "request_fraction": 0.2125
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 0.937,
+          "upstream_body_read_s": 154.86,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "5bce8cd8ad307c201dbce0ee446133b8bf31ec185c5da512d655d5de706024c5",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 1730080,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 18,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 48106,
+            "output_tokens": 831,
+            "total_tokens": 48937,
+            "input_tokens_details": {
+              "cached_tokens": 9600
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 326
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 22.344,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 247945,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 582.875,
+            "remaining_s": 917.125,
+            "requests_used": 18,
+            "requests_remaining": 62,
+            "time_fraction": 0.38858333333333334,
+            "request_fraction": 0.225
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.422,
+          "upstream_body_read_s": 20.906,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "0791b4b69245c2a3169a537416a38f4b92dea44dad14814476e33aa06d2a7cf9",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 247945,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 19,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 48996,
+            "output_tokens": 536,
+            "total_tokens": 49532,
+            "input_tokens_details": {
+              "cached_tokens": 25088
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 424
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 26.687,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 152011,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 616.2350000000006,
+            "remaining_s": 883.7649999999994,
+            "requests_used": 19,
+            "requests_remaining": 61,
+            "time_fraction": 0.4108233333333337,
+            "request_fraction": 0.2375
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.828,
+          "upstream_body_read_s": 24.844,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "19a02caafdc03a94949c828dba7eb63e254e326606119a04ca20e24335b25c62",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 152011,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 20,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 49897,
+            "output_tokens": 647,
+            "total_tokens": 50544,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 306
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 15.61,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 207474,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 643.0469999999987,
+            "remaining_s": 856.9530000000013,
+            "requests_used": 20,
+            "requests_remaining": 60,
+            "time_fraction": 0.4286979999999991,
+            "request_fraction": 0.25
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.641,
+          "upstream_body_read_s": 13.953,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "ec32865626a0cd6038b044577d550ca91bf580db49c83079ddeb4dac7b5f76be",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 207474,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 21,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 50615,
+            "output_tokens": 735,
+            "total_tokens": 51350,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 230
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 19.0,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 246306,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 659.7819999999992,
+            "remaining_s": 840.2180000000008,
+            "requests_used": 21,
+            "requests_remaining": 59,
+            "time_fraction": 0.43985466666666617,
+            "request_fraction": 0.2625
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.562,
+          "upstream_body_read_s": 17.422,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "1334d2c722de54f9310df1f808ec1a63b3489919a439ff947b4a2ae13f70601f",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 246306,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 22,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 51409,
+            "output_tokens": 65,
+            "total_tokens": 51474,
+            "input_tokens_details": {
+              "cached_tokens": 4096
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 24
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 4.312,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 116197,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 689.7819999999992,
+            "remaining_s": 810.2180000000008,
+            "requests_used": 22,
+            "requests_remaining": 58,
+            "time_fraction": 0.4598546666666662,
+            "request_fraction": 0.275
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.984,
+          "upstream_body_read_s": 2.328,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "70943e5e6aff78bee62e56ddcf75d45588ffe892dd23867703c0b7a1c834edda",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 116197,
+          "usage_status": "known"
+        },
+        {
+          "sequence": 23,
+          "model": "gpt-6.1-sol",
+          "effort": "xhigh",
+          "status": "completed",
+          "actual_model": "gpt-6.1-sol",
+          "usage": {
+            "input_tokens": 51605,
+            "output_tokens": 625,
+            "total_tokens": 52230,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 516
+            }
+          },
+          "semantic_completion_observed": true,
+          "duration_s": 24.282,
+          "http_status": 200,
+          "reason": "completed",
+          "response_content_type": "application/json",
+          "response_encoding": "identity",
+          "response_bytes": 160910,
+          "execution_budget": {
+            "phase": "build",
+            "elapsed_s": 694.2029999999977,
+            "remaining_s": 805.7970000000023,
+            "requests_used": 23,
+            "requests_remaining": 57,
+            "time_fraction": 0.4628019999999985,
+            "request_fraction": 0.2875
+          },
+          "guidance_status": "disabled",
+          "upstream_open_s": 1.141,
+          "upstream_body_read_s": 23.141,
+          "response_buffered": true,
+          "response_read_completed": true,
+          "payload_fingerprint": "9e1e4d9d963d51eed4cda392c67ef34d86cb12c4ac6bcc86192de384915631e3",
+          "retry_eligible": false,
+          "http_eof_observed": false,
+          "read_termination": "response_completed",
+          "upstream_bytes_received": 160910,
+          "usage_status": "known"
+        }
+      ],
+      "aggregate_usage": null,
+      "actual_models": [
+        "gpt-6.1-sol"
+      ],
+      "budget_used": 23,
+      "budget_max_requests": 80,
+      "control_rejections": {},
+      "budget_guidance": {
+        "enabled": false,
+        "applied_requests": 0,
+        "statuses": {
+          "disabled": 23
+        }
+      },
+      "transient_recovery": {
+        "enabled": true,
+        "retry_eligible_failures": 1,
+        "gateway_replays": 0,
+        "scope": "native HTTP retry only; every new upstream attempt reserves the shared budget; no exactly-once backend claim"
+      },
+      "initial_header_open_cancellation": "bounded by remaining timeout; no response handle exists until open returns",
+      "agent_count": null,
+      "agent_count_limitation": "requests do not identify agents"
+    },
+    "transport_validated": true,
+    "root_cli_usage": {
+      "input_tokens": 648174,
+      "output_tokens": 18907,
+      "cached_tokens": 75776
+    },
+    "all_requests_usage": null,
+    "read_denials_configured": true,
+    "native_state_may_rehydrate_shared_history": true,
+    "native_state_content_isolation_verified": false,
+    "native_state_tool_read_denial_configured": true,
+    "native_state_tool_read_denial_verified": false,
+    "group": "B",
+    "task_sha256": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+    "scaffold_sha": "a512714de801e89c9c2b913d2cf2f49efcedc918",
+    "total_arm_s": 719.281,
+    "strategy": "parallel",
+    "orchestration_frontload_s": 1.015,
+    "mercury_real_calls": 1,
+    "harness2_real_probes": 0,
+    "harness_inspired_probes": 0,
+    "time_to_first_working_demo_s": null,
+    "quality_score": null,
+    "tests_passed": null,
+    "tests_total": null,
+    "integration_status": "degraded",
+    "details": {
+      "mercury": {
+        "status": "OBSERVED",
+        "reason": "parallel_useful",
+        "confidence": 0.9947798753220525,
+        "successful_calls": 1,
+        "inference_attempts": 1,
+        "usage": {
+          "cost": 0,
+          "input_tokens": 142,
+          "output_tokens": 1
+        },
+        "route": "parallel",
+        "wall_clock_s": 0.937,
+        "inference_latency_ms": 513
+      },
+      "harness": {
+        "status": "deferred",
+        "mode": "Harness2-inspired",
+        "upstream_probes": 0,
+        "inspired_probes": 0,
+        "runs": [],
+        "decision": {
+          "adopted": false
+        },
+        "application_quality_eligible": false,
+        "reason": "no independent application-quality calibration; online plan probes disabled",
+        "limitation": "guard only; no measured optimizer benefit or upstream Harness2 execution"
+      }
+    },
+    "observed_role_profile": true,
+    "observed_role_profiles": [
+      {
+        "actual_model": "gpt-6.1-sol",
+        "requested_model": "gpt-6.1-sol",
+        "requested_effort": "high"
+      }
+    ],
+    "multi_agent_verified": true,
+    "multi_agent_evidence": [
+      "daeaf914969470c0a12af8a770ef286ad6e6f1d459580f8ece479b1ac8c4ddcf"
+    ],
+    "model_requests_total": 23,
+    "root_input_tokens": 648174,
+    "root_output_tokens": 18907,
+    "usage_limitation": "root/probe usage retained; aggregate native subagent usage not exposed by this JSON stream"
+  }
+}

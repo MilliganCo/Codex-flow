@@ -1,0 +1,11 @@
+{
+  "monitor_finished": true,
+  "stop_reason": "both_arms_terminal_and_declared_pids_dead",
+  "interval_s": 10,
+  "groups": [
+    "A",
+    "B"
+  ],
+  "scope": "declared root CLI PID only; helpers/descendants, gateway/provider and remote models excluded",
+  "identity_rule": "Exact declared PID plus observed creation FILETIME; reuse proves original identity ended"
+}

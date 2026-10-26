@@ -11,6 +11,20 @@ modules. Mercury and Harness-inspired probes are optional and disabled by defaul
 
 **Status:** private development. No project license has been selected. There is no validated universal speedup or quota-saving claim. Runtime completion is distinct from independent acceptance.
 
+The final [two-task CLI cohort](benchmarks/efficient-cli-suite-20261026-02/README.md)
+finished both Solo and Flow arms within 1,500 seconds and 80 physical requests.
+All four unchanged applications scored **100/100** in independent SDK grading.
+Flow took **719.281 vs 599.609 seconds** on Ledger and **1,207.984 vs 925.687 seconds**
+on SafeZip: about **20.0% and 30.5% longer**. The required acceleration without
+quality loss was **not achieved**. The slower test-proposal policy is retained as
+an exact frozen candidate and was not promoted; the current default keeps the
+balanced, context-only `reviewer/high` risk pass with its shell tool disabled.
+Earlier [transport-failed](benchmarks/cohesive-suite-20261024-02/README.md) and
+[partial-completion](benchmarks/resilient-cli-suite-20261026-01/README.md) cohorts
+remain visible. [Offline demos](benchmarks/efficient-cli-suite-20261026-02/README.md#run-the-included-cli-demos)
+and a [separate-checkout rollback](docs/rollback.md#before-the-cli-recovery-changes)
+are included.
+
 The complete [fixed three-task series](benchmarks/stream-suite-20261024-01/README.md)
 completed **all six branches and all 147 native requests without transport errors**.
 Scores A/B: Tree **98/96**, Ledger **100/100**, SafeZip **100/100**. Flow was 3.419%
@@ -83,7 +97,7 @@ Single-agent execution is ephemeral. Parallel parents persist because native wor
 
 On this Windows sandbox, reciprocal per-arm deny rules interfered through shared `CodexSandboxUsers` ACLs. The benchmark gives every arm the same deny policy for existing evaluator/prior-solution targets. Current peer reads remain a soft prohibition: **physical read and shared-state isolation are degraded**. The completed audit of B/C/D's own journals found no native spawn calls or literal peer/state-read indicators; this limited observation does not prove absence of all cross-arm reads. A was ephemeral and has no equivalent retained journal. See [safety](docs/safety-and-permissions.md).
 
-Gateway totals are available only when every observed request completes with usable usage. Request counts do not identify agents; top-level unknown totals, quota deltas and actual API cost remain `null`. Root CLI usage is retained separately. `max_attempts` is a bounded configuration field; the current wrapper makes one attempt with automatic transport retries disabled.
+Gateway totals are available only when every observed request completes with usable usage. Request counts do not identify agents; top-level unknown totals, quota deltas and actual API cost remain `null`. Root CLI usage is retained separately. `max_attempts` is a bounded configuration field; the wrapper makes one task attempt. The optional project setting `native_request_retries: 1` enables one native HTTP retry and bounded stateless recovery within the same deadline/request budget. Its default is `0`; stream retries and gateway replays remain disabled. See [configuration](docs/configuration.md#bounded-http-recovery).
 
 The frozen case02 applications scored A=95, B=97, C=95 and D=96, with zero successful Mercury calls and unconfirmed helpers. The later [case04](benchmarks/case04/README.md) scored A=89, B=83, C=96 and D=90; all four artifacts met the frozen acceptance rule. B/C each made one real Mercury call and B/D each ran two inspired probes, but helpers remained unverified. A/B/D hit their deadlines. These are artifact-quality results, without a full multi-agent or speedup conclusion. Case01 is invalidated and case03 aborted; both remain immutable. See [benchmark evidence](docs/benchmarking.md).
 

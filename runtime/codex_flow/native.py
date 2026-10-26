@@ -31,19 +31,16 @@ def environment(workspace:Path):
 
 def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gateway=None,denied_reads=(),profiles=None,budget_channel=None):
     if parallel:
-        instructions += ('\nController execution plan: selected_strategy=parallel; max_helpers='+str(cfg.max_agents)+
+        instructions += ('\nController: selected_strategy=parallel; max_helpers='+str(cfg.max_agents)+
                          '; delegation_depth=1 (instruction boundary). The human owner explicitly authorized '
-                         'this multi-agent execution. Your FIRST TOOL ACTION must spawn exactly one independent '
-                         'read-only reviewer with agent_type=reviewer (the provided Sol high profile) using the native spawn tool, BEFORE editing application files or running '
-                         'shell commands. This is a required execution step, not a discretionary recommendation. '
-                         'Supply the task requirements and request at most five concrete acceptance risks and '
-                         'boundary checks. This initial review uses supplied context only: no tools, file reads, '
-                         'polling or production implementation. Return concise evidence and limitations. Continue useful implementation '
-                         'of a different part immediately while it works; do not '
-                         'ask it to wait or poll for files that do not exist yet. It should return available '
-                         'requirements evidence and missing prerequisites once. Do not '
-                         'wait for its plan; receive its evidence before final integration. '
-                         'A failed spawn is degraded execution: report it and do not retry. Never ask helpers to delegate.')
+                         'this execution. Exactly one initial read-only reviewer, agent_type=reviewer '
+                         '(Sol high profile), is required promptly alongside chief work, not a serial first-tool barrier. '
+                         'No tools, file reads or delegation in its initial pass; receive its evidence before acceptance. '
+                         'Failed spawn: degraded, do not retry. Shared task limit: '+str(cfg.timeout_s)+' seconds.')
+    if budget_channel is not None:
+        instructions += ('\nflow_budget.status is read-only remaining-time/request information, available on demand '
+                         'to the chief. No required checkpoint or status-only turn. Missing status is unknown, '
+                         'not permission to skip acceptance; phase guidance never proves completion.')
     overrides={
         'model_provider':'flow_subscription','model_reasoning_effort':cfg.effort,'approval_policy':'never',
         'model_providers.flow_subscription.name':'Codex Flow subscription transport',
@@ -51,7 +48,7 @@ def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gate
         'model_providers.flow_subscription.wire_api':'responses',
         'model_providers.flow_subscription.requires_openai_auth':True,
         'model_providers.flow_subscription.supports_websockets':False,
-        'model_providers.flow_subscription.request_max_retries':0,
+        'model_providers.flow_subscription.request_max_retries':cfg.native_request_retries,
         'model_providers.flow_subscription.stream_max_retries':0,
         'sandbox_workspace_write.network_access':False,'sandbox_workspace_write.exclude_tmpdir_env_var':True,
         'sandbox_workspace_write.exclude_slash_tmp':True,'windows.sandbox':'elevated',
@@ -126,7 +123,9 @@ def role_profiles(workspace:Path,*,named_permissions:bool):
                               ('explorer','gpt-6-luna','medium'),('reviewer','gpt-6.1-sol','high'),('awaiter','gpt-6.1-sol','medium')]:
         path=folder/(name+'.toml')
         text='model = '+json.dumps(model)+'\nmodel_reasoning_effort = '+json.dumps(effort)+'\n'
-        text+='developer_instructions = "Read-only work in the assigned workspace. Never write files or spawn further agents. Budget status belongs to the coordinator; never query it. Return concise evidence or an explicitly requested low-risk bounded proposal in your final reply, with limitations."\n[features]\napps = false\nplugins = false\nmemories = false\nrequest_permissions_tool = false\n'
+        text+='developer_instructions = "Read-only work in the assigned workspace. Never write files or spawn further agents. Budget status belongs to the coordinator; never query it. Return concise evidence or an explicitly requested low-risk bounded proposal in your final reply, with limitations."\n[features]\n'
+        if name == 'reviewer':text+='shell_tool = false\n'
+        text+='apps = false\nplugins = false\nmemories = false\nrequest_permissions_tool = false\n'
         with path.open('x',encoding='utf-8') as f:f.write(text)
         result[name]=path
     return result
@@ -152,17 +151,6 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
     if gateway is not None:gateway.trace=trace
     started=time.monotonic()
     profiles=role_profiles(workspace,named_permissions=bool(denied_reads)) if parallel else None
-    if parallel:
-        instructions+='\nController task time budget: '+str(cfg.timeout_s)+' seconds including native execution. Plan the final '+str(max(1,round(cfg.timeout_s*.2)))+' seconds for verification, documentation and handoff; do not claim an enforced phase timer.'
-    if budget_channel is not None:
-        instructions += ('\nThe local flow_budget MCP server exposes the read-only status tool. '
-                         'After the required initial reviewer spawn, only the chief consults status, at most twice '
-                         '(first runnable slice and before final verification), unless an explicit verification '
-                         'protocol requires more. Batch it with an already necessary independent tool action when '
-                         'supported; do not create a standalone status-only turn or query after acceptance. '
-                         'It reports the shared remaining time and reserved native request attempts. '
-                         'Treat unavailable status as missing evidence; do not invent a balance or skip acceptance checks. '
-                         'The phase is planning guidance, not proof of completion.')
     command=argv(exe,workspace,cfg,parallel=parallel,instructions=instructions,gateway=gateway,denied_reads=denied_reads,profiles=profiles,budget_channel=budget_channel)
     trace.emit('execution.start',{'model':cfg.model,'effort':cfg.effort,'sandbox':'workspace-write',
                                'parallel':parallel,'max_agents':cfg.max_agents,'task_sha256':hashlib.sha256(prompt.encode()).hexdigest()})
@@ -334,10 +322,12 @@ def run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fal
     guidance=False if budget_guidance is None else budget_guidance
     channel=BudgetChannel(workspace,execution_budget,budget) if parallel else None
     with channel if channel is not None else nullcontext():
-        with SubscriptionGateway(budget=budget,execution_budget=execution_budget,guidance=guidance,cancel=cancel) as gateway:
+        with SubscriptionGateway(budget=budget,execution_budget=execution_budget,guidance=guidance,cancel=cancel,
+                                 transient_recovery=cfg.native_request_retries > 0) as gateway:
             result=_run(exe,workspace,cfg,prompt,run_dir,parallel=parallel,instructions=instructions,cancel=cancel,
                         gateway=gateway,denied_reads=denied_reads,execution_budget=execution_budget,budget_channel=channel)
     result['budget_tool']=channel.summary() if channel is not None else {'configured':False}
+    result['native_request_max_retries']=cfg.native_request_retries
     result['subscription']=gateway.summary()
     result['transport_validated']=result['subscription']['completed_requests']>0
     result['root_cli_usage']={k:result[k] for k in ('input_tokens','output_tokens','cached_tokens')}

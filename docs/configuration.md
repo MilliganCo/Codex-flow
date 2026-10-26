@@ -17,7 +17,8 @@ The runtime reads `.codex-flow/config.json` under `--repo`, or an explicit `--co
   "harness2": false,
   "max_refinements": 1,
   "allow_paid_api": false,
-  "max_model_requests": 80
+  "max_model_requests": 80,
+  "native_request_retries": 0
 }
 ```
 
@@ -34,8 +35,30 @@ The runtime reads `.codex-flow/config.json` under `--repo`, or an explicit `--co
 | `max_refinements` | Integer 1–2 for guarded local proposals; no automatic unbounded loop |
 | `allow_paid_api` | Only false; true is rejected |
 | `max_model_requests` | Integer 1–80; shared hard gateway inference-request budget, including planning probes |
+| `native_request_retries` | Integer 0–1, default 0; optional native HTTP retry with stateless recovery in the same budgets |
 
-`--max-agents` and `--timeout` override run-level values. `--no-mercury` and `--no-harness2` disable optional components for that run. An external Mercury installation is selected by `--mercury-root`; its key or source is never placed in project config. Enabling `harness2` executes two measured planning probes before the main task, consuming additional subscription time/quota. Both probes use the fixed five-field ASCII Tree brief even for an unrelated task; this is a narrow integration pilot, not a task-specific general optimizer or a measure of application quality.
+## Bounded HTTP recovery
+
+Set `"native_request_retries": 1` in a reviewed project configuration, or pass
+that file through the global `--config <file>` option. There is no separate CLI
+retry flag. The native HTTP request retry limit becomes one, stream retries stay
+zero, and the gateway never replays a request itself. Every physical upstream
+attempt reserves the same hard request budget, including failed attempts.
+
+Only recognized transient transport failures and structured temporary HTTP 429
+responses are eligible. Retry-After is honored up to the fixed 60-second policy;
+a longer delay or one exceeding the remaining deadline defers instead of being
+clamped into an early retry. This does not resume a failed task or promise
+exactly-once backend execution. Default HTTP encoding remains `identity`; request
+compression is disabled. Generic gzip does not establish token or quota savings.
+
+The nine synthetic recovery cases and the separate 24-check real native
+prerequisite are archived with the [final cohort](../benchmarks/efficient-cli-suite-20261026-02/README.md).
+Their successful recovery/integration evidence is separate from the failed
+performance criterion. The final candidate's test-proposal orchestration was
+rejected; current Flow instructions use the balanced context-only reviewer.
+
+`--max-agents` and `--timeout` override run-level values. `--no-mercury` and `--no-harness2` disable optional components for that run. An external Mercury installation is selected by `--mercury-root`; its key or source is never placed in project config. The enabled Harness²-inspired guard defers calibration with zero automatic online probes. Explicit library planning diagnostics cannot adopt instructions and do not establish application-quality gains. Historical two-probe runs retain their original runtime and measurements.
 
 ## Routing inputs
 

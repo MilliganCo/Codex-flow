@@ -1,0 +1,813 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile-v1.0",
+  "criteria": [
+    {
+      "id": "L01",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "basic",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.140959,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L02",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "exact-cents",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.149635,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        },
+        {
+          "case": "row-limit-exact",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.178108,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L03",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "signed",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.12537,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L04",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "currencies",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.137543,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L05",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "opaque-ids",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.137381,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L06",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "permutation-a",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.149197,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        },
+        {
+          "case": "permutation-b",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.134253,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L07",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "semantic-duplicates",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.129037,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L08",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "conflicting-payment",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.157381,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 68,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "28110694aba77730d071d88e04919554fbb04474ed1bb91742db632f093b1f15",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: conflicting duplicate payment_id\r\n"
+        },
+        {
+          "case": "conflicting-order",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.153516,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 68,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "28110694aba77730d071d88e04919554fbb04474ed1bb91742db632f093b1f15",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: conflicting duplicate payment_id\r\n"
+        }
+      ]
+    },
+    {
+      "id": "L09",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "duplicate-order",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.164505,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 52,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "3fce4ffc17c5518821dff0b7e274e6cb1d1f56311c113dcd68663b77ab6495e2",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: orders: duplicate order_id\r\n"
+        }
+      ]
+    },
+    {
+      "id": "L10",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "unknown-order",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.156952,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 52,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "341949f6b99d794b7b4e5ec665f726c5b5ec8e4d05d566c461ac14959e3d187e",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: unknown order_id\r\n"
+        }
+      ]
+    },
+    {
+      "id": "L11",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "currency-mismatch",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.162419,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 65,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "4a1fd3d5ceb365618391ba8f55043e13aa9729dd2cbf5d50f18e7f7ac5aea21b",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: currency does not match order\r\n"
+        }
+      ]
+    },
+    {
+      "id": "L12",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "invalid-money-0",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.189502,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 57,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "c33151f0815e5818de30a537e75ffe3c71dd064663a3aab54c379585f76a72a7",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: invalid amount syntax\r\n"
+        },
+        {
+          "case": "invalid-money-1",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.202787,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 57,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "c33151f0815e5818de30a537e75ffe3c71dd064663a3aab54c379585f76a72a7",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: invalid amount syntax\r\n"
+        },
+        {
+          "case": "invalid-money-2",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.163558,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 57,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "c33151f0815e5818de30a537e75ffe3c71dd064663a3aab54c379585f76a72a7",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: invalid amount syntax\r\n"
+        },
+        {
+          "case": "invalid-money-3",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.167681,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 57,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "c33151f0815e5818de30a537e75ffe3c71dd064663a3aab54c379585f76a72a7",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: invalid amount syntax\r\n"
+        },
+        {
+          "case": "invalid-money-4",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.15555,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 57,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "c33151f0815e5818de30a537e75ffe3c71dd064663a3aab54c379585f76a72a7",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: invalid amount syntax\r\n"
+        },
+        {
+          "case": "invalid-money-5",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.143948,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 57,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "c33151f0815e5818de30a537e75ffe3c71dd064663a3aab54c379585f76a72a7",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: invalid amount syntax\r\n"
+        },
+        {
+          "case": "invalid-money-6",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.15458,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 61,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "79749572f594b6afd965f5987a39661ae8415dd0d8d14d8676948fd60cb27560",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: amount exceeds 1000000.00\r\n"
+        },
+        {
+          "case": "invalid-money-7",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.177137,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 61,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "79749572f594b6afd965f5987a39661ae8415dd0d8d14d8676948fd60cb27560",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: amount exceeds 1000000.00\r\n"
+        },
+        {
+          "case": "invalid-order-0",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.169639,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 66,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "d23c046b7a2633797903cca1493f44519b22fd716f83409246e4bc0b986f3be6",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: orders: amount must be strictly positive\r\n"
+        },
+        {
+          "case": "invalid-order-1",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.139452,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 66,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "d23c046b7a2633797903cca1493f44519b22fd716f83409246e4bc0b986f3be6",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: orders: amount must be strictly positive\r\n"
+        },
+        {
+          "case": "invalid-order-2",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.147898,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 59,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "28714d1d0ab46f1f29064524ee8970c6de80dc6fdc2228d916b1769e448fd088",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: orders: amount exceeds 1000000.00\r\n"
+        },
+        {
+          "case": "row-limit-exceeded",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.172951,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 64,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "569cced37871910d4542bacb0d7aa503ab97643a9ebd918270ed53be9f9f77e4",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: combined inputs exceed 10000 data rows\r\n"
+        }
+      ]
+    },
+    {
+      "id": "L13",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "zero-byte",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.125767,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 74,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "8e376f9ed12ea5b439d4bd256c0e720bbc006974cbe5de95ce01028045b1656e",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: orders: missing, extra, or duplicate CSV headers\r\n"
+        },
+        {
+          "case": "extra-header",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.121255,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 74,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "8e376f9ed12ea5b439d4bd256c0e720bbc006974cbe5de95ce01028045b1656e",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: orders: missing, extra, or duplicate CSV headers\r\n"
+        },
+        {
+          "case": "duplicate-header",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.122088,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 74,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "8e376f9ed12ea5b439d4bd256c0e720bbc006974cbe5de95ce01028045b1656e",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: orders: missing, extra, or duplicate CSV headers\r\n"
+        },
+        {
+          "case": "broken-quote",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.143111,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 63,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "4fec58bad19cbc2464ab8aa9304399b4f491dc069f1cd5a6d14b59e34d3c3336",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: orders: unterminated quoted CSV field\r\n"
+        },
+        {
+          "case": "empty-id",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.151736,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 59,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "25c8e0d0374d12343e4f277be552ed7b7a442d475902923a8497746d5c77dc90",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: orders: order_id must be nonempty\r\n"
+        }
+      ]
+    },
+    {
+      "id": "L14",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "quoted-utf8-bom",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.14049,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L15",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "header-only",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.142629,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        },
+        {
+          "case": "unpaid",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.154017,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L16",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "late-invalid-atomic",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.138216,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 52,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "341949f6b99d794b7b4e5ec665f726c5b5ec8e4d05d566c461ac14959e3d187e",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: payments: unknown order_id\r\n"
+        }
+      ]
+    },
+    {
+      "id": "L17",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "existing-output",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.142912,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 47,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "f45c9e3ef951ade3b68f8a46631f3e3f853861aa30d6d2b351b1eb2ec3d8511b",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: output already exists\r\n"
+        },
+        {
+          "case": "existing-output-directory",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 1,
+          "timed_out": false,
+          "wall_s": 0.144056,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 47,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "f45c9e3ef951ade3b68f8a46631f3e3f853861aa30d6d2b351b1eb2ec3d8511b",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "ledgerreconcile: error: output already exists\r\n"
+        }
+      ]
+    },
+    {
+      "id": "L18",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "help",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.150865,
+          "capture_complete": true,
+          "stdout_bytes": 333,
+          "stderr_bytes": 0,
+          "stdout_sha256": "a0d7fca516229da58e0b896736927db56426f41d0153985bb21a70af0dcf46a7",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "usage: ledgerreconcile [-h] --orders CSV --payments CSV --output JSON\r\n\r\nReconcile UTF-8 order and payment CSV files using exact integer cents.\r\n\r\noptions:\r\n  -h, --help      show this help message and exit\r\n  --orders CSV    orders CSV input\r\n  --payments CSV  payments CSV input\r\n  --output JSON   new report path; must not exist\r\n",
+          "stderr_excerpt": ""
+        },
+        {
+          "case": "paths with spaces",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.174957,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "id": "L19",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "stdlib-unittest-at-least-five",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 16.496248,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 125,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "b3920372329f14bf7955cdb2524f97297be63505d1d11561496b041756da2e08",
+          "stdout_excerpt": "",
+          "stderr_excerpt": "....................\r\n----------------------------------------------------------------------\r\nRan 20 tests in 16.314s\r\n\r\nOK\r\n"
+        }
+      ]
+    },
+    {
+      "id": "L20",
+      "max": 5,
+      "score": 5,
+      "status": "pass",
+      "evidence": [
+        {
+          "case": "actual-readme-command",
+          "status": "pass",
+          "reason": "contract_check",
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_s": 0.254518,
+          "capture_complete": true,
+          "stdout_bytes": 0,
+          "stderr_bytes": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ]
+    }
+  ],
+  "assessed_points": 100,
+  "assessed_max": 100,
+  "unassessed_max": 0,
+  "quality_score": 100,
+  "accepted": true,
+  "source_unchanged": true,
+  "source_sha256_before": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "README.md": "75e1036a59584cbe7eb3f6ad5c99b527204ac3d99199f10350f37fbb95739ce0",
+    "examples/orders.csv": "4fda00c56d94b31aac0d052cae860e4ad9df1862bea1bc95610d0a97330964f7",
+    "examples/payments.csv": "575370c641849881f743e48325fae3f0c6cc64a78664e337a23b6265291b3a02",
+    "ledgerreconcile/__init__.py": "85e482e744cdf0ba34eb282d34d1d50107a5d1cafdcde37cdf4cbf7d61fabf52",
+    "ledgerreconcile/__main__.py": "2489fd3ddc7c52e934525a44f4e8e8dea9979ad7cc8bee3d38c550af7b390a2d",
+    "ledgerreconcile/core.py": "a7163cdd79d05ef2c4ca4aecc3df8e19620f527d6315f0e70e3c8d1a8d21d137",
+    "tests/test_boundaries.py": "9358d43e258de12ca659e853baeaa90be609930659096defc48501186af8f75c",
+    "tests/test_cli.py": "ec6691acb38329006f6e5722db344d1669a7c95bfb8000d5399012adcf6e4f55"
+  },
+  "source_sha256_after": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "README.md": "75e1036a59584cbe7eb3f6ad5c99b527204ac3d99199f10350f37fbb95739ce0",
+    "examples/orders.csv": "4fda00c56d94b31aac0d052cae860e4ad9df1862bea1bc95610d0a97330964f7",
+    "examples/payments.csv": "575370c641849881f743e48325fae3f0c6cc64a78664e337a23b6265291b3a02",
+    "ledgerreconcile/__init__.py": "85e482e744cdf0ba34eb282d34d1d50107a5d1cafdcde37cdf4cbf7d61fabf52",
+    "ledgerreconcile/__main__.py": "2489fd3ddc7c52e934525a44f4e8e8dea9979ad7cc8bee3d38c550af7b390a2d",
+    "ledgerreconcile/core.py": "a7163cdd79d05ef2c4ca4aecc3df8e19620f527d6315f0e70e3c8d1a8d21d137",
+    "tests/test_boundaries.py": "9358d43e258de12ca659e853baeaa90be609930659096defc48501186af8f75c",
+    "tests/test_cli.py": "ec6691acb38329006f6e5722db344d1669a7c95bfb8000d5399012adcf6e4f55"
+  },
+  "rubric_sha256": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+  "model_calls": 0,
+  "submissions_imported_on_host": false,
+  "launch_assertion_is_not_sandbox_attestation": true
+}

@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "task": "safezip-v1.0",
+  "total_max": 100,
+  "acceptance": {
+    "minimum_score": 100,
+    "required": [
+      "Z01",
+      "Z02",
+      "Z03",
+      "Z04",
+      "Z05",
+      "Z06",
+      "Z07",
+      "Z08",
+      "Z09",
+      "Z10",
+      "Z11",
+      "Z12",
+      "Z13",
+      "Z14",
+      "Z15",
+      "Z16",
+      "Z17",
+      "Z18",
+      "Z19",
+      "Z20"
+    ],
+    "source_unchanged": true
+  },
+  "timeouts": {
+    "fixture_s": 10,
+    "authored_tests_s": 90
+  },
+  "criteria": [
+    {
+      "id": "Z01",
+      "max": 5,
+      "requirement": "basic inspect/schema"
+    },
+    {
+      "id": "Z02",
+      "max": 5,
+      "requirement": "byte-exact extraction"
+    },
+    {
+      "id": "Z03",
+      "max": 5,
+      "requirement": "inspect/extract agreement"
+    },
+    {
+      "id": "Z04",
+      "max": 5,
+      "requirement": "entry order/mtime determinism"
+    },
+    {
+      "id": "Z05",
+      "max": 5,
+      "requirement": "portable names"
+    },
+    {
+      "id": "Z06",
+      "max": 5,
+      "requirement": "absolute/drive/UNC/backslash rejection"
+    },
+    {
+      "id": "Z07",
+      "max": 5,
+      "requirement": "dot/dotdot/empty components"
+    },
+    {
+      "id": "Z08",
+      "max": 5,
+      "requirement": "casefold/prefix conflicts"
+    },
+    {
+      "id": "Z09",
+      "max": 5,
+      "requirement": "special files"
+    },
+    {
+      "id": "Z10",
+      "max": 5,
+      "requirement": "encrypted entries"
+    },
+    {
+      "id": "Z11",
+      "max": 5,
+      "requirement": "quotas/exact boundaries"
+    },
+    {
+      "id": "Z12",
+      "max": 5,
+      "requirement": "CRC corruption"
+    },
+    {
+      "id": "Z13",
+      "max": 5,
+      "requirement": "late invalid member atomicity"
+    },
+    {
+      "id": "Z14",
+      "max": 5,
+      "requirement": "existing destination preservation"
+    },
+    {
+      "id": "Z15",
+      "max": 5,
+      "requirement": "cleanup/no outside writes"
+    },
+    {
+      "id": "Z16",
+      "max": 5,
+      "requirement": "input archive unchanged"
+    },
+    {
+      "id": "Z17",
+      "max": 5,
+      "requirement": "empty/binary payloads"
+    },
+    {
+      "id": "Z18",
+      "max": 5,
+      "requirement": "help/space paths/controlled exits"
+    },
+    {
+      "id": "Z19",
+      "max": 5,
+      "requirement": "authored unittest >=5"
+    },
+    {
+      "id": "Z20",
+      "max": 5,
+      "requirement": "actual README smoke"
+    }
+  ]
+}

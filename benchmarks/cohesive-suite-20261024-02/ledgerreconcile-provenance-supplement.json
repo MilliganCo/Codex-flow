@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "series": "cohesive-suite-20261024-02",
+  "reason": "Legacy stream publisher omitted its computed provenance from its manifest",
+  "existing_publications_unchanged": true,
+  "canonical_inputs": {
+    "evaluator.py": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+    "rubric.json": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+    "task.md": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018"
+  },
+  "raw_provenance": [
+    {
+      "path": "cohesive-suite-20261024-02/ledgerreconcile-grade-seal.json",
+      "sha256": "99894d25bf6ef6a3b1f6eda074d3cac9c6a91719aba3a0dfa5364f07b8491f51"
+    },
+    {
+      "path": "cohesive-suite-20261024-02/ledgerreconcile-unblinded-quality.json",
+      "sha256": "8d332aafab85d376aba3347dd4f9d920208f45d0f32a6bcf5276bf8d5bc4fe21"
+    },
+    {
+      "path": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/copy-integrity.json",
+      "sha256": "414833a3989ad521757a54e3aa187ecd1cd93f318dec82e8d1a3eb85c53d4e70"
+    },
+    {
+      "path": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/source-hashes.json",
+      "sha256": "8625540bec89da6497c08be0a1704e35cca82358207fa1ec99757f83d712c1dd"
+    },
+    {
+      "path": "cohesive-ledger-evaluation-recovery-20261025-02/verification-ledgerreconcile-20261024-02/verified-copy.json",
+      "sha256": "220dd6aa7cd32fdbddbd95b365f0ca46376a15a7bfd9bd95a8ca6488d28e5113"
+    },
+    {
+      "path": "cohesive-suite-20261024-02/preregistration.json",
+      "sha256": "f04507f9caa0033c728cb3d0b854a28a166df5415a32c6c30a0fdc547bf24db6"
+    },
+    {
+      "path": "Codex-flow/benchmarks/cohesive-suite-20261024-02/ledgerreconcile-publication.json",
+      "sha256": "4c8b6844dd0d1e2ad4dd61d8d7a0f9a560a8ed3e75e5eb8b5febef726e2db257"
+    },
+    {
+      "path": "Codex-flow/benchmarks/cohesive-suite-20261024-02/metadata-publication.json",
+      "sha256": "6bf183f4a477edb05b8973f67c449259989a792446e4d3c7bf7c5777fc81bb2c"
+    }
+  ],
+  "file_count": 2,
+  "files": [
+    {
+      "path": "evidence/ledgerreconcile/source-hashes.json",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/evaluation-ledgerreconcile-20261024-02/source-hashes.json",
+      "raw_sha256": "8625540bec89da6497c08be0a1704e35cca82358207fa1ec99757f83d712c1dd",
+      "published_sha256": "8625540bec89da6497c08be0a1704e35cca82358207fa1ec99757f83d712c1dd",
+      "transformation": "derived_report",
+      "raw_bytes": 803,
+      "published_bytes": 803,
+      "path_replacements": {
+        "owned_or_home_root": 0,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0
+      }
+    },
+    {
+      "path": "evidence/ledgerreconcile/verified-copy.json",
+      "raw_source": "cohesive-ledger-evaluation-recovery-20261025-02/verification-ledgerreconcile-20261024-02/verified-copy.json",
+      "raw_sha256": "220dd6aa7cd32fdbddbd95b365f0ca46376a15a7bfd9bd95a8ca6488d28e5113",
+      "published_sha256": "220dd6aa7cd32fdbddbd95b365f0ca46376a15a7bfd9bd95a8ca6488d28e5113",
+      "transformation": "derived_report",
+      "raw_bytes": 294,
+      "published_bytes": 294,
+      "path_replacements": {
+        "owned_or_home_root": 0,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0
+      }
+    }
+  ],
+  "model_calls": 0,
+  "app_runs": 0,
+  "sdk_calls": 0,
+  "publisher_sha256": "33d737436a8d545005adfcc7b3fdd1573eb9a4dd86c63c0d42e0d68a4f4b4901",
+  "report_policy": "Fresh derived reports and raw SHA supplement; original publications are preserved unchanged"
+}

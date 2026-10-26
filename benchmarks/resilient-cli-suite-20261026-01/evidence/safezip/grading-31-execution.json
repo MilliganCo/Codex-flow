@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "task": "safezip",
+  "solution_id": 31,
+  "exit_code": 0,
+  "timed_out": false,
+  "launch_error": null,
+  "wall_s": 7.258,
+  "capture_complete": true,
+  "sdk_root_exit_observed": true,
+  "timeout_s": 1200,
+  "all_anonymous_selected_sources_unchanged": true,
+  "checker_support_unchanged": true,
+  "source_integrity_error": null,
+  "checker_integrity_error": null,
+  "checker_sha256": {
+    "evaluator.py": "6e94529e5d6b06c9f5b0ebc1ae6327706a4682d90386015bcdfc026b960741df",
+    "rubric.json": "696f3f1f2ec9cc6246c5f72cb297d4dccb2482fb4eae9c5a516e15c096bd52f4",
+    "task.md": "4b732cd8658cc2c8426ade124ad48be2492993615440ddc3bce8f2d85ded0568"
+  },
+  "model_calls": 0,
+  "network_enabled": false,
+  "source_files_checked": {
+    "solution-31": 1,
+    "solution-32": 7
+  },
+  "capture": {
+    "stdout": {
+      "bytes": 133,
+      "sha256": "ec2a1ea60d9ed13befe787f064ceb6360341fcc1e6ed825af00164545733f18b"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "permission_profile_sha256": "2a9d8235dae78821091f82a64e740f80a4c2668a5cb23e2022e389329903bd14",
+  "grader_output_sha256": "c55a218f6b3d19f27c2191b8c151da4cfa1abb35b60a6a02ae9b8d09b21485e5",
+  "grader_output_error": null,
+  "retry_allowed": false,
+  "raw_capture_is_bounded": true,
+  "boundary": "Official SDK; verifier read-only; owned evaluation writable; user state denied; no auth copying",
+  "timeout_limit": "Best-effort process-tree termination; descendant termination is not independently proved"
+}

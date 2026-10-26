@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile",
+  "grade_seal_sha256": "6565aa886ff63248e31baef6c2f3771cf5337f6a5a914cfce966f0a8b2b499de",
+  "sealed_before_map_read": true,
+  "quality": {
+    "B": {
+      "quality_score": 100,
+      "accepted": true,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "a56153a37817b508aa076708cb95a540b193442df060d679e388504b64b7441d",
+      "execution_sha256": "0f85974cd751c8e7518ab95016778292ee5d61d51da5d0f3626080add65a19e3",
+      "anonymous_id": "solution-33"
+    },
+    "A": {
+      "quality_score": 100,
+      "accepted": true,
+      "criteria_assessed": 20,
+      "evaluation_sha256": "c6ff42854949bd77b5e6f7786647137e03165a6543ad108fc9f02901f7f35221",
+      "execution_sha256": "49f80fe854170f06e488fcc2a78fbc9331a2a8dfe8f22d1f0ec38f550d13a65e",
+      "anonymous_id": "solution-34"
+    }
+  },
+  "preregistration_sha256": "181bbbe076560c83ec879b1e5be69b6a7e953e0cedf3c12a316bf8340e9e3288",
+  "analysis_model_calls": 0,
+  "analysis_app_runs": 0
+}

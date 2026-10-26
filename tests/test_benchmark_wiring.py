@@ -36,7 +36,10 @@ class BenchmarkWiringTests(unittest.TestCase):
     def test_ab_only_creates_and_executes_two_fresh_concurrent_arms(self):
         self.assert_execution('AB')
 
-    def assert_execution(self, groups):
+    def test_opt_in_http_recovery_is_equal_in_both_arms_and_preserves_caps(self):
+        self.assert_execution('AB', native_request_retries=1)
+
+    def assert_execution(self, groups, native_request_retries=0):
         experiment = self.root / "new-experiment"
         task = self.root / "task.md"
         task.write_text("Synthetic common task; no implementation or real experiment solutions.", encoding="utf-8")
@@ -72,6 +75,7 @@ class BenchmarkWiringTests(unittest.TestCase):
             self.assertEqual(cfg.model, 'gpt-6.1-sol')
             self.assertEqual(cfg.effort, 'xhigh')
             self.assertEqual(cfg.max_model_requests, 80)
+            self.assertEqual(cfg.native_request_retries, native_request_retries)
             budget = kwargs["request_budget"]
             budget.reserve()
             with lock:
@@ -98,7 +102,8 @@ class BenchmarkWiringTests(unittest.TestCase):
              patch.object(benchmark, "run", side_effect=fake_run), \
              patch.object(benchmark, "ThreadPoolExecutor", wraps=ThreadPoolExecutor) as pools:
             result = benchmark.execute(experiment, task, evaluator, timeout=30, execute=True,
-                                       protect_paths=(protected,), groups=groups)
+                                       protect_paths=(protected,), groups=groups,
+                                       native_request_retries=native_request_retries)
         probes.assert_not_called()
         self.assertEqual(set(result), set(groups))
         self.assertTrue(all(result[g]["status"] == "completed_unverified" for g in groups))
@@ -122,6 +127,7 @@ class BenchmarkWiringTests(unittest.TestCase):
         self.assertFalse(manifest["isolation"]["cross_arm_read_isolation"])
         self.assertTrue(manifest["isolation"]["shared_deny_policy"])
         self.assertEqual(manifest['selected_groups'], list(groups))
+        self.assertEqual(manifest['native_request_max_retries_both_arms'], native_request_retries)
         self.assertEqual(result['B']['details']['harness']['status'], 'deferred')
         self.assertEqual(result['B']['harness_inspired_probes'], 0)
         self.assertEqual(manifest['task_sha256'], benchmark.sha(task))
@@ -196,7 +202,10 @@ class BenchmarkWiringTests(unittest.TestCase):
                 self.assertEqual(role_config["model"], "gpt-6.1-sol")
                 self.assertEqual(role_config["model_reasoning_effort"], "high")
             self.assertFalse({"permissions", "default_permissions", "sandbox_mode", "approval_policy"} & role_config.keys())
-            self.assertLessEqual(set(role_config["features"]), {"apps", "plugins", "memories", "request_permissions_tool"})
+            # shell_tool is a documented capability that custom agents may disable.
+            self.assertLessEqual(set(role_config["features"]), {"shell_tool", "apps", "plugins", "memories", "request_permissions_tool"})
+            if role == 'reviewer':self.assertFalse(role_config['features']['shell_tool'])
+            else:self.assertNotIn('shell_tool',role_config['features'])
             self.assertTrue(all(value is False for value in role_config["features"].values()))
         self.assertIn("--ephemeral", native.argv("fake-codex", workspace, Config(), parallel=False))
 

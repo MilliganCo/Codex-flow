@@ -1,6 +1,15 @@
-# Acceptance status — 2026-10-24
+# Acceptance status — 2026-10-26
 
 This is an evidence boundary, not a claim that the entire requested architecture has passed. Status values are `pass`, `degraded`, `deferred`, `blocked` and `notimplemented`. Independent integration proofs, packaged-demo verification and frozen benchmarks are separate records; later success does not rewrite an earlier run.
+
+The latest [CLI cohort](../benchmarks/efficient-cli-suite-20261026-02/README.md)
+completed both fixed tasks in both arms with four independent 100/100 grades.
+Flow took longer on both: 719.281 vs 599.609 seconds, and 1207.984 vs 925.687
+seconds. Acceleration without quality loss was not achieved. The experimental
+test-proposal policy is retained only as a frozen candidate; current instructions
+restore the balanced context-only reviewer. Earlier failures and incomplete rows
+remain in their original cohorts. The CI links below describe named historical
+commits; current publication requires its own exact-commit Actions result.
 
 | Requirement | Status | Verified scope / remaining limit |
 |---|---|---|
@@ -14,12 +23,14 @@ This is an evidence boundary, not a claim that the entire requested architecture
 | Hard helper read-only/depth isolation | degraded | Custom roles inherit parent permissions; ownership/depth are instructions; worker policy refusal is not an observed OS attempt |
 | Configured multi-agent A/B | pass | Case05 observed real helpers/Mercury/inspired probes; independently accepted artifact scores A/B/C/D=97/89/89/94 |
 | Updated orchestration A/B repeat | pass | Case06: solo 97/Flow 98, both completed, headless 25/25 and native 57/57; Flow one verified helper/one Mercury call/deferred guard with zero online probes |
-| Acceleration / causal component benefit | degraded | One updated-runtime repeat: process durations 1444.484/1414.000s,43/36 requests; one aesthetic point difference; no general contribution, active optimizer or quota-saving conclusion |
+| Acceleration without quality loss | degraded | Final CLI cohort: all four artifacts 100/100 and all generators complete, but Flow slower on each task; fixed per-task ratio criterion fails |
+| Optional bounded HTTP recovery | pass | Nine synthetic cases and 24-check/eight-request real native prerequisite; default retries 0, stream retries 0, gateway replay 0; separate from performance credit |
 | Doctor, integration status, cancel, event replay | pass | Implemented CLI controls; replay does not resume inference |
 | Runtime TUI / native-session resume | notimplemented | No such commands or interface shipped |
 | Real 2D/3D/4D demos | pass | Accepted old case02 originals preserved; labelled packaged portability patch passed Windows/Ubuntu CI |
-| Local core verification | pass | Latest 254 tests: Windows 233 passed/21 symlink skips; WSL 254 passed; static checks and zipapp build passed |
-| Private CI | pass | Confirmed green for f757663: all 192 core tests on Windows/Ubuntu; packaged examples, static checks, build and 454-object all-history scan passed |
+| Local core verification | pass | Final balanced source f557a1a: Windows discovered 306 tests, 285 passed/21 unavailable-symlink skips, exit 0 in 30.373s; Ruff selected correctness rules and mypy on 15 files passed |
+| Historical private CI | pass | Confirmed green for f757663: all 192 then-current core tests on Windows/Ubuntu; examples, static checks, build and 454-object all-history scan passed; this is not current-release CI |
+| Exact new publication CI | deferred | Must be checked on the new private main commit after publication; retain final verification outside Git to avoid a self-referential commit loop |
 | License selection | blocked | Owner decision pending; repository remains private |
 | Host configuration preservation | pass | Process-local overrides; no copied auth tokens, global-setting rewrites or sandbox bypass |
 

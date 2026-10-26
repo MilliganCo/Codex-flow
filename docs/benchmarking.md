@@ -1,6 +1,21 @@
 # Benchmarking
 
-Latest [case08](../benchmarks/case08/README.md) retains the same 1500-second,
+The final [two-task CLI cohort](../benchmarks/efficient-cli-suite-20261026-02/README.md)
+completed both tasks in both arms; all four unchanged applications scored 100/100.
+Flow's observed times were 719.281/1207.984 seconds versus Solo's
+599.609/925.687 seconds. The preregistered per-task `A/B >= 1.10` criterion failed.
+The test-proposal candidate is frozen byte-for-byte and was rejected as the default.
+Current source restores the balanced context-only risk reviewer, with shell disabled.
+
+Earlier [cohesive02](../benchmarks/cohesive-suite-20261024-02/README.md) retains
+both failed Ledger arms and the scheduled-but-not-run ZIP row in denominator two.
+[Resilient03](../benchmarks/resilient-cli-suite-20261026-01/README.md) retains its
+completed Ledger pair and first-request HTTP 429 failure for ZIP B. Neither failure
+is an eligible speed ratio. Setup, synthetic recovery, real prerequisite, SDK grading
+and benchmark work have separate receipts and credit. No cohort is overwritten or
+pooled with another CLI/runtime version.
+
+Earlier [case08](../benchmarks/case08/README.md) retains the same 1500-second,
 80-request A/B contract. Both artifacts scored 97, with headless 25/25 and native
 57/57. A completed; B failed during upstream body reading, so no speedup follows.
 The MCP candidate, successful prerequisite, aborted case07, raw NaN probes,

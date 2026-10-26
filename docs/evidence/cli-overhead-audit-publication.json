@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "source": "reporting/cli-overhead-audit-20261024.json",
+  "raw_sha256": "c75415c04be463dfb7ba26ce510d096017691c5481a2fbadd7f3463a0cb4a30d",
+  "published_sha256": "c75415c04be463dfb7ba26ce510d096017691c5481a2fbadd7f3463a0cb4a30d",
+  "transformation": "paths redacted; fixed metrics and findings retained",
+  "path_replacements": {
+    "owned_or_home_root": 0,
+    "personal_profile_root": 0,
+    "other_drive_root": 0,
+    "posix_profile_root": 0
+  },
+  "analysis_model_calls": 0,
+  "analysis_app_runs": 0
+}

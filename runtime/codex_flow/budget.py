@@ -107,16 +107,40 @@ class BudgetChannel:
         self._stop = threading.Event()
         self._thread = None
         self.publisher_failed = False
+        self.publisher_error_counts: dict[str, int] = {}
+        self.publisher_retry_attempts = 0
+        self.publisher_recovered_publications = 0
+        self.publisher_failed_publications = 0
+        self.publisher_last_errno: int | None = None
+        self.publisher_last_winerror: int | None = None
 
     def publish(self):
         from .contracts import inside
         from .telemetry import utc, write_json
-        try:
-            inside(self.root, self.status_file)
-            write_json(self.status_file, {'schema': 1, 'observed_utc': utc(),
-                       'budget': self.execution_budget.snapshot(self.request_budget.used)})
-        except (OSError, ValueError):
-            self.publisher_failed = True
+        # Windows can deny atomic replacement while the readonly MCP reader has
+        # status.json open. Retry this metadata transaction only (10/20/40 ms),
+        # retaining every error. Never retry inference, validation or arbitrary I/O.
+        for attempt in range(4):
+            try:
+                inside(self.root, self.status_file)
+                write_json(self.status_file, {'schema': 1, 'observed_utc': utc(),
+                           'budget': self.execution_budget.snapshot(self.request_budget.used)})
+            except (OSError, ValueError) as error:
+                kind = 'io' if isinstance(error, OSError) else 'validation'
+                self.publisher_error_counts[kind] = self.publisher_error_counts.get(kind, 0) + 1
+                self.publisher_last_errno = getattr(error, 'errno', None)
+                self.publisher_last_winerror = getattr(error, 'winerror', None)
+                sharing = (os.name == 'nt' and isinstance(error, PermissionError)
+                           and self.publisher_last_winerror in (5, 32))
+                if sharing and attempt < 3 and not self._stop.wait(.01 * 2 ** attempt):
+                    self.publisher_retry_attempts += 1
+                    continue
+                self.publisher_failed_publications += 1
+                self.publisher_failed = True
+                return
+            if attempt:
+                self.publisher_recovered_publications += 1
+            return
 
     def __enter__(self):
         self.publish()
@@ -132,10 +156,17 @@ class BudgetChannel:
         self._thread.join(timeout=3)
         if self._thread.is_alive():
             self.publisher_failed = True
+            self.publisher_error_counts['shutdown'] = self.publisher_error_counts.get('shutdown', 0) + 1
 
     def summary(self):
         from .contracts import inside
         result = {'configured': True, 'publisher_failed': self.publisher_failed,
+                  'publisher_error_counts': dict(self.publisher_error_counts),
+                  'publisher_retry_attempts': self.publisher_retry_attempts,
+                  'publisher_recovered_publications': self.publisher_recovered_publications,
+                  'publisher_failed_publications': self.publisher_failed_publications,
+                  'publisher_last_errno': self.publisher_last_errno,
+                  'publisher_last_winerror': self.publisher_last_winerror,
                   'status_calls': 0, 'successful_calls': 0, 'unavailable_calls': 0,
                   'audit_valid': True, 'phases': {}}
         try:

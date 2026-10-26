@@ -1,0 +1,346 @@
+{
+  "schema": 1,
+  "kind": "pinned_native_synthetic_http_recovery",
+  "created_utc": "2026-10-26T10:42:20.204868+00:00",
+  "passed": true,
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "79941c26485f99a761139b0022e7c7de245a28bfbe98f1a04d5b9dffdcc498ee",
+    "runtime/codex_flow/budget.py": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "9c8cb98902555c00620a4fe4c1175f43490d092fab1f375be7bdcecad8649dcd",
+    "runtime/codex_flow/config.py": "2b64c387744b9892bb9935d58d9d9576330a194fa39a9b71cd9a1768673ccf13",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "017a63ffccc56b1a03cf9fa93a6562c18bfad0f26b3d09813e48960420c7bff9",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "5faea42fa74475ec23f52e6620afef5aaff8cab19c3640d4ee8a3528b6873948",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "runtime_unchanged": true,
+  "codex_sha256": "1103e9e09c71fa2cd0afd6d8f3b9a2d63174fe8efd7cb5bd09f1cb14ef58a098",
+  "script_sha256": "6832f42968a7a9039cde1f8b959b413720898ba90231b604b28910f514540979",
+  "admission_metadata": [
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    },
+    {
+      "store_is_false": true,
+      "input_is_array": true,
+      "forbidden_keys": [],
+      "allowed": true
+    }
+  ],
+  "cases": [
+    {
+      "mode": "reset_once",
+      "checks": {
+        "runtime_unchanged": true,
+        "no_gateway_replay": true,
+        "all_admitted_inputs_stateless": true,
+        "all_upstream_attempts_counted": true,
+        "attempt_cap_preserved": true,
+        "same_bytes_on_resend": true,
+        "synthetic_no_external_inference": true,
+        "native_completed": true,
+        "exactly_one_resend": true,
+        "statuses": true,
+        "same_hmac": true,
+        "failed_usage_unknown": true,
+        "aggregate_usage_unknown": true
+      },
+      "native_status": "completed_unverified",
+      "native_exit_code": 0,
+      "elapsed_s": 28.75,
+      "upstream_attempts_synthetic": 2,
+      "models_gets_synthetic": 1,
+      "summary_sha256": "813d89bf5f42e2a92f6b383ae0fe130ff89ae645ba281dbfe8cb1402dbfb20c4",
+      "fixture_usage_is_real_model_usage": false,
+      "model_calls": 0,
+      "app_runs": 0
+    },
+    {
+      "mode": "rate_once",
+      "checks": {
+        "runtime_unchanged": true,
+        "no_gateway_replay": true,
+        "all_admitted_inputs_stateless": true,
+        "all_upstream_attempts_counted": true,
+        "attempt_cap_preserved": true,
+        "same_bytes_on_resend": true,
+        "synthetic_no_external_inference": true,
+        "native_completed": true,
+        "exactly_one_resend": true,
+        "statuses": true,
+        "same_hmac": true,
+        "failed_usage_unknown": true,
+        "aggregate_usage_unknown": true,
+        "known_429_classified": true,
+        "retry_after_minimum_honored": true,
+        "raw_provider_error_not_retained": true
+      },
+      "native_status": "completed_unverified",
+      "native_exit_code": 0,
+      "elapsed_s": 27.719,
+      "upstream_attempts_synthetic": 2,
+      "models_gets_synthetic": 1,
+      "summary_sha256": "e21f6d1d876392bf80cda720c056465e5c88f90c34296cf51367ee7490dd1ab9",
+      "fixture_usage_is_real_model_usage": false,
+      "model_calls": 0,
+      "app_runs": 0
+    },
+    {
+      "mode": "quota_429",
+      "checks": {
+        "runtime_unchanged": true,
+        "no_gateway_replay": true,
+        "all_admitted_inputs_stateless": true,
+        "all_upstream_attempts_counted": true,
+        "attempt_cap_preserved": true,
+        "same_bytes_on_resend": true,
+        "synthetic_no_external_inference": true,
+        "native_failed": true,
+        "no_unapproved_resend": true,
+        "none_completed": true,
+        "nonretryable_429": true,
+        "unknown_failed_usage": true,
+        "raw_provider_error_not_retained": true
+      },
+      "native_status": "failed",
+      "native_exit_code": 1,
+      "elapsed_s": 28.828,
+      "upstream_attempts_synthetic": 1,
+      "models_gets_synthetic": 1,
+      "summary_sha256": "4e7261e23c329d17f631d964f8968bb0140e4e1635a1c86ae0a27a5a8014bfa7",
+      "fixture_usage_is_real_model_usage": false,
+      "model_calls": 0,
+      "app_runs": 0
+    },
+    {
+      "mode": "unknown_429",
+      "checks": {
+        "runtime_unchanged": true,
+        "no_gateway_replay": true,
+        "all_admitted_inputs_stateless": true,
+        "all_upstream_attempts_counted": true,
+        "attempt_cap_preserved": true,
+        "same_bytes_on_resend": true,
+        "synthetic_no_external_inference": true,
+        "native_failed": true,
+        "no_unapproved_resend": true,
+        "none_completed": true,
+        "nonretryable_429": true,
+        "unknown_failed_usage": true,
+        "raw_provider_error_not_retained": true
+      },
+      "native_status": "failed",
+      "native_exit_code": 1,
+      "elapsed_s": 28.859,
+      "upstream_attempts_synthetic": 1,
+      "models_gets_synthetic": 1,
+      "summary_sha256": "20a806b5d706dfa091a3a349153117e4d0d9dd00c86b87cb1802bde7de64d78e",
+      "fixture_usage_is_real_model_usage": false,
+      "model_calls": 0,
+      "app_runs": 0
+    },
+    {
+      "mode": "deferred_61",
+      "checks": {
+        "runtime_unchanged": true,
+        "no_gateway_replay": true,
+        "all_admitted_inputs_stateless": true,
+        "all_upstream_attempts_counted": true,
+        "attempt_cap_preserved": true,
+        "same_bytes_on_resend": true,
+        "synthetic_no_external_inference": true,
+        "native_failed": true,
+        "no_unapproved_resend": true,
+        "none_completed": true,
+        "nonretryable_429": true,
+        "unknown_failed_usage": true,
+        "raw_provider_error_not_retained": true,
+        "long_server_delay_deferred_not_clamped": true
+      },
+      "native_status": "failed",
+      "native_exit_code": 1,
+      "elapsed_s": 28.625,
+      "upstream_attempts_synthetic": 1,
+      "models_gets_synthetic": 1,
+      "summary_sha256": "b5ec0c91edff2fb82ccbd54f68629c32d72f34d1666838620fdbd75b3fe4a6f6",
+      "fixture_usage_is_real_model_usage": false,
+      "model_calls": 0,
+      "app_runs": 0
+    },
+    {
+      "mode": "auth_401",
+      "checks": {
+        "runtime_unchanged": true,
+        "no_gateway_replay": true,
+        "all_admitted_inputs_stateless": true,
+        "all_upstream_attempts_counted": true,
+        "attempt_cap_preserved": true,
+        "same_bytes_on_resend": true,
+        "synthetic_no_external_inference": true,
+        "native_failed": true,
+        "no_unapproved_resend": true,
+        "none_completed": true
+      },
+      "native_status": "failed",
+      "native_exit_code": 1,
+      "elapsed_s": 28.859,
+      "upstream_attempts_synthetic": 1,
+      "models_gets_synthetic": 1,
+      "summary_sha256": "29e28d5f40d121fdefc7d6faa9d5829e8969c1c5b7825ea015b6bf2bdb4a6f33",
+      "fixture_usage_is_real_model_usage": false,
+      "model_calls": 0,
+      "app_runs": 0
+    },
+    {
+      "mode": "auth_403",
+      "checks": {
+        "runtime_unchanged": true,
+        "no_gateway_replay": true,
+        "all_admitted_inputs_stateless": true,
+        "all_upstream_attempts_counted": true,
+        "attempt_cap_preserved": true,
+        "same_bytes_on_resend": true,
+        "synthetic_no_external_inference": true,
+        "native_failed": true,
+        "no_unapproved_resend": true,
+        "none_completed": true
+      },
+      "native_status": "failed",
+      "native_exit_code": 1,
+      "elapsed_s": 28.015,
+      "upstream_attempts_synthetic": 1,
+      "models_gets_synthetic": 1,
+      "summary_sha256": "2e36dcd8337f3faf8cd17d6738f7e61bb49f020f83bce996966256cd754b8d34",
+      "fixture_usage_is_real_model_usage": false,
+      "model_calls": 0,
+      "app_runs": 0
+    },
+    {
+      "mode": "terminal_failed",
+      "checks": {
+        "runtime_unchanged": true,
+        "no_gateway_replay": true,
+        "all_admitted_inputs_stateless": true,
+        "all_upstream_attempts_counted": true,
+        "attempt_cap_preserved": true,
+        "same_bytes_on_resend": true,
+        "synthetic_no_external_inference": true,
+        "native_failed": true,
+        "no_unapproved_resend": true,
+        "none_completed": true
+      },
+      "native_status": "failed",
+      "native_exit_code": 1,
+      "elapsed_s": 26.031,
+      "upstream_attempts_synthetic": 1,
+      "models_gets_synthetic": 1,
+      "summary_sha256": "b76a7388dd78900c1a87fee292c55129eb7593735f2aa113f65fa8baeca6c5c6",
+      "fixture_usage_is_real_model_usage": false,
+      "model_calls": 0,
+      "app_runs": 0
+    },
+    {
+      "mode": "cap_one",
+      "checks": {
+        "runtime_unchanged": true,
+        "no_gateway_replay": true,
+        "all_admitted_inputs_stateless": true,
+        "all_upstream_attempts_counted": true,
+        "attempt_cap_preserved": true,
+        "same_bytes_on_resend": true,
+        "synthetic_no_external_inference": true,
+        "native_failed": true,
+        "no_unapproved_resend": true,
+        "none_completed": true
+      },
+      "native_status": "failed",
+      "native_exit_code": 1,
+      "elapsed_s": 29.016,
+      "upstream_attempts_synthetic": 1,
+      "models_gets_synthetic": 1,
+      "summary_sha256": "caf6f172788d7500201e38e8bcec12447a6dd7c7c51b9ca47cdc23cfaeae4972",
+      "fixture_usage_is_real_model_usage": false,
+      "model_calls": 0,
+      "app_runs": 0
+    }
+  ],
+  "model_calls": 0,
+  "fixture_usage_is_real_model_usage": false,
+  "app_runs": 0,
+  "auth_read_or_copied_by_proof": false,
+  "limitations": [
+    "Synthetic protocol only; no real model generation, speed, quality or quota credit",
+    "Subscription auth is used only by the unmodified native CLI; proof never inspects headers"
+  ]
+}

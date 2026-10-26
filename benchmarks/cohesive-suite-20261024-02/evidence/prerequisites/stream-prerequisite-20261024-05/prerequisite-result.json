@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "kind": "stream_native_prerequisite",
+  "created_utc": "2026-10-25T06:00:57.402969+00:00",
+  "success": true,
+  "failure_category": null,
+  "checks": {
+    "native_completed": true,
+    "answer_ascii_ready": true,
+    "stage1_ascii_correct": true,
+    "all_requests_completed": true,
+    "actual_model_sol61": true,
+    "root_xhigh_reviewer_high_profiles": true,
+    "gateway_guidance_disabled_and_unapplied": true,
+    "at_least_two_completed_shell_events": true,
+    "exactly_one_parent_linked_used_child": true,
+    "readonly_child_instructions_configured": true,
+    "zero_failed_calls": true,
+    "budget_tool_configured": true,
+    "budget_publisher_healthy": true,
+    "budget_audit_valid": true,
+    "at_least_three_successful_status_calls": true,
+    "no_unavailable_status_calls": true,
+    "runtime_unchanged": true,
+    "pinned_executable_unchanged": true,
+    "read_denials_configured": true,
+    "every_request_semantically_completed": true,
+    "chief_function_ast_exact": true
+  },
+  "runtime_source_commit": "ae4ba13953ebe8ca997c7ae81c8e3ce3a9dfc811",
+  "runtime_file_count": 16,
+  "runtime_hashes": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/benchmark.py": "96dedf00ede3fed9856f454d8f4516912e34b1286846a99c80ab3c081392b463",
+    "runtime/codex_flow/budget.py": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "8a6508b9f28dde9ac4940aeb52ba917f15c972b08236ecd6a22186c5e9613d88",
+    "runtime/codex_flow/config.py": "d32991de8cbc3b519dae960dcff90266bb6fd421155aac26235bbcaa8d14a509",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "a021d83930f9c9c40ececd19be4369a456cff5ac705f22723441a5b53821d67d",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "842d612db5417256acb0f80fdb2222d8c92354a061cd019abe881641e1f3302d",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+  },
+  "codex_sha256": "e757246b4de87359e660647fa9514955a0971ff6a30affdd8c145d1d5ece7b84",
+  "timeout_s": 180,
+  "max_model_requests": 12,
+  "root_model": "gpt-6.1-sol",
+  "root_effort": "xhigh",
+  "parallel": true,
+  "budget_guidance": false,
+  "mcp_server": "flow_budget",
+  "mcp_tool": "status",
+  "benchmark_credit": false,
+  "status": "completed_unverified",
+  "usage": {
+    "request_count": 6,
+    "completed_requests": 6,
+    "budget_used": 6,
+    "actual_models": [
+      "gpt-6.1-sol"
+    ],
+    "root_cli_usage": {
+      "input_tokens": 108800,
+      "output_tokens": 1542,
+      "cached_tokens": 0
+    },
+    "all_requests_usage": {
+      "input_tokens": 128633,
+      "output_tokens": 1564,
+      "total_tokens": 130197,
+      "cached_tokens": 0,
+      "reasoning_tokens": 896
+    },
+    "actual_api_cost_usd": null,
+    "subscription_quota_delta": null,
+    "budget_guidance": {
+      "enabled": false,
+      "applied_requests": 0,
+      "statuses": {
+        "disabled": 6
+      }
+    }
+  },
+  "budget_tool": {
+    "configured": true,
+    "publisher_failed": false,
+    "status_calls": 3,
+    "successful_calls": 3,
+    "unavailable_calls": 0,
+    "audit_valid": true
+  },
+  "transport": {
+    "semantic_completion_count": 6,
+    "read_termination_counts": {
+      "completed_before_http_error": 0,
+      "response_completed": 6
+    },
+    "http_eof_observed_count": 0,
+    "status_is_model_terminal_not_delivery_ack": true
+  },
+  "structural_evidence": {
+    "completed_shell_events": 2,
+    "chief_source_exists": true,
+    "chief_ast_checked_without_host_execution": true,
+    "reviewer_cases_used_by_sdk_checker": true,
+    "sdk_checker_sha256": "86e1f97ccd2cb0e7872cd705326252577660d9af149526a17195b5e5b55af5a8",
+    "chief_sha256": "a4fec89bac1536478f2580a5737f50cead6d144abbb26646d5edac0e799f0c45",
+    "parent_linked_used_children": 1,
+    "mcp_audit_counts_do_not_identify_root_or_worker": true,
+    "requested_profile_counts_are_not_agent_identity": true
+  },
+  "limits": [
+    "One-shot native stream/MCP/reviewer-case proof; no benchmark quality or speed credit",
+    "Prompt requests three root status calls; aggregate MCP audit counts do not identify individual callers",
+    "Native parent-linked metadata proves one used high-profile child, not per-tool attribution or independent case authorship",
+    "Chief AST/cases/checker receipt are read on host without function execution; native checker binds tested source and cases hashes",
+    "Readonly/depth remain instructions; shared auth/rollouts and physical read isolation remain degraded",
+    "No controller retry, inference payload suffix or provider fallback; official subscription transport only"
+  ]
+}

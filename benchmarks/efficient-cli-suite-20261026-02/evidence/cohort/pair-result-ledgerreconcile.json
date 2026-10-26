@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "finished_utc": "2026-10-26T11:21:11.776725+00:00",
+  "key": "ledgerreconcile",
+  "experiment_id": "ledger-case-20261026-04",
+  "controller_status": "finished",
+  "failure_category": null,
+  "integrity": {
+    "frozen_runtime_unchanged": true,
+    "snapshot_manifest_unchanged": true,
+    "inputs_unchanged": true,
+    "executable_unchanged": true,
+    "prerequisite_unchanged": true,
+    "synthetic_recovery_proof_unchanged": true,
+    "pair_protection_record_unchanged": true,
+    "executed_manifest_matches": true
+  },
+  "policy_violations": [],
+  "groups": [
+    "A",
+    "B"
+  ],
+  "arms": {
+    "A": {
+      "status": "completed_unverified",
+      "metrics_sha256": "62b1bf21ee1b9c25f0c128541eaf66b8f95e02449323558ce2794de6fccd39f2",
+      "total_arm_s": 599.609,
+      "orchestration_frontload_s": 0.078,
+      "model_requests_total": 13,
+      "native_request_max_retries": 1,
+      "transient_recovery": {
+        "enabled": true,
+        "retry_eligible_failures": 0,
+        "gateway_replays": 0,
+        "scope": "native HTTP retry only; every new upstream attempt reserves the shared budget; no exactly-once backend claim"
+      },
+      "physical_upstream_attempts": 13,
+      "completed_upstream_attempts": 13,
+      "aggregate_usage": {
+        "input_tokens": 411157,
+        "output_tokens": 19835,
+        "total_tokens": 430992,
+        "cached_tokens": 58496,
+        "reasoning_tokens": 7240
+      },
+      "all_requests_usage": {
+        "input_tokens": 411157,
+        "output_tokens": 19835,
+        "total_tokens": 430992,
+        "cached_tokens": 58496,
+        "reasoning_tokens": 7240
+      },
+      "budget_tool": {
+        "configured": false,
+        "publisher_failed": null,
+        "status_calls": null,
+        "successful_calls": null,
+        "unavailable_calls": null,
+        "audit_valid": null
+      },
+      "budget_feedback_use_status": "unknown",
+      "mercury_successful_calls": 0,
+      "online_probe_counts": {
+        "harness2_real_probes": 0,
+        "harness_inspired_probes": 0
+      },
+      "quality_score": null,
+      "accepted": null
+    },
+    "B": {
+      "status": "completed_unverified",
+      "metrics_sha256": "833bb05ce1792cb6e5f63fbec9423f5ec02e351eca5696a316273e97f62ecf32",
+      "total_arm_s": 719.281,
+      "orchestration_frontload_s": 1.015,
+      "model_requests_total": 23,
+      "native_request_max_retries": 1,
+      "transient_recovery": {
+        "enabled": true,
+        "retry_eligible_failures": 1,
+        "gateway_replays": 0,
+        "scope": "native HTTP retry only; every new upstream attempt reserves the shared budget; no exactly-once backend claim"
+      },
+      "physical_upstream_attempts": 23,
+      "completed_upstream_attempts": 22,
+      "aggregate_usage": null,
+      "all_requests_usage": null,
+      "budget_tool": {
+        "configured": true,
+        "publisher_failed": false,
+        "status_calls": 0,
+        "successful_calls": 0,
+        "unavailable_calls": 0,
+        "audit_valid": true
+      },
+      "budget_feedback_use_status": "not_observed",
+      "mercury_successful_calls": 1,
+      "online_probe_counts": {
+        "harness2_real_probes": 0,
+        "harness_inspired_probes": 0
+      },
+      "quality_score": null,
+      "accepted": null
+    }
+  },
+  "retained_in_denominator": true,
+  "denominator": 2,
+  "quality_assessed_by_controller": false,
+  "speed_claim": null,
+  "pair_rerun_allowed": false,
+  "native_retry_policy": {
+    "native_request_max_retries_both_arms": 1,
+    "native_stream_max_retries_both_arms": 0,
+    "gateway_transient_recovery_enabled": true,
+    "gateway_replays": 0,
+    "http_transport_both_arms": "HTTP/1.1",
+    "retry_after_max_s": 60,
+    "long_or_deadline_exceeding_delay": "defer_not_clamp",
+    "http_429_policy": "recognized_structured_temporary_only",
+    "max_physical_upstream_attempts_including_all_retries_per_arm": 80
+  },
+  "protect_paths_sha256": "8308d5f7714ead0a6667bc8eb23f2c0e55f196bec99ac39c654fba4c49e74c88",
+  "both_arms_native_completed": true,
+  "resource_monitor_launched_by_controller": false
+}

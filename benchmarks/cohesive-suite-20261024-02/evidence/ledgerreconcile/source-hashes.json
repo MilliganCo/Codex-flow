@@ -1,0 +1,14 @@
+{
+  "solution-25": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8"
+  },
+  "solution-26": {
+    ".gitignore": "3b338a6826f6b2250dc66d554ab17db77b8f0e94c654dcd591bf55f58930feb8",
+    "README.md": "ad949c0849e4e18b3b3bb3505fbca8ca4d9bae09e6f72f44de0e3b17956c427a",
+    "examples/orders.csv": "f00c5539ad48ed3d21453c0825bbf9b4ad5212025ae827a1187bbe17d2ea1c12",
+    "examples/payments.csv": "b457b36e69e4aa75b900077dc71fcaf146bc993b2fddeda41a4952c4088715f2",
+    "ledgerreconcile/__init__.py": "f139acc12a6173f5351e09389615d3cc87a513155145d44283cf84e05108cce1",
+    "ledgerreconcile/__main__.py": "292612e649a59db77f7c5775b64640f466c2c95a15c2bb590642330be427b794",
+    "ledgerreconcile/core.py": "26efdedf2c9dabb13b757743d1a65ac68ff9a4bbb78b857ba81b71be22f76831"
+  }
+}

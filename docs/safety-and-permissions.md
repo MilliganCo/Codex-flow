@@ -20,6 +20,12 @@ Deny targets must already exist. In the aborted case03, Windows SDK materialized
 
 Native concurrent-helper limits are requested through the current CLI configuration. Custom helper roles inherit parent permissions; their read-only ownership, depth=1 and total-helper limits are instruction-only. They do not have independently enforced read-only sandboxes. A sole integrator reduces conflicts but does not eliminate shared-filesystem risks.
 
+The current `reviewer/high` role explicitly disables its shell tool. Its initial
+context-only risk pass is instructed to use no tools or file reads; that instruction
+is broader than the shell feature switch and is not an independent OS read sandbox.
+The chief remains the sole application-file writer. The slower test-proposal policy
+is archived in the final cohort's frozen runtime and is not the current default.
+
 ## Verified synthetic boundaries
 
 The [2026-10-23 integration summary](evidence/integration-2026-10-23.json) records a real kernel/sandbox check with **zero model calls**. Normal project reads/writes passed. Protected owned sentinel and SQLite read/write operations raised `PermissionError`; the host's own SQLite fixture remained readable/updatable before and after. This is an actual tool-boundary result, not proof that native internal metadata access is isolated.

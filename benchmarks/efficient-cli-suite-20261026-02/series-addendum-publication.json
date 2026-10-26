@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "series": "efficient-cli-suite-20261026-02",
+  "file_count": 1,
+  "files": [
+    {
+      "path": "evidence/cohort/series-result-schema-addendum.json",
+      "raw_source": "efficient-cli-suite-20261026-02/series-result-schema-addendum.json",
+      "raw_sha256": "6a8cb70548a51c41a5015ce61301565df54d2adaaf2cd543240704a569b9f3ef",
+      "published_sha256": "ecd5691288f36f0a062539798787e507056feff56845de7618914edb738a77c7",
+      "transformation": "derived_report",
+      "raw_bytes": 197059,
+      "published_bytes": 196013,
+      "path_replacements": {
+        "owned_or_home_root": 150,
+        "personal_profile_root": 0,
+        "other_drive_root": 0,
+        "posix_profile_root": 0,
+        "changed_strings": 150
+      }
+    }
+  ],
+  "preliminary_summary_sha256": "53521e0a49a6ebdada8b6b54fb18e57c642eeab5c3b0ea27f6db3cbef567a78b",
+  "original_summary_unchanged": true,
+  "report_policy": "Derived path-redacted root addendum; embedded bindings refer to raw originals",
+  "publisher_sha256": "bd446b452782be908703dd8286cf9e7575aa8566e2a7297827875d0324977bd0",
+  "model_calls": 0,
+  "app_runs": 0,
+  "sdk_calls": 0
+}

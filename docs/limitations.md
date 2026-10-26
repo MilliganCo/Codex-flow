@@ -8,6 +8,7 @@ This list describes implementation boundaries, not missing evidence disguised as
 - Independent-step counts are supplied by the caller; arbitrary task prose is not automatically converted into a validated dependency graph.
 - Native concurrent-helper cap is requested; custom roles inherit parent permissions. Read-only ownership, total-helper and depth restrictions are instruction-only. Configured role models are not proof of actual helper execution.
 - `max_attempts` is configurable but the current wrapper executes a single attempt. There is no general autonomous retry/refinement daemon.
+- `native_request_retries` defaults to 0; opt-in 1 enables bounded native HTTP recovery within the shared deadline/physical-request budget. It does not provide exactly-once backend execution or resume an old failed task. Stream retries and gateway replays remain disabled.
 - No runtime TUI, dashboard or resume command exists. JSON inspection and event replay are implemented.
 
 ## Security and environment
@@ -31,6 +32,7 @@ This list describes implementation boundaries, not missing evidence disguised as
 - First-working-demo time is not automatically established by file creation or native completion.
 - The benchmark runner freezes evaluator hashes but does not invoke the evaluator or perform blind interactive review automatically.
 - Parallel runs contend for host/network/quota resources. One experiment cannot support general speed claims.
+- The final two-task CLI cohort completed all four generators with four 100/100 grades, but Flow took longer on both tasks. Its test-proposal policy was rejected; quality preservation alone does not meet the acceleration criterion. Older transport failures remain in their original denominators.
 - Final quality requires independent evidence, including real 4D mathematics and runnable behavior; self-tests and changed frame bytes are insufficient alone.
 
 The frozen case02 artifact scores A=95/B=97/C=95/D=96 coexist with zero successful Mercury calls and unconfirmed helpers. They do not validate a full-component performance gain. Case03 is aborted and immutable. Case04 artifact scores are A=89/B=83/C=96/D=90, with all artifacts accepted under the frozen formula despite documented defects. B/C each recorded one Mercury call; B/D each ran two local inspired probes. Helpers were unverified in B/C/D. Requested-profile heuristics are insufficient proof, and development-source fixes do not change that frozen runtime.

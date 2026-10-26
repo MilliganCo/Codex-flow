@@ -2,6 +2,27 @@
 
 Preserve current artifacts and local edits before restoring anything. Runtime shutdown, local proposal rollback and global skill uninstall are different operations. None requires disabling the host sandbox.
 
+## Before the CLI recovery changes
+
+The previous reviewed private release is
+`b9323d616169ec57c017fd376b5575b9a329b27c`. From the private clone, recover it
+into a new, previously unused directory:
+
+```powershell
+git worktree add --detach ../codex-flow-before-cli-recovery b9323d616169ec57c017fd376b5575b9a329b27c
+```
+
+Review the older checkout's project settings before running it. This preserves
+the current checkout, local edits, exact candidate snapshots and negative results.
+It requires no global configuration, key, skill or sandbox change. The final
+experimental snapshot in `benchmarks/efficient-cli-suite-20261026-02/frozen-runtime/`
+retains source `f35d342`; it is evidence of the rejected test-proposal policy,
+not the current default. Current source restores the balanced review policy.
+
+Для возврата к предыдущему приватному релизу выполните команду выше в клоне
+репозитория. Она создаёт отдельный каталог и сохраняет текущие правки и результаты.
+Перед запуском проверьте настройки старой версии; глобальные настройки не меняются.
+
 ## Before the terminal-aware stream change
 
 The previous private `main` commit is

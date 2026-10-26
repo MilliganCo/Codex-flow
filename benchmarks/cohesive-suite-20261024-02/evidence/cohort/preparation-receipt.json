@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "kind": "stream_suite_preparation",
+  "created_utc": "2026-10-25T06:03:03.313523+00:00",
+  "preregistration_sha256": "f04507f9caa0033c728cb3d0b854a28a166df5415a32c6c30a0fdc547bf24db6",
+  "runtime_snapshot_sha256": "5c5e377f84903b11ce310e3383b4da60fe53fae672d05ef8ff5a8e492f2ede57",
+  "controller_sha256": "d910bb11e333415b8e737f8b45ecb21a2809774fabb8fdbbe761bd152023cfdf",
+  "model_calls": 0
+}

@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "series_id": "cohesive-suite-20261024-02",
+  "primary_passed": false,
+  "denominator": 2,
+  "ledger_both_native_failed": true,
+  "safezip_retained_as_not_run": true,
+  "speedup_without_quality_loss_proven": false,
+  "native_requests_total": 11,
+  "setup_requests_counted_separately": 16,
+  "old_generations_retried": false,
+  "next_experiment_requires_new_id_and_concrete_recovery_change": true,
+  "frozen_runtime_unchanged": true,
+  "grading_relocation": "Fresh sibling after original SDK permission rejection; all checker/source bytes unchanged; old receipts retained",
+  "quality_warning": "Partial points from negative-input cases do not establish a working CLI; both artifacts rejected",
+  "analysis_model_calls": 0,
+  "analysis_app_runs": 0
+}

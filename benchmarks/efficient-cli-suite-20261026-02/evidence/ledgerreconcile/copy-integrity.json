@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "task": "ledgerreconcile",
+  "created_utc": "2026-10-26T11:28:41.587107+00:00",
+  "preregistration_sha256": "181bbbe076560c83ec879b1e5be69b6a7e953e0cedf3c12a316bf8340e9e3288",
+  "canonical_inputs": {
+    "task": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+    "evaluator": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+    "rubric": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+    "selftest": "dbef9230f2985aed4d89f6e889f200117c9325c5bfa1016b869da02327ce8ce2"
+  },
+  "terminal_pid_proof": {
+    "A": {
+      "original_process_dead": true,
+      "basis": "original_pid_absent",
+      "unique_observed_identity_available": true
+    },
+    "B": {
+      "original_process_dead": true,
+      "basis": "original_pid_absent",
+      "unique_observed_identity_available": true
+    }
+  },
+  "all_original_selected_files_unchanged": true,
+  "all_copies_byte_identical": true,
+  "file_counts": {
+    "solution-33": 9,
+    "solution-34": 8
+  },
+  "scope": "Full eligible inventories; private state, credentials, Git pointers and logs excluded",
+  "model_calls": 0,
+  "submissions_executed": false
+}

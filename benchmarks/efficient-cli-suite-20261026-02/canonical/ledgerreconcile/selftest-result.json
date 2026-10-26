@@ -1,0 +1,20 @@
+{
+  "app_runs": 0,
+  "checks": 43,
+  "criteria": 20,
+  "evaluator_sha256": "b237675c4b160880ea0fbe1a31ef411c78592e176c345a021d32b8bb66917bdc",
+  "fixture_counts": {
+    "invalid_fixture_cases": 23,
+    "valid_fixture_cases": 12
+  },
+  "model_calls": 0,
+  "rubric_sha256": "84279dc8fe738da5aa7ddeef175117be99dc4f6cd7e0c1736b9d60efc8530427",
+  "schema": 1,
+  "scope": "pure_oracle_and_fixture_validation_only_no_app_imports_or_execution",
+  "sdk_calls": 0,
+  "self_test_subprocess_guard": true,
+  "status": "passed",
+  "task": "ledgerreconcile-v1.0",
+  "task_sha256": "19dd76c183c258cba15bad052da49a14c4f5efc02d8d22cbd7d3d587b3c61018",
+  "total_max": 100
+}

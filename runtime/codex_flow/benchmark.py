@@ -98,7 +98,7 @@ def task_contract(value=None):
     return dict(value,quality_scores=dict(scores))
 
 
-def prepare(root,task,evaluator,exe,timeout,groups='ABCD',contract=None):
+def prepare(root,task,evaluator,exe,timeout,groups='ABCD',contract=None,native_request_retries=0):
     selected_contract=task_contract(contract)
     if root.exists():raise PolicyError('experiment root already exists; never overwrite a frozen experiment')
     if not task.is_file() or not evaluator.is_file():raise PolicyError('task/evaluator missing')
@@ -128,27 +128,28 @@ def prepare(root,task,evaluator,exe,timeout,groups='ABCD',contract=None):
                            'boundary_smoke':'single deny works; reciprocal Windows profiles interfere through shared CodexSandboxUsers ACL; custom roles inherit parent permissions'},
               'validity':'degraded physical read isolation; independent contexts/workspaces and no operator transfer; Harness2-inspired only; per-arm provider trace required',
               'max_model_requests_per_arm_including_probes':80,
+              'native_request_max_retries_both_arms':native_request_retries,
               'flow_treatment':{'harness':'enabled guard; calibration deferred; zero automatic online probes',
-                                'helper':'bounded readonly evidence or inline implementation proposal; root remains sole application-file writer',
-                                'phase_reserve':'final 20 percent planning instruction; not independently enforced'},
+                                'helper':'context-only reviewer/high; root remains sole application-file writer',
+                                'phase_reserve':'required finite checks within hard deadline; optional on-demand status'},
               'acceptance':selected_contract['acceptance'],
               'quality_scores_frozen':selected_contract['quality_scores'],
               'runtime_sha256':{p.name:sha(p) for p in Path(__file__).parent.glob('*.py')}}
     write_json(root/'experiment-manifest.json',manifest)
     return manifest
 
-def execute(root:Path,task:Path,evaluator:Path,codex=None,mercury_root=None,timeout=1200,*,execute=False,protect_paths=(),groups='ABCD',contract=None):
+def execute(root:Path,task:Path,evaluator:Path,codex=None,mercury_root=None,timeout=1200,*,execute=False,protect_paths=(),groups='ABCD',contract=None,native_request_retries=0):
     if type(timeout) is not int or not 1<=timeout<=3600:raise PolicyError('invalid timeout')
     if groups not in ('AB','ABCD'):raise PolicyError('groups must be AB or ABCD')
     task_contract(contract)
+    cfg=Config(enabled=True,mode='benchmark',timeout_s=timeout,native_request_retries=native_request_retries)
     exe=executable(codex);subscription(exe)
     root=root.resolve();task=task.resolve();evaluator=evaluator.resolve()
     protect_paths=tuple(Path(p).resolve() for p in protect_paths)
     if any(not p.exists() for p in protect_paths):raise PolicyError('protected read paths must already exist')
     if not execute:return {'dry_run':True,'groups':list(groups),'root':str(root),'provider_calls':0,'isolation_limit':'shared auth; filesystem read isolation unavailable'}
-    manifest=prepare(root,task,evaluator,exe,timeout,groups,contract=contract)
+    manifest=prepare(root,task,evaluator,exe,timeout,groups,contract=contract,native_request_retries=native_request_retries)
     prompt=(root/'frozen'/manifest.get('frozen_task_file','TREE_BENCHMARK_TASK.md')).read_text(encoding='utf-8-sig')
-    cfg=Config(enabled=True,mode='benchmark',timeout_s=timeout)
     # Reciprocal per-arm read denials are unsafe on this Windows sandbox version:
     # its CodexSandboxUsers deny ACLs affect concurrently running native profiles.
     # All arms receive one identical policy instead. Previous solutions and the

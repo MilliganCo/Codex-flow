@@ -11,6 +11,9 @@ from collections import Counter
 import hashlib
 import hmac
 import http.client
+import io
+from email.utils import parsedate_to_datetime
+import math
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import re
@@ -26,6 +29,77 @@ from typing import Any
 
 
 UPSTREAM = "https://chatgpt.com/backend-api/codex"
+MAX_ERROR_BYTES = 4096
+MAX_RETRY_DELAY_S = 60.0
+
+
+def _unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError('duplicate JSON key')
+        result[key] = value
+    return result
+
+
+def _reject_constant(_text):
+    raise ValueError('nonfinite JSON constant')
+
+
+def _header_values(headers, name):
+    if headers is None:
+        return []
+    values = headers.get_all(name, []) if callable(getattr(headers, 'get_all', None)) else [headers.get(name)]
+    return [value for value in values if value is not None]
+
+
+def _rate_limit_kind(raw):
+    try:
+        document = json.loads(raw.decode('utf-8-sig'), object_pairs_hook=_unique_object,
+                              parse_constant=_reject_constant)
+    except (ValueError, TypeError, UnicodeError, RecursionError):
+        return 'unknown'
+    if not isinstance(document, dict) or set(document) != {'error'} or not isinstance(document['error'], dict):
+        return 'unknown'
+    error = document['error']
+    kind, code = error.get('type'), error.get('code')
+    if not isinstance(kind, (str, type(None))) or not isinstance(code, (str, type(None))):
+        return 'unknown'
+    quota = {'insufficient_quota', 'usage_limit_reached', 'credit_balance_exhausted', 'billing_hard_limit_reached'}
+    if kind in quota or code in quota:
+        return 'quota'
+    if set(error) - {'type', 'code', 'message', 'param'}:
+        return 'unknown'
+    if any(error.get(key) is not None and not isinstance(error[key], str) for key in ('message', 'param')):
+        return 'unknown'
+    allowed = {('rate_limit_error', 'slow_down'), ('rate_limit_error', 'rate_limit_exceeded'),
+               ('tokens', 'rate_limit_exceeded'), ('requests', 'rate_limit_exceeded')}
+    return 'temporary_rate_limit' if (kind, code) in allowed else 'unknown'
+
+
+def _retry_delay(headers, now):
+    """Never truncate a valid server delay into an earlier retry."""
+    values = _header_values(headers, 'Retry-After')
+    if not values:
+        return 1.0, 'fallback'
+    if len(values) != 1 or not isinstance(values[0], str) or len(values[0]) > 128:
+        return None, 'invalid'
+    value = values[0].strip()
+    if re.fullmatch(r'[0-9]{1,10}', value):
+        delay = float(int(value))
+    else:
+        try:
+            date = parsedate_to_datetime(value)
+            if date.tzinfo is None:
+                return None, 'invalid'
+            delay = max(0., date.timestamp() - now)
+        except (ValueError, TypeError, OverflowError, IndexError):
+            return None, 'invalid'
+    if not math.isfinite(delay):
+        return None, 'invalid'
+    if delay > MAX_RETRY_DELAY_S:
+        return delay, 'too_long'
+    return delay, 'server'
 MAX_REQUEST_BYTES = 2 * 1024 * 1024
 MAX_RESPONSE_BYTES = 4 * 1024 * 1024
 ALLOWED = {"gpt-6.1-sol": {"xhigh", "medium", "high"}, "gpt-6-luna": {"medium"}}
@@ -100,6 +174,23 @@ def _failure_category(error):
     if isinstance(error, OSError): return 'io_error'
     if isinstance(error, ValueError): return 'stream_state_error'
     return 'unexpected_error'
+
+
+def _transient_before_completion(error, phase):
+    """Only source-known failures, before any buffered response is delivered."""
+    if phase not in ('upstream_open', 'body_read') or isinstance(error, _Validation):
+        return False
+    if isinstance(error, urllib.error.HTTPError):
+        return error.code in (500, 502, 503, 504)
+    if isinstance(error, urllib.error.URLError):
+        error = error.reason
+    return isinstance(error, (TimeoutError, ConnectionResetError, ConnectionAbortedError,
+                              http.client.IncompleteRead))
+
+
+def _stateless_retry_input(document):
+    return (document.get('store') is False and isinstance(document.get('input'), list)
+            and not any(key in document for key in ('previous_response_id', 'conversation', 'background')))
 
 
 def _mime(value):
@@ -262,11 +353,14 @@ def _read_inference(response, content_type, check_control, updates):
 
 class SubscriptionGateway:
     def __init__(self, budget: RequestBudget | None = None, opener=None, trace=None,
-                 *, execution_budget=None, guidance=False, cancel=None):
+                 *, execution_budget=None, guidance=False, cancel=None, transient_recovery=False):
         if type(guidance) is not bool:raise ValueError('guidance must be boolean')
+        if type(transient_recovery) is not bool:raise ValueError('transient_recovery must be boolean')
+        if transient_recovery and guidance:raise ValueError('recovery requires unchanged inference inputs')
         self.budget = budget if budget is not None else RequestBudget()
         self.execution_budget = execution_budget
         self.guidance = guidance
+        self.transient_recovery = transient_recovery
         self.external_cancel = cancel
         self._cancelled = threading.Event()
         self._stop_reason = 'cancelled'
@@ -334,10 +428,22 @@ class SubscriptionGateway:
         return min(120,remaining)
 
     @staticmethod
+    def _response_socket(response):
+        # HTTPError wraps HTTPResponse, which wraps the buffered socket reader.
+        item = response
+        for _ in range(4):
+            raw = getattr(item, 'raw', None)
+            sock = getattr(raw, '_sock', None) or getattr(item, '_sock', None)
+            if callable(getattr(sock, 'shutdown', None)):
+                return sock
+            item = getattr(item, 'fp', None)
+            if item is None:
+                break
+        return None
+
+    @staticmethod
     def _abort_response(response):
-        fp = getattr(response, "fp", None)
-        raw = getattr(fp, "raw", None)
-        sock = getattr(raw, "_sock", None) or getattr(fp, "_sock", None)
+        sock = SubscriptionGateway._response_socket(response)
         if sock is not None:
             try:
                 sock.shutdown(socket.SHUT_RDWR)
@@ -347,6 +453,93 @@ class SubscriptionGateway:
             response.close()
         except Exception:
             pass
+
+    def _inspect_rate_limit(self, error, updates):
+        """Read complete bounded JSON only; never retain messages or raw bytes."""
+        headers = error.headers
+        mime, encoding = _header_values(headers, 'Content-Type'), _header_values(headers, 'Content-Encoding')
+        if (len(mime) != 1 or _mime(mime[0]) != 'application/json'
+                or len(encoding) > 1 or encoding and encoding[0] not in ('identity', '')):
+            return 'unknown'
+        lengths = _header_values(headers, 'Content-Length')
+        if (len(lengths) > 1 or lengths and (not isinstance(lengths[0], str)
+                or re.fullmatch(r'[0-9]{1,10}', lengths[0].strip()) is None)):
+            return 'unknown'
+        length = int(lengths[0]) if lengths else None
+        if length is not None and (not 0 < length <= MAX_ERROR_BYTES or _header_values(headers, 'Transfer-Encoding')):
+            return 'unknown'
+        stream = error.fp
+        read = getattr(stream, 'read1', None)
+        sock = self._response_socket(error)
+        bounded_socket = sock if isinstance(sock, socket.socket) else None
+        if not callable(read) or bounded_socket is None and type(stream) is not io.BytesIO:
+            return 'unknown'
+        raw = bytearray()
+        complete = False
+        self._register_response(error)
+        try:
+            deadline = time.monotonic() + 1.0
+            while len(raw) < MAX_ERROR_BYTES and time.monotonic() < deadline:
+                self._check_control()
+                if bounded_socket is not None:
+                    read_timeout = min(.25, deadline - time.monotonic(), self._open_timeout())
+                    if read_timeout <= 0:
+                        break
+                    bounded_socket.settimeout(read_timeout)
+                room = min(MAX_ERROR_BYTES - len(raw), length - len(raw) if length is not None else MAX_ERROR_BYTES)
+                chunk = read(room)
+                if not isinstance(chunk, bytes) or len(chunk) > room:
+                    return 'unknown'
+                raw.extend(chunk)
+                if length is not None and len(raw) == length:
+                    complete = True
+                    break
+                if not chunk:
+                    complete = length is None
+                    break
+            self._check_control()
+            updates['http_error_bytes_inspected'] = len(raw)
+            return _rate_limit_kind(bytes(raw)) if complete else 'unknown'
+        except _ControlRejected:
+            raise
+        except (OSError, ValueError):
+            self._check_control()
+            return 'unknown'
+        finally:
+            updates['http_error_bytes_inspected'] = len(raw)
+            self._unregister_response(error)
+            self._abort_response(error)
+
+    def _http_error_recovery(self, error, updates):
+        try:
+            kind = self._inspect_rate_limit(error, updates) if error.code == 429 else 'server_error'
+        finally:
+            self._abort_response(error)  # Close before waiting; never keep upstream capacity occupied.
+        updates['http_error_kind'] = kind
+        if error.code == 429 and kind != 'temporary_rate_limit':
+            return False
+        delay, source = _retry_delay(error.headers, time.time())
+        updates['retry_delay_source'] = source
+        updates['retry_after_requested_s'] = delay
+        if delay is None or source == 'too_long':
+            updates['retry_deferred'] = True
+            return False
+        # Only jitter may be bounded; a valid server delay is never shortened.
+        wait = delay + min(secrets.randbelow(251) / 1000., MAX_RETRY_DELAY_S - delay)
+        if self.execution_budget is not None and self.execution_budget.remaining_s() <= wait:
+            updates['retry_deferred'] = True
+            return False
+        started = time.monotonic()
+        target = started + wait
+        try:
+            while time.monotonic() < target:
+                self._check_control()
+                self._cancelled.wait(min(.05, max(0., target - time.monotonic())))
+            self._check_control()
+        finally:
+            updates['retry_wait_s'] = round(time.monotonic() - started, 6)
+        updates['retry_deferred'] = False
+        return True
 
     def _register_response(self, response):
         with self._lock:
@@ -368,6 +561,7 @@ class SubscriptionGateway:
             except ValueError:raise _ControlRejected('request_budget_exhausted') from None
         record = {"sequence": sequence, "model": model, "effort": effort,
                   "status": "pending", "actual_model": None, "usage": None,
+                  "semantic_completion_observed": False,
                   "duration_s": None, "http_status": None, "reason": None,
                   "response_content_type": None, "response_encoding": None, "response_bytes": None}
         if self.execution_budget is not None:
@@ -424,6 +618,10 @@ class SubscriptionGateway:
                 "budget_guidance":{"enabled":self.guidance,
                     "applied_requests":sum(r.get('guidance_status')=='applied' for r in records),
                     "statuses":dict(Counter(r.get('guidance_status','disabled') for r in records))},
+                "transient_recovery":{"enabled":self.transient_recovery,
+                    "retry_eligible_failures":sum(r.get('retry_eligible') is True for r in records),
+                    "gateway_replays":0,
+                    "scope":"native HTTP retry only; every new upstream attempt reserves the shared budget; no exactly-once backend claim"},
                 "initial_header_open_cancellation":"bounded by remaining timeout; no response handle exists until open returns",
                 "agent_count": None, "agent_count_limitation": "requests do not identify agents"}
 
@@ -493,6 +691,7 @@ class SubscriptionGateway:
                 failure_stage = "request_validation"
                 failure_phase = "request_validation"
                 response = None
+                http_error_response = None
                 request_bytes_read = 0
                 reply_status, reply_body, reply_type = 502, b'{"error":{"type":"subscription_transport_rejected"}}', "application/json"
                 try:
@@ -529,12 +728,21 @@ class SubscriptionGateway:
                         document = json.loads(data)
                         if not isinstance(document, dict):
                             raise ValueError("invalid request object")
+                        # Native HTTP retries can also follow a local disconnect.
+                        # Therefore every admitted recovery-mode POST must be
+                        # stateless, not just those later returning a 503.
+                        if owner.transient_recovery and not _stateless_retry_input(document):
+                            raise ValueError("stateful recovery input forbidden")
                         model = document.get("model")
                         reasoning = document.get("reasoning")
                         effort = reasoning.get("effort") if isinstance(reasoning, dict) else None
                         if not isinstance(model, str) or model not in ALLOWED or effort not in ALLOWED[model]:
                             raise ValueError("unapproved model effort")
                         record = owner._begin(model, effort, self.headers)
+                        if owner.transient_recovery:
+                            record['payload_fingerprint'] = hmac.new(owner.nonce.encode('ascii'), data,
+                                                                      hashlib.sha256).hexdigest()
+                            record['retry_eligible'] = False
                         if owner.guidance:record['input_schema']=_input_metadata(document)
                         if owner.guidance and owner.execution_budget is not None:
                             from .budget import append_budget_guidance
@@ -610,9 +818,28 @@ class SubscriptionGateway:
                         updates["reason"] = "completed"
                     reply_status, reply_body, reply_type = status, body, content_type
                 except Exception as error:
+                    if isinstance(error, urllib.error.HTTPError):
+                        http_error_response = error
                     if not isinstance(error,_ControlRejected):
                         try:owner._check_control()
                         except _ControlRejected as stopped:error=stopped
+                    http_retryable = None
+                    if (owner.transient_recovery and inference and record is not None
+                            and failure_phase in ('upstream_open', 'body_read')
+                            and updates.get('semantic_completion_observed') is not True
+                            and isinstance(error, urllib.error.HTTPError) and error.code in (429, 500, 502, 503, 504)):
+                        updates['http_status'] = error.code
+                        try:
+                            http_retryable = owner._http_error_recovery(error, updates)
+                        except _ControlRejected as stopped:
+                            error = stopped
+                            http_retryable = False
+                        except Exception:
+                            # A diagnostic/parser failure never authorizes retry
+                            # and must not expose the original provider message.
+                            updates['http_error_kind'] = 'unknown'
+                            updates['http_error_inspection_failed'] = True
+                            http_retryable = False
                     terminal_cleanup = (inference and failure_phase == 'response_close'
                                         and updates.get('semantic_completion_observed') is True
                                         and not isinstance(error, _Validation))
@@ -636,12 +863,25 @@ class SubscriptionGateway:
                             updates['partial_response_bytes']=len(error.partial)
                         # Fixed errors only; no exception text, partial content or credentials.
                         reply_status = 403 if isinstance(error, ValueError) else 502
+                        if owner.transient_recovery:
+                            retryable = (inference and record is not None and
+                                         (http_retryable if http_retryable is not None else
+                                          _transient_before_completion(error, failure_phase)))
+                            updates['retry_eligible'] = retryable
+                            # Do not pass an upstream 401 into native auth-refresh
+                            # recovery. Denial stays nonretryable; original status
+                            # remains in metadata without exposing its body.
+                            reply_status = 503 if retryable else (403 if isinstance(error, urllib.error.HTTPError)
+                                                                 and error.code in (401, 403) else 400)
                         reply_body=b'{"error":{"type":"subscription_transport_rejected"}}'
                         if isinstance(error,_ControlRejected):
                             with owner._lock:owner._control_rejections[error.code]+=1
-                            reply_status={'request_budget_exhausted':429,'deadline_exhausted':408,'cancelled':503}[error.code]
+                            reply_status=(400 if owner.transient_recovery else
+                                          {'request_budget_exhausted':429,'deadline_exhausted':408,'cancelled':503}[error.code])
                             reply_body=json.dumps({'error':{'type':error.code}}).encode('ascii')
                 finally:
+                    if http_error_response is not None:
+                        owner._abort_response(http_error_response)
                     if response is not None:
                         owner._unregister_response(response)
                     if record is not None:
