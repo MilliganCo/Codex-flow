@@ -65,6 +65,12 @@ def main(argv=None):
     r.add_argument('--risk-level',choices=['low','normal','medium','high','critical'],default='normal')
     r.add_argument('--conflicting-paths',action='store_true')
     r.add_argument('--timeout',type=int)
+    r.add_argument('--acceptance-file',type=Path)
+    r.add_argument('--protect-path',type=Path,action='append',default=[])
+    v=sub.add_parser('verify',help='Inspect or execute owner-selected external acceptance checks without a model')
+    v.add_argument('--acceptance-file',type=Path,required=True)
+    v.add_argument('--execute',action='store_true');v.add_argument('--timeout',type=int)
+    v.add_argument('--protect-path',type=Path,action='append',default=[])
     s=sub.add_parser('runs');s.add_argument('action',choices=['list','show','cancel','replay']);s.add_argument('run_id',nargs='?')
     b=sub.add_parser('benchmark');b.add_argument('action',choices=['tree','report']);b.add_argument('--task-file',type=Path);b.add_argument('--root',type=Path);b.add_argument('--evaluator',type=Path);b.add_argument('--mercury-root',type=Path);b.add_argument('--execute',action='store_true');b.add_argument('--timeout',type=int,default=1200)
     b.add_argument('--protect-path',type=Path,action='append',default=[])
@@ -85,10 +91,14 @@ def main(argv=None):
             if args.max_agents is not None:cfg=replace(cfg,max_agents=args.max_agents)
             if args.timeout is not None:cfg=replace(cfg,timeout_s=args.timeout)
             from .budget import ExecutionBudget
+            from . import acceptance
             execution_budget=ExecutionBudget(cfg.timeout_s,cfg.max_model_requests)
             prompt=args.task_file.read_text(encoding='utf-8-sig') if args.task_file else args.task
             if not prompt:raise PolicyError('task or --task-file required')
             if not args.dry_run and not (cfg.enabled or args.enable):raise PolicyError('runtime disabled; use --enable or project config')
+            contract=acceptance.load_contract(args.acceptance_file) if args.acceptance_file else None
+            protected=acceptance.protected_paths(repo,args.protect_path)
+            if contract and not args.dry_run:acceptance.require_backend()
             mercury=None
             decision=route(independent_steps=args.independent_steps,conflicting_paths=args.conflicting_paths,
                            risk_level=args.risk_level,single=args.single_agent or args.strategy=='single')
@@ -98,11 +108,13 @@ def main(argv=None):
                     'conflicting_paths':False,'risk_level':'low' if args.risk_level=='normal' else args.risk_level},enabled=True)
                 decision=route(independent_steps=args.independent_steps,conflicting_paths=args.conflicting_paths,
                                risk_level=args.risk_level,single=args.single_agent or args.strategy=='single',mercury=mercury)
-            if args.dry_run:out={'dry_run':True,'config':asdict(cfg),'route':asdict(decision),'external_calls':0}
+            if args.dry_run:out={'dry_run':True,'config':asdict(cfg),'route':asdict(decision),'external_calls':0,
+                                'acceptance':contract.summary() if contract else {'configured':False}}
             else:
                 if not (cfg.enabled or args.enable):raise PolicyError('runtime disabled; use --enable or project config')
                 if decision.strategy=='escalate':raise PolicyError(decision.reason)
                 cli=executable(args.codex)
+                prepared=acceptance.prepare(repo,contract) if contract else None
                 from .subscription import RequestBudget
                 request_budget=RequestBudget(cfg.max_model_requests)
                 harness=None
@@ -118,20 +130,55 @@ def main(argv=None):
                         from .harness import GuardedHarness
                         GuardedHarness(repo).rollback(harness['decision']['proposal']['id'])
                     raise PolicyError('total task budget exhausted during routing/probes; task execution not started')
-                out=run(cli,repo,replace(cfg,timeout_s=remaining),prompt,repo/'.codex-flow/runs'/uuid.uuid4().hex,
-                        parallel=decision.strategy=='parallel',instructions=instructions,request_budget=request_budget,execution_budget=execution_budget)
+                run_dir=repo/'.codex-flow/runs'/uuid.uuid4().hex
+                out=run(cli,repo,replace(cfg,timeout_s=remaining),prompt,run_dir,
+                        parallel=decision.strategy=='parallel',instructions=instructions,request_budget=request_budget,
+                        execution_budget=execution_budget,denied_reads=protected)
                 out['execution_s']=out['wall_clock_s']
+                gate=None
+                if prepared:
+                    gate=(acceptance.verify(cli,repo,prepared,run_dir,execution_budget,protected)
+                          if out['status']=='completed_unverified' else
+                          {'status':'not_run','accepted':False,'reason':'native_execution_not_completed'})
+                acceptance.apply_result(out,gate)
                 out['wall_clock_s']=round(time.monotonic()-started,3)
                 out['root_usage']={k:out[k] for k in ('input_tokens','output_tokens','cached_tokens')}
                 if decision.strategy=='parallel':
                     for key in ('input_tokens','output_tokens','cached_tokens'):out[key]=None
                 out['route']=asdict(decision);out['mercury']=mercury
                 out['harness2']=harness or {'status':'disabled'}
-                if harness and harness['decision']['adopted'] and out['status']!='completed_unverified':
+                if harness and harness['decision']['adopted'] and out['status'] not in ('completed_unverified','completed_verified'):
                     from .harness import GuardedHarness
                     try:out['harness2']['rollback']=GuardedHarness(repo).rollback(harness['decision']['proposal']['id'])
                     except PolicyError:out['harness2']['rollback_error']='active instruction drift; preserved for review'
+                if prepared:
+                    out['execution_budget']=execution_budget.snapshot(request_budget.used)
                 write_json(repo/'.codex-flow/runs'/out['run_id']/'metrics.json',out)
+                if prepared:
+                    write_json(run_dir/'control.json',{'pid':None,'status':out['status']})
+                    print(json.dumps(out,ensure_ascii=False,indent=2));return 0 if out['accepted'] else 3
+        elif args.command=='verify':
+            from . import acceptance
+            from .budget import ExecutionBudget
+            contract=acceptance.load_contract(args.acceptance_file)
+            protected=acceptance.protected_paths(repo,args.protect_path)
+            if not args.execute:
+                out={'dry_run':True,'acceptance':contract.summary(),'external_calls':0,'model_calls':0}
+            else:
+                acceptance.require_backend()
+                from .native import executable
+                cli=executable(args.codex)
+                budget=ExecutionBudget(args.timeout if args.timeout is not None else cfg.timeout_s,cfg.max_model_requests)
+                prepared=acceptance.prepare(repo,contract)
+                run_dir=inside(repo,repo/'.codex-flow/runs'/('verify-'+uuid.uuid4().hex))
+                run_dir.mkdir(parents=True,exist_ok=False)
+                receipt=acceptance.verify(cli,repo,prepared,run_dir,budget,protected)
+                out={'run_id':run_dir.name,'status':'completed_verified' if receipt['accepted'] else 'verification_failed',
+                     'accepted':receipt['accepted'],'acceptance':receipt,'model_calls':0,
+                     'execution_budget':budget.snapshot(0)}
+                write_json(run_dir/'metrics.json',out)
+                write_json(run_dir/'control.json',{'pid':None,'status':out['status']})
+                print(json.dumps(out,ensure_ascii=False,indent=2));return 0 if out['accepted'] else 3
         elif args.command=='runs':
             def checked_record_path(path):
                 try:return inside(repo,path)

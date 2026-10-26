@@ -11,6 +11,15 @@ modules. Mercury and Harness-inspired probes are optional and disabled by defaul
 
 **Status:** private development. No project license has been selected. There is no validated universal speedup or quota-saving claim. Runtime completion is distinct from independent acceptance.
 
+An optional [external acceptance gate](docs/acceptance-gate.md) now connects that
+distinction to ordinary `run`: supply an owner-reviewed `--acceptance-file` to
+require sandboxed checks before `completed_verified` / `accepted: true`. Without
+one, completion stays unverified. The separate `verify` command runs no model.
+[Working JSON CLI example](examples/acceptance-gate/README.md) and
+[seven real sandbox controls](docs/evidence/acceptance-gate-sdk-20261026.json)
+cover correct output, deliberate defects, empty/stale/missing reports, timeout,
+and observed read/write restrictions. This verifies the gate, not a model speedup.
+
 The final [two-task CLI cohort](benchmarks/efficient-cli-suite-20261026-02/README.md)
 finished both Solo and Flow arms within 1,500 seconds and 80 physical requests.
 All four unchanged applications scored **100/100** in independent SDK grading.

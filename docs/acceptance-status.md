@@ -26,9 +26,10 @@ commits; current publication requires its own exact-commit Actions result.
 | Acceleration without quality loss | degraded | Final CLI cohort: all four artifacts 100/100 and all generators complete, but Flow slower on each task; fixed per-task ratio criterion fails |
 | Optional bounded HTTP recovery | pass | Nine synthetic cases and 24-check/eight-request real native prerequisite; default retries 0, stream retries 0, gateway replay 0; separate from performance credit |
 | Doctor, integration status, cancel, event replay | pass | Implemented CLI controls; replay does not resume inference |
+| External acceptance in ordinary run | pass | Explicit frozen owner contract/checker; no-model Windows SDK gate; seven real fault/boundary controls and 21 offline regressions; claims only selected checks |
 | Runtime TUI / native-session resume | notimplemented | No such commands or interface shipped |
 | Real 2D/3D/4D demos | pass | Accepted old case02 originals preserved; labelled packaged portability patch passed Windows/Ubuntu CI |
-| Local core verification | pass | Final balanced source f557a1a: Windows discovered 306 tests, 285 passed/21 unavailable-symlink skips, exit 0 in 30.373s; Ruff selected correctness rules and mypy on 15 files passed |
+| Local core verification | pass | Acceptance-gate source: Windows discovered 327 tests, 306 passed/21 unavailable-symlink skips, exit 0 in 29.923s; Ruff selected correctness rules and mypy on 16 files passed |
 | Historical private CI | pass | Confirmed green for f757663: all 192 then-current core tests on Windows/Ubuntu; examples, static checks, build and 454-object all-history scan passed; this is not current-release CI |
 | Exact new publication CI | deferred | Must be checked on the new private main commit after publication; retain final verification outside Git to avoid a self-referential commit loop |
 | License selection | blocked | Owner decision pending; repository remains private |

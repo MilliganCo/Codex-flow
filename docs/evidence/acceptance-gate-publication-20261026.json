@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "raw_source": "acceptance-gate-proof-20261026-02/proof-result.json",
+  "published_path": "docs/evidence/acceptance-gate-sdk-20261026.json",
+  "raw_sha256": "02af54b121978f0c59c6614bee828bd0cb0e050c0d9ed8e595294b6cdf767a7e",
+  "published_sha256": "02af54b121978f0c59c6614bee828bd0cb0e050c0d9ed8e595294b6cdf767a7e",
+  "transformation": "verbatim_metadata",
+  "raw_runtime_hashes_bind_executed_local_files": true,
+  "runtime_lf_normalized_sha256": {
+    "runtime/codex_flow/acceptance.py": "fa8ba60781524245d9d6af17322325e990f47a50f2bc7e357f7042db9e8c9048",
+    "runtime/codex_flow/benchmark.py": "79941c26485f99a761139b0022e7c7de245a28bfbe98f1a04d5b9dffdcc498ee",
+    "runtime/codex_flow/budget.py": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "7dca78407b9e9dba2b0dafd4e0168d83a68bdb22f5badf5c4f77fd4cae0a9df0",
+    "runtime/codex_flow/config.py": "2b64c387744b9892bb9935d58d9d9576330a194fa39a9b71cd9a1768673ccf13",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "d9b534f213b39a28bdbe916f2ecdfec0ca83475459e041fd086f75bc8e51d1d6",
+    "runtime/codex_flow/native.py": "017a63ffccc56b1a03cf9fa93a6562c18bfad0f26b3d09813e48960420c7bff9",
+    "runtime/codex_flow/native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "5faea42fa74475ec23f52e6620afef5aaff8cab19c3640d4ee8a3528b6873948",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1"
+  },
+  "line_ending_note": "Git eol=lf normalizes source text; raw runtime hashes and normalized source hashes are distinct. No application/checker or benchmark outputs were changed.",
+  "model_calls": 0,
+  "app_checker_host_executions": 0
+}

@@ -73,6 +73,17 @@ Risk, ownership and independence are caller-provided facts, not automatic task d
 
 ## CLI and host settings
 
+### External acceptance
+
+`run --acceptance-file <owner-reviewed-contract.json>` enables the optional
+[external acceptance gate](acceptance-gate.md). Config schema 1 is unchanged;
+no checker is discovered automatically. `verify --acceptance-file ...` inspects
+without execution; add `--execute` for a no-model Windows sandbox check. Both
+commands accept repeatable `--protect-path <existing-path>` read denials. Missing
+targets and workspace-ancestor denies are rejected before execution. A configured
+gate failure exits 3; an invalid contract/admission exits 2. An unconfigured run
+retains its existing completion/exit behavior and explicitly reports `accepted: false`.
+
 `--codex` takes precedence over `CODEX_FLOW_CODEX`, followed by PATH discovery. The adapter checks `--version` and native subscription login before execution.
 
 Runtime overrides are scoped to the launched CLI process: root Sol XHigh, workspace-based permissions, approvals disabled for this noninteractive wrapper, shell-network access off and discovery/hooks/plugins/apps/memory disabled. With read-denial targets, a named permission profile extends `:workspace` and adds explicit existing-path denies; it is not a sandbox bypass. `benchmark tree --protect-path <existing-path>` is repeatable. Missing targets are rejected because Windows SDK materialized future deny paths as directories.

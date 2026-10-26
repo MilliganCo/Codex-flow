@@ -1,0 +1,412 @@
+{
+  "schema": 1,
+  "kind": "acceptance_gate_sdk_proof",
+  "passed": true,
+  "rows": [
+    {
+      "case": "valid",
+      "accepted": true,
+      "exit_code": 0,
+      "status": "passed",
+      "reason": "all_selected_checks_passed",
+      "run_id": "verify-ccffc22f717746e1915c6854d2495974",
+      "wall_s": 1.563,
+      "input_hashes_unchanged": true,
+      "acceptance_receipt_sha256": "256c1d57573c85dfb087edaae2f1a5ee769cd54ff1a188179721f2fbbc9ae5cf",
+      "receipt": {
+        "schema": 1,
+        "status": "passed",
+        "accepted": true,
+        "configured": true,
+        "contract_sha256": "ddcf8870e628b526829f450ad004546a412eb3f5a42271312268afc385510056",
+        "checker_sha256": "d689f85fc79afa865298abbc4a5508c293b7af5b0508d5b064825c16975959f8",
+        "min_checks": 8,
+        "timeout_s": 30,
+        "input_roots": [
+          "sum_cli.py"
+        ],
+        "model_calls": 0,
+        "network_enabled": false,
+        "checker_executed_on_host": false,
+        "scope": "owner-selected checks and declared input inventory",
+        "descendant_termination": "best_effort_not_independently_attested",
+        "exit_code": 0,
+        "stop_reason": null,
+        "capture_complete": true,
+        "sdk_root_exit_observed": true,
+        "capture": {
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          }
+        },
+        "output_limit_exceeded": false,
+        "input_files_checked": 1,
+        "input_inventory_sha256": "cfd94eb82485cc40bdfcdab4e11a81496b005b3ffae535ecaa59be4898926e62",
+        "inputs_unchanged": true,
+        "checker_unchanged": true,
+        "checks_run": 8,
+        "checks_passed": 8,
+        "checks_failed": 0,
+        "checks_skipped": 0,
+        "report_sha256": "1aa0485d19c1ba0b2b59b9abca381ebc4b5586564f8b3ca1da8f61558022122f",
+        "reason": "all_selected_checks_passed",
+        "wall_clock_s": 1.328
+      }
+    },
+    {
+      "case": "wrong_result",
+      "accepted": false,
+      "exit_code": 3,
+      "status": "failed",
+      "reason": "checks_failed_or_skipped",
+      "run_id": "verify-6994a9a262d24e12bd907e7e11d12102",
+      "wall_s": 1.375,
+      "input_hashes_unchanged": true,
+      "acceptance_receipt_sha256": "b3a4697acbbf5221e48376d79be1e59d3b6f398be015247373974e8a0ab5bff9",
+      "receipt": {
+        "schema": 1,
+        "status": "failed",
+        "accepted": false,
+        "configured": true,
+        "contract_sha256": "ddcf8870e628b526829f450ad004546a412eb3f5a42271312268afc385510056",
+        "checker_sha256": "d689f85fc79afa865298abbc4a5508c293b7af5b0508d5b064825c16975959f8",
+        "min_checks": 8,
+        "timeout_s": 30,
+        "input_roots": [
+          "sum_cli.py"
+        ],
+        "model_calls": 0,
+        "network_enabled": false,
+        "checker_executed_on_host": false,
+        "scope": "owner-selected checks and declared input inventory",
+        "descendant_termination": "best_effort_not_independently_attested",
+        "exit_code": 0,
+        "stop_reason": null,
+        "capture_complete": true,
+        "sdk_root_exit_observed": true,
+        "capture": {
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          }
+        },
+        "output_limit_exceeded": false,
+        "input_files_checked": 1,
+        "input_inventory_sha256": "08acc5dc2ce6abcb061945c092ed6cc70dd8c57f0b4286f8e11a8d0991b1b162",
+        "inputs_unchanged": true,
+        "checker_unchanged": true,
+        "checks_run": 8,
+        "checks_passed": 4,
+        "checks_failed": 4,
+        "checks_skipped": 0,
+        "report_sha256": "64cce1637a64cc0babe3cc9b23da14be4c2ff0c6bde8b74227497215793183c1",
+        "reason": "checks_failed_or_skipped",
+        "wall_clock_s": 1.156
+      }
+    },
+    {
+      "case": "zero_checks",
+      "accepted": false,
+      "exit_code": 3,
+      "status": "blocked",
+      "reason": "acceptance_evidence_invalid",
+      "run_id": "verify-9162e12499424cc9ad9e432d4ebc8cf7",
+      "wall_s": 0.938,
+      "input_hashes_unchanged": true,
+      "acceptance_receipt_sha256": "cf5102d3364d985aaa6a9244416e1b4a25439816ac6c11747f8192d07ccaa17b",
+      "receipt": {
+        "schema": 1,
+        "status": "blocked",
+        "accepted": false,
+        "configured": true,
+        "contract_sha256": "ddcf8870e628b526829f450ad004546a412eb3f5a42271312268afc385510056",
+        "checker_sha256": "e40a9fa2756f5e253ced1371bb900e8698066e6e107420f621f50a4a18e986f3",
+        "min_checks": 8,
+        "timeout_s": 30,
+        "input_roots": [
+          "sum_cli.py"
+        ],
+        "model_calls": 0,
+        "network_enabled": false,
+        "checker_executed_on_host": false,
+        "scope": "owner-selected checks and declared input inventory",
+        "descendant_termination": "best_effort_not_independently_attested",
+        "exit_code": 0,
+        "stop_reason": null,
+        "capture_complete": true,
+        "sdk_root_exit_observed": true,
+        "capture": {
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          }
+        },
+        "output_limit_exceeded": false,
+        "input_files_checked": 1,
+        "input_inventory_sha256": "cfd94eb82485cc40bdfcdab4e11a81496b005b3ffae535ecaa59be4898926e62",
+        "inputs_unchanged": true,
+        "checker_unchanged": true,
+        "reason": "acceptance_evidence_invalid",
+        "wall_clock_s": 0.718
+      }
+    },
+    {
+      "case": "stdout_only",
+      "accepted": false,
+      "exit_code": 3,
+      "status": "blocked",
+      "reason": "acceptance_evidence_invalid",
+      "run_id": "verify-9317869f1df94ddd8c2a62a7de852a49",
+      "wall_s": 0.875,
+      "input_hashes_unchanged": true,
+      "acceptance_receipt_sha256": "014716bcf52c91a877ef123d4069e7b569f094764de7cd673feb7c89a9783d62",
+      "receipt": {
+        "schema": 1,
+        "status": "blocked",
+        "accepted": false,
+        "configured": true,
+        "contract_sha256": "ddcf8870e628b526829f450ad004546a412eb3f5a42271312268afc385510056",
+        "checker_sha256": "03190035abe69498de09a5a4c71dfc0743758113c67651f39b29a6c6b417e807",
+        "min_checks": 8,
+        "timeout_s": 30,
+        "input_roots": [
+          "sum_cli.py"
+        ],
+        "model_calls": 0,
+        "network_enabled": false,
+        "checker_executed_on_host": false,
+        "scope": "owner-selected checks and declared input inventory",
+        "descendant_termination": "best_effort_not_independently_attested",
+        "exit_code": 0,
+        "stop_reason": null,
+        "capture_complete": true,
+        "sdk_root_exit_observed": true,
+        "capture": {
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          },
+          "stdout": {
+            "bytes": 37,
+            "sha256": "91e83e5d88cc6ffb889ba011611606428ae97427b26dc31b70465af0784dc4e5",
+            "error": false
+          }
+        },
+        "output_limit_exceeded": false,
+        "input_files_checked": 1,
+        "input_inventory_sha256": "cfd94eb82485cc40bdfcdab4e11a81496b005b3ffae535ecaa59be4898926e62",
+        "inputs_unchanged": true,
+        "checker_unchanged": true,
+        "reason": "acceptance_evidence_invalid",
+        "wall_clock_s": 0.656
+      }
+    },
+    {
+      "case": "stale_nonce",
+      "accepted": false,
+      "exit_code": 3,
+      "status": "blocked",
+      "reason": "acceptance_evidence_invalid",
+      "run_id": "verify-496101bf2bb94bc3a10bbaf162cdebfa",
+      "wall_s": 0.875,
+      "input_hashes_unchanged": true,
+      "acceptance_receipt_sha256": "6dd4371fc0c7cd5c349e6bbef9da1e836d33786f6b16fa12430ccc33cac8f36f",
+      "receipt": {
+        "schema": 1,
+        "status": "blocked",
+        "accepted": false,
+        "configured": true,
+        "contract_sha256": "ddcf8870e628b526829f450ad004546a412eb3f5a42271312268afc385510056",
+        "checker_sha256": "cfdc38af553e724470a12aad502c7287b0ea0171338ac2d5c5e5392211e2fae7",
+        "min_checks": 8,
+        "timeout_s": 30,
+        "input_roots": [
+          "sum_cli.py"
+        ],
+        "model_calls": 0,
+        "network_enabled": false,
+        "checker_executed_on_host": false,
+        "scope": "owner-selected checks and declared input inventory",
+        "descendant_termination": "best_effort_not_independently_attested",
+        "exit_code": 0,
+        "stop_reason": null,
+        "capture_complete": true,
+        "sdk_root_exit_observed": true,
+        "capture": {
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          }
+        },
+        "output_limit_exceeded": false,
+        "input_files_checked": 1,
+        "input_inventory_sha256": "cfd94eb82485cc40bdfcdab4e11a81496b005b3ffae535ecaa59be4898926e62",
+        "inputs_unchanged": true,
+        "checker_unchanged": true,
+        "reason": "acceptance_evidence_invalid",
+        "wall_clock_s": 0.656
+      }
+    },
+    {
+      "case": "timeout",
+      "accepted": false,
+      "exit_code": 3,
+      "status": "timed_out",
+      "reason": "timed_out",
+      "run_id": "verify-973c26947f9047c8a58102da8a33c885",
+      "wall_s": 2.687,
+      "input_hashes_unchanged": true,
+      "acceptance_receipt_sha256": "ad1ac666be946602510b7a049f0697d9d0295eadce56c6c9d5be014b7df66742",
+      "receipt": {
+        "schema": 1,
+        "status": "timed_out",
+        "accepted": false,
+        "configured": true,
+        "contract_sha256": "b3451fe71fc6334bd172dfad905bcff654e5e36d27c5300d8df67db0057a0081",
+        "checker_sha256": "fbfd2534aec30998b74745795873c9e93c1d4239ebe7cbcc2ce3e6a27266ce28",
+        "min_checks": 8,
+        "timeout_s": 2,
+        "input_roots": [
+          "sum_cli.py"
+        ],
+        "model_calls": 0,
+        "network_enabled": false,
+        "checker_executed_on_host": false,
+        "scope": "owner-selected checks and declared input inventory",
+        "descendant_termination": "best_effort_not_independently_attested",
+        "exit_code": 1,
+        "stop_reason": "timed_out",
+        "capture_complete": true,
+        "sdk_root_exit_observed": true,
+        "capture": {
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          }
+        },
+        "output_limit_exceeded": false,
+        "input_files_checked": 1,
+        "input_inventory_sha256": "cfd94eb82485cc40bdfcdab4e11a81496b005b3ffae535ecaa59be4898926e62",
+        "inputs_unchanged": true,
+        "checker_unchanged": true,
+        "reason": "timed_out",
+        "wall_clock_s": 2.5
+      }
+    },
+    {
+      "case": "boundaries",
+      "accepted": true,
+      "exit_code": 0,
+      "status": "passed",
+      "reason": "all_selected_checks_passed",
+      "run_id": "verify-536f873df8f74e98a30fcd66ef75c19d",
+      "wall_s": 0.844,
+      "input_hashes_unchanged": true,
+      "acceptance_receipt_sha256": "ce6fb643ec51a5975b95d0732abc5ebc961f922be2b66584d92c9138660f9587",
+      "receipt": {
+        "schema": 1,
+        "status": "passed",
+        "accepted": true,
+        "configured": true,
+        "contract_sha256": "06b78bf78bd42bb7c6f90fc17fbd20479fbd785975e0d8720122838cec880a2b",
+        "checker_sha256": "c7e75e562fec546d769a99f2c8a66548aa6ba3d1836c974491d13832d2741b0e",
+        "min_checks": 3,
+        "timeout_s": 30,
+        "input_roots": [
+          "sum_cli.py"
+        ],
+        "model_calls": 0,
+        "network_enabled": false,
+        "checker_executed_on_host": false,
+        "scope": "owner-selected checks and declared input inventory",
+        "descendant_termination": "best_effort_not_independently_attested",
+        "exit_code": 0,
+        "stop_reason": null,
+        "capture_complete": true,
+        "sdk_root_exit_observed": true,
+        "capture": {
+          "stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          },
+          "stderr": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "error": false
+          }
+        },
+        "output_limit_exceeded": false,
+        "input_files_checked": 1,
+        "input_inventory_sha256": "cfd94eb82485cc40bdfcdab4e11a81496b005b3ffae535ecaa59be4898926e62",
+        "inputs_unchanged": true,
+        "checker_unchanged": true,
+        "checks_run": 3,
+        "checks_passed": 3,
+        "checks_failed": 0,
+        "checks_skipped": 0,
+        "report_sha256": "4c5689eb2d1a47aebf2c7c47551322aac2421b764de4d4abec632511259df8ce",
+        "reason": "all_selected_checks_passed",
+        "wall_clock_s": 0.656
+      }
+    }
+  ],
+  "model_calls": 0,
+  "app_checker_host_executions": 0,
+  "sandbox_launches": 7,
+  "runtime_hashes": {
+    "runtime\\codex_flow\\acceptance.py": "fa8ba60781524245d9d6af17322325e990f47a50f2bc7e357f7042db9e8c9048",
+    "runtime\\codex_flow\\benchmark.py": "79941c26485f99a761139b0022e7c7de245a28bfbe98f1a04d5b9dffdcc498ee",
+    "runtime\\codex_flow\\budget.py": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d",
+    "runtime\\codex_flow\\budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime\\codex_flow\\cli.py": "7dca78407b9e9dba2b0dafd4e0168d83a68bdb22f5badf5c4f77fd4cae0a9df0",
+    "runtime\\codex_flow\\config.py": "2b64c387744b9892bb9935d58d9d9576330a194fa39a9b71cd9a1768673ccf13",
+    "runtime\\codex_flow\\contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime\\codex_flow\\doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime\\codex_flow\\harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime\\codex_flow\\mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime\\codex_flow\\native.py": "017a63ffccc56b1a03cf9fa93a6562c18bfad0f26b3d09813e48960420c7bff9",
+    "runtime\\codex_flow\\native_metadata.py": "70f940f246e8c602a1ca8381f12cd030be17d10f74124af802263f5828ab1a75",
+    "runtime\\codex_flow\\policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime\\codex_flow\\subscription.py": "5faea42fa74475ec23f52e6620afef5aaff8cab19c3640d4ee8a3528b6873948",
+    "runtime\\codex_flow\\telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "runtime\\codex_flow\\__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1"
+  },
+  "codex_sha256": "1103e9e09c71fa2cd0afd6d8f3b9a2d63174fe8efd7cb5bd09f1cb14ef58a098",
+  "codex_version": "codex-cli 0.164.0-alpha.11.1",
+  "synthetic_protected_sentinel_unchanged": true,
+  "proof_script_sha256": "7ad9c502aa34900bfb118ee8bf042d9e2eaa4a0622b63304b827c25d9773457d",
+  "scope": "fixed valid/fault controls and declared checks; not a model quality or speed benchmark"
+}

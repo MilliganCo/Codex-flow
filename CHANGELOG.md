@@ -2,6 +2,16 @@
 
 ## Unreleased — opt-in runtime development
 
+- Add explicit owner-selected external acceptance to ordinary `run`, with a
+ `completed_verified` result only after all declared sandboxed checks pass.
+ Preserve unconfigured runs as `completed_unverified`; configured rejection
+ exits 3. Standalone `verify` defaults to inert contract inspection and can run
+ checks without a model. Freeze checker/contract before generation, bind declared
+ inputs before/after, reject empty/stale/incomplete evidence, and share the task
+ deadline. The first backend is the reviewed Windows Codex sandbox; other hosts
+ refuse explicit execution before generation. Seven real sandbox controls and
+ 21 offline acceptance regressions are separate from prior model benchmarks.
+
 - Share a monotonic task deadline/attempt view between native execution and the
  subscription gateway. Parallel Flow receives a fixed-path read-only local MCP
  budget status tool. Gateway message injection is disabled by default after native

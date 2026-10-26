@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "checker": "verifier.py",
+  "inputs": ["sum_cli.py"],
+  "min_checks": 8,
+  "timeout_s": 30
+}

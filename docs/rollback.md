@@ -1,5 +1,19 @@
 # Rollback
 
+## Before external acceptance
+
+The preceding private release is `9456f1d0e8a293345910a2eccbbe1bb2741abc0a`.
+Create a new recovery checkout to preserve current work and acceptance receipts:
+
+```powershell
+git worktree add --detach ../codex-flow-before-acceptance 9456f1d0e8a293345910a2eccbbe1bb2741abc0a
+```
+
+The gate is opt-in per command; omit `--acceptance-file` to retain the existing
+unverified completion behavior. No global installation or configuration rollback
+is required. Старая версия открывается в отдельном каталоге; текущие исходники,
+локальные правки и квитанции приёмки сохраняются.
+
 Preserve current artifacts and local edits before restoring anything. Runtime shutdown, local proposal rollback and global skill uninstall are different operations. None requires disabling the host sandbox.
 
 ## Before the CLI recovery changes
