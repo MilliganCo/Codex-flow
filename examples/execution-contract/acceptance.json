@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "checker": "verifier.py",
+  "inputs": ["core.py", "app.py", "README.md", "worker-proposal.txt"],
+  "min_checks": 15,
+  "timeout_s": 30
+}

@@ -73,6 +73,16 @@ Risk, ownership and independence are caller-provided facts, not automatic task d
 
 ## CLI and host settings
 
+### Durable stage orchestration
+
+The new [workflow commands](workflows.md) keep their state under
+`.codex-flow/workflows/`. Start accepts `--timeout` as the cumulative active-time
+limit and `--max-model-requests` as the shared reservation cap. Resume has no
+budget-raising options. An explicit owner acceptance contract is required.
+Ordinary `run --timeout` and benchmark deadlines retain their prior semantics.
+Workflow status/pause/cancel remain available even if current project JSON config
+is malformed; live resume still needs current enablement or `--enable`.
+
 ### External acceptance
 
 `run --acceptance-file <owner-reviewed-contract.json>` enables the optional
@@ -84,7 +94,9 @@ targets and workspace-ancestor denies are rejected before execution. A configure
 gate failure exits 3; an invalid contract/admission exits 2. An unconfigured run
 retains its existing completion/exit behavior and explicitly reports `accepted: false`.
 
-`--codex` takes precedence over `CODEX_FLOW_CODEX`, followed by PATH discovery. The adapter checks `--version` and native subscription login before execution.
+### Native execution
+
+`--codex` takes precedence over `CODEX_FLOW_CODEX`, followed by PATH discovery. The adapter checks `--version` and native subscription login before inference. Standalone sandbox verification needs no subscription login.
 
 Runtime overrides are scoped to the launched CLI process: root Sol XHigh, workspace-based permissions, approvals disabled for this noninteractive wrapper, shell-network access off and discovery/hooks/plugins/apps/memory disabled. With read-denial targets, a named permission profile extends `:workspace` and adds explicit existing-path denies; it is not a sandbox bypass. `benchmark tree --protect-path <existing-path>` is repeatable. Missing targets are rejected because Windows SDK materialized future deny paths as directories.
 

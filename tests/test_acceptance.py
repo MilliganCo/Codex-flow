@@ -58,6 +58,8 @@ class AcceptanceTests(unittest.TestCase):
         for field, value in (('schema', True), ('schema', 2), ('min_checks', 0), ('min_checks', True),
                              ('timeout_s', 301), ('inputs', []), ('inputs', ['../other']),
                              ('inputs', ['.']), ('inputs', ['.codex-flow/state']),
+                             ('inputs', ['.CoDeX-FlOw/state']),
+                             ('inputs', ['app.py.']), ('inputs', ['folder /app.py']),
                              ('inputs', ['app.py', 'app.py']), ('checker', '../checker.py')):
             with self.subTest(field=field, value=value):
                 self.spec.write_text(json.dumps({**self.data, field: value}), encoding='utf-8')

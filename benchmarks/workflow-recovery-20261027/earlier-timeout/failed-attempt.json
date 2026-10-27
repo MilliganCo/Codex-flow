@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "status": "failed",
+  "reason": "verification_timeout_30_seconds",
+  "real_model_calls": 0,
+  "fixture_generations": 1,
+  "request_reservations": 1,
+  "sdk_launches": 1,
+  "path_lengths": [
+    260
+  ],
+  "original_attempt_preserved": true
+}

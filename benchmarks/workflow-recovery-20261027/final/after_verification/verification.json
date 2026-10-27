@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "accepted": true,
+  "configured": true,
+  "contract_sha256": "ddcf8870e628b526829f450ad004546a412eb3f5a42271312268afc385510056",
+  "checker_sha256": "d689f85fc79afa865298abbc4a5508c293b7af5b0508d5b064825c16975959f8",
+  "min_checks": 8,
+  "timeout_s": 30,
+  "input_roots": [
+    "sum_cli.py"
+  ],
+  "model_calls": 0,
+  "network_enabled": false,
+  "checker_executed_on_host": false,
+  "scope": "owner-selected checks and declared input inventory",
+  "descendant_termination": "best_effort_not_independently_attested",
+  "exit_code": 0,
+  "stop_reason": null,
+  "capture_complete": true,
+  "sdk_root_exit_observed": true,
+  "capture": {
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "error": false
+    },
+    "stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "error": false
+    }
+  },
+  "output_limit_exceeded": false,
+  "input_files_checked": 1,
+  "input_inventory_sha256": "cfd94eb82485cc40bdfcdab4e11a81496b005b3ffae535ecaa59be4898926e62",
+  "inputs_unchanged": true,
+  "checker_unchanged": true,
+  "checks_run": 8,
+  "checks_passed": 8,
+  "checks_failed": 0,
+  "checks_skipped": 0,
+  "report_sha256": "3c45125d819c53763be9ff9042b644a06a055c6430a06ceea29af121524498b1",
+  "reason": "all_selected_checks_passed",
+  "wall_clock_s": 2.469
+}

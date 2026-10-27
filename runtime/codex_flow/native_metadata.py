@@ -79,7 +79,8 @@ def observe_children(workspace: Path, root_id):
             model = row[2] if isinstance(row[2], str) and re.fullmatch(r'[A-Za-z0-9._:/-]{1,128}', row[2]) else None
             effort = row[3] if row[3] in ('low', 'medium', 'high', 'xhigh', 'max') else None
             children.append({'thread_sha256': child_hash, 'model': model, 'requested_effort': effort,
-                             'depth': 1, 'tokens_used': row[1]})
+                             'depth': 1, 'tokens_used': row[1],
+                             'agent_role': spawn['agent_role'] if re.fullmatch(r'[A-Za-z0-9_-]{1,48}', spawn['agent_role']) else None})
         return {'status': 'observed', 'reason': 'native_parent_link_and_usage_metadata' if children else 'no_used_children',
                 'root_sha256': root_hash, 'children': children, 'peak_concurrent_agents': None}
     except (OSError, ValueError, sqlite3.Error):

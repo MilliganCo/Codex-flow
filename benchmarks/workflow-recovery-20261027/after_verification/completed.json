@@ -1,0 +1,147 @@
+{
+  "workflow_id": "a846797e52ea483185a8c0f61cf5de97",
+  "state": "completed",
+  "control": null,
+  "stages": {
+    "prepare": {
+      "state": "succeeded",
+      "attempts": 1,
+      "output": {
+        "passed": true,
+        "retryable": false,
+        "reason": "source_snapshot_ready",
+        "tree": "a/prepare/1/seed",
+        "manifest": "a/prepare/1/manifest.json",
+        "manifest_sha256": "3e7d9d2c23fc0ada37160d558d16b2515009a2303751d1c332ae584f3c8a9a04",
+        "bound_files": {
+          "a/prepare/1/manifest.json": "3e7d9d2c23fc0ada37160d558d16b2515009a2303751d1c332ae584f3c8a9a04"
+        },
+        "seed_content_sha256": "dee7e5d66521b048fced5fd4f6892c66eb3e945b95fbe3ee82e5fa179ac57238"
+      },
+      "retryable": false
+    },
+    "generate": {
+      "state": "succeeded",
+      "attempts": 1,
+      "output": {
+        "passed": true,
+        "retryable": false,
+        "metrics": "a/generate/1/generation.json",
+        "bound_files": {
+          "a/generate/1/generation.json": "e49751166465338669a0596c98df68bd3947acc5300fda0824dd5e5d87e4f616",
+          "a/generate/1/manifest.json": "acabbda57511de3665bc8ea2eb1497e6d866c8f501eedbb4fe23849ef7841840"
+        },
+        "backend_kind": "fixture_generator_real_sdk",
+        "tree": "a/generate/1/w",
+        "manifest": "a/generate/1/manifest.json",
+        "manifest_sha256": "acabbda57511de3665bc8ea2eb1497e6d866c8f501eedbb4fe23849ef7841840"
+      },
+      "retryable": false
+    },
+    "verify": {
+      "state": "succeeded",
+      "attempts": 1,
+      "output": {
+        "passed": true,
+        "retryable": false,
+        "bound_files": {
+          "a/verify/1/verification.json": "5fc9b78c29b1b610886d4872eaa5ecb4c9e8fe84bbd95410f3c0f8f42444e814"
+        },
+        "receipt": "a/verify/1/verification.json"
+      },
+      "retryable": false
+    },
+    "report": {
+      "state": "succeeded",
+      "attempts": 1,
+      "output": {
+        "passed": true,
+        "bundle": "a/report/1/bundle",
+        "summary": {
+          "schema": 1,
+          "added": [],
+          "deleted": [],
+          "changed": [
+            "sum_cli.py"
+          ],
+          "seed_manifest_sha256": "56229f46e53cfa242a8b526a751f9ecdc6f1f66006d57c581708908d54d488ed",
+          "result_manifest_sha256": "5100b07cf0918df942d13cc08fef4aaf29857cbb9a7f026cebce01b73f1a0302",
+          "files": "files",
+          "manifest": "manifest.json",
+          "diff": "diff.patch",
+          "diff_sha256": "b00100ad65579e688663387eeb021042fabddc804e0c7c1667c6b27cf385019a",
+          "text_diff_limited": false,
+          "source_changed_since_start": true,
+          "source_project_updated": false,
+          "backend_kind": "fixture_generator_real_sdk",
+          "request_reservations": 1,
+          "requests_completed": 1,
+          "requests_failed": 0,
+          "requests_unknown": 0,
+          "all_requests_usage": null,
+          "active_time_at_report_s": 31.764999999999418,
+          "actual_api_cost_usd": null,
+          "subscription_quota_delta": null
+        },
+        "bound_files": {
+          "a/report/1/summary.json": "f3226d248914a7eed82600491984513f7058c48d8cc3bbfcfd1d4dec32b3d59c",
+          "a/report/1/bundle/manifest.json": "8b1dc7f616f49e966db04a1f28b97e61e9794209e203c30c6a5f7da3f7859ee0",
+          "a/report/1/bundle/diff.patch": "b00100ad65579e688663387eeb021042fabddc804e0c7c1667c6b27cf385019a",
+          "a/report/1/bundle/seed-manifest.json": "bf1ef6253601bae98cd9cf7cc69f42a423991ad77832e50fb0051d9b315fe91f",
+          "a/report/1/bundle/report.json": "56b95776eddc6f22aa9729da6cf85e284b381e204c416d792ba9bbcfb6013628"
+        }
+      },
+      "retryable": false
+    }
+  },
+  "requests_used": 1,
+  "active_time_used_s": 31.796000000002095,
+  "active_time_reserved_s": 0.0,
+  "requests_remaining": 2,
+  "active_time_remaining_s": 208.2039999999979,
+  "accepted": true,
+  "integrity": "verified",
+  "report": {
+    "passed": true,
+    "bundle": "a/report/1/bundle",
+    "summary": {
+      "schema": 1,
+      "added": [],
+      "deleted": [],
+      "changed": [
+        "sum_cli.py"
+      ],
+      "seed_manifest_sha256": "56229f46e53cfa242a8b526a751f9ecdc6f1f66006d57c581708908d54d488ed",
+      "result_manifest_sha256": "5100b07cf0918df942d13cc08fef4aaf29857cbb9a7f026cebce01b73f1a0302",
+      "files": "files",
+      "manifest": "manifest.json",
+      "diff": "diff.patch",
+      "diff_sha256": "b00100ad65579e688663387eeb021042fabddc804e0c7c1667c6b27cf385019a",
+      "text_diff_limited": false,
+      "source_changed_since_start": true,
+      "source_project_updated": false,
+      "backend_kind": "fixture_generator_real_sdk",
+      "request_reservations": 1,
+      "requests_completed": 1,
+      "requests_failed": 0,
+      "requests_unknown": 0,
+      "all_requests_usage": null,
+      "active_time_at_report_s": 31.764999999999418,
+      "actual_api_cost_usd": null,
+      "subscription_quota_delta": null
+    },
+    "bound_files": {
+      "a/report/1/summary.json": "f3226d248914a7eed82600491984513f7058c48d8cc3bbfcfd1d4dec32b3d59c",
+      "a/report/1/bundle/manifest.json": "8b1dc7f616f49e966db04a1f28b97e61e9794209e203c30c6a5f7da3f7859ee0",
+      "a/report/1/bundle/diff.patch": "b00100ad65579e688663387eeb021042fabddc804e0c7c1667c6b27cf385019a",
+      "a/report/1/bundle/seed-manifest.json": "bf1ef6253601bae98cd9cf7cc69f42a423991ad77832e50fb0051d9b315fe91f",
+      "a/report/1/bundle/report.json": "56b95776eddc6f22aa9729da6cf85e284b381e204c416d792ba9bbcfb6013628"
+    }
+  },
+  "source_changed_since_start": true,
+  "owner_pid": null,
+  "launch_pending": false,
+  "owned_children": [],
+  "backend_kind": "fixture_generator_real_sdk",
+  "source_project_updated": false
+}

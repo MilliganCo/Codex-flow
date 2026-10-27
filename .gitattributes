@@ -29,3 +29,4 @@ benchmarks/tree-confirmation-20261024-10/** -text -whitespace
 benchmarks/cohesive-suite-20261024-02/** -text -whitespace
 benchmarks/resilient-cli-suite-20261026-01/** -text -whitespace
 benchmarks/efficient-cli-suite-20261026-02/** -text -whitespace
+benchmarks/workflow-recovery-20261027/** -text -whitespace

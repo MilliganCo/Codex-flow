@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "runtime_sha256": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/acceptance.py": "a92fbac71ae01f453d190eb2c3d52091cef693afe8dc7d747bda78f5924e0b02",
+    "runtime/codex_flow/benchmark.py": "79941c26485f99a761139b0022e7c7de245a28bfbe98f1a04d5b9dffdcc498ee",
+    "runtime/codex_flow/budget.py": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "d1ead05a36c08d823cdfd281fce342ce1cb759aa94ea3a8800d596e3e9b6b7b9",
+    "runtime/codex_flow/config.py": "2b64c387744b9892bb9935d58d9d9576330a194fa39a9b71cd9a1768673ccf13",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/execution_contract.py": "d0f363001d9acb6ceb4bd94d7fc9be94881325a086bff371b43ad6392a939701",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+    "runtime/codex_flow/native.py": "6f4bff41f42beaedb8d8685235ca2646393b815205f191d79f5fe633e7ca4ef0",
+    "runtime/codex_flow/native_metadata.py": "0421e1f875930e266797bcb9ae8e3b1bb7e51f36f1b6bf2b349dd8d07cf43c5b",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "5faea42fa74475ec23f52e6620afef5aaff8cab19c3640d4ee8a3528b6873948",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "runtime/codex_flow/workflow.py": "6ee502b5939565270edd167f580dd846b3c0629930c291abb5252562154b34bd",
+    "runtime/codex_flow/workflow_files.py": "0a8ccbfb52eebc9c8fec23e525dfd1ab221b6bba022c87dea443d2681c5249d9",
+    "runtime/codex_flow/workflow_store.py": "2acc18686f7b86ef78540c64d4daa42840e8771b1a6a945dca8a78d735ed3f33"
+  },
+  "codex_sha256": "1103e9e09c71fa2cd0afd6d8f3b9a2d63174fe8efd7cb5bd09f1cb14ef58a098",
+  "models": 0,
+  "generator": "explicit fixture",
+  "real_sdk": true,
+  "cases": [
+    "after_generation",
+    "after_verification"
+  ],
+  "reruns": false,
+  "per_workflow": {
+    "max_request_reservations": 3,
+    "active_time_s": 240
+  },
+  "conditions": [
+    "actual controller process death",
+    "committed stages reused",
+    "generation count stays one",
+    "counter not reset",
+    "real SDK eight checks",
+    "manual origin edit preserved",
+    "review bundle equals accepted snapshot"
+  ]
+}

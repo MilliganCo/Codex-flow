@@ -1,4 +1,4 @@
-# Acceptance status — 2026-10-26
+# Acceptance status — 2026-10-27
 
 This is an evidence boundary, not a claim that the entire requested architecture has passed. Status values are `pass`, `degraded`, `deferred`, `blocked` and `notimplemented`. Independent integration proofs, packaged-demo verification and frozen benchmarks are separate records; later success does not rewrite an earlier run.
 
@@ -27,9 +27,11 @@ commits; current publication requires its own exact-commit Actions result.
 | Optional bounded HTTP recovery | pass | Nine synthetic cases and 24-check/eight-request real native prerequisite; default retries 0, stream retries 0, gateway replay 0; separate from performance credit |
 | Doctor, integration status, cancel, event replay | pass | Implemented CLI controls; replay does not resume inference |
 | External acceptance in ordinary run | pass | Explicit frozen owner contract/checker; no-model Windows SDK gate; seven real fault/boundary controls and 21 offline regressions; claims only selected checks |
+| Durable stage recovery | pass | Actual controller exits after generation/verification; resume retains one fixture generation and one reservation; official SDK passed 8/8 per control; origin edits preserved; no real model calls |
+| Sol/Luna execution contract | degraded | Offline contract/profile/evidence guards pass; retained live prerequisite failed on first Sol HTTP429 before Luna; no capability or performance promotion |
 | Runtime TUI / native-session resume | notimplemented | No such commands or interface shipped |
 | Real 2D/3D/4D demos | pass | Accepted old case02 originals preserved; labelled packaged portability patch passed Windows/Ubuntu CI |
-| Local core verification | pass | Acceptance-gate source: Windows discovered 327 tests, 306 passed/21 unavailable-symlink skips, exit 0 in 29.923s; Ruff selected correctness rules and mypy on 16 files passed |
+| Local core verification | pass | Durable-workflow source: Windows discovered 419 tests, 395 passed/24 platform skips, exit 0 in 91.926s; Ruff correctness rules and mypy on 20 files passed |
 | Historical private CI | pass | Confirmed green for f757663: all 192 then-current core tests on Windows/Ubuntu; examples, static checks, build and 454-object all-history scan passed; this is not current-release CI |
 | Exact new publication CI | deferred | Must be checked on the new private main commit after publication; retain final verification outside Git to avoid a self-referential commit loop |
 | License selection | blocked | Owner decision pending; repository remains private |

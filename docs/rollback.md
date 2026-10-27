@@ -1,5 +1,23 @@
 # Rollback
 
+## Before durable workflows
+
+The previous private release is `70b5e6e732161b6a5fdc3c5184cb20f22e75f5dc`.
+Keep current source, snapshots, SQLite and receipts; recover into a new directory:
+
+```powershell
+git worktree add --detach ../codex-flow-before-workflows 70b5e6e732161b6a5fdc3c5184cb20f22e75f5dc
+```
+
+Use `workflow pause ID` or `workflow cancel ID` for an active owned workflow.
+An unresolved launch/process identity blocks recovery and is not cleared by
+guessing or killing unrelated Codex sessions. The prior release cannot resume
+the new database; preserve it without downgrading its schema. No global settings,
+account quotas, auth or protected Harness lab require restoration.
+
+Для отката создайте отдельный checkout командой выше. Новые снимки, базу и
+историю попыток сохраняйте; старая версия не возобновляет новый workflow.
+
 ## Before external acceptance
 
 The preceding private release is `9456f1d0e8a293345910a2eccbbe1bb2741abc0a`.

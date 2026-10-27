@@ -13,6 +13,9 @@ Codex Flow has two compatible layers. `payload/codex-flow/` retains the 1.2.0 sk
 | `telemetry.py`, `doctor.py`, `benchmark.py` | Sanitized evidence, metadata preflight and experiment lifecycle |
 | `budget.py` | Shared monotonic deadline/attempt observations and owned MCP snapshot publisher |
 | `budget_stdio.py` | Argument-free, fixed-path read-only MCP budget status server |
+| `workflow.py` | Fixed prepare/generate/verify/report graph, immutable inputs and hash-checked recovery |
+| `workflow_store.py` | SQLite attempts, project ownership, launch barriers and persistent request/active-time accounting |
+| `workflow_files.py` | Safe working-byte snapshots, materialization and complete review bundles |
 
 ## Task execution
 
@@ -26,7 +29,14 @@ Codex Flow has two compatible layers. `payload/codex-flow/` retains the 1.2.0 sk
 
 The coordinator is the sole integrator/writer. Generated native role files request Sol medium for default/worker/awaiter, Sol high for reviewer and Luna medium for explorer. All instruct helpers to gather evidence without application writes or further delegation. They **inherit parent permissions**; no hard per-role read-only sandbox or delegation-depth enforcement is claimed. Their configured names are not evidence that workers actually ran.
 
-For an admitted parallel invocation, developer instructions explicitly require one read-only helper as the first tool action. After process exit, the observer checks only the exact CLI-observed root ID/cwd and JSON-linked direct child metadata with positive usage. Missing/incompatible metadata stays unknown. `orchestration_status` is `verified` only with accepted native evidence, otherwise `degraded` with `helper_not_observed`; this is separate from application completion and does not prove helper completion, hard depth enforcement or peak agent concurrency.
+For the default admitted parallel invocation, developer instructions request a
+supplied-context reviewer alongside useful chief work. There is no serial
+first-tool ordering barrier. Post-exit evidence covers the exact observed root
+and JSON-linked used children; missing evidence stays unknown. Application
+acceptance, observed delegation and hard permission isolation remain distinct.
+The optional owner execution-contract mode instead assigns one bounded Luna
+proposal and requires external acceptance; its live capability proof remains
+unverified after the retained upstream 429 attempt.
 
 The current first helper is `reviewer/high`: a supplied-context acceptance-risk
 pass, without tools, file reads or production coding. The chief implements and
@@ -78,7 +88,10 @@ One locked `RequestBudget` limits inference requests across a task's planning pr
 
 When enabled, the runtime guard defers uncalibrated optimization without model calls or implicit loading of old overlays. The explicit library planning diagnostic remains available, but cannot adopt instructions: plan coverage and faster plan generation do not establish application quality. Historical cases retain their original probes and adoption records. This is Harness²-inspired behavior, not execution of the upstream optimizer.
 
-The coordinator policy requests an early runnable slice, current documentation, one bounded helper review while implementation continues, and a final 20 percent planning reserve for verification and handoff. The reserve is an instruction, not an enforced phase timer. The outer task timeout and shared request cap remain enforced.
+The coordinator policy batches cohesive work and finite verification without
+mandatory extra smoke/status stages. One-shot runs retain their shared monotonic
+deadline. Durable workflows use a separate persisted active-time policy;
+pause does not replenish requests and unknown crash reservations remain charged.
 
 ## Evidence boundary
 

@@ -1,0 +1,5 @@
+{
+  "workflow_id": "28fef590db6e46e496385fa4cf976000",
+  "stage_committed_before_crash": "generate",
+  "generation_count": 1
+}

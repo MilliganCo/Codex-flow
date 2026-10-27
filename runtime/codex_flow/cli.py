@@ -66,18 +66,32 @@ def main(argv=None):
     r.add_argument('--conflicting-paths',action='store_true')
     r.add_argument('--timeout',type=int)
     r.add_argument('--acceptance-file',type=Path)
+    r.add_argument('--execution-contract',type=Path)
     r.add_argument('--protect-path',type=Path,action='append',default=[])
     v=sub.add_parser('verify',help='Inspect or execute owner-selected external acceptance checks without a model')
     v.add_argument('--acceptance-file',type=Path,required=True)
     v.add_argument('--execute',action='store_true');v.add_argument('--timeout',type=int)
     v.add_argument('--protect-path',type=Path,action='append',default=[])
+    w=sub.add_parser('workflow',help='Durable prepare/generate/verify/report stages')
+    ws=w.add_subparsers(dest='workflow_action',required=True)
+    start=ws.add_parser('start')
+    start.add_argument('task',nargs='?');start.add_argument('--task-file',type=Path)
+    start.add_argument('--acceptance-file',type=Path,required=True)
+    start.add_argument('--execution-contract',type=Path)
+    start.add_argument('--enable',action='store_true');start.add_argument('--dry-run',action='store_true')
+    start.add_argument('--timeout',type=int);start.add_argument('--max-model-requests',type=int)
+    for action in ('status','pause','resume','cancel'):
+        action_parser=ws.add_parser(action);action_parser.add_argument('workflow_id')
+        if action=='resume':action_parser.add_argument('--enable',action='store_true')
     s=sub.add_parser('runs');s.add_argument('action',choices=['list','show','cancel','replay']);s.add_argument('run_id',nargs='?')
     b=sub.add_parser('benchmark');b.add_argument('action',choices=['tree','report']);b.add_argument('--task-file',type=Path);b.add_argument('--root',type=Path);b.add_argument('--evaluator',type=Path);b.add_argument('--mercury-root',type=Path);b.add_argument('--execute',action='store_true');b.add_argument('--timeout',type=int,default=1200)
     b.add_argument('--protect-path',type=Path,action='append',default=[])
     b.add_argument('--groups',choices=['AB','ABCD'],default='ABCD')
     args=p.parse_args(argv)
     try:
-        repo=args.repo.resolve();cfg=load(args.config or repo/'.codex-flow/config.json')
+        repo=args.repo.resolve()
+        control_only=(args.command=='workflow' and args.workflow_action in ('status','pause','cancel'))
+        cfg=Config() if control_only else load(args.config or repo/'.codex-flow/config.json')
         if args.command=='doctor':
             from .doctor import doctor
             out=doctor(args.codex,args.deep,args.mercury_root,args.live_mercury)
@@ -92,29 +106,38 @@ def main(argv=None):
             if args.timeout is not None:cfg=replace(cfg,timeout_s=args.timeout)
             from .budget import ExecutionBudget
             from . import acceptance
+            from . import execution_contract
             execution_budget=ExecutionBudget(cfg.timeout_s,cfg.max_model_requests)
             prompt=args.task_file.read_text(encoding='utf-8-sig') if args.task_file else args.task
             if not prompt:raise PolicyError('task or --task-file required')
             if not args.dry_run and not (cfg.enabled or args.enable):raise PolicyError('runtime disabled; use --enable or project config')
             contract=acceptance.load_contract(args.acceptance_file) if args.acceptance_file else None
+            execution=execution_contract.load(args.execution_contract,repo) if args.execution_contract else None
+            if execution and not contract:raise PolicyError('execution contract requires --acceptance-file')
             protected=acceptance.protected_paths(repo,args.protect_path)
             if contract and not args.dry_run:acceptance.require_backend()
             mercury=None
             decision=route(independent_steps=args.independent_steps,conflicting_paths=args.conflicting_paths,
                            risk_level=args.risk_level,single=args.single_agent or args.strategy=='single')
-            if decision.strategy=='parallel' and cfg.mercury and not args.no_mercury and not args.dry_run:
+            if execution:
+                assert contract is not None
+                decision=execution_contract.admit(execution,contract.inputs,single=args.single_agent or args.strategy=='single',
+                                                  conflicting=args.conflicting_paths,risk=args.risk_level)
+            if not execution and decision.strategy=='parallel' and cfg.mercury and not args.no_mercury and not args.dry_run:
                 from .mercury import MercuryBridge
                 mercury=MercuryBridge(args.mercury_root).decide({'complexity':'high','independent_steps':min(args.independent_steps,100),
                     'conflicting_paths':False,'risk_level':'low' if args.risk_level=='normal' else args.risk_level},enabled=True)
                 decision=route(independent_steps=args.independent_steps,conflicting_paths=args.conflicting_paths,
                                risk_level=args.risk_level,single=args.single_agent or args.strategy=='single',mercury=mercury)
             if args.dry_run:out={'dry_run':True,'config':asdict(cfg),'route':asdict(decision),'external_calls':0,
-                                'acceptance':contract.summary() if contract else {'configured':False}}
+                                'acceptance':contract.summary() if contract else {'configured':False},
+                                'execution_contract':execution.summary() if execution else {'configured':False}}
             else:
                 if not (cfg.enabled or args.enable):raise PolicyError('runtime disabled; use --enable or project config')
                 if decision.strategy=='escalate':raise PolicyError(decision.reason)
                 cli=executable(args.codex)
                 prepared=acceptance.prepare(repo,contract) if contract else None
+                frozen_execution=execution_contract.freeze(execution) if execution else None
                 from .subscription import RequestBudget
                 request_budget=RequestBudget(cfg.max_model_requests)
                 harness=None
@@ -122,8 +145,11 @@ def main(argv=None):
                     from .harness import runtime_guard
                     harness=runtime_guard()
                 instructions=FLOW_INSTRUCTIONS if decision.strategy=='parallel' else BASE_INSTRUCTIONS
+                if execution:instructions=execution.instructions()
                 active=repo/'.codex-flow/lessons/active.txt'
                 if harness and harness['decision']['adopted']:instructions=active.read_text(encoding='utf-8')
+                if execution and harness and harness['decision']['adopted']:
+                    raise PolicyError('execution contract cannot use an adopted instruction overlay')
                 remaining=int(cfg.timeout_s-(time.monotonic()-started))
                 if remaining<=0:
                     if harness and harness['decision']['adopted']:
@@ -133,14 +159,39 @@ def main(argv=None):
                 run_dir=repo/'.codex-flow/runs'/uuid.uuid4().hex
                 out=run(cli,repo,replace(cfg,timeout_s=remaining),prompt,run_dir,
                         parallel=decision.strategy=='parallel',instructions=instructions,request_budget=request_budget,
-                        execution_budget=execution_budget,denied_reads=protected)
+                        execution_budget=execution_budget,denied_reads=protected,executor_mode=execution is not None)
                 out['execution_s']=out['wall_clock_s']
+                execution_evidence=None
+                if execution:
+                    assert frozen_execution is not None
+                    try:execution_evidence=execution_contract.observe(execution,frozen_execution,out,
+                                        budget=execution_budget,cancel_file=run_dir/'cancel.request')
+                    except (OSError,ValueError,TypeError):
+                        execution_evidence={'status':'degraded','verified':False,'reason':'execution_evidence_unavailable'}
+                    out['execution_contract']=execution_evidence
                 gate=None
                 if prepared:
                     gate=(acceptance.verify(cli,repo,prepared,run_dir,execution_budget,protected)
-                          if out['status']=='completed_unverified' else
-                          {'status':'not_run','accepted':False,'reason':'native_execution_not_completed'})
+                          if out['status']=='completed_unverified' and (not execution or execution_evidence['verified']) else
+                          {'status':'not_run','accepted':False,'reason':'native_or_execution_contract_not_verified'})
+                if execution and gate and gate.get('accepted') is True:
+                    try:
+                        current=execution_contract.observe(execution,frozen_execution,out,
+                                        budget=execution_budget,cancel_file=run_dir/'cancel.request')
+                        if (not current['verified'] or current['artifact_sha256']!=execution_evidence['artifact_sha256']):
+                            current={**current,'verified':False,'status':'degraded','reason':'execution_artifact_drift'}
+                        execution_evidence=current
+                    except (OSError,ValueError,TypeError):
+                        execution_evidence={'status':'degraded','verified':False,'reason':'execution_artifact_drift'}
                 acceptance.apply_result(out,gate)
+                if execution:
+                    out['execution_contract']=execution_evidence
+                    if not execution_evidence['verified']:
+                        out['status']='execution_contract_failed';out['accepted']=False
+                    if (run_dir/'cancel.request').exists():
+                        out['status']='cancelled';out['accepted']=False
+                    elif execution_budget.remaining_s()<=0:
+                        out['status']='timed_out';out['accepted']=False
                 out['wall_clock_s']=round(time.monotonic()-started,3)
                 out['root_usage']={k:out[k] for k in ('input_tokens','output_tokens','cached_tokens')}
                 if decision.strategy=='parallel':
@@ -157,6 +208,24 @@ def main(argv=None):
                 if prepared:
                     write_json(run_dir/'control.json',{'pid':None,'status':out['status']})
                     print(json.dumps(out,ensure_ascii=False,indent=2));return 0 if out['accepted'] else 3
+        elif args.command=='workflow':
+            from .workflow import Engine
+            engine=Engine(repo)
+            if args.workflow_action=='start':
+                if args.timeout is not None:cfg=replace(cfg,timeout_s=args.timeout)
+                if args.max_model_requests is not None:cfg=replace(cfg,max_model_requests=args.max_model_requests)
+                task=args.task_file.read_text(encoding='utf-8-sig') if args.task_file else args.task
+                out=engine.start(cfg,task,args.acceptance_file,args.execution_contract,
+                                 exe=args.codex,enable=args.enable,dry_run=args.dry_run)
+            elif args.workflow_action=='resume':
+                if not (args.enable or cfg.enabled):raise PolicyError('workflow resume requires --enable or current enabled config')
+                out=engine.resume(args.workflow_id,enable=args.enable or cfg.enabled,exe=args.codex)
+            elif args.workflow_action=='status':out=engine.status(args.workflow_id)
+            else:out=engine.signal(args.workflow_id,args.workflow_action)
+            print(json.dumps(out,ensure_ascii=False,indent=2))
+            if args.workflow_action in ('start','resume') and not out.get('dry_run'):
+                return 0 if out['state'] in ('completed','paused') and out.get('integrity')!='failed' else 3
+            return 0
         elif args.command=='verify':
             from . import acceptance
             from .budget import ExecutionBudget

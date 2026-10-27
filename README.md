@@ -11,6 +11,16 @@ modules. Mercury and Harness-inspired probes are optional and disabled by defaul
 
 **Status:** private development. No project license has been selected. There is no validated universal speedup or quota-saving claim. Runtime completion is distinct from independent acceptance.
 
+[Durable workflows](docs/workflows.md) add project-local SQLite state for
+**prepare → generate → verify → report**. Each attempt uses a separate snapshot;
+resume reuses hash-checked stages without resetting requests or charged active
+time. The original project is never automatically updated. Commands are
+`workflow start`, `status`, `pause`, `resume`, and `cancel`.
+[Real crash/recovery controls](benchmarks/workflow-recovery-20261027/README.md)
+passed with fixture generation and the official Windows sandbox: one generator
+call and eight checks per workflow, including report-only recovery. No model
+was invoked for these controls. [Accepted fixture demo](examples/workflow-recovery/README.md).
+
 An optional [external acceptance gate](docs/acceptance-gate.md) now connects that
 distinction to ordinary `run`: supply an owner-reviewed `--acceptance-file` to
 require sandboxed checks before `completed_verified` / `accepted: true`. Without

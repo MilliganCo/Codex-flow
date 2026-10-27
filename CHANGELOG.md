@@ -2,6 +2,15 @@
 
 ## Unreleased — opt-in runtime development
 
+- Add durable `workflow start/status/pause/resume/cancel`: project-local SQLite
+ stage/attempt state, request reservations before forwarding, renewable 30-second
+ active-time reservations, PID/creation ownership and pre-spawn launch barriers.
+ Immutable snapshots and review bundles preserve the original working tree;
+ explicit resume reuses accepted stages and never resets the shared budget.
+ Model-stage retries are manual and bounded to two attempts. A portable no-model
+ control proves real process death and SDK acceptance without repeating generation.
+ Runtime and native conversation resume remain distinct.
+
 - Add explicit owner-selected external acceptance to ordinary `run`, with a
  `completed_verified` result only after all declared sandboxed checks pass.
  Preserve unconfigured runs as `completed_unverified`; configured rejection

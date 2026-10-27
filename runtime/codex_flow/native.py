@@ -29,8 +29,9 @@ def environment(workspace:Path):
     env.update(TEMP=str(temp),TMP=str(temp),PYTHONUTF8='1',PYTHONDONTWRITEBYTECODE='1')
     return env
 
-def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gateway=None,denied_reads=(),profiles=None,budget_channel=None):
-    if parallel:
+def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gateway=None,denied_reads=(),profiles=None,budget_channel=None,executor_mode=False):
+    if executor_mode and not parallel:raise PolicyError('executor contract requires parallel capability')
+    if parallel and not executor_mode:
         instructions += ('\nController: selected_strategy=parallel; max_helpers='+str(cfg.max_agents)+
                          '; delegation_depth=1 (instruction boundary). The human owner explicitly authorized '
                          'this execution. Exactly one initial read-only reviewer, agent_type=reviewer '
@@ -114,17 +115,18 @@ def argv(exe:str,workspace:Path,cfg:Config,*,parallel=False,instructions='',gate
         command+=['-c','default_permissions="flow_task"','-c','permissions.flow_task='+profile]
     return command+['-']
 
-def role_profiles(workspace:Path,*,named_permissions:bool):
+def role_profiles(workspace:Path,*,named_permissions:bool,executor_mode=False):
     import uuid
     folder=inside(workspace,workspace/'.codex-flow/runtime-agents'/uuid.uuid4().hex)
     folder.mkdir(parents=True,exist_ok=False)
     result={}
     for name,model,effort in [('default','gpt-6.1-sol','medium'),('worker','gpt-6.1-sol','medium'),
                               ('explorer','gpt-6-luna','medium'),('reviewer','gpt-6.1-sol','high'),('awaiter','gpt-6.1-sol','medium')]:
+        if executor_mode and name=='worker':model='gpt-6-luna'
         path=folder/(name+'.toml')
         text='model = '+json.dumps(model)+'\nmodel_reasoning_effort = '+json.dumps(effort)+'\n'
         text+='developer_instructions = "Read-only work in the assigned workspace. Never write files or spawn further agents. Budget status belongs to the coordinator; never query it. Return concise evidence or an explicitly requested low-risk bounded proposal in your final reply, with limitations."\n[features]\n'
-        if name == 'reviewer':text+='shell_tool = false\n'
+        if name == 'reviewer' or (executor_mode and name=='worker'):text+='shell_tool = false\n'
         text+='apps = false\nplugins = false\nmemories = false\nrequest_permissions_tool = false\n'
         with path.open('x',encoding='utf-8') as f:f.write(text)
         result[name]=path
@@ -141,7 +143,7 @@ def terminate_tree(proc):
     try:proc.wait(timeout=10)
     except subprocess.TimeoutExpired:proc.kill();proc.wait(timeout=5)
 
-def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=False,instructions='',cancel:threading.Event|None=None,gateway=None,denied_reads=(),execution_budget=None,budget_channel=None):
+def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=False,instructions='',cancel:threading.Event|None=None,gateway=None,denied_reads=(),execution_budget=None,budget_channel=None,executor_mode=False,on_process_start=None):
     from .budget import ExecutionBudget
     execution_budget=execution_budget or ExecutionBudget(cfg.timeout_s,cfg.max_model_requests)
     subscription(exe)
@@ -150,16 +152,30 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
     trace=Trace(run_dir/'events.jsonl',run_dir.name)
     if gateway is not None:gateway.trace=trace
     started=time.monotonic()
-    profiles=role_profiles(workspace,named_permissions=bool(denied_reads)) if parallel else None
-    command=argv(exe,workspace,cfg,parallel=parallel,instructions=instructions,gateway=gateway,denied_reads=denied_reads,profiles=profiles,budget_channel=budget_channel)
+    profiles=role_profiles(workspace,named_permissions=bool(denied_reads),executor_mode=executor_mode) if parallel else None
+    command=argv(exe,workspace,cfg,parallel=parallel,instructions=instructions,gateway=gateway,denied_reads=denied_reads,profiles=profiles,budget_channel=budget_channel,executor_mode=executor_mode)
     trace.emit('execution.start',{'model':cfg.model,'effort':cfg.effort,'sandbox':'workspace-write',
                                'parallel':parallel,'max_agents':cfg.max_agents,'task_sha256':hashlib.sha256(prompt.encode()).hexdigest()})
     env=environment(workspace)
     if gateway is not None:env.update(CODEX_FLOW_GATEWAY_TOKEN=gateway.nonce,NO_PROXY='127.0.0.1,localhost')
-    proc=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,
-                          cwd=workspace,env=env,text=True,encoding='utf-8',errors='replace',
-                          start_new_session=os.name!='nt')
-    write_json(run_dir/'control.json',{'pid':proc.pid,'status':'running','started_utc':utc()})
+    before=getattr(on_process_start,'before_spawn',None)
+    if before is not None:before()
+    try:
+        proc=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,
+                              cwd=workspace,env=env,text=True,encoding='utf-8',errors='replace',
+                              start_new_session=os.name!='nt')
+    except FileNotFoundError:
+        missing=getattr(on_process_start,'spawn_missing',None)
+        if missing is not None:missing()
+        raise
+    try:
+        if on_process_start is not None:on_process_start(proc.pid)
+        write_json(run_dir/'control.json',{'pid':proc.pid,'status':'running','started_utc':utc()})
+    except BaseException:
+        terminate_tree(proc)
+        finished=getattr(on_process_start,'finished',None)
+        if finished is not None and proc.poll() is not None:finished(proc.pid)
+        raise
     lines:queue.Queue[str|None]=queue.Queue(); stderr_size=[0]; stderr_tail=[]
     def drain():
         for line in proc.stdout:lines.put(line)
@@ -279,6 +295,8 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
         if input_failed.is_set() and not timed_out and result.get('error_category')!='stdin_write_failed':
             result['error_category']='stdin_write_failed';result['failed_calls']+=1
         result.update(native_exit_code=proc.returncode,ended_utc=utc(),wall_clock_s=round(time.monotonic()-started,3),stderr_bytes_suppressed=stderr_size[0])
+        finished=getattr(on_process_start,'finished',None)
+        if finished is not None and proc.poll() is not None:finished(proc.pid)
         result['status']='cancelled' if cancelled else 'timed_out' if timed_out else ('completed_unverified' if completed and proc.returncode==0 and not input_failed.is_set() else 'failed')
         used=getattr(getattr(gateway,'budget',None),'used',0)
         result['execution_budget']=execution_budget.snapshot(used if type(used) is int else 0)
@@ -304,7 +322,7 @@ def _run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fa
         write_json(run_dir/'diagnostics.json',{'stderr_tail':sanitize(''.join(stderr_tail))})
     return result
 
-def run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=False,instructions='',cancel=None,denied_reads=(),request_budget=None,execution_budget=None,budget_guidance=None):
+def run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=False,instructions='',cancel=None,denied_reads=(),request_budget=None,execution_budget=None,budget_guidance=None,executor_mode=False,on_process_start=None):
     from .subscription import RequestBudget, SubscriptionGateway
     from .budget import BudgetChannel, ExecutionBudget
     from contextlib import nullcontext
@@ -325,7 +343,7 @@ def run(exe:str,workspace:Path,cfg:Config,prompt:str,run_dir:Path,*,parallel=Fal
         with SubscriptionGateway(budget=budget,execution_budget=execution_budget,guidance=guidance,cancel=cancel,
                                  transient_recovery=cfg.native_request_retries > 0) as gateway:
             result=_run(exe,workspace,cfg,prompt,run_dir,parallel=parallel,instructions=instructions,cancel=cancel,
-                        gateway=gateway,denied_reads=denied_reads,execution_budget=execution_budget,budget_channel=channel)
+                        gateway=gateway,denied_reads=denied_reads,execution_budget=execution_budget,budget_channel=channel,executor_mode=executor_mode,on_process_start=on_process_start)
     result['budget_tool']=channel.summary() if channel is not None else {'configured':False}
     result['native_request_max_retries']=cfg.native_request_retries
     result['subscription']=gateway.summary()

@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "handoff_artifact": "worker-proposal.txt",
+  "tasks": [
+    {
+      "id": "module",
+      "role": "executor",
+      "goal": "Propose core.py with clamp_int(value, minimum, maximum). Accept only strict ints, reject booleans/non-ints with TypeError, reversed bounds with ValueError. Return the value clamped to the inclusive bounds. No imports or tools; one Python source block, at most 150 lines.",
+      "allowed_paths": ["core.py"],
+      "dependencies": [],
+      "artifacts": ["core.py"],
+      "acceptance_criteria": ["Exact public clamp_int signature", "Strict integer validation and inclusive bounds"],
+      "risk_level": "low"
+    },
+    {
+      "id": "cli",
+      "role": "chief",
+      "goal": "Write app.py and README.md while the worker prepares core.py. The JSON stdin CLI accepts exactly value,min,max, calls clamp_int and writes a JSON object containing value. Invalid input exits 2 without traceback. The CLI must work under python -I -B; explicitly add the application directory to sys.path before importing core. Save the worker final reply verbatim as worker-proposal.txt and integrate its source once.",
+      "allowed_paths": ["app.py", "README.md"],
+      "dependencies": [],
+      "artifacts": ["app.py", "README.md"],
+      "acceptance_criteria": ["Valid JSON output for valid inputs", "Invalid inputs exit 2", "README has an executable example"],
+      "risk_level": "low"
+    }
+  ]
+}

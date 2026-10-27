@@ -69,7 +69,8 @@ def _relative(value):
     if not isinstance(value, str) or not value or '\\' in value or ':' in value:
         raise PolicyError('acceptance paths must be relative POSIX paths')
     path = PurePosixPath(value)
-    if path.is_absolute() or any(p in ('.', '..') or p in RESERVED for p in path.parts) or not path.parts:
+    if (path.is_absolute() or any(p in ('.', '..') or p.casefold() in RESERVED or p.endswith(('.', ' '))
+                                 for p in path.parts) or not path.parts):
         raise PolicyError('acceptance input path refused')
     return path.as_posix()
 
@@ -148,6 +149,7 @@ def inventory(workspace: Path, names: tuple[str, ...]):
             if visited > MAX_FILES * 2:
                 raise PolicyError('acceptance inventory too large')
             path = inside(workspace, todo.pop())
+            _relative(path.relative_to(workspace).as_posix())
             info = path.stat()
             if stat.S_ISDIR(info.st_mode):
                 for child in path.iterdir():
@@ -209,14 +211,27 @@ def require_backend():
         raise PolicyError('acceptance requires the reviewed Windows Codex sandbox')
 
 
-def capture(command, env, scratch, deadline, cancel_file, control_file):
+def capture(command, env, scratch, deadline, cancel_file, control_file, on_process_start=None):
     from .native import terminate_tree
-    proc = subprocess.Popen(command, cwd=scratch, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                            stdin=subprocess.DEVNULL, shell=False, start_new_session=os.name != 'nt')
+    before = getattr(on_process_start, 'before_spawn', None)
+    if before is not None:
+        before()
     try:
+        proc = subprocess.Popen(command, cwd=scratch, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                stdin=subprocess.DEVNULL, shell=False, start_new_session=os.name != 'nt')
+    except FileNotFoundError:
+        missing = getattr(on_process_start, 'spawn_missing', None)
+        if missing is not None:
+            missing()
+        raise
+    try:
+        if on_process_start is not None:on_process_start(proc.pid)
         write_json(control_file, {'pid': proc.pid, 'status': 'verifying'})
     except BaseException:
         terminate_tree(proc)
+        finished = getattr(on_process_start, 'finished', None)
+        if finished is not None and proc.poll() is not None:
+            finished(proc.pid)
         raise
     lock = threading.Lock()
     captures = {}
@@ -253,15 +268,22 @@ def capture(command, env, scratch, deadline, cancel_file, control_file):
             time.sleep(.05)
     except BaseException:
         terminate_tree(proc)
+        finished = getattr(on_process_start, 'finished', None)
+        if finished is not None and proc.poll() is not None:
+            finished(proc.pid)
         raise
     for thread in threads:
         thread.join(timeout=min(.5, max(0., deadline - time.monotonic())))
     with lock:
         complete = (set(captures) == {'stdout', 'stderr'} and not any(t.is_alive() for t in threads)
                     and not any(row['error'] for row in captures.values()))
-        return {'exit_code': proc.poll(), 'stop_reason': reason, 'capture_complete': complete,
-                'sdk_root_exit_observed': proc.poll() is not None, 'capture': dict(captures),
-                'output_limit_exceeded': overflow.is_set()}
+        result = {'exit_code': proc.poll(), 'stop_reason': reason, 'capture_complete': complete,
+                  'sdk_root_exit_observed': proc.poll() is not None, 'capture': dict(captures),
+                  'output_limit_exceeded': overflow.is_set()}
+    finished = getattr(on_process_start, 'finished', None)
+    if finished is not None and proc.poll() is not None:
+        finished(proc.pid)
+    return result
 
 
 def assess_report(raw, nonce, minimum):
@@ -284,7 +306,7 @@ def assess_report(raw, nonce, minimum):
             'checks_skipped': sum(r['status'] == 'skipped' for r in checks)}
 
 
-def verify(exe, workspace: Path, prepared: Prepared, run_dir: Path, budget, denied=()):
+def verify(exe, workspace: Path, prepared: Prepared, run_dir: Path, budget, denied=(),on_process_start=None):
     if (run_dir / 'acceptance.json').exists() or (run_dir / 'acceptance.json').is_symlink():
         raise PolicyError('existing acceptance receipt must be preserved')
     started = time.monotonic()
@@ -318,8 +340,10 @@ def verify(exe, workspace: Path, prepared: Prepared, run_dir: Path, budget, deni
             result['reason'] = 'deadline_exhausted'
             return result
         require_backend()
-        execution = capture(command, sandbox_environment(scratch), scratch, deadline,
-                            run_dir / 'cancel.request', run_dir / 'control.json')
+        arguments = (command, sandbox_environment(scratch), scratch, deadline,
+                     run_dir / 'cancel.request', run_dir / 'control.json')
+        execution = (capture(*arguments, on_process_start=on_process_start)
+                     if on_process_start is not None else capture(*arguments))
         result.update(execution)
         after = inventory(workspace, contract.inputs)
         inventory_path = inside(run_dir, run_dir / 'acceptance-inputs.json')
