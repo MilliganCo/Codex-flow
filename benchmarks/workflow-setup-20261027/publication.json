@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "kind": "exact_workflow_setup_evidence",
+  "files": [
+    {
+      "path": "frozen-runtime/__init__.py",
+      "bytes": 92,
+      "sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1"
+    },
+    {
+      "path": "frozen-runtime/acceptance.py",
+      "bytes": 18050,
+      "sha256": "a92fbac71ae01f453d190eb2c3d52091cef693afe8dc7d747bda78f5924e0b02"
+    },
+    {
+      "path": "frozen-runtime/benchmark.py",
+      "bytes": 15802,
+      "sha256": "79941c26485f99a761139b0022e7c7de245a28bfbe98f1a04d5b9dffdcc498ee"
+    },
+    {
+      "path": "frozen-runtime/budget.py",
+      "bytes": 17730,
+      "sha256": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d"
+    },
+    {
+      "path": "frozen-runtime/budget_stdio.py",
+      "bytes": 11188,
+      "sha256": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740"
+    },
+    {
+      "path": "frozen-runtime/cli.py",
+      "bytes": 24699,
+      "sha256": "aa6478162b476b10bce8d9fccb16fa2465785013157d637fc7974e89dd133925"
+    },
+    {
+      "path": "frozen-runtime/config.py",
+      "bytes": 1930,
+      "sha256": "2b64c387744b9892bb9935d58d9d9576330a194fa39a9b71cd9a1768673ccf13"
+    },
+    {
+      "path": "frozen-runtime/contracts.py",
+      "bytes": 3038,
+      "sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335"
+    },
+    {
+      "path": "frozen-runtime/doctor.py",
+      "bytes": 3387,
+      "sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed"
+    },
+    {
+      "path": "frozen-runtime/execution_contract.py",
+      "bytes": 12430,
+      "sha256": "d0f363001d9acb6ceb4bd94d7fc9be94881325a086bff371b43ad6392a939701"
+    },
+    {
+      "path": "frozen-runtime/harness.py",
+      "bytes": 4813,
+      "sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7"
+    },
+    {
+      "path": "frozen-runtime/mercury.py",
+      "bytes": 12136,
+      "sha256": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653"
+    },
+    {
+      "path": "frozen-runtime/native.py",
+      "bytes": 25105,
+      "sha256": "6f4bff41f42beaedb8d8685235ca2646393b815205f191d79f5fe633e7ca4ef0"
+    },
+    {
+      "path": "frozen-runtime/native_metadata.py",
+      "bytes": 5014,
+      "sha256": "0421e1f875930e266797bcb9ae8e3b1bb7e51f36f1b6bf2b349dd8d07cf43c5b"
+    },
+    {
+      "path": "frozen-runtime/policy.py",
+      "bytes": 935,
+      "sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac"
+    },
+    {
+      "path": "frozen-runtime/subscription.py",
+      "bytes": 45197,
+      "sha256": "5faea42fa74475ec23f52e6620afef5aaff8cab19c3640d4ee8a3528b6873948"
+    },
+    {
+      "path": "frozen-runtime/telemetry.py",
+      "bytes": 2912,
+      "sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811"
+    },
+    {
+      "path": "frozen-runtime/workflow.py",
+      "bytes": 24319,
+      "sha256": "868ffdc00ec11378ce088ac93f3ca818f2fb7e620c1de7048d05deb1304c769b"
+    },
+    {
+      "path": "frozen-runtime/workflow_display.py",
+      "bytes": 4691,
+      "sha256": "cc49aca8130918d9427b7deaad581def510994c71b8523338cbe8430b28112f4"
+    },
+    {
+      "path": "frozen-runtime/workflow_files.py",
+      "bytes": 15491,
+      "sha256": "0a8ccbfb52eebc9c8fec23e525dfd1ab221b6bba022c87dea443d2681c5249d9"
+    },
+    {
+      "path": "frozen-runtime/workflow_models.py",
+      "bytes": 2901,
+      "sha256": "7f4bf1d8f3874b96ff1ba1eb16561d4dd61fb5efb76c04a0e9346d2edda85004"
+    },
+    {
+      "path": "frozen-runtime/workflow_setup.py",
+      "bytes": 8961,
+      "sha256": "4e6b7d0aa512433fb8b6fc28d96172fbbf318db57521d5779078b05e9ca87cb0"
+    },
+    {
+      "path": "frozen-runtime/workflow_store.py",
+      "bytes": 30213,
+      "sha256": "22f85ab0f95e49214295453430961753b43b0155cf2b57644e1db7aa2d1e1768"
+    },
+    {
+      "path": "frozen-runtime/workflow_templates.py",
+      "bytes": 12428,
+      "sha256": "b16e7b76cca468cc0c3a7e97cbaf4ccce82277e793e0b89480f0227d5531bcde"
+    },
+    {
+      "path": "preregistration.json",
+      "bytes": 3549,
+      "sha256": "34810e48802b039a7965dd8813e1f84016c49b561990254199427651d6bc2456"
+    },
+    {
+      "path": "proof-result.json",
+      "bytes": 12033,
+      "sha256": "c42c80a75bbec2bd6d06a4c2722da22a2e421c88de6914eb07363ca4ad969cf9"
+    },
+    {
+      "path": "proof-script.py",
+      "bytes": 10396,
+      "sha256": "6bb4a684dd6e612cf3143bbeacc68053cd86bf63a15558b2d29cc718ed70e300"
+    }
+  ],
+  "raw_receipts": "kept locally; receipt hashes in proof-result.json",
+  "raw_native_state_published": false
+}

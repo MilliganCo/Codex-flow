@@ -21,6 +21,17 @@ passed with fixture generation and the official Windows sandbox: one generator
 call and eight checks per workflow, including report-only recovery. No model
 was invoked for these controls. [Accepted fixture demo](examples/workflow-recovery/README.md).
 
+For an existing Python unittest project, `workflow init` now creates a versioned
+acceptance checker without executing project code. Then `workflow start "Task"
+--dry-run` uses that explicitly initialized checker. Existing test bytes are
+frozen; zero tests cannot pass. `workflow status ID --human --lang en` summarizes
+stages and remaining budget; the default JSON interface is unchanged.
+[Model roles](docs/model-roles.md) includes GPT-6.1 Terra as a documented candidate
+with dispatch disabled. Live model experiments remain paused; Sol XHigh stays
+the default. See the [workflow guide](docs/workflows.md) for exact commands.
+[Fourteen real sandbox controls and a complete fixture workflow](benchmarks/workflow-setup-20261027/README.md)
+validate the setup without model calls.
+
 An optional [external acceptance gate](docs/acceptance-gate.md) now connects that
 distinction to ordinary `run`: supply an owner-reviewed `--acceptance-file` to
 require sandboxed checks before `completed_verified` / `accepted: true`. Without

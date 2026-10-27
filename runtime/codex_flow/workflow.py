@@ -26,6 +26,15 @@ def digest(raw):
     return hashlib.sha256(raw).hexdigest()
 
 
+def _selected_contract(value):
+    if isinstance(value, acceptance.Contract):
+        if (acceptance._file(value.path, acceptance.MAX_REPORT) != value.raw
+                or acceptance._file(value.checker, 262144) != value.checker_raw):
+            raise PolicyError('selected acceptance inputs changed during admission')
+        return value
+    return acceptance.load_contract(value)
+
+
 def _read(path, expected=None):
     raw = acceptance._file(path, 67108864)
     if expected is not None and digest(raw) != expected:
@@ -134,10 +143,13 @@ class Engine:
         return inside(self.root, self.root / workflow_id)
 
     def inspect(self, cfg, task, acceptance_file, execution_file=None):
+        contract = _selected_contract(acceptance_file)
+        execution = execution_contract.load(execution_file, self.repo) if execution_file else None
+        return self._inspect(cfg, task, contract, execution)
+
+    def _inspect(self, cfg, task, contract, execution):
         if not isinstance(task, str) or not task.strip() or len(task.encode('utf-8')) > 1048576:
             raise PolicyError('workflow task required and bounded to one MiB')
-        contract = acceptance.load_contract(acceptance_file)
-        execution = execution_contract.load(execution_file, self.repo) if execution_file else None
         if execution:
             execution_contract.admit(execution, contract.inputs)
         source = snapshots.project_inventory(self.repo)
@@ -149,13 +161,13 @@ class Engine:
 
     def start(self, cfg, task, acceptance_file, execution_file=None, *, exe=None, enable=False, dry_run=False):
         admission_started = time.monotonic()
-        preview = self.inspect(cfg, task, acceptance_file, execution_file)
+        contract = _selected_contract(acceptance_file)
+        execution = execution_contract.load(execution_file, self.repo) if execution_file else None
+        preview = self._inspect(cfg, task, contract, execution)
         if dry_run:
             return preview
         if not (cfg.enabled or enable):
             raise PolicyError('workflow disabled; use --enable or project config')
-        contract = acceptance.load_contract(acceptance_file)
-        execution = execution_contract.load(execution_file, self.repo) if execution_file else None
         fingerprint = self.backend.fingerprint(exe)
         self.backend.exe = fingerprint.get('executable', exe)
         checker_name = acceptance._relative(json.loads(contract.raw)['checker'])

@@ -6,18 +6,63 @@ Use `workflow` to preserve progress across four stages:
 `prepare → generate → verify → report`. Existing `run`, `verify`, `runs`, and
 `benchmark` commands retain their separate behavior.
 
-## 1. Inspect a task before enabling generation
+## 1. Initialize checks and inspect a task
 
 Run from the Codex Flow checkout. Global options precede `workflow`:
 
 ```powershell
-python codex-flow.py --repo C:\work\project workflow start "Implement the agreed change" --acceptance-file C:\checks\contract.json --dry-run
+python codex-flow.py --repo C:\work\project workflow init --dry-run --json
+python codex-flow.py --repo C:\work\project workflow init --lang en
+python codex-flow.py --repo C:\work\project workflow start "Implement the agreed change" --dry-run --human --lang en
 ```
 
-Supply either the task argument or `--task-file C:\checks\task.md`. An explicit,
-owner-reviewed `--acceptance-file` is required. Its checker must be a reviewed,
-self-contained Python file; see the [acceptance contract](acceptance-gate.md).
-The dry run inspects local inputs without generation or checker execution.
+`workflow init` supports an existing Git project with Python `unittest` tests.
+Auto detection looks in `tests/`, then `test/`, for `test*.py` files containing
+unittest imports. Detection reads Python syntax trees; it does not import project
+modules, collect or run tests, execute the checker, or call a model. A successful
+initialization does not establish that any tests pass. `--dry-run` previews the
+setup without writing it; `--json` selects machine-readable setup output.
+
+For a different existing test directory, select it explicitly:
+
+```powershell
+python codex-flow.py --repo C:\work\project workflow init --framework unittest --tests qa/unit --pattern "test_*.py" --dry-run
+```
+
+Paths such as `qa/unit` are relative POSIX paths within the project; the pattern
+is a basename glob. The explicit framework option selects unittest without
+requiring the auto-detection import marker. Other frameworks need an explicit,
+owner-reviewed `--acceptance-file C:\checks\contract.json` instead; see the
+[acceptance contract](acceptance-gate.md).
+
+Initialization writes a version under `.codex-flow/project/v/REVISION/` with
+`checker.py`, `acceptance.json`, `task.md`, and `setup.json`. The active pointer
+selects the default contract, so `workflow start` may omit `--acceptance-file`
+after this explicit setup. Without setup or an explicit contract, start refuses
+to proceed. Supplying `--acceptance-file` still selects that reviewed contract.
+The setup does not change model routing, project enablement, or global settings.
+
+Repeating init with the same options preserves the existing version and edited
+task file. Changed options or a changed initialized checker require review and
+`workflow init --refresh`, which creates a new version and preserves old files.
+Refresh records the current baseline test bytes; it is an explicit replacement
+of that baseline. Preserve any edited task before using the new task template.
+
+The generated checker freezes SHA-256 hashes of existing selected test files.
+Missing or changed baseline files fail acceptance; new test files may be added.
+Skips are refused by default. Use `--allow-skips N` only for an explicitly
+reviewed allowance, from 0 to 800; it bounds skipped cases and skip events,
+including subtests. Skips never count as passes, and at least one actual test
+must pass. Zero tests, all-skipped suites, import errors, failures, errors,
+expected failures, and unexpected successes fail acceptance. Collection is
+bounded to 800 tests and the report to 64 KiB. These checks attest ordinary
+unittest outcomes, not resistance to adversarial Python test code.
+
+Supply either the task argument or `--task-file C:\checks\task.md`. To use the
+generated task file, edit the path printed by init, replace the placeholder with
+the actual requested change, and remove `CODEX_FLOW_TASK_REQUIRED`. An unchanged
+generated template is refused. A start dry run inspects local inputs without
+generation or checker execution.
 
 An existing Git project, Python 3.11+, and the installed native Codex CLI are
 required for execution. Generation needs the existing subscription login.
@@ -28,7 +73,7 @@ select a paid API fallback.
 ## 2. Start with fixed budgets
 
 ```powershell
-python codex-flow.py --repo C:\work\project workflow start --task-file C:\checks\task.md --acceptance-file C:\checks\contract.json --enable --timeout 1200 --max-model-requests 40
+python codex-flow.py --repo C:\work\project workflow start --task-file C:\checks\task.md --enable --timeout 1200 --max-model-requests 40
 ```
 
 Execution requires `--enable` or an enabled project configuration. `--timeout`
@@ -42,16 +87,34 @@ experimental and have no live validation for this workflow. Current workflow
 evidence uses labelled test fixtures only; model execution remains paused.
 No benchmark or quality advantage follows from fixture success.
 
+The read-only [model-role catalog](model-roles.md) includes Terra as a candidate
+with dispatch disabled. Inspect it without starting inference or checking account
+access:
+
+```powershell
+python codex-flow.py --repo C:\work\project workflow models --json
+```
+
+Catalog entries do not change routing or resume the paused live experiments.
+
 ## 3. Inspect, pause, resume, or cancel
 
 Use the returned workflow ID:
 
 ```powershell
+python codex-flow.py --repo C:\work\project workflow status WORKFLOW_ID --human --lang en
 python codex-flow.py --repo C:\work\project workflow status WORKFLOW_ID
 python codex-flow.py --repo C:\work\project workflow pause WORKFLOW_ID
 python codex-flow.py --repo C:\work\project workflow resume WORKFLOW_ID --enable
 python codex-flow.py --repo C:\work\project workflow cancel WORKFLOW_ID
 ```
+
+`--human` prints a short status, stage attempts, remaining requests and active
+time, and acceptance of the saved snapshot. `--lang ru` or `--lang en` selects
+human labels; Russian is the default. Start, pause, resume, and cancel also
+support these flags. Without `--human`, their existing JSON interface is
+unchanged. Human output reports integrity failure and source changes without
+claiming acceptance of the live original project.
 
 Pause and cancel are persisted control requests; an active operation must observe
 them before it stops. Paused time does not consume the active-time budget.

@@ -2,6 +2,16 @@
 
 ## Unreleased — opt-in runtime development
 
+- Add explicit `workflow init` for existing Git Python unittest projects without
+ importing or executing their code. Versioned checker bindings freeze baseline
+ test bytes, preserve prior setup/task files, and require explicit refresh for
+ replacement. Empty/all-skipped suites cannot pass; bounded skip allowances and
+ actual test counts stay distinct. Keep JSON control output and add opt-in
+ `--human` summaries. Add a read-only Terra 6.1 role candidate; keep its dispatch
+ disabled and the chief Sol XHigh unchanged. Admission now freezes the exact
+ acceptance and execution contract bytes that were validated, closing concurrent
+ reread races before backend startup. No live model experiment is resumed.
+
 - Add durable `workflow start/status/pause/resume/cancel`: project-local SQLite
  stage/attempt state, request reservations before forwarding, renewable 30-second
  active-time reservations, PID/creation ownership and pre-spawn launch barriers.

@@ -117,6 +117,24 @@ Backups and installation records may contain private instructions. Keep them loc
 
 ## Restore source
 
+Before the workflow usability changes, private commit
+`d364425be820cdb0a6f60a7cff05a1e1f1f5305d` retains durable stage recovery:
+
+```powershell
+git worktree add --detach ../codex-flow-before-workflow-init d364425be820cdb0a6f60a7cff05a1e1f1f5305d
+```
+
+Keep current project `.codex-flow` state and manual changes. Initialized checker
+revisions are preserved under `.codex-flow/project/v/`; `workflow init --refresh`
+selects a new version without deleting the old one. Do not edit active bindings
+or hashes to bypass validation. Use an explicitly reviewed `--acceptance-file`
+for a custom checker. Runtime identity is frozen per existing workflow, so finish
+or inspect its recovery using the same reviewed runtime version that created it.
+This source rollback changes no global settings, sandbox policy, or login.
+
+Для отката создайте отдельный каталог командой выше. Текущие исходники, ручные
+правки и сохранённые workflow останутся на месте; глобальные настройки не меняются.
+
 Before the live-budget/MCP change, the private repository's reviewed commit is
 `aa9cd7a2c85b5b2bce11c6e26e4e3042c3920160`. Keep the current checkout and recover
 into a new directory:

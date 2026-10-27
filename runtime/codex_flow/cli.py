@@ -76,12 +76,23 @@ def main(argv=None):
     ws=w.add_subparsers(dest='workflow_action',required=True)
     start=ws.add_parser('start')
     start.add_argument('task',nargs='?');start.add_argument('--task-file',type=Path)
-    start.add_argument('--acceptance-file',type=Path,required=True)
+    start.add_argument('--acceptance-file',type=Path)
     start.add_argument('--execution-contract',type=Path)
     start.add_argument('--enable',action='store_true');start.add_argument('--dry-run',action='store_true')
     start.add_argument('--timeout',type=int);start.add_argument('--max-model-requests',type=int)
+    start.add_argument('--human',action='store_true');start.add_argument('--lang',choices=['ru','en'],default='ru')
+    init=ws.add_parser('init',help='Create an explicit owner-selected unittest acceptance template without executing code')
+    init.add_argument('--framework',choices=['auto','unittest'],default='auto')
+    init.add_argument('--tests');init.add_argument('--pattern',default='test*.py')
+    init.add_argument('--allow-skips',type=int,default=0);init.add_argument('--input',action='append')
+    init.add_argument('--refresh',action='store_true');init.add_argument('--dry-run',action='store_true')
+    init.add_argument('--json',action='store_true');init.add_argument('--lang',choices=['ru','en'],default='ru')
+    models=ws.add_parser('models',help='Inspect model-role metadata without inference or changing routing')
+    models.add_argument('--json',action='store_true');models.add_argument('--lang',choices=['ru','en'],default='ru')
+    models.add_argument('--cli-version')
     for action in ('status','pause','resume','cancel'):
         action_parser=ws.add_parser(action);action_parser.add_argument('workflow_id')
+        action_parser.add_argument('--human',action='store_true');action_parser.add_argument('--lang',choices=['ru','en'],default='ru')
         if action=='resume':action_parser.add_argument('--enable',action='store_true')
     s=sub.add_parser('runs');s.add_argument('action',choices=['list','show','cancel','replay']);s.add_argument('run_id',nargs='?')
     b=sub.add_parser('benchmark');b.add_argument('action',choices=['tree','report']);b.add_argument('--task-file',type=Path);b.add_argument('--root',type=Path);b.add_argument('--evaluator',type=Path);b.add_argument('--mercury-root',type=Path);b.add_argument('--execute',action='store_true');b.add_argument('--timeout',type=int,default=1200)
@@ -90,7 +101,7 @@ def main(argv=None):
     args=p.parse_args(argv)
     try:
         repo=args.repo.resolve()
-        control_only=(args.command=='workflow' and args.workflow_action in ('status','pause','cancel'))
+        control_only=(args.command=='workflow' and args.workflow_action in ('status','pause','cancel','init','models'))
         cfg=Config() if control_only else load(args.config or repo/'.codex-flow/config.json')
         if args.command=='doctor':
             from .doctor import doctor
@@ -209,20 +220,35 @@ def main(argv=None):
                     write_json(run_dir/'control.json',{'pid':None,'status':out['status']})
                     print(json.dumps(out,ensure_ascii=False,indent=2));return 0 if out['accepted'] else 3
         elif args.command=='workflow':
+            from . import workflow_display, workflow_setup
+            if (getattr(args,'human',False) or args.workflow_action in ('init','models')) and hasattr(sys.stdout,'reconfigure'):
+                sys.stdout.reconfigure(encoding='utf-8')
+            if args.workflow_action=='init':
+                out=workflow_setup.initialize(repo,framework=args.framework,test_dir=args.tests,pattern=args.pattern,
+                        allow_skips=args.allow_skips,inputs=args.input,refresh=args.refresh,dry_run=args.dry_run)
+                print(json.dumps(out,ensure_ascii=False,indent=2) if args.json else workflow_display.setup(out,args.lang))
+                return 0
+            if args.workflow_action=='models':
+                from .workflow_models import catalog
+                out=catalog(args.cli_version)
+                print(json.dumps(out,ensure_ascii=False,indent=2) if args.json else workflow_display.models(out,args.lang))
+                return 0
             from .workflow import Engine
             engine=Engine(repo)
             if args.workflow_action=='start':
                 if args.timeout is not None:cfg=replace(cfg,timeout_s=args.timeout)
                 if args.max_model_requests is not None:cfg=replace(cfg,max_model_requests=args.max_model_requests)
                 task=args.task_file.read_text(encoding='utf-8-sig') if args.task_file else args.task
-                out=engine.start(cfg,task,args.acceptance_file,args.execution_contract,
+                if task and task.strip()==workflow_setup.TASK.strip():raise PolicyError('replace the generated task template with the actual requested change')
+                selected=args.acceptance_file or workflow_setup.default_contract(repo)
+                out=engine.start(cfg,task,selected,args.execution_contract,
                                  exe=args.codex,enable=args.enable,dry_run=args.dry_run)
             elif args.workflow_action=='resume':
                 if not (args.enable or cfg.enabled):raise PolicyError('workflow resume requires --enable or current enabled config')
                 out=engine.resume(args.workflow_id,enable=args.enable or cfg.enabled,exe=args.codex)
             elif args.workflow_action=='status':out=engine.status(args.workflow_id)
             else:out=engine.signal(args.workflow_id,args.workflow_action)
-            print(json.dumps(out,ensure_ascii=False,indent=2))
+            print(workflow_display.status(out,args.lang) if args.human else json.dumps(out,ensure_ascii=False,indent=2))
             if args.workflow_action in ('start','resume') and not out.get('dry_run'):
                 return 0 if out['state'] in ('completed','paused') and out.get('integrity')!='failed' else 3
             return 0
