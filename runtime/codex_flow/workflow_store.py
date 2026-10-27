@@ -32,7 +32,7 @@ def _birth(pid: int) -> tuple[str, str | None]:
     """Return a stable process creation identity, without guessing on access errors."""
     if os.name == 'nt':
         from ctypes import wintypes
-        kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+        kernel = getattr(ctypes, 'WinDLL')('kernel32', use_last_error=True)
         kernel.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
         kernel.OpenProcess.restype = wintypes.HANDLE
         kernel.GetProcessTimes.argtypes = [wintypes.HANDLE] + [ctypes.POINTER(wintypes.FILETIME)] * 4
@@ -41,7 +41,7 @@ def _birth(pid: int) -> tuple[str, str | None]:
         kernel.CloseHandle.argtypes = [wintypes.HANDLE]
         handle = kernel.OpenProcess(0x1000, False, pid)
         if not handle:
-            return ('dead' if ctypes.get_last_error() == 87 else 'unknown'), None
+            return ('dead' if getattr(ctypes, 'get_last_error')() == 87 else 'unknown'), None
         try:
             created, exited, system, user = (wintypes.FILETIME() for _ in range(4))
             code = wintypes.DWORD()

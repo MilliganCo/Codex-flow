@@ -510,12 +510,264 @@
       "path": "final/after_verification/bundle/seed-manifest.json",
       "sha256": "58a34abcb100c68c254d478d6181500a4660a2a8d3ac8201d59ece20693b6eb0",
       "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/proof-result.json",
+      "path": "release/proof-result.json",
+      "sha256": "6589535f1ced0c86145784e22f9b861acdad4e3f287f4cf8a08949505ef7f19d",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/preregistration.json",
+      "path": "release/preregistration.json",
+      "sha256": "aee923c101bcecd5ca65e255534b8ed8dffb7fa14376bc59926706be4b04fba5",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/codex-flow.py",
+      "path": "release/frozen-runtime/codex-flow.py",
+      "sha256": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/__init__.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/__init__.py",
+      "sha256": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/acceptance.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/acceptance.py",
+      "sha256": "a92fbac71ae01f453d190eb2c3d52091cef693afe8dc7d747bda78f5924e0b02",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/benchmark.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/benchmark.py",
+      "sha256": "79941c26485f99a761139b0022e7c7de245a28bfbe98f1a04d5b9dffdcc498ee",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/budget.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/budget.py",
+      "sha256": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/budget_stdio.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/budget_stdio.py",
+      "sha256": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/cli.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/cli.py",
+      "sha256": "d1ead05a36c08d823cdfd281fce342ce1cb759aa94ea3a8800d596e3e9b6b7b9",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/config.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/config.py",
+      "sha256": "2b64c387744b9892bb9935d58d9d9576330a194fa39a9b71cd9a1768673ccf13",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/contracts.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/contracts.py",
+      "sha256": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/doctor.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/doctor.py",
+      "sha256": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/execution_contract.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/execution_contract.py",
+      "sha256": "d0f363001d9acb6ceb4bd94d7fc9be94881325a086bff371b43ad6392a939701",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/harness.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/harness.py",
+      "sha256": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/mercury.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/mercury.py",
+      "sha256": "6c137f3147fc26dd283beeb9997945881dc6ba7800617c40ea3535c7b7521653",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/native.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/native.py",
+      "sha256": "6f4bff41f42beaedb8d8685235ca2646393b815205f191d79f5fe633e7ca4ef0",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/native_metadata.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/native_metadata.py",
+      "sha256": "0421e1f875930e266797bcb9ae8e3b1bb7e51f36f1b6bf2b349dd8d07cf43c5b",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/policy.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/policy.py",
+      "sha256": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/subscription.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/subscription.py",
+      "sha256": "5faea42fa74475ec23f52e6620afef5aaff8cab19c3640d4ee8a3528b6873948",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/telemetry.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/telemetry.py",
+      "sha256": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/workflow.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/workflow.py",
+      "sha256": "6ee502b5939565270edd167f580dd846b3c0629930c291abb5252562154b34bd",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/workflow_files.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/workflow_files.py",
+      "sha256": "0a8ccbfb52eebc9c8fec23e525dfd1ab221b6bba022c87dea443d2681c5249d9",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/runtime/runtime/codex_flow/workflow_store.py",
+      "path": "release/frozen-runtime/runtime/codex_flow/workflow_store.py",
+      "sha256": "22f85ab0f95e49214295453430961753b43b0155cf2b57644e1db7aa2d1e1768",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/checkpoint.json",
+      "path": "release/after_generation/checkpoint.json",
+      "sha256": "a1362becf2dca42fae4f69ba08e0f74df744b912c371ba3617265d10991bc0b5",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/completed.json",
+      "path": "release/after_generation/completed.json",
+      "sha256": "6a92fe81faf49d875d90c34aa5b5e3ca832d381a19380d30e09a8ddcc398393a",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/counters.json",
+      "path": "release/after_generation/counters.json",
+      "sha256": "b75680a0302a99639a8d50da75ada23dcaf833aa0394de738bf783688cfb7119",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/interrupted.json",
+      "path": "release/after_generation/interrupted.json",
+      "sha256": "0b85688c6a68b7913f406cc189550bd336da0401b16b99c4027a88be7796d7ae",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/source/.codex-flow/workflows/b8d946af04224a7fb3ac51d7b273f320/a/verify/2/verification.json",
+      "path": "release/after_generation/verification.json",
+      "sha256": "50723303e98555c5cb2dd7548d410fd7012904e990a0d31a52b7e490ddd5ac1b",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/source/.codex-flow/workflows/b8d946af04224a7fb3ac51d7b273f320/a/report/1/bundle/diff.patch",
+      "path": "release/after_generation/bundle/diff.patch",
+      "sha256": "b00100ad65579e688663387eeb021042fabddc804e0c7c1667c6b27cf385019a",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/source/.codex-flow/workflows/b8d946af04224a7fb3ac51d7b273f320/a/report/1/bundle/files/sum_cli.py",
+      "path": "release/after_generation/bundle/files/sum_cli.py",
+      "sha256": "f33b309b3916d5d95be2c67be73933af52235c2415c7826e09b1548d67799142",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/source/.codex-flow/workflows/b8d946af04224a7fb3ac51d7b273f320/a/report/1/bundle/manifest.json",
+      "path": "release/after_generation/bundle/manifest.json",
+      "sha256": "8b1dc7f616f49e966db04a1f28b97e61e9794209e203c30c6a5f7da3f7859ee0",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/source/.codex-flow/workflows/b8d946af04224a7fb3ac51d7b273f320/a/report/1/bundle/report.json",
+      "path": "release/after_generation/bundle/report.json",
+      "sha256": "044dbac7384e180e0f86aab0e48220d68420a810fc3e8dc368f2d0ee09d20711",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_generation/source/.codex-flow/workflows/b8d946af04224a7fb3ac51d7b273f320/a/report/1/bundle/seed-manifest.json",
+      "path": "release/after_generation/bundle/seed-manifest.json",
+      "sha256": "f7c284d032ca5410fd4e531698d510807e3adb5d04c857ba73d2d8b07261013d",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_verification/checkpoint.json",
+      "path": "release/after_verification/checkpoint.json",
+      "sha256": "5ec2a5a877e6c6a8127b898695dc3400799a1a9378e2e7a1b7700339df478d41",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_verification/completed.json",
+      "path": "release/after_verification/completed.json",
+      "sha256": "52e87f3748d7ab1bfe704103dd787dc0dadb94770dc9c3a1d69c4f2440055c39",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_verification/counters.json",
+      "path": "release/after_verification/counters.json",
+      "sha256": "605862bc56e3bb34091f4339ce08e11c0fe4ba6e7d408a7ed7f59cd8ecf95980",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_verification/source/.codex-flow/workflows/850b5850ba68475db60c051658bcfd63/a/verify/1/verification.json",
+      "path": "release/after_verification/verification.json",
+      "sha256": "53fccbd4d7d10d2f5c0b3549ab357257726388a45dc352911dd6d1e09d33aae3",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_verification/source/.codex-flow/workflows/850b5850ba68475db60c051658bcfd63/a/report/1/bundle/diff.patch",
+      "path": "release/after_verification/bundle/diff.patch",
+      "sha256": "b00100ad65579e688663387eeb021042fabddc804e0c7c1667c6b27cf385019a",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_verification/source/.codex-flow/workflows/850b5850ba68475db60c051658bcfd63/a/report/1/bundle/files/sum_cli.py",
+      "path": "release/after_verification/bundle/files/sum_cli.py",
+      "sha256": "f33b309b3916d5d95be2c67be73933af52235c2415c7826e09b1548d67799142",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_verification/source/.codex-flow/workflows/850b5850ba68475db60c051658bcfd63/a/report/1/bundle/manifest.json",
+      "path": "release/after_verification/bundle/manifest.json",
+      "sha256": "8b1dc7f616f49e966db04a1f28b97e61e9794209e203c30c6a5f7da3f7859ee0",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_verification/source/.codex-flow/workflows/850b5850ba68475db60c051658bcfd63/a/report/1/bundle/report.json",
+      "path": "release/after_verification/bundle/report.json",
+      "sha256": "a8cc335a751ed889396b43d296ed64134ec9792836071a9418a7ec9932638c85",
+      "transformation": "verbatim"
+    },
+    {
+      "raw_source": "durable-workflow-proof-20261027-05/after_verification/source/.codex-flow/workflows/850b5850ba68475db60c051658bcfd63/a/report/1/bundle/seed-manifest.json",
+      "path": "release/after_verification/bundle/seed-manifest.json",
+      "sha256": "b6e71a9e6e354be7c64f6f7496918843810dfd4554dd6f50f6d39634745060aa",
+      "transformation": "verbatim"
     }
   ],
   "real_model_calls": 0,
   "no_sqlite_auth_history_or_raw_process_logs_published": true,
-  "final_proof": "final/proof-result.json",
-  "final_runtime": "final/frozen-runtime",
+  "final_proof": "release/proof-result.json",
+  "final_runtime": "release/frozen-runtime",
   "prior_successful_control_preserved": true,
   "final_source_lf_sha256": {
     "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
@@ -538,7 +790,30 @@
     "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
     "runtime/codex_flow/workflow.py": "6ee502b5939565270edd167f580dd846b3c0629930c291abb5252562154b34bd",
     "runtime/codex_flow/workflow_files.py": "0a8ccbfb52eebc9c8fec23e525dfd1ab221b6bba022c87dea443d2681c5249d9",
-    "runtime/codex_flow/workflow_store.py": "2acc18686f7b86ef78540c64d4daa42840e8771b1a6a945dca8a78d735ed3f33"
+    "runtime/codex_flow/workflow_store.py": "22f85ab0f95e49214295453430961753b43b0155cf2b57644e1db7aa2d1e1768"
   },
-  "line_ending_note": "Frozen runtime bytes bind execution; source Git files use eol=lf. Normalized source hashes are separate."
+  "line_ending_note": "Frozen runtime bytes bind execution; source Git files use eol=lf. Normalized source hashes are separate.",
+  "previous_source_lf_sha256": {
+    "codex-flow.py": "f1e4b0e501e08d48f70069e7d9d9032d240350c89925a5ed9e4e0fb08adf7b9f",
+    "runtime/codex_flow/__init__.py": "0ee498d2f476917e0f0bfcdc17abba61e9f46eab180648c424d8220be11217e1",
+    "runtime/codex_flow/acceptance.py": "a92fbac71ae01f453d190eb2c3d52091cef693afe8dc7d747bda78f5924e0b02",
+    "runtime/codex_flow/benchmark.py": "79941c26485f99a761139b0022e7c7de245a28bfbe98f1a04d5b9dffdcc498ee",
+    "runtime/codex_flow/budget.py": "71f5d363dc4a89ed4b6c78c973ac3c2cae6012488e44c8fb1cf960e29fe0d19d",
+    "runtime/codex_flow/budget_stdio.py": "86cfa71be5b3f118876e3f80cc331fa989395e50b4613402f59dc1ef76cf6740",
+    "runtime/codex_flow/cli.py": "d1ead05a36c08d823cdfd281fce342ce1cb759aa94ea3a8800d596e3e9b6b7b9",
+    "runtime/codex_flow/config.py": "2b64c387744b9892bb9935d58d9d9576330a194fa39a9b71cd9a1768673ccf13",
+    "runtime/codex_flow/contracts.py": "8bc48422f1b6606554424f88cfde165e1568443aa635380de02c09b57f364335",
+    "runtime/codex_flow/doctor.py": "f791cec7a58c842983fc960ee11f0cfb807173d354ce27a16f35e0174ae3f6ed",
+    "runtime/codex_flow/execution_contract.py": "d0f363001d9acb6ceb4bd94d7fc9be94881325a086bff371b43ad6392a939701",
+    "runtime/codex_flow/harness.py": "fc534cfd2b84ec81655a9e862f89992d496b9ae15a2f8b27e852a215a881c6c7",
+    "runtime/codex_flow/mercury.py": "d9b534f213b39a28bdbe916f2ecdfec0ca83475459e041fd086f75bc8e51d1d6",
+    "runtime/codex_flow/native.py": "6f4bff41f42beaedb8d8685235ca2646393b815205f191d79f5fe633e7ca4ef0",
+    "runtime/codex_flow/native_metadata.py": "0421e1f875930e266797bcb9ae8e3b1bb7e51f36f1b6bf2b349dd8d07cf43c5b",
+    "runtime/codex_flow/policy.py": "018072b18b2956520c91c85493ecb46e2bdce84eeff2b8db9e6e0f0d6ae072ac",
+    "runtime/codex_flow/subscription.py": "5faea42fa74475ec23f52e6620afef5aaff8cab19c3640d4ee8a3528b6873948",
+    "runtime/codex_flow/telemetry.py": "8d2a98f3c9b1a5a77826abfcef71ce9a396717a1cfe7b76df9c2510d456d9811",
+    "runtime/codex_flow/workflow.py": "6ee502b5939565270edd167f580dd846b3c0629930c291abb5252562154b34bd",
+    "runtime/codex_flow/workflow_files.py": "0a8ccbfb52eebc9c8fec23e525dfd1ab221b6bba022c87dea443d2681c5249d9",
+    "runtime/codex_flow/workflow_store.py": "2acc18686f7b86ef78540c64d4daa42840e8771b1a6a945dca8a78d735ed3f33"
+  }
 }

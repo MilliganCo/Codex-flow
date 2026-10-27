@@ -1,6 +1,6 @@
 # Durable workflow recovery: real process and sandbox controls
 
-[Русский](README.ru.md) · [Exact publication hashes](publication.json) · [Final proof](final/proof-result.json)
+[Русский](README.ru.md) · [Exact publication hashes](publication.json) · [Release proof](release/proof-result.json)
 
 Both fixed controls passed using fixture generation and the official Windows
 Codex command sandbox. No model generated code during this experiment. This
@@ -41,3 +41,5 @@ from this publication. Raw runtime/checker/fixture bytes and metadata hashes
 remain exact. Only selected checks and declared boundaries are attested.
 
 Final source, including the final budget-settlement barrier, passed the same controls: [final proof](final/proof-result.json). The earlier successful control is preserved separately.
+
+The cross-platform type-stub compatibility revision passed [release controls](release/proof-result.json). Earlier controls remain unchanged.

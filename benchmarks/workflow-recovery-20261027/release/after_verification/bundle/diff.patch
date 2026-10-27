@@ -1,0 +1,11 @@
+--- a/sum_cli.py
++++ b/sum_cli.py
+@@ -9,7 +9,7 @@
+         if (not isinstance(data, dict) or set(data) != {'numbers'} or not isinstance(data['numbers'], list)
+                 or any(type(n) is not int for n in data['numbers'])):
+             raise ValueError('integer list required')
+-        print(json.dumps({'sum': sum(data['numbers']) + 1}))
++        print(json.dumps({'sum': sum(data['numbers'])}))
+         return 0
+     except (ValueError, TypeError):
+         print('invalid input', file=sys.stderr)

@@ -1,0 +1,70 @@
+{
+  "workflow_id": "b8d946af04224a7fb3ac51d7b273f320",
+  "state": "failed",
+  "control": null,
+  "stages": {
+    "prepare": {
+      "state": "succeeded",
+      "attempts": 1,
+      "output": {
+        "passed": true,
+        "retryable": false,
+        "reason": "source_snapshot_ready",
+        "tree": "a/prepare/1/seed",
+        "manifest": "a/prepare/1/manifest.json",
+        "manifest_sha256": "ee1c483d27f871ab7bd0a37677c783b3387c6a531f0d117dc0fe48ebf5aced11",
+        "bound_files": {
+          "a/prepare/1/manifest.json": "ee1c483d27f871ab7bd0a37677c783b3387c6a531f0d117dc0fe48ebf5aced11"
+        },
+        "seed_content_sha256": "dee7e5d66521b048fced5fd4f6892c66eb3e945b95fbe3ee82e5fa179ac57238"
+      },
+      "retryable": false
+    },
+    "generate": {
+      "state": "succeeded",
+      "attempts": 1,
+      "output": {
+        "passed": true,
+        "retryable": false,
+        "metrics": "a/generate/1/generation.json",
+        "bound_files": {
+          "a/generate/1/generation.json": "e49751166465338669a0596c98df68bd3947acc5300fda0824dd5e5d87e4f616",
+          "a/generate/1/manifest.json": "acabbda57511de3665bc8ea2eb1497e6d866c8f501eedbb4fe23849ef7841840"
+        },
+        "backend_kind": "fixture_generator_real_sdk",
+        "tree": "a/generate/1/w",
+        "manifest": "a/generate/1/manifest.json",
+        "manifest_sha256": "acabbda57511de3665bc8ea2eb1497e6d866c8f501eedbb4fe23849ef7841840"
+      },
+      "retryable": false
+    },
+    "verify": {
+      "state": "failed",
+      "attempts": 1,
+      "output": {
+        "reason": "stage_execution_error"
+      },
+      "retryable": true
+    },
+    "report": {
+      "state": "pending",
+      "attempts": 0,
+      "output": null,
+      "retryable": false
+    }
+  },
+  "requests_used": 1,
+  "active_time_used_s": 31.531000000002678,
+  "active_time_reserved_s": 0.0,
+  "requests_remaining": 2,
+  "active_time_remaining_s": 208.46899999999732,
+  "accepted": false,
+  "integrity": "not_complete",
+  "report": {},
+  "source_changed_since_start": null,
+  "owner_pid": null,
+  "launch_pending": false,
+  "owned_children": [],
+  "backend_kind": "fixture_generator_real_sdk",
+  "source_project_updated": false
+}
