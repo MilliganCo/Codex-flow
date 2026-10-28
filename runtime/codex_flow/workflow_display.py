@@ -38,6 +38,45 @@ def status(value, language='ru'):
         lines.append(('Пакет: ' if ru else 'Bundle: ') + '.codex-flow/workflows/' + _safe(value['workflow_id'], 32) + '/' + _safe(bundle))
     if value.get('reason'):
         lines.append(('Причина: ' if ru else 'Reason: ') + _safe(value['reason']))
+    for name, node in value.get('stages', {}).items():
+        if node.get('state') in ('failed', 'interrupted'):
+            reason = (node.get('output') or {}).get('reason')
+            if reason:
+                lines.append(('Причина стадии ' if ru else 'Stage reason ') + _safe(name, 24) + ': ' + _safe(reason))
+    lines.append(_next_action(value, ru))
+    return '\n'.join(lines)
+
+
+def _next_action(value, ru):
+    if value.get('integrity') == 'failed':
+        return 'Сохраните артефакты и разберите нарушение целостности.' if ru else 'Preserve artifacts and investigate the integrity failure.'
+    if value.get('state') == 'completed':
+        return 'Откройте сохранённый пакет изменений для проверки.' if ru else 'Review the saved change bundle.'
+    if value.get('state') == 'cancelled':
+        return 'Отмена окончательна; этот workflow не возобновляется.' if ru else 'Cancellation is terminal; this workflow cannot resume.'
+    if value.get('launch_pending') or value.get('owner_pid') or value.get('owned_children'):
+        return 'Сначала проверьте зарегистрированные процессы; их состояние здесь не определяется.' if ru else 'Inspect registered processes first; their liveness is not determined here.'
+    if value.get('requests_remaining', 1) <= 0 or value.get('active_time_remaining_s', 1) <= 0:
+        return 'Бюджет исчерпан; resume его не восстановит.' if ru else 'Budget exhausted; resume cannot restore it.'
+    for node in value.get('stages', {}).values():
+        if node.get('state') in ('failed', 'interrupted') and (not node.get('retryable') or node.get('attempts', 0) >= 2):
+            return 'Повтор стадии запрещён или попытки исчерпаны; изучите сохранённые результаты.' if ru else 'Stage retry is forbidden or attempts exhausted; inspect saved evidence.'
+    return 'Продолжение запускается только явной командой resume с повторной проверкой целостности.' if ru else 'An explicit resume rechecks integrity before continuing.'
+
+
+def listing(value, language='ru'):
+    ru = language == 'ru'
+    lines = ['Сохранённые workflow (новые первыми):' if ru else 'Saved workflows (newest created first):']
+    for row in value['workflows']:
+        lines.append(_safe(row['id'], 32) + ' | ' + _safe(row['state'], 16)
+                     + (' | запросов ' if ru else ' | requests ') + _safe(row['requests_used'], 8)
+                     + (' | активное время ' if ru else ' | active time ') + _safe(row['time_spent_s'], 16)
+                     + (' s; резерв ' if ru else ' s; reserved ') + _safe(row['time_reserved_s'], 16) + ' s')
+    if not value['workflows']:
+        lines.append('Подходящих workflow нет.' if ru else 'No matching workflows.')
+    if value['has_more']:
+        lines.append('Есть ещё записи: увеличьте --limit (до 100) или задайте --state.' if ru else 'More records exist: raise --limit (up to 100) or select --state.')
+    lines.append('Целостность здесь не проверяется. Далее: workflow status ID --human' if ru else 'Integrity is not checked here. Next: workflow status ID --human --lang en')
     return '\n'.join(lines)
 
 

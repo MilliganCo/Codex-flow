@@ -101,6 +101,23 @@ Catalog entries do not change routing or resume the paused live experiments.
 
 Use the returned workflow ID:
 
+Find saved IDs with `workflow list` (20 records by default, newest created first,
+not most recently updated). Filter by state, raise `--limit` up to 100, or select
+`--json`; `has_more` indicates truncated results:
+
+```powershell
+python codex-flow.py --repo C:\work\project workflow list --lang en
+python codex-flow.py --repo C:\work\project workflow list --state paused --limit 50 --json
+```
+
+The list excludes task text and settings; integrity is `not_checked`. A stored
+`completed` row is not fresh acceptance: `status ID` rechecks saved artifacts.
+Listing an unused project creates no database. Listing and status use read-only
+SQLite transactions, without schema initialization, owner recovery, model calls,
+or budget changes. Damaged/incompatible databases fail without repair. Flow's
+default rollback journal is supported; externally switched WAL databases are
+refused before SQLite can create shared-memory sidecars.
+
 ```powershell
 python codex-flow.py --repo C:\work\project workflow status WORKFLOW_ID --human --lang en
 python codex-flow.py --repo C:\work\project workflow status WORKFLOW_ID
@@ -115,6 +132,9 @@ human labels; Russian is the default. Start, pause, resume, and cancel also
 support these flags. Without `--human`, their existing JSON interface is
 unchanged. Human output reports integrity failure and source changes without
 claiming acceptance of the live original project.
+It also shows recorded stage reasons and guidance for integrity failures,
+cancellation, registered processes, exhausted budgets and forbidden retries.
+Registration is not a process liveness check; guidance never executes a resume.
 
 Pause and cancel are persisted control requests; an active operation must observe
 them before it stops. Paused time does not consume the active-time budget.

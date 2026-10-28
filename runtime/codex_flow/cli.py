@@ -90,6 +90,10 @@ def main(argv=None):
     models=ws.add_parser('models',help='Inspect model-role metadata without inference or changing routing')
     models.add_argument('--json',action='store_true');models.add_argument('--lang',choices=['ru','en'],default='ru')
     models.add_argument('--cli-version')
+    listing=ws.add_parser('list',help='List saved workflow IDs without starting or recovering work')
+    listing.add_argument('--limit',type=int,default=20)
+    listing.add_argument('--state',choices=('pending','ready','running','paused','blocked','failed','cancelled','completed','succeeded'))
+    listing.add_argument('--json',action='store_true');listing.add_argument('--lang',choices=['ru','en'],default='ru')
     for action in ('status','pause','resume','cancel'):
         action_parser=ws.add_parser(action);action_parser.add_argument('workflow_id')
         action_parser.add_argument('--human',action='store_true');action_parser.add_argument('--lang',choices=['ru','en'],default='ru')
@@ -101,7 +105,7 @@ def main(argv=None):
     args=p.parse_args(argv)
     try:
         repo=args.repo.resolve()
-        control_only=(args.command=='workflow' and args.workflow_action in ('status','pause','cancel','init','models'))
+        control_only=(args.command=='workflow' and args.workflow_action in ('status','pause','cancel','init','models','list'))
         cfg=Config() if control_only else load(args.config or repo/'.codex-flow/config.json')
         if args.command=='doctor':
             from .doctor import doctor
@@ -221,7 +225,7 @@ def main(argv=None):
                     print(json.dumps(out,ensure_ascii=False,indent=2));return 0 if out['accepted'] else 3
         elif args.command=='workflow':
             from . import workflow_display, workflow_setup
-            if (getattr(args,'human',False) or args.workflow_action in ('init','models')) and hasattr(sys.stdout,'reconfigure'):
+            if (getattr(args,'human',False) or args.workflow_action in ('init','models','list')) and hasattr(sys.stdout,'reconfigure'):
                 sys.stdout.reconfigure(encoding='utf-8')
             if args.workflow_action=='init':
                 out=workflow_setup.initialize(repo,framework=args.framework,test_dir=args.tests,pattern=args.pattern,
@@ -235,6 +239,18 @@ def main(argv=None):
                 return 0
             from .workflow import Engine
             engine=Engine(repo)
+            if args.workflow_action=='list':
+                from .workflow_store import Store, WorkflowError
+                if not 1<=args.limit<=100:raise WorkflowError('workflow list limit must be 1..100')
+                if (engine.root/'state.sqlite').exists():
+                    out=Store(engine.root,read_only=True).list_workflows(limit=args.limit,state=args.state)
+                else:
+                    from .workflow_store import _safe
+                    _safe(engine.root);_safe(engine.root/'state.sqlite',file=True)
+                    out={'workflows':[],'has_more':False,'limit':args.limit,'state_filter':args.state,
+                         'order':'newest_created_first','read_only':True}
+                print(json.dumps(out,ensure_ascii=False,indent=2) if args.json else workflow_display.listing(out,args.lang))
+                return 0
             if args.workflow_action=='start':
                 if args.timeout is not None:cfg=replace(cfg,timeout_s=args.timeout)
                 if args.max_model_requests is not None:cfg=replace(cfg,max_model_requests=args.max_model_requests)

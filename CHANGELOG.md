@@ -2,6 +2,12 @@
 
 ## Unreleased — opt-in runtime development
 
+- Add `workflow list` with stored-state filtering, bounded output and JSON mode.
+ Listing and status now use read-only SQLite transactions without initialization,
+ migration or owner recovery. Listing never claims artifact acceptance; status
+ retains hash checks. Human status explains stage reasons, terminal states,
+ ownership uncertainty and exhausted budgets. No inference or routing changes.
+
 - Add explicit `workflow init` for existing Git Python unittest projects without
  importing or executing their code. Versioned checker bindings freeze baseline
  test bytes, preserve prior setup/task files, and require explicit refresh for

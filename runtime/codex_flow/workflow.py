@@ -218,7 +218,7 @@ class Engine:
         self._base(workflow_id)
         if not (self.root / 'state.sqlite').is_file():
             raise PolicyError('workflow state missing')
-        row = self.store.get(workflow_id)
+        row = Store(self.root, read_only=True).get(workflow_id)
         report = row['stages']['report']['output'] or {}
         integrity = 'not_complete'
         source_changed = None

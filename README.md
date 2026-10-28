@@ -11,6 +11,10 @@ modules. Mercury and Harness-inspired probes are optional and disabled by defaul
 
 **Status:** private development. No project license has been selected. There is no validated universal speedup or quota-saving claim. Runtime completion is distinct from independent acceptance.
 
+Use `workflow list` to find saved task IDs (`--state paused --json` for filtering
+and scripts). Listing and status inspect SQLite read-only. `status ID --human`
+explains recorded stage failures, budget exhaustion and the next action.
+
 [Durable workflows](docs/workflows.md) add project-local SQLite state for
 **prepare → generate → verify → report**. Each attempt uses a separate snapshot;
 resume reuses hash-checked stages without resetting requests or charged active

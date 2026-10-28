@@ -17,6 +17,7 @@ import uuid
 
 
 STAGES = ('prepare', 'generate', 'verify', 'report')
+STATES = ('pending', 'ready', 'running', 'paused', 'blocked', 'failed', 'cancelled', 'completed', 'succeeded')
 _ID = re.compile(r'[a-f0-9]{32}')
 
 
@@ -114,12 +115,19 @@ class Store:
     """
 
     def __init__(self, root: Path, *, identity: Callable[[int], str | None] = process_identity,
-                 probe: Callable[[int, str], str] = process_probe, pid: int | None = None):
+                 probe: Callable[[int, str], str] = process_probe, pid: int | None = None,
+                 read_only: bool = False):
         self.root = Path(os.path.abspath(root))
         self.path = self.root / 'state.sqlite'
         self._identity, self._probe = identity, probe
         self._pid = os.getpid() if pid is None else pid
+        self._read_only = read_only
         _safe(self.root)
+        if read_only:
+            _safe(self.path, file=True)
+            if not self.path.is_file():
+                raise WorkflowError('workflow state missing')
+            return
         self.root.mkdir(parents=True, exist_ok=True)
         _safe(self.root)
         if not self.path.exists():
@@ -159,17 +167,39 @@ class Store:
                     db.execute(statement)
 
     @contextmanager
-    def _transaction(self):
+    def _transaction(self, *, read_only=False):
+        if self._read_only and not read_only:
+            raise WorkflowError('read-only workflow store cannot be modified')
         _safe(self.root)
         for suffix in ('', '-journal', '-wal', '-shm'):
             _safe(Path(str(self.path) + suffix), file=True)
-        db = sqlite3.connect(self.path, timeout=5, isolation_level=None)
+        if read_only:
+            # Flow uses rollback journals. Refuse WAL before SQLite can create
+            # shared-memory sidecars; immutable=1 would incorrectly ignore locks.
+            with self.path.open('rb') as stream:
+                header = stream.read(20)
+            if header[:16] != b'SQLite format 3\x00' or header[18:20] != b'\x01\x01':
+                raise WorkflowError('workflow database format unsupported for read-only inspection')
+        try:
+            db = sqlite3.connect(self.path.as_uri() + '?mode=ro' if read_only else self.path,
+                                 uri=read_only, timeout=5, isolation_level=None)
+        except sqlite3.Error as error:
+            if not read_only:
+                raise
+            raise WorkflowError('workflow database unavailable: ' + getattr(error, 'sqlite_errorname', 'SQLITE_ERROR')) from None
         db.row_factory = sqlite3.Row
         try:
             db.execute('PRAGMA busy_timeout=5000')
-            db.execute('BEGIN IMMEDIATE')
+            if read_only:
+                db.execute('PRAGMA query_only=ON')
+            db.execute('BEGIN' if read_only else 'BEGIN IMMEDIATE')
             yield db
             db.commit()
+        except sqlite3.Error as error:
+            db.rollback()
+            if not read_only:
+                raise
+            raise WorkflowError('workflow database unavailable: ' + getattr(error, 'sqlite_errorname', 'SQLITE_ERROR')) from None
         except BaseException:
             db.rollback()
             raise
@@ -212,7 +242,7 @@ class Store:
         return workflow_id
 
     def get(self, workflow_id: str) -> dict:
-        with self._transaction() as db:
+        with self._transaction(read_only=True) as db:
             row = self._workflow(db, workflow_id)
             result = dict(row)
             result['spec'] = json.loads(row['spec'])
@@ -245,6 +275,23 @@ class Store:
             result['launch_pending'] = bool(owner and db.execute(
                 'SELECT 1 FROM launches WHERE token=?', (owner['token'],)).fetchone())
             return result
+
+    def list_workflows(self, *, limit=20, state=None):
+        if type(limit) is not int or not 1 <= limit <= 100 or (state is not None and state not in STATES):
+            raise WorkflowError('workflow list requires limit 1..100 and a known state')
+        with self._transaction(read_only=True) as db:
+            rows = db.execute('SELECT id,state,control,requests_used,time_spent_s,time_reserved_s '
+                              'FROM workflows WHERE (? IS NULL OR state=?) ORDER BY rowid DESC LIMIT ?',
+                              (state, state, limit + 1)).fetchall()
+            items = []
+            for row in rows[:limit]:
+                if not _ID.fullmatch(row['id']):
+                    raise WorkflowError('invalid stored workflow ID')
+                item = dict(row)
+                item['integrity'] = 'not_checked'
+                items.append(item)
+            return {'workflows': items, 'has_more': len(rows) > limit, 'limit': limit,
+                    'state_filter': state, 'order': 'newest_created_first', 'read_only': True}
 
     def _recover(self, db, owner):
         if self._probe(owner['pid'], owner['birth']) != 'dead':

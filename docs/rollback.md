@@ -117,6 +117,18 @@ Backups and installation records may contain private instructions. Keep them loc
 
 ## Restore source
 
+Before read-only workflow navigation, private commit
+`95064829c4fa0035acb8256f5a105cc7ae578f64` retains initialization and durable recovery:
+
+```powershell
+git worktree add --detach ../codex-flow-before-navigation 95064829c4fa0035acb8256f5a105cc7ae578f64
+```
+
+This iteration changes no database schema. Keep saved project state and use the
+original frozen runtime for resuming older workflows. Never edit budgets or
+ownership to force compatibility. Для отката создайте отдельный каталог командой
+выше: текущие правки и артефакты сохраняются.
+
 Before the workflow usability changes, private commit
 `d364425be820cdb0a6f60a7cff05a1e1f1f5305d` retains durable stage recovery:
 
