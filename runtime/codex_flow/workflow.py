@@ -196,13 +196,20 @@ class Engine:
 
     def resume(self, workflow_id, *, enable=False, exe=None):
         admission_started = time.monotonic()
+        self._base(workflow_id)
+        if not (self.root / 'state.sqlite').is_file():
+            raise PolicyError('workflow state missing')
+        # Explicit resume retains SQLite's normal hot-journal recovery; status
+        # itself must never repair or initialize the control database.
+        with self.store._transaction():
+            pass
+        spec = self.store.get(workflow_id)['spec']
         current = self.status(workflow_id)
         if current.get('integrity') == 'failed':
             raise PolicyError('cached workflow artifacts changed')
-        cfg = Config(**self.store.get(workflow_id)['spec']['config'])
+        cfg = Config(**spec['config'])
         if current['state'] != 'completed' and not (cfg.enabled or enable):
             raise PolicyError('workflow resume requires --enable or frozen enabled config')
-        spec = self.store.get(workflow_id)['spec']
         if self.backend.kind != spec['backend_kind']:
             raise PolicyError('workflow backend changed')
         fingerprint = self.backend.fingerprint(exe or spec['fingerprint'].get('executable'))

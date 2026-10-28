@@ -117,6 +117,9 @@ SQLite transactions, without schema initialization, owner recovery, model calls,
 or budget changes. Damaged/incompatible databases fail without repair. Flow's
 default rollback journal is supported; externally switched WAL databases are
 refused before SQLite can create shared-memory sidecars.
+If a crash left a hot rollback journal, read-only inspection reports
+`SQLITE_READONLY_ROLLBACK`. Explicit `resume --enable` retains SQLite's normal
+journal recovery before validation; it does not discard saved workflow budgets.
 
 ```powershell
 python codex-flow.py --repo C:\work\project workflow status WORKFLOW_ID --human --lang en

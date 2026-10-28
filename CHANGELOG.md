@@ -7,6 +7,8 @@
  migration or owner recovery. Listing never claims artifact acceptance; status
  retains hash checks. Human status explains stage reasons, terminal states,
  ownership uncertainty and exhausted budgets. No inference or routing changes.
+ Explicit resume retains SQLite hot-journal recovery after controller crashes;
+ inspection reports recovery-required state without repairing it.
 
 - Add explicit `workflow init` for existing Git Python unittest projects without
  importing or executing their code. Versioned checker bindings freeze baseline

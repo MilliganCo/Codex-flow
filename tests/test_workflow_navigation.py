@@ -151,7 +151,7 @@ class NavigationTests(unittest.TestCase):
         self.assertEqual(code, 2)
         self.assertIn('one link', error)
 
-    def test_status_is_read_only_and_rechecks_completed_artifacts(self):
+    def completed_fixture(self):
         subprocess.run(['git', '-c', 'init.templateDir=' + str(self.repo / 'empty'), 'init', '--quiet', str(self.repo)],
                        capture_output=True, check=True)
         (self.repo / 'app.txt').write_text('original', encoding='utf-8')
@@ -162,6 +162,10 @@ class NavigationTests(unittest.TestCase):
         engine = workflow.Engine(self.repo, backend=FixtureBackend())
         done = engine.start(Config(), 'fixture task', contract, enable=True)
         self.assertTrue(done['accepted'])
+        return engine, done
+
+    def test_status_is_read_only_and_rechecks_completed_artifacts(self):
+        engine, done = self.completed_fixture()
         before = self.snapshot()
         with patch.object(workflow.Engine, 'store', side_effect=AssertionError('writer store must not be used')):
             checked = workflow.Engine(self.repo).status(done['workflow_id'])
@@ -171,6 +175,25 @@ class NavigationTests(unittest.TestCase):
         (bundle / 'files/app.txt').write_text('tampered', encoding='utf-8')
         self.assertFalse(engine.status(done['workflow_id'])['accepted'])
         self.assertEqual(Store(self.root, read_only=True).list_workflows()['workflows'][0]['integrity'], 'not_checked')
+
+    def test_explicit_resume_recovers_hot_journal_without_repeating_generation(self):
+        engine, done = self.completed_fixture()
+        # Trusted controller-state crash fixture; no project/checker code runs.
+        script = ('import sqlite3,os,sys; db=sqlite3.connect(sys.argv[1]); '
+                  'db.execute("PRAGMA cache_size=1"); db.execute("BEGIN IMMEDIATE"); '
+                  'db.execute("UPDATE workflows SET spec=?", ("x"*1000000,)); os._exit(42)')
+        crashed = subprocess.run([sys.executable, '-I', '-c', script, str(self.root / 'state.sqlite')], capture_output=True)
+        self.assertEqual(crashed.returncode, 42)
+        self.assertTrue((self.root / 'state.sqlite-journal').exists())
+        before = self.snapshot()
+        with self.assertRaises(WorkflowError):
+            workflow.Engine(self.repo).status(done['workflow_id'])
+        self.assertEqual(before, self.snapshot())
+        before_calls = (engine.backend.generations, engine.backend.verifications)
+        resumed = engine.resume(done['workflow_id'], enable=True)
+        self.assertTrue(resumed['accepted'])
+        self.assertEqual(resumed['requests_used'], 1)
+        self.assertEqual((engine.backend.generations, engine.backend.verifications), before_calls)
 
     def test_human_status_explains_terminal_failure_and_sanitizes_reason(self):
         value = {'state': 'failed', 'stages': {'verify': {'state': 'failed', 'attempts': 1,
