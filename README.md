@@ -9,7 +9,7 @@ helper is a `reviewer/high` acceptance-risk pass; the chief owns critical
 implementation and verification. Medium code proposals are limited to low-risk
 modules. Mercury and Harness-inspired probes are optional and disabled by default.
 
-**Status:** private development. No project license has been selected. There is no validated universal speedup or quota-saving claim. Runtime completion is distinct from independent acceptance.
+**Status:** public development preview. No project license has been selected. There is no validated universal speedup or quota-saving claim. Runtime completion is distinct from independent acceptance.
 
 Use `workflow list` to find saved task IDs (`--state paused --json` for filtering
 and scripts). Listing and status inspect SQLite read-only. `status ID --human`
@@ -170,3 +170,6 @@ Inspect dry-run output and preserve local skill edits before applying any instal
 Documentation: [baseline audit](docs/baseline-compatibility.md), [configuration](docs/configuration.md), [benchmarking](docs/benchmarking.md), [troubleshooting](docs/troubleshooting.md), [limitations](docs/limitations.md), [FAQ](docs/faq.md), [contributing](CONTRIBUTING.md), [security](SECURITY.md), [license options](docs/license-options.md), [provenance](THIRD_PARTY_NOTICES.md).
 
 Upstream references: [Codex CLI](https://github.com/openai/codex), [Harness²](https://github.com/google-research/harness2), [Mercury Decide free route](https://openrouter.ai/inception/mercury-decide:free). These projects and services are independently maintained; their presence does not establish a working integration in this checkout.
+
+
+Publication review and offline CI scope: [PUBLICATION.md](PUBLICATION.md). Live model experiments remain paused; publication does not restart them.
